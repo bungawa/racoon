@@ -1,0 +1,103 @@
+/* Leçon « L'énergie relativiste » (Feynman I.16.5) : textes en français.
+   Une autre langue = locales/<langue>/lecons/relat-energie.js, mêmes clés.
+   Texte seulement : années, types d'événement, données, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "L'énergie relativiste",
+    "crumb.jour": "Énergie relativiste",
+    "h1": "L'énergie relativiste",
+    "lede": "L'énergie cinétique d'un corps rapide n'est plus ½mv², et toute énergie enfermée dans un corps, quelle que soit sa forme, augmente sa masse. On en tire l'énergie que libère une fission à partir des seules masses au repos, et deux relations simples entre l'énergie, la quantité de mouvement et la vitesse.",
+    "tag.piste": "Relativité",
+    "tag.prereq": "Prérequis : la masse relativiste",
+
+    "s1.sec": "Énergie cinétique",
+    "s1.h2": "L'énergie cinétique vaut (γ \u2212 1)mc²",
+    "s1.p1": "« L'équivalence de la masse et de l'énergie » a montré que, si la quantité de mouvement vaut γ<var>m</var><var>v</var>, le travail des forces qui mettent un corps en mouvement augmente <var>m</var><sub><var>v</var></sub><var>c</var><sup>2</sup> d'autant. Le système : un corps de masse <var>m</var>, parti du repos, qui atteint la vitesse <var>u</var> dans un référentiel galiléen. Son énergie cinétique, le travail total qu'il a reçu, vaut :",
+    "val.16.12": "Exacte : théorème de l'énergie cinétique pour un point matériel de masse <var>m</var> constante, avec <var>p</var> = γ<var>m</var><var>v</var>, à toute vitesse <var>u</var> < <var>c</var>. Ce qui est supposé : le corps ne reçoit d'énergie que par le travail des forces, et sa nature ne change pas en route.",
+    "s1.p2": "À faible vitesse, (16.12) redonne ½<var>m</var><var>u</var><sup>2</sup> ; près de <var>c</var>, elle croît sans limite alors que la vitesse plafonne. La figure compare les deux lois pour un électron ou un proton, et donne l'énergie totale et la quantité de mouvement, que relient les deux relations de la dernière partie.",
+    "fig.aria": "Énergie cinétique en fonction de la vitesse, selon la relativité et selon Newton, en unités de l'énergie au repos",
+    "fig.legend.rel": "relativité : T/mc² = γ \u2212 1, (16.12)",
+    "fig.legend.newton": "Newton : T/mc² = ½(v/c)²",
+    "fig.electron": "Électron",
+    "fig.proton": "Proton",
+    "fig.T": "Énergie cinétique T",
+    "fig.xaxis": "v/c",
+    "fig.yaxis": "T/mc²",
+    "fig.k.v": "Vitesse <var>v</var>/<var>c</var>",
+    "fig.f.v": "1 \u2212 v/c = {d} ; γ = {g}",
+    "fig.k.n": "Newton : <var>v</var>/<var>c</var> pour la même énergie",
+    "fig.f.n": "½mv², avec la vraie vitesse, sous-estime T de {e}\u00a0%",
+    "fig.k.E": "Énergie totale <var>E</var> = γ<var>m</var><var>c</var><sup>2</sup>",
+    "fig.f.E": "√(E² \u2212 p²c²) = {m}, l'énergie au repos",
+    "fig.k.p": "Quantité de mouvement <var>p</var>",
+    "fig.f.p": "pc/E = {r}, c'est v/c",
+    "fig.caption": "Ordonnée logarithmique : chaque graduation marquée, un facteur 1\u00a0000. Les deux courbes se confondent à faible vitesse ; celle de Newton franchit v = c pour T = mc²/2, alors que la courbe relativiste devient verticale en v = c. L'énergie au repos mc² vaut 511\u00a0keV pour un électron et 938\u00a0MeV pour un proton : la même énergie cinétique rend l'électron relativiste bien avant le proton.",
+    "sys.title": "Le système décrit : un électron accéléré par une tension",
+    "sys1.body": "Un électron part du repos et traverse une différence de potentiel <var>V</var> dans le vide ; le laboratoire mesure <var>V</var>, donc l'énergie cinétique <var>T</var> = <var>e</var><var>V</var>. Sous 1\u00a0kV, (<var>v</var>/<var>c</var>)<sup>2</sup> = {b2} : la formule de Newton, avec la vraie vitesse, sous-estime <var>T</var> de {e1}\u00a0%. Sous 100\u00a0kV, l'erreur est de {e2}\u00a0% ; sous 1\u00a0MV, de {e3}\u00a0%. Au-delà de quelques kilovolts, ½<var>m</var><var>v</var><sup>2</sup> n'est plus une approximation acceptable pour un électron.",
+
+    "s2.sec": "Énergie de liaison",
+    "s2.h2": "L'énergie a de l'inertie",
+    "s2.p1": "« La masse relativiste » a montré que deux corps de masse <var>m</var> qui se collent à la vitesse <var>w</var> forment un corps de masse <var>M</var> = 2<var>m</var><sub><var>w</var></sub>, plus grande que 2<var>m</var> de l'énergie cinétique apportée divisée par <var>c</var><sup>2</sup>. Que cette énergie reste dedans comme agitation, comme énergie potentielle ou sous toute autre forme, elle pèse : la conservation de la masse ainsi définie est la conservation de l'énergie. Il n'y a donc pas, en relativité, de choc parfaitement mou au sens de Newton. Réunis doucement, les deux corps forment un objet de masse 2<var>m</var> ; réunis violemment, un objet plus lourd, donc différent.",
+    "s2.p2": "À l'inverse, un corps de masse <var>M</var> au repos se scinde en deux morceaux égaux lancés à la vitesse <var>w</var>. Arrêtés dans la matière, ils y laissent chacun (<var>m</var><sub><var>w</var></sub> \u2212 <var>m</var>)<var>c</var><sup>2</sup>, en chaleur ou autrement. Comme <var>M</var> = 2<var>m</var><sub><var>w</var></sub>, l'énergie libérée est :",
+    "val.16.11a": "Exacte, les masses étant mesurées au repos : <var>M</var> avant, <var>m</var> pour chaque morceau une fois arrêté. Ce qui est approché, ce sont les données : des morceaux qui ne sont pas exactement égaux, et la formule devient (<var>M</var> \u2212 <var>m</var><sub>1</sub> \u2212 <var>m</var><sub>2</sub>)<var>c</var><sup>2</sup> ; des masses connues avec une incertitude qui pèse lourd quand leur différence est petite, comme en chimie.",
+    "s2.p3": "C'est ainsi qu'on a estimé l'énergie d'une fission : la masse d'un atome d'uranium et celles des atomes plus légers qu'il donne étaient mesurées d'avance, au repos ; il suffisait de soustraire. Ce calcul dit combien d'énergie libère chaque fission. Il ne dit pas comment en provoquer beaucoup à la fois, ce qui est une tout autre affaire. Il vaut aussi pour la chimie : la molécule de dioxyde de carbone pèse moins que le carbone et l'oxygène séparés, mais d'une fraction 10<sup>\u221210</sup> seulement, trop petite pour mesurer ainsi l'énergie d'une réaction.",
+    "s2.deuton": "Le plus simple des noyaux composés montre l'effet en grand. Le deutéron, un proton et un neutron liés, est plus léger que ses deux constituants séparés de {B}/<var>c</var><sup>2</sup>, pour une énergie au repos totale de {m2}. Cette énergie de liaison, une fraction {f} de la masse, est celle qu'il faut fournir pour le séparer, et celle qu'emporte le photon gamma émis quand un proton capture un neutron.",
+
+    "s3.sec": "Énergie totale",
+    "s3.h2": "Ne plus chercher les morceaux",
+    "s3.kaon": "Peut-on toujours dire de quoi un corps est fait, et partager son énergie entre la masse de ses morceaux, leur énergie cinétique et leur énergie potentielle ? Le kaon chargé, de masse {mK}, se désintègre en deux pions dans 21\u00a0% des cas, et en trois pions chargés, de {mpi} chacun, dans 6\u00a0% des cas ; ces trois pions emportent alors {Q} d'énergie cinétique. Dire que le kaon est fait de deux pions, ou de trois, n'a pas de sens.",
+    "s3.p2": "On ne cherche donc plus les morceaux. On décale l'origine des énergies de la constante <var>m</var><var>c</var><sup>2</sup>, et l'on appelle énergie totale d'une particule <var>E</var> = γ<var>m</var><var>c</var><sup>2</sup> : la masse fois <var>c</var><sup>2</sup> au repos, plus l'énergie cinétique en mouvement. Les bilans de réaction se font sur cette énergie totale, sans hypothèse sur ce qu'il y a dedans.",
+
+    "s4.sec": "Énergie et impulsion",
+    "s4.h2": "Deux relations à retenir",
+    "s4.p1": "La formule de γ<var>m</var> sert peu en pratique. On utilise plutôt deux relations entre l'énergie totale <var>E</var>, la quantité de mouvement <var>P</var> et la vitesse <var>v</var> d'une particule de masse <var>m</var>. On les vérifie en remplaçant <var>E</var> par γ<var>m</var><var>c</var><sup>2</sup> et <var>P</var> par γ<var>m</var><var>v</var> :",
+    "val.16.13": "Exacte, pour une particule libre, ou pour un système : <var>E</var> et <var>P</var> sont alors ses totaux et <var>m</var> sa masse invariante. Le membre de gauche a la même valeur pour tous les observateurs, comme le montre « Le quadrivecteur énergie-impulsion ».",
+    "val.16.14": "Exacte pour une particule libre, à toute vitesse ; elle vaut aussi pour une particule de masse nulle, avec <var>v</var> = <var>c</var>. Ce qui reste approché, ce sont les mesures : près de <var>c</var>, une erreur sur <var>E</var> ou <var>P</var> change à peine <var>v</var>.",
+    "s4.lhc": "Pour un photon, <var>m</var> = 0 : (16.13) donne <var>E</var> = <var>P</var><var>c</var>, et (16.14) <var>v</var> = <var>c</var>. Une particule très rapide s'en approche : un proton du Grand collisionneur de hadrons (LHC), d'énergie totale {E}, a <var>P</var><var>c</var> inférieur à <var>E</var> d'une fraction {ecart} seulement. À ces énergies, on confond souvent énergie et quantité de mouvement ; la masse ne se lit plus que dans la différence <var>E</var><sup>2</sup> \u2212 <var>P</var><sup>2</sup><var>c</var><sup>2</sup>.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Des masses au repos à l'énergie des noyaux",
+    "hist.intro": "La soustraction des masses au repos a prédit l'énergie de la fission ; les particules nouvelles des années 1940 ont montré qu'on ne pouvait pas toujours nommer les morceaux.",
+    "hist.events": {
+      meitner: { who: "Lise Meitner et Otto Frisch", what: "expliquent la « fission » de l'uranium et en estiment l'énergie : environ 200 MeV par noyau.", context: "Leur lettre à Nature, publiée le 11 février 1939, tire cette valeur de la répulsion électrique des deux fragments, et note qu'elle correspond à la différence de masse entre l'uranium et les éléments du milieu du tableau périodique." },
+      trinity: { who: "Le projet Manhattan", what: "fait exploser au Nouveau-Mexique, le 16 juillet 1945, la première bombe à fission : l'essai Trinity.", context: "L'énergie libérée, environ 9 × 10¹³ J selon l'estimation officielle de 1963, était le double de celle qu'Enrico Fermi avait estimée sur place, et environ quatre fois celle qu'attendaient la plupart des physiciens de Los Alamos. Les masses donnaient l'énergie d'une fission, pas le nombre de noyaux qui fissionneraient." },
+      rochester: { who: "George Rochester et Clifford Butler", what: "photographient dans une chambre à brouillard les traces en V de particules nouvelles, instables.", context: "Publiées dans Nature en 1947, ce sont les premières observations des particules qu'on appellera kaons, et qu'on verra se désintégrer tantôt en deux pions, tantôt en trois." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      neutron: { name: "La masse du neutron", text: "Le neutron n'a pas de charge : on ne peut pas le peser comme un ion, par son mouvement dans un champ magnétique. Le CODATA tire donc sa masse de celles du deutéron et du proton, en y ajoutant l'énergie de liaison du deutéron divisée par <var>c</var><sup>2</sup>, mesurée par la longueur d'onde du photon gamma émis quand un proton capture un neutron." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      cinetique: { prompt: "Un électron (mc² = 511\u00a0keV) a une énergie cinétique de 511\u00a0keV. Quelle est sa vitesse ?",
+        options: { a: "0,866\u00a0c, car γ = 2.", b: "1,41\u00a0c, car ½mv² = mc².", c: "0,5\u00a0c.", d: "c exactement." },
+        hint: "Cherchez d'abord γ avec T = (γ \u2212 1)mc².",
+        why: "T = mc² donne γ = 2, d'où v/c = √(1 \u2212 1/4) ≈ 0,866. La formule de Newton donnerait √2 c, impossible." },
+      mou: { prompt: "Pourquoi n'y a-t-il pas, en relativité, de choc parfaitement mou au sens de Newton ?",
+        options: { a: "Parce que l'énergie cinétique ne peut pas devenir de la chaleur.", b: "Parce que deux corps ne peuvent pas rester collés.", c: "Parce que le corps formé garde l'énergie apportée dans sa masse : réuni violemment, il est plus lourd, donc différent de celui qu'on forme doucement.", d: "Parce que la quantité de mouvement ne se conserve pas dans un choc mou." },
+        why: "Chez Newton, le bloc formé a la masse 2m quelle que soit la violence du choc. En relativité, M = 2mγ : l'énergie dissipée reste dans le bloc et le rend plus lourd. Conserver la masse, c'est conserver l'énergie." },
+      fission: { prompt: "Un noyau de masse M au repos se scinde en deux fragments de masse m chacun, avec M \u2212 2m = 0,2\u00a0u (1\u00a0u·c² = 931,5\u00a0MeV). Quelle énergie est libérée ?",
+        options: { a: "0,2\u00a0MeV.", b: "Environ 186\u00a0MeV.", c: "Environ 931,5\u00a0MeV.", d: "Environ 373\u00a0MeV." },
+        why: "(16.11a) : (M \u2212 2m)c² = 0,2 × 931,5 ≈ 186\u00a0MeV. C'est l'ordre de grandeur de la fission de l'uranium, environ 200\u00a0MeV." },
+      kaon: { prompt: "Un kaon chargé (493,7\u00a0MeV/c²) au repos se désintègre en trois pions chargés (139,6\u00a0MeV/c² chacun). Quelle énergie cinétique totale emportent-ils ?",
+        options: { a: "493,7\u00a0MeV.", b: "Aucune : l'énergie se conserve.", c: "354,1\u00a0MeV.", d: "Environ 75\u00a0MeV." },
+        why: "L'énergie totale se conserve : 493,7 = 3 × 139,6 + T, d'où T ≈ 75\u00a0MeV. La masse du kaon n'est pas la somme des masses des pions." },
+      relation: { prompt: "Une particule a une énergie totale de 5\u00a0GeV et une quantité de mouvement de 4\u00a0GeV/c. Que valent son énergie au repos et sa vitesse ?",
+        options: { a: "3\u00a0GeV et 0,8\u00a0c.", b: "1\u00a0GeV et 0,8\u00a0c.", c: "3\u00a0GeV et 0,6\u00a0c.", d: "9\u00a0GeV et 1,25\u00a0c." },
+        why: "(16.13) : mc² = √(5² \u2212 4²) = 3\u00a0GeV. (16.14) : v/c = Pc/E = 4/5 = 0,8." },
+      photon: { prompt: "Que donnent (16.13) et (16.14) pour un photon ?",
+        options: { a: "E = 0 et v = 0.", b: "E = Pc et v = c.", c: "E = mc² et v = c.", d: "E = ½Pc et v = c." },
+        why: "Avec m = 0, (16.13) donne E = Pc ; alors (16.14) donne v = c. Un objet sans masse va toujours à c." },
+      liaison: { prompt: "Le deutéron est plus léger qu'un proton et un neutron séparés de 2,224\u00a0MeV/c². Que faut-il pour le séparer en ses deux constituants ?",
+        options: { a: "Rien : il se sépare spontanément.", b: "Lui apporter 2,224\u00a0keV.", c: "Lui apporter au moins 2,224\u00a0MeV, par exemple avec un photon gamma.", d: "Lui retirer 2,224\u00a0MeV." },
+        why: "Les morceaux séparés ont une énergie au repos plus grande de 2,224\u00a0MeV : il faut la fournir. C'est l'énergie de liaison, 1,2 × 10⁻³ de la masse." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. I, chap. 16, §16-5 (texte original en anglais). Notations : <var>m</var> est la masse, que le texte source note <var>m</var><sub>0</sub> ; <var>m</var><sub><var>u</var></sub> = γ<var>m</var>. Meitner et Frisch : <i>Nature</i> 143, p. 239–240 (1939). Trinity : Wikipédia, « Trinity (nuclear test) », et Air Force Nuclear Weapons Center. Rochester et Butler : <i>Nature</i> 160, p. 855–857 (1947) ; CERN, frise historique. Kaon et pion chargés, modes de désintégration : Particle Data Group, <i>Review of Particle Physics</i> (2024). Deutéron et masse du neutron : CODATA 2022. LHC : CERN. Calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

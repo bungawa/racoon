@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le rayonnement de freinage</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-optique-ondulatoire" data-i18n="monde.optique-ondulatoire"></a><span class="aux">›</span><a href="/racoon/etape?id=opt-synchrotron-doppler" data-i18n="etape.opt-synchrotron-doppler"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-optique" href="/racoon/atlas?piste=optique" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/opt-mouvement-apparent" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mi>d</mi><mi>t</mi></mrow><mrow><mi>d</mi><mi>τ</mi></mrow></mfrac><mo>=</mo><mn>1</mn><mo>−</mo><mi>β</mi><mi data-i18n="eq.cos"></mi><mi>θ</mi><mo>,</mo><mspace width="1em"/><mn>1</mn><mo>−</mo><mi>β</mi><mo>=</mo><mfrac><mn>1</mn><mrow><msup><mi>γ</mi><mn>2</mn></msup><mo>(</mo><mn>1</mn><mo>+</mo><mi>β</mi><mo>)</mo></mrow></mfrac></math><span class="n">(34.5p)</span></div>
+    <p class="validite" data-i18n-html="val.34.5p"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mi>d</mi><mi>P</mi></mrow><mrow><mi>d</mi><mi>Ω</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mi>q</mi><mn>2</mn></msup><msup><mi>a</mi><mn>2</mn></msup></mrow><mrow><mn>16</mn><msup><mi>π</mi><mn>2</mn></msup><msub><mi>ε</mi><mn>0</mn></msub><msup><mi>c</mi><mn>3</mn></msup></mrow></mfrac><mfrac><mrow><msup><mrow><mo>(</mo><mn>1</mn><mo>−</mo><mi>β</mi><mi data-i18n="eq.cos"></mi><mi>θ</mi><mo>)</mo></mrow><mn>2</mn></msup><mo>−</mo><mo>(</mo><mn>1</mn><mo>−</mo><msup><mi>β</mi><mn>2</mn></msup><mo>)</mo><msup><mi data-i18n="eq.sin"></mi><mn>2</mn></msup><mi>θ</mi><msup><mi data-i18n="eq.cos"></mi><mn>2</mn></msup><mi>φ</mi></mrow><msup><mrow><mo>(</mo><mn>1</mn><mo>−</mo><mi>β</mi><mi data-i18n="eq.cos"></mi><mi>θ</mi><mo>)</mo></mrow><mn>5</mn></msup></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.dpdo"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="apparent" role="img" data-i18n-attr="aria-label:fig.aria.apparent"></svg>
+      <svg class="fig" id="polaire" viewBox="0 0 640 300" role="img" data-i18n-attr="aria-label:fig.aria.polaire"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.choisi"></span><span class="c-warn" data-i18n="fig.legend.ref"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" role="group" id="mode">
+            <button type="button" data-m="perpendiculaire" data-i18n="fig.perp"></button>
+            <button type="button" data-m="parallele" data-i18n="fig.par"></button>
+          </div>
+          <div class="ctl"><div class="row"><label for="sg" data-i18n="fig.gamma"></label><output id="sgr" for="sg"></output></div>
+            <input id="sg" type="range" min="0.005" max="2" step="0.005" value="0.7"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.comp"></span><span class="v" id="vc"></span><span class="f" id="fc"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.cone"></span><span class="v" id="vk"></span><span class="f" id="fk"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.frac"></span><span class="v" id="vf"></span><span class="f" id="ff"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>λ</mi><mtext data-i18n="eq.min"></mtext></msub><mo>=</mo><mfrac><mrow><mi>h</mi><mi>c</mi></mrow><mrow><mi>e</mi><mi>U</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.duane"></p>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/opt-rayonnement-freinage.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/optique-ondulatoire.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const O = OptOnd, DEG = 180 / Math.PI, MEC2 = Constantes.m_e * O.c ** 2 / Constantes.e;   // electron rest energy, eV
+const betaDe = g => Math.sqrt((g - 1) * (g + 1)) / g;
+
+/* ---------- le coude vu de loin, et le cône où part l'énergie ---------- */
+(() => {
+  const svgA = $("apparent"), svgP = $("polaire"), sg = $("sg"), seg = $("mode"), DELTA = 0.2, BREF = 0.1;
+  let mode = "perpendiculaire";
+  /* apparent transverse position x′ against the observer's time t, observer far away along the initial velocity (θ = 0):
+     t = t′ − z(t′)/c, x′ = x(t′); in units of the turn duration T and of the end-of-turn offset R(1 − cos δ) */
+  const courbe = b => { const k = O.coude({ beta: b, R: 1, delta: DELTA }), u = 1 - Math.cos(DELTA);
+    return Array.from({ length: 401 }, (_, i) => { const tp = (-0.3 + 3.3 * i / 400) * k.T, r = k.traj(tp); return [(tp - r[2] / O.c) / k.T, r[0] / u]; }); };
+  function draw() {
+    const g = 10 ** +sg.value, b = betaDe(g);
+    svgA.innerHTML = "";
+    const A = Plot.axes(svgA, { fmt: F, w: 640, h: 220, pad: { l: 56, b: 40 }, x: { domain: [-0.3, 1.5], label: t("fig.xaxis") }, y: { domain: [0, 4], label: t("fig.yaxis") } });
+    const clipA = ([x, y]) => [A.x(Math.max(-0.3, Math.min(1.5, x))), A.y(Math.max(0, Math.min(4, y)))];
+    const visible = p => p[0] >= -0.3 && p[0] <= 1.5 && p[1] <= 4;
+    Plot.el("path", { d: Plot.path(courbe(BREF).filter(visible).map(clipA)), class: "stroke c-warn" }, A.g);
+    Plot.el("path", { d: Plot.path(courbe(b).filter(visible).map(clipA)), class: "curve" }, A.g);
+    /* polar diagram in the plane of v and a (φ = 0, π), velocity to the right, acceleration up */
+    svgP.innerHTML = "";
+    const cx = 320, cy = 150, R = 140, N = 721;
+    const D = (bb, th, ph) => O.distributionAngulaire(bb, th, ph, mode);
+    const lobe = bb => { const pts = Array.from({ length: N }, (_, i) => -Math.PI + 2 * Math.PI * i / (N - 1));
+      const val = pts.map(th => D(bb, Math.abs(th), th < 0 ? Math.PI : 0)), max = Math.max(...val);
+      return Plot.path(pts.map((th, i) => [cx + R * val[i] / max * Math.cos(th), cy - R * val[i] / max * Math.sin(th)])); };
+    Plot.el("line", { x1: cx - R, x2: cx + R + 20, y1: cy, y2: cy, class: "stroke thin c-label-2" }, svgP);
+    Plot.fleche(svgP, [cx, cy], [cx + 60, cy], { cls: "c-label-2" });                               // v
+    if (mode === "parallele") Plot.fleche(svgP, [cx, cy + 14], [cx + 40, cy + 14], { cls: "c-ko" });  // a along v
+    else Plot.fleche(svgP, [cx, cy], [cx, cy - 40], { cls: "c-ko" });                                // a across v
+    Plot.el("path", { d: lobe(BREF), class: "stroke c-warn" }, svgP);
+    Plot.el("path", { d: lobe(b), class: "curve" }, svgP);
+    /* stats */
+    const cone = O.demiCone(b, mode);
+    $("sgr").textContent = t("fig.f.gamma", { g: F.num(g, 3), b: F.num(b, 4) });
+    $("vc").textContent = F.sci(O.compression(b, 1), 2);
+    $("fc").textContent = t("fig.f.comp", { x: F.num(1 / O.compression(b, 1), 3) });
+    $("vk").textContent = F.num(cone * DEG, 2) + "°";
+    $("fk").textContent = t("fig.f.cone", { g: F.num(DEG / g, 2) + "°", r: F.num(cone * g, 2) });
+    $("vf").textContent = F.qty(F.num(100 * O.fractionCone(b, Math.min(Math.PI, 1 / g), mode), 3), "%");
+    $("ff").textContent = t("fig.f.frac");
+    seg.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.m === mode)));
+  }
+  seg.querySelectorAll("button").forEach(x => x.onclick = () => { mode = x.dataset.m; draw(); });
+  sg.oninput = draw; draw();
+})();
+
+/* ---------- le système décrit : tube à rayons X de 100 kV contre accélérateur médical de 6,5 MeV ---------- */
+(() => {
+  const ligne = K => { const g = 1 + K / MEC2, b = betaDe(g); return { g: F.num(g, 3), b: F.num(b, 3), un: F.sci(O.compression(b, 1), 2), c: F.num(O.demiCone(b) * DEG, 2) + "°" }; };
+  const tube = ligne(1e5), lin = ligne(6.5e6);
+  $("sys1").innerHTML = t("sys1.body", { g1: tube.g, b1: tube.b, u1: tube.un, c1: tube.c, g2: lin.g, b2: lin.b, u2: lin.un, c2: lin.c,
+    l: F.si(Constantes.h * O.c / (Constantes.e * 1e5), "m") });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["rontgen", 1895, "experiment"], ["duane", 1915, "experiment"], ["bethe", 1934, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["linac", "tube"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["avant", "b"], ["compression", "d"], ["cone", "a"], ["lent", "c"], ["coupure", "b"], ["tungstene", "a"], ["axe", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 345 });
+})();
+</script>
+</body>
+</html>

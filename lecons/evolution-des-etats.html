@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>L'évolution des états dans le temps</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-quantique-deux-etats" data-i18n="monde.quantique-deux-etats"></a><span class="aux">›</span><a href="/racoon/etape?id=hamiltonien-ammoniac" data-i18n="etape.hamiltonien-ammoniac"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-quant" href="/racoon/atlas?piste=quant" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/etape?id=espace-des-etats" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi>U</mi><mo>(</mo><msub><mi>t</mi><mn>3</mn></msub><mo>,</mo><msub><mi>t</mi><mn>1</mn></msub><mo>)</mo><mo>=</mo><mi>U</mi><mo>(</mo><msub><mi>t</mi><mn>3</mn></msub><mo>,</mo><msub><mi>t</mi><mn>2</mn></msub><mo>)</mo><mo>·</mo><mi>U</mi><mo>(</mo><msub><mi>t</mi><mn>2</mn></msub><mo>,</mo><msub><mi>t</mi><mn>1</mn></msub><mo>)</mo></math><span class="n">(8.30)</span></div>
+    <p class="validite" data-i18n-html="val.8.30"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>C</mi><mi>i</mi></msub><mo>(</mo><mi>t</mi><mo>+</mo><mi>Δ</mi><mi>t</mi><mo>)</mo><mo>=</mo><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>U</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>(</mo><mi>t</mi><mo>+</mo><mi>Δ</mi><mi>t</mi><mo>,</mo><mi>t</mi><mo>)</mo><mspace width="0.1em"/><msub><mi>C</mi><mi>j</mi></msub><mo>(</mo><mi>t</mi><mo>)</mo></math><span class="n">(8.35)</span></div>
+    <p class="validite" data-i18n-html="val.8.35"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>U</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>(</mo><mi>t</mi><mo>+</mo><mi>Δ</mi><mi>t</mi><mo>,</mo><mi>t</mi><mo>)</mo><mo>=</mo><msub><mi>δ</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>−</mo><mfrac><mi>i</mi><mi>ℏ</mi></mfrac><msub><mi>H</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>(</mo><mi>t</mi><mo>)</mo><mspace width="0.1em"/><mi>Δ</mi><mi>t</mi></math><span class="n">(8.37)</span></div>
+    <p class="validite" data-i18n-html="val.8.37"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mi>i</mi><mi>ℏ</mi><mfrac><mrow><mi>d</mi><msub><mi>C</mi><mi>i</mi></msub><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>H</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>(</mo><mi>t</mi><mo>)</mo><mspace width="0.1em"/><msub><mi>C</mi><mi>j</mi></msub><mo>(</mo><mi>t</mi><mo>)</mo></math><span class="n">(8.39)</span></div>
+    <p class="validite" data-i18n-html="val.8.39"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="fig" viewBox="0 0 640 300" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.exacte"></span><span class="c-warn" data-i18n="fig.legend.euler"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="sn" data-i18n="fig.n"></label><output id="snr" for="sn"></output></div>
+            <input id="sn" type="range" min="4" max="200" step="1" value="12"></div>
+          <div class="ctl"><div class="row"><label for="se" data-i18n="fig.e0"></label><output id="ser" for="se"></output></div>
+            <input id="se" type="range" min="0" max="10" step="0.5" value="0"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.pas"></span><span class="v" id="vpas"></span><span class="f" id="fpas"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.norme"></span><span class="v" id="vnorme"></span><span class="f" id="fnorme"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.ecart"></span><span class="v" id="vecart"></span><span class="f" id="fecart"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/evolution-des-etats.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/quantique-deux-etats.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const Q = QuantDeux, K = Constantes, NU = 23.87e9, A = Q.aDepuisFrequence(NU), T = Q.periodeAmmoniac(A), PS = 1e-12;
+
+/* ---------- step by step: (8.38) repeated, against the exact evolution, for two coupled states ---------- */
+(() => {
+  const svg = $("fig"), sn = $("sn"), se = $("se"), DUREE = 2 * T, N = 300;
+  function draw() {
+    const n = +sn.value, e0 = +se.value, H = [[e0 * A, -A], [-A, e0 * A]], pas = Math.round(n * DUREE / T), dt = DUREE / pas;
+    svg.innerHTML = "";
+    const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 300, x: { domain: [0, DUREE / PS], label: t("fig.x"), fmt: v => F.num(v, 0) },
+      y: { domain: [0, 1.6], label: t("fig.y"), fmt: v => F.num(v, 1) } });
+    const ex = Array.from({ length: N + 1 }, (_, k) => { const s = DUREE * k / N; return [x(s / PS), y(Q.ammoniac(e0 * A, A, s).P2)]; });
+    Plot.el("path", { d: Plot.path(ex), class: "stroke bold" }, Plot.el("g", { class: "c-tint" }, g));
+    const ge = Plot.el("g", { class: "c-warn" }, g), pts = [];
+    let v = [1, 0], ecart = 0;
+    for (let k = 0; k <= pas; k++) {
+      if (k) v = Q.evolutionEuler(H, v, dt, 1);
+      const p2 = Q.cx(v[1]).re ** 2 + Q.cx(v[1]).im ** 2;
+      ecart = Math.max(ecart, Math.abs(p2 - Q.ammoniac(e0 * A, A, k * dt).P2));
+      pts.push([x(k * dt / PS), y(Math.min(1.6, p2))]);
+      if (pas <= 80) Plot.el("circle", { cx: pts[k][0], cy: pts[k][1], r: 3, class: "fill" }, ge);
+    }
+    Plot.el("path", { d: Plot.path(pts), class: "stroke dash" }, ge);
+    const a = A * dt / K.hbar, eps = (e0 + 1) * a, th = ((1 + ((e0 - 1) * a) ** 2) ** pas + (1 + eps * eps) ** pas) / 2;
+    $("snr").textContent = F.num(n, 0);
+    $("ser").textContent = F.num(e0, 1);
+    $("vpas").textContent = F.si(dt, "s", { prefix: "p" });
+    $("fpas").textContent = t("fig.f.pas", { eps: F.num(eps, 3) });
+    $("vnorme").textContent = F.num(Q.norme2(v), 3);
+    $("fnorme").textContent = t("fig.f.norme", { th: F.num(th, 3) });
+    $("vecart").textContent = F.num(ecart, 3);
+    $("fecart").textContent = t(ecart < 0.02 ? "fig.f.bon" : "fig.f.mauvais");
+  }
+  sn.oninput = se.oninput = draw; draw();
+})();
+
+/* ---------- the system described: the time scales of ammonia ---------- */
+(() => {
+  const tau = K.hbar / A, mc2 = 17 * K.u * K.c ** 2, tauM = K.hbar / mc2;
+  $("sys").innerHTML = t("sys.body", { A: F.si(A / K.e, "eV", { prefix: "µ" }), tau: F.si(tau, "s", { prefix: "p" }), T: F.si(T, "s", { prefix: "p" }),
+    mc2: F.si(mc2 / K.e, "eV", { prefix: "G" }), tauM: F.qty(F.sci(tauM, 1), "s"), r: F.sci(mc2 / A, 1) });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["heisenberg", 1925, "idea"], ["bornjordan", 1925, "idea"], ["dirac", 1925, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["qubits"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["attente", "b"], ["produit", "d"], ["delta", "a"], ["i", "c"], ["euler", "b"], ["base", "d"], ["phase", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 884 });
+})();
+</script>
+</body>
+</html>

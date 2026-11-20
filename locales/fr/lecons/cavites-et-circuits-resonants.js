@@ -1,0 +1,95 @@
+/* Leçon « Cavités et circuits résonants » (Feynman II.23.5) : textes en français.
+   Une autre langue = locales/<langue>/lecons/cavites-et-circuits-resonants.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Cavités et circuits résonants",
+    "crumb.jour": "Cavités et circuits résonants",
+    "h1": "Cavités et circuits résonants",
+    "lede": "Le circuit fait d'une bobine et d'un condensateur et la cavité résonante sont les deux extrêmes d'une même famille de résonateurs. On passe de l'un à l'autre en diminuant l'inductance, jusqu'à ce que le champ magnétique vienne se mêler au champ électrique.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : résonance électrique",
+    "eq.ln": "ln",
+    "eq.tan": "tan",
+
+    "s1.sec": "Du circuit à la boîte",
+    "s1.h2": "Baisser l'inductance, tour après tour",
+    "s1.p1": "Partez d'un condensateur en parallèle sur une bobine. Le circuit résonne à la pulsation vue dans « Résonance électrique » :",
+    "val.lc": "Approximation : éléments localisés, tout le circuit très petit devant la longueur d'onde, et pertes négligées ; la résistance du circuit déplace la résonance d'une fraction de l'ordre de 1/(8<var>Q</var><sup>2</sup>) et l'élargit. Elle cesse de valoir quand le circuit n'est plus petit devant <var>c</var>/<var>f</var>, comme la bobine de « Éléments de circuit réels ».",
+    "s1.p2": "Pour monter en fréquence, on diminue <var>L</var>. On enlève des spires jusqu'à la dernière : il ne reste qu'un morceau de fil qui relie les deux armatures. On peut encore mettre plusieurs de ces boucles d'une seule spire en parallèle : <var>n</var> boucles identiques ont une inductance <var>L</var>/<var>n</var>, si l'on néglige leur inductance mutuelle ; celle-ci, positive pour des boucles voisines orientées de la même façon, rend la baisse un peu moins forte. Avec de plus en plus de boucles, elles finissent par former une paroi continue, un cylindre creux fixé au bord des armatures. On obtient une boîte fermée : une cavité dite chargée, ou rentrante, que l'on peut encore lire comme un circuit à éléments localisés.",
+
+    "s2.sec": "La cavité chargée",
+    "s2.h2": "Une capacité au centre, une inductance autour",
+    "s2.p1": "Le système de la figure : une boîte cylindrique de rayon <var>a</var> = 4\u00a0cm et de hauteur <var>h</var>, et sur l'axe deux plots de rayon <var>b</var> qui ne laissent entre eux qu'un intervalle <var>g</var>. Presque tout le champ électrique est dans l'intervalle : c'est la partie capacité. Presque tout le champ magnétique tourne autour des plots, entre <var>b</var> et <var>a</var> : c'est la partie inductance, une bobine d'une seule spire en forme de tore. Chaque partie a sa formule de condensateur plan et de câble coaxial :",
+    "val.c": "Approximation : champ uniforme dans l'intervalle, comme dans « Condensateurs à armatures planes ». Elle néglige le champ qui déborde autour des plots, une capacité de plus qui baisse la fréquence et compte d'autant moins que <var>g</var> ≪ <var>b</var>. Elle néglige aussi la baisse du champ vers le bord des plots, (<var>kb</var>)<sup>2</sup>/4 d'après (23.8), avec <var>k</var> = ω/<var>c</var> : 2\u00a0% pour la cavité de départ de la figure.",
+    "val.l": "Approximation : champ magnétique en <var>I</var>/(2π<var>r</var>) entre <var>b</var> et <var>a</var>, le même sur toute la hauteur, comme autour du conducteur central d'un câble coaxial. Elle suppose le courant le même tout le long de la paroi, donc <var>kh</var> ≪ 1 ; pour la cavité de départ, <var>kh</var> = 0,9 et le modèle localisé surestime la fréquence de 3,5\u00a0%.",
+    "s2.p2": "On peut faire mieux sans quitter les formules simples. Chaque moitié du tore est un câble coaxial de longueur <var>h</var>/2, court-circuité par le fond ou le couvercle. Un tel tronçon de ligne présente une réactance <var>Z</var><sub>c</sub> tan(ω<var>h</var>/2<var>c</var>), qui vaut ω<var>L</var>/2 tant que ω<var>h</var>/<var>c</var> est petit et croît plus vite au-delà. La résonance a lieu quand les deux tronçons compensent la capacité :",
+    "val.ligne": "Approximation : onde coaxiale sans composante le long de l'axe dans chaque moitié du tore, intervalle ponctuel au milieu ; suppose <var>g</var> ≪ <var>h</var> et <var>b</var> < <var>a</var>. Elle redonne 1/√(<var>LC</var>) pour <var>kh</var> ≪ 1, avec un écart relatif (<var>kh</var>)<sup>2</sup>/24. Elle ne vaut plus quand les plots disparaissent : la boîte vide relève de (23.18).",
+    "fig.aria": "Coupe de la cavité chargée par son axe : paroi, deux plots, champ électrique dans l'intervalle et champ magnétique autour des plots",
+    "fig.legend.metal": "métal : paroi et plots",
+    "fig.legend.e": "E dans l'intervalle",
+    "fig.legend.b": "B autour des plots : sortant à gauche, entrant à droite",
+    "fig.b": "Rayon des plots b",
+    "fig.h": "Hauteur h",
+    "fig.g": "Intervalle g",
+    "fig.k.loc": "1/√(<var>LC</var>), modèle localisé",
+    "fig.f.loc": "<var>C</var> = {C}, <var>L</var> = {L}",
+    "fig.k.ligne": "Modèle de ligne",
+    "fig.f.ligne": "{e} sous le modèle localisé ; <var>kh</var> = {kh}, <var>kb</var> = {kb}",
+    "fig.k.boite": "Boîte vide de même rayon, (23.18)",
+    "fig.f.boite": "la cavité chargée résonne à {r} fois cette fréquence",
+    "fig.caption": "Rapprochez les plots (<var>g</var> plus petit) : la capacité augmente et la fréquence baisse. Élargissez-les : la capacité augmente, l'inductance diminue. Baissez la hauteur : l'inductance diminue et la fréquence monte, et les deux modèles se rejoignent, car <var>kh</var> devient petit. La cavité chargée résonne toujours bien plus bas que la boîte vide de même rayon : c'est ce qui la rend compacte.",
+
+    "s3.sec": "Jusqu'à la boîte vide",
+    "s3.h2": "Les deux champs se mêlent",
+    "s3.p1": "Pour monter encore, on diminue la hauteur <var>h</var> de la partie inductance. À la limite, elle rejoint l'écart entre les armatures : il ne reste que la boîte cylindrique de « Cavité résonante ». Dans le circuit de départ, le champ électrique et le champ magnétique occupent des régions bien séparées : le condensateur d'un côté, la bobine de l'autre. À chaque étape, le champ magnétique se rapproche du champ électrique, et dans la boîte vide ils occupent le même volume.",
+    "sys.title": "Le système décrit : trois résonateurs de la même famille",
+    "sys1.body": "Un circuit de {L} et {C}, de 2\u00a0cm de côté, résonne à {f1} : il mesure {q1} λ, et les éléments localisés le décrivent très bien. La cavité chargée de départ (<var>a</var> = 4\u00a0cm, <var>b</var> = 1\u00a0cm, <var>h</var> = 3\u00a0cm, <var>g</var> = 2\u00a0mm) résonne vers {f2} : son diamètre vaut {q2} λ, et le modèle localisé n'est plus juste qu'à quelques pour cent. La boîte vide de même rayon résonne à {f3}, avec un diamètre de {q3} λ : plus rien n'y est localisé.",
+    "s3.p2": "Le cylindre n'a rien de particulier. Une boîte de forme quelconque a ses propres fréquences de résonance, une par mode d'oscillation des champs, comme le montre « Modes d'une cavité ». Elles se calculent en résolvant les équations de Maxwell dans la boîte, ce qui devient vite difficile ; on le fait aujourd'hui par le calcul numérique.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "De la bouteille de Leyde au résonateur creux",
+    "hist.intro": "La décharge oscillante d'un condensateur dans un circuit a été prédite, puis photographiée, bien avant qu'on construise des résonateurs creux, qu'on a d'abord décrits comme des circuits.",
+    "hist.events": {
+      thomson: { who: "William Thomson (futur Lord Kelvin)", what: "publie « On Transient Electric Currents ».", context: "Il applique la conservation de l'énergie à la décharge d'une bouteille de Leyde dans un circuit, et montre que dans certaines conditions la décharge est oscillante : le courant va et vient en s'amortissant." },
+      feddersen: { who: "Berend Wilhelm Feddersen", what: "montre au miroir tournant que l'étincelle de décharge d'une bouteille de Leyde est faite d'oscillations amorties.", context: "Il étudie l'étincelle depuis sa thèse de 1858. L'image de l'étincelle, étalée par le miroir en rotation, se découpe en une suite d'éclairs : la décharge oscille, comme Thomson l'avait prévu." },
+      hansen: { who: "William W. Hansen", what: "publie « A Type of Electrical Resonator » dans le Journal of Applied Physics.", context: "Il y traite des cavités creuses comme résonateurs électriques et montre qu'à bien des égards elles équivalent à des circuits à éléments localisés, avec des constantes bien choisies. Ce résonateur, le rhumbatron, est au cœur du klystron des frères Varian." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      klystron: { name: "Cavités de klystron", text: "Les cavités d'un klystron sont des cavités rentrantes : le faisceau d'électrons traverse l'intervalle entre deux plots creux, là où le champ électrique est concentré. On les calcule encore comme un circuit : une capacité d'intervalle, à laquelle s'ajoute celle du champ qui déborde, et l'inductance d'un tore d'une seule spire." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      monter: { prompt: "On veut monter la fréquence de résonance d'un circuit fait d'une bobine et d'un condensateur. Que faire sur la bobine ?",
+        options: { a: "Ajouter des spires.", b: "Diminuer son inductance : moins de spires, puis des boucles d'une spire en parallèle.", c: "Augmenter la résistance de son fil.", d: "Rien : seule la capacité compte." },
+        why: "ω0 = 1/√(LC) : diminuer L ou C fait monter la fréquence. Une fois réduite à une spire, la bobine peut encore être divisée en boucles parallèles." },
+      parallele: { prompt: "Six boucles d'une spire identiques, très éloignées les unes des autres, sont mises en parallèle. Quelle est l'inductance de l'ensemble ?",
+        options: { a: "Six fois celle d'une boucle.", b: "La même que celle d'une boucle.", c: "Nulle.", d: "Un sixième de celle d'une boucle." },
+        why: "Des inductances sans couplage en parallèle s'additionnent en inverse, comme des résistances. Rapprochées, leurs inductances mutuelles rendent la baisse moins forte." },
+      mutuelle: { prompt: "Les boucles sont rapprochées et orientées de la même façon. Leur inductance mutuelle est positive. Comparée au cas sans couplage, l'inductance de l'ensemble est :",
+        options: { a: "Plus grande : la baisse en 1/n est moins forte.", b: "Plus petite.", c: "Exactement la même.", d: "Nulle." },
+        why: "Deux boucles en parallèle de couplage M ont une inductance (L + M)/2 au lieu de L/2. Le flux de chacune traverse aussi l'autre." },
+      regions: { prompt: "Dans la cavité chargée, où se trouvent surtout le champ électrique et le champ magnétique ?",
+        options: { a: "Tous deux dans l'intervalle.", b: "Tous deux contre la paroi extérieure.", c: "Le champ électrique dans l'intervalle entre les plots, le champ magnétique autour des plots, dans le tore.", d: "Le champ magnétique dans l'intervalle, le champ électrique autour." },
+        why: "C'est ce qui permet de la lire comme un circuit : la partie capacité contient l'énergie électrique, la partie inductance l'énergie magnétique." },
+      hauteur: { prompt: "On diminue la hauteur h de la cavité chargée, le reste fixe. Que fait la fréquence ?",
+        options: { a: "Elle baisse.", b: "Elle monte, car l'inductance du tore diminue comme h.", c: "Elle ne change pas.", d: "Elle s'annule." },
+        hint: "L ≈ μ0 h ln(a/b)/(2π).",
+        why: "L est proportionnelle à h, et f0 à 1/√L. Avec h plus petit, kh diminue aussi, et le modèle localisé devient plus juste." },
+      ligne: { prompt: "Pourquoi le modèle de ligne donne-t-il une fréquence plus basse que le modèle localisé ?",
+        options: { a: "Parce que la réactance d'un tronçon de ligne court-circuité, Zc tan(ωh/2c), croît plus vite que ωL/2 quand la fréquence monte.", b: "Parce qu'il ajoute une résistance.", c: "Parce qu'il néglige la capacité.", d: "Il donne une fréquence plus haute." },
+        why: "tan u > u pour 0 < u < π/2 : l'inductance effective de la paroi grandit avec la fréquence, et la résonance a lieu plus bas, d'un écart relatif proche de (kh)²/24." },
+      boite: { prompt: "La cavité chargée de 4 cm de rayon résonne vers 1,4 GHz, la boîte vide de même rayon vers 2,9 GHz. Qu'est-ce qui abaisse ainsi la fréquence ?",
+        options: { a: "La résistance des plots.", b: "La hauteur, plus grande.", c: "Rien : les deux résonnent à la même fréquence.", d: "La capacité de l'intervalle étroit entre les plots, bien plus grande que celle de la boîte vide." },
+        why: "Avec un intervalle de 2 mm sur des plots de 1 cm, la capacité vaut 1,4 pF, et elle concentre le champ électrique. C'est pourquoi une cavité rentrante est plus petite qu'une boîte vide à la même fréquence." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 23, §23-5 (texte original en anglais). Notations SI. Thomson : <i>Philosophical Magazine</i>, 1853 ; <i>Encyclopædia Britannica</i> (1911), « Electric Waves ». Feddersen : Annalen de Poggendorff, vol. 103 (1858) et 108 (1859) ; Wikipédia, « Berend Wilhelm Feddersen ». Hansen : <i>Journal of Applied Physics</i>, 9, 654 (1938). Cavités de klystron : K. Fujisawa, <i>Proceedings of the IRE</i>, 1958, et travaux récents sur la capacité d'intervalle des cavités rentrantes. Cavité chargée, modèles et calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

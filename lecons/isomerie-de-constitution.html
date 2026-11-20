@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Isomérie de constitution et formule topologique</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .galerie { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  .galerie button { display: grid; gap: 4px; justify-items: center; padding: 8px; min-width: 0; border-radius: 12px; }
+  .galerie button[aria-pressed="true"] { outline: 2px solid currentColor; outline-offset: -2px; }
+  .galerie svg { width: 100%; height: 86px; }
+  .paire { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+  .paire svg { width: 200px; max-width: 100%; height: 120px; flex: none; }
+  .paire p { flex: 1 1 260px; min-width: 0; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-organique" data-i18n="monde.chim-organique"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-stereochimie" data-i18n="etape.chim-stereochimie"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/geometrie-vsepr" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="box def"><b data-i18n="s1.def.titre"></b>
+      <p data-i18n-html="s1.def.corps"></p>
+    </div>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="paire">
+      <svg class="fig no-sigle" id="topo" role="img" data-i18n-attr="aria-label:s2.aria"></svg>
+      <p data-i18n-html="s2.lecture"></p>
+    </div>
+    <div class="box rem"><b data-i18n="s2.regles.titre"></b>
+      <p data-i18n-html="s2.regles.corps"></p>
+    </div>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure>
+      <div class="galerie" id="galerie"></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><label><input type="checkbox" id="carbones"> <span data-i18n="gal.carbones"></span></label></div>
+          <div class="ctl"><label><input type="checkbox" id="noms"> <span data-i18n="gal.noms"></span></label></div>
+        </div>
+        <p class="readout" id="verdict" aria-live="polite"></p>
+      </div>
+      <figcaption data-i18n-html="gal.caption"></figcaption>
+    </figure>
+    <div class="box def"><b data-i18n="s3.def.titre"></b>
+      <p data-i18n-html="s3.def.corps"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>n</mi><mi mathvariant="normal">i</mi></msub><mo>=</mo><mfrac><mrow><mn>2</mn><msub><mi>n</mi><mi mathvariant="normal">C</mi></msub><mo>+</mo><mn>2</mn><mo>+</mo><msub><mi>n</mi><mi mathvariant="normal">N</mi></msub><mo>−</mo><msub><mi>n</mi><mi mathvariant="normal">H</mi></msub><mo>−</mo><msub><mi>n</mi><mi mathvariant="normal">X</mi></msub></mrow><mn>2</mn></mfrac></math></div>
+    <p class="validite" data-i18n-html="s4.validite"></p>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="list keyed" id="teb"></div>
+    <p data-i18n-html="s4.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/isomerie-de-constitution.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script src="/racoon/chim-organique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I.fallback : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const O = ChimOrga, sym = s => t("chim.sym", { s });
+const peindre = (svg, m, o) => { const d = O.dessin(m, Object.assign({ texte: sym }, o)); svg.setAttribute("viewBox", d.viewBox); svg.innerHTML = d.html; };
+
+/* ---------- une formule topologique lue atome par atome ---------- */
+(() => {
+  const m = O.molecule("methylpropan1ol"), svg = document.getElementById("topo");
+  peindre(svg, m, { marques: { 3: "1", 1: "2", 0: "3" }, echelle: 44 });
+})();
+
+/* ---------- galerie : deux dessins, quelle relation ? ---------- */
+(() => {
+  const IDS = ["butan1ol", "butan2ol", "methylpropan1ol", "methylpropan2ol", "methoxypropane", "methoxypropane2", "ethoxyethane", "butan1olBis", "butanone"];
+  const noms = textOf("gal.molecules", IDS), grp = t("gal.groupes");
+  const gal = document.getElementById("galerie"), verdict = document.getElementById("verdict");
+  const cb = document.getElementById("carbones"), cn = document.getElementById("noms");
+  let choix = [];
+  gal.innerHTML = IDS.map(id => `<button class="btn tinted" type="button" data-id="${id}" aria-pressed="false"><svg class="fig no-sigle" role="img" aria-label="${noms[id]}"></svg><span class="aux" hidden>${noms[id]}</span></button>`).join("");
+  const dessiner = () => gal.querySelectorAll("button").forEach(b => peindre(b.querySelector("svg"), O.molecule(b.dataset.id), { carbones: cb.checked }));
+  const formule = id => O.ecrireFormule(O.formuleBrute(O.molecule(id)));
+  const fonctions = id => [...new Set(O.groupes(O.molecule(id)))].map(g => grp[g]).join(", ");
+  function juger() {
+    gal.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(choix.includes(b.dataset.id))));
+    if (choix.length < 2) { verdict.textContent = t(choix.length ? "gal.encore" : "gal.choisir"); return; }
+    const [a, b] = choix, r = O.relationConstitution(O.molecule(a), O.molecule(b));
+    verdict.innerHTML = t("gal.rel." + r, { a: noms[a], b: noms[b], fa: sym(formule(a)), fb: sym(formule(b)), ga: fonctions(a), gb: fonctions(b) });
+  }
+  gal.onclick = e => { const b = e.target.closest("button"); if (!b) return; const id = b.dataset.id;
+    choix = choix.includes(id) ? choix.filter(x => x !== id) : choix.concat(id).slice(-2); juger(); };
+  cb.onchange = dessiner;
+  cn.onchange = () => gal.querySelectorAll("button > span").forEach(s => { s.hidden = !cn.checked; });
+  dessiner(); juger();
+})();
+
+/* ---------- températures d'ébullition de trois isomères ---------- */
+(() => {
+  const ROWS = [["butan1ol", 390.8], ["methylpropan2ol", 355], ["ethoxyethane", 307.8]], txt = textOf("teb.rows", ROWS.map(r => r[0]));
+  document.getElementById("teb").innerHTML = ROWS.map(([id, T]) => `<div><span class="k">${sym(formule(id))}</span><span>${txt[id]}</span><span class="v">${F.kelvin(T)}</span></div>`).join("");
+  function formule(id) { return O.ecrireFormule(O.formuleBrute(O.molecule(id))); }
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["wohler", 1828, "experiment"], ["berzelius", 1830, "idea"], ["kekule", 1858, "idea"], ["geneve", 1892, "idea"], ["inchi", 2005, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount(document.getElementById("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["bases", "masse"], uses = textOf("uses.items", USES);
+  document.getElementById("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["defi", "b"], ["topo", "c"], ["compte", "a"], ["chaine", "d"], ["fonction", "b"], ["insat", "c"], ["teb", "a"], ["dessin", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount(document.getElementById("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

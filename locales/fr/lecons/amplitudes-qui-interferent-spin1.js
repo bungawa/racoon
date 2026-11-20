@@ -1,0 +1,103 @@
+/* Leçon « Des amplitudes qui interfèrent » (Feynman III.5.5) : textes en français.
+   Une autre langue = locales/<langue>/lecons/amplitudes-qui-interferent-spin1.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Des amplitudes qui interfèrent",
+    "crumb.jour": "Amplitudes qui interfèrent",
+    "h1": "Des amplitudes qui interfèrent",
+    "lede": "Un appareil grand ouvert ne fait rien, et pourtant chacune de ses trois voies a une amplitude non nulle. Les trois amplitudes s'ajoutent et se détruisent exactement. De ce fait, tiré de « Les états de base », sort la loi la plus utile de la mécanique quantique : la somme sur un ensemble complet d'états de base.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : les états de base",
+
+    "s1.sec": "Décrire le système",
+    "s1.h2": "Trois voies, trois produits",
+    "s1.p1": "Des atomes de l'état +<var>S</var> traversent un appareil <var>T</var> idéal, grand ouvert, puis un filtre 0<var>S</var>. Dans <var>T</var>, un atome a trois façons d'aller, par +<var>T</var>, 0<var>T</var> ou \u2212<var>T</var>, et rien n'enregistre laquelle. Chaque façon a pour amplitude un produit : arriver dans l'état <var>i</var> de <var>T</var>, puis de là dans 0<var>S</var>. On ajoute les trois. L'expérience dit qu'aucun atome ne passe ; la somme est donc nulle, <var>i</var> parcourant +<var>T</var>, 0<var>T</var>, \u2212<var>T</var> :",
+    "val.5.20": "Exacte pour un appareil <var>T</var> idéal qui recombine les voies sans les perturber ni les marquer, à toute orientation. Chaque terme, lui, n'est pas nul en général : à 60°, ils valent 0,46, \u22120,31 et \u22120,15. Un appareil réel dont les voies diffèrent d'une phase φ ajoute à chaque terme un facteur e<sup><var>i</var>φ</sup>, et la somme cesse d'être nulle.",
+    "s1.p2": "Avec un filtre +<var>S</var> à la sortie, tous passent : l'amplitude totale vaut 1, à une phase près qu'on peut prendre nulle.",
+    "val.5.21": "Exacte dans les mêmes conditions. C'est la probabilité 1 de retrouver un atome dans l'état où il était, écrite comme une somme de trois chemins. Les probabilités des trois chemins, |⟨+<var>S</var>|<var>i</var>⟩|<sup>2</sup>|⟨<var>i</var>|+<var>S</var>⟩|<sup>2</sup>, ont une somme plus petite que 1 dès que α n'est ni 0 ni 180° : sans interférence, on perdrait des atomes.",
+
+    "s2.sec": "Les flèches",
+    "s2.h2": "Une somme qui ne dépend pas de l'appareil",
+    "s2.p1": "Chaque flèche est un produit ⟨χ|<var>i</var><var>T</var>⟩⟨<var>i</var><var>T</var>|+<var>S</var>⟩ dans le plan complexe, mis bout à bout ; la flèche épaisse est leur somme, et le point marque 1. Tournez <var>T</var> de α autour de <var>y</var>, puis de β autour de <var>z</var> : les flèches changent, leur somme non. Fermez une voie : la somme bouge.",
+    "fig.aria.fleches": "Les trois produits d'amplitudes par les voies de T, mis bout à bout dans le plan complexe, et leur somme",
+    "fig.legend.plus": "par +T",
+    "fig.legend.zero": "par 0T",
+    "fig.legend.moins": "par \u2212T",
+    "fig.legend.somme": "somme",
+    "fig.fin": "État final χ",
+    "fig.voies": "Voies de T ouvertes",
+    "fig.b.plus": "+S",
+    "fig.b.zero": "0S",
+    "fig.b.moins": "\u2212S",
+    "fig.v.plus": "+T",
+    "fig.v.zero": "0T",
+    "fig.v.moins": "\u2212T",
+    "fig.alpha": "T tourné autour de y, α",
+    "fig.beta": "puis autour de z, β",
+    "fig.k.somme": "Σ ⟨χ|<var>i</var><var>T</var>⟩⟨<var>i</var><var>T</var>|+<var>S</var>⟩",
+    "fig.f.somme": "sur les voies ouvertes",
+    "fig.k.proba": "Probabilité de passer χ",
+    "fig.f.ouvert": "T grand ouvert : ⟨χ|+S⟩, quelle que soit l'orientation",
+    "fig.f.ferme": "une voie fermée : la somme dépend de T",
+    "fig.caption": "Pour χ = 0<var>S</var>, les trois flèches se referment en triangle à tout angle : (5.20). Pour χ = +<var>S</var>, elles arrivent au point 1 : (5.21). Avec β, les flèches deviennent complexes et tournent, mais leur somme reste la même.",
+    "s2.p2": "Que la somme ne dépende pas de <var>T</var> a une conséquence : on peut glisser un appareil grand ouvert n'importe où, sans rien changer. Inversement, tout calcul peut passer par les états de base d'un appareil fictif bien choisi.",
+
+    "s3.sec": "La loi générale",
+    "s3.h2": "Sommer sur les états de base",
+    "s3.p1": "Remplaçons l'état de départ +<var>S</var> par un état φ quelconque, et le filtre final par un filtre χ quelconque, d'orientation quelconque. L'appareil grand ouvert ne change toujours rien. Pour toute base, celle d'un appareil <var>T</var> quelconque :",
+    "val.5.24": "Exacte, pour toute base complète : c'est la loi qui définit ce qu'on entend par base. Elle vaut tant que les états intermédiaires ne sont pas marqués : un témoin qui retient la voie transforme la somme d'amplitudes en somme de probabilités. Elle ne dépend ni du nombre d'états de la base, trois ici, ni de l'orientation de <var>T</var>.",
+    "s3.p2": "Prenons pour φ et χ deux états de la base elle-même. Un atome de l'état <var>i</var> repasse sa voie et aucune autre :",
+    "val.5.25": "Exacte : c'est la pureté et l'exclusion des états de base, δ<sub><var>j</var><var>i</var></sub> valant 1 si <var>j</var> = <var>i</var>, 0 sinon. Elle s'accorde avec (5.24) : pour φ = <var>i</var>, la somme se réduit à son seul terme <var>j</var> = <var>i</var>.",
+    "s3.p3": "Enfin, appliquons (5.24) à χ = φ. La probabilité d'être dans l'état où l'on est vaut 1, donc Σ ⟨φ|<var>i</var>⟩⟨<var>i</var>|φ⟩ = 1. Pour que ce soit vrai, quelle que soit la phase des amplitudes, il faut que ⟨φ|<var>i</var>⟩⟨<var>i</var>|φ⟩ soit le carré du module de ⟨<var>i</var>|φ⟩ :",
+    "val.5.26": "Exacte : c'est la règle qui relie une amplitude à l'amplitude inverse, l'astérisque désignant le complexe conjugué. Les probabilités du trajet aller et du trajet retour sont donc égales, |⟨φ|χ⟩|<sup>2</sup> = |⟨χ|φ⟩|<sup>2</sup>. Elle suppose des appareils sans perte.",
+    "s3.p4": "Ces trois règles, (5.24), (5.25) et (5.26), sont toute la structure dont on a besoin. « La machinerie de la mécanique quantique » y ajoute les appareils qui font quelque chose aux atomes.",
+    "sys.title": "Le système décrit : T à 60°, état final 0S",
+    "sys1.body": "Les trois termes valent {a}, {b} et {c} : aucun n'est nul, et leur somme l'est, à 10<sup>\u221216</sup> près dans ce calcul. Les probabilités correspondantes, carrés de ces nombres, valent ensemble 0,33 : si les voies de <var>T</var> étaient marquées, un atome sur trois passerait le filtre 0<var>S</var>. L'interférence fait passer ce nombre à zéro.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Sommer sur les chemins, des livres aux interféromètres",
+    "hist.intro": "La loi (5.24) est une règle de calcul ; les interféromètres en font une mesure.",
+    "hist.events": {
+      dirac: { who: "Paul Dirac", what: "publie The Principles of Quantum Mechanics, qui pose la superposition des états et la décomposition sur une base comme principe premier.", context: "La notation des crochets n'y apparaît qu'en 1939 ; le principe, lui, est déjà celui de cette leçon." },
+      cow: { who: "Roberto Colella, Albert Overhauser et Samuel Werner", what: "observent dans un interféromètre à neutrons un déphasage dû à la pesanteur.", context: "« Observation of Gravitationally Induced Quantum Interference », Physical Review Letters, vol. 34. Les neutrons passent par deux voies à des hauteurs différentes ; la différence de leurs amplitudes déplace les franges." },
+      atomes: { who: "Plusieurs équipes, dont Carnal et Mlynek, Keith et al., Kasevich et Chu", what: "réalisent les premiers interféromètres à atomes : fentes d'Young, réseaux, impulsions laser.", context: "Les voies d'un atome se séparent et se recombinent comme celles de l'appareil grand ouvert ; les impulsions laser font, sur l'état interne, ce que fait un appareil de Stern et Gerlach." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      alpha: { name: "Mesure de la constante de structure fine", text: "En 2018, l'équipe de Müller a mesuré la constante de structure fine par interférométrie d'atomes de césium, avec une incertitude relative de 2 × 10⁻¹⁰. Le résultat sort d'une phase : celle de la somme des amplitudes de deux voies." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      zero: { prompt: "Dans T grand ouvert, chacune des trois voies donne une amplitude non nulle d'arriver en 0S. Pourquoi aucun atome +S n'arrive-t-il en 0S ?",
+        options: { a: "Parce que T arrête les atomes.", b: "Parce que les trois amplitudes s'ajoutent et que leur somme est nulle.", c: "Parce que les probabilités des trois voies se compensent.", d: "Parce que les atomes sortent de T dans l'état 0T." },
+        why: "Les voies ne sont pas marquées : on ajoute des amplitudes, et elles se détruisent, (5.20). Des probabilités positives ne pourraient pas se compenser." },
+      un: { prompt: "Que dit (5.21) ?",
+        options: { a: "Qu'un atome +S passe toujours par +T.", b: "Que les trois probabilités des voies valent 1/3.", c: "Que T grand ouvert arrête un tiers des atomes.", d: "Que la somme des trois produits ⟨+S|i⟩⟨i|+S⟩ vaut 1 : l'atome sort de T grand ouvert dans l'état +S." },
+        why: "Tous les atomes +S passent un filtre +S après T grand ouvert. Chaque produit est un carré de module, |⟨i|+S⟩|², par (5.26), et leur somme vaut 1." },
+      loi: { prompt: "La loi ⟨χ|φ⟩ = Σ ⟨χ|i⟩⟨i|φ⟩ dépend-elle de la base choisie ?",
+        options: { a: "Non : elle vaut pour toute base complète, de n'importe quelle orientation.", b: "Oui : seulement pour la base de S.", c: "Oui : seulement pour les bases tournées autour de y.", d: "Non, mais seulement si χ et φ sont des états de base." },
+        why: "C'est l'expression d'un appareil grand ouvert, qui ne fait rien quelle que soit son orientation. Toute base convient." },
+      conj: { prompt: "On connaît ⟨χ|φ⟩ = 0,6 i. Que vaut ⟨φ|χ⟩ ?",
+        options: { a: "0,6 i.", b: "0,6.", c: "\u22120,6 i.", d: "0,36." },
+        why: "(5.26) : ⟨φ|χ⟩ = ⟨χ|φ⟩* = \u22120,6 i. Les deux probabilités sont égales à 0,36." },
+      fermer: { prompt: "On ferme la voie +T de l'appareil grand ouvert. La probabilité qu'un atome +S passe ensuite 0S…",
+        options: { a: "reste nulle.", b: "devient en général positive : la somme a perdu un terme.", c: "devient 1.", d: "devient la somme des probabilités des deux voies restantes." },
+        hint: "Regardez le triangle des flèches quand on en retire une.",
+        why: "Il reste deux flèches, qui ne se referment plus : la somme est l'opposée de la flèche retirée, de carré |⟨0S|+T⟩⟨+T|+S⟩|². Ce n'est pas la somme des probabilités des deux voies restantes : leurs amplitudes s'ajoutent avant le carré." },
+      temoin: { prompt: "Un témoin marque la voie prise dans T, sans rien changer d'autre. Que devient (5.24) ?",
+        options: { a: "Elle ne s'applique plus : les états intermédiaires sont distingués, et ce sont les probabilités qui s'ajoutent.", b: "Elle reste vraie.", c: "Elle devient ⟨χ|φ⟩ = 0.", d: "Elle s'applique avec des signes opposés." },
+        why: "La somme d'amplitudes suppose des chemins indiscernables. Marqués, ils mènent à des états finaux différents, et Σ |⟨χ|i⟩|²|⟨i|φ⟩|² remplace |Σ ⟨χ|i⟩⟨i|φ⟩|²." },
+      ortho: { prompt: "Que veut dire ⟨j|i⟩ = δ_ji ?",
+        options: { a: "Que tous les états de base ont la même énergie.", b: "Que l'amplitude d'aller de i à j vaut toujours 1.", c: "Que deux bases différentes sont identiques.", d: "Qu'un état de base repasse sa propre voie avec certitude et jamais une autre." },
+        why: "δ_ji vaut 1 si j = i, 0 sinon : pureté et exclusion. C'est (5.25)." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 5, §5-5 (texte original en anglais). Notations SI. Dirac, The Principles of Quantum Mechanics (1930) ; Colella, Overhauser et Werner, Physical Review Letters, vol. 34 (1975) ; Carnal et Mlynek, Keith et al., Kasevich et Chu (1991) ; Müller et al. (2018). Calculs numériques propres à cette page."
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

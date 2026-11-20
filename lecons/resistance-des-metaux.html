@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La résistance des métaux</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-solide" data-i18n="monde.solide"></a><span class="aux">›</span><a href="/racoon/etape?id=cristaux-2" data-i18n="etape.cristaux-2"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-solide" href="/racoon/atlas?piste=solide" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/deformations-uniformes" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi>τ</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>G</mi><mi>b</mi></mrow><mrow><mn>2</mn><mi>π</mi><mi>d</mi></mrow></mfrac><mspace width="0.2em"></mspace><mi data-i18n="eq.sin"></mi><mfrac><mrow><mn>2</mn><mi>π</mi><mi>x</mi></mrow><mi>b</mi></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.frenkel"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="eq"><math display="block"><msub><mi>τ</mi><mtext data-i18n="eq.th"></mtext></msub><mo>=</mo><mfrac><mrow><mi>G</mi><mi>b</mi></mrow><mrow><mn>2</mn><mi>π</mi><mi>d</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.th"></p>
+    <figure>
+      <div class="chart"><svg id="courbe" viewBox="0 0 640 300" role="img" data-i18n-attr="aria-label:fr.aria"></svg></div>
+      <div class="legend"><span class="c-tint" data-i18n="fr.leg.frenkel"></span><span class="c-label-2" data-i18n="fr.leg.hooke"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" id="metal" role="group" data-i18n-attr="aria-label:fr.metal">
+            <button type="button" data-m="Cu" data-i18n="fr.Cu"></button><button type="button" data-m="Fe" data-i18n="fr.Fe"></button>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="fr.k.bd"></span><span class="v" id="vbd"></span><span class="f" id="fbd"></span></div>
+          <div class="stat"><span class="k" data-i18n="fr.k.th"></span><span class="v" id="vth"></span><span class="f" data-i18n="fr.f.th"></span></div>
+          <div class="stat"><span class="k" data-i18n="fr.k.mes"></span><span class="v" id="vmes"></span><span class="f" id="fmes"></span></div>
+          <div class="stat"><span class="k" data-i18n="fr.k.rapport"></span><span class="v" id="vrap"></span><span class="f" data-i18n="fr.f.rapport"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fr.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>E</mi><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><mfrac><mi>k</mi><mn>2</mn></mfrac><msup><mrow><mo>(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><mn>1</mn><mo>)</mo></mrow><mn>2</mn></msup><mo>+</mo><munder><mo>∑</mo><mi>i</mi></munder><mfrac><mrow><mn>1</mn><mo>−</mo><mi data-i18n="eq.cos"></mi><mn>2</mn><mi>π</mi><msub><mi>x</mi><mi>i</mi></msub></mrow><mrow><mn>2</mn><mi>π</mi></mrow></mfrac><mo>−</mo><mi>f</mi><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>x</mi><mi>i</mi></msub></math></div>
+    <p class="validite" data-i18n-html="val.fk"></p>
+    <figure>
+      <svg class="fig" id="chaine" viewBox="0 0 640 200" role="img" data-i18n-attr="aria-label:fk.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fk.leg.chaine"></span><span class="el-o" data-i18n="fk.leg.coeur"></span><span class="c-label-2" data-i18n="fk.leg.substrat"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" id="mode" role="group" data-i18n-attr="aria-label:fk.mode">
+            <button type="button" data-d="1" data-i18n="fk.avec"></button><button type="button" data-d="0" data-i18n="fk.sans"></button>
+          </div>
+          <div class="ctl"><div class="row"><label for="lk" data-i18n="fk.k"></label><output id="lkv" for="lk"></output></div>
+            <input id="lk" type="range" min="-1" max="1" step="0.05" value="0"></div>
+          <div class="ctl"><div class="row"><label for="ff" data-i18n="fk.f"></label><output id="ffv" for="ff"></output></div>
+            <input id="ff" type="range" min="0" max="1.2" step="0.01" value="0.3"></div>
+          <button class="btn tinted" type="button" id="reprise" data-i18n="fk.reprise"></button>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="fk.k.seuil"></span><span class="v" id="vseuil"></span><span class="f" data-i18n="fk.f.seuil"></span></div>
+          <div class="stat"><span class="k" data-i18n="fk.k.glisse"></span><span class="v" id="vglisse"></span><span class="f" data-i18n="fk.f.glisse"></span></div>
+          <div class="stat"><span class="k" data-i18n="fk.k.etat"></span><span class="v" id="vetat"></span><span class="f" id="fetat"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fk.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>τ</mi><mi mathvariant="normal">y</mi></msub><mo>=</mo><mfrac><msub><mi>f</mi><mi mathvariant="normal">y</mi></msub><msqrt><mn>3</mn></msqrt></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.mises"></p>
+    <div class="list keyed" id="aciers"></div>
+    <p data-i18n-html="s3.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/resistance-des-metaux.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/lecons/cristaux.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = Plot.el, X = Cristaux;
+const keyed = (el, tag, ids, items, sub) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text.replace(/\{(\w+)\}/g, (m, k) => (sub && sub[id] && k in sub[id] ? sub[id][k] : m))}</span></div>`).join(""); };
+const seg = (el, attr, cb) => { const bs = [...el.querySelectorAll("button")];
+  const pick = b => { bs.forEach(x => x.setAttribute("aria-pressed", String(x === b))); cb(b.dataset[attr]); };
+  bs.forEach(b => b.onclick = () => pick(b)); pick(bs[0]); return pick; };
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- le cristal parfait : Frenkel ---------- */
+(() => {
+  /* measured: resolved shear stresses that move dislocations in pure copper crystals (0,28 to 2,3 MPa); for iron,
+     the shear yield of the construction steel S235 */
+  const MESURE = { Cu: { lo: 0.28e6, hi: 2.3e6 }, Fe: { lo: X.cissionLimite(X.ACIERS.S235), hi: X.cissionLimite(X.ACIERS.S235) } };
+  const svg = $("courbe");
+  function upd(m) {
+    const M = X.METAUX[m], g = X.glissement(M.reseau, M.a), tm = X.cissionTheorique(M.G, g.b, g.d);
+    svg.innerHTML = "";
+    const ax = Plot.axes(svg, { fmt: F, w: 640, h: 300, x: { domain: [0, 1], label: t("fr.ax.x") }, y: { domain: [-1.2 * tm / 1e9, 1.2 * tm / 1e9], label: t("fr.ax.y") } });
+    const pts = Array.from({ length: 201 }, (_, i) => i / 200);
+    P("path", { d: Plot.path(pts.map(u => [ax.x(u), ax.y(X.frenkel(u * g.b, M.G, g.b, g.d) / 1e9)])), class: "curve" }, svg);
+    const hk = pts.filter(u => M.G * u * g.b / g.d <= 1.2 * tm);
+    P("path", { d: Plot.path(hk.map(u => [ax.x(u), ax.y(M.G * u * g.b / g.d / 1e9)])), class: "stroke thin dash c-label-2" }, svg);
+    $("vbd").textContent = F.si(g.b, "m") + " ; " + F.si(g.d, "m");
+    $("fbd").textContent = t("fr.f.bd", { plan: g.plan, dir: g.direction });
+    $("vth").textContent = F.si(tm, "Pa", { prefix: "G" });
+    const ms = MESURE[m];
+    $("vmes").textContent = ms.lo === ms.hi ? F.si(ms.lo, "Pa", { prefix: "M" }) : t("fr.v.plage", { lo: F.num(ms.lo / 1e6, 2), hi: F.qty(F.num(ms.hi / 1e6, 2), "MPa") });
+    $("fmes").textContent = t("fr.f.mes." + m);
+    $("vrap").textContent = ms.lo === ms.hi ? F.num(tm / ms.lo, 2) : t("fr.v.plage", { lo: F.sci(tm / ms.hi, 1), hi: F.sci(tm / ms.lo, 1) });
+  }
+  seg($("metal"), "m", upd);
+})();
+
+/* ---------- une rangée qui glisse : Frenkel–Kontorova ---------- */
+(() => {
+  const N = 40, svg = $("chaine"), L = 15, ox = 320 - L * N / 2, Y0 = 70, Y1 = 150;
+  let disloc = true, k = 1, f = 0.3, x = null, seuil = 1, x0 = null, raf = 0;
+  const px = u => ox + L * u;
+  function depart() {
+    x = X.fkChaine(N, disloc, k); if (disloc) x = X.fkContraint(x, k).x; x0 = x.slice();
+    seuil = X.fkSeuil(k, disloc);
+    $("vseuil").textContent = F.fix(seuil, seuil < 0.1 ? 3 : 2);
+  }
+  function dessin() {
+    svg.innerHTML = "";
+    const sub = Array.from({ length: 2 * N + 41 }, (_, i) => -10 + i / 2).filter(u => px(u) >= 0 && px(u) <= 640);
+    sub.forEach(u => { if (Number.isInteger(u)) P("circle", { cx: px(u), cy: Y1, r: 6, class: "fill c-label-2" }, svg); });
+    P("path", { d: Plot.path(Array.from({ length: 321 }, (_, i) => { const u = (i * 2 - ox) / L; return [i * 2, Y0 + 26 - 14 * Math.cos(2 * Math.PI * u)]; })), class: "stroke thin c-label-2" }, svg);
+    for (let i = 0; i + 1 < x.length; i++) P("line", { x1: px(x[i]), y1: Y0, x2: px(x[i + 1]), y2: Y0, class: "stroke thin c-tint" }, svg);
+    const p = X.fkPosition(x);
+    x.forEach((xi, i) => P("circle", { cx: px(xi), cy: Y0, r: 6, class: "fill " + (p !== null && Math.abs(i - p) < 1.5 ? "el-o" : "c-tint") }, svg));
+    const g = x.reduce((s, xi, i) => s + xi - x0[i], 0) / x.length;
+    $("vglisse").textContent = F.fix(g, 2);
+    const etat = p === null ? (disloc ? "sortie" : f > seuil ? "glisse" : "tient") : f > seuil ? "avance" : "bloquee";
+    $("vetat").textContent = t("fk.etat." + etat);
+    $("fetat").textContent = p === null ? "" : t("fk.f.pos", { p: F.fix(p, 1) });
+  }
+  function boucle() {
+    const dt = X.fkDt(k);
+    for (let s = 0; s < 150; s++) x = X.fkPas(x, k, f, dt);
+    dessin();
+    raf = reduce ? 0 : requestAnimationFrame(boucle);
+  }
+  function relance() { cancelAnimationFrame(raf); depart(); if (reduce) { const dt = X.fkDt(k); for (let s = 0; s < 20000; s++) x = X.fkPas(x, k, f, dt); dessin(); } else boucle(); }
+  $("lk").oninput = () => { k = Math.pow(10, +$("lk").value); $("lkv").textContent = F.num(k, 2); relance(); };
+  $("ff").oninput = () => { f = +$("ff").value; $("ffv").textContent = F.fix(f, 2); if (reduce) relance(); };
+  $("reprise").onclick = relance;
+  $("lkv").textContent = F.num(k, 2); $("ffv").textContent = F.fix(f, 2);
+  seg($("mode"), "d", v => { disloc = v === "1"; relance(); });
+})();
+
+/* ---------- aciers de construction ---------- */
+(() => {
+  const ids = Object.keys(X.ACIERS), items = textOf("aciers.items", ids), sub = {};
+  const fe = X.glissement("cc", X.METAUX.Fe.a), tm = X.cissionTheorique(X.G_ACIER, fe.b, fe.d);
+  ids.forEach(id => { const ty = X.cissionLimite(X.ACIERS[id]); sub[id] = { fy: F.si(X.ACIERS[id], "Pa", { prefix: "M" }), ty: F.si(ty, "Pa", { prefix: "M" }), r: F.num(tm / ty, 2) }; });
+  keyed($("aciers"), t("aciers.tag"), ids, items, sub);
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["frenkel", 1926, "idea"], ["dislocation", 1934, "idea"], ["frankread", 1950, "idea"], ["hirsch", 1956, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["acier", "ecrouissage"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["ecart", "c"], ["quart", "a"], ["un", "d"], ["raideur", "b"], ["fer", "c"], ["ecrouir", "a"], ["carbone", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

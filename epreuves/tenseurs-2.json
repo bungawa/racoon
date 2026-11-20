@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["cle", "a"],
+  ["dimension", "b"],
+  ["miroir", "c"],
+  ["facette", "d"],
+  ["mohr", "a"],
+  ["cisaillement", "b"],
+  ["silicium", "c"],
+  ["piezo", "d"]
+ ]
+}

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Filtrer des atomes avec un appareil de Stern et Gerlach</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-quantique-deux-etats" data-i18n="monde.quantique-deux-etats"></a><span class="aux">›</span><a href="/racoon/etape?id=stern-gerlach-spin1" data-i18n="etape.stern-gerlach-spin1"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-quant" href="/racoon/atlas?piste=quant" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/composition-des-amplitudes" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>F</mi><mi>z</mi></msub><mo>=</mo><msub><mi>μ</mi><mi>z</mi></msub><mfrac><mrow><mo>∂</mo><mi>B</mi></mrow><mrow><mo>∂</mo><mi>z</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.force"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi>z</mi><mo>=</mo><mfrac><mrow><msub><mi>μ</mi><mi>z</mi></msub><mi>G</mi><mi>L</mi></mrow><mrow><mi>m</mi><msup><mi>v</mi><mn>2</mn></msup></mrow></mfrac><mrow><mo>(</mo><mfrac><mi>L</mi><mn>2</mn></mfrac><mo>+</mo><mi>D</mi><mo>)</mo></mrow></math></div>
+    <p class="validite" data-i18n-html="val.deviation"></p>
+    <figure class="chart">
+      <svg class="fig" id="ecran" viewBox="0 0 640 240" role="img" data-i18n-attr="aria-label:fig.aria.ecran"></svg>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="sg" data-i18n="fig.g"></label><output id="sgr" for="sg"></output></div>
+            <input id="sg" type="range" min="0" max="2" step="0.02" value="1"></div>
+          <div class="ctl"><div class="row"><label for="sv" data-i18n="fig.v"></label><output id="svr" for="sv"></output></div>
+            <input id="sv" type="range" min="200" max="1200" step="10" value="500"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.ecart"></span><span class="v" id="vecart"></span><span class="f" id="fecart"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.force"></span><span class="v" id="vforce"></span><span class="f" id="fforce"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.lambda"></span><span class="v" id="vlambda"></span><span class="f" id="flambda"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="chart">
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><span data-i18n="fig.f1"></span></div>
+            <div class="seg" role="group" id="f1" data-i18n-attr="aria-label:fig.f1">
+              <button type="button" data-i="0" data-i18n="fig.b.plus"></button><button type="button" data-i="1" data-i18n="fig.b.zero"></button><button type="button" data-i="2" data-i18n="fig.b.moins"></button>
+            </div></div>
+          <div class="ctl"><div class="row"><span data-i18n="fig.f2"></span></div>
+            <div class="seg" role="group" id="f2" data-i18n-attr="aria-label:fig.f2">
+              <button type="button" data-i="0" data-i18n="fig.b.plus"></button><button type="button" data-i="1" data-i18n="fig.b.zero"></button><button type="button" data-i="2" data-i18n="fig.b.moins"></button>
+            </div></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.un"></span><span class="v" id="vun"></span><span class="f" id="fun"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.deux"></span><span class="v" id="vdeux"></span><span class="f" id="fdeux"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption2"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><mrow><mo>⟨</mo><mi>j</mi><mi>S</mi><mo>|</mo><mi>i</mi><mi>S</mi><mo>⟩</mo></mrow><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow></math><span class="n">(5.8)</span></div>
+    <p class="validite" data-i18n-html="val.5.8"></p>
+    <p data-i18n-html="s3.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/filtrer-stern-gerlach.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/quantique-deux-etats.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const Q = QuantDeux;
+
+/* ---------- the system: a spin-one atom of 100 u, μ_z = m μ_B, magnet 0,1 m, flight 0,2 m, slit 0,1 mm ---------- */
+const ATOME = { m: 100 * Q.u, L: 0.1, D: 0.2, w: 1e-4 };
+(() => {
+  const sg = $("sg"), sv = $("sv");
+  const G = () => 10 * Math.pow(10, +sg.value);                         // 10 to 1 000 T·m⁻¹, logarithmic slider
+  function draw() {
+    const g = G(), v = +sv.value, d = Q.deviationSG({ mu: Q.mu_B, g, m: ATOME.m, v, L: ATOME.L, D: ATOME.D });
+    const svg = $("ecran"); svg.innerHTML = "";
+    const XM = 3;                                                          // screen shown over ±3 mm
+    const ax = Plot.axes(svg, { fmt: F, w: 640, h: 240, x: { domain: [-XM, XM], label: t("fig.ax.z") }, y: { domain: [0, 1.1], label: t("fig.ax.n") } });
+    const s = ATOME.w / 2 * 1e3, zs = [d.z, 0, -d.z].map(z => z * 1e3);   // spots in mm, half-width of the slit as standard deviation
+    const xs = Array.from({ length: 401 }, (_, i) => -XM + i * 2 * XM / 400);
+    const f = x => zs.reduce((a, z) => a + Math.exp(-((x - z) ** 2) / (2 * s * s)), 0);
+    Plot.el("path", { d: Plot.path(xs.map(x => [ax.x(x), ax.y(Math.min(f(x), 1.1))])), class: "stroke c-label", fill: "none" }, svg);
+    ["fig.plus", "fig.zero", "fig.moins"].forEach((k, i) => {
+      if (Math.abs(zs[i]) > XM) return;
+      const e = Plot.el("text", { x: ax.x(zs[i]), y: ax.y(1.05), "text-anchor": "middle" }, svg); e.textContent = t(k);
+    });
+    $("sgr").textContent = F.si(g, "T·m⁻¹"); $("svr").textContent = F.si(v, "m·s⁻¹");
+    $("vecart").textContent = F.si(d.z, "m");
+    $("fecart").textContent = t("fig.f.ecart", { r: F.num(d.z / ATOME.w, 2) });
+    $("vforce").textContent = F.num(d.F / (ATOME.m * 9.81), 2);
+    $("fforce").textContent = t("fig.f.force", { F: F.si(d.F, "N") });
+    $("vlambda").textContent = F.si(Q.h / (ATOME.m * v), "m");
+    $("flambda").textContent = t("fig.f.lambda", { r: F.sci(Q.h / (ATOME.m * v) / ATOME.w, 2) });
+  }
+  sg.oninput = sv.oninput = draw; draw();
+  const d = Q.deviationSG({ mu: Q.mu_B, g: 100, m: ATOME.m, v: 500, L: ATOME.L, D: ATOME.D });
+  $("sys1").innerHTML = t("sys1.body", { F: F.si(d.F, "N"), P: F.si(ATOME.m * 9.81, "N"), r: F.num(d.F / (ATOME.m * 9.81), 2),
+    tau: F.si(ATOME.L / 500, "s"), z: F.si(d.z, "m"), dB: F.num(100 * ATOME.w, 2) });
+})();
+
+/* ---------- two S filters in series, unpolarized furnace beam: one third in each state ---------- */
+(() => {
+  const S = Q.spin1Y(0), ouv = [[true, false, false], [true, false, false]];
+  const segs = [$("f1"), $("f2")];
+  function draw() {
+    segs.forEach((sg, k) => sg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(ouv[k][+b.dataset.i]))));
+    let un = 0, deux = 0;
+    for (let i = 0; i < 3; i++) {
+      const r = Q.chaineFiltres(Q.etatBase(3, i), [{ R: S, ouverts: ouv[0] }, { R: S, ouverts: ouv[1] }]);
+      un += r[0].p / 3; deux += r[1].p / 3;
+    }
+    $("vun").textContent = F.num(un, 3); $("fun").textContent = t("fig.f.un");
+    $("vdeux").textContent = un > 0 ? F.num(deux / un, 3) : "—";
+    $("fdeux").textContent = t("fig.f.deux", { v: F.num(deux, 3) });
+  }
+  segs.forEach((sg, k) => sg.querySelectorAll("button").forEach(b => b.onclick = () => { ouv[k][+b.dataset.i] = !ouv[k][+b.dataset.i]; draw(); }));
+  draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["stern", 1922, "experiment"], ["spin", 1925, "idea"], ["hydrogene", 1927, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["horloge"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["gradient", "c"], ["trois", "a"], ["vitesse", "d"], ["modifie", "b"], ["serie", "a"], ["zero", "c"], ["matrice", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 501 });
+})();
+</script>
+</body>
+</html>

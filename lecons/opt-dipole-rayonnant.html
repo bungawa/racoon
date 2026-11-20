@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le dipôle rayonnant</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-optique-ondulatoire" data-i18n="monde.optique-ondulatoire"></a><span class="aux">›</span><a href="/racoon/etape?id=opt-rayonnement-dipole" data-i18n="etape.opt-rayonnement-dipole"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-optique" href="/racoon/atlas?piste=optique" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/opt-rayonnement" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mover><mi>E</mi><mo>→</mo></mover><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mo>−</mo><mi>q</mi></mrow><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub><msup><mi>c</mi><mn>2</mn></msup><mi>r</mi></mrow></mfrac><msub><mover><mi>a</mi><mo>→</mo></mover><mo>⊥</mo></msub><mrow><mo>(</mo><mi>t</mi><mo>−</mo><mfrac><mi>r</mi><mi>c</mi></mfrac><mo>)</mo></mrow><mo>,</mo><mspace width="1em"/><mrow><mo>|</mo><msub><mover><mi>a</mi><mo>→</mo></mover><mo>⊥</mo></msub><mo>|</mo></mrow><mo>=</mo><mi>a</mi><mspace width="0.1em"/><mi data-i18n="eq.sin"></mi><mi>θ</mi></math><span class="n">(28.6a)</span></div>
+    <p class="validite" data-i18n-html="val.28.6a"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="scene" viewBox="0 0 640 400" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-label-2" data-i18n="fig.legend.diagramme"></span><span class="c-tint" data-i18n="fig.legend.champ"></span><span class="c-warn" data-i18n="fig.legend.detecteur"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" role="group" id="poste">
+            <button type="button" data-p="1" data-i18n="fig.p1"></button>
+            <button type="button" data-p="2" data-i18n="fig.p2"></button>
+            <button type="button" data-p="3" data-i18n="fig.p3"></button>
+          </div>
+          <div class="ctl"><div class="row"><label for="sth" data-i18n="fig.theta"></label><output id="sthr" for="sth"></output></div>
+            <input id="sth" type="range" min="0" max="180" step="1" value="90"></div>
+          <div class="ctl"><div class="row"><label for="sal" data-i18n="fig.alpha"></label><output id="salr" for="sal"></output></div>
+            <input id="sal" type="range" min="0" max="180" step="1" value="0"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.champ"></span><span class="v" id="vchamp"></span><span class="f" id="fchamp"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.signal"></span><span class="v" id="vsignal"></span><span class="f" id="fsignal"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/opt-dipole-rayonnant.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/optique-ondulatoire.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const O = OptOnd, TAU = 2 * Math.PI, DEG = Math.PI / 180;
+
+/* ---------- the generator G and the detector D, seen from the side ---------- */
+(() => {
+  const scene = $("scene"), sth = $("sth"), sal = $("sal"), seg = $("poste");
+  const POSTES = { 1: 90, 2: 45, 3: 0 };
+  const lambda = 1, R = 20 * lambda, G = [{ pos: [0, 0, 0], axe: [0, 0, 1] }];
+  const cx = 320, cy = 200, Rpx = 150;                                     // the drawing: G at the centre, D on a circle
+  const px = (x, z, s) => [cx + s * x, cy - s * z];
+  function draw() {
+    const th = +sth.value * DEG, al = +sal.value * DEG;
+    const P = [R * Math.sin(th), 0, R * Math.cos(th)], u = [Math.sin(al), 0, Math.cos(al)];
+    const eq = O.sommeDipoles(G, [R, 0, 0], lambda), s = O.sommeDipoles(G, P, lambda);
+    const E = s.axe ? s.axe.map(v => v * s.max / eq.max) : [0, 0, 0];      // amplitude vector, unit: the field at the equator
+    const signal = O.signalDetecteur(E, u);
+    scene.innerHTML = "";
+    /* radiation pattern |sin θ|, the circle of positions, the generator */
+    const pat = Array.from({ length: 361 }, (_, i) => { const a = i * DEG; return px(Math.sin(a) * Math.abs(Math.sin(a)), Math.cos(a) * Math.abs(Math.sin(a)), Rpx * 0.9); });
+    Plot.el("path", { d: Plot.path(pat), class: "stroke thin c-label-2" }, scene);
+    Plot.el("circle", { cx, cy, r: Rpx, class: "stroke thin dash c-label-2" }, scene);
+    Plot.el("line", { x1: cx, x2: cx, y1: cy - 22, y2: cy + 22, class: "stroke bold c-label" }, scene);
+    Plot.el("circle", { cx, cy, r: 3, class: "fill c-label" }, scene);
+    const tag = (x, y, txt) => { const e = Plot.el("text", { x, y, "text-anchor": "middle" }, scene); e.textContent = txt; };
+    tag(cx + 16, cy - 28, t("fig.G"));
+    /* the detector at D, its direction u; the field at D, scaled */
+    const D = px(Math.sin(th), Math.cos(th), Rpx), L = 26;
+    Plot.el("line", { x1: cx, y1: cy, x2: D[0], y2: D[1], class: "stroke thin c-label-2" }, scene);
+    [1, -1].forEach(k => Plot.fleche(scene, D, [D[0] + k * 60 * E[0], D[1] - k * 60 * E[2]], { cls: "c-tint", tete: 10, min: 3 }));
+    const w = 3, pts = [[-L, -w], [L, -w], [L, w], [-L, w]].map(([a, b]) => [D[0] + a * u[0] + b * u[2], D[1] - a * u[2] + b * u[0]].map(v => v.toFixed(1)).join(","));
+    Plot.el("polygon", { points: pts.join(" "), class: "fill c-warn" }, scene);
+    tag(D[0] + (D[0] >= cx ? 34 : -34), D[1] + 5, t("fig.D"));
+    $("sthr").textContent = F.num(+sth.value, 3) + "°";
+    $("salr").textContent = F.num(+sal.value, 3) + "°";
+    $("vchamp").textContent = F.num(Math.hypot(...E), 2);
+    $("fchamp").textContent = t("fig.f.champ", { v: F.num(Math.abs(Math.sin(th)), 2) });
+    $("vsignal").textContent = F.num(signal, 2);
+    const ang = Math.hypot(...E) > 1e-9 ? Math.acos(Math.min(1, signal / Math.hypot(...E))) / DEG : null;
+    $("fsignal").textContent = ang === null ? t("fig.f.rien") : t("fig.f.signal", { a: F.num(ang, 2) + "°" });
+    seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(POSTES[b.dataset.p] === +sth.value)));
+  }
+  seg.querySelectorAll("button").forEach(b => b.onclick = () => { sth.value = POSTES[b.dataset.p]; draw(); });
+  sth.oninput = sal.oninput = draw; draw();
+})();
+
+/* ---------- the system described: a bench at 300 MHz ---------- */
+(() => {
+  const f = 300e6, lambda = O.c / f, L = 0.2, r = 2, mur = 3;
+  const z = O.zoneOnde(r, lambda);
+  $("sys1").innerHTML = t("sys1.body", { l: F.si(lambda, "m"), Ll: F.num(L / lambda, 2), kr: F.num(z.kr, 3), p: F.num(100 / z.kr, 2), p2: F.num(100 / z.kr ** 2, 2),
+    echo: F.num(100 * r / (r + 2 * mur), 2) });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["hertz1", 1886, "experiment"], ["hertz2", 1888, "experiment"], ["marconi", 1901, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["wifi"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["axe", "c"], ["tourne", "a"], ["oblique", "d"], ["azimut", "b"], ["court", "a"], ["deuxfils", "c"], ["murs", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 283 });
+})();
+</script>
+</body>
+</html>

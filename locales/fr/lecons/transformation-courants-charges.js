@@ -1,0 +1,100 @@
+/* Leçon « Transformation des courants et des charges » (Feynman II.13.7) : textes en français.
+   Une autre langue = locales/<langue>/lecons/transformation-courants-charges.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Transformation des courants et des charges",
+    "crumb.jour": "Courants et charges",
+    "h1": "Transformation des courants et des charges",
+    "lede": "Pour le fil, il a fallu compter à la main les ions et les électrons, avec leurs contractions. Il y a plus court : la densité de charge et la densité de courant forment ensemble un quadrivecteur, et se transforment d'un référentiel à l'autre exactement comme le temps et la position.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : relativité des champs électrique et magnétique",
+
+    "s1.sec": "Un quadrivecteur",
+    "s1.h2": "ρ et j, comme l'énergie et la quantité de mouvement",
+    "s1.p1": "Prenons des charges qui ont toutes la même vitesse <var>v</var>, de densité propre ρ<sub>0</sub> dans le référentiel où elles sont au repos. Vue en mouvement, leur densité vaut ρ<sub>0</sub>/√(1 \u2212 <var>v</var>²/<var>c</var>²) par contraction des longueurs, (13.23). Le courant est cette densité multipliée par la vitesse :",
+    "val.13.34": "Exacte pour une population de charges de même vitesse : contraction des longueurs et invariance de la charge. Pour un métal, où les électrons ont des vitesses dispersées, on somme sur les populations : les relations sont linéaires, et la somme garde la même forme.",
+    "s1.p2": "Comparez à une particule de masse <var>m</var> : son énergie divisée par <var>c</var>, <var>U</var>/<var>c</var> = <var>mc</var>/√(1 \u2212 <var>v</var>²/<var>c</var>²), et sa quantité de mouvement, <var>p</var> = <var>mv</var>/√(1 \u2212 <var>v</var>²/<var>c</var>²). Remplacez <var>m</var> par ρ<sub>0</sub> : vous obtenez <var>c</var>ρ et <var>j</var>. Les deux quadruplets dépendent de la vitesse de la même façon ; ils se transforment donc de la même façon (leçons « Les quadrivecteurs » et « Le quadrivecteur énergie-impulsion »).",
+
+    "s2.sec": "La transformation",
+    "s2.h2": "Les mêmes formules que pour t et x",
+    "s2.p1": "Un observateur S′ se déplace à la vitesse <var>u</var> le long de l'axe <var>x</var> de S. À gauche, la transformation de Lorentz des coordonnées d'un événement (leçon « La transformation de Lorentz ») ; à droite, celle de la densité de courant et de la densité de charge. <var>j</var> joue le rôle de la position, ρ celui du temps.",
+    "val.13.35": "Exacte en relativité restreinte, pour deux référentiels galiléens en translation à la vitesse <var>u</var> le long de <var>x</var>, aux origines confondues à <var>t</var> = 0. Les composantes perpendiculaires au mouvement ne changent pas. Pour <var>u</var> ≪ <var>c</var>, <var>j</var>′ ≈ <var>j</var> \u2212 <var>u</var>ρ, ce que dit la cinématique de Galilée ; mais ρ′ ≈ ρ \u2212 <var>uj</var><sub><var>x</var></sub>/<var>c</var>² n'a pas d'équivalent galiléen : c'est le terme qui charge le fil.",
+    "s2.p2": "Comme l'intervalle <var>c</var>²<var>t</var>² \u2212 <var>x</var>² \u2212 <var>y</var>² \u2212 <var>z</var>², une combinaison des quatre composantes ne dépend pas du référentiel :",
+    "val.13.35a": "Exacte : conséquence directe de (13.35). Pour une seule population de charges, elle vaut <var>c</var>²ρ<sub>0</sub>² : la densité propre est la même pour tous. Pour un fil neutre parcouru par un courant, elle vaut \u2212<var>j</var>² dans S : elle est négative, et ce signe ne change dans aucun référentiel.",
+
+    "s3.sec": "Le fil, sans compter",
+    "s3.h2": "Un courant neutre n'est neutre que pour un observateur",
+    "s3.p1": "Dans S, le fil neutre a ρ = 0 et <var>j</var><sub><var>x</var></sub> = ρ<sub>\u2212</sub><var>v</var>. Dans le référentiel des électrons, <var>u</var> = <var>v</var>, (13.35) donne ρ′ = \u2212<var>v</var>ρ<sub>\u2212</sub><var>v</var>/<var>c</var>²/√(1 \u2212 <var>v</var>²/<var>c</var>²) : c'est (13.27), obtenue en une ligne. Pour toute autre vitesse <var>u</var>, le fil porte la charge nette ρ′ = \u2212<var>u</var><var>j</var><sub><var>x</var></sub>/<var>c</var>²/√(1 \u2212 <var>u</var>²/<var>c</var>²), proportionnelle à <var>u</var> tant que <var>u</var> ≪ <var>c</var>.",
+    "tr.aria": "Densité de charge et densité de courant vues par un observateur en mouvement, en fonction de sa vitesse, pour un fil neutre ou pour un faisceau d'électrons",
+    "tr.legend.rho": "ρ′, densité de charge (trait plein)",
+    "tr.legend.j": "j′x/c, densité de courant (tirets)",
+    "tr.cas.fil": "Fil neutre",
+    "tr.cas.faisceau": "Faisceau d'électrons",
+    "tr.v": "Vitesse des électrons dans S, v/c",
+    "tr.u": "Vitesse de l'observateur S′, u/c",
+    "tr.x": "u/c",
+    "tr.y": "en unités de ρ+",
+    "tr.k.rho": "ρ′/ρ<sub>+</sub>",
+    "tr.f.rho": "densité de charge vue de S′",
+    "tr.k.j": "<var>j</var>′<sub><var>x</var></sub>/(ρ<sub>+</sub><var>c</var>)",
+    "tr.f.j": "densité de courant vue de S′",
+    "tr.k.inv": "(<var>c</var>²ρ′² \u2212 <var>j</var>′²)/(ρ<sub>+</sub><var>c</var>)²",
+    "tr.f.inv.temps": "positif et constant : il existe un référentiel sans courant, celui des électrons",
+    "tr.f.inv.espace": "négatif et constant : aucun référentiel ne fait disparaître le courant",
+    "tr.caption": "ρ<sub>+</sub> est la densité des ions du fil, et le faisceau a, dans S, la même densité que les électrons du fil. Déplacez <var>u</var> : les deux courbes changent, l'invariant (13.35a) ne bouge pas. Fil neutre : la charge n'est nulle que pour <var>u</var> = 0, et le courant ne s'annule jamais. Faisceau : le courant s'annule pour <var>u</var> = <var>v</var>, et la densité y est la plus faible en valeur absolue, la densité propre.",
+    "s3.p2": "Le signe de l'invariant classe les distributions. Positif : il existe un référentiel où les charges sont au repos, sans courant ; c'est le cas d'un faisceau de particules toutes de même signe. Négatif : il existe un référentiel où la charge est nulle, mais jamais un où le courant l'est ; c'est le cas d'un fil neutre. Aucun observateur ne verra un fil parcouru par un courant comme une simple ligne de charges immobiles.",
+
+    "s4.sec": "Choisir son référentiel",
+    "s4.h2": "Le résultat ne dépend pas du référentiel ; le calcul, si",
+    "s4.p1": "Avec (13.35), on sait écrire charges et courants dans n'importe quel référentiel galiléen. Dans chacun, on calcule les champs, puis les forces sur les particules : leurs mouvements, une fois ramenés dans un même référentiel, sont identiques. On choisit donc le référentiel où le problème est le plus simple. La même règle vaut pour les champs eux-mêmes, qui se transforment aussi (leçon « Transformation relativiste des champs ») ; ensemble, ρ et <var>j</var> forment le quadricourant de l'électrodynamique (leçon « Les quadrivecteurs de l'électrodynamique »).",
+    "sys.title": "Décrire le système avant d'appliquer la loi",
+    "sys.body": "Dans S, des ions au repos et des électrons à <var>v</var>. Quelle approximation peut-on faire ? Pour l'observateur qui suit les électrons d'un fil de cuivre, <var>u</var> ≈ 10⁻³\u00a0m·s⁻¹ : (<var>u</var>/<var>c</var>)² ≈ 10⁻²³, et (13.35) se réduit à <var>j</var>′ ≈ <var>j</var> \u2212 <var>u</var>ρ et ρ′ ≈ ρ \u2212 <var>uj</var>/<var>c</var>². On garde pourtant ce dernier terme : il est du premier ordre en <var>u</var>/<var>c</var> et c'est lui qui fait toute la force magnétique. Négliger (<var>u</var>/<var>c</var>)² devant 1, oui ; négliger <var>uj</var>/<var>c</var>² devant ρ, non, quand ρ est nul.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Du changement de variables au quadrivecteur",
+    "hist.intro": "La transformation de la charge et du courant a été trouvée en 1905, par Poincaré et par Einstein, comme une conséquence de l'invariance des équations de l'électrodynamique. Minkowski en a fait, trois ans plus tard, un vecteur de l'espace-temps.",
+    "hist.events": {
+      poincare: { label: "5 juin 1905", who: "Henri Poincaré", what: "présente à l'Académie des sciences « Sur la dynamique de l'électron ».", context: "Il y donne la transformation de la densité de charge et de la vitesse des charges, et note qu'elle diffère un peu de celle qu'avait trouvée Lorentz." },
+      einstein: { label: "septembre 1905", who: "Albert Einstein", what: "transforme, dans « Sur l'électrodynamique des corps en mouvement », la densité de charge d'un corps en mouvement.", context: "Il en conclut que la charge d'un corps est la même dans tous les référentiels galiléens." },
+      minkowski: { who: "Hermann Minkowski", what: "publie les équations fondamentales de l'électrodynamique des corps en mouvement, présentées à Göttingen le 21 décembre 1907.", context: "Il y définit le vecteur d'espace-temps « de première espèce », quatre grandeurs qui se transforment comme les coordonnées, et y range le courant de convection et la densité de charge." },
+      vay: { who: "Jean-Luc Vay", what: "montre qu'une simulation d'un système relativiste peut être bien plus rapide dans un référentiel en mouvement bien choisi.", context: "Dans Physical Review Letters. Le rapport entre la plus grande et la plus petite échelle d'un système qui contient des parties en mouvement relatif rapide dépend du référentiel : on choisit celui qui le minimise." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      boost: { name: "Simulation des accélérateurs laser-plasma", text: "Un laser traverse un plasma au repos au laboratoire. Dans un référentiel qui avance à la vitesse <var>u</var>, le plasma défile à \u2212<var>u</var>, avec une densité multipliée par γ et un courant : (13.35). Le gain en calcul croît à peu près comme γ². Pour un étage de 10\u00a0GeV simulé dans un référentiel de γ = 130, un calcul de près de quatre heures sur 512 processeurs en remplace un qu'on estimait à une quinzaine d'années au laboratoire." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      propre: { prompt: "Un faisceau a une densité de charge propre ρ0. Il se déplace à 0,8 c. Quelle densité mesure-t-on au laboratoire ?",
+        options: { a: "ρ0/0,6 ≈ 1,67 ρ0 : les longueurs se contractent, la charge ne change pas.", b: "0,6 ρ0 : la charge diminue avec la vitesse.", c: "ρ0 : la densité est un invariant.", d: "0,8 ρ0 : la densité est multipliée par v/c." },
+        why: "√(1 \u2212 0,64) = 0,6. La même charge occupe un volume 0,6 fois plus petit : (13.23). Ce qui est invariant, c'est la charge, et la combinaison c²ρ² \u2212 j², pas la densité." },
+      quadri: { prompt: "Pourquoi (cρ, j) se transforme-t-il comme (U/c, p) d'une particule ?",
+        options: { a: "Parce que la charge est une forme d'énergie.", b: "Parce que le courant transporte de la quantité de mouvement.", c: "Parce que les deux s'écrivent (constante invariante) × (c, v)/√(1 \u2212 v²/c²) : même dépendance en vitesse, donc même transformation.", d: "C'est une coïncidence des formules." },
+        why: "ρ0 joue le rôle de la masse : ρ = ρ0/√(1 \u2212 v²/c²) et j = ρ0 v/√(1 \u2212 v²/c²), comme U/c = mc/√(1 \u2212 v²/c²) et p = mv/√(1 \u2212 v²/c²). Un quadruplet qui dépend de la vitesse ainsi est un quadrivecteur." },
+      fil: { prompt: "Un fil neutre porte une densité de courant j. Quelle densité de charge voit un observateur qui longe le fil à la vitesse u ≪ c, dans le sens du courant ?",
+        options: { a: "Zéro : le fil est neutre.", b: "Environ \u2212u j/c² : petite, du premier ordre en u, et de signe opposé à celui de u j.", c: "Environ u j/c, du premier ordre.", d: "Environ ρ+ u²/c², du second ordre seulement." },
+        hint: "Appliquez (13.35) avec ρ = 0.",
+        why: "ρ′ = (0 \u2212 u j/c²)/√(1 \u2212 u²/c²) ≈ \u2212u j/c². Longer le fil dans le sens du courant, c'est aller à la rencontre des électrons : leur vitesse relative augmente, ils se serrent plus que les ions, et le fil paraît négatif. (13.27) est le cas inverse : l'observateur suit les électrons, donc remonte le courant, et voit le fil positif." },
+      repos: { prompt: "Existe-t-il un référentiel où un fil neutre parcouru par un courant n'a plus de courant ?",
+        options: { a: "Oui, celui des électrons.", b: "Oui, celui des ions.", c: "Oui, à condition d'aller assez vite.", d: "Non : c²ρ² \u2212 j², négatif dans S, le reste partout ; avec j = 0, il serait positif ou nul." },
+        why: "Dans le référentiel des électrons, ce sont les ions qui bougent : il y a toujours un courant. L'invariant le dit sans calcul. Pour un faisceau de charges toutes de même signe, au contraire, l'invariant est positif, et le référentiel des charges les voit au repos." },
+      invariant: { prompt: "Pour un faisceau, c²ρ² \u2212 j² vaut c²ρ0². Que représente ρ0 ?",
+        options: { a: "La densité dans le référentiel où les charges du faisceau sont au repos, la même pour tous les observateurs.", b: "La densité au laboratoire.", c: "La plus grande densité qu'un observateur puisse mesurer.", d: "La densité quand le faisceau va à la vitesse de la lumière." },
+        why: "Dans le référentiel propre, j = 0, et l'invariant se réduit à c²ρ0². Comme la masse d'une particule, c'est la grandeur que tous les observateurs s'accordent à calculer. C'est aussi la plus petite densité, en valeur absolue, qu'on puisse mesurer." },
+      perp: { prompt: "Un courant circule selon y. Un observateur se déplace selon x. Que devient la composante j_y ?",
+        options: { a: "Elle est multipliée par γ.", b: "Elle est divisée par γ.", c: "Elle ne change pas.", d: "Elle devient une densité de charge." },
+        why: "Comme y′ = y dans la transformation de Lorentz, j′_y = j_y : (13.35). Seules ρ et la composante de j le long du mouvement se mélangent." },
+      choix: { prompt: "On veut la trajectoire d'une particule près d'un faisceau d'électrons rapides. Pourquoi peut-on faire le calcul dans le référentiel du faisceau ?",
+        options: { a: "Parce que les lois de l'électromagnétisme ne valent que dans ce référentiel.", b: "Parce que les équations prennent la même forme dans tous les référentiels galiléens : on calcule là où c'est simple, puis on revient au laboratoire par la transformation de Lorentz.", c: "Parce que le champ magnétique est nul dans tous les référentiels.", d: "On ne peut pas : seul le référentiel du laboratoire est valable." },
+        why: "Dans le référentiel du faisceau, les charges sont au repos : pas de courant, un simple problème d'électrostatique. On transforme ensuite le mouvement obtenu. Le résultat est le même que si l'on avait gardé les champs électrique et magnétique du laboratoire." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 13 (texte original en anglais), §13-7.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

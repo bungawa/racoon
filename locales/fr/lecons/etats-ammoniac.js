@@ -1,0 +1,103 @@
+/* Leçon « Les états de la molécule d'ammoniac » (Feynman III.9.1) : textes en français.
+   Une autre langue = locales/<langue>/lecons/etats-ammoniac.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Les états de la molécule d'ammoniac",
+    "crumb.jour": "Les états de l'ammoniac",
+    "h1": "Les états de la molécule d'ammoniac",
+    "lede": "Deux bases décrivent la même molécule. L'une dit où est l'azote, l'autre quelle est l'énergie. Passer de l'une à l'autre, c'est tout le calcul : dans la base des énergies, chaque amplitude évolue seule.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : la molécule d'ammoniac",
+
+    "s1.sec": "Changer de base",
+    "s1.h2": "La base des énergies",
+    "s1.p1": "Le système : le modèle à deux états de « La molécule d'ammoniac », <var>H</var><sub>11</sub> = <var>H</var><sub>22</sub> = <var>E</var><sub>0</sub>, <var>H</var><sub>12</sub> = <var>H</var><sub>21</sub> = \u2212<var>A</var>. Il a deux états stationnaires : celui où les amplitudes sont opposées, d'énergie <var>E</var><sub>0</sub> + <var>A</var>, et celui où elles sont égales, d'énergie <var>E</var><sub>0</sub> \u2212 <var>A</var>. On les prend comme nouveaux états de base, normés, nommés I pour le plus haut et II pour le plus bas :",
+    "val.9.12": "Exacte pour le modèle à deux états. Les signes sont un choix : multiplier |I⟩ par \u22121 ne change aucune probabilité. La normalisation 1/√2 assure ⟨I|I⟩ = ⟨II|II⟩ = 1 et ⟨I|II⟩ = 0.",
+    "s1.p2": "Les deux bases décrivent les mêmes états de la molécule. Les amplitudes d'un état |ψ⟩ dans la nouvelle base se calculent à partir des anciennes, <var>C</var><sub>I</sub> = ⟨I|ψ⟩ :",
+    "val.9.13": "Exacte : c'est la règle de changement de base, ⟨I|ψ⟩ = Σ ⟨I|<var>i</var>⟩⟨<var>i</var>|ψ⟩, avec ⟨I|1⟩ = 1/√2 et ⟨I|2⟩ = \u22121/√2, des nombres réels. Elle ne suppose rien de la dynamique.",
+
+    "s2.sec": "La dynamique",
+    "s2.h2": "Chaque amplitude évolue seule",
+    "s2.p1": "Dans la base I, II, la matrice hamiltonienne est diagonale. Les équations ne couplent plus rien :",
+    "val.9.8": "Exacte pour le modèle à deux états, sans champ extérieur. Un champ électrique couple I et II : c'est l'objet de « La molécule d'ammoniac dans un champ électrique statique ».",
+    "val.9.9": "Exacte pour le modèle à deux états, sans champ. |<var>C</var><sub>II</sub>|² ne change pas : la probabilité d'être dans l'état II est constante.",
+    "s2.p2": "Les probabilités |<var>C</var><sub>I</sub>|² et |<var>C</var><sub>II</sub>|² restent donc constantes, quel que soit l'état de départ. Ce sont les probabilités de trouver chaque énergie si on la mesure ; leur moyenne pondérée est l'énergie moyenne :",
+    "val.9.13a": "Exacte : définition de la moyenne des résultats d'une mesure d'énergie sur un grand nombre de molécules préparées dans le même état. Elle ne change pas avec le temps sans champ extérieur : c'est la conservation de l'énergie.",
+
+    "s3.sec": "Interaction",
+    "s3.h2": "Un état, deux lectures",
+    "s3.p1": "Le système : une molécule préparée dans l'état <var>C</var><sub>1</sub> = cos θ, <var>C</var><sub>2</sub> = sin θ e<sup><var>i</var>φ</sup>. θ règle le partage entre azote en haut et en bas, φ la phase relative. La courbe donne la probabilité d'avoir l'azote en haut au cours du temps ; les tirets, les probabilités des états I et II, constantes.",
+    "fig.aria": "Probabilité d'avoir l'azote en haut au cours du temps, et probabilités constantes des états I et II",
+    "fig.legend.p1": "azote en haut, |C₁|²",
+    "fig.legend.pI": "état I, |C_I|²",
+    "fig.legend.pII": "état II, |C_II|²",
+    "fig.x": "temps t (ps)",
+    "fig.y": "probabilité",
+    "fig.theta": "Partage θ",
+    "fig.phi": "Phase relative φ",
+    "fig.k.pI": "Probabilités des états I et II",
+    "fig.v.pI": "{a} et {b}",
+    "fig.f.pI": "constantes au cours du temps",
+    "fig.k.E": "Énergie moyenne ⟨<var>E</var>⟩ \u2212 <var>E</var><sub>0</sub>",
+    "fig.v.E": "{e}\u00a0µeV",
+    "fig.f.E": "entre \u2212{A} et +{A}\u00a0µeV",
+    "fig.k.osc": "Amplitude de l'oscillation de |<var>C</var><sub>1</sub>|²",
+    "fig.f.osc": "écart crête à crête 2√(<var>P</var><sub>I</sub><var>P</var><sub>II</sub>) = {d}",
+    "fig.f.stat": "aucune : l'état est stationnaire",
+    "fig.caption": "θ = 45° et φ = 0 donne l'état II : l'azote n'oscille plus, il est moitié en haut, moitié en bas. θ = 45° et φ = 180° donne l'état I. Entre les deux, à θ = 45° et φ = 90°, les deux états ont le même poids, et l'azote oscille pourtant complètement : la phase relative compte autant que le partage.",
+    "s3.p2": "Seul le mélange de I et de II oscille : l'oscillation est le battement de deux phases qui tournent à des vitesses différentes. Un état qui n'a qu'une composante n'a rien avec quoi battre.",
+
+    "s4.sec": "Décrire le système",
+    "s4.h2": "Une molécule ou un gaz",
+    "s4.p1": "Ce qu'on dit d'une molécule vaut pour un gaz de molécules indépendantes, tant que les collisions sont rares pendant le temps qu'on considère. Les collisions changent l'état ; entre deux collisions, chaque molécule suit (9.8) et (9.9).",
+    "s4.p2": "À l'équilibre thermique, l'état d'une molécule n'est pas connu, mais la probabilité d'être dans l'état I ou II suit la loi de Boltzmann. L'écart d'énergie est si petit devant <var>k</var><sub>B</sub><var>T</var> que les deux états sont presque également peuplés.",
+    "sys.title": "Le système décrit : un gaz d'ammoniac à 300 K",
+    "sys.body": "2<var>A</var> = {deuxA} contre <var>k</var><sub>B</sub><var>T</var> = {kT} à 300\u00a0K : l'écart entre les populations des états II et I ne vaut que {f}\u00a0% du total. Pour obtenir un faisceau où presque toutes les molécules sont dans un même état, il faut les trier : c'est ce que permet un champ électrique non uniforme.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "L'effet tunnel dans les molécules",
+    "hist.intro": "Que l'azote traverse une barrière qu'il ne pourrait pas franchir classiquement est une idée de 1926 ; l'ammoniac l'a rendue mesurable.",
+    "hist.events": {
+      hund: { who: "Friedrich Hund", what: "découvre l'effet tunnel : une particule passe une barrière plus haute que son énergie, avec une probabilité qui n'est pas nulle.", context: "Il étudie alors les spectres des molécules." },
+      chiral: { who: "Friedrich Hund", what: "applique l'effet tunnel aux molécules chirales : le passage d'une forme à son image dans un miroir existe, mais il est trop lent pour être observé dans les grosses molécules.", context: "C'est la même question que pour l'ammoniac : deux formes symétriques, une barrière entre elles." },
+      cleeton: { who: "Claud Cleeton et Neal Williams", what: "mesurent l'absorption de micro-ondes par l'ammoniac, avec un maximum vers 1,25\u00a0cm de longueur d'onde : l'écart entre les états I et II.", context: "Première expérience de spectroscopie micro-onde, à l'université du Michigan." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      spectro: { name: "Ce que mesure un spectromètre", text: "Un spectromètre mesure des différences entre les énergies des états stationnaires, jamais l'énergie d'une configuration comme « azote en haut », qui n'en a pas. Chaque raie de la spectroscopie des molécules est un écart comme <var>E</var><sub>I</sub> \u2212 <var>E</var><sub>II</sub>." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      base: { prompt: "Les bases 1, 2 et I, II décrivent-elles des molécules différentes ?",
+        options: { a: "Oui : la base 1, 2 pour l'ammoniac immobile, I, II pour l'ammoniac qui vibre.", b: "Oui : I et II sont des molécules d'isotopes différents.", c: "Non : ce sont deux bases pour les mêmes états ; on passe de l'une à l'autre par (9.13).", d: "Non, mais seule la base I, II est physique." },
+        why: "Tout état s'écrit dans l'une ou l'autre base. La base 1, 2 parle de la géométrie, la base I, II de l'énergie ; aucune n'est plus réelle." },
+      stat: { prompt: "Pourquoi les équations (9.8) et (9.9) ne couplent-elles pas C_I et C_II ?",
+        options: { a: "Parce que |I⟩ et |II⟩ sont des états d'énergie définie : la matrice hamiltonienne est diagonale dans cette base.", b: "Parce que A = 0.", c: "Parce que les deux états ont la même énergie.", d: "Parce que l'azote ne traverse pas le plan." },
+        why: "Le couplage A est toujours là, mais il est absorbé dans le choix de la base : dans la base des états stationnaires, H est diagonale, avec E₀ + A et E₀ \u2212 A." },
+      un: { prompt: "Une molécule a l'azote en haut. Quelles sont ses amplitudes C_I et C_II ?",
+        options: { a: "1 et 0.", b: "0 et 1.", c: "1/2 et 1/2.", d: "1/√2 et 1/√2 : elle est autant dans l'état I que dans l'état II." },
+        why: "D'après (9.13), avec C₁ = 1 et C₂ = 0, C_I = C_II = 1/√2. Une molécule dont on sait où est l'azote n'a pas d'énergie définie." },
+      energie: { prompt: "On mesure l'énergie d'une molécule qui a l'azote en haut. Que trouve-t-on ?",
+        options: { a: "Toujours E₀.", b: "E₀ + A ou E₀ \u2212 A, chacun avec la probabilité 1/2.", c: "Une valeur quelconque entre E₀ \u2212 A et E₀ + A.", d: "Toujours E₀ \u2212 A, l'état le plus bas." },
+        why: "Une mesure de l'énergie donne l'une des valeurs propres, avec la probabilité |C_I|² ou |C_II|². La moyenne est E₀, mais aucune mesure ne donne E₀." },
+      moyenne: { prompt: "Une molécule est dans un état où |C_I|² = 0,8. Que vaut son énergie moyenne ?",
+        options: { a: "E₀ + 0,8 A.", b: "E₀ \u2212 0,6 A.", c: "E₀ + 0,6 A.", d: "E₀ + A." },
+        hint: "⟨E⟩ = E_I |C_I|² + E_II |C_II|².",
+        why: "0,8 (E₀ + A) + 0,2 (E₀ \u2212 A) = E₀ + 0,6 A. Elle reste constante tant qu'aucun champ n'agit." },
+      phase: { prompt: "Deux états ont les mêmes probabilités |C_I|² = |C_II|² = 1/2 mais des phases relatives différentes. Qu'est-ce qui les distingue ?",
+        options: { a: "La position de l'azote et son oscillation : selon la phase, l'azote est en haut, en bas, ou à moitié de chaque côté.", b: "Rien : seules les probabilités comptent.", c: "Leur énergie moyenne.", d: "Le nombre de molécules." },
+        why: "L'énergie moyenne et les probabilités d'énergie sont les mêmes ; la phase relative fixe où est l'azote, et à quel moment de son oscillation." },
+      gaz: { prompt: "Dans un gaz d'ammoniac à 300\u00a0K, comment sont peuplés les états I et II ?",
+        options: { a: "Toutes les molécules sont dans l'état II, le plus bas.", b: "Toutes sont dans l'état I.", c: "Les deux tiers dans II, un tiers dans I.", d: "Presque également : 2A est environ 260 fois plus petit que k_B T." },
+        why: "La loi de Boltzmann donne un rapport e^(\u22122A/k_B T) ≈ 0,996 entre les deux populations. Pour un faisceau dans un seul état, il faut trier les molécules." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 9, §9-1 (texte original en anglais). Raie d'inversion (3, 3) : 23\u00a0870,129\u00a0MHz. Histoire : F. Hund, découverte de l'effet tunnel (1926) et molécules chirales (1927) ; C. E. Cleeton et N. H. Williams, Phys. Rev. 45, 234 (1934). Calculs propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

@@ -1,0 +1,102 @@
+/* Leçon « Les implications philosophiques » (Feynman I.38.6) : textes en français.
+   Une autre langue = locales/<langue>/lecons/implications-philosophiques-quantique.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Les implications philosophiques",
+    "crumb.jour": "Les implications philosophiques",
+    "h1": "Les implications philosophiques",
+    "lede": "La mécanique quantique dit qu'une observation dérange ce qu'elle observe, qu'on ne peut prédire que des probabilités, et qu'il est inutile de parler de la trajectoire exacte d'un électron. Que faut-il en conclure pour la physique ? Moins qu'on ne le dit souvent : la physique classique, elle non plus, ne prédisait pas grand-chose à long terme.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : les niveaux d'énergie",
+
+    "s1.sec": "Observer",
+    "s1.h2": "Une perturbation qu'on ne peut pas réduire",
+    "s1.p1": "On a toujours su qu'observer un phénomène peut le perturber : un thermomètre plongé dans un verre d'eau en change un peu la température. La nouveauté est ailleurs. Dans la leçon « Observer les électrons », la lumière qui révèle par quel trou passe l'électron détruit les franges, et aucun réglage de l'appareil ne permet d'y échapper : la perturbation a un minimum, fixé par la relation (38.3) de « Mesurer la position et la quantité de mouvement ». Ce minimum n'est pas un défaut des instruments : sans lui, la théorie se contredirait.",
+    "s1.p2": "Faut-il un observateur pour qu'un phénomène ait lieu ? Un arbre qui tombe dans une forêt déserte fait-il du bruit ? Un vrai arbre, dans une vraie forêt, laisse des traces : des feuilles secouées, peut-être une épine qui a rayé une feuille et dont on ne comprendrait pas la rayure sans le son. En ce sens, il y a eu un son. Y a-t-il eu une <em>sensation</em> de son ? C'est une question de conscience, que la physique laisse ouverte. La mécanique quantique n'a pas besoin d'un observateur conscient : elle a besoin d'une trace qui distingue les possibilités.",
+
+    "s2.sec": "Ce qu'on ne mesure pas",
+    "s2.h2": "Faut-il bannir ce qu'on ne peut pas mesurer ?",
+    "s2.p1": "Une idée répandue depuis la naissance de la mécanique quantique : une grandeur qu'on ne peut pas définir par une mesure n'a pas sa place dans une théorie. La position exacte d'un électron localisé, avec sa quantité de mouvement exacte, ne se mesure pas : la physique classique aurait eu tort d'en parler. C'est une analyse trop rapide. Qu'on ne puisse pas mesurer à la fois la position et la quantité de mouvement ne veut pas dire qu'on n'a pas le <em>droit</em> d'en parler ; seulement qu'on n'y est pas <em>obligé</em>. Quand on reprochait à la nouvelle théorie de ne pas dire par quel trou passe l'électron, Heisenberg, raconte Feynman, répondait qu'on ne peut pas poser cette question à l'expérience.",
+    "s2.p2": "Il est utile de savoir quelles idées ne se vérifient pas directement ; il n'est pas nécessaire de toutes les supprimer. La mécanique quantique elle-même contient des amplitudes et des potentiels qu'on ne mesure pas directement. Une science vaut par ses prédictions : dire ce qui arrivera dans une expérience jamais faite. Pour cela, il faut prolonger les idées là où on ne les a pas vérifiées. Les physiciens classiques supposaient que la position, qui a un sens pour une balle, en a un pour un électron : ce n'était pas une sottise, c'était la démarche normale. On ne découvre qu'on se trompe qu'en avançant des prédictions.",
+
+    "s3.sec": "Prédire",
+    "s3.h2": "Le hasard quantique, et l'autre",
+    "s3.p1": "La mécanique quantique ne peut pas dire quand un atome excité émettra son photon : elle donne une amplitude d'émission à chaque instant, donc une probabilité. Dans des circonstances préparées aussi soigneusement que possible, on ne prédit que des probabilités. On en a tiré bien des conclusions hâtives sur le libre arbitre ou sur un monde incertain.",
+    "s3.p2": "Mais la physique classique est elle aussi indéterminée, en pratique. Elle est déterministe : connaître la position et la vitesse de chaque particule d'une boîte de gaz suffirait à tout prédire. Supposons pourtant la position d'un seul atome connue à un milliardième près. Au premier choc, l'erreur sur sa direction est multipliée par un facteur <var>A</var> de l'ordre du rapport du libre parcours ℓ au rayon <var>r</var> des molécules ; au choc suivant, encore. L'erreur relative ε atteint 1, et toute prévision est perdue, après un nombre de chocs :",
+    "eq.ln": "ln",
+    "val.horizon": "Approximation : ordre de grandeur, pour des sphères dures ; <var>A</var> ≈ ℓ/<var>r</var> suppose ℓ ≫ <var>r</var>, vrai dans un gaz (rapport de quelques centaines dans l'air), faux dans un liquide. Le point qui compte est exact : le nombre de chocs croît comme le logarithme de la précision, pas comme la précision.",
+    "fig.aria": "Durée pendant laquelle on peut prédire le mouvement d'une molécule d'air, en fonction du nombre de chiffres connus de sa position",
+    "fig.legend.horizon": "durée de la prévision",
+    "fig.legend.choix": "précision choisie",
+    "fig.chiffres": "Précision initiale ε",
+    "fig.eps": "10{e}",
+    "fig.a": "Facteur d'amplification par choc, A",
+    "fig.x": "nombre de chiffres connus, log₁₀(1/ε)",
+    "fig.y": "durée de la prévision (ns)",
+    "fig.k.chocs": "Chocs avant de tout perdre",
+    "fig.f.chocs": "l'erreur est multipliée par {A} à chaque choc",
+    "fig.k.temps": "Durée de la prévision",
+    "fig.f.temps": "un choc toutes les {tau}",
+    "fig.k.dire": "Temps pour énoncer la précision",
+    "fig.f.dire": "à 3 chiffres par seconde : {r} fois plus long",
+    "fig.caption": "Le système : une molécule d'azote de l'air, à 293\u00a0K <span class=\"aux\">(20\u00a0°C)</span> et 101\u00a0kPa, dont on connaît la position avec un nombre donné de chiffres. Chaque chiffre de plus ne fait gagner que 1/log<sub>10</sub>\u00a0<var>A</var> choc, moins d'un demi-choc dans l'air. Avec trois cents chiffres, la prévision tient moins de vingt nanosecondes : des milliards de fois moins que les cent secondes qu'il faut pour énoncer ces chiffres.",
+    "s3.p3": "Pour n'importe quelle précision, si grande soit-elle, il existe une durée au-delà de laquelle on ne peut plus rien prédire, et cette durée est courte. L'eau qui tombe d'un barrage éclabousse ; une goutte vient de temps en temps sur le nez de celui qui regarde. C'est apparemment le hasard, et pourtant les lois classiques le décrivent : les plus petites irrégularités de l'eau avant la chute sont amplifiées. Il est donc injuste de saluer la mécanique quantique comme une libération d'un univers « entièrement mécanique » : l'indétermination, en pratique, était déjà là.",
+
+    "s4.sec": "Décrire le système",
+    "s4.h2": "Deux hasards chiffrés",
+    "s4.p1": "Le hasard classique vient de l'amplification d'une erreur initiale ; le hasard quantique est présent même quand l'état initial est connu aussi bien que la théorie le permet. Les deux se chiffrent.",
+    "sys.title": "Le système décrit : une molécule, un atome",
+    "sys1.body": "Dans l'air à {T} et 101\u00a0kPa, le libre parcours moyen vaut environ {l}, le rayon d'une molécule d'azote {r} : <var>A</var> ≈ {A}. Les molécules vont à {v} en moyenne, un choc toutes les {tau}. Une précision d'un milliardième est perdue en quatre chocs environ, en moins d'une nanoseconde.",
+    "sys2.body": "Un atome d'hydrogène dans l'état 2p a une durée de vie de 1,6\u00a0ns : la moitié d'un grand nombre de tels atomes a émis son photon au bout de {m}. Cette proportion se prédit très bien ; l'instant où un atome donné émettra ne se prédit pas du tout, si bien que l'atome soit préparé.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Le déterminisme mis à l'épreuve",
+    "hist.intro": "Le débat sur le déterminisme a précédé la mécanique quantique, et il s'est poursuivi après elle, jusqu'au laboratoire.",
+    "hist.events": {
+      laplace: { who: "Pierre-Simon de Laplace", what: "publie l'Essai philosophique sur les probabilités.", context: "Il y imagine une intelligence qui, connaissant à un instant toutes les forces et toutes les positions, verrait l'avenir comme le passé. Les probabilités ne mesurent, pour lui, que notre ignorance." },
+      poincare: { who: "Henri Poincaré", what: "publie Science et méthode, dont un chapitre, « Le hasard », explique qu'une cause très petite peut déterminer un effet considérable.", context: "C'est la sensibilité aux conditions initiales : la prédiction devient impossible même si les lois sont exactes, faute de connaître exactement l'état initial." },
+      born: { who: "Max Born", what: "propose que l'onde de la mécanique quantique donne la probabilité de trouver la particule.", context: "Il l'énonce dans un article sur les collisions, reçu le 25 juin par la Zeitschrift für Physik. Il reçoit le prix Nobel de physique 1954." },
+      lorenz: { who: "Edward Lorenz", what: "publie « Deterministic Nonperiodic Flow » dans le Journal of the Atmospheric Sciences.", context: "Un modèle de convection à trois équations, déterministe, amplifie les plus petites différences de conditions initiales : la prévision du temps a une limite." },
+      bell: { who: "John Bell", what: "montre que toute théorie à variables cachées locales obéit à des inégalités que la mécanique quantique viole.", context: "La question de savoir si le hasard quantique cache un déterminisme sous-jacent devient une question d'expérience." },
+      aspect: { who: "Alain Aspect et ses collègues", what: "mesurent à Orsay des corrélations entre photons intriqués qui violent les inégalités de Bell, avec des analyseurs changés pendant le vol des photons.", context: "Aspect, John Clauser et Anton Zeilinger reçoivent le prix Nobel de physique 2022 pour ces expériences sur les photons intriqués." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      meteo: { name: "Prévision d'ensemble", text: "Le Centre européen pour les prévisions météorologiques à moyen terme ne calcule pas une prévision, mais cinquante et une : une de contrôle, et cinquante dont l'état initial est légèrement perturbé. L'écart entre ces prévisions, qui grandit avec l'échéance, mesure la confiance qu'on peut leur accorder. C'est le hasard classique de cette leçon, traité par la statistique." },
+      hasard: { name: "Générateurs quantiques de nombres aléatoires", text: "Des puces tirent des nombres au hasard du caractère imprévisible des émissions de photons. Depuis 2020, un téléphone vendu en Corée du Sud en contient une, conçue par la société genevoise ID Quantique : un capteur d'image y compte les photons émis par une diode électroluminescente, dont le nombre fluctue au hasard." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      arbre: { prompt: "Un arbre tombe dans une forêt où personne n'écoute. Que peut dire la physique ?",
+        options: { a: "Qu'il n'y a pas eu de son, faute d'observateur.", b: "Qu'il y a eu un son, au sens où il laisse des traces physiques : la question de la sensation relève de la conscience.", c: "Que le son est dans un état indéterminé jusqu'à ce qu'on regarde.", d: "Que la question n'a pas de sens physique." },
+        why: "Le son secoue des feuilles, peut laisser des rayures : des traces qu'on pourrait retrouver. La sensation de son est une autre question, que la physique ne tranche pas." },
+      mesure: { prompt: "La position et la quantité de mouvement exactes d'un électron ne se mesurent pas ensemble. Faut-il en conclure que la physique classique avait tort d'en parler ?",
+        options: { a: "Oui : une théorie ne doit contenir que des grandeurs mesurables.", b: "Oui, parce que ces grandeurs n'existent pas.", c: "Non : on n'est pas obligé d'en parler, mais en parler n'est pas une faute ; la mécanique quantique elle-même utilise des amplitudes qu'on ne mesure pas directement.", d: "Non, parce qu'on finira par les mesurer avec de meilleurs instruments." },
+        why: "Une idée qu'on ne vérifie pas directement peut être utile ou non ; elle n'est pas interdite. L'erreur serait de croire qu'une théorie qui ne l'utilise pas est fausse pour cette raison, ou l'inverse." },
+      prevoir: { prompt: "Pourquoi une théorie physique doit-elle contenir des idées qui n'ont pas encore été vérifiées ?",
+        options: { a: "Parce que prédire, c'est dire ce qui arrivera dans une expérience jamais faite : il faut prolonger les idées au-delà de ce qu'on a vérifié.", b: "Parce que les expériences sont toujours fausses.", c: "Pour être plus élégante.", d: "Elle ne le doit pas : une théorie ne contient que des faits vérifiés." },
+        why: "Sans extrapolation, pas de prédiction. C'est en prolongeant les idées qu'on découvre où elles cessent de valoir." },
+      atome: { prompt: "On prépare un atome excité avec tout le soin possible. Que peut-on prédire de l'instant où il émettra un photon ?",
+        options: { a: "L'instant exact, si l'on connaît assez bien l'atome.", b: "Rien du tout.", c: "L'instant, à la durée de vie près, en mesurant l'atome sans le perturber.", d: "Seulement la probabilité qu'il ait émis avant un instant donné : sur beaucoup d'atomes, la proportion est bien prédite, pas l'instant de chacun." },
+        why: "La théorie donne une amplitude d'émission à chaque instant. Pour l'état 2p de l'hydrogène, la moitié des atomes a émis au bout de 1,1 ns environ ; lequel émettra le premier, on ne peut pas le dire." },
+      classique: { prompt: "Pourquoi peut-on dire que la physique classique est, elle aussi, indéterminée en pratique ?",
+        options: { a: "Parce que ses lois contiennent des probabilités.", b: "Parce qu'une erreur initiale, même minuscule, est amplifiée à chaque choc ou à chaque instabilité : au bout d'un temps court, on ne peut plus rien prédire.", c: "Parce que les instruments classiques sont imprécis.", d: "Parce qu'elle ignore la relation d'incertitude." },
+        why: "Les lois classiques sont déterministes, mais la prévision demande l'état initial exact. Une erreur multipliée par A à chaque choc atteint 1 après ln(1/ε)/ln A chocs." },
+      log: { prompt: "Une molécule d'air subit un choc toutes les 0,15 ns environ, chacun multipliant l'erreur par 370. On passe d'une position connue à 10⁻⁹ près à une position connue à 10⁻¹⁸ près. Que devient la durée de la prévision ?",
+        options: { a: "Elle est multipliée par un milliard.", b: "Elle ne change pas.", c: "Elle double à peu près : de 3,5 à 7 chocs, environ 1 ns.", d: "Elle devient infinie." },
+        hint: "Le nombre de chocs vaut ln(1/ε)/ln A.",
+        why: "ln(10⁹)/ln 370 ≈ 3,5 ; ln(10¹⁸)/ln 370 ≈ 7. Doubler le nombre de chiffres ne fait que doubler la durée : elle croît comme le logarithme de la précision." },
+      minimum: { prompt: "Qu'apporte de nouveau la mécanique quantique à l'idée qu'une observation perturbe ce qu'elle observe ?",
+        options: { a: "La perturbation a un minimum qu'aucun perfectionnement de l'appareil ne peut abaisser.", b: "Elle découvre que les observations perturbent les phénomènes.", c: "Elle montre que la perturbation dépend de l'observateur conscient.", d: "Rien : c'est la même idée qu'en physique classique." },
+        why: "En physique classique, on peut rendre la perturbation aussi petite qu'on veut. En mécanique quantique, voir par quel trou passe l'électron brouille forcément les franges : c'est la condition de la cohérence de la théorie." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. I, chap. 38, §38-6 (texte original en anglais). Notations SI. Laplace, Essai philosophique sur les probabilités (1814) ; Poincaré, Science et méthode (1908), chapitre « Le hasard » ; Born, Zeitschrift für Physik 37, 863 (1926) ; Lorenz, Journal of the Atmospheric Sciences 20, 130 (1963) ; Bell, Physics 1, 195 (1964) ; Aspect, Dalibard et Roger, Physical Review Letters 49, 1804 (1982). Prix Nobel : site de la Fondation Nobel. Libre parcours moyen dans l'air : Jennings, Journal of Aerosol Science 19, 159 (1988). Prévision d'ensemble : documentation du Centre européen pour les prévisions météorologiques à moyen terme. Calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

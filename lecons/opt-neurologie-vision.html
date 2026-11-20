@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La neurologie de la vision</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-optique-geometrique" data-i18n="monde.optique-geometrique"></a><span class="aux">›</span><a href="/racoon/etape?id=opt-yeux-neurologie" data-i18n="etape.opt-yeux-neurologie"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-optique" href="/racoon/atlas?piste=optique" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/opt-oeil-compose" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="box sys"><b data-i18n="s2.sys.title"></b>
+      <p data-i18n-html="s2.sys.body"></p>
+    </div>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>r</mi><mi>p</mi></msub><mo>=</mo><msub><mi>e</mi><mi>p</mi></msub><mo>−</mo><munder><mo>∑</mo><mrow><mi>j</mi><mo>≠</mo><mi>p</mi></mrow></munder><msub><mi>k</mi><mrow><mi>p</mi><mi>j</mi></mrow></msub><mspace width="0.1em"/><mo stretchy="false">(</mo><msub><mi>r</mi><mi>j</mi></msub><mo>−</mo><msup><mi>r</mi><mn>0</mn></msup><mo stretchy="false">)</mo></math></div>
+    <p class="validite" data-i18n-html="val.hr"></p>
+    <p data-i18n-html="s2.p3"></p>
+    <figure class="chart">
+      <svg class="fig" id="inhib" role="img" data-i18n-attr="aria-label:in.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="in.legend.r"></span><span class="c-label-2" data-i18n="in.legend.e"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" role="group" id="motif" data-i18n-attr="aria-label:in.motif">
+            <button type="button" data-m="marche" data-i18n="in.m.marche"></button>
+            <button type="button" data-m="rampe" data-i18n="in.m.rampe"></button>
+            <button type="button" data-m="fente" data-i18n="in.m.fente"></button>
+          </div>
+          <div class="ctl"><div class="row"><label for="kk" data-i18n="in.k"></label><output id="kkr" for="kk"></output></div>
+            <input id="kk" type="range" min="0" max="0.95" step="0.01" value="0.6"></div>
+          <div class="ctl"><div class="row"><label for="ll" data-i18n="in.l"></label><output id="llr" for="ll"></output></div>
+            <input id="ll" type="range" min="0.5" max="8" step="0.1" value="3"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" id="k1"></span><span class="v" id="v1"></span><span class="f" id="f1"></span></div>
+          <div class="stat"><span class="k" id="k2"></span><span class="v" id="v2"></span><span class="f" id="f2"></span></div>
+          <div class="stat"><span class="k" id="k3"></span><span class="v" id="v3"></span><span class="f" id="f3"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="in.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p4"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="list keyed" id="types"></div>
+    <p data-i18n-html="s3.p2"></p>
+    <p data-i18n-html="s3.p3"></p>
+    <div class="box rem"><b data-i18n="s3.rem.title"></b>
+      <p data-i18n-html="s3.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/opt-neurologie-vision.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/optique-geometrique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), O = OptiqueGeometrique, P = Plot.el;
+
+/* ---------- inhibition latérale : équations de Hartline et Ratliff sur une rangée d'ommatidies ---------- */
+(() => {
+  const svg = $("inhib"), W = 640, H = 300, N = 80, sk = $("kk"), sl = $("ll"), seg = $("motif");
+  let motif = "marche";
+  const pc = x => F.qty(F.num(100 * x, 3), "%");
+  function draw() {
+    const K = +sk.value, l = +sl.value, e = O.motifLumiere(motif, N), r = O.inhibitionLaterale(e, { K, l }).r;
+    svg.innerHTML = "";
+    const ax = Plot.axes(svg, { fmt: F, w: W, h: H, x: { domain: [0, N - 1], label: t("in.ax.x") }, y: { domain: [0, 3.2], label: t("in.ax.y") } });
+    P("path", { d: Plot.path(e.map((v, i) => [ax.x(i), ax.y(v)])), class: "stroke thin c-label-2" }, svg);
+    P("path", { d: Plot.path(r.map((v, i) => [ax.x(i), ax.y(v)])), class: "stroke bold c-tint" }, svg);
+    r.forEach((v, i) => P("circle", { cx: ax.x(i), cy: ax.y(v), r: 2, class: "fill c-tint" }, svg));
+    seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.m === motif)));
+    $("kkr").textContent = F.num(K, 2); $("llr").textContent = t("in.v.l").replace("{l}", F.num(l, 2));
+    const b = O.bordsMach(r);
+    if (motif === "fente") {
+      $("k1").textContent = t("in.k.trait"); $("v1").textContent = F.num(b.pic / b.bas, 3); $("f1").textContent = t("in.f.trait");
+      $("k2").textContent = t("in.k.cotes"); $("v2").textContent = pc(b.creusement); $("f2").textContent = t("in.f.cotes");
+    } else {
+      $("k1").textContent = t("in.k.claire"); $("v1").textContent = pc(b.depassement); $("f1").textContent = t("in.f.claire");
+      $("k2").textContent = t("in.k.sombre"); $("v2").textContent = pc(b.creusement); $("f2").textContent = t("in.f.sombre");
+    }
+    $("k3").textContent = t("in.k.fond"); $("v3").textContent = pc(b.bas / e[0]); $("f3").textContent = t("in.f.fond").replace("{u}", pc(1 / (1 + K)));
+  }
+  seg.querySelectorAll("button").forEach(btn => btn.onclick = () => { motif = btn.dataset.m; draw(); });
+  sk.oninput = sl.oninput = draw;
+  draw();
+})();
+
+/* ---------- les cinq sortes de fibres de la grenouille ---------- */
+(() => {
+  const TYPES = ["bord", "convexe", "contraste", "assombrir", "noir"], txt = textOf("gr.types", TYPES);
+  $("types").innerHTML = TYPES.map((id, i) => `<div><span class="k">${t("gr.num").replace("{n}", i + 1)}</span><span><strong>${txt[id].name}.</strong> ${txt[id].text} <span class="aux">${txt[id].data}</span></span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["mach", 1865, "idea"], ["adrian", 1926, "experiment"], ["limule", 1932, "experiment"], ["inhibition", 1956, "experiment"], ["grenouille", 1959, "experiment"], ["chat", 1959, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["evenements", "nettete"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["impulsion", "b"], ["limule", "d"], ["voisin", "a"], ["uniforme", "c"], ["bord", "b"], ["mach", "d"], ["mouche", "a"], ["couleur", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 366 });
+})();
+</script>
+</body>
+</html>

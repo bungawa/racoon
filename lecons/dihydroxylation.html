@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Syn-dihydroxylation et coupure des diols</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .meca { width: 100%; max-width: 440px; height: 230px; display: block; margin: 0 auto; }
+  .trois { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; align-items: start; }
+  .trois svg { width: 100%; height: 130px; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-organique" data-i18n="monde.chim-organique"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-alcenes-alcynes" data-i18n="etape.chim-alcenes-alcynes"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/chiralite-descripteurs" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>R</mi><mn>2</mn></msub><mi mathvariant="normal">C</mi><mo>=</mo><mi mathvariant="normal">C</mi><msub><mi>R</mi><mn>2</mn></msub><mo>+</mo><msub><mi mathvariant="normal">H</mi><mn>2</mn></msub><mi mathvariant="normal">O</mi><mo>+</mo><mtext data-i18n="eq.nmo"></mtext><mo>→</mo><msub><mi>R</mi><mn>2</mn></msub><mi mathvariant="normal">C</mi><mo>(</mo><mi mathvariant="normal">O</mi><mi mathvariant="normal">H</mi><mo>)</mo><mo>−</mo><mi mathvariant="normal">C</mi><mo>(</mo><mi mathvariant="normal">O</mi><mi mathvariant="normal">H</mi><mo>)</mo><msub><mi>R</mi><mn>2</mn></msub><mo>+</mo><mtext data-i18n="eq.nmm"></mtext></math></div>
+    <p class="validite" data-i18n-html="s1.validite"></p>
+    <figure>
+      <div class="panel"><div class="seg" role="group" id="m-osmylation-actes"></div></div>
+      <svg class="fig meca no-sigle" id="m-osmylation" role="img" data-i18n-attr="aria-label:meca.osmylation.aria"></svg>
+      <p id="m-osmylation-texte"></p>
+      <figcaption data-i18n-html="meca.caption"></figcaption>
+    </figure>
+    <div class="box def"><b data-i18n="s1.def.titre"></b>
+      <p data-i18n-html="s1.def.corps"></p>
+    </div>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="alcene" data-i18n="st.alcene"></label></div><select id="alcene"></select></div>
+        <div class="seg" role="group" id="mode"><button type="button" data-m="syn" aria-pressed="true" data-i18n="st.syn"></button><button type="button" data-m="anti" aria-pressed="false" data-i18n="st.anti"></button></div>
+      </div>
+      <div class="trois">
+        <div><svg class="fig no-sigle" id="depart" role="img" data-i18n-attr="aria-label:st.ariaA"></svg><p class="readout" id="departnom"></p></div>
+        <div><svg class="fig no-sigle" id="face1" role="img" data-i18n-attr="aria-label:st.ariaB"></svg><p class="readout" id="face1nom"></p></div>
+        <div><svg class="fig no-sigle" id="face2" role="img" data-i18n-attr="aria-label:st.ariaC"></svg><p class="readout" id="face2nom"></p></div>
+      </div>
+      <p class="readout" id="issue" aria-live="polite"></p>
+      <figcaption data-i18n-html="st.caption"></figcaption>
+    </figure>
+    <div class="box prop"><b data-i18n="s2.prop.titre"></b>
+      <p data-i18n-html="s2.prop.corps"></p>
+    </div>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>R</mi><mn>2</mn></msub><mi mathvariant="normal">C</mi><mo>(</mo><mi mathvariant="normal">O</mi><mi mathvariant="normal">H</mi><mo>)</mo><mo>−</mo><mi mathvariant="normal">C</mi><mo>(</mo><mi mathvariant="normal">O</mi><mi mathvariant="normal">H</mi><mo>)</mo><msub><mi>R</mi><mn>2</mn></msub><mo>+</mo><mi mathvariant="normal">I</mi><msubsup><mi mathvariant="normal">O</mi><mn>4</mn><mo>−</mo></msubsup><mo>→</mo><mn>2</mn><msub><mi>R</mi><mn>2</mn></msub><mi mathvariant="normal">C</mi><mo>=</mo><mi mathvariant="normal">O</mi><mo>+</mo><mi mathvariant="normal">I</mi><msubsup><mi mathvariant="normal">O</mi><mn>3</mn><mo>−</mo></msubsup><mo>+</mo><msub><mi mathvariant="normal">H</mi><mn>2</mn></msub><mi mathvariant="normal">O</mi></math></div>
+    <p class="validite" data-i18n-html="s3.validite"></p>
+    <figure>
+      <div class="panel"><div class="seg" role="group" id="m-periodate-actes"></div></div>
+      <svg class="fig meca no-sigle" id="m-periodate" role="img" data-i18n-attr="aria-label:meca.periodate.aria"></svg>
+      <p id="m-periodate-texte"></p>
+      <figcaption data-i18n-html="meca.caption"></figcaption>
+    </figure>
+    <figure>
+      <div class="seg" role="group" id="diols"><button type="button" data-d="diolButane" aria-pressed="true" data-i18n="cp.diolButane"></button><button type="button" data-d="diolPentane" aria-pressed="false" data-i18n="cp.diolPentane"></button><button type="button" data-d="diolCyclohexane" aria-pressed="false" data-i18n="cp.diolCyclohexane"></button></div>
+      <div class="trois" id="coupe"></div>
+      <figcaption data-i18n-html="cp.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/dihydroxylation.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script src="/racoon/chim-organique.js"></script>
+<script src="/racoon/actes-mecanisme.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I.fallback : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const O = ChimOrga, A = O.Alcenes, sym = s => t("chim.sym", { s }), $ = id => document.getElementById(id);
+
+/* ---------- mécanismes limites, acte par acte : flèches courbes et comptes d'électrons du module ---------- */
+function mecanisme(id, o) {
+  const vues = O.actesMecanisme(id, Object.assign({ texte: sym, echelle: 40 }, o));
+  ActesMecanisme.monter({ vues, textes: textOf("meca.actes." + id, vues.map((_, k) => "a" + k)), svg: $("m-" + id), boutons: $("m-" + id + "-actes"), texte: $("m-" + id + "-texte") });
+}
+mecanisme("osmylation", { carbones: true, doublets: [4] });
+mecanisme("periodate", { doublets: [6] });
+const peindre = (svg, m, o) => { const d = O.dessin(m, Object.assign({ texte: sym }, o)); svg.setAttribute("viewBox", d.viewBox); svg.innerHTML = d.html; };
+
+/* ---------- stéréospécificité : alcène Z ou E, addition syn ou anti ---------- */
+(() => {
+  /* [alcène, gabarit du diol, carbones de la double liaison] */
+  const CAS = { but2eneZ: ["diolButane", 1, 2], but2eneE: ["diolButane", 1, 2], pent2eneZ: ["diolPentane", 1, 2], cyclohexene: ["diolCyclohexane", 0, 1] };
+  const IDS = Object.keys(CAS), noms = textOf("st.alcenes", IDS), produits = textOf("st.produits", IDS), sel = $("alcene");
+  sel.innerHTML = IDS.map(id => `<option value="${id}">${noms[id]}</option>`).join("");
+  let mode = "syn";
+  const desc = (f, a, b) => "(" + t("st.desc", { a: f[a], b: f[b], ia: a === 0 ? 1 : 2, ib: a === 0 ? 2 : 3 }) + ")";
+  function maj() {
+    const id = sel.value, [g, a, b] = CAS[id], m = A.molecule(id), r = A.addition(m, a, b, "O", mode);
+    peindre($("depart"), m, { echelle: 40, surligne: [a, b] });
+    $("departnom").textContent = noms[id];
+    r.faces.forEach((f, k) => {
+      peindre($("face" + (k + 1)), A.cram(A.MOLECULES[g], a, b, f), { echelle: 36, surligne: [a, b] });
+      $("face" + (k + 1) + "nom").textContent = t("st.face" + (k + 1), { d: desc(f, a, b), n: produits[id] });
+    });
+    $("issue").textContent = t("st.issue." + r.issue);
+    document.querySelectorAll("#mode button").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.m === mode)));
+  }
+  sel.onchange = maj;
+  $("mode").onclick = e => { const x = e.target.closest("button"); if (!x) return; mode = x.dataset.m; maj(); };
+  maj();
+})();
+
+/* ---------- coupure des diols ---------- */
+(() => {
+  const CAS = { diolButane: [1, 2], diolPentane: [1, 2], diolCyclohexane: [0, 1] }, fam = textOf("cp.familles", ["aldehyde", "cetone", "acide"]);
+  let id = "diolButane";
+  function maj() {
+    const d = O.mol(A.MOLECULES[id]), [a, b] = CAS[id], frag = A.coupure(d, [[a, b]]);
+    const cases = [d].concat(frag);
+    $("coupe").innerHTML = cases.map((_, k) => `<div><svg class="fig no-sigle" role="img" aria-label="${k ? t("cp.ariaP") : t("cp.ariaD")}"></svg><p class="readout"></p></div>`).join("");
+    [...$("coupe").children].forEach((div, k) => {
+      const m = cases[k];
+      peindre(div.querySelector("svg"), m, { echelle: 34, surligne: k ? [] : [a, b] });
+      const f = O.ecrireFormule(O.formuleBrute(m));
+      div.querySelector("p").textContent = k ? t("cp.produit", { f, g: O.groupes(m).map(x => fam[x]).join(", ") }) : t("cp.depart", { f });
+    });
+    document.querySelectorAll("#diols button").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.d === id)));
+  }
+  $("diols").onclick = e => { const x = e.target.closest("button"); if (!x) return; id = x.dataset.d; maj(); };
+  maj();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["malaprade", 1928, "experiment"], ["criegee", 1931, "experiment"], ["upjohn", 1976, "experiment"], ["sharpless", 1988, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["histologie", "osmium"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["face", "b"], ["meso", "a"], ["trans", "d"], ["anti", "c"], ["catalytique", "b"], ["coupure", "a"], ["equivalent", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

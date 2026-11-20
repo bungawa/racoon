@@ -1,0 +1,101 @@
+/* Leçon « Comprendre le ferromagnétisme » (Feynman II.37.1) : textes en français.
+   Une autre langue = locales/<langue>/lecons/comprendre-le-ferromagnetisme.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Comprendre le ferromagnétisme",
+    "crumb.jour": "Comprendre le ferromagnétisme",
+    "h1": "Comprendre le ferromagnétisme",
+    "lede": "Le champ moyen de Weiss rend compte de l'aimantation spontanée, à condition d'accepter un couplage des milliers de fois trop fort pour être magnétique. D'où vient-il ? Du spin de l'électron, du principe d'exclusion et de la répulsion électrostatique. Et que vaut la courbe tanh quand on la compare à un vrai métal ?",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : aimantation spontanée",
+    "eq.sat": "sat",
+    "eq.tanh": "tanh",
+    "eq.coth": "coth",
+
+    "s1.sec": "1 · Décrire le système",
+    "s1.h2": "Ce qui porte l'aimantation",
+    "s1.p1": "L'aimantation <b>M</b> est un moment magnétique par unité de volume, moyenné sur une région qui contient beaucoup d'atomes. Les courants d'aimantation de « Courants d'aimantation » sont une description de cette moyenne, pas des courants qui circuleraient vraiment d'atome en atome. La question est donc : quels moments microscopiques s'additionnent dans le fer ?",
+    "s1.p2": "Ce sont surtout les spins des électrons. Un électron a un spin ½ et un moment d'un magnéton de Bohr, μ<sub>B</sub>\u00a0=\u00a0<var>e</var>ħ/(2<var>m</var><sub>e</sub>) ; sa charge étant négative, ce moment est opposé à son moment cinétique. L'expérience gyromagnétique décrite dans « Courants d'aimantation » le confirme : le rapport du moment cinétique au moment magnétique d'un barreau de fer est celui de spins, pas celui d'orbites. Reste à savoir ce qui aligne ces spins.",
+    "sys.title": "Décrire le système avant d'appliquer la loi",
+    "sys1.body": "Dans le nickel, deux atomes voisins sont à {a}, chacun portant en moyenne 0,6 magnéton de Bohr. L'énergie d'interaction magnétique de deux tels dipôles vaut environ {dip}. L'énergie thermique au point de Curie, <var>k</var><var>T</var><sub>c</sub> avec <var>T</var><sub>c</sub>\u00a0=\u00a0{Tc}, vaut {kT} : {r1} fois plus. L'interaction magnétique ne peut donc pas maintenir l'ordre jusqu'au point de Curie. En revanche, l'énergie électrostatique de deux électrons à la même distance vaut {cou}, et <var>k</var><var>T</var><sub>c</sub> n'en représente que {r2}\u00a0% : une petite part de l'électrostatique suffit.",
+
+    "s2.sec": "2 · L'origine du couplage",
+    "s2.h2": "Exclusion de Pauli et répulsion électrostatique",
+    "s2.p1": "Deux électrons de même spin ne peuvent pas occuper le même état : le principe d'exclusion les tient à l'écart l'un de l'autre. Deux électrons de spins opposés n'ont pas cette contrainte et peuvent se rapprocher. Or deux électrons proches se repoussent. L'énergie électrostatique d'une paire dépend donc de l'orientation relative des spins, sans qu'aucune force magnétique n'intervienne. C'est l'interaction d'échange.",
+    "s2.p2": "Le plus souvent, elle favorise les spins opposés : les électrons appariés d'une liaison chimique ont des spins contraires, et c'est pourquoi la plupart des corps ne sont pas ferromagnétiques. Dans le fer, le cobalt et le nickel, l'équilibre penche de l'autre côté et les spins voisins préfèrent être parallèles. Le mécanisme passe probablement par les électrons de conduction, qui transmettent la préférence d'un atome au suivant. Le signe dépend de détails fins des orbitales : du temps de Feynman, un calcul direct pour le fer donnait même le mauvais signe.",
+    "s2.p3": "Faute de calcul, on garde la description de champ moyen et l'on traite λ comme un paramètre. Un moment μ parallèle (indice +) ou opposé (indice \u2212) au champ appliqué <var>H</var> et au champ effectif λμ<sub>0</sub><var>M</var> des autres a l'une des deux énergies :",
+    "val.37.1": "Approximation : champ moyen. Chaque spin ne ressent que l'aimantation moyenne <var>M</var>, pas l'orientation réelle de ses voisins. Le terme λμ<sub>0</sub><var>M</var> a la forme d'un champ, mais il est d'origine électrostatique ; pour le nickel, avec un magnéton de Bohr par atome, il faut λ de l'ordre de 900, valeur tirée du point de Curie et non calculée.",
+    "s2.p4": "Avec ces énergies, la statistique de Boltzmann de deux niveaux redonne exactement le calcul de « Aimantation spontanée » : (36.39) définit <var>T</var><sub>c</sub> et (36.40) donne l'aimantation. Le contenu nouveau n'est pas l'équation, c'est le sens de λ : non plus un champ magnétique mystérieux, mais l'effet du principe d'exclusion sur la répulsion entre électrons.",
+
+    "s3.sec": "3 · Quantique ou classique",
+    "s3.h2": "Deux orientations, ou toutes",
+    "s3.p1": "Sans champ appliqué, l'aimantation spontanée réduite <var>m</var>\u00a0=\u00a0<var>M</var>/<var>M</var><sub>sat</sub> vérifie :",
+    "val.37.4": "Approximation : champ moyen, moments de spin ½ à deux orientations, <var>H</var>\u00a0=\u00a00, <var>M</var><sub>sat</sub>\u00a0=\u00a0<var>N</var>μ. <var>T</var><sub>c</sub> est le paramètre ajusté sur la mesure. La forme près de <var>T</var><sub>c</sub> et à basse température est fausse pour un métal réel (voir plus bas).",
+    "s3.p2": "Un moment classique peut pointer dans toutes les directions. La moyenne de sa projection suit alors la fonction de Langevin, celle de « Paramagnétisme des matériaux massifs ». À constante de Curie égale, donc à même <var>T</var><sub>c</sub>, l'équation devient :",
+    "val.37.4a": "Approximation : celle de (37.4), avec un moment classique libre de toutes les orientations au lieu de deux. Le facteur 3 vient de <var>L</var>(<var>x</var>)\u00a0≈\u00a0<var>x</var>/3 aux petits <var>x</var> : il garde la même pente à l'origine, donc le même <var>T</var><sub>c</sub>.",
+    "fig.aria": "Aimantation spontanée réduite en fonction de T/Tc pour un spin un demi, un spin un et un moment classique.",
+    "fig.legend.demi": "spin ½, (37.4)",
+    "fig.legend.un": "spin 1",
+    "fig.legend.classique": "moment classique, (37.4a)",
+    "fig.t": "Température réduite <var>T</var>/<var>T</var><sub>c</sub>",
+    "fig.ax.x": "T/Tc",
+    "fig.ax.y": "M/Msat",
+    "fig.k.demi": "Spin ½",
+    "fig.f.demi": "<var>M</var>/<var>M</var><sub>sat</sub> ; pour le nickel, cela correspond à {T}",
+    "fig.k.classique": "Moment classique",
+    "fig.f.classique": "plus bas de {e}\u00a0% : les orientations intermédiaires sont des états de plus",
+    "fig.k.exposant": "Exposant local",
+    "fig.f.exposant": "d\u00a0ln\u00a0<var>m</var>/d\u00a0ln(1\u00a0\u2212\u00a0<var>T</var>/<var>T</var><sub>c</sub>) du modèle à cette température ; il ne devient un exposant qu'au voisinage de <var>T</var><sub>c</sub>, où il tend vers 0,5 ; le nickel mesuré y donne environ 0,34",
+    "fig.caption": "Les trois courbes partent de la saturation et tombent à zéro au même <var>T</var><sub>c</sub>. Le moment classique se désaligne plus tôt : à basse température, 1\u00a0\u2212\u00a0<var>m</var> y croît comme <var>T</var>/(3<var>T</var><sub>c</sub>), alors que pour un spin ½ il reste exponentiellement petit. Les mesures sur le nickel et le cobalt suivent de près la courbe du spin ½, pas la courbe classique.",
+    "s3.p3": "L'accord n'est que d'ensemble. À basse température, l'aimantation d'un métal baisse comme <var>T</var><sup>3/2</sup> : des ondes de spin, oscillations collectives de l'orientation, s'excitent bien plus facilement que le retournement d'un spin isolé que suppose le champ moyen. Près de <var>T</var><sub>c</sub>, l'aimantation du nickel tombe comme (1\u00a0\u2212\u00a0<var>T</var>/<var>T</var><sub>c</sub>)<sup>0,34</sup> environ, plus brutalement que la racine carrée du modèle : les fluctuations des voisins, que le champ moyen efface, y comptent. Le comportement exact au point de Curie est un problème de physique statistique, pas de magnétisme.",
+
+    "s4.sec": "4 · Ce que l'on sait, ce que l'on ne sait pas",
+    "s4.h2": "Une théorie de la forme, pas du chiffre",
+    "s4.p1": "Le champ moyen explique l'existence d'un point de Curie, l'aimantation spontanée, la loi de Curie-Weiss au-dessus et l'ordre de grandeur des courbes. Il ne dit ni pourquoi λ a ce signe dans quelques métaux seulement, ni la forme exacte près de <var>T</var><sub>c</sub>.",
+    "s4.p2": "Le point de Curie se voit sans instrument : un fil de nickel attiré par un aimant cesse de l'être quand une flamme le chauffe au-delà de 627\u00a0K <span class=\"aux\">(354\u00a0°C)</span> environ, puis l'est de nouveau en refroidissant. L'échange n'a pas disparu ; l'agitation thermique l'emporte sur lui, et l'ordre à grande distance se défait.",
+    "s4.p3": "La conséquence pratique de ce chapitre tient en une phrase : l'énergie d'échange, de l'ordre de <var>k</var><var>T</var><sub>c</sub> par atome, fixe la température d'usage d'un matériau magnétique. Les leçons « Propriétés thermodynamiques d'un ferromagnétique » et « Cycle d'hystérésis » en tirent la chaleur massique et les domaines.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "De Weiss à l'échange",
+    "hist.intro": "Le champ moléculaire de Weiss attendait une explication. Elle est venue de la mécanique quantique, en trois ans, et avec elle les premières limites du champ moyen.",
+    "hist.events": {
+      ising: { who: "Ernst Ising", what: "publie dans la Zeitschrift für Physik le résumé de sa thèse : une chaîne de moments à deux orientations, couplés à leurs voisins, n'a aucune aimantation spontanée à température finie.", context: "Il en conjecture, à tort, qu'il en va de même en trois dimensions. Le modèle porte son nom et sert encore de banc d'essai." },
+      heisenberg: { who: "Werner Heisenberg", what: "publie « Zur Theorie des Ferromagnetismus » : les forces moléculaires de Weiss viennent de l'échange quantique, conséquence du principe de Pauli.", context: "Pour la première fois, l'alignement est attribué à l'électrostatique et à la statistique des électrons, non à un champ magnétique." },
+      bloch: { who: "Felix Bloch", what: "montre dans la Zeitschrift für Physik qu'aux basses températures l'aimantation baisse comme T à la puissance 3/2, par des ondes de spin.", context: "C'est le premier écart chiffré au champ moyen, qui prévoit une baisse exponentielle." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      thermobalance: { name: "Étalonner une thermobalance au point de Curie", text: "Une thermobalance pèse un échantillon pendant qu'on le chauffe. Pour vérifier son échelle de température, on y place un étalon ferromagnétique près d'un aimant : l'attraction magnétique s'ajoute au poids apparent. Au point de Curie, elle disparaît et la masse indiquée saute. La norme européenne EN ISO 11358-1, sur la thermogravimétrie des polymères, prescrit un étalonnage en température et donne en annexe des substances d'étalonnage par leur point de Curie. C'est l'expérience du fil de nickel, devenue un étalon." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      porteur: { prompt: "Quels moments microscopiques font l'essentiel de l'aimantation du fer ?",
+        options: { a: "Les moments orbitaux des électrons, comme le suggèrent les courants d'Ampère.", b: "Les moments des noyaux de fer.", c: "Les spins des électrons, dont le moment vaut environ un magnéton de Bohr chacun.", d: "Les courants de conduction qui circulent dans le métal." },
+        why: "L'expérience gyromagnétique donne le rapport du spin, pas celui d'une orbite ; les moments nucléaires sont environ deux mille fois plus petits." },
+      dipole: { prompt: "L'énergie d'interaction magnétique de deux atomes voisins de nickel vaut environ un micro-électronvolt, et kTc environ 0,05 eV. Qu'en conclure ?",
+        options: { a: "Que l'interaction magnétique ne peut pas expliquer un ordre qui tient jusqu'à plus de 600 K.", b: "Que le nickel n'a pas de point de Curie.", c: "Que kTc est une énergie négligeable.", d: "Qu'il suffit de compter tous les voisins pour retrouver l'ordre de grandeur." },
+        hint: "Comparer les deux énergies : leur rapport est de quelques dizaines de milliers.",
+        why: "Même en sommant sur une douzaine de voisins, on reste des milliers de fois en dessous de kTc. Le couplage est électrostatique : l'échange." },
+      pauli: { prompt: "Pourquoi l'énergie électrostatique de deux électrons dépend-elle de l'orientation relative de leurs spins ?",
+        options: { a: "Parce que le spin porte une charge électrique supplémentaire.", b: "Parce que le champ magnétique de l'un agit sur la charge de l'autre.", c: "Parce que deux spins parallèles s'attirent comme deux aimants.", d: "Parce que le principe d'exclusion tient à distance deux électrons de même spin, ce qui change leur répulsion moyenne." },
+        why: "Deux électrons de spins parallèles ne peuvent pas être au même endroit dans le même état : ils restent écartés et se repoussent moins. Aucune force magnétique n'intervient." },
+      signe: { prompt: "Pourquoi la plupart des corps ne sont-ils pas ferromagnétiques ?",
+        options: { a: "Parce que leurs atomes n'ont pas d'électrons.", b: "Parce que l'échange y favorise le plus souvent des spins opposés, comme dans une liaison chimique.", c: "Parce que leur point de Curie est toujours supérieur à leur température de fusion.", d: "Parce que le principe d'exclusion ne s'applique qu'aux métaux." },
+        why: "Le signe de l'échange dépend des orbitales. Les paires d'électrons d'une liaison ont des spins contraires ; le fer, le cobalt et le nickel sont des exceptions." },
+      classique: { prompt: "À même température de Curie, comment se compare l'aimantation spontanée d'un moment classique à celle d'un spin ½ ?",
+        options: { a: "Elle est plus grande : un moment classique s'aligne mieux.", b: "Elle est identique : seule compte la constante de Curie.", c: "Elle est plus petite : les orientations intermédiaires offrent plus d'états désordonnés.", d: "Elle est nulle : un moment classique ne s'ordonne jamais." },
+        why: "La fonction de Langevin croît moins vite que tanh vers la saturation. Les mesures sur le nickel suivent la courbe du spin ½." },
+      basse: { prompt: "À basse température, l'aimantation d'un métal ferromagnétique baisse comme T à la puissance 3/2. Que prévoit le champ moyen à spin ½ ?",
+        options: { a: "Une baisse exponentiellement petite, car retourner un spin coûte une énergie finie.", b: "La même loi en puissance 3/2.", c: "Une baisse linéaire en T.", d: "Aucune baisse avant le point de Curie." },
+        why: "Dans le champ moyen, 1\u00a0\u2212\u00a0m ≈ 2\u00a0exp(\u22122Tc/T). Les ondes de spin, collectives, coûtent moins qu'un retournement isolé et dominent à basse température." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol.\u00a0II, chap.\u00a037, §37-1 (texte original en anglais). Notations SI : μ<sub>0</sub> à la place de 1/(ε<sub>0</sub><var>c</var>²). Moment par atome du nickel, 0,606 μ<sub>B</sub> à 0\u00a0K : valeur de Kittel citée par l'université de Kiel (tf.uni-kiel.de, exercice 4.3-2). Exposant 0,34 du nickel : arXiv:1409.7397, « Quantitative simulation of temperature dependent magnetization dynamics and equilibrium properties of elemental ferromagnets ». Ising : arXiv:2203.13849. Heisenberg : <i>Z. Phys.</i> vol.\u00a049, p.\u00a0619-636, 1928. Bloch : <i>Z. Phys.</i> vol.\u00a061, p.\u00a0206-219, 1930. EN ISO 11358-1:2022 : sommaire de la norme (article 7.2 et annexe A), din.de ; principe de la mesure : tainstruments.com, note sur l'étalonnage en température des thermobalances. Calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

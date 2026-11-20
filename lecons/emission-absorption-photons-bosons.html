@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Émission et absorption de photons</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-quantique-amplitudes" data-i18n="monde.quantique-amplitudes"></a><span class="aux">›</span><a href="/racoon/etape?id=bosons-et-fermions" data-i18n="etape.bosons-et-fermions"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-quant" href="/racoon/atlas?piste=quant" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/etats-n-bosons" data-i18n="tag.prereq"></a>
+      <a class="chip plain" href="/racoon/lecons/lois-du-rayonnement-d-einstein" data-i18n="tag.prereq2"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mo>⟨</mo><mi>χ</mi><mo>|</mo><mi>φ</mi><mo>⟩</mo><mo>=</mo><msup><mrow><mo>⟨</mo><mi>φ</mi><mo>|</mo><mi>χ</mi><mo>⟩</mo></mrow><mo>*</mo></msup></math><span class="n">(4.24)</span></div>
+    <p class="validite" data-i18n-html="val.4.24"></p>
+    <div class="eq"><math display="block"><mo>⟨</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>|</mo><mi>n</mi><mo>⟩</mo><mo>=</mo><msqrt><mi>n</mi><mo>+</mo><mn>1</mn></msqrt><mspace width="0.1em"/><mi>a</mi></math><span class="n">(4.25)</span></div>
+    <p class="validite" data-i18n-html="val.4.25"></p>
+    <div class="eq"><math display="block"><mo>⟨</mo><mi>n</mi><mo>|</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>⟩</mo><mo>=</mo><msqrt><mi>n</mi><mo>+</mo><mn>1</mn></msqrt><mspace width="0.1em"/><msup><mi>a</mi><mo>*</mo></msup></math><span class="n">(4.26)</span></div>
+    <p class="validite" data-i18n-html="val.4.26"></p>
+    <div class="eq"><math display="block"><mo>⟨</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>|</mo><mi>n</mi><mo>⟩</mo><mo>=</mo><msqrt><mi>n</mi></msqrt><mspace width="0.1em"/><msup><mi>a</mi><mo>*</mo></msup></math><span class="n">(4.27)</span></div>
+    <p class="validite" data-i18n-html="val.4.27"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>P</mi><mtext data-i18n="eq.emission"></mtext></msub><mo>=</mo><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo><msup><mrow><mo>|</mo><mi>a</mi><mo>|</mo></mrow><mn>2</mn></msup></math><span class="n">(4.28)</span></div>
+    <p class="validite" data-i18n-html="val.4.28"></p>
+    <div class="eq"><math display="block"><msub><mi>P</mi><mtext data-i18n="eq.absorption"></mtext></msub><mo>=</mo><mi>n</mi><msup><mrow><mo>|</mo><mi>a</mi><mo>|</mo></mrow><mn>2</mn></msup></math><span class="n">(4.29)</span></div>
+    <p class="validite" data-i18n-html="val.4.29"></p>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>p</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mrow><mo>(</mo><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup><mo>)</mo></mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>n</mi><mi>x</mi></mrow></msup><mo>,</mo><mspace width="1em"/><mi>x</mi><mo>=</mo><mfrac><mrow><mi>ħ</mi><mi>ω</mi></mrow><mrow><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow></mfrac></math><span class="n">(4.29a)</span></div>
+    <p class="validite" data-i18n-html="val.4.29a"></p>
+    <figure class="chart">
+      <svg class="fig" id="histo" viewBox="0 0 640 300" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.sim"></span><span class="c-label" data-i18n="fig.legend.loi"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" role="group" id="poste">
+            <button type="button" data-p="visible" data-i18n="fig.p.visible"></button>
+            <button type="button" data-p="ir" data-i18n="fig.p.ir"></button>
+            <button type="button" data-p="mm" data-i18n="fig.p.mm"></button>
+          </div>
+          <div class="ctl"><div class="row"><label for="sx" data-i18n-html="fig.x.label"></label><output id="sxr" for="sx"></output></div>
+            <input id="sx" type="range" min="-1.7" max="0.7" step="0.01" value="0"></div>
+          <p><button type="button" class="btn tinted" id="relancer" data-i18n="fig.relancer"></button></p>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.moyenne"></span><span class="v" id="vm"></span><span class="f" id="fm"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.induites"></span><span class="v" id="vi"></span><span class="f" id="fi"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.bilan"></span><span class="v" id="vb"></span><span class="f" id="fb"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+      <p id="sys2"></p>
+      <p id="sys3"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/emission-absorption-photons-bosons.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/quantique-amplitudes.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const Q = QuantAmp, { h, c, k_B } = Constantes;
+const xDe = (lambda, T) => h * c / (lambda * k_B * T);               // ħω/(k_B T) for a wavelength and a temperature
+const nb = v => v < 1e-3 || v >= 1e4 ? F.sci(v, 2) : F.num(v, 3);
+
+/* ---------- one photon state in equilibrium with atoms: jumps n → n + 1 (rate e^(−x)(n + 1)) and n → n − 1 (rate n) ---------- */
+(() => {
+  const svg = $("histo"), sx = $("sx"), seg = $("poste"), alea = Q.aleaGraine(444), SAUTS = 200000;
+  const POSTES = { visible: [500e-9, 5772], ir: [50e-6, 300], mm: [1e-3, 300] };
+  let poste = null;
+  function draw() {
+    const x = 10 ** +sx.value, s = Q.avanceMode(Q.modeThermique(x), SAUTS, alea), moy = Q.occupationPhotons(x);
+    const nmax = Math.min(80, Math.max(6, Math.ceil(4 * moy) + 3));
+    const top = Math.max(Q.loiPhotonsThermique(x, 0), (s.temps[0] || 0) / s.duree) * 1.1;
+    svg.innerHTML = "";
+    const o = Plot.axes(svg, { fmt: F, w: 640, h: 300, pad: { b: 44, l: 56 },
+      x: { domain: [-0.5, nmax + 0.5], label: t("fig.x"), ticks: Math.min(nmax + 1, 10) }, y: { domain: [0, top], label: t("fig.y") } });
+    const w = Math.min(16, (o.x(1) - o.x(0)) * 0.7);
+    for (let n = 0; n <= nmax; n++) {
+      const f = (s.temps[n] || 0) / s.duree, p = Q.loiPhotonsThermique(x, n);
+      Plot.el("rect", { x: o.x(n) - w / 2, y: o.y(f), width: w, height: o.y(0) - o.y(f), class: "fill c-tint" }, o.g);
+      Plot.el("circle", { cx: o.x(n), cy: o.y(p), r: 3, class: "fill c-label" }, o.g);
+    }
+    $("sxr").textContent = F.num(x, 3);
+    $("vm").textContent = nb(s.moyenne);
+    $("fm").textContent = t("fig.f.moyenne", { n: nb(moy) });
+    $("vi").textContent = s.spontanees ? nb(s.induites / s.spontanees) : "—";
+    $("fi").textContent = t("fig.f.induites", { s: F.num(s.spontanees, 6), i: F.num(s.induites, 6) });
+    $("vb").textContent = F.fix((s.spontanees + s.induites) / Math.max(1, s.absorptions), 3);
+    $("fb").textContent = t("fig.f.bilan", { a: F.num(s.absorptions, 6) });
+    seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.p === poste)));
+  }
+  seg.querySelectorAll("button").forEach(b => b.onclick = () => { poste = b.dataset.p; sx.value = Math.log10(xDe(...POSTES[poste])).toFixed(2); draw(); });
+  sx.oninput = () => { poste = null; draw(); };
+  $("relancer").onclick = draw;
+  draw();
+})();
+
+/* ---------- the system described: photons per state from the Sun, a radio receiver, a laser ---------- */
+(() => {
+  const xs = xDe(500e-9, 5772), xr = h * 100e6 / (k_B * 300);
+  $("sys1").innerHTML = t("sys1.body", { x: F.num(xs, 3), n: nb(Q.occupationPhotons(xs)), t: F.kelvin(5772) });
+  $("sys2").innerHTML = t("sys2.body", { x: F.sci(xr, 2), n: nb(Q.occupationPhotons(xr)), t: F.kelvin(300) });
+  const lambda = 633e-9, Psortie = 1e-3, T = 0.01, L = 0.3, Pint = Psortie / T, photon = h * c / lambda;
+  const N = Pint * 2 * L / c / photon;
+  $("sys3").innerHTML = t("sys3.body", { pi: F.si(Pint, "W"), e: F.si(photon, "J"), n: F.sci(N, 1) });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["einstein", 1917, "idea"], ["dirac", 1927, "idea"], ["maiman", 1960, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["edfa"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["emettre", "c"], ["vide", "a"], ["racine", "b"], ["induite", "d"], ["soleil", "a"], ["equilibre", "c"], ["einstein", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 444 });
+})();
+</script>
+</body>
+</html>

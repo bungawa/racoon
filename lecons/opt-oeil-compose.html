@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>L’œil composé des insectes</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-optique-geometrique" data-i18n="monde.optique-geometrique"></a><span class="aux">›</span><a href="/racoon/etape?id=opt-yeux-neurologie" data-i18n="etape.opt-yeux-neurologie"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-optique" href="/racoon/atlas?piste=optique" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/opt-pouvoir-separateur" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="box sys"><b data-i18n="s2.sys.title"></b>
+      <p data-i18n-html="s2.sys.body"></p>
+    </div>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mi mathvariant="normal">Δ</mi><msub><mi>θ</mi><mi>g</mi></msub><mo>=</mo><mfrac><mi>δ</mi><mi>r</mi></mfrac></math><span class="n">(36.1)</span></div>
+    <p class="validite" data-i18n-html="val.36.1"></p>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="eq"><math display="block"><mi mathvariant="normal">Δ</mi><msub><mi>θ</mi><mi>d</mi></msub><mo>=</mo><mfrac><mi>λ</mi><mi>δ</mi></mfrac></math><span class="n">(36.2)</span></div>
+    <p class="validite" data-i18n-html="val.36.2"></p>
+    <p data-i18n-html="s2.p4"></p>
+    <div class="eq"><math display="block"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mi>δ</mi></mrow></mfrac><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><msub><mi>θ</mi><mi>g</mi></msub><mo>+</mo><mi mathvariant="normal">Δ</mi><msub><mi>θ</mi><mi>d</mi></msub><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mi>r</mi></mfrac><mo>−</mo><mfrac><mi>λ</mi><msup><mi>δ</mi><mn>2</mn></msup></mfrac><mo>=</mo><mn>0</mn></math><span class="n">(36.3)</span></div>
+    <p class="validite" data-i18n-html="val.36.3"></p>
+    <div class="eq"><math display="block"><mi>δ</mi><mo>=</mo><msqrt><mi>λ</mi><mi>r</mi></msqrt></math><span class="n">(36.4)</span></div>
+    <p class="validite" data-i18n-html="val.36.4"></p>
+    <p data-i18n-html="s2.p5"></p>
+    <div class="eq"><math display="block"><mi mathvariant="normal">Δ</mi><msub><mi>θ</mi><mi data-i18n="eq.min"></mi></msub><mo>=</mo><mn>2</mn><msqrt><mfrac><mi>λ</mi><mi>r</mi></mfrac></msqrt></math><span class="n">(36.4a)</span></div>
+    <p class="validite" data-i18n-html="val.36.4a"></p>
+    <figure class="chart">
+      <svg class="fig" id="facette" role="img" data-i18n-attr="aria-label:fc.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fc.legend.total"></span><span class="c-label-2" data-i18n="fc.legend.parts"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="dd" data-i18n="fc.d"></label><output id="ddr" for="dd"></output></div>
+            <input id="dd" type="range" min="0.6" max="2.2" step="0.01" value="1.4"></div>
+          <div class="ctl"><div class="row"><label for="rr" data-i18n="fc.r"></label><output id="rrr" for="rr"></output></div>
+            <input id="rr" type="range" min="-0.523" max="1.297" step="0.01" value="0.477"></div>
+          <div class="ctl"><div class="row"><label for="ll" data-i18n="fc.l"></label><output id="llr" for="ll"></output></div>
+            <input id="ll" type="range" min="300" max="600" step="5" value="400"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="fc.k.flou"></span><span class="v" id="vf"></span><span class="f" id="ff"></span></div>
+          <div class="stat"><span class="k" data-i18n="fc.k.opt"></span><span class="v" id="vo"></span><span class="f" id="fo"></span></div>
+          <div class="stat"><span class="k" data-i18n="fc.k.min"></span><span class="v" id="vm"></span><span class="f" id="fm"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fc.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p6"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="box rem"><b data-i18n="s3.rem.title"></b>
+      <p data-i18n-html="s3.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/opt-oeil-compose.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/optique-geometrique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), O = OptiqueGeometrique, P = Plot.el, DEG = Math.PI / 180, MIN = DEG / 60;
+
+/* ---------- la facette : flou géométrique (36.1) contre diffraction (36.2) ---------- */
+(() => {
+  const svg = $("facette"), W = 640, H = 320, sd = $("dd"), sr = $("rr"), sl = $("ll");
+  const Ds = Array.from({ length: 201 }, (_, i) => Math.pow(10, 0.5 + i * 0.01) * 1e-6);    // 3,2 à 320 µm
+  const deg = v => v / DEG;
+  function draw() {
+    const delta = Math.pow(10, +sd.value) * 1e-6, r = Math.pow(10, +sr.value) * 1e-3, lambda = +sl.value * 1e-9, o = { r, lambda };
+    svg.innerHTML = "";
+    const ax = Plot.axes(svg, { fmt: F, w: W, h: H, x: { scale: "log", domain: [Ds[0] * 1e6, Ds[Ds.length - 1] * 1e6], label: t("fc.ax.x"), fmt: v => F.num(v, 3) },
+      y: { scale: "log", domain: [0.1, 30], label: t("fc.ax.y"), fmt: v => F.num(v, 3) } });
+    const clipY = v => ax.y(Math.min(30, Math.max(0.1, v)));
+    /* les facettes mesurées de l'ouvrière, 20 à 25 µm */
+    const [f0, f1] = O.ABEILLE.facette.map(v => v * 1e6);
+    P("rect", { x: ax.x(f0), y: ax.y(30), width: ax.x(f1) - ax.x(f0), height: ax.y(0.1) - ax.y(30), class: "area" }, svg);
+    ["geo", "diff"].forEach(k => P("path", { d: Plot.path(Ds.map(d => [ax.x(d * 1e6), clipY(deg(O.flouCompose(d, o)[k]))])), class: "stroke thin c-label-2" }, svg));
+    P("path", { d: Plot.path(Ds.map(d => [ax.x(d * 1e6), clipY(deg(O.flouCompose(d, o).total))])), class: "stroke bold c-tint" }, svg);
+    P("text", { x: ax.x(280), y: clipY(0.35 * deg(280e-6 / r)), class: "tick", "text-anchor": "end" }, svg).textContent = t("fc.lbl.geo");
+    P("text", { x: ax.x(4), y: clipY(0.35 * deg(lambda / 4e-6)), class: "tick", "text-anchor": "start" }, svg).textContent = t("fc.lbl.diff");
+    const opt = O.optimumCompose(o), f = O.flouCompose(delta, o);
+    P("line", { x1: ax.x(opt.delta * 1e6), x2: ax.x(opt.delta * 1e6), y1: ax.y(30), y2: ax.y(0.1), class: "stroke thin dash c-tint" }, svg);
+    P("circle", { cx: ax.x(delta * 1e6), cy: clipY(deg(f.total)), r: 5, class: "fill c-tint" }, svg);
+    $("ddr").textContent = F.si(delta, "m"); $("rrr").textContent = F.si(r, "m"); $("llr").textContent = F.si(lambda, "m");
+    $("vf").textContent = F.num(deg(f.total), 2) + "°";
+    $("ff").textContent = t("fc.f.flou").replace("{x}", F.num(f.total / MIN, 2));
+    $("vo").textContent = F.si(opt.delta, "m");
+    $("fo").textContent = t("fc.f.opt").replace("{g}", F.num(deg(opt.geo), 2) + "°");
+    $("vm").textContent = F.num(deg(opt.angle), 2) + "°";
+    $("fm").textContent = t("fc.f.min").replace("{x}", F.num(opt.angle / MIN, 2));
+  }
+  sd.oninput = sr.oninput = sl.oninput = draw;
+  draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["exner", 1891, "idea"], ["frisch", 1914, "experiment"], ["kuhn", 1924, "experiment"], ["polar", 1949, "experiment"], ["barlow", 1952, "idea"], ["song", 2013, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["camera", "uv"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["blanc", "b"], ["rouge", "d"], ["compromis", "a"], ["optimum", "c"], ["facteur", "b"], ["barlow", "d"], ["humain", "a"], ["lentille", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 364 });
+})();
+</script>
+</body>
+</html>

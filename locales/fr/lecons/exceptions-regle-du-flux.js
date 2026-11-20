@@ -1,0 +1,102 @@
+/* Leçon « Exceptions à la règle du flux » (Feynman II.17.2) : textes en français.
+   Une autre langue = locales/<langue>/lecons/exceptions-regle-du-flux.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Exceptions à la règle du flux",
+    "crumb.jour": "Exceptions à la règle du flux",
+    "h1": "Exceptions à la règle du flux",
+    "lede": "La règle du flux n'est qu'un résumé : elle donne la bonne réponse quand le circuit est un fil dont la matière suit le contour. Qu'un contact glisse ou que le conducteur soit étendu, elle peut se tromper du tout au tout. Un disque qui tourne donne une force électromotrice à flux constant ; deux plaques qui basculent n'en donnent presque aucune, alors que le flux change beaucoup.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : la physique de l'induction",
+    "eq.vraie": "vraie",
+    "eq.cos": "cos",
+
+    "s1.sec": "Ce que suppose la règle",
+    "s1.h2": "Un contour fait de la même matière",
+    "s1.p1": "Les deux lois de « La physique de l'induction », la force <var>q</var>(<var>E</var> + <var>v</var> ∧ <var>B</var>) sur une charge et (17.1), valent toujours. La règle du flux en découle à une condition : le contour qui sert à calculer le flux doit être fait, à chaque instant, des mêmes morceaux de matière, qui emportent leurs porteurs avec eux. Alors la partie électrique de la force électromotrice donne (17.3), et la partie magnétique donne exactement l'aire que balaie le contour. Pour un fil, rien de plus naturel : le fil est le contour.",
+    "s1.p2": "La partie électrique n'a même pas besoin de matière. Par (17.2), la circulation de <var>E</var> le long de n'importe quelle courbe fixe, imaginaire ou non, est l'opposé de la vitesse de variation du flux à travers elle ; celle d'un champ électrostatique est toujours nulle. Les ennuis viennent de la partie magnétique, quand les porteurs ne suivent pas le contour qu'on a dessiné : contact qui glisse, conducteur large où le courant choisit son chemin.",
+
+    "s2.sec": "Le disque de Faraday",
+    "s2.h2": "Une force électromotrice à flux constant",
+    "s2.p1": "Un disque conducteur de rayon <var>a</var> tourne à ω autour de son axe, dans un champ <var>B</var> uniforme parallèle à l'axe. Un balai frotte sur l'arbre, de rayon <var>b</var>, un autre sur le bord ; un galvanomètre ferme le circuit. Le circuit que tracent les balais, l'arbre, un rayon du disque et les fils ne bouge pas : son flux est constant, et la règle prédit zéro. Pourtant chaque porteur du disque, entraîné à la vitesse ωρ, subit la force <var>q</var><var>v</var> ∧ <var>B</var>, radiale, de module <var>q</var>ωρ<var>B</var>. Sur un chemin qui va de l'arbre au bord à travers le disque :",
+    "val.disque": "Approximation : champ uniforme et constant sur tout le disque, vitesse du bord ω<var>a</var> ≪ <var>c</var> ; le champ du courant du disque lui-même et les résistances de contact sont négligés (circuit ouvert). Le chemin à travers le disque est quelconque : <var>v</var> ∧ <var>B</var> = ω<var>B</var>ρ, radial, y dérive du potentiel ω<var>B</var>ρ<sup>2</sup>/2, et seuls comptent les rayons de départ et d'arrivée.",
+    "s2.p2": "On peut sauver la règle en choisissant un autre contour : un rayon peint sur le disque, qui tourne avec lui. Ce contour balaie l'aire (<var>a</var><sup>2</sup> \u2212 <var>b</var><sup>2</sup>)ω/2 par seconde, et \u2212dΦ/d<var>t</var> redonne la bonne valeur. Mais rien ne dit à l'avance quel contour prendre : le contour fixe donne zéro, le contour mobile donne juste. La règle ne tranche pas ; la force sur les porteurs, si.",
+    "sys.title": "Le système décrit : un disque comme celui de Faraday",
+    "sys1.body": "Un disque de {a} de diamètre, dans {B}, tourne à {w}, deux tours par seconde : ℰ = {e}. La vitesse du bord, {v}, donne (<var>v</var>/<var>c</var>)<sup>2</sup> = {b2} : la mécanique de Newton suffit. La tension est faible, mais la résistance d'un disque épais, de l'arbre au bord, est minuscule : les machines de ce type, dites homopolaires, débitent des courants énormes sous quelques volts.",
+
+    "s3.sec": "Les plaques qui basculent",
+    "s3.h2": "Un flux qui change beaucoup, presque aucune force électromotrice",
+    "s3.p1": "Deux plaques de métal sont dans un plan, dans un champ uniforme <var>B</var> perpendiculaire à ce plan. Chacune est reliée, par une borne placée à la distance <var>h</var> de son bord, à une borne du galvanomètre. Leurs bords en regard sont des arcs de cercle de rayon <var>R</var><sub>c</sub> > <var>h</var>, et elles se touchent en un point. On les fait basculer de quelques degrés, la plaque de gauche de α autour de sa borne, celle de droite de \u2212α : les arcs roulent l'un sur l'autre, et le contact glisse de (<var>R</var><sub>c</sub> \u2212 <var>h</var>) sin α, bien plus que le métal près du contact, qui ne se déplace que de <var>h</var> sin α. Le circuit passe par le contact : son aire change vite. La force sur les porteurs, sommée dans chaque plaque, puis la règle du flux appliquée à ce circuit donnent :",
+    "val.plaques": "Approximation : rotation rigide de chaque plaque autour de sa borne, champ uniforme et statique (aucun champ électrique induit), vitesses ≪ <var>c</var>. La première relation est exacte pour ce mouvement : dans chaque plaque, <var>v</var> ∧ <var>B</var> dérive d'un potentiel, et seules comptent les distances <var>d</var><sub>1</sub>, <var>d</var><sub>2</sub> du contact aux bornes ; elle vaut \u2212α̇<var>B</var><var>h</var><sup>2</sup> à (<var>y</var><sub>P</sub>/<var>h</var>)<sup>2</sup> près, <var>y</var><sub>P</sub> le déplacement du contact. La seconde suppose un seul point de contact : les centres des deux arcs se rapprochent de 2(<var>R</var><sub>c</sub> \u2212 <var>h</var>)(1 \u2212 cos α), et les bornes doivent s'écarter d'autant pour que les plaques ne se chevauchent pas, un effet du second ordre en α (moins de 1\u00a0mm pour la figure).",
+    "fig.aria.plaques": "Deux plaques aux bords courbes qui basculent dans un champ magnétique, avec le circuit qui passe par leur contact",
+    "fig.aria.trace": "Force électromotrice vraie et règle du flux sur une oscillation des plaques",
+    "fig.legend.vraie": "force électromotrice vraie, ∮(v ∧ B)·ds dans les plaques",
+    "fig.legend.regle": "règle du flux, circuit passant par le contact",
+    "fig.legend.mat": "règle du flux, contour qui suit le métal",
+    "fig.rc": "Rayon de courbure des bords",
+    "fig.t": "Instant t",
+    "fig.xaxis": "t/T (une oscillation)",
+    "fig.yaxis": "ℰ (mV)",
+    "fig.k.vraie": "Force électromotrice vraie",
+    "fig.f.vraie": "par sommation sur le circuit : {v}",
+    "fig.k.regle": "Règle du flux, \u2212dΦ/d<var>t</var>",
+    "fig.f.regle": "rapport à la valeur vraie : {r}",
+    "fig.k.depl": "Déplacement du contact",
+    "fig.f.depl": "le métal au contact : {m}",
+    "fig.caption": "Bornes à 2\u00a0cm des bords, champ de 1\u00a0T, basculement de ±0,05\u00a0rad à 2\u00a0Hz. Le trait épais suit le circuit qui passe par le contact ; le pointillé, le contour qui suit le métal qui se touchait au départ. Plus les bords sont plats, plus le contact court, et plus la règle du flux se trompe : d'un facteur (<var>R</var><sub>c</sub> \u2212 <var>h</var>)/<var>h</var>, et avec le mauvais signe. La force électromotrice vraie ne dépend presque pas de <var>R</var><sub>c</sub>.",
+    "s3.p2": "La règle échoue ici parce que le circuit change de matière : à chaque instant, le courant passe par d'autres points des bords. Appliquée au contour qui suit les morceaux de métal qui se touchaient au départ, elle redonne la valeur vraie. Le galvanomètre ne voit que la force sur les porteurs.",
+
+    "s4.sec": "La règle sûre",
+    "s4.h2": "Revenir aux deux lois",
+    "s4.p1": "Dans tous les cas, la physique juste vient des deux lois de base : la force <var>q</var>(<var>E</var> + <var>v</var> ∧ <var>B</var>) sur chaque porteur, et (17.1) pour le champ électrique. Pour un fil fin dont la matière suit le contour, elles redonnent la règle du flux. Sinon, on calcule ∮(<var>E</var> + <var>v</var> ∧ <var>B</var>)·d<var>s</var> le long du chemin réel des porteurs, avec la vitesse de la matière là où elle se trouve.",
+    "s4.p2": "Le même problème se pose dans tout conducteur étendu : une plaque qui traverse un champ, un liquide qui coule dans une conduite. Il n'y a plus un circuit mais une infinité de chemins, et le courant se répartit selon la résistance de chacun : ce sont les courants de Foucault de « Forces sur les courants induits ». La règle du flux n'y dit rien ; les deux lois et la loi d'Ohm locale disent tout.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Du disque de Faraday aux débitmètres",
+    "hist.intro": "Le disque de Faraday a été la première génératrice ; il est aussi resté longtemps une énigme, avant que des ingénieurs ne mettent en défaut l'énoncé par le flux.",
+    "hist.events": {
+      disque: { who: "Michael Faraday", what: "note le 28 octobre dans son journal l'essai d'un disque de cuivre d'environ 30\u00a0cm de diamètre, qui tourne entre les pôles d'un aimant.", context: "Un frotteur sur l'axe, un autre sur le bord : le galvanomètre dévie tant que le disque tourne. C'est la première génératrice de courant continu. Le flux à travers le circuit fixe ne change pas : la règle du flux, seule, ne rend pas compte de cette force électromotrice." },
+      hering: { who: "Carl Hering", what: "publie dans les Transactions de l'American Institute of Electrical Engineers une critique de l'énoncé usuel de la loi fondamentale de l'induction.", context: "Le titre dit la thèse : l'énoncé par la variation du flux a une imperfection." },
+      blondel: { who: "André Blondel", what: "présente à l'Académie des sciences ses expériences « Sur l'énoncé le plus général des lois de l'induction ».", context: "Un fil passe d'un tambour à un autre entre les pôles d'un électroaimant, relié au galvanomètre par un contact glissant. Le nombre de spires dans le champ change, donc le flux, et le galvanomètre ne dévie pas." },
+      anu: { who: "L'Université nationale australienne", what: "met en service le générateur homopolaire de Mark Oliphant, qui stocke jusqu'à 500\u00a0MJ.", context: "Un disque de Faraday géant, qui fournit jusqu'à 2\u00a0MA à des expériences de synchrotron. Il a servi jusqu'à son démontage en 1986." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      debitmetre: { name: "Débitmètres électromagnétiques", text: "Un liquide conducteur traverse le champ d'un électroaimant ; deux électrodes placées de part et d'autre de la conduite recueillent la tension créée par <var>v</var> ∧ <var>B</var> sur les porteurs du fluide, proportionnelle à sa vitesse. Pas de fil qui suive la matière : c'est la force sur les porteurs qui compte. Il faut une conductivité d'au moins 0,5\u00a0mS·m<sup>\u22121</sup> environ ; la précision atteint 0,2 à 0,5\u00a0% de la mesure, sans aucune pièce mobile." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      disque: { prompt: "Pourquoi la règle du flux, appliquée au circuit fixe du disque de Faraday, prédit-elle zéro ?",
+        options: { a: "Parce que le champ magnétique est trop faible.", b: "Parce que le disque est conducteur, donc E = 0 dedans.", c: "Parce que le circuit tracé par les balais et un rayon fixe ne bouge pas : son flux est constant, alors que les porteurs tournent avec le disque.", d: "Parce que la vitesse angulaire est constante." },
+        why: "Le flux à travers un contour fixe ne change pas. Ce sont les porteurs, entraînés par le disque, qui subissent qv ∧ B : la règle ignore leur mouvement si le contour ne les suit pas." },
+      contour: { prompt: "On prend pour contour un rayon peint sur le disque, qui tourne avec lui. Que donne alors la règle du flux ?",
+        options: { a: "La bonne valeur, ωB(a² \u2212 b²)/2 : ce contour balaie de l'aire.", b: "Toujours zéro.", c: "Le double de la bonne valeur.", d: "Une valeur qui dépend du rayon choisi." },
+        why: "Un rayon qui tourne à ω balaie (a² \u2212 b²)ω/2 par seconde. Le contour qui suit la matière redonne la force sur les porteurs ; encore faut-il savoir qu'il faut le choisir." },
+      plaques: { prompt: "Les plaques basculent ; le contact glisse de 1\u00a0cm pendant que le métal près du contact ne bouge que de 1\u00a0mm. Que fait le galvanomètre ?",
+        options: { a: "Il dévie fortement, puisque l'aire du circuit change beaucoup.", b: "Il ne dévie pas du tout, la force électromotrice est exactement nulle.", c: "Il dévie dans le même sens que ce que prédit la règle du flux, mais dix fois moins.", d: "Il dévie à peine : la force électromotrice ne dépend que du mouvement du métal, pas de celui du point de contact." },
+        why: "La force sur les porteurs dépend de la vitesse du métal, petite. Le point de contact n'est pas un objet : sa course rapide ne pousse aucune charge." },
+      signe: { prompt: "Dans le modèle des plaques, comment se comparent la règle du flux appliquée au circuit et la force électromotrice vraie ?",
+        options: { a: "Elles sont égales au premier ordre en α.", b: "La règle est plus grande d'un facteur (Rc \u2212 h)/h, et de signe opposé.", c: "La règle est plus petite d'un facteur h/Rc.", d: "Elles ne diffèrent que par le signe." },
+        hint: "Le contact descend quand le métal qui le touchait monte.",
+        why: "Le contact glisse de (Rc \u2212 h) sin α dans un sens pendant que le métal du bord monte de h sin α dans l'autre : rapport \u2212(Rc \u2212 h)/h." },
+      regle: { prompt: "Quelle condition rend la règle du flux sûre ?",
+        options: { a: "Le contour de calcul est fait à chaque instant de la même matière, qui emporte ses porteurs.", b: "Le champ magnétique est uniforme.", c: "Le circuit est immobile.", d: "Le flux varie lentement." },
+        why: "Alors la partie magnétique est exactement l'aire balayée par le contour, et la partie électrique donne (17.3) : leur somme est \u2212dΦ/dt. Un circuit immobile est un cas particulier." },
+      tension: { prompt: "Un disque de 20\u00a0cm de rayon tourne à 100\u00a0rad·s⁻¹ dans un champ axial de 0,5\u00a0T ; un balai sur l'axe, de rayon négligeable, l'autre au bord. Quelle force électromotrice ?",
+        options: { a: "0,1\u00a0V.", b: "2\u00a0V.", c: "1\u00a0V.", d: "10\u00a0V." },
+        hint: "ℰ = ωBa²/2.",
+        why: "100 × 0,5 × 0,04/2 = 1\u00a0V. Oublier le facteur 1/2, c'est prendre tout le rayon à la vitesse du bord." },
+      debit: { prompt: "Pourquoi la tension d'un débitmètre électromagnétique se calcule-t-elle par v ∧ B plutôt que par la règle du flux ?",
+        options: { a: "Parce que le champ y est alternatif.", b: "Parce que le liquide n'a pas de contour qui suive sa matière : seule la force sur les porteurs, à leur vitesse, a un sens.", c: "Parce que le liquide n'est pas conducteur.", d: "Parce que la règle du flux ne vaut que pour les solides." },
+        why: "Dans un conducteur étendu, les porteurs ont chacun leur vitesse et le courant choisit ses chemins. La règle suppose un fil ; la force de Lorentz n'a besoin que de v et de B." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 17, §17-2 (texte original en anglais). Notations SI. Disque de Faraday : <i>Faraday's Diary</i>, vol. I, 28 octobre 1831, d'après le Joseph Henry Project de l'université de Princeton, « Faraday Unipolar Generator ». Générateur homopolaire de Canberra : Wikipédia, « Homopolar generator ». Hering et Blondel : Wikipédia, « Blondel's experiments » ; Blondel, <i>Comptes rendus</i>, t. 159, 1914, p. 674-679. Débitmètres : Fuji Electric, « How electromagnetic flowmeters measure conductive liquids ». Disque, plaques et calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

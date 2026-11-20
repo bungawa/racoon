@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["antenne", "a"],
+  ["boule", "b"],
+  ["gravite", "c"],
+  ["laser", "d"],
+  ["einstein", "a"],
+  ["fil", "b"],
+  ["condensateur", "c"],
+  ["aimant", "d"]
+ ]
+}

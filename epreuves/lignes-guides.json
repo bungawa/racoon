@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["echo", "a"],
+  ["geometrie", "b"],
+  ["sous", "c"],
+  ["longueur", "d"],
+  ["vitesses", "a"],
+  ["trajet", "b"],
+  ["grille", "c"],
+  ["monomode", "d"]
+ ]
+}

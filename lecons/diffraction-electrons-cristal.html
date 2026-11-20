@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La diffraction par un cristal</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-quantique-amplitudes" data-i18n="monde.quantique-amplitudes"></a><span class="aux">›</span><a href="/racoon/etape?id=atome-et-niveaux" data-i18n="etape.atome-et-niveaux"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-quant" href="/racoon/atlas?piste=quant" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/mesure-position-impulsion" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mn>2</mn><mi>d</mi><mspace width="0.1em"/><mi data-i18n="eq.sin"></mi><mi>θ</mi><mo>=</mo><mi>n</mi><mi>λ</mi><mo>,</mo><mspace width="1em"/><mi>n</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mo>…</mo></math><span class="n">(38.9)</span></div>
+    <p class="validite" data-i18n-html="val.38.9"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="fig" viewBox="0 0 640 300" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-label-2" data-i18n="fig.legend.plans"></span><span class="c-tint" data-i18n="fig.legend.faisceau"></span><span class="c-warn" data-i18n="fig.legend.reflechi"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" role="group" id="part">
+            <button type="button" data-p="electron" data-i18n="fig.p.electron"></button>
+            <button type="button" data-p="neutron" data-i18n="fig.p.neutron"></button>
+            <button type="button" data-p="photon" data-i18n="fig.p.photon"></button>
+          </div>
+          <div class="ctl"><div class="row"><label for="se" data-i18n="fig.e"></label><output id="ser" for="se"></output></div>
+            <input id="se" type="range" min="0" max="1" step="0.005" value="0.2"></div>
+          <div class="ctl"><div class="row"><label for="sd" data-i18n="fig.d"></label><output id="sdr" for="sd"></output></div>
+            <input id="sd" type="range" min="0.1" max="1" step="0.005" value="0.335"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.lambda"></span><span class="v" id="vl"></span><span class="f" id="fl"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.theta"></span><span class="v" id="vt"></span><span class="f" id="ft"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.ordres"></span><span class="v" id="vo"></span><span class="f" id="fo"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>λ</mi><mo>&gt;</mo><mn>2</mn><mi>d</mi><mspace width="1em"/><mo>⇒</mo><mspace width="1em"/><mi>v</mi><mo>&lt;</mo><mfrac><mi>h</mi><mrow><mn>2</mn><msub><mi>m</mi><mi mathvariant="normal">n</mi></msub><mi>d</mi></mrow></mfrac></math><span class="n">(38.9a)</span></div>
+    <p class="validite" data-i18n-html="val.38.9a"></p>
+    <p id="seuil"></p>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+      <p id="sys2"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/diffraction-electrons-cristal.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/optique-ondulatoire.js"></script>
+<script src="/racoon/quantique-amplitudes.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const Q = QuantAmp, O = OptOnd, K = Constantes, DEG = Math.PI / 180;
+const eV = x => F.si(x / K.e, "eV");
+
+/* ---------- a beam on the planes of a crystal: the orders of (38.9) ---------- */
+(() => {
+  /* mass and energy range (J, log scale) of each beam */
+  const P = { electron: { m: K.m_e, e0: 10, e1: 1e4 }, neutron: { m: K.m_n, e0: 1e-4, e1: 1 }, photon: { m: 0, e0: 1e3, e1: 1e5 } };
+  const svg = $("fig"), se = $("se"), sd = $("sd"), seg = $("part"); let part = "electron";
+  const tag = (x, y, txt, anchor) => { const e = Plot.el("text", { x, y, "text-anchor": anchor || "middle" }, svg); e.textContent = txt; };
+  function draw() {
+    const q = P[part], Ec = q.e0 * (q.e1 / q.e0) ** +se.value * K.e, d = +sd.value * 1e-9;
+    const lambda = Q.lambdaEnergie(q.m, Ec), ordres = O.ordresBragg(d, lambda);
+    svg.innerHTML = "";
+    /* the planes, seen edge on: rows of atoms 36 px apart; the beam hits them at the angle of the first order */
+    const top = 150, gap = 36, x0 = 40, x1 = 600, cx = 320;
+    for (let k = 0; k < 4; k++) {
+      Plot.el("line", { x1: x0, x2: x1, y1: top + k * gap, y2: top + k * gap, class: "stroke thin dash" }, Plot.el("g", { class: "c-label-2" }, svg));
+      for (let x = x0; x <= x1; x += 28) Plot.el("circle", { cx: x, cy: top + k * gap, r: 3.5, class: "fill" }, Plot.el("g", { class: "c-label-2" }, svg));
+    }
+    const th = ordres.length ? ordres[0].theta : 30 * DEG, Lr = 150, ux = Math.cos(th), uy = Math.sin(th);
+    Plot.fleche(svg, [cx - Lr * ux, top - Lr * uy], [cx, top], { cls: "c-tint", tete: 10 });
+    if (ordres.length) {
+      Plot.fleche(svg, [cx, top], [cx + Lr * ux, top - Lr * uy], { cls: "c-warn", tete: 10 });
+      /* the same rays on the second plane: the extra path is 2 d sin θ */
+      const y2 = top + gap;
+      Plot.el("line", { x1: cx - Lr * ux, y1: top - Lr * uy + gap, x2: cx, y2, class: "stroke thin" }, Plot.el("g", { class: "c-tint" }, svg));
+      Plot.el("line", { x1: cx, y1: y2, x2: cx + Lr * ux, y2: top - Lr * uy + gap, class: "stroke thin" }, Plot.el("g", { class: "c-warn" }, svg));
+      tag(cx, 40, t("fig.t.ordre", { th: F.num(th / DEG, 3) + "°" }));
+    } else {
+      Plot.fleche(svg, [cx, top], [cx + Lr * ux, top + Lr * uy], { cls: "c-tint", tete: 10 });
+      tag(cx, 40, t("fig.t.traverse"));
+    }
+    $("ser").textContent = eV(Ec);
+    $("sdr").textContent = F.si(d, "m", { prefix: "n" });
+    $("vl").textContent = F.si(lambda, "m");
+    $("fl").textContent = t("fig.f.lambda", { r: F.num(lambda / (2 * d), 3) });
+    $("vt").textContent = ordres.length ? F.num(ordres[0].theta / DEG, 3) + "°" : t("fig.v.aucun");
+    $("ft").textContent = ordres.length ? t("fig.f.theta") : t("fig.f.aucun");
+    $("vo").textContent = F.num(ordres.length, 4);
+    $("fo").textContent = ordres.length > 1 ? t("fig.f.ordres", { th: F.num(ordres[ordres.length - 1].theta / DEG, 3) + "°" }) : t("fig.f.un");
+    seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.p === part)));
+  }
+  seg.querySelectorAll("button").forEach(b => b.onclick = () => { part = b.dataset.p; draw(); });
+  se.oninput = sd.oninput = draw; draw();
+})();
+
+/* ---------- the graphite filter ---------- */
+(() => {
+  const s = Q.seuilBragg(0.335e-9, K.m_n);
+  $("seuil").innerHTML = t("seuil.body", { l: F.si(s.lambda, "m", { prefix: "n" }), v: F.si(s.v, "m·s⁻¹"), E: F.sci(s.Ec, 2), eV: F.si(s.Ec / K.e, "eV"), T: F.kelvin(s.T) });
+})();
+
+/* ---------- the system described: Davisson and Germer, reactor neutrons ---------- */
+(() => {
+  const lam = Q.lambdaEnergie(K.m_e, 54 * K.e), D = 0.215e-9;
+  $("sys1").innerHTML = t("sys1.body", { l: F.si(lam, "m", { prefix: "n" }), r: F.num(lam / D, 2), phi: F.num(Math.asin(lam / D) / DEG, 3) + "°" });
+  const ln = Q.lambdaEnergie(K.m_n, K.k_B * 293.15);
+  $("sys2").innerHTML = t("sys2.body", { T: F.kelvin(293.15), E: F.si(K.k_B * 293.15 / K.e, "eV"), l: F.si(ln, "m", { prefix: "n" }), th: F.num(O.bragg(0.335e-9, ln, 1) / DEG, 3) + "°" });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["broglie", 1924, "idea"], ["davisson", 1927, "experiment"], ["thomson", 1927, "experiment"], ["mitchell", 1936, "experiment"], ["fermi", 1946, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["leed", "ill"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["phase", "c"], ["milieu", "a"], ["lumiere", "d"], ["lents", "b"], ["poudre", "c"], ["intensite", "a"], ["electrons", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 383 });
+})();
+</script>
+</body>
+</html>

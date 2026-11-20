@@ -1,0 +1,102 @@
+/* Leçon « L'absorption de la lumière » (Feynman III.9.6) : textes en français.
+   Une autre langue = locales/<langue>/lecons/absorption-de-la-lumiere-quantique.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "L'absorption de la lumière",
+    "crumb.jour": "L'absorption de la lumière",
+    "h1": "L'absorption de la lumière",
+    "lede": "Une onde lumineuse est un champ électrique qui oscille ; elle agit sur une molécule comme le champ d'une cavité. Pour une lumière de spectre large, la probabilité de transition devient proportionnelle au temps : un taux constant, le coefficient d'Einstein. Toute la théorie quantique de l'absorption et de l'émission se ramène à un élément de matrice.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : les transitions hors résonance",
+
+    "s1.sec": "Une onde",
+    "s1.h2": "De l'amplitude du champ à l'intensité",
+    "s1.p1": "Le système : une molécule dans l'état I éclairée par une onde plane, dont le champ électrique, 2ℰ<sub>0</sub> cos ω<var>t</var>, est le long du dipôle. L'intensité moyenne de l'onde vaut <var>I</var> = 2ε<sub>0</sub><var>c</var>ℰ<sub>0</sub>² dans le vide, pour une onde plane. On l'introduit dans (9.52) :",
+    "eq.sin": "sin",
+    "val.9.53": "Approximation : celle de (9.52), premier ordre, μℰ<sub>0</sub><var>T</var>/ℏ ≪ 1 ; onde monochromatique, champ le long du dipôle. Pour des molécules orientées au hasard, il faut moyenner le carré de la projection du dipôle sur le champ, ce qui divise par 3.",
+    "s1.p2": "La lumière ordinaire n'a pas une seule fréquence : son intensité se répartit en <var>I</var>(ω) par unité de pulsation. Les différentes fréquences n'ont pas de phase fixe entre elles ; les probabilités s'additionnent :",
+    "val.9.54": "Approximation : celle de (9.53), et une lumière incohérente, dont les composantes de fréquences différentes ne sont pas en phase : on ajoute leurs probabilités, pas leurs amplitudes.",
+    "s1.p3": "Si <var>I</var>(ω) varie peu sur la largeur 2π/<var>T</var> de la raie, on la sort de l'intégrale à ω<sub>0</sub>. L'intégrale du sinc² vaut 2π/<var>T</var>, et l'un des <var>T</var> disparaît :",
+    "val.9.55": "Approximation : spectre lisse sur 2π/<var>T</var>, soit σ<var>T</var> ≫ 1 pour un spectre de largeur σ ; premier ordre, probabilité petite devant 1. Pour un temps plus court que 1/σ, la lumière agit comme une onde monochromatique, et la probabilité croît comme <var>T</var>².",
+    "s1.p4": "La probabilité est proportionnelle au temps : il y a une probabilité de transition par unité de temps, constante, proportionnelle à l'intensité de la lumière à la fréquence de la raie et au carré du dipôle. Le calcul ne suppose pas que l'état I est au-dessus : il vaut pour l'émission stimulée comme pour l'absorption. Le coefficient de <var>I</var>(ω<sub>0</sub>) est, à des facteurs près, le coefficient <var>B</var> d'Einstein.",
+
+    "s2.sec": "Au-delà de l'ammoniac",
+    "s2.h2": "Un élément de matrice",
+    "s2.p1": "Pour l'ammoniac, μℰ est l'élément de matrice du hamiltonien entre I et II créé par le champ. Pour deux états quelconques <var>m</var> et <var>n</var> d'un atome, on écrit de même",
+    "val.9.56": "Exacte : définition du dipôle de transition μ<sub><var>mn</var></sub>, à partir de l'élément de matrice dû au champ. Ce qui est approché, c'est l'interaction elle-même, écrite comme celle d'un dipôle dans un champ uniforme : la longueur d'onde doit être grande devant l'atome.",
+    "s2.p2": "Toutes les formules gardent leur forme, μ devenant μ<sub><var>mn</var></sub>. Pour un atome simple, on calcule μ<sub><var>mn</var></sub> à partir de ses états ; pour l'ammoniac, on le mesure. La théorie quantique de l'absorption et de l'émission de la lumière se ramène au calcul de ces éléments de matrice.",
+
+    "s3.sec": "Interaction",
+    "s3.h2": "De T² à T",
+    "s3.p1": "Le système : des molécules d'ammoniac éclairées par une lumière micro-onde d'intensité totale 10⁻⁹\u00a0W·m⁻², de spectre gaussien centré sur la raie, d'écart type σ. On calcule (9.54) numériquement. Tirets gris : toute la lumière à ω<sub>0</sub>, (9.53) ; tirets orange : (9.55).",
+    "fig.aria": "Probabilité de transition en fonction du temps, en échelles logarithmiques, pour une lumière de largeur spectrale donnée",
+    "fig.legend.vraie": "(9.54), lumière de largeur σ",
+    "fig.legend.mono": "(9.53), toute la lumière à ω₀",
+    "fig.legend.large": "(9.55), taux constant",
+    "fig.x": "temps d'éclairement T (s)",
+    "fig.y": "probabilité de passer de I à II",
+    "fig.s": "Largeur spectrale σ, échelle logarithmique",
+    "fig.T": "Temps T, échelle logarithmique",
+    "fig.k.p": "Probabilité au temps choisi",
+    "fig.f.p": "rapport à (9.55) : {r}",
+    "fig.k.st": "σ<var>T</var>",
+    "fig.f.large": "temps long devant 1/σ : un taux constant",
+    "fig.f.mono": "temps court devant 1/σ : la lumière agit comme une onde monochromatique",
+    "fig.f.entre": "transition entre les deux régimes",
+    "fig.caption": "La courbe pleine suit d'abord la pente 2 des tirets gris, puis la pente 1 des tirets orange : le coude est vers <var>T</var> ≈ 1/σ. Une lumière plus large atteint plus tôt le régime du taux constant, avec un taux plus faible, car elle met moins d'intensité par unité de pulsation à ω<sub>0</sub>.",
+    "s3.p2": "Le taux constant n'est pas une hypothèse : il sort de la largeur finie de la raie. Une molécule éclairée assez longtemps par une lumière large ne « voit » que l'intensité à sa fréquence, dans une bande de largeur 2π/<var>T</var> qui se resserre à mesure que <var>T</var> grandit.",
+
+    "s4.sec": "Décrire le système",
+    "s4.h2": "Les conditions du taux constant",
+    "s4.p1": "Trois conditions : un temps long devant l'inverse de la largeur spectrale de la lumière, σ<var>T</var> ≫ 1 ; une probabilité encore petite, pour que le premier ordre vaille ; et une longueur d'onde grande devant la molécule, pour que le champ soit uniforme sur elle. Pour l'ammoniac, la troisième est vraie d'un facteur cent millions.",
+    "s4.p2": "Si la lumière est intense, la probabilité cesse d'être petite : on revient à l'oscillation de « Les transitions à la résonance », qui n'a plus rien d'un taux.",
+    "sys.title": "Le système décrit : un faisceau micro-onde faible",
+    "sys.body": "Le coefficient μ²/(4πε<sub>0</sub>ℏ²<var>c</var>) vaut {c} pour l'ammoniac. Une intensité de {I} correspond à un champ ℰ<sub>0</sub> = {e} : même éclairée une milliseconde, la molécule n'a qu'une chance sur des milliers de passer.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Des coefficients d'Einstein à leur calcul",
+    "hist.intro": "Einstein a posé les taux d'absorption et d'émission avant la mécanique quantique ; Dirac les a calculés avec elle.",
+    "hist.events": {
+      einstein16: { who: "Albert Einstein", what: "introduit les coefficients d'absorption et d'émission, dans « Strahlungs-Emission und -Absorption nach der Quantentheorie ».", context: "Publié aux Verhandlungen der Deutschen Physikalischen Gesellschaft." },
+      einstein17: { who: "Albert Einstein", what: "publie « Zur Quantentheorie der Strahlung » à la Physikalische Zeitschrift : l'absorption, l'émission stimulée et l'émission spontanée y sont décrites par des probabilités par unité de temps.", context: "Le travail était paru l'année précédente dans les communications de la Société de physique de Zurich." },
+      dirac: { who: "Paul Dirac", what: "calcule les coefficients d'Einstein par la mécanique quantique, dans « The quantum theory of the emission and absorption of radiation ».", context: "Proceedings of the Royal Society. La formule du taux de transition que Fermi appellera sa « règle d'or » y apparaît pour la première fois." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      spectro: { name: "La spectroscopie d'absorption", text: "Un spectrophotomètre mesure la part de la lumière absorbée par un échantillon à chaque fréquence. Comme le taux de transition est proportionnel à l'intensité, cette part ne dépend pas de l'intensité de la lampe, tant que la lumière est faible ; elle dépend du nombre de molécules et du carré de leur dipôle de transition." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      taux: { prompt: "Pour une lumière de spectre large, comment la probabilité de transition varie-t-elle avec la durée d'éclairement T ?",
+        options: { a: "Comme T².", b: "Elle ne dépend pas de T.", c: "Comme T : il y a un taux de transition constant.", d: "Comme √T." },
+        why: "La hauteur de la raie croît comme T² et sa largeur décroît comme 1/T ; une lumière large en somme l'aire, qui croît comme T. C'est (9.55)." },
+      large: { prompt: "Quand peut-on utiliser (9.55) ?",
+        options: { a: "Quand l'intensité I(ω) varie peu sur la largeur 2π/T de la raie et que la probabilité reste petite.", b: "Pour une lumière monochromatique.", c: "Pour toute durée T.", d: "Seulement à la résonance exacte." },
+        why: "Il faut pouvoir sortir I(ω₀) de l'intégrale, et rester au premier ordre." },
+      mono: { prompt: "Pour une lumière parfaitement monochromatique à ω₀, et un champ faible, comment la probabilité varie-t-elle avec T ?",
+        options: { a: "Comme T.", b: "Elle est constante.", c: "Comme sin²(T).", d: "Comme T² : (9.53) à ω = ω₀." },
+        why: "Sans largeur spectrale, la raie ne fait que s'affiner autour de la fréquence de la lumière, et le pic, (μℰ₀T/ħ)², croît comme T²." },
+      mu2: { prompt: "On remplace l'ammoniac par une molécule de dipôle de transition deux fois plus grand. Que devient le taux d'absorption ?",
+        options: { a: "Il double.", b: "Il est multiplié par 4.", c: "Il ne change pas.", d: "Il est divisé par 2." },
+        hint: "Regardez la puissance de μ dans (9.55).",
+        why: "Le taux est proportionnel à μ², comme tout (9.55)." },
+      emission: { prompt: "Le calcul de (9.55) part de l'état haut. Que donne-t-il pour une molécule qui part de l'état bas ?",
+        options: { a: "Rien : l'état bas ne réagit pas à la lumière.", b: "Un taux deux fois plus faible.", c: "Le même taux : le calcul ne dépend pas de l'état qui est le plus haut ; il décrit l'absorption comme l'émission stimulée.", d: "Un taux qui dépend de la température." },
+        why: "Les équations (9.45) sont symétriques en I et II. La lumière fait monter les molécules du bas et descendre celles du haut avec le même taux." },
+      matrice: { prompt: "Que faut-il calculer pour connaître le taux d'absorption d'un atome entre deux états m et n ?",
+        options: { a: "Le dipôle de transition μ_mn, élément de matrice entre m et n.", b: "La masse de l'atome.", c: "Le moment dipolaire permanent de l'atome.", d: "L'énergie de l'état m seulement." },
+        why: "C'est (9.56) : tout le reste de (9.55) est universel. Un atome sans dipôle permanent peut avoir un μ_mn non nul." },
+      regime: { prompt: "Une lumière a une largeur spectrale σ = 10⁵\u00a0rad·s⁻¹. À partir de quelle durée d'éclairement le taux devient-il constant ?",
+        options: { a: "10\u00a0ns.", b: "Au-delà de 1/σ = 10\u00a0µs environ.", c: "1\u00a0s.", d: "Jamais." },
+        why: "Le coude est vers σT ≈ 1. Avant, la lumière agit comme une onde de fréquence unique ; après, comme un spectre large." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 9, §9-6 (texte original en anglais). Moment dipolaire de l'ammoniac, 1,47\u00a0D : NIST, « Selected Values of Electric Dipole Moments for Molecules in the Gas Phase » (Nelson, Lide et Maryott, 1967). Histoire : A. Einstein, Verh. Dtsch. Phys. Ges. 18, 318 (1916) et Phys. Z. 18, 121 (1917) ; P. A. M. Dirac, Proc. R. Soc. A (1927). Calculs propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["antenne", "a"],
+  ["rendement", "b"],
+  ["courant", "c"],
+  ["larmor", "d"],
+  ["cones", "a"],
+  ["qualite", "b"],
+  ["duree", "c"],
+  ["largeur", "d"]
+ ]
+}

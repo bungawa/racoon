@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["barre", "a"],
+  ["temps", "b"],
+  ["paroi", "c"],
+  ["tuyau", "d"],
+  ["tige", "a"],
+  ["bille", "b"],
+  ["sphere", "c"],
+  ["fick", "d"]
+ ]
+}

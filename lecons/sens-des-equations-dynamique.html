@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ce que disent les équations de la dynamique</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-mecanique" data-i18n="monde.mecanique"></a><span class="aux">›</span><a href="/racoon/etape?id=lois-de-newton" data-i18n="etape.lois-de-newton"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-meca" href="/racoon/atlas?piste=meca" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/acceleration" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi>m</mi><mfrac><mrow><msup><mi mathvariant="normal">d</mi><mn>2</mn></msup><mi>x</mi></mrow><mrow><mi mathvariant="normal">d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mover accent="true"><mi>x</mi><mo>˙</mo></mover><mo>,</mo><mi>t</mi><mo stretchy="false">)</mo></math><span class="n">(9.7a)</span></div>
+    <p class="validite" data-i18n-html="val.9.1"></p>
+    <div class="box def"><b data-i18n="s1.def.title"></b>
+      <p data-i18n-html="s1.def.body"></p>
+    </div>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi>x</mi><mo stretchy="false">(</mo><mi>t</mi><mo>+</mo><mi>ε</mi><mo stretchy="false">)</mo><mo>≈</mo><mi>x</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>+</mo><mi>ε</mi><mspace width="0.1em"/><mi>v</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>,</mo><mspace width="1em"/><mi>v</mi><mo stretchy="false">(</mo><mi>t</mi><mo>+</mo><mi>ε</mi><mo stretchy="false">)</mo><mo>≈</mo><mi>v</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>+</mo><mi>ε</mi><mspace width="0.1em"/><mfrac><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mi>m</mi></mfrac></math><span class="n">(9.13–9.14)</span></div>
+    <p class="validite" data-i18n-html="val.9.2"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="box warn"><b data-i18n="s1.warn.title"></b>
+      <p data-i18n-html="s1.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>m</mi><mover accent="true"><mi>x</mi><mo>¨</mo></mover><mo>=</mo><mo>−</mo><mi>k</mi><mi>x</mi></math><span class="n">(9.11)</span></div>
+    <p class="validite" data-i18n-html="val.9.3"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mover accent="true"><mi>x</mi><mo>¨</mo></mover><mo>=</mo><mo>−</mo><msubsup><mi>ω</mi><mn>0</mn><mn>2</mn></msubsup><mi>x</mi><mo>,</mo><mspace width="1em"/><msub><mi>ω</mi><mn>0</mn></msub><mo>=</mo><msqrt><mfrac><mi>k</mi><mi>m</mi></mfrac></msqrt></math><span class="n">(9.11a)</span></div>
+    <p class="validite" data-i18n-html="val.9.4"></p>
+    <h3 data-i18n="neglect.h3"></h3>
+    <div class="list keyed" id="neglect"></div>
+    <figure class="chart">
+      <svg id="lab" role="img" data-i18n-attr="aria-label:lab.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="lab.legend.exact"></span><span class="c-warn" data-i18n="lab.legend.steps"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="x0" data-i18n="lab.x0"></label><output id="x0read" for="x0"></output></div>
+            <input id="x0" type="range" min="-10" max="10" step="0.5" value="5"></div>
+          <div class="ctl"><div class="row"><label for="v0" data-i18n="lab.v0"></label><output id="v0read" for="v0"></output></div>
+            <input id="v0" type="range" min="-100" max="100" step="5" value="0"></div>
+          <div class="ctl"><div class="row"><label for="ms" data-i18n="lab.m"></label><output id="mread" for="ms"></output></div>
+            <input id="ms" type="range" min="0.1" max="1" step="0.05" value="0.25"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="lab.k.w"></span><span class="v" id="vw"></span></div>
+          <div class="stat"><span class="k" data-i18n="lab.k.T"></span><span class="v" id="vT"></span><span class="f" data-i18n="lab.f.T"></span></div>
+          <div class="stat"><span class="k" data-i18n="lab.k.A"></span><span class="v" id="vA"></span><span class="f" data-i18n="lab.f.A"></span></div>
+          <div class="stat"><span class="k" data-i18n="lab.k.E"></span><span class="v" id="vE"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="lab.caption"></figcaption>
+    </figure>
+    <div class="list" id="steps" role="table" data-i18n-attr="aria-label:steps.aria"></div>
+    <p class="caption" data-i18n-html="steps.caption"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>x</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>x</mi><mn>0</mn></msub><mi data-i18n="eq.cos"></mi><mo>⁡</mo><mo stretchy="false">(</mo><msub><mi>ω</mi><mn>0</mn></msub><mi>t</mi><mo stretchy="false">)</mo><mo>+</mo><mfrac><msub><mi>v</mi><mn>0</mn></msub><msub><mi>ω</mi><mn>0</mn></msub></mfrac><mi data-i18n="eq.sin"></mi><mo>⁡</mo><mo stretchy="false">(</mo><msub><mi>ω</mi><mn>0</mn></msub><mi>t</mi><mo stretchy="false">)</mo></math><span class="n">(9.11b)</span></div>
+    <p class="validite" data-i18n-html="val.9.5"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="box prop"><b data-i18n="s3.prop.title"></b>
+      <p data-i18n-html="s3.prop.body"></p>
+    </div>
+    <div class="box warn"><b data-i18n="s3.warn.title"></b>
+      <p data-i18n-html="s3.warn.body"></p>
+    </div>
+    <div class="box rem"><b data-i18n="s3.rem.title"></b>
+      <p data-i18n-html="s3.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/sens-des-equations-dynamique.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+
+/* ---------- ce que le modèle néglige ---------- */
+(() => { const IDS = ["frottement", "masse", "lineaire", "point"]; keyed($("neglect"), t("neglect.tag"), IDS, textOf("neglect.items", IDS)); })();
+
+/* ---------- le ressort : deux nombres de départ, une courbe ---------- */
+(() => {
+  const K = 10, EPS = 0.02, TMAX = 3, svg = $("lab"), x0s = $("x0"), v0s = $("v0"), ms = $("ms");
+  const len = x => F.qty(F.num(x, 3), "m");
+  function draw() {
+    const m = +ms.value, w = Math.sqrt(K / m), S = Integ.spring(w), s0 = { t: 0, x: [x0s.value / 100], v: [v0s.value / 100] };
+    const A = Math.hypot(s0.x[0], s0.v[0] / w), lim = Math.max(5, Math.ceil(A * 100 / 5) * 5) / 100;
+    svg.innerHTML = "";
+    const { x: X, y: Y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 300, pad: { b: 44 }, x: { domain: [0, TMAX], label: t("lab.xaxis") }, y: { domain: [-lim, lim], label: t("lab.yaxis") } });
+    Plot.el("line", { x1: X(0), x2: X(TMAX), y1: Y(0), y2: Y(0), class: "zero" }, g);
+    let d = ""; for (let i = 0; i <= 300; i++) { const tt = TMAX * i / 300; d += (i ? "L" : "M") + X(tt).toFixed(1) + " " + Y(S.exact(s0, tt).x[0]).toFixed(1); }
+    Plot.el("path", { d, class: "curve" }, g);
+    const r = Integ.run("euler", S.a, s0, EPS, 40);
+    const clip = Plot.el("clipPath", { id: "labarea" }, svg); Plot.el("rect", { x: X(0), y: Y(lim), width: X(TMAX) - X(0), height: Y(-lim) - Y(lim) }, clip);
+    Plot.el("path", { "clip-path": "url(#labarea)", d: r.t.map((tt, k) => (k ? "L" : "M") + X(tt).toFixed(1) + " " + Y(r.x[k][0]).toFixed(1)).join(""), class: "ref" }, g);
+    $("x0read").textContent = len(s0.x[0]); $("v0read").textContent = F.qty(F.num(s0.v[0], 2), "m·s⁻¹"); $("mread").textContent = F.qty(F.num(m, 2), "kg");
+    $("vw").textContent = F.qty(F.num(w, 3), "rad·s⁻¹"); $("vT").textContent = F.qty(F.num(2 * Math.PI / w, 3), "s");
+    $("vA").textContent = len(A); $("vE").textContent = F.si((m * s0.v[0] ** 2 + K * s0.x[0] ** 2) / 2, "J", { sig: 3 });
+    const row = (cells, role) => `<div role="row">${cells.map((c, i) => `<span class="${i ? "v" : ""}" role="${role}">${c}</span>`).join("")}</div>`;
+    $("steps").innerHTML = row(["t", "x", "v", "a"].map(k => t("steps.head." + k)), "columnheader") +
+      r.t.slice(0, 5).map((tt, k) => row([F.qty(F.fix(tt, 2), "s"), F.qty(F.fix(r.x[k][0], 4), "m"), F.qty(F.fix(r.v[k][0], 3), "m·s⁻¹"), F.qty(F.fix(S.a(tt, r.x[k])[0], 2), "m·s⁻²")], "cell")).join("");
+  }
+  x0s.oninput = v0s.oninput = ms.oninput = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["hooke", 1678, "idea"], ["newton", 1687, "idea"], ["laplace", 1814, "idea"], ["poincare", 1899, "idea"], ["lorenz", 1963, "experiment"], ["ensemble", 1992, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["meteo", "accelero"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["locale", "a"], ["deux", "a"], ["croisement", "a"], ["periode", "a"], ["pas", "a"], ["ressort", "a"], ["meteo", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 95 });
+})();
+</script>
+</body>
+</html>

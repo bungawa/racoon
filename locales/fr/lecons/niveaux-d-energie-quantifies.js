@@ -1,0 +1,103 @@
+/* Leçon « Les niveaux d'énergie quantifiés » (Feynman III.16.6) : textes en français.
+   Une autre langue = locales/<langue>/lecons/niveaux-d-energie-quantifies.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Les niveaux d'énergie quantifiés",
+    "crumb.jour": "Les niveaux quantifiés",
+    "h1": "Les niveaux d'énergie quantifiés",
+    "lede": "Pourquoi un électron lié à un atome n'a-t-il droit qu'à certaines énergies ? L'équation de Schrödinger répond sans postulat de plus : dans un puits, presque toutes les énergies donnent une fonction d'onde qui explose loin du puits. Seules quelques valeurs donnent une solution qui s'éteint des deux côtés. Ce sont les niveaux.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : l'équation de Schrödinger",
+
+    "s1.sec": "Les états d'énergie définie",
+    "s1.h2": "Une équation sans le temps",
+    "s1.p1": "Le système : une particule sur une droite, dans un puits de potentiel <var>V</var>(<var>x</var>) qui ne dépend pas du temps. Cherchons ses états d'énergie définie : ceux où l'amplitude, en chaque point, tourne à la même fréquence <var>E</var>/ħ.",
+    "val.16.57": "Exacte : forme d'un état stationnaire de (16.53) quand <var>V</var> ne dépend pas du temps. |ψ|<sup>2</sup> = |<var>a</var>|<sup>2</sup> ne bouge pas : rien n'y change, d'où le nom. Un état réel est une superposition de tels états, et c'est elle qui évolue.",
+    "val.16.58": "Approximation : celle de (16.53), particule non relativiste et sans spin dans un potentiel local et constant dans le temps ; la relation entre (16.57) et (16.53) est exacte. Pour un électron lié dans un atome léger, les termes négligés sont d'ordre α<sup>2</sup> ≈ 5 × 10<sup>\u22125</sup>.",
+    "s1.p2": "Lisons (16.58) comme une règle de courbure. Là où <var>V</var> > <var>E</var>, la région interdite pour une particule classique, d<sup>2</sup><var>a</var>/d<var>x</var><sup>2</sup> a le signe de <var>a</var> : la courbe s'écarte de l'axe, vers le haut si elle est au-dessus, vers le bas si elle est au-dessous. Là où <var>V</var> < <var>E</var>, la courbure ramène <var>a</var> vers l'axe : elle oscille. Une solution générale, dans la région interdite, finit donc par croître sans limite.",
+
+    "s2.sec": "Chercher les niveaux",
+    "s2.h2": "La méthode du tir",
+    "s2.p1": "Le puits : 1\u00a0eV de profondeur, 2\u00a0nm de largeur, un électron. Partons du mur de gauche avec <var>a</var> = 0 et une pente infime, puis intégrons (16.58) vers la droite, par la méthode de Numerov. Pour presque toutes les énergies, <var>a</var> repart vers l'infini au-delà du puits, d'un côté ou de l'autre. Cherchez les énergies où elle s'éteint.",
+    "fig.aria": "Solution de l'équation de Schrödinger stationnaire intégrée depuis la gauche dans un puits carré, pour l'énergie choisie, avec le potentiel et les niveaux exacts",
+    "fig.legend.a": "a(x), tracée autour de la ligne de l'énergie choisie",
+    "fig.legend.v": "potentiel V(x)",
+    "fig.legend.niveaux": "niveaux exacts",
+    "fig.e": "Énergie E",
+    "fig.niveaux": "Trouver un niveau par dichotomie",
+    "fig.b.n0": "niveau 0",
+    "fig.b.n1": "niveau 1",
+    "fig.b.n2": "niveau 2",
+    "fig.b.n3": "niveau 3",
+    "fig.x": "x (nm)",
+    "fig.y": "énergie (eV)",
+    "fig.k.queue": "Queue au mur de droite, en unités du maximum dans le puits",
+    "fig.f.lie": "elle s'éteint : un état lié",
+    "fig.f.haut": "elle part vers le haut",
+    "fig.f.bas": "elle part vers le bas",
+    "fig.k.noeuds": "Zéros de <var>a</var> jusqu'à <var>x</var> = 2\u00a0nm",
+    "fig.f.proche": "niveau le plus proche : n = {n}, {e}",
+    "fig.caption": "Entre deux niveaux, la queue change de côté : en passant un niveau, elle traverse zéro. Les boutons cherchent ce passage par dichotomie, au millionième. Le niveau <var>n</var> a <var>n</var> zéros, et l'énergie d'un état lié est toujours au-dessus du fond du puits : la particule a une énergie cinétique minimale.",
+    "s2.p2": "Il n'y a que quatre états liés : au-dessus de 1\u00a0eV, la région extérieure n'est plus interdite, toute énergie convient, et la particule n'est plus liée. La quantification ne vient pas d'une règle ajoutée : elle vient de la condition qu'une probabilité reste finie.",
+
+    "s3.sec": "Un cas exact",
+    "s3.h2": "Le puits aux murs infinis",
+    "s3.p1": "Si les murs sont infiniment hauts, <var>a</var> doit s'annuler aux deux murs, et la solution dans le puits est un sinus. Il faut qu'un nombre entier de demi-longueurs d'onde tienne dans la largeur <var>L</var> :",
+    "val.16.58a": "Exacte pour un puits de largeur <var>L</var> aux murs infinis, énergie comptée depuis le fond. Pour un puits de profondeur finie, les niveaux sont plus bas, parce que <var>a</var> déborde sous les murs : dans le puits de la figure, de 30\u00a0% pour le niveau 0, de 38\u00a0% pour le niveau 3.",
+    "s3.p2": "Les niveaux s'écartent comme <var>n</var><sup>2</sup> et comme 1/<var>L</var><sup>2</sup> : plus la boîte est petite, plus les niveaux sont espacés. C'est le principe d'incertitude à l'œuvre : confiner la particule sur <var>L</var> lui impose une quantité de mouvement de l'ordre de ħ/<var>L</var>, donc une énergie cinétique minimale.",
+
+    "s4.sec": "Décrire le système",
+    "s4.h2": "Quand la quantification se voit",
+    "s4.p1": "Les niveaux existent pour tout puits ; ils ne se voient que si leur écart dépasse l'incertitude de la mesure ou l'agitation thermique. Le nombre qui le dit est l'écart entre niveaux, divisé par l'énergie typique de la particule.",
+    "sys.title": "Le puits de la figure, puis une bille dans une boîte",
+    "sys1.body": "Le puits de 1\u00a0eV et 2\u00a0nm porte {n} états liés. Le plus bas est à {e0}\u00a0eV, contre {i0}\u00a0eV pour des murs infinis ; le niveau 3, à {e3}\u00a0eV, contre {i3}\u00a0eV, au-dessus du bord du puits. L'écart entre les deux premiers niveaux, 0,19\u00a0eV, dépasse sept fois l'agitation thermique vers 300\u00a0K : on le voit à température ambiante.",
+    "sys2.body": "Une bille de 1\u00a0g dans une boîte de 10\u00a0cm a un niveau fondamental de {e}. Pour qu'elle ait l'énergie de 1\u00a0cm de chute libre, il faut un nombre quantique d'environ {n} : les niveaux sont si serrés que l'énergie paraît continue.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Des niveaux mesurés, puis fabriqués",
+    "hist.intro": "Les niveaux discrets ont été mesurés avant d'être compris. Aujourd'hui, on fabrique des puits sur mesure pour choisir leurs niveaux.",
+    "hist.events": {
+      franckhertz: { who: "James Franck et Gustav Hertz", what: "montrent que des électrons qui traversent de la vapeur de mercure ne perdent leur énergie que par paquets de 4,9 eV.", context: "Un atome de mercure ne peut absorber qu'une énergie déterminée : la preuve directe que ses états d'énergie sont discrets. Prix Nobel de physique de 1925." },
+      schrodinger: { who: "Erwin Schrödinger", what: "publie « Quantisierung als Eigenwertproblem » : la quantification comme problème de valeurs propres.", context: "Le titre dit le contenu de cette leçon : les énergies permises sont celles pour lesquelles l'équation a une solution finie partout." },
+      ekimov: { who: "Alexeï Ekimov et Alexeï Onouchtchenko", what: "obtiennent les premières boîtes quantiques, des nanocristaux de semi-conducteur dans un verre, à l'Institut optique d'État Vavilov.", context: "Leur couleur dépend de leur taille : un puits plus petit a des niveaux plus écartés. Louis Brus en obtient de façon indépendante en suspension colloïdale aux Bell Labs en 1983." },
+      nobel: { who: "Moungi Bawendi, Louis Brus et Alexeï Ekimov", what: "reçoivent le prix Nobel de chimie pour la découverte et la synthèse des boîtes quantiques.", context: "Quarante ans après les premiers cristaux, le puits de cette leçon est devenu un composant industriel." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      qled: { name: "Les écrans à boîtes quantiques", text: "Des boîtes de 2 à 3\u00a0nm émettent dans le bleu ou le vert, de 5 à 6\u00a0nm dans l'orange ou le rouge : plus la boîte est petite, plus l'écart entre niveaux est grand. Les écrans à boîtes quantiques éclairent des boîtes de deux tailles par des diodes bleues, pour obtenir un vert et un rouge purs ; le premier modèle commercial date de 2013." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      stationnaire: { prompt: "Dans un état d'énergie définie, ψ = a(x) e^(\u2212iEt/ħ). Qu'est-ce qui change avec le temps ?",
+        options: { a: "Seulement la phase commune de ψ : |ψ|² et toutes les probabilités restent fixes.", b: "La forme de |ψ|², qui oscille à la fréquence E/h.", c: "La position moyenne, qui avance à la vitesse E/p.", d: "Rien, pas même la phase." },
+        why: "|a e^(\u2212iEt/ħ)|² = |a|² : la densité est figée, d'où le nom d'état stationnaire. Seule tourne la phase globale, sans effet mesurable sur cet état seul. Une superposition de deux énergies, elle, bat à la fréquence (E₂ \u2212 E₁)/h." },
+      courbure: { prompt: "Dans une région où V > E, que fait la solution a(x) de (16.58) ?",
+        options: { a: "Elle oscille, comme dans le puits.", b: "Elle est nulle.", c: "Elle se courbe en s'éloignant de l'axe : en général, elle croît sans limite, sauf pour la solution qui décroît exactement.", d: "Elle reste constante." },
+        why: "d²a/dx² = (2m/ħ²)(V \u2212 E) a : même signe que a. Les solutions sont des exponentielles e^(±κx). La croissante l'emporte, sauf si son coefficient est exactement nul : c'est ce qui choisit les niveaux." },
+      queue: { prompt: "Sur la figure, en passant l'énergie de 0,20 à 0,30 eV, la queue de a(x) au mur de droite change de côté. Que conclure ?",
+        options: { a: "Que la méthode est instable.", b: "Qu'un niveau se trouve entre 0,20 et 0,30 eV : en le passant, la queue traverse zéro.", c: "Que l'électron n'est pas lié à ces énergies.", d: "Que l'énergie de 0,25 eV est interdite." },
+        hint: "La queue dépend continûment de E.",
+        why: "La queue est une fonction continue de E ; si elle change de signe, elle s'annule entre les deux : c'est le niveau 1, à 0,259 eV. La dichotomie des boutons exploite exactement ce changement de signe." },
+      noeuds: { prompt: "Combien de fois la fonction d'onde du niveau n = 2 s'annule-t-elle, murs exclus ?",
+        options: { a: "Jamais.", b: "Une fois.", c: "Quatre fois.", d: "Deux fois : le niveau n a n zéros." },
+        why: "Chaque niveau a un zéro de plus que le précédent : plus de zéros, plus de courbure, plus d'énergie cinétique. Le fondamental n'en a aucun. C'est le théorème d'oscillation de Sturm." },
+      fini: { prompt: "Pourquoi les niveaux d'un puits de profondeur finie sont-ils plus bas que ceux du même puits aux murs infinis ?",
+        options: { a: "Parce que la particule y est plus lourde.", b: "Parce que la fonction d'onde déborde sous les murs : elle a plus de place, une longueur d'onde plus grande dans le puits, donc moins d'énergie cinétique.", c: "Parce que le potentiel est négatif.", d: "Ils ne le sont pas : ce sont les mêmes." },
+        why: "Avec des murs finis, a(x) ne s'annule pas au bord : elle s'y raccorde à une exponentielle décroissante. Dans le puits, la demi-onde est plus longue que L. Dans le puits de la figure, le fondamental tombe de 0,094 à 0,066 eV." },
+      profond: { prompt: "On rend un puits carré dix fois moins profond, sans changer sa largeur. Que devient le nombre d'états liés ?",
+        options: { a: "Il diminue, mais il en reste toujours au moins un : à une dimension, tout puits a un état lié.", b: "Il ne change pas.", c: "Il tombe à zéro dès que le puits est moins profond que 1 eV.", d: "Il augmente." },
+        why: "Le nombre d'états liés croît avec L√(2mV₀)/ħ ; il diminue quand V₀ diminue. Mais à une dimension, l'état fondamental pair existe toujours, si faible que soit le puits. Ce n'est plus vrai à trois dimensions." },
+      bille: { prompt: "Pourquoi ne voit-on pas les niveaux d'une bille de 1 g dans une boîte de 10 cm ?",
+        options: { a: "Parce que la bille n'obéit pas à l'équation de Schrödinger.", b: "Parce que ses niveaux sont trop écartés pour être atteints.", c: "Parce que son niveau fondamental vaut environ 5 × 10⁻⁶³ J et que ses niveaux utiles ont des nombres quantiques de l'ordre de 10²⁹ : l'écart relatif entre voisins est infime.", d: "Parce qu'une bille n'a pas de fonction d'onde." },
+        why: "E_n = n²π²ħ²/(2mL²) : pour m = 10⁻³ kg et L = 0,1 m, E₁ ≈ 5,5 × 10⁻⁶³ J. L'écart relatif entre niveaux voisins vaut 2/n, environ 10⁻²⁹ : bien sous toute incertitude de mesure." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 16, §16-6 (texte original en anglais). Notations SI. Franck et Hertz : Wikipédia, « Franck–Hertz experiment ». Schrödinger : Annalen der Physik 79 (1926). Boîtes quantiques, prix Nobel de chimie de 2023, écrans : Wikipédia, « Quantum dot ». Calculs numériques propres à cette page, méthode de Numerov et dichotomie.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

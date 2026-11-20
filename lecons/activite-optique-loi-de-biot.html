@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Activité optique et séparation des stéréoisomères</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .duo { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+  .duo .cadran { width: 200px; max-width: 100%; height: 200px; flex: none; }
+  #mesures { flex: 1 1 260px; min-width: 0; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-organique" data-i18n="monde.chim-organique"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-stereochimie" data-i18n="etape.chim-stereochimie"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/chiralite-descripteurs" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi>α</mi><mo>=</mo><msubsup><mrow><mo stretchy="false">[</mo><mi>α</mi><mo stretchy="false">]</mo></mrow><mi>λ</mi><mi>T</mi></msubsup><mspace width="0.1em"/><mi>ℓ</mi><mspace width="0.1em"/><mi>c</mi></math></div>
+    <p class="validite" data-i18n-html="s1.validite"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure>
+      <div class="duo">
+        <svg class="fig cadran" id="cadran" viewBox="-80 -80 160 160" role="img" data-i18n-attr="aria-label:pol.aria"></svg>
+        <div class="stats" id="mesures">
+          <div class="stat"><span class="k" data-i18n="pol.alpha"></span><span class="v" id="alpha"></span><span class="f" id="alphaf"></span></div>
+          <div class="stat"><span class="k" data-i18n="pol.ee"></span><span class="v" id="ee"></span><span class="f" id="eef"></span></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="xs" data-i18n="pol.xs"></label><output id="xsread" for="xs"></output></div>
+          <input id="xs" type="range" min="0" max="100" step="1" value="100"></div>
+        <div class="ctl"><div class="row"><label for="lg" data-i18n="pol.l"></label><output id="lread" for="lg"></output></div>
+          <input id="lg" type="range" min="0.5" max="4" step="0.5" value="1"></div>
+        <div class="ctl"><div class="row"><label for="conc" data-i18n="pol.c"></label><output id="cread" for="conc"></output></div>
+          <input id="conc" type="range" min="0" max="200" step="5" value="50"></div>
+      </div>
+      <figcaption data-i18n-html="pol.caption"></figcaption>
+    </figure>
+    <div class="eq"><math display="block"><mtext data-i18n="eq.ee"></mtext><mo>=</mo><mrow><mo>|</mo><msub><mi>x</mi><mi>S</mi></msub><mo>−</mo><msub><mi>x</mi><mi>R</mi></msub><mo>|</mo></mrow><mo>,</mo><mspace width="1em"/><mi>α</mi><mo>=</mo><msub><mrow><mo stretchy="false">[</mo><mi>α</mi><mo stretchy="false">]</mo></mrow><mi>S</mi></msub><mspace width="0.1em"/><mi>ℓ</mi><mspace width="0.1em"/><mi>c</mi><mspace width="0.1em"/><mo stretchy="false">(</mo><msub><mi>x</mi><mi>S</mi></msub><mo>−</mo><msub><mi>x</mi><mi>R</mi></msub><mo stretchy="false">)</mo></math></div>
+    <p class="validite" data-i18n-html="s2.validite"></p>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>α</mi><mo>=</mo><mi>ℓ</mi><munder><mo>∑</mo><mi>i</mi></munder><msub><mrow><mo stretchy="false">[</mo><mi>α</mi><mo stretchy="false">]</mo></mrow><mi>i</mi></msub><mspace width="0.1em"/><msub><mi>c</mi><mi>i</mi></msub></math></div>
+    <p class="validite" data-i18n-html="s3.validite"></p>
+    <figure class="chart">
+      <svg id="inversion" role="img" data-i18n-attr="aria-label:inv.aria"></svg>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="tau" data-i18n="inv.tau"></label><output id="tauread" for="tau"></output></div>
+          <input id="tau" type="range" min="0" max="100" step="1" value="0"></div>
+      </div>
+      <figcaption data-i18n-html="inv.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="list keyed" id="methodes"></div>
+    <div class="box rem"><b data-i18n="s4.rem.titre"></b>
+      <p data-i18n-html="s4.rem.corps"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/activite-optique-loi-de-biot.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script src="/racoon/chim-organique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I.fallback : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const O = ChimOrga, $ = id => document.getElementById(id), P = Plot.el;
+const deg = x => F.fix(x, 2).replace(/^-/, Fmt.MINUS) + "°";
+const DM = O.DEG_DM_G_ML;                                          // valeurs tabulées en °·dm⁻¹·g⁻¹·mL → °·m²·kg⁻¹
+const SPEC = { saccharose: 66.5 * DM, glucose: 52.7 * DM, fructose: -92 * DM, carvoneS: 61 * DM };
+
+/* ---------- polarimètre : mélange des deux carvones ---------- */
+(() => {
+  const svg = $("cadran"), xs = $("xs"), lg = $("lg"), conc = $("conc");
+  for (let k = 0; k < 36; k++) { const a = k * Math.PI / 18, r1 = k % 9 ? 66 : 60;
+    P("line", { x1: r1 * Math.sin(a), y1: -r1 * Math.cos(a), x2: 70 * Math.sin(a), y2: -70 * Math.cos(a), class: "stroke thin c-label-2" }, svg); }
+  P("circle", { cx: 0, cy: 0, r: 70, class: "stroke thin c-label-2" }, svg);
+  P("line", { x1: 0, y1: 58, x2: 0, y2: -58, class: "stroke dash c-label-2" }, svg);
+  const analyseur = P("line", { x1: 0, y1: 58, x2: 0, y2: -58, class: "stroke bold c-tint" }, svg);
+  const arc = P("path", { class: "stroke c-tint" }, svg);
+  function maj() {
+    const x = +xs.value / 100, l = +lg.value / 10, c = +conc.value, a = O.biot(SPEC.carvoneS, l, c * x) + O.biot(-SPEC.carvoneS, l, c * (1 - x));
+    analyseur.setAttribute("transform", `rotate(${a.toFixed(2)})`);
+    const r = 40, aa = a * Math.PI / 180;
+    arc.setAttribute("d", `M 0 ${-r} A ${r} ${r} 0 ${Math.abs(a) > 180 ? 1 : 0} ${a > 0 ? 1 : 0} ${(r * Math.sin(aa)).toFixed(2)} ${(-r * Math.cos(aa)).toFixed(2)}`);
+    $("xsread").textContent = F.qty(F.fix(100 * x, 0), "%");
+    $("lread").textContent = F.qty(F.fix(+lg.value, 1), "dm");
+    $("cread").textContent = F.qty(F.fix(c, 0), "kg·m⁻³");
+    $("alpha").textContent = deg(a);
+    $("alphaf").textContent = t(Math.abs(a) < 0.005 ? "pol.nul" : a > 0 ? "pol.dextro" : "pol.levo");
+    $("ee").textContent = F.qty(F.fix(100 * Math.abs(2 * x - 1), 0), "%");
+    $("eef").textContent = t(Math.abs(2 * x - 1) < 0.005 ? "pol.racemique" : x > 0.5 ? "pol.excesS" : "pol.excesR");
+  }
+  xs.oninput = lg.oninput = conc.oninput = maj; maj();
+})();
+
+/* ---------- inversion du saccharose ---------- */
+(() => {
+  const l = 0.2, c0 = 100, Ms = O.masseMolaire({ C: 12, H: 22, O: 11 }), Mg = O.masseMolaire({ C: 6, H: 12, O: 6 });
+  const alpha = tau => { const cg = c0 * tau * Mg / Ms;
+    return O.pouvoirMelange([{ alpha: SPEC.saccharose, c: c0 * (1 - tau) }, { alpha: SPEC.glucose, c: cg }, { alpha: SPEC.fructose, c: cg }], l); };
+  const { x, y, g } = Plot.axes($("inversion"), { fmt: F, w: 560, h: 260, pad: { b: 44 }, x: { domain: [0, 1], label: t("inv.x") }, y: { domain: [-6, 15], label: t("inv.y") } });
+  P("line", { x1: x(0), x2: x(1), y1: y(0), y2: y(0), class: "zero" }, g);
+  P("path", { d: `M ${x(0)} ${y(alpha(0))} L ${x(1)} ${y(alpha(1))}`, class: "curve" }, g);
+  const a0 = alpha(0), a1 = alpha(1), t0 = a0 / (a0 - a1);
+  P("line", { x1: x(t0), x2: x(t0), y1: y(-6), y2: y(15), class: "ref" }, g);
+  const dot = P("circle", { r: 6, class: "dot" }, g), note = P("text", { x: x(0.55), y: y(12), class: "note" }, g);
+  const tau = $("tau");
+  function maj() {
+    const u = +tau.value / 100, a = alpha(u);
+    dot.setAttribute("cx", x(u)); dot.setAttribute("cy", y(a));
+    $("tauread").textContent = F.qty(F.fix(100 * u, 0), "%");
+    note.textContent = t("inv.note", { a: deg(a) });
+  }
+  tau.oninput = maj; maj();
+})();
+
+/* ---------- méthodes de séparation ---------- */
+(() => {
+  const IDS = ["tri", "sels", "chromato", "synthese"], txt = textOf("sep.items", IDS);
+  $("methodes").innerHTML = IDS.map(id => `<div><span class="k">${txt[id].k}</span><span><strong>${txt[id].name}.</strong> ${txt[id].text}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["arago", 1811, "experiment"], ["biot", 1815, "experiment"], ["pasteur", 1848, "experiment"], ["wilhelmy", 1850, "experiment"], ["nobel", 2001, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["etalon", "carvone"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["biot", "c"], ["double", "a"], ["racem", "d"], ["signe", "b"], ["ee", "c"], ["diast", "a"], ["inversion", "d"], ["valid", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

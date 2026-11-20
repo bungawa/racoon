@@ -1,0 +1,12 @@
+{
+  "cles": [
+    ["looping", "c"],
+    ["ascenseur", "a"],
+    ["rouler", "d"],
+    ["trainee", "b"],
+    ["escalator", "c"],
+    ["freinage", "d"],
+    ["barrage", "a"],
+    ["pingpong", "b"]
+  ]
+}

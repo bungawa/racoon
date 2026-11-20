@@ -1,0 +1,100 @@
+/* Leçon « Les transitions hors résonance » (Feynman III.9.5) : textes en français.
+   Une autre langue = locales/<langue>/lecons/transitions-hors-resonance.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Les transitions hors résonance",
+    "crumb.jour": "Les transitions hors résonance",
+    "h1": "Les transitions hors résonance",
+    "lede": "Hors de la fréquence exacte, le champ fait encore passer quelques molécules, de moins en moins à mesure qu'on s'écarte. La largeur de la résonance ne dépend que du temps que dure l'interaction : une milliseconde suffit pour distinguer deux fréquences de 24\u00a0GHz qui diffèrent de quatre cent-millionièmes.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : les transitions à la résonance",
+
+    "s1.sec": "Champ faible",
+    "s1.h2": "Une molécule qui passe à peine",
+    "s1.p1": "Le système : une molécule entrée dans l'état I, qui passe un temps <var>T</var> dans un champ faible, μℰ<sub>0</sub><var>T</var>/ℏ ≪ 1, de pulsation ω proche de ω<sub>0</sub>. La molécule reste presque sûrement dans l'état I : on garde γ<sub>I</sub> = 1 dans la seconde équation de (9.45), et l'on intègre de 0 à <var>T</var> :",
+    "val.9.51": "Approximation : premier ordre en μℰ<sub>0</sub><var>T</var>/ℏ, γ<sub>I</sub> supposé égal à 1 pendant tout le passage ; plus celles de (9.45). Elle surestime la probabilité de 10\u00a0% quand μℰ<sub>0</sub><var>T</var>/ℏ ≈ 0,55 à la résonance.",
+    "s1.p2": "La probabilité de sortir dans l'état II est son module au carré :",
+    "eq.sin": "sin",
+    "val.9.52": "Approximation : celle de (9.51). À la résonance, elle vaut (μℰ<sub>0</sub><var>T</var>/ℏ)², le début de sin²(μℰ<sub>0</sub><var>T</var>/ℏ) de (9.50) ; elle dépasserait 1 si on l'appliquait à un champ fort.",
+    "s1.p3": "La courbe a la forme d'une raie : un pic à ω = ω<sub>0</sub>, des zéros quand (ω \u2212 ω<sub>0</sub>)<var>T</var> est un multiple de 2π, et des lobes de plus en plus petits. Presque toute son aire est entre les deux premiers zéros ; l'aire de la courbe normée à 1 au centre vaut 2π/<var>T</var> en pulsation.",
+
+    "s2.sec": "La largeur",
+    "s2.h2": "Le temps fixe la finesse",
+    "s2.p1": "Le premier zéro est à |<var>f</var> \u2212 <var>f</var><sub>0</sub>| = 1/<var>T</var> en fréquence. L'écart relatif qui suffit à éteindre les transitions est donc",
+    "val.9.52a": "Approximation : définition de la largeur par le premier zéro de (9.52), pour une seule durée <var>T</var> ; un faisceau de vitesses dispersées brouille les lobes, sans changer l'ordre de grandeur. Il ne dépend ni de μ ni du champ, tant que le champ est faible.",
+    "s2.p2": "Si le champ n'est pas faible, (9.45) se résout encore exactement. On trouve une oscillation entre les deux états, plus rapide et incomplète hors de la résonance, comme dans « La matrice hamiltonienne » :",
+    "val.9.52b": "Approximation : celle de (9.45) seule, terme rapide négligé ; pas de développement en μℰ<sub>0</sub><var>T</var>/ℏ. Se réduit à (9.50) à la résonance, et à (9.52) quand μℰ<sub>0</sub><var>T</var>/ℏ ≪ 1.",
+
+    "s3.sec": "Interaction",
+    "s3.h2": "La raie et sa largeur",
+    "s3.p1": "Le système : une molécule d'ammoniac, raie (3, 3), qui passe le temps <var>T</var> dans le champ. Le second curseur règle μℰ<sub>0</sub><var>T</var>/ℏ : la valeur π/2 ≈ 1,57 est celle du maser. Courbe pleine, la solution (9.52b) ; tirets, le premier ordre (9.52).",
+    "fig.aria": "Probabilité de transition en fonction de l'écart de fréquence, formule exacte et premier ordre",
+    "fig.legend.exacte": "(9.52b), sans développement",
+    "fig.legend.pert": "(9.52), premier ordre",
+    "fig.x": "écart f \u2212 f₀ (kHz)",
+    "fig.y": "probabilité de passer de I à II",
+    "fig.T": "Durée de l'interaction T",
+    "fig.k": "μℰ₀T/ℏ",
+    "fig.k.zero": "Premier zéro, |<var>f</var> \u2212 <var>f</var><sub>0</sub>| = 1/<var>T</var>",
+    "fig.f.zero": "soit {r} de la fréquence de la raie",
+    "fig.k.centre": "Probabilité au centre",
+    "fig.v.centre": "{e} contre {p}",
+    "fig.f.bon": "exacte, puis premier ordre : ils s'accordent",
+    "fig.f.mauvais": "exacte, puis premier ordre : le premier ordre se trompe de {r}\u00a0%",
+    "fig.caption": "Allonger <var>T</var> affine la raie, à toute intensité. Pousser le champ vers π/2 fait monter le pic à 1 et élargit un peu la courbe exacte, que le premier ordre surestime et qu'il fait dépasser 1.",
+    "s3.p2": "La raie a une largeur même si la molécule ne perd jamais son énergie : c'est la durée finie de l'observation qui la fixe. Une fréquence ne se mesure pas plus finement que l'inverse du temps pendant lequel on l'observe.",
+
+    "s4.sec": "Décrire le système",
+    "s4.h2": "Ce qui fixe la largeur d'une raie",
+    "s4.p1": "Trois durées se disputent la largeur : le temps de passage dans le champ, le temps entre deux collisions, et la durée de vie de l'état. La plus courte l'emporte. Dans un faisceau dans le vide, c'est le temps de passage ; dans un gaz sous pression ordinaire, les collisions élargissent la raie bien davantage. La durée de vie de l'état I de l'ammoniac, par émission spontanée, est si longue qu'elle ne compte pas.",
+    "s4.p2": "Le nombre sans dimension qui décide de la précision est <var>f</var><sub>0</sub><var>T</var>, le nombre de périodes pendant lesquelles le champ agit de façon cohérente.",
+    "sys.title": "Le système décrit : une milliseconde de passage",
+    "sys.body": "Avec <var>T</var> = 1\u00a0ms, le premier zéro est à {d} de la raie, soit {r} de 23,87\u00a0GHz : la molécule a vu {n} périodes du champ. C'est cette sensibilité qui fait d'une raie de molécule ou d'atome un étalon de fréquence.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Des raies de plus en plus fines",
+    "hist.intro": "Allonger le temps d'interaction est devenu le moyen principal d'affiner les horloges.",
+    "hist.events": {
+      ramsey: { who: "Norman Ramsey", what: "invente la méthode des champs oscillants séparés : deux brèves interactions espacées valent, pour la largeur de la raie, une interaction qui durerait tout l'intervalle.", context: "Les horloges à jet de césium l'utilisent." },
+      essen: { who: "Louis Essen et Jack Parry", what: "construisent au National Physical Laboratory, au Royaume-Uni, la première horloge atomique à césium d'usage pratique.", context: "La raie du césium devient la référence des mesures de temps." },
+      nobel: { who: "Norman Ramsey", what: "reçoit le prix Nobel de physique pour la méthode des champs oscillants séparés et son usage dans le maser à hydrogène et d'autres horloges atomiques.", context: "Fondation Nobel." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      horloges: { name: "Les horloges atomiques", text: "Une horloge atomique asservit un oscillateur sur le sommet d'une raie comme celle de la figure. Pour la rendre plus fine, on allonge le temps pendant lequel les atomes voient le champ : atomes lents, refroidis, ou champs séparés à la manière de Ramsey." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      petit: { prompt: "Pourquoi peut-on garder γ_I = 1 pour obtenir (9.51) ?",
+        options: { a: "Parce que le champ est à la résonance.", b: "Parce que le champ est faible et le passage court, μℰ₀T/ħ ≪ 1 : la molécule reste presque sûrement dans l'état I.", c: "Parce que γ_I est toujours égal à 1.", d: "Parce que la molécule est triée." },
+        why: "C'est un premier ordre : on suppose que presque rien n'a changé pour calculer ce qui a changé. Hors de ce domaine, il faut (9.52b)." },
+      largeur: { prompt: "De quoi dépend la largeur de la raie (9.52) ?",
+        options: { a: "De l'intensité du champ.", b: "Du moment dipolaire μ.", c: "De la fréquence f₀.", d: "Seulement de la durée T de l'interaction : premier zéro à |f \u2212 f₀| = 1/T." },
+        why: "Le facteur sinc² ne contient que (ω \u2212 ω₀)T. Le champ et μ fixent la hauteur du pic, pas sa largeur, tant que le champ est faible." },
+      aire: { prompt: "Pourquoi l'aire de la courbe (9.52), normée à 1 au centre, compte-t-elle ?",
+        options: { a: "Parce qu'une lumière de spectre large somme les probabilités sur toutes les fréquences : ce qui compte est l'aire, 2π/T en pulsation.", b: "Elle ne compte pas.", c: "Parce qu'elle donne la durée de vie de l'état.", d: "Parce qu'elle vaut 1." },
+        why: "C'est l'argument de « L'absorption de la lumière » : l'aire en 2π/T, multipliée par le T² de la hauteur, donne une probabilité proportionnelle à T." },
+      long: { prompt: "On fait passer les molécules dix fois plus lentement dans la même cavité. Que devient la largeur de la raie ?",
+        options: { a: "Elle est dix fois plus grande.", b: "Elle ne change pas.", c: "Elle est dix fois plus petite.", d: "Elle est cent fois plus petite." },
+        why: "T est dix fois plus long, et la largeur est 1/T. C'est pourquoi les horloges cherchent des atomes lents." },
+      fort: { prompt: "Que donne (9.52) au centre de la raie quand μℰ₀T/ħ = 2 ?",
+        options: { a: "Une valeur exacte, 0,83.", b: "4 : une probabilité impossible, (9.52) est hors de son domaine.", c: "1.", d: "0." },
+        hint: "Au centre, (9.52) vaut (μℰ₀T/ħ)².",
+        why: "Le premier ordre ne vaut que pour μℰ₀T/ħ ≪ 1. La solution (9.52b) donne sin²(2) ≈ 0,83." },
+      zero: { prompt: "Avec T = 0,5\u00a0ms, à quel écart de fréquence la probabilité de transition s'annule-t-elle pour la première fois ?",
+        options: { a: "2\u00a0kHz.", b: "500\u00a0Hz.", c: "1\u00a0kHz.", d: "4\u00a0kHz." },
+        why: "Premier zéro à |f \u2212 f₀| = 1/T = 2\u00a0kHz, soit environ 8 × 10⁻⁸ de 23,87\u00a0GHz." },
+      horloge: { prompt: "Pourquoi une raie fine fait-elle une bonne horloge ?",
+        options: { a: "Parce qu'elle émet beaucoup de puissance.", b: "Parce qu'elle ne dépend pas de la température.", c: "Parce qu'elle est facile à produire.", d: "Parce que la fréquence du sommet est d'autant mieux repérée que la raie est étroite : un petit écart change déjà beaucoup la probabilité de transition." },
+        why: "On asservit un oscillateur sur le sommet de la raie ; plus elle est étroite, plus un écart de fréquence se voit, et plus l'oscillateur est stable." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 9, §9-5 (texte original en anglais). Raie (3, 3) de l'ammoniac : 23\u00a0870,129\u00a0MHz. Histoire : N. F. Ramsey, méthode des champs oscillants séparés (1949) ; L. Essen et J. V. L. Parry, National Physical Laboratory (1955) ; prix Nobel de physique 1989. Calculs propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

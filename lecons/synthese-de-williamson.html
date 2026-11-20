@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alcoolates et synthèse de Williamson</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .mec svg { width: 100%; max-width: 420px; height: 150px; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-organique" data-i18n="monde.chim-organique"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-activation-protection" data-i18n="etape.chim-activation-protection"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/nucleophiles-electrophiles" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>K</mi><mo>=</mo><msup><mn>10</mn><mrow><mi>p</mi><msub><mi>K</mi><mi>a</mi></msub><mo>(</mo><mtext data-i18n="eq.bh"></mtext><mo>)</mo><mo>−</mo><mi>p</mi><msub><mi>K</mi><mi>a</mi></msub><mo>(</mo><mtext data-i18n="eq.roh"></mtext><mo>)</mo></mrow></msup></math></div>
+    <p class="validite" data-i18n-html="s2.validite"></p>
+    <figure>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="alcool" data-i18n="dep.alcool"></label></div><select id="alcool"></select></div>
+        <div class="ctl"><div class="row"><label for="base" data-i18n="dep.base"></label></div><select id="base"></select></div>
+        <div class="ctl"><div class="row"><label for="eq" data-i18n="dep.eq"></label><output id="eqv" for="eq"></output></div>
+          <input id="eq" type="range" min="0.5" max="5" step="0.5" value="1"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="dep.k.K"></span><span class="v" id="vK"></span><span class="f" id="fK"></span></div>
+          <div class="stat"><span class="k" data-i18n="dep.k.x"></span><span class="v" id="vx"></span><span class="f" id="fx"></span></div>
+        </div>
+        <p class="readout" id="depverdict" aria-live="polite"></p>
+      </div>
+      <figcaption data-i18n-html="dep.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="mec">
+      <svg class="fig no-sigle" id="meca" role="img" data-i18n-attr="aria-label:meca.aria"></svg>
+      <svg class="fig no-sigle" id="produit" role="img" data-i18n-attr="aria-label:meca.ariaP"></svg>
+      <figcaption data-i18n-html="meca.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+    <figure>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="halo" data-i18n="hal.label"></label></div><select id="halo"></select></div>
+        <p class="readout" id="halverdict" aria-live="polite"></p>
+      </div>
+      <figcaption data-i18n-html="hal.caption"></figcaption>
+    </figure>
+    <div class="box prop"><b data-i18n="s3.box.titre"></b>
+      <p data-i18n-html="s3.box.corps"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/synthese-de-williamson.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script src="/racoon/chim-organique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), O = ChimOrga, sym = s => t("chim.sym", { s });
+const peindre = (svg, d) => { svg.setAttribute("viewBox", d.viewBox); svg.innerHTML = d.html; };
+
+/* ---------- former l'alcoolate ---------- */
+(() => {
+  const ALCOOLS = ["methanol", "ethanol", "tbutanol", "phenol"], BASES = ["carbonate", "hydroxyde", "sodium", "hydrure"];
+  const na = textOf("dep.alcools", ALCOOLS), nb = textOf("dep.bases", BASES);
+  $("alcool").innerHTML = ALCOOLS.map(id => `<option value="${id}">${na[id]}</option>`).join("");
+  $("base").innerHTML = BASES.map(id => `<option value="${id}">${nb[id]}</option>`).join("");
+  $("alcool").value = "ethanol"; $("base").value = "hydroxyde";
+  function maj() {
+    const a = $("alcool").value, b = $("base").value, eq = +$("eq").value, r = O.deprotonation(a, b, eq);
+    $("eqv").textContent = F.num(eq, 2);
+    if (r.totale) { $("vK").textContent = t("dep.totale"); $("fK").textContent = t("dep.f.totale"); }
+    else { $("vK").textContent = r.K > 1e3 || r.K < 1e-2 ? F.sci(r.K, 2) : F.num(r.K, 3);
+      $("fK").textContent = t("dep.f.K", { d: F.num(O.BASES_ALCOOLATE[b] - O.PKA_ACTIVATION[a], 3) }); }
+    $("vx").textContent = F.qty(F.fix(100 * r.x, 1), "%");
+    $("fx").textContent = t("dep.f.x");
+    $("depverdict").textContent = t(r.x > 0.99 ? "dep.v.total" : r.x > 0.5 ? "dep.v.partiel" : "dep.v.faible");
+  }
+  ["alcool", "base", "eq"].forEach(id => $(id).oninput = maj); maj();
+})();
+
+/* ---------- mécanisme SN2 ---------- */
+(() => {
+  const [acte, fin] = O.actesActivation("williamson", { texte: sym, echelle: 40, doublets: [2] });
+  peindre($("meca"), acte); peindre($("produit"), fin);
+})();
+
+/* ---------- l'halogénure : classe et voie ---------- */
+(() => {
+  const H = { iodomethane: "methyle", bromoethane: "primaire", bromopropane2: "secondaire", bromomethylpropane: "tertiaire", bromobenzene: "vinylique" };
+  const noms = textOf("hal.items", Object.keys(H));
+  $("halo").innerHTML = Object.keys(H).map(id => `<option value="${id}">${noms[id]}</option>`).join("");
+  const maj = () => { const v = O.voieWilliamson(H[$("halo").value]); $("halverdict").textContent = t("hal.v." + v, { c: t("hal.classe." + H[$("halo").value]) }); };
+  $("halo").oninput = maj; maj();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["williamson", 1850, "idea"], ["pedersen", 1967, "experiment"], ["starks", 1971, "experiment"], ["nobel", 1987, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["epoxy", "cmc"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["nucleo", "b"], ["base", "d"], ["phenol", "a"], ["sodium", "c"], ["choix", "b"], ["tertiaire", "a"], ["aryle", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 1850 });
+})();
+</script>
+</body>
+</html>

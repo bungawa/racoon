@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Énolates, C-alkylation et aldolisation</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .deux { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; align-items: center; }
+  .deux svg { width: 100%; height: 150px; }
+  .large svg { width: 100%; max-width: 560px; height: 170px; margin: 0 auto; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-organique" data-i18n="monde.chim-organique"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-liaisons-cc" data-i18n="etape.chim-liaisons-cc"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/couples-acide-base" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <figure>
+      <div class="deux">
+        <svg class="fig no-sigle" id="enolA" role="img" data-i18n-attr="aria-label:enol.ariaA"></svg>
+        <svg class="fig no-sigle" id="enolB" role="img" data-i18n-attr="aria-label:enol.ariaB"></svg>
+      </div>
+      <figcaption data-i18n-html="enol.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s1.p2"></p>
+    <figure>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="acide" data-i18n="dep.acide"></label></div><select id="acide"></select></div>
+          <div class="ctl"><div class="row"><label for="base" data-i18n="dep.base"></label></div><select id="base"></select></div>
+          <div class="ctl"><div class="row"><label for="eq" data-i18n="dep.eq"></label><output id="eqr" for="eq"></output></div>
+            <input id="eq" type="range" min="0.5" max="2" step="0.05" value="1"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="dep.k.K"></span><span class="v" id="vK"></span></div>
+          <div class="stat"><span class="k" data-i18n="dep.k.x"></span><span class="v" id="vx"></span></div>
+          <div class="stat"><span class="k" data-i18n="dep.k.reste"></span><span class="v" id="vr"></span></div>
+        </div>
+        <p class="readout" id="depverdict" aria-live="polite"></p>
+      </div>
+      <figcaption data-i18n-html="dep.caption"></figcaption>
+    </figure>
+    <div class="eq"><math display="block"><msup><mi>K</mi><mo>°</mo></msup><mo>=</mo><mfrac><msub><mi>K</mi><mrow><mi mathvariant="normal">a</mi><mo>,</mo><mi data-i18n="eq.ah"></mi></mrow></msub><msub><mi>K</mi><mrow><mi mathvariant="normal">a</mi><mo>,</mo><mi data-i18n="eq.bh"></mi></mrow></msub></mfrac><mo>=</mo><msup><mn>10</mn><mrow><mi mathvariant="normal">p</mi><msub><mi>K</mi><mi mathvariant="normal">a</mi></msub><mo>(</mo><mi data-i18n="eq.bh"></mi><mo>)</mo><mo>−</mo><mi mathvariant="normal">p</mi><msub><mi>K</mi><mi mathvariant="normal">a</mi></msub><mo>(</mo><mi data-i18n="eq.ah"></mi><mo>)</mo></mrow></msup></math></div>
+    <p class="validite" data-i18n-html="val.K"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure class="large">
+      <svg class="fig no-sigle" id="alkyl" role="img" data-i18n-attr="aria-label:alkyl.aria"></svg>
+      <figcaption data-i18n-html="alkyl.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p2"></p>
+    <figure>
+      <div class="panel">
+        <div class="seg" role="group" id="regime"><button type="button" data-r="lda" aria-pressed="true" data-i18n="ctl.lda"></button><button type="button" data-r="faible" aria-pressed="false" data-i18n="ctl.faible"></button></div>
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="temp" data-i18n="ctl.T"></label><output id="tempr" for="temp"></output></div>
+            <input id="temp" type="range" min="180" max="360" step="5" value="195"></div>
+          <div class="ctl"><div class="row"><label for="duree" data-i18n="ctl.t"></label><output id="dureer" for="duree"></output></div>
+            <input id="duree" type="range" min="0" max="7" step="0.1" value="3"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="ctl.k.cin"></span><span class="v" id="vcin"></span></div>
+          <div class="stat"><span class="k" data-i18n="ctl.k.thermo"></span><span class="v" id="vth"></span></div>
+          <div class="stat"><span class="k" data-i18n="ctl.k.ici"></span><span class="v" id="vici"></span><span class="f" id="fici"></span></div>
+        </div>
+        <p class="readout" id="ctlverdict" aria-live="polite"></p>
+      </div>
+      <figcaption data-i18n-html="ctl.caption"></figcaption>
+    </figure>
+    <div class="eq"><math display="block"><msub><mi>t</mi><mtext data-i18n="eq.eq"></mtext></msub><mo>≈</mo><mfrac><mn>1</mn><msub><mi>k</mi><mrow><mo>−</mo><mn>1</mn></mrow></msub></mfrac><mo>=</mo><mfrac><mi>h</mi><mrow><msub><mi>k</mi><mi mathvariant="normal">B</mi></msub><mi>T</mi></mrow></mfrac><mspace width="0.2em"/><msup><mi mathvariant="normal">e</mi><mrow><mi>Δ</mi><msubsup><mi>G</mi><mrow><mo>−</mo><mn>1</mn></mrow><mo>‡</mo></msubsup><mo>/</mo><mi>R</mi><mi>T</mi></mrow></msup></math></div>
+    <p class="validite" data-i18n-html="val.teq"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="large">
+      <svg class="fig no-sigle" id="aldol" role="img" data-i18n-attr="aria-label:aldol.aria"></svg>
+      <figcaption data-i18n-html="aldol.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+    <figure>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="pa" data-i18n="cr.a"></label></div><select id="pa"></select></div>
+          <div class="ctl"><div class="row"><label for="pb" data-i18n="cr.b"></label></div><select id="pb"></select></div>
+        </div>
+        <div class="seg" role="group" id="mode"><button type="button" data-m="non" aria-pressed="true" data-i18n="cr.non"></button><button type="button" data-m="dirigee" aria-pressed="false" data-i18n="cr.dirigee"></button></div>
+        <div class="list keyed" id="paires"></div>
+        <p class="readout" id="crverdict" aria-live="polite"></p>
+      </div>
+      <figcaption data-i18n-html="cr.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/enolates-aldolisation.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script src="/racoon/statistique.js"></script>
+<script src="/racoon/chim-organique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const O = ChimOrga, sym = s => t("chim.sym", { s }), $ = id => document.getElementById(id);
+const peindre = (svg, d) => { svg.setAttribute("viewBox", d.viewBox); svg.innerHTML = d.html; };
+const segment = (id, cle, f) => { $(id).onclick = e => { const b = e.target.closest("button"); if (!b) return;
+  $(id).querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x === b))); f(b.dataset[cle]); }; };
+
+/* ---------- l'énolate de la propanone : deux formes mésomères ---------- */
+(() => {
+  const m = O.mol("C 0 0 q-1; C 0.866 0.5; O 0.866 1.5; C 1.732 0 | 0-1 1=2 1-3"), fl = [{ de: 0, vers: [0, 1] }, { de: [1, 2], vers: 2, cote: -1 }];
+  const s = O.schema(m, { texte: sym, fleches: fl, echelle: 40, carbones: true, doublets: [0] });
+  peindre($("enolA"), s);
+  peindre($("enolB"), O.schema(s.apres.m, { texte: sym, echelle: 40, carbones: true, doublets: [2] }));
+})();
+
+/* ---------- quelle base pour quel acide ---------- */
+(() => {
+  const ACIDES = [["propanone", 19.3], ["ester", O.PKA.ester], ["malonate", O.PKA.malonate], ["acetoacetate", O.PKA.acetoacetate]];
+  const BASES = [["ethanolate", O.PKA.ethanol], ["tbutanolate", O.PKA.tbutanol], ["lda", O.PKA.diisopropylamine]];
+  const na = textOf("dep.acides", ACIDES.map(a => a[0])), nb = textOf("dep.bases", BASES.map(b => b[0]));
+  $("acide").innerHTML = ACIDES.map(([id, p]) => `<option value="${id}">${t("dep.option", { n: na[id], p: F.fix(p, 1) })}</option>`).join("");
+  $("base").innerHTML = BASES.map(([id, p]) => `<option value="${id}">${t("dep.option", { n: nb[id], p: F.fix(p, 1) })}</option>`).join("");
+  function maj() {
+    const pa = ACIDES.find(a => a[0] === $("acide").value)[1], pb = BASES.find(b => b[0] === $("base").value)[1], r = +$("eq").value;
+    const x = O.fractionDeprotonee(pa, pb, r);
+    $("eqr").textContent = F.fix(r, 2);
+    $("vK").textContent = F.sci(Math.pow(10, pb - pa), 2);
+    $("vx").textContent = t("dep.v.x", { x: F.num(100 * x, 3) });
+    $("vr").textContent = F.sci(1 - x, 2);
+    $("depverdict").textContent = t(x > 0.99 ? "dep.total" : x > 0.5 ? "dep.majoritaire" : "dep.partiel");
+  }
+  $("acide").onchange = $("base").onchange = $("eq").oninput = maj; maj();
+})();
+
+/* ---------- C-alkylation : énolate + iodométhane ---------- */
+(() => {
+  const m = O.mol("C 0 0 q-1; C 0.866 0.5; O 0.866 1.5; C 1.732 0; C -1.4 -0.3; I -2.6 -0.3 | 0-1 1=2 1-3 4-5");
+  peindre($("alkyl"), O.schema(m, { texte: sym, echelle: 40, carbones: true, doublets: [0], fleches: [{ de: 0, vers: [0, 4] }, { de: [4, 5], vers: 5 }] }));
+})();
+
+/* ---------- énolate cinétique ou thermodynamique : deux voies renversables (controle, modèle d'Eyring) ---------- */
+(() => {
+  /* valeurs choisies pour l'illustration : B, énolate le moins substitué (formé le plus vite) ; C, le plus substitué (le plus stable) */
+  const REGIMES = { lda: { gB: 50e3, gC: 56e3, rB: -60e3, rC: -66e3 }, faible: { gB: 50e3, gC: 56e3, rB: -2e3, rC: -8e3 } };
+  let regime = "lda";
+  function maj() {
+    const T = +$("temp").value, tt = Math.pow(10, +$("duree").value), o = Object.assign({ T }, REGIMES[regime]);
+    const p = O.controle(o, tt), cin = O.rapportVoies(o.gC - o.gB, T), th = Math.exp((o.rB - o.rC) / (Constantes.R * T)), teq = O.tempsEquilibre(o);
+    $("tempr").innerHTML = F.kelvin(T); $("dureer").textContent = F.si(tt, "s", { sig: 2 });
+    $("vcin").textContent = t("ctl.v.rapport", { x: F.num(cin, 3) });
+    $("vth").textContent = t("ctl.v.rapport", { x: F.num(1 / th, 3) });
+    $("vici").textContent = t("ctl.v.fractions", { b: F.num(100 * p.B, 3), c: F.num(100 * p.C, 3) });
+    $("fici").textContent = t("ctl.f.teq", { t: F.sci(teq, 2) });
+    $("ctlverdict").textContent = t(p.A > 0.5 ? "ctl.verdict.debut" : tt < 0.05 * teq ? "ctl.verdict.cin" : tt > 5 * teq ? "ctl.verdict.thermo" : "ctl.verdict.entre");
+  }
+  segment("regime", "r", r => { regime = r; maj(); });
+  $("temp").oninput = $("duree").oninput = maj; maj();
+})();
+
+/* ---------- aldolisation : énolate de l'éthanal sur l'éthanal ---------- */
+(() => {
+  const m = O.mol("C 0 0 q-1; C 0.866 0.5; O 0.866 1.5; C 2.3 -0.2; O 2.3 1.0; C 3.166 -0.7 | 0-1 1=2 3=4 3-5");
+  peindre($("aldol"), O.schema(m, { texte: sym, echelle: 40, carbones: true, doublets: [0], fleches: [{ de: 0, vers: [0, 3], cote: -1 }, { de: [3, 4], vers: 4 }] }));
+})();
+
+/* ---------- aldolisations croisées : combien de produits ---------- */
+(() => {
+  const IDS = Object.keys(O.PARTENAIRES_ALDOL), noms = textOf("cr.partenaires", IDS);
+  ["pa", "pb"].forEach(s => { $(s).innerHTML = IDS.map(id => `<option value="${id}">${noms[id]}</option>`).join(""); });
+  $("pa").value = "propanone"; $("pb").value = "ethanal";
+  let mode = "non";
+  function maj() {
+    const a = $("pa").value, b = $("pb").value;
+    let paires, refus = null;
+    try { paires = O.aldols(a, b, mode === "dirigee"); } catch (e) { paires = []; refus = t("cr.refus", { a: noms[a] }); }
+    $("paires").innerHTML = paires.map(([d, e]) => `<div><span class="k">${t("cr.tag")}</span><span>${t("cr.paire", { d: noms[d], e: noms[e] })}</span></div>`).join("");
+    $("crverdict").textContent = refus || t(paires.length === 1 ? "cr.un" : paires.length === 0 ? "cr.zero" : "cr.plusieurs", { n: paires.length });
+  }
+  segment("mode", "m", m => { mode = m; maj(); });
+  $("pa").onchange = $("pb").onchange = maj; maj();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["kane", 1838, "experiment"], ["borodine", 1869, "experiment"], ["wurtz", 1872, "experiment"], ["lda", 1950, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["aldolase", "industrie"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["acidite", "b"], ["base", "d"], ["lda", "a"], ["cinetique", "c"], ["thermo", "b"], ["croisee", "d"], ["dirigee", "a"], ["retro", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

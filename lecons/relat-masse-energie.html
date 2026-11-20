@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>L'équivalence de la masse et de l'énergie</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  #proc { flex-wrap: wrap; max-width: 100%; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-relativite" data-i18n="monde.relativite"></a><span class="aux">›</span><a href="/racoon/etape?id=rel-dynamique" data-i18n="etape.rel-dynamique"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-relat" href="/racoon/atlas?piste=relat" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/relat-dynamique" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>m</mi><mi>v</mi></msub><msup><mi>c</mi><mn>2</mn></msup><mo>=</mo><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>m</mi><msup><mi>v</mi><mn>2</mn></msup><mo>+</mo><mo>⋯</mo></math><span class="n">(15.12)</span></div>
+    <p class="validite" data-i18n-html="val.15.12"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <p id="repos"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mi>d</mi><mi>E</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mover><mi>F</mi><mo>→</mo></mover><mo>·</mo><mover><mi>v</mi><mo>→</mo></mover></math><span class="n">(15.13)</span></div>
+    <p class="validite" data-i18n-html="val.15.13"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mi>d</mi><mo>(</mo><msub><mi>m</mi><mi>v</mi></msub><msup><mi>c</mi><mn>2</mn></msup><mo>)</mo></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mover><mi>v</mi><mo>→</mo></mover><mo>·</mo><mfrac><mrow><mi>d</mi><mo>(</mo><msub><mi>m</mi><mi>v</mi></msub><mover><mi>v</mi><mo>→</mo></mover><mo>)</mo></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></math><span class="n">(15.14)</span></div>
+    <p class="validite" data-i18n-html="val.15.14"></p>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="eq"><math display="block"><msup><mi>c</mi><mn>2</mn></msup><mfrac><mrow><mi>d</mi><mo>(</mo><msubsup><mi>m</mi><mi>v</mi><mn>2</mn></msubsup><mo>)</mo></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>d</mi><mo>(</mo><msubsup><mi>m</mi><mi>v</mi><mn>2</mn></msubsup><msup><mi>v</mi><mn>2</mn></msup><mo>)</mo></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></math><span class="n">(15.16)</span></div>
+    <p class="validite" data-i18n-html="val.15.16"></p>
+    <p data-i18n-html="s2.p4"></p>
+    <div class="eq"><math display="block"><msubsup><mi>m</mi><mi>v</mi><mn>2</mn></msubsup><msup><mi>c</mi><mn>2</mn></msup><mo>=</mo><msubsup><mi>m</mi><mi>v</mi><mn>2</mn></msubsup><msup><mi>v</mi><mn>2</mn></msup><mo>+</mo><msup><mi>m</mi><mn>2</mn></msup><msup><mi>c</mi><mn>2</mn></msup></math><span class="n">(15.18)</span></div>
+    <p class="validite" data-i18n-html="val.15.18"></p>
+    <p data-i18n-html="s2.p5"></p>
+    <div class="eq"><math display="block"><msub><mi>m</mi><mi>v</mi></msub><mo>=</mo><mfrac><mi>m</mi><msqrt><mn>1</mn><mo>−</mo><msup><mi>v</mi><mn>2</mn></msup><mo>/</mo><msup><mi>c</mi><mn>2</mn></msup></msqrt></mfrac></math><span class="n">(15.19)</span></div>
+    <p class="validite" data-i18n-html="val.15.19"></p>
+    <p data-i18n-html="s2.p6"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="barres" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" role="group" id="proc"></div>
+          <div class="ctl"><div class="row"><label for="sm" data-i18n="fig.m"></label><output id="smr" for="sm"></output></div>
+            <input id="sm" type="range" min="-6" max="3" step="0.05" value="0"></div>
+        </div>
+        <p id="ptxt"></p>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.frac"></span><span class="v" id="vfrac"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.E"></span><span class="v" id="vE"></span><span class="f" id="fE"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.dm"></span><span class="v" id="vdm"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p id="bombe"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p data-i18n-html="sys.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p id="annih"></p>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/relat-masse-energie.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/relativite.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const R = Relativite, K = Constantes, c = K.c, u = K.u, MeV = 1e6 * K.e, TNT = 4.184e6;   // J per kilogram of TNT (convention)
+/* a mass of TNT: grams up to 1 000 kg, then kilograms in scientific notation */
+const tnt = E => { const kg = E / TNT; return kg >= 1000 ? F.qty(F.sci(kg, 2), "kg") : F.si(kg * 1000, "g"); };
+
+/* ---------- l'énergie au repos d'un kilogramme ---------- */
+$("repos").innerHTML = t("s1.repos", { E: F.qty(F.sci(c * c, 3), "J"), tnt: tnt(c * c) });
+
+/* ---------- quelle fraction de la masse devient énergie ---------- */
+(() => {
+  /* id, energy released (J), mass of the reactants (kg): data checked in the footer's sources */
+  const PROCS = [
+    ["chauffe", 4180 * 80, 1],                                                   // 1 kg of water, 20 → 100 °C, c = 4,18 kJ/(kg·K)
+    ["combustion", 393.5e3, 44.01e-3],                                           // C + O2 → CO2, 393,5 kJ/mol
+    ["fission", 200 * MeV, 236 * u],                                             // ²³⁵U + n, about 200 MeV
+    ["lithium", R.energieLiberee((7.016004 + 1.007825) * u, [4.002603 * u, 4.002603 * u]), (7.016004 + 1.007825) * u],
+    ["fusion", 17.6 * MeV, 5 * u],                                               // D + T → ⁴He + n, 17,6 MeV, 5 u to 1 %
+    ["annihilation", 2 * K.m_e * c * c, 2 * K.m_e],                              // e⁺ + e⁻ at rest
+  ];
+  const txt = textOf("proc.items", PROCS.map(p => p[0]));
+  const svg = $("barres"), seg = $("proc"), sm = $("sm");
+  let sel = "combustion";
+  seg.innerHTML = PROCS.map(([id]) => `<button type="button" data-p="${id}">${txt[id].name}</button>`).join("");
+  function draw() {
+    svg.innerHTML = "";
+    const n = PROCS.length, P = Plot.axes(svg, { fmt: F, w: 640, h: 70 + 44 * n, pad: { l: 16, b: 44, t: 8 },
+      x: { scale: "log", domain: [1e-12, 1], label: t("fig.xaxis") }, y: { domain: [0, n], ticks: 1, fmt: () => "" } });
+    PROCS.forEach(([id, Q, m], i) => {
+      const f = Q / (m * c * c), y = P.y(n - i - 0.35), on = id === sel;
+      Plot.el("rect", { x: P.x(1e-12), y: y - 7, width: Math.max(1, P.x(f) - P.x(1e-12)), height: 14, class: "fill " + (on ? "c-tint" : "c-label-2") }, P.g);
+      Plot.el("text", { x: P.x(1e-12) + 4, y: y - 12 }, P.g).textContent = txt[id].name + " : " + F.sci(f, 2);
+    });
+    const [, Q, m] = PROCS.find(p => p[0] === sel), f = Q / (m * c * c), M = Math.pow(10, +sm.value), E = f * M * c * c;
+    $("smr").textContent = M >= 1 ? F.si(M, "kg", { prefix: "" }) : F.si(M * 1000, "g");
+    $("ptxt").innerHTML = txt[sel].text;
+    $("vfrac").textContent = F.sci(f, 3);
+    $("vE").textContent = F.si(E, "J");
+    $("fE").textContent = t("fig.f.E", { tnt: tnt(E) });
+    $("vdm").textContent = F.si(f * M * 1000, "g");
+    seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.p === sel)));
+  }
+  seg.querySelectorAll("button").forEach(b => b.onclick = () => { sel = b.dataset.p; draw(); });
+  sm.oninput = draw; draw();
+})();
+
+/* ---------- la bombe de 20 kt ---------- */
+$("bombe").innerHTML = t("s3.bombe", { M: F.qty(F.sci(2e7, 1), "kg"), E: F.si(2e7 * TNT, "J"), dm: F.si(2e7 * TNT / (c * c) * 1000, "g") });
+
+/* ---------- l'annihilation ---------- */
+$("annih").innerHTML = t("s4.annih", { E: F.qty(F.num(K.m_e * c * c / (1e3 * K.e), 6), "keV") });
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["einstein", 1905, "idea"], ["cockcroft", 1932, "experiment"], ["rainville", 2005, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["tep"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["gramme", "c"], ["hypothese", "a"], ["constante", "d"], ["chimie", "b"], ["annihilation", "c"], ["bombe", "a"], ["lithium", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 159 });
+})();
+</script>
+</body>
+</html>

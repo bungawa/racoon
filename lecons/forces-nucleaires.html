@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Forces nucléaires</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-mecanique" data-i18n="monde.mecanique"></a><span class="aux">›</span><a href="/racoon/etape?id=les-forces" data-i18n="etape.les-forces"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-meca" href="/racoon/atlas?piste=meca" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/forces-fondamentales-et-champs" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="stats">
+      <div class="stat"><span class="k" data-i18n="s1.k.coul"></span><span class="v" id="vcoul"></span><span class="f" id="fcoul"></span></div>
+      <div class="stat"><span class="k" data-i18n="s1.k.lien"></span><span class="v" id="vlien"></span><span class="f" data-i18n="s1.f.lien"></span></div>
+    </div>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi>U</mi><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mo>−</mo><msup><mi>g</mi><mn>2</mn></msup><mfrac><msup><mi mathvariant="normal">e</mi><mrow><mo>−</mo><mi>r</mi><mo>/</mo><mi>R</mi></mrow></msup><mi>r</mi></mfrac><mo>,</mo><mspace width="1em"/><mi>R</mi><mo>=</mo><mfrac><mi>ħ</mi><mrow><msub><mi>m</mi><mi>π</mi></msub><mi>c</mi></mrow></mfrac><mo>≈</mo><mn>1,4</mn><mspace width="0.2em"/><mi mathvariant="normal" data-i18n="eq.fm"></mi></math></div>
+    <p class="validite" data-i18n-html="val.12.19"></p>
+    <div class="list keyed" id="yuk"></div>
+    <div class="box warn"><b data-i18n="s1.warn.title"></b>
+      <p data-i18n-html="s1.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>B</mi><mo>=</mo><mrow><mo>(</mo><mi>Z</mi><msub><mi>m</mi><mi mathvariant="normal">p</mi></msub><mo>+</mo><mi>N</mi><msub><mi>m</mi><mi mathvariant="normal">n</mi></msub><mo>−</mo><msub><mi>m</mi><mi>X</mi></msub><mo>)</mo></mrow><msup><mi>c</mi><mn>2</mn></msup><mo>,</mo><mspace width="1em"/><mi>A</mi><mo>=</mo><mi>Z</mi><mo>+</mo><mi>N</mi></math></div>
+    <p class="validite" data-i18n-html="val.12.20"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mi>B</mi><mo>≈</mo><msub><mi>a</mi><mi>V</mi></msub><mi>A</mi><mo>−</mo><msub><mi>a</mi><mi>S</mi></msub><msup><mi>A</mi><mrow><mn>2</mn><mo>/</mo><mn>3</mn></mrow></msup><mo>−</mo><msub><mi>a</mi><mi>C</mi></msub><mfrac><mrow><mi>Z</mi><mo stretchy="false">(</mo><mi>Z</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><msup><mi>A</mi><mrow><mn>1</mn><mo>/</mo><mn>3</mn></mrow></msup></mfrac><mo>−</mo><msub><mi>a</mi><mi>A</mi></msub><mfrac><msup><mrow><mo stretchy="false">(</mo><mi>N</mi><mo>−</mo><mi>Z</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mi>A</mi></mfrac><mo>±</mo><mfrac><msub><mi>a</mi><mi>P</mi></msub><msqrt><mi>A</mi></msqrt></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.12.21"></p>
+    <figure class="chart">
+      <svg id="bchart" role="img" data-i18n-attr="aria-label:ba.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="ba.legend.model"></span><span class="c-warn ring" data-i18n="ba.legend.mes"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="Asl" data-i18n="ba.A"></label><output id="Aread" for="Asl"></output></div>
+            <input id="Asl" type="range" min="4" max="250" step="1" value="56"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="ba.k.ba"></span><span class="v" id="vba"></span><span class="f" id="fba"></span></div>
+          <div class="stat"><span class="k" data-i18n="ba.k.z"></span><span class="v" id="vz"></span><span class="f" id="fz"></span></div>
+          <div class="stat"><span class="k" data-i18n="ba.k.r"></span><span class="v" id="vr"></span></div>
+        </div>
+        <div class="list keyed" id="terms"></div>
+      </div>
+      <figcaption data-i18n-html="ba.caption"></figcaption>
+    </figure>
+    <div class="box prop"><b data-i18n="s2.sat.title"></b>
+      <p data-i18n-html="s2.sat.body"></p>
+    </div>
+    <div class="eq"><math display="block"><mi>R</mi><mo>≈</mo><msub><mi>r</mi><mn>0</mn></msub><msup><mi>A</mi><mrow><mn>1</mn><mo>/</mo><mn>3</mn></mrow></msup><mo>,</mo><mspace width="1em"/><msub><mi>r</mi><mn>0</mn></msub><mo>≈</mo><mn>1,2</mn><mspace width="0.2em"/><mi mathvariant="normal" data-i18n="eq.fm"></mi></math></div>
+    <p class="validite" data-i18n-html="val.12.22"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="list keyed" id="reac"></div>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/forces-nucleaires.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/forces-nucleaires.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const MEV = v => F.qty(F.num(v, 3), "MeV"), FM = v => F.qty(F.num(v, 3), "fm");
+const fill = (s, v) => s.replace(/\{(\w+)\}/g, (m, k) => v[k] != null ? v[k] : m);
+const EL = t("el"), nameOf = id => t("nuc.nom", { el: EL[id.replace(/\d+$/, "")], A: Noyau.MESURES[id].A });
+
+/* ---------- §1 : une attraction plus forte que Coulomb, et courte ---------- */
+(() => {
+  $("vcoul").textContent = MEV(Noyau.coulombPP(1));
+  $("fcoul").textContent = t("s1.f.coul", { j: F.qty(F.sci(Noyau.coulombPP(1) * Noyau.MEV, 3), "J") });
+  $("vlien").textContent = MEV(Noyau.MESURES.He4.BA);
+  const R = Noyau.PORTEE;
+  $("yuk").innerHTML = [1, 2, 5, 10].map(r => { const y = Noyau.yukawa(r, R);
+    return `<div><span class="k">${FM(r)}</span><span>${t("yuk.row", { y: y < 0.01 ? F.sci(y, 2) : F.num(y, 2), c: F.num(r, 2) })}</span></div>`; }).join("");
+})();
+
+/* ---------- §2 : la courbe d'Aston, modèle et mesures ---------- */
+(() => {
+  const svg = $("bchart"), Asl = $("Asl"), ids = Object.keys(Noyau.MESURES);
+  function draw() {
+    svg.innerHTML = "";
+    const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 300, x: { domain: [0, 250], label: t("ba.x") }, y: { domain: [0, 10], label: t("ba.y") } });
+    let d = ""; for (let A = 8; A <= 250; A++) d += (A > 8 ? "L" : "M") + x(A).toFixed(1) + " " + y(Math.max(0, Noyau.courbe(A))).toFixed(1);
+    Plot.el("path", { d, class: "curve" }, g);
+    ids.forEach(id => { const m = Noyau.MESURES[id]; Plot.el("circle", { cx: x(m.A), cy: y(m.BA), r: 4, class: "ref" }, g); });
+    ["He4", "Fe56", "U238"].forEach(id => { const m = Noyau.MESURES[id];
+      Plot.el("text", { x: x(m.A) + (m.A > 200 ? -6 : 6), y: y(m.BA) - 10, "text-anchor": m.A > 200 ? "end" : "start", class: "note" }, g).textContent = nameOf(id); });
+    const A = +Asl.value, Z = Noyau.zStable(A), b = Noyau.liaison(A, Z);
+    Plot.el("line", { x1: x(A), x2: x(A), y1: y(0), y2: y(10), class: "zero" }, g);
+    Plot.el("circle", { cx: x(A), cy: y(Math.max(0, b.BA)), r: 6, class: "dot" }, g);
+    const near = ids.reduce((best, id) => Math.abs(Noyau.MESURES[id].A - A) < Math.abs(Noyau.MESURES[best].A - A) ? id : best, ids[0]);
+    const mn = Noyau.MESURES[near];
+    $("Aread").textContent = String(A);
+    $("vba").textContent = MEV(b.BA);
+    $("fba").textContent = t("ba.f.mes", { nuc: nameOf(near), v: MEV(mn.BA), e: F.num(Math.abs(Noyau.liaison(mn.A, mn.Z).BA / mn.BA - 1) * 100, 2) });
+    $("vz").textContent = String(Z);
+    $("fz").textContent = t("ba.f.n", { n: A - Z });
+    $("vr").textContent = FM(Noyau.rayon(A));
+    const TERMS = ["volume", "surface", "coulomb", "asymetrie", "appariement"], tk = textOf("ba.terms", TERMS);
+    $("terms").innerHTML = TERMS.map(k => `<div><span class="k">${F.qty(F.num(b.termes[k] / A, 3), "MeV")}</span><span>${tk[k]}</span></div>`).join("");
+  }
+  Asl.oninput = draw; draw();
+})();
+
+/* ---------- §3 : ce que la courbe permet ---------- */
+(() => {
+  const R = [["fusion", ["H2", "H3"], ["He4", "n"], 5], ["fission", ["U235", "n"], ["Ba141", "Kr92", "n", "n", "n"], 236]];
+  const txt = textOf("reac.items", R.map(r => r[0]));
+  $("reac").innerHTML = R.map(([id, a, b, n]) => { const Q = Noyau.reaction(a, b);
+    return `<div><span class="k">${MEV(Q)}</span><span><strong>${txt[id].k}.</strong> ${fill(txt[id].text, { q: MEV(Q / n) })}</span></div>`; }).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["rutherford", 1911, "experiment"], ["chadwick", 1932, "experiment"], ["yukawa", 1935, "idea"], ["weizsacker", 1935, "idea"], ["fission", 1938, "experiment"], ["pion", 1947, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["reacteurs", "fusion"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["portee", "a"], ["neutrons", "a"], ["saturation", "a"], ["fer", "a"], ["surface", "a"], ["densite", "a"], ["helium", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 126 });
+})();
+</script>
+</body>
+</html>

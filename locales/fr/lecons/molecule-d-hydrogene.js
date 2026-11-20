@@ -1,0 +1,100 @@
+/* Leçon « La molécule d'hydrogène » (Feynman III.10.3) : textes en français.
+   Une autre langue = locales/<langue>/lecons/molecule-d-hydrogene.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "La molécule d'hydrogène",
+    "crumb.jour": "La molécule H₂",
+    "h1": "La molécule d'hydrogène",
+    "lede": "Deux atomes d'hydrogène qui se rencontrent ne forment pas toujours une molécule : tout dépend de l'orientation des spins de leurs électrons. Spins opposés, l'échange des électrons lie les deux atomes ; spins parallèles, il les repousse. La liaison covalente, celle de la paire d'électrons partagée, vient de là.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : l'ion moléculaire d'hydrogène",
+
+    "s1.sec": "Le modèle",
+    "s1.h2": "Deux électrons qui s'échangent",
+    "s1.p1": "Le système : deux protons tenus immobiles à la distance <var>D</var>, deux électrons. Mettons d'abord les spins des électrons opposés et fixés. Un état de base naturel, |1⟩ : l'électron <i>a</i>, spin vers le haut, autour du proton 1, l'électron <i>b</i>, spin vers le bas, autour du proton 2. L'état |2⟩ est le même avec les électrons échangés : celui de spin haut autour du proton 2. Les deux états ont la même énergie par symétrie, et les électrons peuvent permuter, avec une amplitude \u2212<var>A</var>. C'est encore un système à deux états : comme dans « L'ion moléculaire d'hydrogène », les états stationnaires sont",
+    "val.etats": "Approximation : deux états de base, chaque électron dans l'état fondamental d'un atome ; états ioniques (les deux électrons sur le même proton) et excités négligés. Spins des protons omis : avec eux, le système compte huit états, qui ne changent pas la conclusion.",
+    "s1.p2": "L'état |II⟩, de plus basse énergie <var>E</var><sub>0</sub> \u2212 <var>A</var>, a un minimum en fonction de la distance : c'est la molécule. Il a une propriété remarquable. Dans |II⟩, on ne peut plus dire quel électron est sur quel proton, ni quel spin a quel électron : la seule chose définie est qu'il y a, sur la molécule, un spin haut et un spin bas, et que la combinaison de leurs spins est un moment cinétique total nul.",
+
+    "s2.sec": "Le rôle des spins",
+    "s2.h2": "Spins parallèles : pas de molécule",
+    "s2.p1": "Si les deux spins sont vers le haut, échanger les électrons ne change rien de visible : il n'y a plus deux états de base distincts, mais un seul. Les électrons sont des fermions : l'amplitude d'un processus où ils s'échangent change de signe. La seule combinaison permise est alors celle de l'état |I⟩, celle dont la fonction d'onde d'espace change de signe à l'échange, et elle ne lie pas. Pour deux atomes qui se rencontrent avec des spins quelconques, seule la composante de spin total nul peut former la molécule :",
+    "val.singulet": "Exacte : probabilité de trouver deux spins 1/2, d'états purs faisant l'angle θ, dans l'état de spin total nul. Les spins des électrons sont supposés libres de toute autre interaction pendant la rencontre.",
+    "s2.p2": "Des atomes aux spins orientés au hasard ont ainsi une chance sur quatre de se lier à la première rencontre ; les trois autres quarts sont les trois états de spin total ℏ, qui se repoussent.",
+
+    "s3.sec": "Interaction",
+    "s3.h2": "Rapprochez deux atomes",
+    "s3.p1": "Les deux courbes ci-dessous ne sont pas calculées par le modèle à deux états : la courbe liée est une courbe de Morse, ajustée sur les mesures de la molécule réelle,",
+    "eq.cos": "cos",
+    "val.morse": "Approximation : la courbe de Morse redonne exactement la profondeur <var>E</var><sub>d</sub> = 4,75\u00a0eV, la distance <var>D</var><sub>e</sub> = 74,1\u00a0pm et la fréquence de vibration mesurées, donc la courbure du fond du puits ; ailleurs, c'est une interpolation : l'anharmonicité qu'elle prédit dépasse la mesure de 4\u00a0%, et à grande distance l'attraction réelle de deux atomes neutres décroît en 1/<var>D</var>⁶, bien plus lentement. La courbe répulsive des spins parallèles est un modèle de même échelle, sans minimum.",
+    "fig.aria": "Énergie de deux atomes d'hydrogène en fonction de la distance des protons, spins opposés et parallèles",
+    "fig.legend.II": "spin total nul, état II",
+    "fig.legend.I": "spins parallèles, état I",
+    "fig.x": "distance des protons D (pm)",
+    "fig.y": "énergie (eV)",
+    "fig.d": "Distance des protons",
+    "fig.angle": "Angle entre les spins à la rencontre",
+    "fig.k.II": "Énergie, spin total nul",
+    "fig.f.II": "comptée depuis les deux atomes séparés",
+    "fig.k.I": "Énergie, spins parallèles",
+    "fig.f.I": "toujours au-dessus des atomes séparés",
+    "fig.k.P": "Probabilité de former la molécule",
+    "fig.f.P": "(1 \u2212 cos θ)/4 ; rebond : {q}",
+    "fig.caption": "La courbe liée a son minimum à 74,1\u00a0pm, 4,75\u00a0eV sous les atomes séparés. Spins opposés, θ = 180°, la rencontre lie une fois sur deux ; spins parallèles, jamais. Le mouvement des protons n'est pas représenté : la molécule au repos garde une énergie de vibration au fond du puits.",
+    "s3.p2": "Le modèle à deux états donne la forme : une courbe liée, l'autre répulsive. Il ne donne pas la profondeur juste, pas plus que pour l'ion. Mais il dit pourquoi la paire d'électrons de la liaison a des spins opposés.",
+
+    "s4.sec": "Décrire le système",
+    "s4.h2": "De la liaison covalente à la liaison ionique",
+    "s4.p1": "Deux électrons partagés lient plus fort qu'un seul : l'énergie de dissociation de H₂ est 4,48\u00a0eV, contre 2,65\u00a0eV pour H₂⁺, et les protons sont plus proches, 74\u00a0pm contre 106\u00a0pm. C'est la liaison covalente : une paire d'électrons de spins opposés qui permutent entre deux atomes. Elle est la plus courante en chimie.",
+    "s4.p2": "Entre deux atomes différents, l'un peut attirer plus fort les électrons : l'état où les deux électrons sont sur le même noyau devient bas, et doit entrer dans la base. À l'extrême, la liaison est ionique : un électron est passé d'un atome à l'autre. Entre les deux, toutes les nuances existent.",
+    "sys.title": "Le système décrit : profondeur, vibration, température",
+    "sys.body": "Le puits a une profondeur de {De} ; la molécule au repos n'en tire que {D0}, car elle garde au fond du puits une énergie de vibration de {zp}. Distance d'équilibre : {re}. À 300\u00a0K, <var>k</var><sub>B</sub><var>T</var> = {kT}, {r} fois moins que l'énergie de dissociation : à température ambiante, les chocs ne cassent pas la molécule.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "La paire d'électrons, expliquée",
+    "hist.intro": "La paire partagée a été proposée par les chimistes avant d'être comprise par la mécanique quantique ; l'échange des protons, eux aussi fermions, a laissé une trace mesurable dans l'hydrogène.",
+    "hist.events": {
+      lewis: { who: "Gilbert Lewis", what: "propose qu'une liaison chimique est faite de deux électrons partagés par deux atomes.", context: "La même année, Walther Kossel décrit la liaison ionique par le transfert d'électrons." },
+      heitler: { who: "Walter Heitler et Fritz London", what: "calculent pour la première fois la liaison de la molécule H₂ par la mécanique quantique, avec l'échange des deux électrons.", context: "Werner Heisenberg et Friedrich Hund proposent la même année les deux formes de l'hydrogène, selon les spins des protons." },
+      para: { who: "Karl Friedrich Bonhoeffer et Paul Harteck", what: "préparent pour la première fois du parahydrogène pur, la forme où les spins des deux protons sont opposés.", context: "Travail mené à l'institut Kaiser-Wilhelm de chimie physique et d'électrochimie." },
+      nobel: { who: "Werner Heisenberg", what: "reçoit le prix Nobel de physique pour la création de la mécanique quantique.", context: "Le prix cite une application : la découverte des formes ortho et para de l'hydrogène." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      liquide: { name: "Stocker l'hydrogène liquide", text: "À température ambiante, l'hydrogène est aux trois quarts ortho ; à 20\u00a0K, l'équilibre est presque tout para. La conversion, lente sans aide, libère une chaleur qui peut vaporiser jusqu'à la moitié du liquide. On la force donc pendant la liquéfaction avec un catalyseur, oxyde de fer ou charbon actif." },
+      rmn: { name: "Amplifier un signal de résonance magnétique nucléaire", text: "Hydrogéner une molécule avec du parahydrogène lui transmet l'ordre des spins des protons : son signal de résonance magnétique nucléaire du proton est fortement amplifié. La méthode sert à suivre des mécanismes de réaction, et elle est étudiée pour l'imagerie par résonance magnétique." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      base: { prompt: "Spins opposés : quels sont les deux états de base de H₂ dans le modèle ?",
+        options: { a: "L'électron de spin haut sur le proton 1 et celui de spin bas sur le proton 2, ou l'inverse.", b: "Les deux électrons sur le proton 1, ou les deux sur le proton 2.", c: "Les deux spins en haut, ou les deux en bas.", d: "La molécule liée, ou dissociée." },
+        why: "Chaque état de base a un électron par proton ; ils diffèrent par l'échange des électrons. Les états où les deux électrons sont sur le même proton sont négligés." },
+      spins: { prompt: "Dans l'état lié |II⟩, que sait-on des spins ?",
+        options: { a: "Le spin haut est sur le proton 1.", b: "Les deux spins sont vers le haut.", c: "Il y a un spin haut et un spin bas, sans qu'on puisse dire lequel est sur quel proton : le moment cinétique de spin total est nul.", d: "Rien : les spins ne jouent pas de rôle." },
+        why: "|II⟩ = (|1⟩ + |2⟩)/√2 mélange à parts égales les deux attributions. La combinaison de spins qui en résulte a un moment cinétique total nul." },
+      parallele: { prompt: "Pourquoi deux atomes aux spins électroniques parallèles ne se lient-ils pas ?",
+        options: { a: "Parce que deux spins parallèles se repoussent magnétiquement.", b: "Parce que l'amplitude A est nulle.", c: "Parce que les électrons ne peuvent pas permuter.", d: "Parce que les électrons sont des fermions : avec des spins identiques, seule la combinaison antisymétrique d'espace est permise, et elle est répulsive." },
+        why: "L'échange de deux fermions identiques change le signe de l'amplitude : l'état symétrique |II⟩ est interdit. L'interaction magnétique des spins est bien trop faible pour jouer." },
+      hasard: { prompt: "Deux atomes aux spins orientés au hasard se rencontrent. Quelle est la probabilité qu'ils forment une molécule à ce moment ?",
+        options: { a: "1/2.", b: "1/4 : il y a un état de spin total nul pour trois de spin total ℏ.", c: "1.", d: "0." },
+        hint: "Moyennez (1 \u2212 cos θ)/4 sur des directions au hasard.",
+        why: "La moyenne de cos θ est nulle pour des directions au hasard : P = 1/4. Les trois autres quarts sont les états de spin 1, qui se repoussent." },
+      fermi: { prompt: "On remplace les électrons par des particules identiques sans spin, qui seraient des bosons. Quel état d'espace serait permis ?",
+        options: { a: "L'état symétrique |II⟩ seulement : celui qui lie.", b: "L'état antisymétrique |I⟩ seulement.", c: "Les deux.", d: "Aucun." },
+        why: "Pour des bosons identiques, l'échange garde le signe de l'amplitude : seule la combinaison symétrique est permise. Pour les électrons, c'est l'état de spin qui décide de la symétrie d'espace." },
+      compare: { prompt: "H₂ : 4,48\u00a0eV de dissociation, 74\u00a0pm. H₂⁺ : 2,65\u00a0eV, 106\u00a0pm. Que montre la comparaison ?",
+        options: { a: "Que le deuxième électron n'ajoute rien.", b: "Que l'ion est plus stable que la molécule.", c: "Que deux électrons de spins opposés partagés lient plus fort et plus court qu'un seul.", d: "Que les deux mesures se contredisent." },
+        why: "La paire partagée abaisse davantage l'énergie, et tire les protons plus près, malgré la répulsion entre les électrons." },
+      ionique: { prompt: "Dans une molécule formée de deux atomes très différents, quel état de base faut-il ajouter au modèle ?",
+        options: { a: "Un état où les spins sont parallèles.", b: "L'état où les deux électrons sont sur le noyau qui les attire le plus : la liaison devient en partie ionique.", c: "Aucun : le modèle à deux états suffit toujours.", d: "Un état sans électron." },
+        why: "Quand un noyau attire nettement plus les électrons, l'état ionique devient bas et se mélange aux deux états de base covalents ; à l'extrême, il domine." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 10, §10-3 (texte original en anglais). Molécule H₂ : distance d'équilibre 74,144\u00a0pm, fréquence de vibration 4\u00a0401,213\u00a0cm⁻¹ et son anharmonicité 121,336\u00a0cm⁻¹, énergie de dissociation 36\u00a0118,3\u00a0cm⁻¹, soit 4,478\u00a0eV (NIST Chemistry WebBook) ; profondeur du puits déduite en ajoutant l'énergie de point zéro. Formes ortho et para : données usuelles. Courbes et calculs propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

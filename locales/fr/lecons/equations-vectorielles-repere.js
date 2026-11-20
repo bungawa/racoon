@@ -1,0 +1,97 @@
+/* Leçon « Remarques sur les équations vectorielles » (Feynman II.6.3) : textes en français.
+   Une autre langue = locales/<langue>/lecons/equations-vectorielles-repere.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Remarques sur les équations vectorielles",
+    "crumb.jour": "Équations vectorielles",
+    "h1": "Remarques sur les équations vectorielles",
+    "eq.cos": "cos",
+    "eq.sin": "sin",
+    "lede": "Pour calculer le potentiel du dipôle, on a mis l'axe z le long du dipôle : le calcul devient simple, mais le résultat semble lié à ce choix. Écrit en vecteurs, il ne l'est plus. La méthode est générale : choisir les axes qui simplifient le calcul, puis écrire le résultat sous une forme qui vaut dans tous les repères.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : rotations",
+
+    "s1.sec": "Choisir les axes, puis les oublier",
+    "s1.h2": "Ce qui change et ce qui reste quand on tourne les axes",
+    "s1.p1": "Tournez les axes d'un angle α autour de <var>z</var> (leçon « Rotations »). Un même point a d'autres coordonnées ; un même vecteur a d'autres composantes, qui se transforment de la même façon que les coordonnées.",
+    "val.rotation": "Exacte : changement de base orthonormée par rotation d'angle α autour de <var>z</var>. Les composantes d'un vecteur se transforment de la même façon. Ce qui reste approché : rien ici ; c'est en physique que la question se pose, l'espace étant supposé isotrope, sans direction privilégiée.",
+    "s1.p2": "Les composantes changent, mais certaines combinaisons ne changent pas : la longueur d'un vecteur, l'angle entre deux vecteurs, donc leur produit scalaire.",
+    "val.scalaire": "Exacte : le produit scalaire ne dépend pas de la base orthonormée où on l'écrit (leçon « Produit scalaire »). Dans une base non orthonormée, il faudrait ajouter des termes croisés.",
+    "s1.p3": "Le potentiel du dipôle, calculé avec <var>z</var> le long de <var>p</var>, s'écrit <var>K</var><var>p</var><var>z</var>/<var>r</var><sup>3</sup>. Dans ce repère, <var>p</var><var>z</var> = <var>p</var>·<var>r</var> : en remplaçant l'un par l'autre, on obtient (6.13), qui ne contient plus que des produits scalaires et des longueurs. Elle vaut donc dans n'importe quel repère, pour un dipôle orienté n'importe comment. Une égalité entre vecteurs, ou entre grandeurs qui ne changent pas par rotation, est vraie dans tous les repères dès qu'elle l'est dans un seul.",
+
+    "s2.sec": "À manipuler",
+    "s2.h2": "Un dipôle, un point, deux repères",
+    "s2.p1": "Un dipôle de 10<sup>\u221211</sup>\u00a0C·m est à l'origine ; le point P est à 5\u00a0cm. Tournez le repère <var>x</var>′<var>y</var>′ : les composantes de <var>p</var> et de <var>r</var> changent, leur produit scalaire et le potentiel ne changent pas. La troisième case applique la formule du calcul initial, <var>K</var><var>p</var><var>y</var>′/<var>r</var><sup>3</sup>, en supposant que l'axe <var>y</var>′ est l'axe du dipôle : elle n'est juste que lorsque c'est vrai.",
+    "fig.aria": "Deux repères tournés l'un par rapport à l'autre, un dipôle à l'origine et un point d'observation, avec les composantes de chaque vecteur dans chaque repère",
+    "fig.legend.xy": "axes x, y",
+    "fig.legend.prime": "axes tournés x′, y′",
+    "fig.legend.p": "moment dipolaire p",
+    "fig.legend.r": "vecteur r vers P",
+    "fig.al": "Rotation α du repère x′y′",
+    "fig.be": "Direction du dipôle",
+    "fig.deg": "{a}\u00a0°",
+    "fig.trio": "({a} ; {b})",
+    "fig.l.p": "p dans x′y′ : {c} × 10⁻¹¹ C·m",
+    "fig.l.r": "r dans x′y′ : {c} cm",
+    "fig.l.pxy": "p dans xy : {c} × 10⁻¹¹ C·m",
+    "fig.l.rxy": "r dans xy : {c} cm",
+    "fig.k.comp": "p·r calculé dans x′y′",
+    "fig.f.comp": "calculé dans xy : {v}",
+    "fig.k.vect": "φ par (6.13), composantes x′y′",
+    "fig.f.vect": "composantes xy : {v}",
+    "fig.k.naif": "φ par K p y′/r³",
+    "fig.f.naif.ok": "juste : y′ est l'axe du dipôle",
+    "fig.f.naif.ko": "faux de {e} : y′ n'est pas l'axe du dipôle",
+    "fig.caption": "Les deux premières cases ne bougent pas quand on tourne le repère : seules les composantes changent. La troisième n'est juste que si la direction du dipôle fait 90° de plus que l'angle α, c'est-à-dire si y′ est le long de p : une formule en composantes est liée au repère où on l'a obtenue.",
+
+    "s3.sec": "Les composantes ont leur place",
+    "s3.h2": "Écrire en composantes n'est pas une faute",
+    "s3.p1": "La notation vectorielle n'interdit pas les composantes. Devant un problème nouveau, les écrire est souvent plus clair : on voit chaque dérivée, chaque terme. La divergence, par exemple, est la somme de trois dérivées partielles.",
+    "val.divergence": "Exacte en coordonnées cartésiennes, dans toute base orthonormée fixe : la somme des trois dérivées a la même valeur après rotation des axes. En coordonnées sphériques ou cylindriques, la formule est différente : les vecteurs de base y changent d'un point à l'autre (leçon « Les pièges »).",
+    "s3.p2": "La démarche est donc double. Pour calculer : choisir les axes qui rendent le problème simple, ici <var>z</var> le long de <var>p</var>, et écrire les composantes. Pour énoncer le résultat : le réécrire en vecteurs, ce qui le libère du choix des axes et montre qu'il ne dépend que de la géométrie du système.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Des quaternions à la norme sur les symboles",
+    "hist.intro": "Pendant la plus grande partie du XIX<sup>e</sup> siècle, les équations de la physique s'écrivaient composante par composante. La notation vectorielle actuelle s'est dégagée des quaternions en quelques décennies ; elle est aujourd'hui fixée par une norme.",
+    "hist.events": {
+      hamilton: { who: "William Rowan Hamilton", what: "découvre les quaternions le 16 octobre, en marchant le long du Royal Canal à Dublin, et grave leur règle fondamentale sur une pierre du pont de Broome.", context: "Un quaternion a une partie scalaire et une partie à trois composantes ; le produit de deux quaternions purs contient à la fois le produit scalaire et le produit vectoriel." },
+      gibbs: { who: "Josiah Willard Gibbs", what: "fait imprimer à titre privé, pour ses étudiants, ses Éléments d'analyse vectorielle (une seconde partie suit en 1884).", context: "Il sépare produit scalaire et produit vectoriel et ne garde que les vecteurs : c'est, à peu de choses près, la notation de cette leçon." },
+      norme: { who: "Norme EN ISO 80000-2", what: "publiée le 8 octobre, elle fixe les signes et symboles mathématiques des sciences et des techniques ; un chapitre traite des scalaires, vecteurs et tenseurs.", context: "Elle précise par exemple l'écriture du produit scalaire et du produit vectoriel." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      structures: { name: "Calcul des structures", text: "Les logiciels de calcul de structures et de conception assistée par ordinateur calculent chaque poutre ou chaque élément dans son repère local, où ses équations sont simples, puis tournent les résultats dans le repère global : la méthode de cette leçon, appliquée des milliers de fois." },
+      notation: { name: "Normes de notation", text: "La série EN ISO 80000 sert de référence aux manuels, aux normes techniques et aux éditeurs scientifiques pour l'écriture des grandeurs et des opérations vectorielles." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      invariant: { prompt: "On tourne les axes. Laquelle de ces grandeurs ne change pas ?",
+        options: { a: "La composante p_x du moment dipolaire.", b: "Le produit scalaire p·r.", c: "La coordonnée x du point d'observation.", d: "Le rapport p_x/p_y." },
+        why: "Le produit scalaire ne dépend que des longueurs et de l'angle entre les deux vecteurs, que la rotation ne modifie pas. Les composantes, elles, changent." },
+      composantes: { prompt: "Le vecteur p a les composantes (1 ; 0) dans le repère xy. Que deviennent-elles si on tourne les axes de 90° (x′ le long de l'ancien y) ?",
+        options: { a: "(1 ; 0) : le vecteur n'a pas bougé.", b: "(0 ; 1).", c: "(0 ; \u22121).", d: "(\u22121 ; 0)." },
+        hint: "x′ = x cos α + y sin α, y′ = \u2212x sin α + y cos α.",
+        why: "Avec α = 90° : x′ = y = 0 et y′ = \u2212x = \u22121. Le vecteur est le même ; c'est le repère qui a tourné, dans l'autre sens vu du vecteur." },
+      choix: { prompt: "Pourquoi, pour calculer le potentiel d'une paire de charges, met-on l'axe z le long de la paire ?",
+        options: { a: "Parce que le calcul est le plus simple : une seule coordonnée porte la dissymétrie.", b: "Parce que le résultat serait faux autrement.", c: "Parce que la paire définit le seul repère galiléen.", d: "Parce que les composantes x et y du champ sont nulles partout." },
+        why: "N'importe quel repère donnerait le même potentiel, au prix d'un calcul plus long. Une fois le résultat écrit en vecteurs, le choix de z n'y figure plus." },
+      piege: { prompt: "Un étudiant applique φ = K p z/r³ à un dipôle dirigé le long de x. Qu'obtient-il ?",
+        options: { a: "Le bon résultat : la formule est vectorielle.", b: "Le bon résultat au signe près.", c: "Le bon résultat, divisé par √2.", d: "Un résultat faux : dans ce repère, p·r = p x, et la formule en z ne vaut que si z est le long de p." },
+        why: "K p z/r³ est la forme en composantes, liée au repère où z est le long de p. La forme vectorielle K p·r/r³ donne ici K p x/r³." },
+      tourner: { prompt: "La divergence ∂Ex/∂x + ∂Ey/∂y + ∂Ez/∂z est calculée dans deux bases orthonormées fixes, tournées l'une par rapport à l'autre. Les deux résultats :",
+        options: { a: "Diffèrent, car les composantes de E diffèrent.", b: "Sont égaux : la divergence ne dépend pas de la base orthonormée.", c: "Sont égaux seulement si E est uniforme.", d: "Sont opposés." },
+        why: "Chaque terme change, mais leur somme est la même : ∇·E est un scalaire, comme ρ/ε0, qui ne dépend d'aucun repère." },
+      cartesien: { prompt: "En coordonnées sphériques, la divergence d'un champ radial E_r(r) vaut-elle ∂E_r/∂r ?",
+        options: { a: "Oui, par analogie avec les coordonnées cartésiennes.", b: "Oui, si le champ est radial.", c: "Non : elle vaut (1/r²) ∂(r²E_r)/∂r, car les vecteurs de base changent d'un point à l'autre.", d: "Non : elle est toujours nulle." },
+        why: "La formule en somme de dérivées partielles vaut dans une base orthonormée fixe. Pour E = K q/r², ∂E_r/∂r ≠ 0 alors que la divergence est nulle hors de la charge : (1/r²) ∂(r² × Kq/r²)/∂r = 0." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 6 (texte original en anglais), §6-3. Figure, exemples et calculs numériques propres à cette page. Sigles : EN, ISO.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

@@ -1,0 +1,36 @@
+{
+ "cles": [
+  [
+   "electrons",
+   "a"
+  ],
+  [
+   "basique",
+   "b"
+  ],
+  [
+   "nernst",
+   "c"
+  ],
+  [
+   "pile",
+   "d"
+  ],
+  [
+   "capacite",
+   "a"
+  ],
+  [
+   "lgk",
+   "b"
+  ],
+  [
+   "dismut",
+   "c"
+  ],
+  [
+   "cinetique",
+   "d"
+  ]
+ ]
+}

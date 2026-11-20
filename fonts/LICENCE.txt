@@ -1,0 +1,4 @@
+New Computer Modern 8.1.1, (C) 2019-2026 Antonis Tsolomitis.
+Released under the GUST Font License: http://tug.org/fonts/licenses/GUST-FONT-LICENSE.txt
+These woff2 files are the unmodified .otf faces NewCM10-Book, NewCM10-BookItalic, NewCM10-Bold,
+NewCM10-BoldItalic and NewCMMath-Book, repackaged as woff2 by fontTools (same glyphs, same names).

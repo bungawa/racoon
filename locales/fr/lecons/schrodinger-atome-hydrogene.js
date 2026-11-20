@@ -1,0 +1,103 @@
+/* Leçon « L'équation de Schrödinger de l'atome d'hydrogène » (Feynman III.19.1) : textes en français.
+   Une autre langue = locales/<langue>/lecons/schrodinger-atome-hydrogene.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "L'équation de Schrödinger de l'atome d'hydrogène",
+    "crumb.jour": "Schrödinger pour l'hydrogène",
+    "h1": "L'équation de Schrödinger de l'atome d'hydrogène",
+    "lede": "Un proton, un électron, et la force de Coulomb entre eux : le plus simple des atomes. Son équation de Schrödinger s'écrit en une ligne et se résout exactement. Avant de la résoudre, voyons ce qu'elle contient, ce qu'elle néglige, et pourquoi on l'écrit en coordonnées sphériques.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : les niveaux d'énergie quantifiés",
+    "eq.sin": "sin",
+
+    "s1.sec": "L'équation",
+    "s1.h2": "Un électron dans le champ d'un proton",
+    "s1.p1": "Le système : un électron, traité comme une particule sans spin et non relativiste, attiré par un proton supposé infiniment lourd et immobile à l'origine. L'énergie potentielle est celle de Coulomb, nulle à l'infini. L'équation de Schrödinger (16.54) devient :",
+    "val.19.3": "Approximation : proton fixe et ponctuel, électron sans spin, non relativiste, sans effet magnétique. Les termes négligés sont d'ordre α<sup>2</sup> ≈ 5 × 10<sup>\u22125</sup> en valeur relative ; la masse finie du proton se rattrape en remplaçant <var>m</var> par la masse réduite, un effet de 5 × 10<sup>\u22124</sup>.",
+    "s1.p2": "On cherche les états d'énergie définie : ceux dont la dépendance en temps est une simple phase.",
+    "val.19.4": "Exacte : forme d'un état stationnaire quand l'hamiltonien ne dépend pas du temps. Tout état de l'atome est une superposition de tels états.",
+    "val.19.5": "Exacte à partir de (19.3) et (19.4) ; elle hérite des approximations de (19.3). <var>E</var> < 0 pour un électron lié, puisque le zéro est pris à l'infini.",
+
+    "s2.sec": "Les coordonnées",
+    "s2.h2": "Un potentiel qui ne dépend que de r",
+    "s2.p1": "Le potentiel ne dépend que de la distance <var>r</var> au proton. On écrit donc le laplacien en coordonnées sphériques <var>r</var>, θ, ϕ :",
+    "val.19.6": "Exacte : identité de l'analyse vectorielle, pour toute fonction deux fois dérivable, sauf sur l'axe θ = 0, où ϕ n'est pas défini, et en <var>r</var> = 0.",
+    "s2.p2": "Le premier terme porte sur <var>r</var> seul ; les deux autres, sur les angles, divisés par <var>r</var><sup>2</sup>. Les solutions à symétrie sphérique n'ont que le premier : c'est le sujet de « Les solutions à symétrie sphérique ». La partie angulaire, elle, est fixée par le moment cinétique : « Les états à dépendance angulaire ».",
+
+    "s3.sec": "Les échelles",
+    "s3.h2": "Rayon de Bohr et énergie de Rydberg",
+    "s3.p1": "L'équation ne contient que trois constantes, ħ, <var>m</var> et <var>q<sub>e</sub></var><sup>2</sup>/(4πε<sub>0</sub>). Elles ne forment qu'une longueur, le rayon de Bohr, et qu'une énergie, celle de Rydberg. Les niveaux, que la suite de l'étape trouvera, sont \u2212<var>E<sub>R</sub></var><var>Z</var><sup>2</sup>/<var>n</var><sup>2</sup>. Choisissez un système : l'atome à noyau fixe, l'hydrogène avec sa masse réduite, le deutérium, l'ion hélium, le positronium.",
+    "fig.aria": "Diagramme des niveaux d'énergie d'un système hydrogénoïde, avec les raies Lyman alpha et Balmer alpha",
+    "fig.legend.niveaux": "niveaux \u2212E_R Z²/n²",
+    "fig.legend.lyman": "Lyman α, 2 → 1",
+    "fig.legend.balmer": "Balmer α, 3 → 2",
+    "fig.systemes": "Système",
+    "fig.b.fixe": "noyau fixe",
+    "fig.b.h": "¹H",
+    "fig.b.d": "²H",
+    "fig.b.he": "He⁺",
+    "fig.b.ps": "positronium",
+    "fig.y": "énergie (eV)",
+    "fig.n": "n = {n}",
+    "fig.k.e1": "Niveau fondamental",
+    "fig.f.e1": "rayon {r} ; masse réduite {mu} mₑ",
+    "fig.k.lyman": "Lyman α, dans le vide",
+    "fig.f.ecart": "écart à ¹H : {v} pm",
+    "fig.k.balmer": "Balmer α, dans le vide",
+    "fig.f.visible": "dans le visible",
+    "fig.f.invisible": "hors du visible",
+    "fig.caption": "Tout le spectre se déduit de deux nombres, <var>Z</var> et la masse réduite μ = <var>m<sub>e</sub>M</var>/(<var>m<sub>e</sub></var> + <var>M</var>). L'ion hélium a des niveaux quatre fois plus profonds et un rayon deux fois plus petit. Le positronium, de masse réduite <var>m<sub>e</sub></var>/2, a des niveaux deux fois moins profonds. Le deutérium décale les raies de l'hydrogène d'environ 2,7 × 10<sup>\u22124</sup> en valeur relative.",
+
+    "s4.sec": "Décrire le système",
+    "s4.h2": "Ce que l'équation laisse de côté",
+    "s4.p1": "Le modèle de (19.3) a deux nombres sans dimension pour juger de ce qu'il néglige : le rapport des masses de l'électron et du noyau, et le carré de la vitesse de l'électron devant <var>c</var>.",
+    "sys.title": "L'hydrogène, en ordres de grandeur",
+    "sys1.body": "<var>m<sub>e</sub></var>/<var>m<sub>p</sub></var> = {r} : supposer le proton immobile décale toutes les raies de cette fraction. La masse réduite corrige l'effet exactement dans ce modèle à deux corps : elle le fait passer de l'ordre de 5 × 10<sup>\u22124</sup> à rien.",
+    "sys2.body": "Dans l'état fondamental, la vitesse typique de l'électron est α<var>c</var> ≈ {v} : (<var>v</var>/<var>c</var>)<sup>2</sup> = α<sup>2</sup> ≈ {a2}. La relativité et le spin dédoublent la raie Lyman α en deux composantes séparées d'environ 5 × 10<sup>\u22124</sup> nm, la structure fine que ce modèle ignore.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Un atome qui sert d'étalon",
+    "hist.intro": "L'hydrogène a été le premier succès de l'équation de Schrödinger. Sa simplicité en a fait un étalon : la moindre différence entre deux noyaux se lit dans ses raies.",
+    "hist.events": {
+      schrodinger: { who: "Erwin Schrödinger", what: "publie dans les Annalen der Physik la première partie de « Quantisierung als Eigenwertproblem ».", context: "Il y résout l'équation de l'atome d'hydrogène et retrouve les niveaux de Bohr, sans postulat de quantification : ce sont les valeurs propres." },
+      urey: { who: "Harold Urey, avec Ferdinand Brickwedde et G. M. Murphy", what: "détecte le deutérium par spectroscopie, à la fin de l'année.", context: "Brickwedde distille cinq litres d'hydrogène liquide jusqu'à environ un millilitre, pour concentrer l'isotope de masse 2. Les raies de Balmer apparaissent doublées, décalées par la masse réduite, comme sur la figure. La publication date de 1932." },
+      nobel: { who: "Harold Urey", what: "reçoit le prix Nobel de chimie pour la découverte de l'hydrogène lourd.", context: "Le deutérium ne forme qu'environ 0,0156 % de l'hydrogène terrestre : un atome sur 6 400." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      lyman: { name: "L'astronomie en Lyman α", text: "La raie Lyman α de l'hydrogène, à 121,567\u00a0nm, est fortement absorbée par l'air : on l'observe depuis des satellites. Elle a aussi été observée sur l'antihydrogène, avec une fréquence égale à celle de l'hydrogène aux incertitudes près, comme le veut la symétrie entre matière et antimatière." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      potentiel: { prompt: "Quelle est l'énergie potentielle de l'électron dans l'atome d'hydrogène, avec le zéro à l'infini ?",
+        options: { a: "+q_e²/(4πε₀r).", b: "\u2212q_e²/(4πε₀r²).", c: "\u2212q_e²/(4πε₀r) : l'attraction de Coulomb entre deux charges opposées.", d: "\u2212q_e r." },
+        why: "Deux charges de signes opposés, q_e et \u2212q_e : V = \u2212q_e²/(4πε₀r), négative, nulle à l'infini. Feynman écrit e² pour q_e²/(4πε₀)." },
+      stationnaire: { prompt: "Pourquoi peut-on chercher des solutions de la forme ψ(r, t) = e^(\u2212iEt/ħ) ψ(r) ?",
+        options: { a: "Parce que le potentiel ne dépend pas du temps : les états d'énergie définie évoluent par une simple phase, et tout état en est une superposition.", b: "Parce que l'électron est immobile.", c: "Parce que E est nulle.", d: "Parce que ψ est réelle." },
+        why: "Si H ne dépend pas de t, la séparation des variables donne ces états stationnaires, et l'équation (19.5) pour ψ(r). Leur densité |ψ|² ne bouge pas." },
+      spherique: { prompt: "Pourquoi écrire l'équation en coordonnées sphériques ?",
+        options: { a: "Parce que l'électron tourne en cercle.", b: "Parce que ψ ne dépend que de r.", c: "Par habitude.", d: "Parce que le potentiel ne dépend que de r : la symétrie sépare la partie radiale de la partie angulaire." },
+        why: "V(r) est le même dans toutes les directions. En coordonnées sphériques, l'équation se sépare en une équation en r et une partie angulaire fixée par le moment cinétique. Tous les états ne sont pas sphériques pour autant." },
+      masse: { prompt: "On tient compte du mouvement du proton. Que faut-il changer dans les niveaux ?",
+        options: { a: "Rien.", b: "Remplacer m_e par la masse réduite μ = m_e m_p/(m_e + m_p) : les niveaux remontent d'environ 5 × 10⁻⁴ en valeur relative.", c: "Doubler la masse.", d: "Ajouter l'énergie cinétique du proton à chaque niveau." },
+        why: "Un problème à deux corps se ramène à un corps de masse réduite autour du centre de masse. E_R est proportionnelle à μ : elle diminue de m_e/m_p ≈ 5,4 × 10⁻⁴. Lyman α passe de 121,50 à 121,57 nm." },
+      deuterium: { prompt: "Pourquoi les raies du deutérium sont-elles légèrement décalées par rapport à celles de l'hydrogène ?",
+        options: { a: "Parce que sa masse réduite est plus proche de m_e : son énergie de Rydberg est plus grande d'environ 2,7 × 10⁻⁴, ses raies plus courtes.", b: "Parce que son noyau a une charge 2.", c: "Parce que le neutron attire l'électron.", d: "Elles ne le sont pas." },
+        why: "Même charge, noyau deux fois plus lourd : μ se rapproche de m_e. La différence relative vaut environ m_e/m_p \u2212 m_e/m_d ≈ 2,7 × 10⁻⁴ : 0,18 nm sur la raie Balmer α. C'est ainsi qu'Urey a découvert le deutérium." },
+      helium: { prompt: "Comment sont les niveaux de l'ion He⁺ comparés à ceux de l'hydrogène ?",
+        options: { a: "Les mêmes.", b: "Deux fois plus profonds.", c: "Quatre fois plus profonds, avec un rayon deux fois plus petit : E ∝ Z², r_B ∝ 1/Z.", d: "Deux fois moins profonds." },
+        why: "Avec une charge Z q_e, l'énergie de Rydberg est multipliée par Z² et le rayon divisé par Z. Le fondamental de He⁺ est à \u221254,4 eV." },
+      neglige: { prompt: "Que néglige l'équation (19.3) de l'atome d'hydrogène, et à quel niveau ?",
+        options: { a: "L'attraction coulombienne, au niveau de 10 %.", b: "L'énergie cinétique de l'électron.", c: "Rien : elle est exacte.", d: "Le spin, la relativité et les effets magnétiques, d'ordre α² ≈ 5 × 10⁻⁵, et la taille du proton, plus faible encore." },
+        why: "Ces effets donnent la structure fine et d'autres corrections minuscules, mesurées avec une précision bien supérieure. Le modèle donne les niveaux à quelques 10⁻⁵ près." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 19, §19-1 (texte original en anglais). Notations SI : (19.3) et (19.5) sont écrites avec <var>q<sub>e</sub></var><sup>2</sup>/(4πε<sub>0</sub>) au lieu de <var>e</var><sup>2</sup>. Schrödinger : Annalen der Physik 79 (1926). Urey, Brickwedde, Murphy, abondance du deutérium : Wikipédia, « Deuterium ». Lyman α et sa structure fine : Wikipédia, « Lyman-alpha line ». Masses du deutéron (2,01355 u) et de la particule α (4,00151 u) : CODATA 2022, arrondies. Calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

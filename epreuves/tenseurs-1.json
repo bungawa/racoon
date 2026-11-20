@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["polarisation", "a"],
+  ["mesures", "b"],
+  ["tourne", "c"],
+  ["invariant", "d"],
+  ["demiaxes", "a"],
+  ["normale", "b"],
+  ["coin", "c"],
+  ["paliers", "d"]
+ ]
+}

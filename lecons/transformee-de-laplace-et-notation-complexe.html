@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Transformée de Laplace et notation complexe</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-ondes" data-i18n="monde.ondes"></a><span class="aux">›</span><a href="/racoon/etape?id=systemes-lineaires" data-i18n="etape.systemes-lineaires"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-ondes" href="/racoon/atlas?piste=ondes" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/resonance-electrique" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi>F</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi>∞</mi></msubsup><mi>f</mi><mo>(</mo><mi>t</mi><mo>)</mo><mspace width="0.15em"/><msup><mi>e</mi><mrow><mo>−</mo><mi>s</mi><mi>t</mi></mrow></msup><mspace width="0.15em"/><mi>d</mi><mi>t</mi></math></div>
+    <p class="validite" data-i18n-html="val.1.1"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mi>d</mi><mi>f</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>↦</mo><mi>s</mi><mi>F</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>−</mo><mi>f</mi><mo>(</mo><mn>0</mn><mo>)</mo><mo>,</mo><mspace width="1.2em"/><msubsup><mo>∫</mo><mn>0</mn><mi>t</mi></msubsup><mi>f</mi><mo>↦</mo><mfrac><mrow><mi>F</mi><mo>(</mo><mi>s</mi><mo>)</mo></mrow><mi>s</mi></mfrac><mo>,</mo><mspace width="1.2em"/><mi>f</mi><mo>∗</mo><mi>g</mi><mo>↦</mo><mi>F</mi><mo>(</mo><mi>s</mi><mo>)</mo><mspace width="0.1em"/><mi>G</mi><mo>(</mo><mi>s</mi><mo>)</mo></math></div>
+    <p class="validite" data-i18n-html="val.1.2"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="list keyed" id="morphisme"></div>
+    <div class="box warn"><b data-i18n="s2.warn.title"></b>
+      <p data-i18n-html="s2.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msup><mi>e</mi><mrow><mi>s</mi><mi>t</mi></mrow></msup><mo>⟶</mo><mi>H</mi><mo>(</mo><mi>s</mi><mo>)</mo><mspace width="0.15em"/><msup><mi>e</mi><mrow><mi>s</mi><mi>t</mi></mrow></msup><mo>,</mo><mspace width="1.2em"/><mi>H</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi>∞</mi></msubsup><mi>h</mi><mo>(</mo><mi>τ</mi><mo>)</mo><mspace width="0.15em"/><msup><mi>e</mi><mrow><mo>−</mo><mi>s</mi><mi>τ</mi></mrow></msup><mspace width="0.15em"/><mi>d</mi><mi>τ</mi></math></div>
+    <p class="validite" data-i18n-html="val.1.3"></p>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><mi>Z</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>=</mo><mi>R</mi><mo>+</mo><mi>L</mi><mi>s</mi><mo>+</mo><mfrac><mn>1</mn><mrow><mi>C</mi><mi>s</mi></mrow></mfrac><mo>,</mo><mspace width="1.2em"/><mi>I</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>E</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mi>L</mi><msub><mi>i</mi><mn>0</mn></msub><mo>−</mo><mfrac><msub><mi>q</mi><mn>0</mn></msub><mrow><mi>C</mi><mi>s</mi></mrow></mfrac></mrow><mrow><mi>Z</mi><mo>(</mo><mi>s</mi><mo>)</mo></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.1.4"></p>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="eq"><math display="block"><mi>q</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><munder><mrow><msub><mi>c</mi><mn>1</mn></msub><msup><mi>e</mi><mrow><msub><mi>p</mi><mn>1</mn></msub><mi>t</mi></mrow></msup><mo>+</mo><msub><mi>c</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><msub><mi>p</mi><mn>2</mn></msub><mi>t</mi></mrow></msup></mrow><mtext data-i18n="eq.transitoire"></mtext></munder><mo>+</mo><munder><mrow><mtext data-i18n="eq.re"></mtext><mo>(</mo><mover><mi>q</mi><mo>^</mo></mover><mspace width="0.1em"/><msup><mi>e</mi><mrow><mi>i</mi><mi>ω</mi><mi>t</mi></mrow></msup><mo>)</mo></mrow><mtext data-i18n="eq.etabli"></mtext></munder><mo>,</mo><mspace width="1.2em"/><mover><mi>q</mi><mo>^</mo></mover><mo>=</mo><mfrac><msub><mi>E</mi><mn>0</mn></msub><mrow><mi>i</mi><mi>ω</mi><mspace width="0.1em"/><mi>Z</mi><mo>(</mo><mi>i</mi><mi>ω</mi><mo>)</mo></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.1.5"></p>
+    <p data-i18n-html="s4.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s5.sec"></span>
+    <h2 data-i18n="s5.h2"></h2>
+    <p data-i18n-html="s5.p1"></p>
+    <div class="list keyed" id="systeme"></div>
+    <p data-i18n-html="s5.p2"></p>
+    <figure class="chart">
+      <svg class="fig" id="temps" role="img" data-i18n-attr="aria-label:tp.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="tp.legend.exacte"></span><span class="c-label-2" data-i18n="tp.legend.complexe"></span><span class="c-warn" data-i18n="tp.legend.transitoire"></span><span class="c-ok" data-i18n="tp.legend.rk4"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="cr" data-i18n="tp.r"></label><output id="crv" for="cr"></output></div>
+            <input id="cr" type="range" min="50" max="2500" step="10" value="200"></div>
+          <div class="ctl"><div class="row"><label for="cw" data-i18n="tp.w"></label><output id="cwv" for="cw"></output></div>
+            <input id="cw" type="range" min="0" max="3" step="0.01" value="0.7"></div>
+          <div class="ctl"><div class="row"><label for="cq" data-i18n="tp.q0"></label><output id="cqv" for="cq"></output></div>
+            <input id="cq" type="range" min="-0.5" max="0.5" step="0.01" value="-0.3"></div>
+          <div class="ctl"><div class="row"><label for="ci" data-i18n="tp.i0"></label><output id="civ" for="ci"></output></div>
+            <input id="ci" type="range" min="-5" max="5" step="0.1" value="-1"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="tp.k.poles"></span><span class="v" id="vp"></span><span class="f" id="fp"></span></div>
+          <div class="stat"><span class="k" data-i18n="tp.k.tau"></span><span class="v" id="vt"></span><span class="f" id="ft"></span></div>
+          <div class="stat"><span class="k" data-i18n="tp.k.complexe"></span><span class="v" id="vc"></span><span class="f" id="fc"></span></div>
+          <div class="stat"><span class="k" data-i18n="tp.k.rk4"></span><span class="v" id="vr"></span><span class="f" id="fr"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="tp.caption"></figcaption>
+    </figure>
+    <figure class="chart">
+      <svg class="fig" id="plan" role="img" data-i18n-attr="aria-label:pl.aria"></svg>
+      <div class="legend"><span class="c-warn" data-i18n="pl.legend.circuit"></span><span class="c-tint" data-i18n="pl.legend.source"></span><span class="c-label-2" data-i18n="pl.legend.axe"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><span data-i18n="pl.mode"></span></div>
+            <div class="seg" role="group" id="mode" data-i18n-attr="aria-label:pl.mode"></div></div>
+          <div class="ctl"><div class="row"><label for="ck" data-i18n="pl.k"></label><output id="ckv" for="ck"></output></div>
+            <input id="ck" type="range" min="0" max="10" step="0.1" value="3"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="pl.k.poles"></span><span class="v" id="vb"></span><span class="f" id="fb"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="pl.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+    <p data-i18n-html="uses.suite"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/transformee-de-laplace-et-notation-complexe.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/ondes.js"></script>
+<script src="/racoon/lecons/laplace.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+(() => { const IDS = ["lineaire", "derivee", "convolution", "limites"]; keyed($("morphisme"), t("morphisme.tag"), IDS, textOf("morphisme.items", IDS)); })();
+(() => { const IDS = ["circuit", "source", "debut", "taille"]; keyed($("systeme"), t("systeme.tag"), IDS, textOf("systeme.items", IDS)); })();
+
+/* ---------- le circuit : réponse exacte (pôles et résidus) contre la notation complexe seule, vérifiée par RK4 ---------- */
+const L = 0.1, C = 1e-7, W0 = 1 / Math.sqrt(L * C), E0 = 1, DUREE = 5e-3, N = 5000, KS = 1e3;
+const pole = p => F.qty(Cx.text(p, v => F.num(v, 3)), "s⁻¹");
+(() => {
+  const TS = Array.from({ length: 401 }, (_, k) => DUREE * k / 400);
+  function upd() {
+    const R = +$("cr").value, w = +$("cw").value * W0, q0 = +$("cq").value * 1e-6, i0 = +$("ci").value * 1e-3;
+    const o = { R, L, C, E0, w, q0, i0 }, r = Laplace.rlc(o), v = Laplace.verifier(o, DUREE, N);
+    $("crv").textContent = F.si(R, "Ω");
+    $("cwv").textContent = w === 0 ? t("tp.echelon") : F.si(w, "rad·s⁻¹");
+    $("cqv").textContent = F.si(q0, "C");
+    $("civ").textContent = F.si(i0, "A");
+    const ex = TS.map(r.q), cn = TS.map(r.complexe.q), tr = TS.map(r.qTransitoire);
+    const m = Math.max(...ex.map(Math.abs), ...cn.map(Math.abs), 1e-8) * 1.1e6;
+    const svg = $("temps"); svg.innerHTML = "";
+    const P = Plot.axes(svg, { fmt: F, w: 640, h: 280, pad: { l: 56, b: 44 }, x: { domain: [0, DUREE * 1e3], label: t("tp.xaxis") }, y: { domain: [-m, m], label: t("tp.yaxis") } });
+    const line = (ys, cls) => Plot.el("path", { d: Plot.path(TS.map((tt, k) => [P.x(tt * 1e3), P.y(ys[k] * 1e6)])), class: cls }, P.g);
+    line(tr, "stroke thin c-warn"); line(cn, "stroke dash c-label-2"); line(ex, "curve");
+    for (let k = 0; k <= N; k += 125) Plot.el("circle", { cx: P.x(v.t[k] * 1e3), cy: P.y(v.q[k] * 1e6), r: 3, class: "fill c-ok" }, P.g);
+    let e = 0, mx = 0; for (let k = 0; k <= N; k += 5) { e = Math.max(e, Math.abs(r.q(v.t[k]) - v.q[k])); mx = Math.max(mx, Math.abs(v.q[k])); }
+    const [p1, p2] = r.poles.circuit;
+    $("vp").textContent = pole(p1); $("fp").textContent = r.poles.double ? t("tp.f.double") : t(p1.im !== 0 ? "tp.f.pseudo" : "tp.f.aperiodique", { p2: pole(p2) });
+    $("vt").textContent = F.si(r.tau, "s"); $("ft").textContent = t("tp.f.tau");
+    $("vc").textContent = F.si(r.complexe.q(0), "C"); $("fc").textContent = t("tp.f.complexe", { q0: F.si(q0, "C") });
+    $("vr").textContent = F.num(e / mx, 2); $("fr").textContent = t("tp.f.rk4");
+  }
+  ["cr", "cw", "cq", "ci"].forEach(id => $(id).oninput = upd);
+  upd();
+})();
+
+/* ---------- le plan des s : pôles du circuit, de la source, et la boucle proportionnelle ---------- */
+(() => {
+  const MODES = ["circuit", "boucle"], noms = textOf("pl.modes", MODES); let mode = 0;
+  $("mode").innerHTML = MODES.map((id, i) => `<button type="button" data-i="${i}" aria-pressed="${i === 0}">${noms[id]}</button>`).join("");
+  const X = [-22, 4], Y = [-36, 36];
+  const croix = (P, p, cls) => { const x = P.x(p.re / KS), y = P.y(p.im / KS);
+    Plot.el("path", { d: `M${x - 5} ${y - 5}L${x + 5} ${y + 5}M${x - 5} ${y + 5}L${x + 5} ${y - 5}`, class: "stroke " + cls }, P.g); };
+  function upd() {
+    [...$("mode").children].forEach((b, i) => b.setAttribute("aria-pressed", String(i === mode)));
+    const R = +$("cr").value, w = +$("cw").value * W0, K = +$("ck").value, boucle = mode === 1;
+    $("ck").disabled = !boucle; $("ckv").textContent = boucle ? F.num(K, 2) : "–";
+    const svg = $("plan"); svg.innerHTML = "";
+    const P = Plot.axes(svg, { fmt: F, w: 640, h: 320, pad: { l: 56, b: 44 }, x: { domain: X, label: t("pl.xaxis") }, y: { domain: Y, label: t("pl.yaxis") } });
+    Plot.el("line", { x1: P.x(0), x2: P.x(0), y1: P.y(Y[0]), y2: P.y(Y[1]), class: "stroke c-label-2" }, P.g);
+    if (boucle) {   /* le lieu des pôles quand K va de 0 à 10 */
+      const lieu = Array.from({ length: 201 }, (_, k) => Laplace.boucle(R, L, C, 10 * k / 200).poles);
+      [0, 1].forEach(j => Plot.el("path", { d: Plot.path(lieu.map(ps => [P.x(Math.max(X[0], ps[j].re / KS)), P.y(ps[j].im / KS)])), class: "stroke thin dash c-warn" }, P.g));
+      const B = Laplace.boucle(R, L, C, K);
+      B.poles.forEach(p => croix(P, p, "c-warn"));
+      $("vb").textContent = pole(B.poles[0]);
+      $("fb").textContent = t("pl.f.boucle", { zeta: F.num(B.zeta, 2), g: F.num(B.gainStatique, 3) });
+    } else {
+      const r = Laplace.rlc({ R, L, C, E0, w, q0: 0, i0: 0 });
+      r.poles.circuit.forEach(p => croix(P, p, "c-warn"));
+      r.poles.source.forEach(p => Plot.el("circle", { cx: P.x(0), cy: P.y(p.im / KS), r: 6, class: "stroke c-tint" }, P.g));
+      $("vb").textContent = pole(r.poles.circuit[0]);
+      $("fb").textContent = t("pl.f.circuit", { w: w === 0 ? t("tp.echelon") : F.si(w, "rad·s⁻¹") });
+    }
+  }
+  $("mode").onclick = e => { const b = e.target.closest("button"); if (b) { mode = +b.dataset.i; upd(); } };
+  ["cr", "cw", "ck"].forEach(id => $(id).addEventListener("input", upd));
+  upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["laplace", 1812, "idea"], ["heaviside", 1893, "idea"], ["steinmetz", 1893, "use"], ["bromwich", 1916, "idea"],
+    ["carson", 1926, "idea"], ["black", 1927, "use"], ["nyquist", 1932, "idea"], ["doetsch", 1937, "idea"], ["bode", 1940, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["asservissement", "electronique"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["derivee", "c"], ["homomorphisme", "a"], ["propre", "d"], ["iw", "b"], ["perd", "a"], ["poles", "c"], ["finale", "d"], ["boucle", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 1812 });
+})();
+</script>
+</body>
+</html>

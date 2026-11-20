@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["muon", "a"],
+  ["faisceau", "b"],
+  ["fil", "c"],
+  ["triplet", "d"],
+  ["invariant", "a"],
+  ["plasma", "b"],
+  ["lumiere", "c"],
+  ["source", "d"]
+ ]
+}

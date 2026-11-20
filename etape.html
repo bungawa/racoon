@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-i18n="page.title">Étape</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page outil">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a id="cmonde" href="/racoon/"></a><span class="aux">›</span><span id="cetape"></span></div>
+    <h1 id="titre"></h1>
+    <p class="lede" id="but"></p>
+    <div class="tags" id="tags"></div>
+    <p class="caption" id="status" role="status"></p>
+  </header>
+
+  <div class="split" id="corps" hidden>
+    <div class="group">
+      <section class="card">
+        <span class="sec" data-i18n="prereq.sec"></span>
+        <div class="group" id="prereq"></div>
+      </section>
+      <section class="card">
+        <span class="sec" data-i18n="lecons.sec"></span>
+        <ol class="list" id="lecons"></ol>
+      </section>
+    </div>
+    <section class="card" id="epreuve-card">
+      <span class="sec" data-i18n="epreuve.sec"></span>
+      <h2 data-i18n="epreuve.h2"></h2>
+      <p class="caption" id="consigne"></p>
+      <div id="epreuve"></div>
+      <div id="resultat" aria-live="polite"></div>
+      <p class="caption" id="save" role="status"></p>
+    </section>
+  </div>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/etape.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/progression.js"></script>
+<script src="/racoon/gist.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t, D = I.pick;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = Parcours;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const get = url => fetch(url, { cache: "no-store" }).then(r => r.ok ? r.json() : Promise.reject(r.status));
+const ID = new URLSearchParams(location.search).get("id") || "";
+
+let data = null, acquis = [], titres = new Map();
+const etatOf = id => P.etat(data, acquis, id);
+const best = id => acquis.find(a => a.etape === id);
+
+/* ---------- the step: where it sits, what it needs, its lessons ---------- */
+function render() {
+  const e = data.etapes[ID], s = etatOf(ID), ici = P.courante(data, acquis) === ID, titre = t("etape." + ID);
+  document.title = titre;
+  $("cmonde").textContent = t("monde." + e.monde); $("cmonde").href = "/racoon/#monde-" + e.monde;
+  $("cetape").textContent = titre; $("titre").textContent = titre; $("but").textContent = t("etape." + ID + ".but");
+  const b = best(ID);
+  $("tags").innerHTML = [`<span class="chip s-${s}">${esc(s === "acquise" && b ? t("etat.score", { score: b.score, total: b.total }) : t("etat." + s))}</span>`,
+    e.bonus ? `<span class="chip plain">${esc(t("bonus"))}</span>` : "",
+    ici ? `<span class="chip c-tint">${esc(t("ici"))}</span>` : ""].join("");
+
+  const manque = P.manquants(data, acquis, ID);
+  $("prereq").innerHTML = (e.prereq.length ? `<div class="tags">${e.prereq.map(p => `<a class="chip s-${etatOf(p)}" href="/racoon/etape?id=${esc(p)}">${esc(t("etape." + p))} <span class="aux">${esc(t("etat." + etatOf(p)))}</span></a>`).join("")}</div>`
+      : `<p class="caption">${esc(t("prereq.aucun"))}</p>`)
+    + (manque.length ? `<div class="box warn"><b>${esc(t("prereq.manque"))}</b><p>${esc(t("prereq.manque.p"))}</p></div>` : "")
+    + (e.bonus ? `<p class="caption">${esc(t("bonus.p"))}</p>` : "");
+
+  $("lecons").innerHTML = e.lecons.length ? e.lecons.map((c, i) => titres.has(c)
+      ? `<li><span><span class="aux">${i + 1}.</span> <a href="${esc(c)}">${esc(D(titres.get(c)))}</a></span></li>`
+      : `<li class="done"><span><span class="aux">${i + 1}.</span> ${esc(t("lecon.sans-titre"))}</span><span class="v">${esc(t("lecon.a-venir"))}</span></li>`).join("")
+    : `<li><span class="caption">${esc(t("lecons.aucune"))}</span></li>`;
+  $("corps").hidden = false;
+}
+
+/* ---------- the épreuve: keys in /epreuves/<id>.json, texts in locales/fr/epreuves/<id>.js, paired by question id ---------- */
+const script = src => new Promise((ok, ko) => { const s = document.createElement("script"); s.src = src; s.onload = ok; s.onerror = ko; document.head.append(s); });
+async function epreuve() {
+  const e = data.etapes[ID], b = best(ID);
+  if (!e.lecons.length) { $("consigne").textContent = t("epreuve.a-venir"); return; }
+  let cles, items;
+  try {
+    cles = (await get("/racoon/epreuves/" + ID + ".json")).cles;
+    await script("/racoon/locales/fr/epreuves/" + ID + ".js");
+    items = t("epreuve.items");
+  } catch { $("consigne").textContent = t("epreuve.preparation"); return; }
+  const ids = cles.map(c => c[0]), sans = ids.filter(q => !items[q]), seuls = Object.keys(items).filter(q => !ids.includes(q));
+  if (sans.length || seuls.length) throw new Error(`épreuve ${ID} : questions sans texte [${sans}], textes sans question [${seuls}]`);
+  const qs = cles.map(([q, bonne]) => ({ id: q, prompt: items[q].prompt, options: Object.entries(items[q].options).map(([k, v]) => ({ id: k, text: v })), correct: bonne, why: items[q].why, hint: items[q].hint }));
+  $("consigne").textContent = t("epreuve.consigne", { total: qs.length, seuil: P.seuil(qs.length) }) + (b ? " " + t("deja", { score: b.score, total: b.total }) : "");
+  Quiz.mount($("epreuve"), qs, { t, exam: true, onEnd: fin, onStart: () => { $("resultat").innerHTML = ""; $("save").textContent = ""; } });
+}
+
+/* graded: at 80 % the step is acquired, saved in this browser; a big button leads to the next step */
+async function fin(g) {
+  const need = P.seuil(g.total), box = $("resultat"), status = $("save");
+  if (g.score < need) {
+    box.innerHTML = `<div class="box warn"><b>${esc(t("resultat.ko.b"))}</b><p>${esc(t("resultat.ko.p", { score: g.score, total: g.total, seuil: need }))}</p></div>`;
+    box.scrollIntoView({ block: "nearest" });
+    return;
+  }
+  const local = acquis.filter(a => a.etape !== ID).concat({ etape: ID, score: g.score, total: g.total }), next = P.courante(data, local);
+  box.innerHTML = `<div class="box c-ok"><b>${esc(t("resultat.ok.b"))}</b><p>${esc(t("resultat.ok.p", { score: g.score, total: g.total }))}</p>
+    <div class="tags">${next ? `<a class="btn grand" href="/racoon/etape?id=${esc(next)}">${esc(t("resultat.suivante", { titre: t("etape." + next) }))}</a>` : `<p>${esc(t("resultat.fin"))}</p>`}
+    <a class="btn tinted" href="/racoon/">${esc(t("resultat.parcours"))}</a></div></div>`;
+  box.scrollIntoView({ block: "nearest" });
+  try {
+    Progression.page().acquerir(data, { etape: ID, score: g.score, total: g.total });
+    acquis = Progression.page().acquis();
+    status.textContent = t(Progression.page().garde() ? "save.done" : "save.memoire"); render();
+  } catch { status.textContent = t("save.fail"); }
+}
+
+(async () => {
+  const [parcours, liste] = await Promise.allSettled([get("/racoon/parcours.json"), get("/racoon/lecons/index.json")]);
+  if (parcours.status !== "fulfilled") { $("status").textContent = t("load.parcours"); return; }
+  data = parcours.value;
+  if (!Object.prototype.hasOwnProperty.call(data.etapes, ID)) {
+    document.title = t("introuvable.h1"); $("cmonde").hidden = true; $("cmonde").nextElementSibling.hidden = true; $("cetape").textContent = t("introuvable.h1");
+    $("titre").textContent = t("introuvable.h1"); $("but").textContent = t("introuvable.lede");
+    $("tags").innerHTML = `<a class="btn" href="/racoon/">${esc(t("resultat.parcours"))}</a>`;
+    return;
+  }
+  acquis = Progression.page().acquis();
+  Gist.page().demarrer().then(r => { if (r.change) { acquis = Progression.page().acquis(); render(); } });
+  if (liste.status === "fulfilled") titres = new Map(liste.value.map(l => [l.chemin, l.titre]));
+  render();
+  await epreuve();
+})();
+</script>
+</body>
+</html>

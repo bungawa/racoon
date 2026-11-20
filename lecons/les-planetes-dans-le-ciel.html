@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Les planètes dans le ciel</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-mecanique" data-i18n="monde.mecanique"></a><span class="aux">›</span><a href="/racoon/etape?id=kepler-newton" data-i18n="etape.kepler-newton"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-meca" href="/racoon/atlas?piste=meca" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/decrire-le-mouvement" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="box def"><b data-i18n="s1.def.title"></b>
+      <p data-i18n-html="s1.def.body"></p>
+    </div>
+    <p data-i18n-html="s1.p4"></p>
+    <div class="eq"><math display="block"><mfrac><mn>1</mn><mi>S</mi></mfrac><mo>=</mo><mfrac><mn>1</mn><msub><mi>T</mi><mi mathvariant="normal">T</mi></msub></mfrac><mo>−</mo><mfrac><mn>1</mn><msub><mi>T</mi><mi mathvariant="normal">M</mi></msub></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.syn"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mover accent="true"><mi>r</mi><mo>→</mo></mover><mrow><mi mathvariant="normal">M</mi><mo>/</mo><mi mathvariant="normal">T</mi></mrow></msub><mo>=</mo><msub><mover accent="true"><mi>r</mi><mo>→</mo></mover><mi mathvariant="normal">M</mi></msub><mo>−</mo><msub><mover accent="true"><mi>r</mi><mo>→</mo></mover><mi mathvariant="normal">T</mi></msub></math></div>
+    <p class="validite" data-i18n-html="val.pos"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="list keyed" id="neglect"></div>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><span data-i18n="sky.planete"></span></div>
+            <div class="seg" role="group" data-i18n-attr="aria-label:sky.planete">
+              <button type="button" id="p-mars" aria-pressed="true"></button>
+              <button type="button" id="p-jupiter" aria-pressed="false"></button>
+              <button type="button" id="p-saturne" aria-pressed="false"></button>
+              <button type="button" id="p-venus" aria-pressed="false"></button>
+            </div></div>
+          <div class="ctl"><div class="row"><span data-i18n="sky.vue"></span></div>
+            <div class="seg" role="group" data-i18n-attr="aria-label:sky.vue">
+              <button type="button" id="v-helio" aria-pressed="true" data-i18n="sky.vue.helio"></button>
+              <button type="button" id="v-geo" aria-pressed="false" data-i18n="sky.vue.geo"></button>
+            </div></div>
+          <div class="ctl"><div class="row"><label for="jour" data-i18n="sky.date"></label><output id="jread" for="jour"></output></div>
+            <input id="jour" type="range" min="0" max="1460" step="1" value="381"></div>
+        </div>
+      </div>
+      <svg class="fig" id="sky" viewBox="0 0 640 420" role="img" data-i18n-attr="aria-label:sky.aria"></svg>
+      <div class="legend"><span class="c-warn" data-i18n="sky.legend.soleil"></span><span class="c-tint" data-i18n="sky.legend.terre"></span><span class="c-ko" data-i18n="sky.legend.planete"></span><span class="c-label-2 ring" data-i18n="sky.legend.visee"></span></div>
+    </figure>
+    <figure class="chart">
+      <svg class="fig" id="lam" role="img" data-i18n-attr="aria-label:lam.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="lam.legend.courbe"></span><span class="c-ko sq" data-i18n="lam.legend.retro"></span><span class="c-warn ring" data-i18n="lam.legend.date"></span></div>
+      <div class="panel">
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="sky.k.lambda"></span><span class="v" id="vlam"></span><span class="f" data-i18n="sky.f.lambda"></span></div>
+          <div class="stat"><span class="k" data-i18n="sky.k.sens"></span><span class="v" id="vsens"></span><span class="f" id="fsens"></span></div>
+          <div class="stat"><span class="k" data-i18n="sky.k.boucle"></span><span class="v" id="vboucle"></span><span class="f" id="fboucle"></span></div>
+          <div class="stat"><span class="k" data-i18n="sky.k.syn"></span><span class="v" id="vsyn"></span><span class="f" id="fsyn"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="sky.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><mover accent="true"><mi>λ</mi><mo>˙</mo></mover><mo>=</mo><mfrac><mrow><msub><mi>v</mi><mi mathvariant="normal">M</mi></msub><mo>−</mo><msub><mi>v</mi><mi mathvariant="normal">T</mi></msub></mrow><mrow><msub><mi>r</mi><mi mathvariant="normal">M</mi></msub><mo>−</mo><msub><mi>r</mi><mi mathvariant="normal">T</mi></msub></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.retro"></p>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="box prop"><b data-i18n="s4.prop.title"></b>
+      <p data-i18n-html="s4.prop.body"></p>
+    </div>
+    <div class="box warn"><b data-i18n="s4.warn.title"></b>
+      <p data-i18n-html="s4.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/les-planetes-dans-le-ciel.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/lecons/kepler.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+const DEG = 180 / Math.PI, DAY = 86400;
+
+/* ---------- ce que l'on néglige ---------- */
+(() => { const IDS = ["taille", "etoiles", "inclinaison", "galilee", "modele"]; keyed($("neglect"), t("neglect.tag"), IDS, textOf("neglect.items", IDS)); })();
+
+/* ---------- la planète vue depuis le Soleil et depuis la Terre ---------- */
+(() => {
+  const PL = ["mars", "jupiter", "saturne", "venus"], names = textOf("sky.p", PL), mois = t("mois");
+  const J0 = Kepler.jd(Date.UTC(2024, 0, 1)), N = 1460, P = Plot.el, WD = 640, HT = 420;
+  let pl = "mars", vue = "helio", cache = {};
+  PL.forEach(id => { $("p-" + id).textContent = names[id]; $("p-" + id).onclick = () => { pl = id; upd(); }; });
+  ["helio", "geo"].forEach(v => $("v-" + v).onclick = () => { vue = v; upd(); });
+  const date = j => { const d = new Date(Kepler.ms(j)); return t("date", { j: d.getUTCDate(), m: mois[d.getUTCMonth()], a: d.getUTCFullYear() }); };
+  const deg = x => F.num(x, 3) + "°";
+  /* one pass per planet: positions of each day, unwrapped longitudes, loops (from a margin before and after the window) */
+  function data(id) {
+    if (cache[id]) return cache[id];
+    const days = Array.from({ length: N + 1 }, (_, k) => J0 + k), lam = [];
+    const helio = days.map(j => Kepler.position(id, j)), terre = days.map(j => Kepler.position("terre", j));
+    days.forEach(j => { let l = Kepler.vue(id, j).lambda * DEG; if (lam.length) l += 360 * Math.round((lam[lam.length - 1] - l) / 360); lam.push(l); });
+    const loops = Kepler.retrogradations(id, J0 - 200, J0 + N + 200, 1);
+    const orbit = Array.from({ length: 241 }, (_, k) => Kepler.position(id, J0 + Kepler.periode(id) / DAY * k / 240));
+    const orbitT = Array.from({ length: 241 }, (_, k) => Kepler.position("terre", J0 + Kepler.periode("terre") / DAY * k / 240));
+    return (cache[id] = { days, lam, helio, terre, loops, orbit, orbitT });
+  }
+  function drawSky(D, k) {
+    const svg = $("sky"); svg.innerHTML = "";
+    const geo = vue === "geo", rel = (p, i) => geo ? [p[0] - D.terre[i][0], p[1] - D.terre[i][1]] : [p[0], p[1]];
+    const pts = geo ? D.helio.map(rel) : D.orbit.map(p => [p[0], p[1]]);
+    const sun = geo ? D.terre.map(p => [-p[0], -p[1]]) : [[0, 0]];
+    const earth = geo ? [[0, 0]] : D.orbitT.map(p => [p[0], p[1]]);
+    const all = pts.concat(sun, earth), R = Math.max(...all.map(p => Math.hypot(p[0], p[1]))) * 1.08;
+    const s = Math.min(WD, HT) / 2 / R, X = x => WD / 2 + s * x, Y = y => HT / 2 - s * y;
+    const clip = P("clipPath", { id: "skyarea" }, svg); P("rect", { x: 0, y: 0, width: WD, height: HT }, clip);
+    const root = P("g", { "clip-path": "url(#skyarea)" }, svg);
+    const path = a => a.map(([x, y], i) => (i ? "L" : "M") + X(x).toFixed(1) + " " + Y(y).toFixed(1)).join("");
+    if (geo) { P("path", { d: path(sun), class: "stroke thin c-warn" }, root); P("path", { d: path(pts), class: "stroke c-ko" }, root); }
+    else { P("path", { d: path(earth), class: "stroke thin c-tint" }, root); P("path", { d: path(pts), class: "stroke thin c-ko" }, root); }
+    /* lines of sight, every 15 days over the last four months: they turn backwards during the loop */
+    const pe = geo ? [0, 0] : D.terre[k], pp = rel(D.helio[k], k), sight = (a, b, op) => {
+      const dx = b[0] - a[0], dy = b[1] - a[1], L = Math.hypot(dx, dy) || 1, far = 3 * R;
+      P("line", { x1: X(a[0]), y1: Y(a[1]), x2: X(a[0] + dx / L * far), y2: Y(a[1] + dy / L * far), class: "stroke thin dash c-label-2", opacity: op }, root); };
+    for (let i = 8; i >= 1; i--) { const kk = k - 15 * i; if (kk >= 0) sight(geo ? [0, 0] : D.terre[kk], rel(D.helio[kk], kk), (0.15 + 0.05 * (8 - i)).toFixed(2)); }
+    sight(pe, pp, "1");
+    const sk = geo ? sun[k] : [0, 0];
+    P("circle", { cx: X(sk[0]), cy: Y(sk[1]), r: 8, class: "fill c-warn" }, root);
+    P("circle", { cx: X(pe[0]), cy: Y(pe[1]), r: 5, class: "fill c-tint" }, root);
+    P("circle", { cx: X(pp[0]), cy: Y(pp[1]), r: 5, class: "fill c-ko" }, root);
+  }
+  function drawLam(D, k) {
+    const svg = $("lam"); svg.innerHTML = "";
+    /* λ between 0 and 360°: the curve is cut where it wraps around */
+    const yr = j => 2024 + (j - J0) / 365.25, w = l => ((l % 360) + 360) % 360;
+    const { x: X, y: Y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 260, pad: { b: 44 },
+      x: { domain: [2024, 2028], label: t("lam.x"), ticks: 4, fmt: v => String(Math.round(v)) },
+      y: { domain: [0, 360], label: t("lam.y"), ticks: 4 } });
+    D.loops.forEach(b => { const x0 = X(Math.max(2024, yr(b.debut))), x1 = X(Math.min(2028, yr(b.fin))); if (x1 > x0) P("rect", { x: x0, y: Y(360), width: x1 - x0, height: Y(0) - Y(360), class: "fill c-ko", opacity: "0.18" }, g); });
+    P("path", { d: D.lam.map((l, i) => (i && Math.abs(w(l) - w(D.lam[i - 1])) < 180 ? "L" : "M") + X(yr(D.days[i])).toFixed(1) + " " + Y(w(l)).toFixed(1)).join(""), class: "curve" }, g);
+    P("line", { x1: X(yr(D.days[k])), x2: X(yr(D.days[k])), y1: Y(360), y2: Y(0), class: "ref" }, g);
+  }
+  function upd() {
+    const D = data(pl), k = +$("jour").value, j = D.days[k];
+    PL.forEach(id => $("p-" + id).setAttribute("aria-pressed", String(id === pl)));
+    ["helio", "geo"].forEach(v => $("v-" + v).setAttribute("aria-pressed", String(v === vue)));
+    drawSky(D, k); drawLam(D, k);
+    $("jread").textContent = date(j);
+    $("vlam").textContent = deg(((D.lam[k] % 360) + 360) % 360);
+    const rate = (D.lam[Math.min(N, k + 1)] - D.lam[Math.max(0, k - 1)]) / (Math.min(N, k + 1) - Math.max(0, k - 1));
+    $("vsens").textContent = t(rate < 0 ? "sky.f.retro" : "sky.f.direct");
+    $("fsens").textContent = t("sky.taux", { v: deg(rate) });
+    const near = D.loops.slice().sort((a, b) => Math.abs((a.debut + a.fin) / 2 - j) - Math.abs((b.debut + b.fin) / 2 - j))[0];
+    $("vboucle").textContent = t("sky.du", { a: date(near.debut), b: date(near.fin) });
+    $("fboucle").textContent = t("sky.f.boucle", { d: F.num(near.duree, 2), arc: deg(near.arc * DEG) });
+    $("vsyn").textContent = t("sky.ans", { n: F.num(Kepler.synodique(pl) / DAY / 365.25, 3) });
+    $("fsyn").textContent = t("sky.f.syn", { n: F.num(Kepler.synodique(pl) / DAY, 3) });
+  }
+  $("jour").oninput = upd; upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["ptolemee", 150, "idea"], ["copernic", 1543, "idea"], ["tycho", 1576, "experiment"], ["galilee", 1610, "experiment"], ["kepler", 1609, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["pointage", "opposition"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["quand", "a"], ["demi", "a"], ["syn", "a"], ["saturne", "a"], ["equiv", "a"], ["venus", "a"], ["precision", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 71 });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atomes en mouvement</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .hex { width: 160px; height: 160px; flex: none; }
+  .ice-row { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+  .ice-row p { flex: 1 1 260px; min-width: 0; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-atomes-energie" data-i18n="monde.atomes-energie"></a><span class="aux">›</span><a href="/racoon/etape?id=les-atomes" data-i18n="etape.les-atomes"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fond" href="/racoon/atlas?piste=fond" data-i18n="tag.piste"></a>
+      <span class="chip plain" data-i18n="tag.prereq"></span>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n="s1.p1"></p>
+    <p data-i18n="s1.p2"></p>
+    <figure class="chart">
+      <svg id="gchart" role="img" data-i18n-attr="aria-label:chart.aria"></svg>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="vsl" data-i18n="chart.speed"></label><output id="vread" for="vsl"></output></div>
+          <input id="vsl" type="range" min="0" max="1000" value="400"></div>
+      </div>
+      <figcaption data-i18n="chart.caption"></figcaption>
+    </figure>
+    <div class="box rem"><b data-i18n="s1.remark.title"></b>
+      <p data-i18n-html="s1.remark.body"></p>
+    </div>
+    <p data-i18n="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <blockquote class="thesis" data-i18n="s2.thesis"></blockquote>
+    <p data-i18n="s2.p"></p>
+    <figure>
+      <div class="stage"><canvas id="md"></canvas><div class="overlay" id="mdread"></div></div>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="tsl" data-i18n="md.temp"></label><output id="tread" for="tsl"></output></div>
+          <input id="tsl" type="range" min="0.1" max="2.5" step="0.05" value="0.35"></div>
+        <div class="controls"><button class="btn tinted" type="button" id="freeze" data-i18n="md.freeze"></button><button class="btn tinted" type="button" id="boil" data-i18n="md.boil"></button></div>
+      </div>
+      <div class="legend"><span class="el-o" data-i18n="md.legend.o"></span><span class="el-h" data-i18n="md.legend.h"></span></div>
+      <figcaption data-i18n-html="md.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="ladder.sec"></span>
+    <h2 data-i18n="ladder.h2"></h2>
+    <p data-i18n="ladder.intro"></p>
+    <div class="list keyed" id="ladder"></div>
+    <p data-i18n="ladder.outro"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="gas.sec"></span>
+    <h2 data-i18n="gas.h2"></h2>
+    <p data-i18n="gas.p"></p>
+    <figure>
+      <div class="stage"><canvas id="gas"></canvas><div class="overlay" id="gasread"></div></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="nsl" data-i18n="gas.n"></label><output id="nread" for="nsl"></output></div>
+            <input id="nsl" type="range" min="50" max="800" step="50" value="300"></div>
+          <div class="ctl"><div class="row"><label for="gtsl" data-i18n="gas.temp"></label><output id="gtread" for="gtsl"></output></div>
+            <input id="gtsl" type="range" min="0.5" max="4" step="0.5" value="1"></div>
+        </div>
+        <div class="controls"><button class="btn tinted" type="button" id="push" data-i18n="gas.push"></button><button class="btn tinted" type="button" id="pull" data-i18n="gas.pull"></button></div>
+      </div>
+      <figcaption data-i18n-html="gas.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="ice.sec"></span>
+    <h2 data-i18n="ice.h2"></h2>
+    <div class="ice-row">
+      <svg class="fig turn hex" id="hex" viewBox="-80 -80 160 160" role="img" data-i18n-attr="aria-label:ice.aria"></svg>
+      <p data-i18n="ice.p"></p>
+    </div>
+    <p data-i18n="ice.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/atomes-en-mouvement.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/atomes-en-mouvement.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I.fallback : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const onTheme = f => { f(); matchMedia("(prefers-color-scheme: dark)").addEventListener("change", f); new MutationObserver(f).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] }); };
+
+/* ---------- §1-1 : écart relativiste ---------- */
+(() => {
+  const svg = document.getElementById("gchart");
+  const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 300, pad: { b: 44 },
+    x: { scale: "log", domain: [1e3, 3e8], label: t("chart.x") },
+    y: { scale: "log", domain: [1e-12, 10], label: t("chart.y") } });
+  let d = "";
+  for (let i = 0; i <= 300; i++) {
+    const v = Math.pow(10, 3 + i * (Math.log10(2.9979e8) - 3) / 300);
+    const e = Math.max(Phys.gammaMinusOne(v), 1e-12);
+    d += (i ? "L" : "M") + x(v).toFixed(1) + " " + y(Math.min(e, 10)).toFixed(1);
+  }
+  Plot.el("path", { d, class: "curve" }, g);
+  Plot.el("line", { x1: x(1e3), x2: x(3e8), y1: y(1e-6), y2: y(1e-6), class: "ref" }, g);
+  const vSeuil = Phys.C * Math.sqrt(2e-6);   // γ − 1 = 10⁻⁶ : v²/2c² = 10⁻⁶, la vitesse du texte
+  Plot.el("line", { x1: x(vSeuil), x2: x(vSeuil), y1: y(10), y2: y(1e-12), class: "ref" }, g);
+  Plot.el("text", { x: x(vSeuil) + 6, y: y(1e-10), class: "note" }, g).textContent = F.qty(F.sci(vSeuil, 2), "m·s⁻¹");
+  const dot = Plot.el("circle", { r: 6, class: "dot" }, g);
+  const sl = document.getElementById("vsl"), out = document.getElementById("vread");
+  const upd = () => {
+    const v = Math.pow(10, 3 + sl.value / 1000 * (Math.log10(2.99e8) - 3));
+    const e = Phys.gammaMinusOne(v);
+    dot.setAttribute("cx", x(v)); dot.setAttribute("cy", y(Math.min(Math.max(e, 1e-12), 10)));
+    out.textContent = t("chart.readout", { v: F.qty(F.sci(v, 3), "m·s⁻¹"), e: F.sci(e, 3) });
+  };
+  sl.oninput = upd; upd();
+})();
+
+/* ---------- échelle des grossissements ---------- */
+(() => {
+  const mags = [1, 2000, 2000, 250], words = t("ladder.rows");   // each step multiplies the previous one
+  if (words.length !== mags.length) throw new Error("ladder.rows: " + words.length + " texts for " + mags.length + " steps");
+  const len = m => F.si(m, "m", m >= 1e6 ? { prefix: "k" } : {});   // 6 350 km reads better than 6,35 Mm
+  let size = 6.35e-3;
+  document.getElementById("ladder").innerHTML = mags.map((k, i) => { size *= k;
+    return `<div><span class="k">×${F.num(k, 4)}</span><span>${words[i]}</span><span class="v">${len(size)}</span></div>`; }).join("");
+})();
+
+/* ---------- eau 3D : dynamique moléculaire Lennard-Jones ---------- */
+(() => {
+  const N = 125, L = 14, canvas = document.getElementById("md");
+  const world = Phys.ljWorld(N, L, 1.12);
+  const rand = Quiz.rng(7);
+  let target = 0.35; Phys.heat(world, target, rand);
+
+  const tsl = document.getElementById("tsl"), tread = document.getElementById("tread"), mdread = document.getElementById("mdread");
+  const phase = T => t(T < 0.5 ? "md.solid" : T < 1.3 ? "md.liquid" : "md.gas");
+  const setT = v => { target = +v; tsl.value = v; tread.innerHTML = t("md.readout", { t: F.kelvin(target * Phys.K_PER_LJ), phase: phase(target) }); };
+  tsl.oninput = () => setT(tsl.value);
+  document.getElementById("freeze").onclick = () => setT(0.2);
+  document.getElementById("boil").onclick = () => setT(2.2);
+  setT(target);
+  if (!self.THREE) { mdread.textContent = t("md.offline"); return; }
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  const scene = new THREE.Scene();
+  const cam = new THREE.PerspectiveCamera(40, 4 / 3, 0.1, 200);
+  cam.position.set(L * 0.5 + 16, L * 0.5 + 10, L * 0.5 + 20);
+  const ctl = new THREE.OrbitControls(cam, canvas);
+  ctl.target.set(L / 2, L / 2, L / 2); ctl.enableDamping = true; ctl.autoRotate = !reduce; ctl.autoRotateSpeed = 0.6;
+  canvas.addEventListener("pointerdown", () => ctl.autoRotate = false);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x445566, 1.0));
+  const sun = new THREE.DirectionalLight(0xffffff, 0.7); sun.position.set(20, 30, 10); scene.add(sun);
+
+  const box = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(L, L, L)), new THREE.LineBasicMaterial({ transparent: true, opacity: 0.5 }));
+  box.position.set(L / 2, L / 2, L / 2); scene.add(box);
+
+  const oMat = new THREE.MeshStandardMaterial({ roughness: 0.5 }), hMat = new THREE.MeshStandardMaterial({ roughness: 0.4 });
+  const O = new THREE.InstancedMesh(new THREE.SphereGeometry(0.42, 20, 14), oMat, N);
+  const H = new THREE.InstancedMesh(new THREE.SphereGeometry(0.25, 14, 10), hMat, 2 * N);
+  scene.add(O, H);
+
+  // H fixes dans le repère de la molécule (104,5°), liaison agrandie pour la lisibilité ; orientation qui tourne
+  const ang = 104.5 * Math.PI / 180, bond = 0.5;
+  const hA = new THREE.Vector3(bond * Math.sin(ang / 2), bond * Math.cos(ang / 2), 0), hB = new THREE.Vector3(-hA.x, hA.y, 0);
+  const q = [], w = [];
+  for (let i = 0; i < N; i++) {
+    q.push(new THREE.Quaternion().setFromEuler(new THREE.Euler(rand() * 6.3, rand() * 6.3, rand() * 6.3)));
+    w.push(new THREE.Vector3(rand() - .5, rand() - .5, rand() - .5).normalize());
+  }
+  const m = new THREE.Matrix4(), p = new THREE.Vector3(), tmp = new THREE.Vector3(), dq = new THREE.Quaternion(), one = new THREE.Vector3(1, 1, 1);
+  onTheme(() => { oMat.color.set(css("--el-o")); hMat.color.set(css("--el-h")); box.material.color.set(css("--label-2")); });
+
+  function resize() {
+    const r = canvas.getBoundingClientRect();
+    renderer.setSize(r.width, r.height, false); cam.aspect = r.width / r.height; cam.updateProjectionMatrix();
+  }
+  new ResizeObserver(resize).observe(canvas); resize();
+
+  let frame = 0, visible = true;
+  new IntersectionObserver(e => visible = e[0].isIntersecting).observe(canvas);
+  function tick() {
+    requestAnimationFrame(tick);
+    if (!visible) return;
+    for (let s = 0; s < 6; s++) Phys.ljStep(world, 0.005, target, 0.2);
+    const T = Phys.temperature(world.v), spin = Math.sqrt(Math.max(T, 0)) * 0.12;
+    for (let i = 0; i < N; i++) {
+      p.set(world.p[3 * i], world.p[3 * i + 1], world.p[3 * i + 2]);
+      q[i].multiply(dq.setFromAxisAngle(w[i], spin));
+      m.compose(p, q[i], one); O.setMatrixAt(i, m);
+      tmp.copy(hA).applyQuaternion(q[i]).add(p); m.makeTranslation(tmp.x, tmp.y, tmp.z); H.setMatrixAt(2 * i, m);
+      tmp.copy(hB).applyQuaternion(q[i]).add(p); m.makeTranslation(tmp.x, tmp.y, tmp.z); H.setMatrixAt(2 * i + 1, m);
+    }
+    O.instanceMatrix.needsUpdate = H.instanceMatrix.needsUpdate = true;
+    if (++frame % 10 === 0) mdread.innerHTML = t("md.measured", { t: F.kelvin(T * Phys.K_PER_LJ) });
+    ctl.update(); renderer.render(scene, cam);
+  }
+  tick();
+})();
+
+/* ---------- gaz 2D sous un piston ---------- */
+(() => {
+  const canvas = document.getElementById("gas"), ctx = canvas.getContext("2d");
+  const W = 100, H0 = 100, rand = Quiz.rng(11);
+  const nsl = document.getElementById("nsl"), gtsl = document.getElementById("gtsl");
+  const nread = document.getElementById("nread"), gtread = document.getElementById("gtread"), out = document.getElementById("gasread");
+  let g, P = 0, acc = 0, ink = {};
+  onTheme(() => ink = { wall: css("--label-2"), piston: css("--tint"), gas: css("--el-o") });
+  const reset = () => { g = Phys.gasWorld(+nsl.value, W, H0, +gtsl.value, rand); P = 0; acc = 0;
+    nread.textContent = nsl.value; gtread.innerHTML = F.kelvin(+gtsl.value * Phys.K_PER_GAS); };
+  nsl.oninput = gtsl.oninput = reset; reset();
+  const move = u => { if (g.u) return; g.u = u; };
+  document.getElementById("push").onclick = () => move(-0.5);
+  document.getElementById("pull").onclick = () => move(0.5);
+
+  function size() { const r = canvas.getBoundingClientRect(), d = Math.min(devicePixelRatio, 2);
+    canvas.width = r.width * d; canvas.height = r.height * d; }
+  new ResizeObserver(size).observe(canvas); size();
+
+  function draw() {
+    requestAnimationFrame(draw);
+    for (let s = 0; s < 4; s++) Phys.gasStep(g, 0.05);
+    if (g.u < 0 && g.h <= 40) g.u = 0;
+    if (g.u > 0 && g.h >= 140) g.u = 0;
+    if (g.time > 25) { const p = Phys.gasPressure(g); P = acc ? 0.7 * P + 0.3 * p : p; acc++; }
+    const cw = canvas.width, ch = canvas.height, sc = Math.min(cw / (W + 20), ch / 150), ox = (cw - W * sc) / 2, base = ch - 6 * sc;
+    ctx.clearRect(0, 0, cw, ch);
+    ctx.strokeStyle = ink.wall; ctx.lineWidth = 2;
+    ctx.strokeRect(ox, base - 145 * sc, W * sc, 145 * sc);
+    ctx.fillStyle = ink.piston;
+    const py = base - g.h * sc;
+    ctx.fillRect(ox - 4, py - 10 * (sc / 3), W * sc + 8, 10 * (sc / 3));
+    ctx.fillRect(ox + W * sc / 2 - 3, base - 150 * sc, 6, py - (base - 150 * sc));
+    ctx.fillStyle = ink.gas;
+    const r = Math.max(1.5, sc * 0.8);
+    for (let i = 0; i < g.n; i++) { ctx.beginPath(); ctx.arc(ox + g.x[i] * sc, base - g.y[i] * sc, r, 0, 6.283); ctx.fill(); }
+    const T = Phys.gasTemperature(g), ideal = g.n * T / (W * g.h);
+    out.innerHTML = t("gas.readout", { r: ideal ? F.fix(P / ideal, 2) : "–", t: F.kelvin(T * Phys.K_PER_GAS) });
+  }
+  draw();
+})();
+
+/* ---------- cycle de la glace ---------- */
+(() => {
+  const svg = document.getElementById("hex"), R = 52; let a = 0;
+  for (let k = 0; k < 6; k++) {
+    const t0 = k * Math.PI / 3, t1 = (k + 1) * Math.PI / 3;
+    Plot.el("line", { x1: R * Math.cos(t0), y1: R * Math.sin(t0), x2: R * Math.cos(t1), y2: R * Math.sin(t1), class: "stroke thin c-label-2" }, svg);
+  }
+  for (let k = 0; k < 6; k++) {
+    const t = k * Math.PI / 3, x = R * Math.cos(t), y = R * Math.sin(t), ht = t + Math.PI / 6;
+    Plot.el("circle", { cx: x, cy: y, r: 11, class: "fill el-o" }, svg);
+    Plot.el("circle", { cx: x + 16 * Math.cos(ht), cy: y + 16 * Math.sin(ht), r: 6, class: "fill rim el-h" }, svg);
+  }
+  svg.onclick = () => { a += 60; svg.style.transform = "rotate(" + a + "deg)"; };
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["leucippe", -430, "idea"], ["kepler", 1611, "idea"], ["bernoulli", 1738, "idea"], ["dalton", 1808, "idea"], ["avogadro", 1811, "idea"],
+    ["maxwell", 1860, "idea"], ["kaufmann", 1901, "experiment"], ["einstein", 1905, "idea"], ["perrin", 1908, "experiment"], ["lennardjones", 1924, "idea"],
+    ["bernal", 1933, "experiment"], ["rahman", 1964, "experiment"], ["binnig", 1981, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount(document.getElementById("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["diesel", "frigo", "accel", "simul"], uses = textOf("uses.items", USES);
+  document.getElementById("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text.replace("{t}", F.kelvin(800))}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["density", "a"], ["compress", "a"], ["ice", "a"], ["helium", "a"], ["approx", "a"], ["real", "a"], ["perrin", "a"], ["solid", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount(document.getElementById("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

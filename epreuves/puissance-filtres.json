@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["moteur", "a"],
+  ["ligne", "b"],
+  ["r2r", "c"],
+  ["absorbe", "d"],
+  ["phase", "b"],
+  ["lissage", "c"],
+  ["court", "d"],
+  ["oscille", "a"]
+ ]
+}

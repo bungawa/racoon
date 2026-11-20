@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["echelle", "a"],
+  ["centrale", "b"],
+  ["isochore", "c"],
+  ["detente", "d"],
+  ["melange", "a"],
+  ["interne", "b"],
+  ["elastique", "c"],
+  ["pile", "d"]
+ ]
+}

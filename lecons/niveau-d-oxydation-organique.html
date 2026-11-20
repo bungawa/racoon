@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Niveau d'oxydation des groupes caractéristiques</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .paire { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+  .paire svg { width: 260px; max-width: 100%; height: 170px; flex: none; }
+  .paire > div { flex: 1 1 240px; min-width: 0; }
+  #echelle { width: 100%; height: 190px; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-organique" data-i18n="monde.chim-organique"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-redox-organique" data-i18n="etape.chim-redox-organique"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/nombres-d-oxydation" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="box def"><b data-i18n="s1.def.titre"></b>
+      <p data-i18n-html="s1.def.corps"></p>
+    </div>
+    <div class="eq"><math display="block"><msub><mi>n</mi><mi mathvariant="normal">o</mi></msub><mo>(</mo><mi mathvariant="normal">C</mi><mo>)</mo><mo>=</mo><msub><mi>N</mi><mi mathvariant="normal">X</mi></msub><mo>−</mo><msub><mi>N</mi><mi mathvariant="normal">H</mi></msub></math></div>
+    <p class="validite" data-i18n-html="val.no"></p>
+    <figure>
+      <div class="paire">
+        <svg class="fig no-sigle" id="mol" role="img" data-i18n-attr="aria-label:mol.aria"></svg>
+        <div><p id="molnom"></p><div class="list keyed" id="moldetail"></div></div>
+      </div>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="molsel" data-i18n="mol.choix"></label></div><select id="molsel"></select></div>
+      </div>
+      <figcaption data-i18n-html="mol.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="list keyed" id="niveaux"></div>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><munder><mo>∑</mo><mi mathvariant="normal">C</mi></munder><msub><mi>n</mi><mi mathvariant="normal">o</mi></msub><mo>=</mo><mn>2</mn><msub><mi>n</mi><mi mathvariant="normal">O</mi></msub><mo>−</mo><msub><mi>n</mi><mi mathvariant="normal">H</mi></msub></math></div>
+    <p class="validite" data-i18n-html="val.somme"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure>
+      <svg class="fig no-sigle" id="echelle" role="img" data-i18n-attr="aria-label:tr.aria"></svg>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="trde" data-i18n="tr.de"></label></div><select id="trde"></select></div>
+        <div class="ctl"><div class="row"><label for="trvers" data-i18n="tr.vers"></label></div><select id="trvers"></select></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="tr.k.delta"></span><span class="v" id="trdelta"></span><span class="f" id="trf"></span></div>
+          <div class="stat"><span class="k" data-i18n="tr.k.nature"></span><span class="v" id="trnature"></span><span class="f" data-i18n="tr.f.nature"></span></div>
+        </div>
+      </div>
+      <p class="readout no-sigle" id="trdemi" aria-live="polite"></p>
+      <figcaption data-i18n-html="tr.caption"></figcaption>
+    </figure>
+    <div class="eq no-sigle" data-i18n-html="eq.acide"></div>
+    <p class="validite" data-i18n-html="val.acide"></p>
+    <div class="box rem"><b data-i18n="s3.rem.titre"></b>
+      <p data-i18n-html="s3.rem.corps"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <p data-i18n-html="uses.p"></p>
+    <div class="list keyed" id="energie"></div>
+    <p data-i18n-html="uses.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/niveau-d-oxydation-organique.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/chim-solutions.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script src="/racoon/statistique.js"></script>
+<script src="/racoon/chim-organique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const O = ChimOrga, S = ChimSolutions, $ = id => document.getElementById(id), sym = s => t("chim.sym", { s });
+const signe = x => (x > 0 ? "+" : "") + F.num(x, 3);
+const peindre = (svg, m, o) => { const d = O.dessin(m, Object.assign({ texte: sym }, o)); svg.setAttribute("viewBox", d.viewBox); svg.innerHTML = d.html; };
+const keyed = (el, rows) => { el.innerHTML = rows.map(([k, v]) => `<div><span class="k">${k}</span><span>${v}</span></div>`).join(""); };
+
+/* ---------- §1 : le n.o. de chaque carbone, compté sur ses liaisons ---------- */
+(() => {
+  const IDS = ["methane", "methanol", "methanal", "acideMethanoique", "dioxydeCarbone", "ethanol", "ethanal", "acideEthanoique",
+    "ethanoateMethyle", "chloroethane", "ethanamine", "acetone", "propan2ol", "butanenitrile"], noms = textOf("mol.molecules", IDS);
+  const UN = new Set(["methane", "methanol", "methanal", "acideMethanoique", "dioxydeCarbone"]);   // un carbone : on l'écrit
+  const sel = $("molsel");
+  sel.innerHTML = IDS.map(id => `<option value="${id}">${noms[id]}</option>`).join("");
+  sel.value = "ethanal";
+  function maj() {
+    const id = sel.value, m = O.molecule(id), cs = m.atomes.map((a, i) => i).filter(i => m.atomes[i].e === "C");
+    const marques = {}, rang = new Map(cs.map((i, k) => [i, k + 1]));
+    cs.forEach(i => { marques[i] = signe(O.nombreOxydation(m, i)); });
+    peindre($("mol"), m, { marques, surligne: cs.filter(i => O.niveauOxydation(m, i) > 0), carbones: UN.has(id), echelle: 44 });
+    $("molnom").textContent = t("mol.nom", { n: noms[id], f: S.texte(O.formuleTexte(m)) });
+    const rows = cs.map(i => {
+      const x = O.niveauOxydation(m, i), n = O.nombreOxydation(m, i), h = x - n;
+      return [t("mol.k.carbone", { k: rang.get(i) }), t("mol.v.carbone", { x, h, n: signe(n), niv: x })];
+    });
+    rows.push([t("mol.k.somme"), t("mol.v.somme", { s: signe(O.sommeNO(m)) })]);
+    keyed($("moldetail"), rows);
+  }
+  sel.onchange = maj;
+  maj();
+})();
+
+/* ---------- §2 : familles et niveaux ---------- */
+(() => {
+  const NIV = ["n0", "n1", "n2", "n3", "n4"], txt = textOf("s2.niveaux", NIV);
+  keyed($("niveaux"), NIV.map(k => [txt[k].k, txt[k].v]));
+})();
+
+/* ---------- §3 : oxydation ou pas ? Σ n.o. des deux carbones, avant et après ---------- */
+(() => {
+  const IDS = ["ethane", "ethene", "ethyne", "ethanol", "ethanal", "acideEthanoique"], noms = textOf("tr.molecules", IDS);
+  const fill = (s, v) => { $(s).innerHTML = IDS.map(id => `<option value="${id}">${noms[id]}</option>`).join(""); $(s).value = v; };
+  fill("trde", "ethanol"); fill("trvers", "ethanal");
+  const sigma = id => O.sommeNO(O.molecule(id));
+  function echelle(de, vers) {
+    /* axe Σ n.o. de −6 à 0 ; chaque molécule à sa place, sur deux rangées si deux partagent une valeur */
+    const X = v => 40 + (v + 6) * 100, out = [], vus = {};
+    out.push(`<line x1="${X(-6)}" y1="100" x2="${X(0)}" y2="100" class="stroke"/>`);
+    for (let v = -6; v <= 0; v++) {
+      out.push(`<line x1="${X(v)}" y1="94" x2="${X(v)}" y2="106" class="stroke thin"/>`);
+      out.push(`<text x="${X(v)}" y="124" text-anchor="middle" class="fill c-label-2">${signe(v)}</text>`);
+    }
+    out.push(`<text x="${X(-3)}" y="150" text-anchor="middle" class="fill c-label-2">${t("tr.axe")}</text>`);
+    IDS.forEach(id => {
+      const v = sigma(id), k = vus[v] = (vus[v] || 0) + 1, y = k === 1 ? 70 : 40, actif = id === de || id === vers;
+      out.push(`<circle cx="${X(v)}" cy="100" r="5" class="fill ${actif ? "c-tint" : "c-label-2"}"/>`);
+      out.push(`<text x="${X(v)}" y="${y}" text-anchor="middle" class="fill ${actif ? "c-tint" : "c-label"}">${noms[id]}</text>`);
+    });
+    if (de !== vers) {
+      const a = X(sigma(de)), b = X(sigma(vers));
+      if (a !== b) {
+        const s = Math.sign(b - a), fin = b - s * 8;
+        out.push(`<path d="M${a} 100 Q${(a + b) / 2} 165 ${fin} 108" class="stroke c-tint"/>`);
+        out.push(`<polygon points="${fin},108 ${fin - s * 10},104 ${fin - s * 4},116" class="fill c-tint"/>`);
+      }
+    }
+    $("echelle").setAttribute("viewBox", "0 15 680 150");
+    $("echelle").innerHTML = out.join("");
+  }
+  function maj() {
+    const de = $("trde").value, vers = $("trvers").value, a = O.molecule(de), b = O.molecule(vers), r = O.bilanRedox(a, b);
+    echelle(de, vers);
+    $("trdelta").textContent = signe(r.electrons);
+    $("trf").textContent = t("tr.f.delta", { a: signe(O.sommeNO(a)), b: signe(O.sommeNO(b)) });
+    $("trnature").textContent = t("tr.nature." + r.nature);
+    if (de === vers) { $("trdemi").textContent = t("tr.meme"); return; }
+    if (r.nature === "aucune") { $("trdemi").textContent = t("tr.pasredox"); return; }
+    const ox = r.electrons > 0 ? b : a, red = r.electrons > 0 ? a : b, d = S.demiEquation(O.formuleTexte(ox), O.formuleTexte(red));
+    $("trdemi").textContent = t(r.electrons > 0 ? "tr.demi.ox" : "tr.demi.red", { e: S.ecrire(d), n: d.n });
+  }
+  $("trde").onchange = $("trvers").onchange = maj;
+  maj();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["wohler", 1835, "idea"], ["pauling", 1932, "idea"], ["latimer", 1938, "idea"], ["iupac", 2016, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  /* facteurs d'énergie du règlement (UE) n° 1169/2011, annexe XIV, en kJ·g⁻¹ ; n.o. moyen du carbone d'une molécule type */
+  const ROWS = [["lipide", "C57H110O6", 37], ["ethanol", "C2H6O", 29], ["glucide", "C6H12O6", 17], ["acide", "C6H8O7", 13]];
+  const txtE = textOf("uses.energie", ROWS.map(r => r[0]));
+  keyed($("energie"), ROWS.map(([id, f, kJ]) => [txtE[id], t("uses.ligne", { f: S.texte(f), no: signe(S.nombreOxydation(f, "C")), e: F.qty(kJ, "kJ·g⁻¹") })]));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["ethanal", "b"], ["propanone", "d"], ["ester", "a"], ["hydratation", "c"], ["famille", "b"], ["methane", "a"], ["substitution", "d"], ["energie", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

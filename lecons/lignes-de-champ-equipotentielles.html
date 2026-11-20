@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lignes de champ et surfaces équipotentielles</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-electrostatique" data-i18n="monde.electrostatique"></a><span class="aux">›</span><a href="/racoon/etape?id=gauss-electrostatique" data-i18n="etape.gauss-electrostatique"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/champ-gradient-du-potentiel" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi>Φ</mi><mo stretchy="false">(</mo><mi>α</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mi>q</mi><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub></mrow></mfrac><mspace width="0.1em"/><mn>2</mn><mi>π</mi><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi data-i18n="eq.cos"></mi><mspace width="0.1em"/><mi>α</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mi>q</mi><msub><mi>ε</mi><mn>0</mn></msub></mfrac><mfrac><mrow><mn>1</mn><mo>−</mo><mi data-i18n="eq.cos"></mi><mspace width="0.1em"/><mi>α</mi></mrow><mn>2</mn></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.cone"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="eq"><math display="block"><msub><mi>q</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi data-i18n="eq.cos"></mi><mspace width="0.1em"/><mi>α</mi><mo stretchy="false">)</mo><mo>=</mo><mo>−</mo><msub><mi>q</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi data-i18n="eq.cos"></mi><mspace width="0.1em"/><mi>β</mi><mo stretchy="false">)</mo></math></div>
+    <p class="validite" data-i18n-html="val.tube"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p data-i18n-html="sys.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi mathvariant="normal">d</mi><mi>φ</mi><mo>=</mo><mo>∇</mo><mi>φ</mi><mo>·</mo><mi mathvariant="normal">d</mi><mover accent="true"><mi>s</mi><mo>→</mo></mover><mo>=</mo><mo>−</mo><mover accent="true"><mi>E</mi><mo>→</mo></mover><mo>·</mo><mi mathvariant="normal">d</mi><mover accent="true"><mi>s</mi><mo>→</mo></mover><mo>=</mo><mn>0</mn></math></div>
+    <p class="validite" data-i18n-html="val.equi"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <figure>
+      <svg class="fig" id="lignes" viewBox="0 0 640 384" role="img" data-i18n-attr="aria-label:li.aria"></svg>
+      <div class="legend"><span class="c-ok" data-i18n="li.legend.lignes"></span><span class="c-label-2" data-i18n="li.legend.equi"></span><span class="c-tint" data-i18n="li.legend.seules"></span><span class="c-warn" data-i18n="li.legend.plus"></span><span class="c-label" data-i18n="li.legend.moins"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="q2sl" data-i18n="li.q2"></label><output id="q2read" for="q2sl"></output></div>
+            <input id="q2sl" type="range" min="-2" max="2" step="0.25" value="-0.5"></div>
+          <div class="ctl"><div class="row"><label for="nsl" data-i18n="li.n"></label><output id="nread" for="nsl"></output></div>
+            <input id="nsl" type="range" min="4" max="16" step="2" value="8"></div>
+          <div class="ctl"><label><input type="checkbox" id="seules"> <span data-i18n="li.seules"></span></label></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="li.k.arrivent"></span><span class="v" id="varrivent"></span><span class="f" id="farrivent"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="li.k.angle"></span><span class="v" id="vangle"></span><span class="f" data-i18n="li.f.angle"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="li.k.infini"></span><span class="v" id="vinfini"></span><span class="f" id="finfini"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="li.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/lignes-de-champ-equipotentielles.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/physique-fondamentale.js"></script>
+<script src="/racoon/lecons/champs-em.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/electrostatique.js"></script>
+<script src="/racoon/carte-champ.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const ES = Electrostatique, NC = 1e-9;
+
+/* ---------- deux charges sur un axe : lignes en tubes de flux égal, équipotentielles (positions en m) ---------- */
+(() => {
+  const svg = $("lignes"), q2sl = $("q2sl"), nsl = $("nsl"), cb = $("seules"), O = { W: 640, H: 384, x0: -0.15, x1: 0.15, y0: -0.09, y1: 0.09 };
+  const X1 = -0.05, X2 = 0.05, OPT = { r0: 1.5e-3, ds: 1e-3, loin: 0.5, n: 3000 }, NIV = [-400, -200, -100, -50, -25, 0, 25, 50, 100, 200, 400];
+  const deg = a => a * 180 / Math.PI;
+  function trace(c, g, pts) { Plot.el("path", { d: Plot.path(pts.map(p => [c.sx(p[0]), c.sy(p[1])])), class: "stroke thin" }, g); }
+  function draw() {
+    const k2 = +q2sl.value, n = +nsl.value, Q = [{ q: NC, x: X1, y: 0 }, { q: k2 * NC, x: X2, y: 0 }].filter(s => s.q !== 0);
+    const c = CarteChamp.carte(svg, O), phi = p => ES.potentiel(Q, p);
+    const clip = Plot.el("clipPath", { id: "cadre-lignes" }, Plot.el("defs", {}, svg)), dans = g => (g.setAttribute("clip-path", "url(#cadre-lignes)"), g);
+    Plot.el("rect", { x: 0, y: 0, width: O.W, height: O.H }, clip);
+    CarteChamp.niveaux(c, phi, NIV, { cls: "c-label-2", epais: NIV.indexOf(0) });
+    if (cb.checked) {                       /* the picture of each charge alone: straight radial lines, which cross */
+      const g = dans(c.layer("c-tint"));
+      Q.forEach(s => ES.anglesEgalFlux(Math.max(1, Math.round(n * Math.abs(s.q) / NC))).forEach(a => [1, -1].forEach(sg => {
+        const u = s.x < 0 ? 1 : -1;        /* angles measured from the direction toward the other charge */
+        trace(c, g, [[s.x, 0], [s.x + 0.4 * u * Math.cos(a), sg * 0.4 * Math.sin(a)]]);
+      })));
+    }
+    const g = dans(c.layer("c-ok"));
+    let arrivent = 0, infini1 = 0, ecart = 0, infini2 = 0;
+    ES.anglesEgalFlux(n).forEach(a => [1, -1].forEach(sg => {
+      const l = ES.suivreLigne(Q, 0, sg * a, Object.assign({ u: [1, 0] }, OPT));
+      trace(c, g, l.points);
+      if (l.fin === 1) { arrivent++; const b = ES.angleArrivee(1, k2, a); if (Number.isFinite(b)) ecart = Math.max(ecart, Math.abs(deg(l.angle - b))); }
+      else infini1++;
+    }));
+    if (Q.length === 2) {                    /* lines of q2 that do not end on q1 */
+      const n2 = Math.round(n * Math.abs(k2));
+      if (n2 > 0) ES.anglesEgalFlux(n2).forEach(a => [1, -1].forEach(sg => {
+        const l = ES.suivreLigne(Q, 1, sg * a, Object.assign({ u: [-1, 0] }, OPT));
+        if (l.fin !== 0) { trace(c, g, l.points); infini2++; }
+      }));
+    }
+    Q.forEach(s => CarteChamp.point(c, [s.x, s.y], 4 + 2.5 * Math.abs(s.q) / NC, s.q > 0 ? "c-warn" : "c-label", t("li.nom", { i: s.x < 0 ? 1 : 2 }), -14));
+    const prevu = k2 < 0 ? 2 * n * Math.min(1, -k2) : 0;
+    $("q2read").textContent = F.si(k2 * NC, "C", { prefix: "n" });
+    $("nread").textContent = String(n);
+    $("varrivent").textContent = t("li.v.arrivent", { a: arrivent, n: 2 * n });
+    $("farrivent").textContent = t("li.f.arrivent", { p: F.num(prevu, 3) });
+    $("vangle").textContent = arrivent ? F.qty(F.num(ecart, 2), "°") : "–";
+    $("vinfini").textContent = String(infini1 + infini2);
+    $("finfini").textContent = t("li.f.infini", { p: F.num(2 * n * Math.abs(1 + k2), 3) });
+  }
+  q2sl.oninput = nsl.oninput = cb.onchange = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["faraday52", 1852, "idea"], ["maxwell", 1855, "idea"], ["maxwell61", 1861, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["anneaux", "calcul"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["nombre", "b"], ["croisement", "d"], ["perpendiculaire", "a"], ["densite", "c"], ["vide", "a"], ["moitie", "c"], ["superposer", "b"], ["plan", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 48 });
+})();
+</script>
+</body>
+</html>

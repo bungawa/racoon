@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Qu'est-ce que l'énergie ?</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-atomes-energie" data-i18n="monde.atomes-energie"></a><span class="aux">›</span><a href="/racoon/etape?id=energie-premiere-approche" data-i18n="etape.energie-premiere-approche"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fond" href="/racoon/atlas?piste=fond" data-i18n="tag.piste"></a>
+      <span class="chip plain" data-i18n="tag.prereq"></span>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <blockquote class="thesis" data-i18n-html="s1.thesis"></blockquote>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <figure>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="bsl" data-i18n="led.boite"></label><output id="bread" for="bsl"></output></div>
+            <input id="bsl" type="range" min="0" max="40" step="1" value="0"></div>
+          <div class="ctl"><div class="row"><label for="esl" data-i18n="led.eau"></label><output id="eread" for="esl"></output></div>
+            <input id="esl" type="range" min="0" max="40" step="1" value="0"></div>
+          <div class="ctl"><div class="row"><label for="dsl" data-i18n="led.dehors"></label><output id="dread" for="dsl"></output></div>
+            <input id="dsl" type="range" min="0" max="10" step="1" value="0"></div>
+        </div>
+        <div class="controls">
+          <button class="btn tinted" type="button" id="melange" data-i18n="led.melange"></button>
+        </div>
+        <h3 data-i18n="led.mesures"></h3>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="led.k.vues"></span><span class="v" id="vvues"></span></div>
+          <div class="stat"><span class="k" data-i18n="led.k.masse"></span><span class="v" id="vmasse"></span></div>
+          <div class="stat"><span class="k" data-i18n="led.k.hauteur"></span><span class="v" id="vhaut"></span></div>
+        </div>
+        <h3 data-i18n="led.bilan"></h3>
+        <div class="list" id="ledger" role="table" data-i18n-attr="aria-label:led.aria"></div>
+        <div class="meter" id="meter"><i id="meterbar"></i></div>
+        <p class="caption" id="verdict"></p>
+      </div>
+      <figcaption data-i18n-html="led.caption"></figcaption>
+    </figure>
+    <div class="eq"><math display="block"><msub><mi>N</mi><mtext data-i18n="eq.vues"></mtext></msub><mo>+</mo><mfrac><mrow><mi>m</mi><mo>−</mo><msub><mi>m</mi><mn>0</mn></msub></mrow><msub><mi>m</mi><mi>b</mi></msub></mfrac><mo>+</mo><mfrac><mrow><mo stretchy="false">(</mo><mi>h</mi><mo>−</mo><msub><mi>h</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mi>S</mi></mrow><msub><mi>V</mi><mi>b</mi></msub></mfrac><mo>=</mo><mn>40</mn></math><span class="n">(4.2)</span></div>
+    <p class="validite" data-i18n-html="val.4.1"></p>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="box warn"><b data-i18n="s2.warn.title"></b>
+      <p data-i18n-html="s2.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="box def"><b data-i18n="s3.def.title"></b>
+      <p data-i18n-html="s3.def.body"></p>
+    </div>
+    <h3 data-i18n="forms.h3"></h3>
+    <div class="list" id="forms" role="table" data-i18n-attr="aria-label:forms.aria"></div>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="box rem"><b data-i18n="s3.rem.title"></b>
+      <p data-i18n-html="s3.rem.body"></p>
+    </div>
+    <div class="box warn"><b data-i18n="s3.warn.title"></b>
+      <p data-i18n-html="s3.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/qu-est-ce-que-l-energie.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/energie.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+
+/* ---------- le bilan des billes ---------- */
+(() => {
+  const B = Energie.BILLES, sl = { boite: $("bsl"), eau: $("esl"), dehors: $("dsl") };
+  /* the three hidden places cannot hold more than the 40 marbles: the slider just moved gives way last */
+  const fit = moved => { const others = Object.keys(sl).filter(k => k !== moved);
+    let over = Object.values(sl).reduce((s, e) => s + +e.value, 0) - B.N;
+    for (const k of others) { if (over <= 0) break; const take = Math.min(over, +sl[k].value); sl[k].value = +sl[k].value - take; over -= take; } };
+  function upd() {
+    const r = { boite: +sl.boite.value, eau: +sl.eau.value, dehors: +sl.dehors.value };
+    r.sol = B.N - r.boite - r.eau - r.dehors;
+    const m = Energie.measure(r), l = Energie.ledger(m), tot = Math.round(l.total * 1e6) / 1e6;
+    $("bread").textContent = r.boite; $("eread").textContent = r.eau; $("dread").textContent = r.dehors;
+    $("vvues").textContent = m.vues;
+    $("vmasse").textContent = F.si(m.masse * 1000, "g", { prefix: "", sig: 3 });
+    $("vhaut").textContent = F.qty(F.fix(m.hauteur * 1000, 1), "mm");
+    const rows = [["vues", m.vues], ["boite", l.boite], ["eau", l.eau]];
+    $("ledger").innerHTML = rows.map(([k, n]) => `<div role="row"><span role="cell">${t("led.row." + k)}</span><span class="v" role="cell">${F.num(Math.round(n * 1e6) / 1e6, 6)}</span></div>`).join("")
+      + `<div role="row"><span role="cell"><strong>${t("led.row.total")}</strong></span><span class="v" role="cell"><strong>${F.num(tot, 6)}</strong></span></div>`;
+    $("meterbar").setAttribute("style", "width:" + (100 * tot / B.N).toFixed(1) + "%");
+    $("meter").classList.toggle("over", tot !== B.N);
+    $("verdict").textContent = tot === B.N ? t("led.ok") : t("led.ouvert", { n: B.N - tot });
+  }
+  Object.entries(sl).forEach(([k, e]) => e.oninput = () => { fit(k); upd(); });
+  $("melange").onclick = () => { const a = Math.floor(Math.random() * 25), b = Math.floor(Math.random() * (B.N - a));
+    sl.boite.value = a; sl.eau.value = b; sl.dehors.value = 0; upd(); };
+  upd();
+})();
+
+/* ---------- formes d'énergie ---------- */
+(() => {
+  const FORMS = [["pesanteur", "/racoon/lecons/energie-potentielle-pesanteur"], ["cinetique", "/racoon/lecons/energie-cinetique"], ["elastique", "/racoon/lecons/autres-formes-energie"],
+    ["thermique", "/racoon/lecons/autres-formes-energie"], ["chimique", "/racoon/lecons/autres-formes-energie"], ["masse", "/racoon/lecons/autres-formes-energie"]];
+  const txt = textOf("forms.rows", FORMS.map(f => f[0]));
+  $("forms").innerHTML = FORMS.map(([id, href]) => `<div role="row"><span role="cell"><a href="${href}">${txt[id].name}</a></span><span class="v" role="cell">${txt[id].f}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["leibniz", 1686, "idea"], ["young", 1807, "idea"], ["joule", 1845, "experiment"], ["helmholtz", 1847, "idea"], ["noether", 1918, "idea"], ["pauli", 1930, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["etiquette", "compteur"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["fenetre", "a"], ["formule", "a"], ["nature", "a"], ["pauli", "a"], ["consommer", "a"], ["mesure", "a"], ["aquarium", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 41 });
+})();
+</script>
+</body>
+</html>

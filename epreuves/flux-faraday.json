@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["aimant", "a"],
+  ["statique", "b"],
+  ["solenoide", "c"],
+  ["disque", "d"],
+  ["plaques", "a"],
+  ["betatron", "b"],
+  ["limite", "c"],
+  ["paradoxe", "d"]
+ ]
+}

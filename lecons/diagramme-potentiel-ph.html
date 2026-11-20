@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Construire et lire un diagramme potentiel-pH</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-solutions" data-i18n="monde.chim-solutions"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-diagrammes-e-ph" data-i18n="etape.chim-diagrammes-e-ph"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/piles-formule-de-nernst" data-i18n="tag.prereq"></a>
+      <a class="chip plain" href="/racoon/etape?id=chim-precipitation-complexation" data-i18n="tag.prereq2"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq" data-i18n-html="eq.nernst"></div>
+    <p class="validite" data-i18n-html="val.nernst"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="box def"><b data-i18n="s2.conv.title"></b>
+      <p data-i18n-html="s2.conv.body"></p>
+    </div>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq" data-i18n-html="eq.horiz"></div>
+    <p class="validite" data-i18n-html="val.horiz"></p>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="eq" data-i18n-html="eq.vert"></div>
+    <p class="validite" data-i18n-html="val.vert"></p>
+    <p data-i18n-html="s2.p4"></p>
+    <div class="eq" data-i18n-html="eq.oblique"></div>
+    <p class="validite" data-i18n-html="val.oblique"></p>
+    <figure class="chart">
+      <svg id="diag" role="img" data-i18n-attr="aria-label:diag.aria"></svg>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="csl" data-i18n="diag.c"></label><output id="cread" for="csl"></output></div>
+          <input id="csl" type="range" min="-6" max="0" step="0.5" value="-2"></div>
+        <div class="controls"><button class="btn tinted" type="button" id="eau" aria-pressed="true" data-i18n="diag.eau"></button></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="diag.k.point"></span><span class="v" id="pt"></span><span class="f" id="ptf"></span></div>
+          <div class="stat"><span class="k" data-i18n="diag.k.espece"></span><span class="v" id="esp"></span><span class="f" id="espf"></span></div>
+          <div class="stat"><span class="k" data-i18n="diag.k.eau"></span><span class="v" id="weau"></span><span class="f" id="weauf"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="diag.caption"></figcaption>
+    </figure>
+    <div class="list keyed" id="frontieres"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq" data-i18n-html="eq.eau"></div>
+    <p class="validite" data-i18n-html="val.eau"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <p data-i18n-html="s3.p3"></p>
+    <div class="box rem"><b data-i18n="s3.dism.title"></b>
+      <p data-i18n-html="s3.dism.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n-html="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/diagramme-potentiel-ph.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/chim-solutions.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), C = ChimSolutions;
+const V = (x, d = 2) => F.qty(F.fix(x, d), "V");
+
+/* ---------- diagramme du fer, calculé ---------- */
+(() => {
+  const svg = $("diag"), PH = [0, 14], EV = [-1, 1.5];
+  const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 420, pad: { b: 44 },
+    x: { domain: PH, label: t("diag.x"), ticks: 7 }, y: { domain: EV, label: t("diag.y") } });
+  const layer = Plot.el("g", {}, g), eauG = Plot.el("g", {}, g), dot = Plot.el("circle", { r: 6, class: "dot" }, g);
+  const csl = $("csl"), btn = $("eau");
+  let d, point = [8, 0.1], eauOn = true;
+  /* the two water lines, fixed */
+  [0, 1].forEach(k => { const w = pH => k ? C.eau(pH).O2 : C.eau(pH).H2;
+    Plot.el("path", { d: Plot.path(PH.map(pH => [x(pH), y(w(pH))])), class: "ref" }, eauG);
+    Plot.el("text", { x: x(12.2), y: y(w(12.2)) - 6, class: "note" }, eauG).textContent = t(k ? "diag.o2" : "diag.h2"); });
+  const lire = () => {
+    const [pH, E] = point, s = C.especeStable(d, pH, E), w = C.eau(pH);
+    dot.setAttribute("cx", x(pH)); dot.setAttribute("cy", y(E));
+    $("pt").textContent = t("diag.ptv", { pH: F.fix(pH, 1) }); $("ptf").textContent = V(E);
+    $("esp").textContent = t("diag.label", { s: C.texte(s.s) }); $("espf").textContent = t(s.phase === "solide" ? "diag.solide" : "diag.dissous", { n: s.n ? "+" + s.n : "0" });
+    const etat = E > w.O2 ? "ox" : E < w.H2 ? "red" : "stable";
+    $("weau").textContent = t("diag.eau." + etat); $("weauf").textContent = t("diag.eauf", { o: V(w.O2), h: V(w.H2) });
+  };
+  const draw = () => {
+    const lc = +csl.value;
+    d = C.diagrammeEpH(C.FER, { c: Math.pow(10, lc), pH: PH, E: EV });
+    $("cread").textContent = t("diag.cv", { c: F.qty(F.sci(Math.pow(10, lc), 2), "mol·L⁻¹") });
+    layer.textContent = "";
+    for (const e of d.especes) {
+      if (!e.poly.length) continue;
+      const pts = e.poly.map(([a, b]) => [x(a), y(b)]);
+      if (e.phase === "solide") Plot.el("path", { d: Plot.path(pts) + "Z", class: "area" }, layer);
+      const cx = pts.reduce((s, q) => s + q[0], 0) / pts.length, cy = pts.reduce((s, q) => s + q[1], 0) / pts.length;
+      Plot.el("text", { x: cx, y: cy, "text-anchor": "middle", class: "note" }, layer).textContent = t("diag.label", { s: C.texte(e.s) });
+    }
+    for (const f of d.frontieres) Plot.el("path", { d: Plot.path(f.seg.map(([a, b]) => [x(a), y(b)])), class: "curve" }, layer);
+    $("frontieres").innerHTML = d.frontieres.map(f => {
+      const nom = t("diag.couple", { a: C.texte(f.s1), b: C.texte(f.s2) });
+      const v = f.verticale ? t("diag.fv", { pH: F.fix(f.pH, 2) })
+        : Math.abs(f.pente) < 1e-9 ? t("diag.fh", { E: V(f.E0) })
+        : t("diag.fo", { E: F.fix(f.E0, 2), p: F.fix(-f.pente, 3) });
+      return `<div><span class="k">${nom}</span><span>${v}</span></div>`;
+    }).join("");
+    lire();
+  };
+  csl.oninput = draw;
+  btn.onclick = () => { eauOn = !eauOn; btn.setAttribute("aria-pressed", eauOn); eauG.setAttribute("display", eauOn ? "inline" : "none"); };
+  svg.addEventListener("pointerdown", ev => {
+    const r = svg.getBoundingClientRect(), vb = svg.viewBox.baseVal;
+    const px = (ev.clientX - r.left) * vb.width / r.width, py = (ev.clientY - r.top) * vb.height / r.height;
+    point = [Math.min(Math.max(x.inv(px), PH[0]), PH[1]), Math.min(Math.max(y.inv(py), EV[0]), EV[1])]; lire();
+  });
+  draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["nernst", 1889, "idea"], ["sorensen", 1909, "idea"], ["pourbaix", 1945, "idea"], ["cebelcor", 1951, "use"], ["atlas", 1963, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["corrosion", "zinc", "eaux"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["pente", "b"], ["vertical", "c"], ["conc", "a"], ["horiz", "d"], ["eau", "b"], ["clou", "a"], ["dism", "c"], ["cinetique", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Effet d'ion commun et influence du pH</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-solutions" data-i18n="monde.chim-solutions"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-precipitation-complexation" data-i18n="etape.chim-precipitation-complexation"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/produit-de-solubilite" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi>s</mi><mo>≈</mo><mfrac><mrow><msub><mi>K</mi><mi mathvariant="normal">s</mi></msub><msup><mrow><mo>(</mo><msup><mi>c</mi><mo>°</mo></msup><mo>)</mo></mrow><mn>2</mn></msup></mrow><mi>c</mi></mfrac><mspace width="1em"/><mo>(</mo><mi>c</mi><mo>≫</mo><mi>s</mi><mo>)</mo></math></div>
+    <p class="validite" data-i18n-html="val.ic"></p>
+    <div class="list keyed" id="ic"></div>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi data-i18n="eq.log"></mi><mfrac><mi>s</mi><msup><mi>c</mi><mo>°</mo></msup></mfrac><mo>=</mo><mo>−</mo><msub><mi mathvariant="normal">p</mi><mrow><mi>K</mi><mi mathvariant="normal">s</mi></mrow></msub><mo>+</mo><mi>n</mi><mspace width="0.15em"/><msub><mi mathvariant="normal">p</mi><mrow><mi>K</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>−</mo><mi>n</mi><mspace width="0.15em"/><mi mathvariant="normal" data-i18n="eq.ph"></mi></math></div>
+    <p class="validite" data-i18n-html="val.hydroxyde"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="list keyed" id="seuils"></div>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>s</mi><mo>=</mo><mfrac><msub><mi>K</mi><mi mathvariant="normal">s</mi></msub><msup><mi>ω</mi><mn>2</mn></msup></mfrac><mo>+</mo><msub><mi>K</mi><mi mathvariant="normal">s</mi></msub><msub><mi>β</mi><mn>4</mn></msub><msup><mi>ω</mi><mn>2</mn></msup></math></div>
+    <p class="validite" data-i18n-html="val.amphotere"></p>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><mi>s</mi><mo>=</mo><msqrt><msub><mi>K</mi><mi mathvariant="normal">s</mi></msub><mrow><mo>(</mo><mn>1</mn><mo>+</mo><mfrac><mi>h</mi><msub><mi>K</mi><mrow><mi mathvariant="normal">a</mi><mn>2</mn></mrow></msub></mfrac><mo>+</mo><mfrac><msup><mi>h</mi><mn>2</mn></msup><mrow><msub><mi>K</mi><mrow><mi mathvariant="normal">a</mi><mn>1</mn></mrow></msub><msub><mi>K</mi><mrow><mi mathvariant="normal">a</mi><mn>2</mn></mrow></msub></mrow></mfrac><mo>)</mo></mrow></msqrt></math></div>
+    <p class="validite" data-i18n-html="val.carbonate"></p>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s5.sec"></span>
+    <h2 data-i18n="s5.h2"></h2>
+    <p data-i18n-html="s5.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="courbe" role="img" data-i18n-attr="aria-label:courbe.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="courbe.leg.s"></span><span class="c-warn" data-i18n="courbe.leg.c"></span><span class="c-ok" data-i18n="courbe.leg.solide"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <label class="field"><span data-i18n="courbe.sel"></span>
+            <select id="sel">
+              <option value="Fe(OH)3" data-i18n="sel.fe"></option>
+              <option value="Cu(OH)2" data-i18n="sel.cu"></option>
+              <option value="Zn(OH)2" data-i18n="sel.zn"></option>
+              <option value="Al(OH)3" data-i18n="sel.al"></option>
+              <option value="Mg(OH)2" data-i18n="sel.mg"></option>
+              <option value="CaCO3" data-i18n="sel.caco3"></option>
+            </select></label>
+          <div class="seg" id="modele"><button type="button" data-m="2" aria-pressed="true" data-i18n="courbe.deux"></button><button type="button" data-m="tout" aria-pressed="false" data-i18n="courbe.tout"></button></div>
+          <div class="ctl"><div class="row"><label for="lc" data-i18n="courbe.c"></label><output id="lcv" for="lc"></output></div>
+            <input id="lc" type="range" min="-5" max="-1" step="0.1" value="-2"></div>
+          <div class="ctl"><div class="row"><label for="ph" data-i18n="courbe.ph"></label><output id="phv" for="ph"></output></div>
+            <input id="ph" type="range" min="0" max="14" step="0.05" value="8"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="courbe.k.s"></span><span class="v" id="vs"></span><span class="f" id="fs"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="courbe.k.dom"></span><span class="v" id="vdom"></span><span class="f" data-i18n="courbe.f.dom"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="courbe.caption"></figcaption>
+    </figure>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/ion-commun-et-ph.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/chim-solutions.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), C = ChimSolutions, P = Plot.el;
+const conc = x => F.qty(F.sci(x, 3), "mol·L⁻¹");
+
+/* ---------- ion commun : AgCl dans NaCl, idéal et Davies ---------- */
+(() => {
+  $("ic").innerHTML = [0, 1e-4, 1e-3, 1e-2, 1e-1].map(c => {
+    const s = C.solubilite("AgCl", { "Cl^-": c }), d = C.solubiliteDavies("AgCl", { "Cl^-": c }, { "Na^+": c });
+    return `<div><span class="k">${c ? conc(c) : t("ic.eau")}</span><span>${t("ic.ligne", { s: conc(s), d: conc(d.s), r: F.fix(d.s / s, 2) })}</span></div>`;
+  }).join("");
+})();
+
+/* ---------- pH de début de précipitation, 0,01 mol·L⁻¹ ---------- */
+(() => {
+  const H = ["Fe(OH)3", "Al(OH)3", "Cu(OH)2", "Zn(OH)2", "Mg(OH)2"];
+  $("seuils").innerHTML = H.map(s => `<div><span class="k">${t("seuils.k", { sel: C.texte(s) })}</span><span>${t("seuils.ligne", {
+    pks: F.fix(C.SELS[s].pKs, 2), ph: F.fix(C.phPrecipitation(s, 0.01, { complexes: [] })[0].de, 2) })}</span></div>`).join("");
+})();
+
+/* ---------- log s en fonction du pH ---------- */
+(() => {
+  const svg = $("courbe"), ss = $("sel"), sc = $("lc"), sp = $("ph"), seg = [...$("modele").querySelectorAll("button")];
+  let tout = false;
+  const opts = s => {                                       // the programme model: M and M(OH)4 only; « tout »: every hydroxo complex
+    if (s === "CaCO3") return {};
+    return tout ? {} : { complexes: s === "Zn(OH)2" || s === "Al(OH)3" ? [4] : [] };
+  };
+  function draw() {
+    const s = ss.value, c = Math.pow(10, +sc.value), pH = +sp.value, o = opts(s);
+    seg.forEach(b => { b.disabled = !["Zn(OH)2", "Al(OH)3"].includes(s); b.setAttribute("aria-pressed", String((b.dataset.m === "tout") === tout)); });
+    svg.innerHTML = "";
+    const g = Plot.axes(svg, { fmt: F, w: 640, h: 320, pad: { b: 44, l: 52 },
+      x: { scale: "lin", domain: [0, 14], label: t("courbe.x") }, y: { scale: "lin", domain: [-12, 1], label: t("courbe.y") } });
+    const dom = C.phPrecipitation(s, c, o);
+    for (const d of dom) P("rect", { x: g.x(d.de), y: g.y(1), width: g.x(d.a) - g.x(d.de), height: g.y(-12) - g.y(1), class: "fill c-ok", "fill-opacity": 0.15 }, g.g);
+    const pts = [];
+    for (let i = 0; i <= 560; i++) { const p = i / 40, l = Math.log10(C.solubilitePH(s, p, o).s);
+      if (l >= -12 && l <= 1) pts.push([g.x(p), g.y(l)]); else if (pts.length) { pts.push(null); } }
+    const parts = []; let cur = [];
+    for (const q of pts) { if (q) cur.push(q); else if (cur.length) { parts.push(cur); cur = []; } }
+    if (cur.length) parts.push(cur);
+    for (const part of parts) P("path", { d: Plot.path(part), class: "stroke c-tint" }, g.g);
+    P("line", { x1: g.x(0), x2: g.x(14), y1: g.y(Math.log10(c)), y2: g.y(Math.log10(c)), class: "stroke dash c-warn" }, g.g);
+    const r = C.solubilitePH(s, pH, o), ls = Math.log10(r.s);
+    if (ls >= -12 && ls <= 1) P("circle", { cx: g.x(pH), cy: g.y(ls), r: 5, class: "fill c-tint" }, g.g);
+    $("lcv").textContent = conc(c); $("phv").textContent = F.fix(pH, 2);
+    $("vs").textContent = conc(r.s);
+    $("fs").textContent = t(r.s < c ? "courbe.f.solide" : "courbe.f.dissous");
+    $("vdom").textContent = dom.length ? dom.map(d => t("courbe.dom", { de: F.fix(d.de, 2), a: F.fix(d.a, 2) })).join(" ; ") : t("courbe.aucun");
+    $("sys").innerHTML = t("sys.inner", { ph: F.fix(pH, 2), I: conc(C.ionique({ "Na^+": 0.1, "NO3^-": 0.1 })),
+      g: F.fix(C.davies(2, 0.1), 2), f: F.fix(1 / C.davies(2, 0.1), 1), h: conc(Math.pow(10, -pH)), w: conc(Math.pow(10, pH - C.PKE)) });
+  }
+  seg.forEach(b => b.onclick = () => { tout = b.dataset.m === "tout"; draw(); });
+  ss.onchange = sc.oninput = sp.oninput = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["nernst", 1889, "idea"], ["noyes", 1890, "experiment"], ["sorensen", 1909, "idea"], ["baes", 1976, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["zinc", "chaux", "detartrage"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["commun", "c"], ["approx", "a"], ["pente", "d"], ["fer", "b"], ["zinc", "c"], ["calcaire", "a"], ["plancher", "d"], ["davies", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 1889 });
+})();
+</script>
+</body>
+</html>

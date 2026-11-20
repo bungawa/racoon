@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["diffuse", "a"],
+  ["ciel", "b"],
+  ["demionde", "c"],
+  ["calcite", "d"],
+  ["croises", "a"],
+  ["malus", "b"],
+  ["escalier", "c"],
+  ["reflet", "d"]
+ ]
+}

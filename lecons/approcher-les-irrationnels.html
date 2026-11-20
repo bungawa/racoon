@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Approcher les irrationnels</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-outils" data-i18n="monde.outils"></a><span class="aux">›</span><a href="/racoon/etape?id=nombres-logarithmes" data-i18n="etape.nombres-logarithmes"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fond" href="/racoon/atlas?piste=fond" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/abstraction-et-generalisation" data-i18n="tag.prereq"></a>
+      <span class="chip plain" data-i18n="tag.duree"></span>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n="s1.p1"></p>
+    <p data-i18n="s1.p2"></p>
+    <div class="eq">
+      <math display="block"><msup><mn>10</mn><mi>ε</mi></msup><mo>≈</mo><mn>1</mn><mo>+</mo><mi>L</mi><mspace width="0.15em"></mspace><mi>ε</mi><mo>,</mo><mspace width="1.5em"></mspace><mi>L</mi><mo>=</mo><munder><mi data-i18n="eq.lim"></mi><mrow><mi>s</mi><mo>→</mo><mn>0</mn></mrow></munder><mfrac><mrow><msup><mn>10</mn><mi>s</mi></msup><mo>−</mo><mn>1</mn></mrow><mi>s</mi></mfrac><mo>=</mo><mn>2,302585</mn><mo>…</mo></math>
+      
+    </div>
+    <p class="validite" data-i18n="eq1.validite"></p>
+    <p data-i18n="s1.p3"></p>
+    <figure>
+      <div class="panel">
+        <div class="seg" role="group" id="tseg">
+          <button type="button" data-m="naive" data-i18n="tab.naive"></button>
+          <button type="button" data-m="stable" data-i18n="tab.stable"></button>
+        </div>
+        <div class="ctl"><div class="row"><label for="tn" data-i18n="tab.n"></label><output id="tnv" for="tn"></output></div><input id="tn" type="range" min="1" max="60" step="1" value="10"></div>
+        <div class="chart"><svg class="fig" id="tplot" role="img" data-i18n-attr="aria-label:tab.aria"></svg></div>
+        <div class="legend"><span class="c-warn" data-i18n="tab.leg.naive"></span><span class="c-tint" data-i18n="tab.leg.stable"></span><span class="c-ok" data-i18n="tab.leg.extra"></span></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="tab.eps"></span><span class="v" id="teps"></span><span class="f" id="tepsf"></span></div>
+          <div class="stat"><span class="k" data-i18n="tab.q"></span><span class="v" id="tq"></span><span class="f" id="tqf"></span></div>
+          <div class="stat"><span class="k" data-i18n="tab.x"></span><span class="v" id="tx"></span><span class="f" id="txf"></span></div>
+        </div>
+        <details class="more"><summary data-i18n="tab.more"></summary>
+          <div class="list keyed scroll" id="trows"></div>
+        </details>
+      </div>
+      <figcaption data-i18n="tab.caption"></figcaption>
+    </figure>
+    <div class="eq">
+      <math display="block"><mi>L</mi><mo>≈</mo><mn>2</mn><msub><mi>q</mi><mi>n</mi></msub><mo>−</mo><msub><mi>q</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><mspace width="1.5em"></mspace><msub><mi>q</mi><mi>n</mi></msub><mo>=</mo><mfrac><mrow><msup><mn>10</mn><msup><mn>2</mn><mrow><mo>−</mo><mi>n</mi></mrow></msup></msup><mo>−</mo><mn>1</mn></mrow><msup><mn>2</mn><mrow><mo>−</mo><mi>n</mi></mrow></msup></mfrac></math>
+      
+    </div>
+    <p class="validite" data-i18n="eq2.validite"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n="s2.p1"></p>
+    <div class="eq">
+      <math display="block"><mi>x</mi><mo>=</mo><msup><mn>10</mn><msub><mi>s</mi><mn>1</mn></msub></msup><msup><mn>10</mn><msub><mi>s</mi><mn>2</mn></msub></msup><mo>⋯</mo><mo>(</mo><mn>1</mn><mo>+</mo><mi>δ</mi><mo>)</mo><mspace width="1em"></mspace><mo>⟹</mo><mspace width="1em"></mspace><msub><mi data-i18n="eq.log"></mi><mn>10</mn></msub><mi>x</mi><mo>≈</mo><msub><mi>s</mi><mn>1</mn></msub><mo>+</mo><msub><mi>s</mi><mn>2</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mfrac><mi>δ</mi><mi>L</mi></mfrac></math>
+      <span class="n">(22.3b)</span>
+    </div>
+    <p class="validite" data-i18n="eq3.validite"></p>
+    <figure>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="lx" data-i18n="lg.x"></label><output id="lxv" for="lx"></output></div><input id="lx" type="range" min="1" max="10" step="0.01" value="2"></div>
+          <div class="ctl"><div class="row"><label for="ln" data-i18n="lg.n"></label><output id="lnv" for="ln"></output></div><input id="ln" type="range" min="3" max="20" step="1" value="10"></div>
+        </div>
+        <div class="list" id="lrows"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="lg.sum"></span><span class="v" id="lsum"></span><span class="f" id="lsumf"></span></div>
+          <div class="stat"><span class="k" data-i18n="lg.value"></span><span class="v" id="lval"></span><span class="f" id="lerr"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n="lg.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n="s3.p1"></p>
+    <div class="eq">
+      <math display="block"><msqrt><mn>1</mn><mo>+</mo><mi>ε</mi></msqrt><mo>−</mo><mn>1</mn><mo>=</mo><mfrac><mi>ε</mi><mrow><mn>1</mn><mo>+</mo><msqrt><mn>1</mn><mo>+</mo><mi>ε</mi></msqrt></mrow></mfrac></math>
+      
+    </div>
+    <p class="validite" data-i18n="eq4.validite"></p>
+    <div class="box warn"><b data-i18n="s3.warn.title"></b>
+      <p data-i18n="s3.warn.body"></p>
+    </div>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/approcher-les-irrationnels.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+/* typographie française partout, sauf le <h1> : il reste identique au titre de lecons/index.json */
+const main = document.querySelector("main");
+F.autoTypo(main);
+document.title = t("title");
+const $ = id => document.getElementById(id);
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+const L = Math.LN10, KMAX = 60;
+const gap = e => e === 0 ? t("err.zero") : t("err.rel", { e: F.sci(e, 2) });
+
+/* ---------- table des racines successives de 10, et ce qu'en fait l'arithmétique flottante ---------- */
+(() => {
+  const RT = Cx.roots(10, KMAX), SL = { naive: Cx.slopes(10, KMAX, "naive"), stable: Cx.slopes(10, KMAX) };
+  const seg = $("tseg"), tn = $("tn"), svg = $("tplot"), P = Plot.el, FLOOR = 1e-16;
+  let mode = "naive";
+  const err = v => Math.max(FLOOR, Math.abs(v - L) / L);
+  function draw(n) {
+    svg.innerHTML = "";
+    const ax = Plot.axes(svg, { fmt: F, w: 640, h: 300, x: { domain: [0, KMAX], label: t("tab.xlabel") }, y: { scale: "log", domain: [FLOOR, 10], label: t("tab.ylabel"), fmt: v => { const e = Math.round(Math.log10(v)); return e % 2 ? "" : "10" + F.sup(e); } } });
+    const line = (rows, f, cls) => P("polyline", { points: rows.filter(r => r.k > (f === "x" ? 1 : 0)).map(r => ax.x(r.k).toFixed(1) + "," + ax.y(err(r[f])).toFixed(1)).join(" "), class: cls }, svg);
+    line(SL.naive, "q", "ref"); line(SL.stable, "q", "curve"); line(SL.stable, "x", "stroke c-ok");
+    P("line", { x1: ax.x(n), x2: ax.x(n), y1: ax.y(10), y2: ax.y(FLOOR), class: "zero" }, svg);
+    P("circle", { cx: ax.x(n), cy: ax.y(err(SL[mode][n].q)), r: 5, class: "dot" }, svg);
+  }
+  function upd() {
+    const n = +tn.value, S = SL[mode], r = RT[n], e = mode === "naive" ? r.v - 1 : r.eps;
+    $("tnv").textContent = F.num(n, 2);
+    $("teps").textContent = e === 0 ? "0" : F.sci(e, 7);
+    const lost = Math.abs((r.v - 1) - r.eps) / r.eps;
+    $("tepsf").textContent = mode === "naive" ? t("tab.eps.naive", { e: lost === 0 ? "0" : F.sci(lost, 2) }) : t("tab.eps.stable");
+    $("tq").textContent = F.num(S[n].q, 10); $("tqf").textContent = gap(Math.abs(S[n].q - L) / L);
+    $("tx").textContent = n > 1 ? F.num(S[n].x, 12) : "–"; $("txf").textContent = n > 1 ? gap(Math.abs(S[n].x - L) / L) : t("tab.x.none");
+    $("trows").innerHTML = S.slice(0, n + 1).map((q, k) => `<div><span class="k">2${F.sup(-k)}</span><span>${F.num(RT[k].v, 12)}</span><span class="v">${F.num(q.q, 8)}</span></div>`).join("");
+    seg.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.m === mode)));
+    draw(n);
+  }
+  seg.querySelectorAll("button").forEach(x => x.onclick = () => { mode = x.dataset.m; upd(); });
+  tn.oninput = upd; upd();
+})();
+
+/* ---------- logarithme décimal par divisions successives (table 22-2) ---------- */
+(() => {
+  const lx = $("lx"), ln = $("ln");
+  function upd() {
+    const x = +lx.value, n = +ln.value, R = Cx.roots(10, n), G = Cx.logRoots(x, 10, n), N = Math.pow(2, n);
+    $("lxv").textContent = F.num(x, 4); $("lnv").textContent = F.num(n, 2);
+    let y = x;
+    $("lrows").innerHTML = G.used.map(k => { y /= R[k].v; return `<div><span>${t("lg.row", { k: "2" + F.sup(-k), v: F.num(R[k].v, 8) })}</span><span class="v">${F.num(y, 8)}</span></div>`; }).join("")
+      + `<div><span>${t("lg.rest", { d: F.sci(G.rest - 1, 4) })}</span><span class="v">${t("lg.tail", { t: F.sci(G.tail, 4) })}</span></div>`;
+    const ints = G.used.map(k => F.num(N / Math.pow(2, k), 7));
+    $("lsum").textContent = (G.whole ? F.num(G.whole, 2) + " + " : "") + "(" + ints.concat([F.fix(G.tail * N, 3)]).join(" + ") + ") / " + F.num(N, 7);
+    $("lsumf").textContent = t("lg.sumf", { n: F.num(N, 7) });
+    $("lval").textContent = F.num(G.value, 9);
+    $("lerr").textContent = t("lg.err", { exact: F.num(Math.log10(x), 9), e: F.sci(Math.abs(G.value - Math.log10(x)) || 1e-17, 2) });
+  }
+  lx.oninput = ln.oninput = upd; upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["napier", 1614, "idea"], ["chilias", 1617, "idea"], ["arithmetica", 1624, "experiment"], ["ieee", 1985, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["libm", "expm1", "oom"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["pourquoi", "a"], ["pente", "a"], ["moitie", "a"], ["log2", "a"], ["annul", "a"], ["remede", "a"], ["briggs", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => { const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) }; }), { t, seed: 25 });
+})();
+</script>
+</body>
+</html>

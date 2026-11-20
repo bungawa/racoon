@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le principe d'incertitude</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-outils" data-i18n="monde.outils"></a><span class="aux">›</span><a href="/racoon/etape?id=probabilites" data-i18n="etape.probabilites"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fond" href="/racoon/atlas?piste=fond" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/distribution-de-probabilite" data-i18n="tag.prereq"></a>
+      <span class="chip plain" data-i18n="tag.duree"></span>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n="s1.p1"></p>
+    <p data-i18n="s1.p2"></p>
+    <div class="box def"><b data-i18n="s1.def.title"></b>
+      <p data-i18n-html="s1.def.body"></p>
+    </div>
+    <div class="eq">
+      <math display="block"><mi>Δ</mi><mi>x</mi><mspace width="0.1em"/><mi>Δ</mi><mi>p</mi><mo>≥</mo><mfrac><mi>ℏ</mi><mn>2</mn></mfrac><mo>,</mo><mspace width="1em"/><mi data-i18n="eq.soit"></mi><mspace width="1em"/><mi>Δ</mi><mi>x</mi><mspace width="0.1em"/><mi>Δ</mi><mi>v</mi><mo>≥</mo><mfrac><mi>ℏ</mi><mrow><mn>2</mn><mi>m</mi></mrow></mfrac></math>
+      <span class="n">(6.22)</span>
+    </div>
+    <p class="validite" data-i18n="eq622.validite"></p>
+    <p data-i18n="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n="s2.p1"></p>
+    <figure class="chart">
+      <div class="panel">
+        <label class="field"><span data-i18n="hz.choice"></span>
+          <select id="part">
+            <option value="e" data-i18n="hz.e"></option>
+            <option value="p" data-i18n="hz.p"></option>
+            <option value="grain" data-i18n="hz.grain"></option>
+            <option value="bille" data-i18n="hz.bille"></option>
+          </select></label>
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="dx" data-i18n="hz.dx"></label><output id="dxv" for="dx"></output></div>
+            <input id="dx" type="range" min="-15" max="-2" step="0.1" value="-10"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="hz.dp"></span><span class="v" id="hdp"></span></div>
+          <div class="stat"><span class="k" data-i18n="hz.dv"></span><span class="v" id="hdv"></span><span class="f" id="hdvf"></span></div>
+          <div class="stat"><span class="k" data-i18n="hz.drift"></span><span class="v" id="hdr"></span><span class="f" data-i18n="hz.drift.f"></span></div>
+        </div>
+      </div>
+      <svg id="hchart" role="img" data-i18n-attr="aria-label:hz.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="hz.legend.sel"></span><span class="c-label-2" data-i18n="hz.legend.others"></span><span class="c-warn" data-i18n="hz.legend.c"></span></div>
+      <figcaption data-i18n="hz.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <p data-i18n="s3.p2"></p>
+    <div class="box rem"><b data-i18n="s3.rem.title"></b>
+      <p data-i18n="s3.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/principe-d-incertitude.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+const main = document.querySelector("main");
+F.autoTypo(main);
+document.title = t("title");
+const $ = id => document.getElementById(id);
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+
+/* ---------- Δv minimal en fonction de Δx, pour quatre masses ---------- */
+(() => {
+  const MASS = { e: Constantes.m_e, p: Constantes.m_p, grain: 1e-9, bille: 1e-3 };
+  /* échelles logarithmiques tracées en exposants, pour espacer les graduations */
+  const X = [-15, -2], Y = [-32, 12], L = Math.log10, pow = e => "10" + F.sup(e);
+  function draw() {
+    const part = $("part").value, m = MASS[part], dx = Math.pow(10, +$("dx").value), dv = Proba.minDv(dx, m);
+    $("dxv").textContent = F.si(dx, "m", { sig: 2 });
+    $("hdp").textContent = F.qty(F.sci(Proba.minDp(dx), 2), "N·s");
+    $("hdv").textContent = dv >= 1e-3 && dv < 1e9 ? F.si(dv, "m·s⁻¹", { sig: 2 }) : F.qty(F.sci(dv, 2), "m·s⁻¹");
+    $("hdvf").textContent = dv > 0.1 * Constantes.c ? t("hz.relat") : t("hz.ok", { r: F.sci(dv / Constantes.c, 1) });
+    const r = dv * 1 / dx; $("hdr").textContent = r >= 1e-3 && r < 1e4 ? F.num(r, 2) : F.sci(r, 2);
+    const svg = $("hchart"); svg.innerHTML = "";
+    const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 300, pad: { b: 44 }, x: { domain: X, ticks: 7, fmt: pow, label: t("hz.x") }, y: { domain: Y, ticks: 6, fmt: pow, label: t("hz.y") } });
+    Plot.el("line", { x1: x(X[0]), x2: x(X[1]), y1: y(L(Constantes.c)), y2: y(L(Constantes.c)), class: "ref" }, g);
+    Object.entries(MASS).forEach(([k, mk]) => {
+      const pts = X.map(e => [e, Math.min(Y[1], Math.max(Y[0], L(Proba.minDv(Math.pow(10, e), mk))))]);
+      Plot.el("path", { d: pts.map(([e, v], i) => (i ? "L" : "M") + x(e).toFixed(1) + " " + y(v).toFixed(1)).join(""), class: k === part ? "curve" : "zero", fill: "none" }, g);
+    });
+    Plot.el("circle", { cx: x(L(dx)), cy: y(L(dv)), r: 5, class: "dot" }, g);
+  }
+  $("part").onchange = draw; $("dx").oninput = draw;
+  draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["born", 1926, "idea"], ["heisenberg", 1927, "idea"], ["kennard", 1927, "idea"], ["nobel", 1933, "idea"], ["ligo", 2019, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["ligo"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["dix", "a"], ["bille", "b"], ["atome", "c"], ["proton", "d"], ["ecarts", "a"], ["noyau", "b"], ["ignorance", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => { const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) }; }), { t, seed: 65 });
+})();
+</script>
+</body>
+</html>

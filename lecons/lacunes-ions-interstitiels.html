@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lacunes et ions interstitiels</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-architecture" data-i18n="monde.chim-architecture"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-cristal-reel" data-i18n="etape.chim-cristal-reel"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/compacite-sites-interstitiels" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <figure>
+      <svg class="fig" id="plan" viewBox="0 0 640 340" role="img" data-i18n-attr="aria-label:pl.aria"></svg>
+      <div class="legend"><span class="el-n" data-i18n="pl.leg.cation"></span><span class="c-label-2" data-i18n="pl.leg.anion"></span><span class="ring c-warn" data-i18n="pl.leg.lacune"></span><span class="c-ok" data-i18n="pl.leg.inter"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" id="plmode" role="group" data-i18n-attr="aria-label:pl.mode">
+            <button type="button" data-d="parfait" data-i18n="pl.parfait"></button><button type="button" data-d="schottky" data-i18n="pl.schottky"></button><button type="button" data-d="frenkel" data-i18n="pl.frenkel"></button>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="pl.k.bilan"></span><span class="v" id="vbilan"></span><span class="f" id="fbilan"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="pl.caption"></figcaption>
+    </figure>
+    <div class="list keyed" id="types"></div>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq" id="eq-lacune"><math display="block"><mfrac><mi>n</mi><mi>N</mi></mfrac><mo>=</mo><msup><mi mathvariant="normal">e</mi><mrow><mi>S</mi><mo>/</mo><msub><mi>k</mi><mi mathvariant="normal">B</mi></msub></mrow></msup><mspace width="0.2em"></mspace><msup><mi mathvariant="normal">e</mi><mrow><mo>&minus;</mo><mi>H</mi><mo>/</mo><msub><mi>k</mi><mi mathvariant="normal">B</mi></msub><mi>T</mi></mrow></msup></math></div>
+    <p class="validite" data-i18n-html="val.lacune"></p>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="eq" id="eq-schottky"><math display="block"><mfrac><msub><mi>n</mi><mi mathvariant="normal">S</mi></msub><mi>N</mi></mfrac><mo>=</mo><msup><mi mathvariant="normal">e</mi><mrow><msub><mi>S</mi><mi mathvariant="normal">S</mi></msub><mo>/</mo><mn>2</mn><msub><mi>k</mi><mi mathvariant="normal">B</mi></msub></mrow></msup><mspace width="0.2em"></mspace><msup><mi mathvariant="normal">e</mi><mrow><mo>&minus;</mo><msub><mi>H</mi><mi mathvariant="normal">S</mi></msub><mo>/</mo><mn>2</mn><msub><mi>k</mi><mi mathvariant="normal">B</mi></msub><mi>T</mi></mrow></msup><mo>,</mo><mspace width="1.5em"></mspace><mfrac><msub><mi>n</mi><mi mathvariant="normal">F</mi></msub><mi>N</mi></mfrac><mo>=</mo><msqrt><mfrac><msub><mi>N</mi><mi mathvariant="normal">i</mi></msub><mi>N</mi></mfrac></msqrt><mspace width="0.2em"></mspace><msup><mi mathvariant="normal">e</mi><mrow><msub><mi>S</mi><mi mathvariant="normal">F</mi></msub><mo>/</mo><mn>2</mn><msub><mi>k</mi><mi mathvariant="normal">B</mi></msub></mrow></msup><mspace width="0.2em"></mspace><msup><mi mathvariant="normal">e</mi><mrow><mo>&minus;</mo><msub><mi>H</mi><mi mathvariant="normal">F</mi></msub><mo>/</mo><mn>2</mn><msub><mi>k</mi><mi mathvariant="normal">B</mi></msub><mi>T</mi></mrow></msup></math></div>
+    <p class="validite" data-i18n-html="val.paires"></p>
+    <figure class="chart">
+      <svg class="fig" id="arrh" viewBox="0 0 640 320" role="img" data-i18n-attr="aria-label:ar.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="ar.leg.Al"></span><span class="c-warn" data-i18n="ar.leg.NaCl"></span><span class="c-ok" data-i18n="ar.leg.AgCl"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" id="armode" role="group" data-i18n-attr="aria-label:ar.mode">
+            <button type="button" data-d="Al" data-i18n="ar.Al"></button><button type="button" data-d="NaCl" data-i18n="ar.NaCl"></button><button type="button" data-d="AgCl" data-i18n="ar.AgCl"></button>
+          </div>
+          <div class="ctl"><div class="row"><label for="art" data-i18n="ar.T"></label><output id="artv" for="art"></output></div>
+            <input id="art" type="range" min="0" max="1" step="0.005" value="1"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="ar.k.f"></span><span class="v" id="vf"></span><span class="f" id="ff"></span></div>
+          <div class="stat"><span class="k" data-i18n="ar.k.d"></span><span class="v" id="vd"></span><span class="f" id="fd"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="ar.k.h"></span><span class="v" id="vh"></span><span class="f" id="fh"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="ar.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p4"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq" id="eq-mesure"><math display="block"><mfrac><mi>n</mi><mi>N</mi></mfrac><mo>=</mo><mn>3</mn><mrow><mo>(</mo><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>L</mi></mrow><mi>L</mi></mfrac><mo>&minus;</mo><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>a</mi></mrow><mi>a</mi></mfrac><mo>)</mo></mrow></math></div>
+    <p class="validite" data-i18n-html="val.mesure"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <p data-i18n-html="s3.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/lacunes-ions-interstitiels.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/lecons/cristaux.js"></script>
+<script src="/racoon/lecons/reseau-motif-maille.js"></script>
+<script src="/racoon/lecons/lacunes-ions-interstitiels.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = Plot.el, R = CristalReel, K = Constantes;
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+const seg = (el, attr, cb) => { const bs = [...el.querySelectorAll("button")];
+  const pick = b => { bs.forEach(x => x.setAttribute("aria-pressed", String(x === b))); cb(b.dataset[attr]); };
+  bs.forEach(b => b.onclick = () => pick(b)); pick(bs[0]); return pick; };
+
+/* ---------- un plan (100) d'un cristal de type NaCl, parfait ou avec une paire de défauts ---------- */
+(() => {
+  const NX = 12, NY = 6, U = 46, ox = 320 - U * (NX - 1) / 2, oy = 52, svg = $("plan");
+  const xy = (i, j) => [ox + U * i, oy + U * j];
+  const SCH = [[3, 2], [8, 2]], FR = { de: [4, 3], vers: [4.5, 2.5] };   // (3,2) cation, (8,2) anion ; (4,3) cation
+  const cation = (i, j) => (i + j) % 2 === 1;
+  function dessiner(mode) {
+    svg.innerHTML = "";
+    const vides = mode === "schottky" ? SCH : mode === "frenkel" ? [FR.de] : [];
+    const vide = (i, j) => vides.some(([a, b]) => a === i && b === j);
+    for (let j = 0; j < NY; j++) for (let i = 0; i < NX; i++) {
+      const [x, y] = xy(i, j);
+      if (vide(i, j)) { P("circle", { cx: x, cy: y, r: cation(i, j) ? 11 : 17, class: "stroke dash c-warn" }, svg); continue; }
+      P("circle", { cx: x, cy: y, r: cation(i, j) ? 11 : 17, class: "fill " + (cation(i, j) ? "el-n" : "c-label-2") }, svg);
+    }
+    if (mode === "schottky") {                      // the pair left for the surface: one more row segment on top
+      [[3, -1], [4, -1]].forEach(([i, j]) => { const [x, y] = xy(i, j); P("circle", { cx: x, cy: y + 6, r: cation(i, j) ? 11 : 17, class: "fill " + (cation(i, j) ? "el-n" : "c-label-2") }, svg); });
+      P("text", { x: xy(5, -1)[0] - 10, y: xy(5, -1)[1] + 10 }, svg).textContent = t("pl.surface");
+    }
+    if (mode === "frenkel") {
+      const [x, y] = xy(...FR.vers), [x0, y0] = xy(...FR.de);
+      Plot.fleche(svg, [x0, y0], [x + 6, y + 6], { cls: "c-ok", trait: "stroke thin dash" });
+      P("circle", { cx: x, cy: y, r: 11, class: "fill c-ok" }, svg);
+    }
+    const B = { parfait: [0, 0, 0], schottky: [1, 1, 0], frenkel: [1, 0, 1] }[mode];
+    $("vbilan").textContent = t("pl.v.bilan", { lc: B[0], la: B[1], ic: B[2] });
+    $("fbilan").textContent = t("pl.f." + mode);
+  }
+  seg($("plmode"), "d", dessiner);
+  const ids = ["lacune", "schottky", "frenkel"]; keyed($("types"), t("types.tag"), ids, textOf("types.items", ids));
+})();
+
+/* ---------- fraction de défauts à l'équilibre : Al, NaCl, AgCl ---------- */
+(() => {
+  const svg = $("arrh"), T0 = 290, COUL = { Al: "c-tint", NaCl: "c-warn", AgCl: "c-ok" }, kB = K.k_B;
+  let cle = "Al";
+  const Tde = d => T0 + (d.Tf - T0) * +$("art").value;
+  function draw() {
+    const d = R.DEFAUTS[cle], T = Tde(d);
+    svg.innerHTML = "";
+    const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 320, x: { domain: [0.9, 3.5], label: t("ar.x"), fmt: v => F.num(v, 2) }, y: { domain: [1e-20, 1e-2], scale: "log", label: t("ar.y") } });
+    for (const [c, o] of Object.entries(R.DEFAUTS)) {
+      const pts = []; for (let u = 1000 / o.Tf; u <= 3.5; u += 0.02) pts.push([x(u), y(Math.max(1e-20, R.fraction(o, 1000 / u)))]);
+      P("path", { d: Plot.path(pts), class: "stroke " + (c === cle ? "bold" : "thin") }, P("g", { class: COUL[c] }, g));
+    }
+    P("circle", { cx: x(1000 / T), cy: y(Math.max(1e-20, R.fraction(d, T))), r: 6, class: "fill" }, P("g", { class: COUL[cle] }, g));
+    const f = R.fraction(d, T), dm = R.distance(d, T) / d.dPlusProche, h = d.H / (d.type === "lacune" ? 1 : 2) / (kB * T);
+    $("artv").innerHTML = F.kelvin(T);
+    $("vf").textContent = F.sci(f, 2);
+    $("ff").textContent = t("ar.f.f", { n: F.sci(1 / f, 2) });
+    $("vd").textContent = t("ar.v.d", { q: F.num(dm, 2) });
+    $("fd").textContent = t("ar.f.d", { d: F.si(R.distance(d, T), "m") });
+    $("vh").textContent = F.num(h, 3);
+    $("fh").innerHTML = t("ar.f.h." + d.type, { kt: F.qty(F.num(kB * T / K.e, 2), "eV") });
+  }
+  $("art").oninput = draw;
+  seg($("armode"), "d", v => { cle = v; draw(); });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["frenkel", 1926, "idea"], ["wagner", 1930, "idea"], ["simmons", 1960, "experiment"], ["dreyfus", 1962, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["sonde", "diffusion"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["pourquoi", "c"], ["schottky", "a"], ["frenkel", "d"], ["facteur2", "b"], ["fusion", "c"], ["mesure", "b"], ["dopage", "a"], ["dislocation", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

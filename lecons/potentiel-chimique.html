@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Potentiel chimique</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-solutions" data-i18n="monde.chim-solutions"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-enthalpie-libre" data-i18n="etape.chim-enthalpie-libre"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n-html="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/enthalpie-libre" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>μ</mi><mi>i</mi></msub><mo>=</mo><msub><mrow><mo>(</mo><mfrac><mrow><mo>∂</mo><mi>G</mi></mrow><mrow><mo>∂</mo><msub><mi>n</mi><mi>i</mi></msub></mrow></mfrac><mo>)</mo></mrow><mrow><mi>T</mi><mo>,</mo><mi>p</mi><mo>,</mo><msub><mi>n</mi><mrow><mi>j</mi><mo>≠</mo><mi>i</mi></mrow></msub></mrow></msub><mspace width="2em"></mspace><mi>G</mi><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>n</mi><mi>i</mi></msub><msub><mi>μ</mi><mi>i</mi></msub></math></div>
+    <p class="validite" data-i18n-html="val.mu"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>μ</mi><mi>i</mi></msub><mo>=</mo><msubsup><mi>μ</mi><mi>i</mi><mo>°</mo></msubsup><mo>(</mo><mi>T</mi><mo>)</mo><mo>+</mo><mi>R</mi><mi>T</mi><mspace width="0.1em"></mspace><mi data-i18n="eq.ln"></mi><mfrac><msub><mi>p</mi><mi>i</mi></msub><msup><mi>p</mi><mo>°</mo></msup></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.gp"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>μ</mi><mi>i</mi></msub><mo>=</mo><msubsup><mi>μ</mi><mi>i</mi><mtext data-i18n="eq.ref"></mtext></msubsup><mo>+</mo><mi>R</mi><mi>T</mi><mspace width="0.1em"></mspace><mi data-i18n="eq.ln"></mi><msub><mi>a</mi><mi>i</mi></msub></math></div>
+    <p class="validite" data-i18n-html="val.a"></p>
+    <div class="list keyed" id="activites"></div>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><msubsup><mi>μ</mi><mi>i</mi><mo>*</mo></msubsup><mo>(</mo><mi>T</mi><mo>,</mo><mi>p</mi><mo>)</mo><mo>=</mo><msubsup><mi>μ</mi><mi>i</mi><mo>°</mo></msubsup><mo>(</mo><mi>T</mi><mo>)</mo><mo>+</mo><msub><mi>V</mi><mtext>m</mtext></msub><mo>(</mo><mi>p</mi><mo>−</mo><msup><mi>p</mi><mo>°</mo></msup><mo>)</mo></math></div>
+    <p class="validite" data-i18n-html="val.vm"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>μ</mi><mtext data-i18n="eq.vap"></mtext></msub><mo>−</mo><msub><mi>μ</mi><mtext data-i18n="eq.liq"></mtext></msub><mo>=</mo><mi>R</mi><mi>T</mi><mspace width="0.1em"></mspace><mi data-i18n="eq.ln"></mi><mfrac><msub><mi>p</mi><mrow><msub><mtext>H</mtext><mn>2</mn></msub><mtext>O</mtext></mrow></msub><mrow><msub><mi>p</mi><mtext data-i18n="eq.sat"></mtext></msub><mo>(</mo><mi>T</mi><mo>)</mo></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.vap"></p>
+    <figure class="chart">
+      <svg class="fig" id="hu" role="img" data-i18n-attr="aria-label:hu.aria"></svg>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="huT" data-i18n="hu.T"></label><output id="huTv" for="huT"></output></div>
+            <input id="huT" type="range" min="273.16" max="373.12" step="0.5" value="293.15"></div>
+          <div class="ctl"><div class="row"><label for="hup" data-i18n="hu.p"></label><output id="hupv" for="hup"></output></div>
+            <input id="hup" type="range" min="2" max="5" step="0.005" value="3.07"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="hu.k.sens"></span><span class="v" id="hus"></span><span class="f" id="husf"></span></div>
+          <div class="stat"><span class="k" data-i18n="hu.k.psat"></span><span class="v" id="hups"></span><span class="f" id="hupsf"></span></div>
+          <div class="stat"><span class="k" data-i18n="hu.k.mod"></span><span class="v" id="hum"></span><span class="f" id="humf"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="hu.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s5.sec"></span>
+    <h2 data-i18n="s5.h2"></h2>
+    <p data-i18n-html="s5.p1"></p>
+    <div class="eq"><math display="block"><mi mathvariant="normal">Π</mi><mo>=</mo><mo>−</mo><mfrac><mrow><mi>R</mi><mi>T</mi></mrow><msub><mi>V</mi><mtext>m</mtext></msub></mfrac><mspace width="0.1em"></mspace><mi data-i18n="eq.ln"></mi><msub><mi>x</mi><mtext data-i18n="eq.eau"></mtext></msub><mo>≈</mo><mi>c</mi><mi>R</mi><mi>T</mi></math></div>
+    <p class="validite" data-i18n-html="val.osm"></p>
+    <figure>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="osc" data-i18n="os.c"></label><output id="oscv" for="osc"></output></div>
+          <input id="osc" type="range" min="0" max="1500" step="10" value="1100"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="os.k.pi"></span><span class="v" id="ospi"></span><span class="f" id="ospif"></span></div>
+          <div class="stat"><span class="k" data-i18n="os.k.h"></span><span class="v" id="osh"></span><span class="f" id="oshf"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="os.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/potentiel-chimique.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script src="/racoon/chim-solutions.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = Plot.el, C = ChimSolutions, Th = Thermo, R = Constantes.R;
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+const Pa = p => F.si(p, "Pa"), pct = r => F.qty(F.num(100 * r, 3), "%");
+
+/* ---------- activités : la liste des cas modèles ---------- */
+(() => {
+  const IDS = ["gaz", "pur", "melange", "solvant", "solute"], txt = textOf("act.items", IDS);
+  $("activites").innerHTML = IDS.map(id => `<div><span class="k">${txt[id].a}</span><span><strong>${txt[id].name}.</strong> ${txt[id].text}</span></div>`).join("");
+})();
+
+/* ---------- l'eau et sa vapeur ---------- */
+(() => {
+  const { x, y, g } = Plot.axes($("hu"), { fmt: F, w: 640, h: 320, pad: { b: 44, l: 60 },
+    x: { scale: "log", domain: [100, 1e5], label: t("hu.x") }, y: { domain: [-8, 8], label: t("hu.y") } });
+  P("line", { x1: x(100), x2: x(1e5), y1: y(0), y2: y(0), class: "zero" }, g);
+  const courbe = P("path", { class: "curve" }, g), sat = P("line", { class: "ref" }, g), dot = P("circle", { r: 6, class: "dot" }, g);
+  const sT = $("huT"), sp = $("hup");
+  P("text", { x: x(130), y: y(6), class: "note" }, g).textContent = t("hu.n.cond");
+  P("text", { x: x(130), y: y(-6.5), class: "note" }, g).textContent = t("hu.n.evap");
+  function upd() {
+    const T = +sT.value, p = Math.pow(10, +sp.value), ps = Th.psat(T), d = mu => Math.max(-8, Math.min(8, mu / 1e3));
+    const pts = []; for (let i = 0; i <= 120; i++) { const q = Math.pow(10, 2 + 3 * i / 120), mu = R * T * Math.log(q / ps); if (Math.abs(mu) <= 8e3) pts.push([x(q), y(mu / 1e3)]); }
+    courbe.setAttribute("d", Plot.path(pts));
+    sat.setAttribute("x1", x(ps)); sat.setAttribute("x2", x(ps)); sat.setAttribute("y1", y(-8)); sat.setAttribute("y2", y(8));
+    const dmu = R * T * Math.log(p / ps);
+    dot.setAttribute("cx", x(p)); dot.setAttribute("cy", y(d(dmu)));
+    $("huTv").innerHTML = F.kelvin(T); $("hupv").textContent = Pa(p);
+    $("hus").textContent = t(Math.abs(dmu) < 5 ? "hu.sens.eq" : dmu < 0 ? "hu.sens.evap" : "hu.sens.cond");
+    $("husf").textContent = t("hu.f.dmu", { d: F.qty(F.num(dmu / 1e3, 3), "kJ·mol⁻¹"), h: pct(p / ps) });
+    $("hups").textContent = Pa(ps); $("hupsf").textContent = t("hu.f.iapws");
+    const pm = C.psatModele(T);
+    $("hum").textContent = Pa(pm); $("humf").textContent = t("hu.f.mod", { e: F.qty(F.num(100 * (pm / ps - 1), 2), "%") });
+  }
+  sT.oninput = sp.oninput = upd; upd();
+})();
+
+/* ---------- osmose ---------- */
+(() => {
+  const s = $("osc"), RHO = 997, G = Constantes.g_CPGE;
+  function upd() {
+    const c = +s.value, o = C.osmose(c);
+    $("oscv").textContent = F.qty(F.num(c / 1e3, 3), "mol·L⁻¹");
+    $("ospi").textContent = F.si(o.vantHoff, "Pa"); $("ospif").textContent = t("os.f.ideale", { p: F.si(o.ideale, "Pa"), e: F.qty(F.num(100 * (o.vantHoff / o.ideale - 1), 2), "%") });
+    $("osh").textContent = F.si(o.vantHoff / (RHO * G), "m"); $("oshf").textContent = t("os.f.h");
+  }
+  s.oninput = upd; upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["gibbs", 1876, "idea"], ["pfeffer", 1877, "experiment"], ["vanthoff", 1886, "idea"], ["lewis", 1901, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["osmose", "rosee"], items = textOf("uses.items", USES);
+  const ps = Th.psat(293.15);
+  items.rosee = { name: items.rosee.name, text: items.rosee.text.replace("{T}", F.kelvin(293.15)).replace("{p}", Pa(0.5 * ps)).replace("{r}", F.kelvin(Th.TsatEau(0.5 * ps))) };
+  keyed($("uses"), t("uses.tag"), USES, items);
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["intensif", "c"], ["sens", "a"], ["pression", "b"], ["condense", "d"], ["humidite", "c"], ["osmose", "a"], ["solute", "d"], ["euler", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

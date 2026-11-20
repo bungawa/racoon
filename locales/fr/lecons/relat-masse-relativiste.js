@@ -1,0 +1,102 @@
+/* Leçon « La masse relativiste » (Feynman I.16.4) : textes en français.
+   Une autre langue = locales/<langue>/lecons/relat-masse-relativiste.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "La masse relativiste",
+    "crumb.jour": "Masse relativiste",
+    "h1": "La masse relativiste",
+    "lede": "Pourquoi la quantité de mouvement doit-elle valoir γmv ? Un choc entre deux corps identiques, regardé depuis deux voitures, suffit à l'établir à partir du seul principe de relativité. Le même raisonnement montre qu'un corps formé par un choc pèse plus que ses morceaux. Quant au mot « masse relativiste », l'usage actuel l'a abandonné, pour des raisons qu'on peut chiffrer.",
+    "tag.piste": "Relativité",
+    "tag.prereq": "Prérequis : l'équivalence de la masse et de l'énergie",
+
+    "s1.sec": "Hypothèses",
+    "s1.h2": "Une quantité de mouvement qui n'est plus proportionnelle à la vitesse",
+    "s1.p1": "Le système : deux corps identiques, deux protons par exemple, et la quantité de mouvement qu'ils échangent dans un choc. Sans rien supposer des forces pendant le choc, on admet que l'énergie et la quantité de mouvement se conservent, et que la quantité de mouvement d'un corps a la direction de sa vitesse. Sa valeur n'est pas forcément proportionnelle à la vitesse ; on l'écrit :",
+    "val.16.8": "Exacte : c'est la définition du coefficient <var>m</var><sub><var>v</var></sub>, avec deux hypothèses qu'on ne démontre pas. La quantité de mouvement est un vecteur parallèle à la vitesse, et son rapport à la vitesse ne dépend que de la norme <var>v</var>. Quand <var>v</var> tend vers zéro, le coefficient tend vers la masse <var>m</var> des expériences lentes.",
+    "s1.p2": "Le coefficient <var>m</var><sub><var>v</var></sub> est ce que le texte source appelle « la masse » du corps en mouvement. « La dynamique relativiste » a admis la formule <var>m</var><sub><var>v</var></sub> = <var>m</var>/√(1 \u2212 <var>v</var><sup>2</sup>/<var>c</var><sup>2</sup>), et « L'équivalence de la masse et de l'énergie » l'a tirée de l'hypothèse <var>E</var> = <var>m</var><sub><var>v</var></sub><var>c</var><sup>2</sup>. On la retrouve ici à partir du seul principe de relativité.",
+
+    "s2.sec": "Le choc",
+    "s2.h2": "Un choc élastique vu depuis deux voitures",
+    "s2.p1": "Deux corps identiques arrivent l'un vers l'autre à la même vitesse et rebondissent. La quantité de mouvement totale est nulle avant, donc après ; l'énergie conservée leur rend leur vitesse. Vu d'une voiture qui roule avec la composante horizontale de la vitesse du corps 1, ce corps monte tout droit à la vitesse <var>w</var> et redescend à la même vitesse. Le corps 2 passe vite : une composante horizontale <var>u</var>, une petite composante verticale.",
+    "s2.p2": "Que vaut cette composante verticale ? Vu d'une seconde voiture, qui roule en sens inverse à <var>u</var> par rapport à la première, le choc est le même, retourné : c'est le corps 2 qui monte et redescend à <var>w</var>, et le corps 1 qui file à <var>u</var>. Revenir dans la première voiture, c'est composer avec <var>u</var> une vitesse perpendiculaire <var>w</var> : la composante verticale devient <var>w</var>√(1 \u2212 <var>u</var><sup>2</sup>/<var>c</var><sup>2</sup>), par la règle de « La composition des vitesses ». Les distances perpendiculaires au mouvement sont les mêmes pour les deux voitures, mais les durées s'allongent.",
+    "fig.aria": "Le choc vu de la première voiture : le corps 1 monte et redescend, le corps 2 passe en oblique",
+    "fig.legend.1": "corps 1 : monte à w, redescend",
+    "fig.legend.2": "corps 2 : avance à u, descend puis remonte",
+    "fig.u": "Vitesse horizontale <var>u</var> du corps 2",
+    "fig.w": "Vitesse verticale <var>w</var> du corps 1",
+    "fig.k.wy": "Vitesse verticale du corps 2",
+    "fig.f.wy": "<var>w</var>√(1 \u2212 <var>u</var><sup>2</sup>/<var>c</var><sup>2</sup>)",
+    "fig.k.n": "Bilan vertical, masse constante",
+    "fig.f.n": "en unités de mc ; il manque {p}\u00a0% de l'apport du corps 1",
+    "fig.k.r": "Bilan vertical, <var>m</var><sub><var>v</var></sub> = γ<var>m</var>",
+    "fig.f.r": "masses : {mw} m (corps 1), {mv} m (corps 2)",
+    "fig.k.q": "Rapport <var>m</var><sub><var>w</var></sub>/<var>m</var><sub><var>v</var></sub>",
+    "fig.f.q": "√(1 \u2212 u²/c²) = {s}",
+    "fig.caption": "Flèches à l'échelle des vitesses, leur longueur proportionnelle à v/c. Le bilan vertical est la somme des variations de quantité de mouvement verticale des deux corps : 2mᵥ w vers le bas pour le corps 1, la même formule avec la vitesse du corps 2 vers le haut pour lui. Avec une masse constante, ce bilan n'est jamais nul dès que u ≠ 0 ; avec γm, il est nul pour toutes les valeurs de u et de w, petites ou non.",
+    "s2.p3": "Le corps 1 change de quantité de mouvement verticale de 2<var>m</var><sub><var>w</var></sub><var>w</var> : 2, parce qu'il monte puis redescend. Le corps 2 en change de 2<var>m</var><sub><var>v</var></sub><var>w</var>√(1 \u2212 <var>u</var><sup>2</sup>/<var>c</var><sup>2</sup>), où <var>v</var> est sa vitesse totale, <var>v</var><sup>2</sup> = <var>u</var><sup>2</sup> + <var>w</var><sup>2</sup>(1 \u2212 <var>u</var><sup>2</sup>/<var>c</var><sup>2</sup>). Pour que la somme soit nulle, il faut :",
+    "val.16.9": "Exacte : conservation de la quantité de mouvement verticale, avec (16.8) et la composition relativiste des vitesses, sans approximation sur <var>u</var> ni sur <var>w</var>. La figure le vérifie : avec <var>m</var><sub><var>v</var></sub> = <var>m</var>/√(1 \u2212 <var>v</var><sup>2</sup>/<var>c</var><sup>2</sup>), l'égalité tient même pour <var>w</var> grand.",
+    "s2.p4": "L'égalité (16.9) dit aussi que la quantité de mouvement verticale du corps 2 est la même pour les deux voitures : <var>m</var><sub><var>v</var></sub><var>w</var>√(1 \u2212 <var>u</var><sup>2</sup>/<var>c</var><sup>2</sup>) dans la première, <var>m</var><sub><var>w</var></sub><var>w</var> dans la seconde. La composante de la quantité de mouvement perpendiculaire à la vitesse relative de deux référentiels ne change pas de l'un à l'autre, alors que la vitesse perpendiculaire change. Faisons tendre <var>w</var> vers zéro : le corps 1 est presque immobile, <var>m</var><sub><var>w</var></sub> tend vers <var>m</var>, et la vitesse <var>v</var> du corps 2 tend vers <var>u</var>. Il reste :",
+    "val.16.10": "Exacte : c'est la limite <var>w</var> → 0 de (16.9), pour un corps de masse <var>m</var> dont la nature ne change pas, à toute vitesse <var>u</var> < <var>c</var>. Elle ne fait que nommer γ<var>m</var> : la grandeur physique est la quantité de mouvement γ<var>m</var><var>u</var>.",
+    "sys.title": "Le système décrit : deux protons, deux voitures",
+    "sys.body": "Deux protons identiques, un choc élastique ; deux référentiels galiléens, deux voitures qui suivent horizontalement l'un puis l'autre. Chaque observateur mesure les vitesses avec ses propres règles et ses propres horloges. Ici <var>u</var>/<var>c</var> n'est pas petit : (<var>u</var>/<var>c</var>)<sup>2</sup> vaut 0,36 à la valeur initiale de la figure, et rien ne se néglige. Pour une vraie voiture à 30\u00a0m·s<sup>\u22121</sup>, (<var>u</var>/<var>c</var>)<sup>2</sup> = 10<sup>\u221214</sup> : la composante verticale ne diffère de <var>w</var> que d'une fraction 5 × 10<sup>\u221215</sup>, et la masse constante de Newton suffit.",
+
+    "s3.sec": "Choc mou",
+    "s3.h2": "Le corps formé pèse plus que ses morceaux",
+    "s3.p1": "Deux corps identiques, de masse <var>m</var>, arrivent l'un vers l'autre à la vitesse <var>w</var> et restent collés : le corps formé, de masse <var>M</var>, est immobile. Regardons ce choc depuis un ascenseur qui descend lentement, à une vitesse <var>u</var> perpendiculaire à <var>w</var>. Avant le choc, chaque corps monte à <var>u</var>, avec le coefficient <var>m</var><sub><var>w</var></sub> ; après, le corps formé monte à <var>u</var> avec la masse <var>M</var>. La conservation de la quantité de mouvement verticale, 2<var>m</var><sub><var>w</var></sub><var>u</var> = <var>M</var><var>u</var>, donne :",
+    "val.16.11": "Exacte pour la masse <var>M</var> du corps formé, mesurée au repos. Le raisonnement prend <var>u</var> infiniment petit pour confondre le coefficient de <var>M</var> à la vitesse <var>u</var> avec <var>M</var> ; la conservation de l'énergie donne le même résultat sans cette limite. Ce qui est supposé : rien ne s'échappe pendant le choc, ni rayonnement ni débris.",
+    "s3.colle": "Le corps formé a une masse plus grande que la somme des masses de ses morceaux : l'énergie cinétique apportée est restée dedans, sous forme d'agitation et de déformation, et elle pèse. Deux boules de mastic de 1\u00a0kg qui se heurtent à 1\u00a0km·s<sup>\u22121</sup> chacune donnent un bloc plus lourd de {dm}, une fraction {frac} de sa masse : aucune balance ne le voit. Si deux corps de la masse du proton se collaient à 0,6\u00a0<var>c</var>, le corps formé aurait {Mp} fois la masse de l'un d'eux, et non 2 fois. « L'énergie relativiste » en tire les conséquences.",
+
+    "s4.sec": "Usage actuel",
+    "s4.h2": "Une notion que l'usage abandonne",
+    "s4.p1": "Le texte source appelle <var>m</var><sub><var>v</var></sub> la masse du corps, et la dit croissante avec la vitesse. L'usage actuel garde le mot « masse » pour <var>m</var> seule, la masse invariante, et n'écrit plus <var>m</var><sub><var>v</var></sub>. Le coefficient γ<var>m</var> n'est que l'énergie divisée par <var>c</var><sup>2</sup>, et il ne décrit pas à lui seul l'inertie : la loi du mouvement <var>F</var> = d<var>p</var>/d<var>t</var>, avec <var>p</var> = γ<var>m</var><var>v</var>, répond différemment selon la direction de la force.",
+    "val.16.10a": "Exacte pour un point matériel de masse constante, à toute vitesse : c'est la dérivée de <var>p</var> = γ<var>m</var><var>v</var>, pour une force perpendiculaire à la vitesse, qui ne change pas γ, ou parallèle à elle, qui change γ. Pour une force oblique, l'accélération n'est pas parallèle à la force.",
+    "s4.lhc": "Un proton du Grand collisionneur de hadrons (LHC), avec γ = {g}, oppose à une force perpendiculaire à sa vitesse, celle des aimants de courbure, l'inertie {tr} <var>m</var><sub>p</sub> : c'est le <var>m</var><sub><var>v</var></sub> du texte source, et c'est bien lui que mesure la déviation d'un faisceau. À une force parallèle à sa vitesse, celle des cavités qui l'accélèrent, il oppose {lo} <var>m</var><sub>p</sub>. Aucun nombre unique ne mérite le nom de masse en mouvement. De plus, <var>m</var><sub><var>v</var></sub> dépend de l'observateur : dans le référentiel où ce proton est immobile, il vaut <var>m</var><sub>p</sub>, soit {mp}, comme pour un proton au repos dans le laboratoire.",
+    "s4.p2": "Rien de ce que dit le texte source n'est faux : γ<var>m</var> est bien le coefficient de la quantité de mouvement, et le choc mou montre bien que l'énergie enfermée dans un corps augmente sa masse, au sens actuel du mot. Seul le vocabulaire a changé : on parle de la masse <var>m</var>, la même pour tous, de l'énergie <var>E</var> = γ<var>m</var><var>c</var><sup>2</sup> et de la quantité de mouvement <var>p</var> = γ<var>m</var><var>v</var>. Un système de corps en mouvement a lui aussi une masse invariante, tirée de son énergie et de sa quantité de mouvement totales : c'est elle que (16.11) donne pour le corps collé.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Un raisonnement de 1909, un mot abandonné",
+    "hist.intro": "L'argument du choc est presque aussi ancien que la relativité ; le débat sur le mot « masse » a duré beaucoup plus longtemps.",
+    "hist.events": {
+      lewis: { who: "Gilbert N. Lewis et Richard C. Tolman", what: "publient « The Principle of Relativity, and Non-Newtonian Mechanics ».", context: "Dans le Philosophical Magazine, ils tirent la variation de la masse avec la vitesse des seules lois de conservation et du principe de relativité, sans théorie électromagnétique, par un choc transversal entre deux corps : le raisonnement repris ici." },
+      einstein: { who: "Albert Einstein", what: "écrit le 19 juin 1948 à Lincoln Barnett, auteur d'articles de vulgarisation sur la relativité.", context: "Il lui déconseille d'introduire une autre masse que la masse au repos m, et lui suggère de donner plutôt les expressions de la quantité de mouvement et de l'énergie d'un corps en mouvement." },
+      okun: { who: "Lev Okun", what: "publie « The Concept of Mass » dans Physics Today, en juin 1989.", context: "Il y défend qu'il n'existe qu'une masse, m, indépendante du référentiel, et que les expressions « masse au repos » et « masse relativiste » sont redondantes et trompeuses. Des lecteurs défendent la masse relativiste l'année suivante : le débat porte sur des mots, pas sur les mesures." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      tables: { name: "Les tables de particules", text: "La <i>Review of Particle Physics</i>, publiée par le Particle Data Group, donne pour chaque particule une seule masse, la masse invariante, exprimée en énergie : 493,677\u00a0MeV/<var>c</var><sup>2</sup> pour le kaon chargé dans l'édition 2024. Une masse qui dépendrait de la vitesse n'aurait pas sa place dans une table : elle changerait avec l'observateur." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      hypothese: { prompt: "Qu'admet-on sur la quantité de mouvement avant d'étudier le choc ?",
+        options: { a: "Qu'elle vaut mv, comme chez Newton.", b: "Qu'elle devient infinie à la vitesse c.", c: "Qu'elle ne se conserve que dans les chocs élastiques.", d: "Qu'elle est parallèle à la vitesse, et que son rapport à la vitesse ne dépend que de la norme de celle-ci." },
+        why: "C'est tout ce que dit (16.8). La forme du coefficient mᵥ n'est pas supposée : c'est le choc, avec la conservation de la quantité de mouvement et le principe de relativité, qui la fixe." },
+      vertical: { prompt: "Vue de la première voiture, pourquoi la vitesse verticale du corps 2 vaut-elle w√(1 \u2212 u²/c²) et non w ?",
+        options: { a: "Parce que, pour cette voiture, le mouvement vertical du corps 2 se déroule plus lentement : la même distance verticale prend plus de temps.", b: "Parce que les distances verticales sont contractées par le mouvement horizontal.", c: "Parce que le choc n'est pas symétrique.", d: "Parce que la masse du corps 2 est plus grande." },
+        why: "Les distances perpendiculaires au mouvement relatif sont les mêmes pour les deux voitures ; les durées, elles, sont multipliées par 1/√(1 \u2212 u²/c²). La vitesse verticale est donc divisée par ce facteur." },
+      newton: { prompt: "Avec u = 0,6\u00a0c et une masse constante, que donne le bilan vertical du choc ?",
+        options: { a: "Il est nul, comme toujours.", b: "Il est nul tant que w est petit.", c: "Il n'est pas nul : il manque 20\u00a0% de la quantité de mouvement verticale du corps 1.", d: "Il n'est pas nul : il manque 36\u00a0%, la valeur de (u/c)²." },
+        why: "Le corps 2 apporte 2mw√(1 \u2212 0,36) = 0,8 × 2mw. Avec une masse constante, la quantité de mouvement ne se conserve plus dans l'autre référentiel : il faut que le corps 2, plus rapide, ait un coefficient mᵥ plus grand dans le rapport 1/0,8." },
+      limite: { prompt: "Pourquoi fait-on tendre w vers zéro dans (16.9) ?",
+        options: { a: "Parce que l'égalité n'est vraie que pour w petit.", b: "Pour que le coefficient du corps 1 devienne la masse m et que v devienne u : on obtient mᵤ en fonction de m.", c: "Pour que le choc devienne mou.", d: "Pour que la vitesse du corps 2 ne dépasse pas c." },
+        why: "(16.9) vaut pour tout w, comme la figure le montre. La limite sert seulement à isoler la loi : quand w → 0, le corps 1 est au repos et le corps 2 va à u." },
+      mastic: { prompt: "Deux boules de mastic de 1\u00a0kg, à 1\u00a0km·s⁻¹ l'une vers l'autre, se collent. Quelle est la masse du bloc immobile ?",
+        options: { a: "2\u00a0kg exactement : la masse se conserve.", b: "2\u00a0kg moins 1,1 × 10⁻¹¹\u00a0kg : l'énergie cinétique a été dissipée.", c: "2,000\u00a001\u00a0kg.", d: "2\u00a0kg plus 1,1 × 10⁻¹¹\u00a0kg." },
+        hint: "L'énergie cinétique apportée, 10⁶\u00a0J, reste dans le bloc.",
+        why: "(16.11) : M = 2γm, γ pris à la vitesse w, soit M ≈ 2m + mw²/c² = 2 + 10⁶/(9 × 10¹⁶)\u00a0kg. L'énergie « dissipée » en chaleur est toujours dans le bloc, et elle pèse." },
+      inertie: { prompt: "Quelle inertie un proton de facteur γ = 7\u00a0000 oppose-t-il à une force parallèle à sa vitesse ?",
+        options: { a: "γ³m, environ 3,4 × 10¹¹ fois sa masse.", b: "γm, 7\u00a0000 fois sa masse.", c: "m, sa masse.", d: "γ²m, environ 4,9 × 10⁷ fois sa masse." },
+        why: "Une force parallèle à la vitesse change γ en même temps que v : dp/dt = γ³m dv/dt. Perpendiculaire, elle ne change que la direction, et l'inertie est γm. Il n'y a pas une masse en mouvement, mais deux." },
+      table: { prompt: "Que donne une table de particules actuelle comme masse du kaon chargé ?",
+        options: { a: "Une masse pour chaque vitesse.", b: "Sa masse relativiste dans le référentiel du laboratoire.", c: "Une seule valeur, 493,677\u00a0MeV/c², la même pour tous les observateurs.", d: "Rien : la masse d'une particule dépend de l'observateur." },
+        why: "La masse invariante m ne dépend pas du référentiel : c'est la seule qu'on tabule. L'énergie et la quantité de mouvement, elles, se calculent pour chaque observateur à partir de m et de la vitesse." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. I, chap. 16, §16-4 (texte original en anglais). Notations : <var>m</var> est la masse, que le texte source note <var>m</var><sub>0</sub> ; <var>m</var><sub><var>v</var></sub> = γ<var>m</var>. Lewis et Tolman : <i>Philosophical Magazine</i> 18, p. 510–523 (1909). Lettre d'Einstein à Barnett et débat sur la masse relativiste : L. B. Okun, « The Concept of Mass », <i>Physics Today</i> 42 (6), p. 31 (1989). Kaon chargé : Particle Data Group, <i>Review of Particle Physics</i> (2024). LHC : CERN. Constantes : CODATA 2022. Choc et calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

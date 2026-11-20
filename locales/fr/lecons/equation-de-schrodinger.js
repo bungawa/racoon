@@ -1,0 +1,103 @@
+/* Leçon « L'équation de Schrödinger » (Feynman III.16.5) : textes en français.
+   Une autre langue = locales/<langue>/lecons/equation-de-schrodinger.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "L'équation de Schrödinger",
+    "crumb.jour": "L'équation de Schrödinger",
+    "h1": "L'équation de Schrödinger",
+    "lede": "La règle d'évolution des amplitudes, iħ dC/dt = HC, ne change pas quand les états de base deviennent les points d'une droite. La somme sur les états devient une intégrale, et pour une particule dans un potentiel, cette intégrale se réduit à une dérivée seconde et à un produit. On obtient l'équation de Schrödinger.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : la normalisation des états en x",
+
+    "s1.sec": "Du discret au continu",
+    "s1.h2": "La matrice hamiltonienne devient un noyau",
+    "s1.p1": "Le système : une particule sans spin, de masse <var>m</var>, sur une droite, soumise à une énergie potentielle <var>V</var>(<var>x</var>) qui ne dépend que de sa position. Pour un système à états de base discrets, l'évolution des amplitudes est donnée par la matrice hamiltonienne :",
+    "val.16.49": "Exacte : loi générale de l'évolution des amplitudes d'un système isolé, ou soumis à des conditions extérieures connues. Tout le contenu physique est dans les coefficients <var>H<sub>ij</sub></var>.",
+    "s1.p2": "Sur une droite, les états de base sont les |<var>x</var>⟩, les amplitudes forment ψ(<var>x</var>), et la somme sur <var>j</var> devient une intégrale sur <var>x</var>′. La matrice <var>H<sub>ij</sub></var> devient une fonction de deux variables, <var>H</var>(<var>x</var>, <var>x</var>′) = ⟨<var>x</var>|<var>H</var>|<var>x</var>′⟩ :",
+    "val.16.51": "Exacte : (16.49) écrite dans la base continue des |<var>x</var>⟩, normée par (16.44). Elle ne dit encore rien de <var>H</var>(<var>x</var>, <var>x</var>′).",
+    "s1.p3": "Pour une particule dans un potentiel, l'amplitude en <var>x</var> ne dépend que des amplitudes infiniment proches : <var>H</var>(<var>x</var>, <var>x</var>′) est nul dès que <var>x</var>′ s'écarte de <var>x</var>. Ce qui en reste, on l'a vu dans « Les amplitudes sur une droite », est une dérivée seconde, l'énergie cinétique, plus <var>V</var>(<var>x</var>) multiplié par ψ(<var>x</var>), l'énergie potentielle :",
+    "val.16.53": "Approximation : particule non relativiste, (<var>v</var>/<var>c</var>)<sup>2</sup> ≪ 1 ; sans spin ni champ magnétique ; potentiel local, ne dépendant que de <var>x</var>. Pour un électron de 0,2\u00a0eV, (<var>v</var>/<var>c</var>)<sup>2</sup> ≈ 8 × 10<sup>\u22127</sup>. L'équation n'est pas démontrée : elle est devinée, puis confirmée par toutes les expériences dans ce domaine.",
+
+    "s2.sec": "Voir l'équation travailler",
+    "s2.h2": "Un paquet contre une barrière",
+    "s2.p1": "Un électron d'énergie cinétique 0,2\u00a0eV arrive sur une marche de potentiel de hauteur <var>V</var><sub>0</sub> et de largeur <var>a</var>. La courbe bleue est |ψ|<sup>2</sup>, calculée en résolvant (16.53) pas à pas par la méthode de Crank et Nicolson ; la ligne tiretée marque l'énergie de l'électron, la courbe orange le potentiel, sur la même échelle en électronvolts. Faites avancer le temps, puis changez la barrière.",
+    "fig.aria": "Densité de probabilité d'un paquet d'électron qui rencontre une barrière de potentiel, à l'instant choisi",
+    "fig.legend.psi": "|ψ(x)|², nm⁻¹",
+    "fig.legend.v": "potentiel V(x), eV",
+    "fig.t": "Temps t",
+    "fig.v0": "Hauteur de la barrière V₀",
+    "fig.a": "Largeur de la barrière a",
+    "fig.x": "x (nm)",
+    "fig.y": "|ψ|² (nm⁻¹) ; V (eV)",
+    "fig.k.trans": "Probabilité au-delà de la barrière",
+    "fig.f.classiquePasse": "classiquement : V₀ < E, tout passe",
+    "fig.f.classiqueBloque": "classiquement : V₀ > E, rien ne passe",
+    "fig.k.norme": "Norme ∫|ψ|<sup>2</sup>d<var>x</var>, rapportée à t = 0",
+    "fig.f.norme": "conservée : l'évolution est unitaire",
+    "fig.caption": "Paquet de largeur 3\u00a0nm ; grille de 2\u00a0000 points au pas de 0,02\u00a0nm, pas de temps de 0,2\u00a0fs, murs infinis à ±20\u00a0nm. L'énergie du paquet est étalée de quelques centièmes d'électronvolt autour de 0,2\u00a0eV. Devant la barrière, l'onde réfléchie interfère avec l'onde incidente : |ψ|<sup>2</sup> se couvre de franges. Barrière plus haute que l'énergie de l'électron : une partie passe quand même, d'autant plus que la barrière est mince. C'est l'effet tunnel. En dessous, une partie revient : une particule classique passerait toujours.",
+    "s2.p2": "La probabilité totale reste 1 : l'équation déplace la probabilité, elle ne la crée ni ne la détruit. Ni la réflexion au-dessous de la barrière ni le passage à travers n'ont d'équivalent classique ; ils viennent de ce que l'équation porte sur une amplitude, qui se prolonge en exponentielle décroissante là où <var>V</var> > <var>E</var>.",
+
+    "s3.sec": "Dans l'espace, à plusieurs",
+    "s3.h2": "Trois dimensions, plusieurs particules",
+    "s3.p1": "Dans l'espace, la dérivée seconde devient le laplacien :",
+    "val.16.54": "Approximation : les mêmes hypothèses que (16.53), une particule sans spin, non relativiste, dans un potentiel scalaire. Le spin et le champ magnétique s'ajoutent par d'autres termes ; une vitesse proche de <var>c</var> demande l'équation de Dirac.",
+    "s3.p2": "Pour plusieurs particules, ψ dépend de toutes leurs positions à la fois : ψ(<b>r</b><sub>1</sub>, <b>r</b><sub>2</sub>, …), une fonction dans un espace à 3<var>N</var> dimensions. Il y a un laplacien par particule, divisé par sa masse, et l'énergie potentielle d'un atome ou d'une molécule est l'énergie électrostatique de toutes les paires de charges :",
+    "eq.paires": "paires",
+    "val.16.56": "Approximation : seule l'interaction électrostatique instantanée, entre charges ponctuelles. Elle néglige les effets magnétiques et relativistes, d'ordre α<sup>2</sup> ≈ 5 × 10<sup>\u22125</sup> de l'énergie de l'hydrogène, la taille des noyaux, et le retard de l'interaction. Elle suffit pour toute la chimie des éléments légers.",
+    "s3.p3": "Toute la chimie est dans ces deux lignes. Rien d'autre n'est ajouté : avec (16.56) et la masse de chaque particule, l'équation décrit en principe tous les atomes et toutes les molécules. En principe seulement : pour <var>N</var> électrons, ψ vit dans un espace à 3<var>N</var> dimensions, et le calcul exact est hors de portée dès quelques électrons.",
+
+    "s4.sec": "Décrire le système",
+    "s4.h2": "Ce que l'équation néglige",
+    "s4.p1": "Deux nombres sans dimension disent si l'équation de Schrödinger sans spin suffit : (<var>v</var>/<var>c</var>)<sup>2</sup> pour la relativité, et le rapport de l'énergie magnétique à l'énergie électrostatique, du même ordre pour un électron dans un atome.",
+    "sys.title": "L'électron de la figure, puis celui de l'hydrogène",
+    "sys1.body": "L'électron de 0,2\u00a0eV va à {v} : (<var>v</var>/<var>c</var>)<sup>2</sup> = {b}. Les corrections relativistes sont invisibles sur la figure, qui est précise au millième près au mieux.",
+    "sys2.body": "Dans l'atome d'hydrogène, la vitesse de l'électron est de l'ordre de α<var>c</var>, avec 1/α = {a} : (<var>v</var>/<var>c</var>)<sup>2</sup> ≈ α<sup>2</sup> = {a2}. Les niveaux calculés sans spin ni relativité sont justes à quelques 10<sup>\u22125</sup> près ; la structure fine, mesurée bien plus précisément, demande davantage.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Une équation, et ce qu'elle permet",
+    "hist.intro": "L'équation est publiée en 1926. En deux ans, elle explique des phénomènes que la physique classique déclarait impossibles.",
+    "hist.events": {
+      schrodinger: { who: "Erwin Schrödinger", what: "publie dans les Annalen der Physik une série d'articles « Quantisierung als Eigenwertproblem », et un résumé en anglais dans la Physical Review.", context: "L'équation y est posée et appliquée à l'atome d'hydrogène, à l'oscillateur et au rotateur. Dans la Physical Review, il la présente comme une théorie ondulatoire de la mécanique des atomes et des molécules." },
+      hund: { who: "Friedrich Hund", what: "applique l'équation au passage d'une particule entre deux puits séparés par une barrière.", context: "Il en tire des propriétés des spectres moléculaires : c'est la première étude de l'effet tunnel entre deux régions permises classiquement." },
+      gamow: { who: "George Gamow", what: "explique la radioactivité α par l'effet tunnel ; Ronald Gurney et Edward Condon trouvent la même explication indépendamment.", context: "La particule α sort du noyau à travers une barrière coulombienne plus haute que son énergie. La probabilité de passage, très sensible à l'énergie, relie la demi-vie à l'énergie d'émission." },
+      stm: { who: "Gerd Binnig et Heinrich Rohrer", what: "mettent au point le microscope à effet tunnel, qui leur vaut le prix Nobel de physique de 1986.", context: "Le courant qui passe entre une pointe et une surface, à travers le vide, dépend exponentiellement de leur distance : il trace le relief à l'échelle des atomes." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      flash: { name: "Les mémoires flash", text: "Une mémoire flash garde un bit sous forme de charges piégées sur une grille isolée. Pour l'écrire ou l'effacer, on fait passer des électrons par effet tunnel à travers une couche isolante. Le même effet limite la miniaturisation : sous environ 1\u00a0nm d'isolant, les électrons traversent d'eux-mêmes et la charge fuit." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      base: { prompt: "Que devient la matrice hamiltonienne H_ij quand les états de base sont les points d'une droite ?",
+        options: { a: "Un nombre, l'énergie totale.", b: "Une fonction de deux positions, H(x, x′) = ⟨x|H|x′⟩, et la somme sur j devient une intégrale sur x′.", c: "Une matrice 2 × 2.", d: "Elle disparaît : l'équation de Schrödinger ne contient pas d'hamiltonien." },
+        why: "Les indices i et j deviennent les variables continues x et x′. La règle iħ dC/dt = ΣH_ij C_j garde sa forme, avec une intégrale à la place de la somme." },
+      local: { prompt: "Pourquoi l'intégrale ∫H(x, x′)ψ(x′)dx′ se réduit-elle à des dérivées de ψ en x ?",
+        options: { a: "Parce que H(x, x′) est constant.", b: "Parce que ψ est réelle.", c: "Parce que la particule est immobile.", d: "Parce que l'amplitude en x ne dépend que des amplitudes infiniment voisines : H(x, x′) est nul dès que x′ s'éloigne de x." },
+        why: "Comme dans la chaîne, l'électron ne saute qu'aux voisins. Un noyau concentré au voisinage de x′ = x ne retient de ψ que sa valeur et ses dérivées en x : V(x)ψ et \u2212(ħ²/2m)ψ''." },
+      complexe: { prompt: "Pourquoi le facteur i de l'équation de Schrödinger compte-t-il ?",
+        options: { a: "Sans lui, ce serait une équation de diffusion : les paquets s'étaleraient en perdant leur norme et leurs oscillations ; avec lui, la probabilité totale se conserve et les phases tournent.", b: "Il ne compte pas : on pourrait l'enlever en changeant d'unités.", c: "Il rend ψ réelle.", d: "Il impose V = 0." },
+        why: "∂ψ/∂t = D ∂²ψ/∂x² est l'équation de la chaleur, qui ne conserve pas ∫|ψ|². Le i transforme l'étalement en rotation de phase : solutions e^(i(kx \u2212 ωt)), norme conservée. La figure le vérifie." },
+      norme: { prompt: "Sur la figure, la norme ∫|ψ|²dx reste égale à 1 à 10⁻⁶ près pendant toute la collision. Qu'est-ce que cela traduit ?",
+        options: { a: "Que la particule ne traverse jamais la barrière.", b: "Que le potentiel est nul.", c: "Que l'évolution conserve la probabilité : ce qui passe d'un côté manque de l'autre.", d: "Une coïncidence numérique." },
+        why: "L'hamiltonien est hermitien, l'évolution unitaire : la probabilité totale est conservée. Le schéma de Crank et Nicolson garde cette propriété exactement, aux arrondis près." },
+      tunnel: { prompt: "La barrière fait 0,25 eV et l'électron 0,2 eV. À la fin de la simulation, la probabilité de passage vaut 73 % pour 0,4 nm de largeur, 37 % pour 0,8 nm, 17 % pour 1,2 nm. Que montrent ces nombres ?",
+        options: { a: "Une décroissance proportionnelle à 1/a.", b: "Une décroissance à peu près exponentielle : chaque 0,4 nm de plus divise la probabilité par deux environ.", c: "Que la hauteur de la barrière ne compte pas.", d: "Une erreur de calcul : rien ne devrait passer, puisque V₀ > E." },
+        hint: "Sous la barrière, ψ décroît comme e^(\u2212κx), avec κ = √(2m(V₀ \u2212 E))/ħ.",
+        why: "Chaque tranche de 0,4 nm multiplie la probabilité par 0,5 environ : c'est une exponentielle. Sous la barrière, ψ décroît comme e^(\u2212κx), κ = √(2m × 0,05 eV)/ħ ≈ 1,1 nm⁻¹. La décroissance mesurée est un peu plus lente que e^(\u22122κa), car une partie du paquet a plus de 0,25 eV et passe au-dessus. Essayez avec le curseur." },
+      deux: { prompt: "Pour deux électrons, de quoi dépend la fonction d'onde ?",
+        options: { a: "Des six coordonnées des deux électrons à la fois : ψ(r₁, r₂).", b: "De trois coordonnées : chacun a sa propre onde dans l'espace, et on les ajoute.", c: "D'une seule coordonnée, leur distance.", d: "Du temps seulement." },
+        why: "ψ donne l'amplitude de chaque configuration (r₁, r₂) : une fonction sur un espace à six dimensions. C'est ce qui rend le calcul exact si coûteux pour beaucoup d'électrons." },
+      coulomb: { prompt: "Que néglige le potentiel (16.56), somme des énergies de Coulomb de toutes les paires de charges ?",
+        options: { a: "Rien : c'est l'énergie exacte de toute la matière.", b: "L'énergie cinétique des électrons.", c: "Les interactions entre électrons.", d: "Les interactions magnétiques et relativistes, d'ordre α² ≈ 5 × 10⁻⁵, la taille des noyaux et le retard des interactions." },
+        why: "Le potentiel ne contient que l'électrostatique instantanée de charges ponctuelles. Les corrections magnétiques et relativistes sont d'ordre α² dans les atomes légers ; elles donnent la structure fine. Les interactions entre électrons, elles, y sont : ce sont des paires de charges." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 16, §16-5 (texte original en anglais). Notations SI : (16.56) est écrite avec <var>q<sub>e</sub></var><sup>2</sup>/(4πε<sub>0</sub>). Schrödinger : Annalen der Physik 79 (1926) ; Physical Review 28, 1049 (1926). Hund, Gamow, Gurney et Condon, Binnig et Rohrer, mémoires flash : Wikipédia, « Quantum tunnelling ». Calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["queue", "c"],
+  ["vitesses", "a"],
+  ["forme", "d"],
+  ["chocs", "b"],
+  ["eau", "a"],
+  ["azote", "c"],
+  ["niveaux", "d"],
+  ["iode", "b"]
+ ]
+}

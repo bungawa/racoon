@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["newton", "d"],
+  ["biot", "b"],
+  ["ailette", "a"],
+  ["longue", "c"],
+  ["wien", "b"],
+  ["stefan", "d"],
+  ["equilibre", "a"],
+  ["serre", "c"]
+ ]
+}

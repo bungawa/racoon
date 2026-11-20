@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Élimination E2, stéréochimie et régiosélectivité</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .meca svg { width: 100%; max-width: 520px; height: auto; }
+  .deux { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; align-items: start; }
+  .deux svg { width: 100%; height: 190px; }
+  .trois { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+  .trois svg { width: 100%; height: 110px; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-organique" data-i18n="monde.chim-organique"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-halogenoalcanes" data-i18n="etape.chim-halogenoalcanes"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/substitutions-nucleophiles" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <figure class="meca">
+      <svg class="fig no-sigle" id="meca" role="img" data-i18n-attr="aria-label:meca.aria"></svg>
+      <figcaption data-i18n-html="meca.caption"></figcaption>
+    </figure>
+    <div class="eq"><math display="block"><mi>v</mi><mo>=</mo><msub><mi>k</mi><mi mathvariant="normal">E</mi></msub><mo stretchy="false">[</mo><mi>R</mi><mi>X</mi><mo stretchy="false">]</mo><mo stretchy="false">[</mo><msup><mi>B</mi><mo>−</mo></msup><mo stretchy="false">]</mo></math></div>
+    <p class="validite" data-i18n-html="s1.validite"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure>
+      <div class="deux">
+        <div><svg class="fig no-sigle proj" id="newman" role="img" data-i18n-attr="aria-label:nw.aria"></svg></div>
+        <div><svg class="fig no-sigle" id="alcene" role="img" data-i18n-attr="aria-label:nw.ariaP"></svg></div>
+      </div>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="sub" data-i18n="nw.substrat"></label></div><select id="sub"></select></div>
+        <div class="ctl"><div class="row"><label for="phi" data-i18n="nw.phi"></label><output id="phiRead" for="phi"></output></div>
+          <input id="phi" type="range" min="0" max="360" step="1" value="60"></div>
+        <p class="readout" id="nwVerdict" aria-live="polite"></p>
+      </div>
+      <figcaption data-i18n-html="nw.caption"></figcaption>
+    </figure>
+    <div class="box prop"><b data-i18n="s2.prop.titre"></b>
+      <p data-i18n-html="s2.prop.corps"></p>
+    </div>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="trois" id="regio"></div>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="list keyed" id="brown"></div>
+    <p data-i18n-html="s3.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="box prop"><b data-i18n="s4.tend.titre"></b>
+      <p data-i18n-html="s4.tend.corps"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/elimination-e2.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script src="/racoon/statistique.js"></script>
+<script src="/racoon/chim-organique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I.fallback : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const O = ChimOrga, sym = s => t("chim.sym", { s }), $ = id => document.getElementById(id);
+const peindre = (svg, d) => { svg.setAttribute("viewBox", d.viewBox); svg.innerHTML = d.html; };
+
+/* ---------- mécanisme : trois flèches courbes ---------- */
+(() => {
+  const m = O.mol("O 2.9 -1.5 q-1; C -0.866 -0.5; C 0 0; C 0.866 -0.5; C 1.732 0; Br 0 1; H 0.866 -1.5 | 1-2 2-3 3-4 2-5 3-6");
+  peindre($("meca"), O.schema(m, { texte: sym, echelle: 36, fleches: [{ de: 0, vers: [0, 6], courbure: 0.3, cote: 1 }, { de: [3, 6], vers: [2, 3] }, { de: [2, 5], vers: 5 }], doublets: [0, 5] }));
+})();
+
+/* ---------- Newman : tourner jusqu'à l'anti-périplanaire ---------- */
+(() => {
+  const SUB = { bromomethylpentaneRR: ["bromomethylpentane", [], 1, 2], bromomethylpentaneRS: ["bromomethylpentane", [2], 1, 2], bromobutane: ["bromobutane", [], 0, 2] };
+  const IDS = Object.keys(SUB), noms = textOf("nw.substrats", IDS);
+  $("sub").innerHTML = IDS.map(id => `<option value="${id}">${noms[id]}</option>`).join("");
+  const phi = $("phi");
+  let m, a, b, prods, base;
+  const lab = (o, i) => O.groupeTexte(m, o, i);
+  function charger() {
+    const [mid, inv, aa, bb] = SUB[$("sub").value];
+    m = inv.reduce((x, c) => O.inverser(x, c), O.molecule(mid)); a = aa; b = bb;
+    prods = O.e2(m, a).filter(p => p.beta === b);
+    base = prods[0].newman;
+    maj();
+  }
+  const memes = (u, v) => u.every((x, k) => x === v[k] || (x !== null && v[k] !== null && m.atomes[x].e === "H" && m.atomes[v[k]].e === "H"));
+  function maj() {
+    const p = +phi.value, arr = base.arriere;
+    peindre($("newman"), O.newman({ avant: base.avant.map(i => lab(a, i)), arriere: arr.map(i => lab(b, i)), phi: p, texte: sym }));
+    $("phiRead").textContent = F.fix(p, 0) + "°";
+    /* l'arrière tourné de p : le groupe k de l'arrière est anti du nucléofuge quand p ≡ 180° − 120° k */
+    let k = -1;
+    for (let q = 0; q < 3; q++) { const d = ((p - (180 - 120 * q)) % 360 + 540) % 360 - 180; if (Math.abs(d) <= 10) k = q; }
+    const svgP = $("alcene");
+    if (k < 0) { svgP.innerHTML = ""; $("nwVerdict").textContent = t("nw.pasAnti"); return; }
+    const rot = [arr[k], arr[(k + 1) % 3], arr[(k + 2) % 3]], partant = rot[0];
+    if (partant !== null && m.atomes[partant].e !== "H") { svgP.innerHTML = ""; $("nwVerdict").textContent = t("nw.antiC", { g: lab(b, partant) }); return; }
+    const pr = prods.find(q => memes(q.newman.arriere, rot)) || prods[0];
+    peindre(svgP, O.dessin(pr.m, { texte: sym, echelle: 40, surligne: [pr.a, pr.b] }));
+    $("nwVerdict").textContent = t(pr.ze ? "nw.anti" : "nw.antiSans", { d: pr.ze });
+  }
+  $("sub").onchange = charger; phi.oninput = maj;
+  charger();
+})();
+
+/* ---------- régiosélectivité : les alcènes du 2-bromo-2-méthylbutane ---------- */
+(() => {
+  const m = O.molecule("bromomethylbutane"), ps = O.e2(m, 1).sort((p, q) => q.degre - p.degre);
+  const NOMS = textOf("rg.alcenes", ["deg3", "deg2"]);
+  $("regio").innerHTML = ps.map(() => `<div><svg class="fig no-sigle" role="img"></svg><p class="readout"></p></div>`).join("");
+  [...$("regio").children].forEach((div, k) => {
+    const svg = div.querySelector("svg"), n = NOMS["deg" + ps[k].degre];
+    svg.setAttribute("aria-label", n);
+    peindre(svg, O.dessin(ps[k].m, { texte: sym, echelle: 36, surligne: [ps[k].a, ps[k].b] }));
+    div.querySelector("p").textContent = t("rg.lu", { n, d: ps[k].degre });
+  });
+  /* H. C. Brown, I. Moritani, Y. Okamoto (1956), base à 1 mol·L⁻¹ : part du 2-méthylbut-2-ène */
+  const BROWN = [["ethanolate", 70], ["tbutanolate", 28]], txt = textOf("rg.bases", BROWN.map(b => b[0]));
+  $("brown").innerHTML = BROWN.map(([id, p]) => `<div><span class="k">${txt[id]}</span><span>${t("rg.parts", { z: F.qty(p, "%"), h: F.qty(100 - p, "%") })}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["hofmann", 1851, "experiment"], ["zaitsev", 1875, "idea"], ["brown", 1956, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["chloroprene"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["loi", "b"], ["anti", "a"], ["diastereo", "d"], ["zaitsev", "c"], ["encombree", "a"], ["sansH", "b"], ["concurrence", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

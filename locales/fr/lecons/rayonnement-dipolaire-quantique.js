@@ -1,0 +1,101 @@
+/* Leçon « Le rayonnement dipolaire électrique quantique » (Feynman III.18.1) : textes en français.
+   Une autre langue = locales/<langue>/lecons/rayonnement-dipolaire-quantique.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Le rayonnement dipolaire électrique quantique",
+    "crumb.jour": "Le rayonnement dipolaire",
+    "h1": "Le rayonnement dipolaire électrique quantique",
+    "lede": "Un atome excité de spin 1 retombe dans un état de spin 0 en émettant un photon. Dans quelle direction, et avec quelle polarisation ? Sans rien savoir de l'intérieur de l'atome, la conservation du moment cinétique et celle de la parité donnent la réponse complète, à une seule constante près.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : les états de polarisation du photon",
+
+    "s1.sec": "Ce que fixent les symétries",
+    "s1.h2": "Un photon pour emporter un moment cinétique",
+    "s1.p1": "Le système : un atome au repos, dans un état excité de moment cinétique <var>j</var> = 1 et de composante <var>m</var> = +1 selon l'axe <var>z</var>, de parité impaire. Il se désexcite vers un état de moment cinétique nul et de parité paire, en émettant un photon. On néglige le recul de l'atome et tout ce qui le distingue d'un objet ponctuel.",
+    "s1.p2": "Vers le haut, le long de +<var>z</var>, le photon doit emporter toute la composante <var>m</var> = +1 : il est polarisé circulairement à droite, de moment cinétique +ħ selon sa direction. Appelons <var>a</var> cette amplitude. Un photon gauche vers le haut emporterait \u2212ħ : c'est interdit, son amplitude est nulle. Vers le bas, le long de \u2212<var>z</var>, c'est l'inverse : seul un photon gauche, qui tourne dans le même sens vu de l'atome, est permis.",
+    "s1.p3": "Que vaut l'amplitude vers le bas ? Retournons tout par une inversion d'espace, puis par une rotation de 180° autour de <var>y</var>. L'état initial redevient lui-même, au signe de sa parité près ; un photon droit vers le haut devient un photon gauche vers le bas. Comme l'état initial est impair et l'état final pair, la conservation de la parité impose un signe : l'amplitude vers le bas est \u2212<var>a</var>.",
+
+    "s2.sec": "Dans une direction quelconque",
+    "s2.h2": "Tourner l'atome plutôt que le détecteur",
+    "s2.p1": "Pour un photon émis à l'angle θ de l'axe, regardons l'atome dans un repère tourné de θ autour de <var>y</var>, dont l'axe <var>z</var>′ pointe vers le détecteur. L'état |+⟩ y a une amplitude ⟨+|<var>R<sub>y</sub></var>(θ)|+⟩ d'être |+⟩, qui émet vers <var>z</var>′ un photon droit, et une amplitude ⟨\u2212|<var>R<sub>y</sub></var>(θ)|+⟩ d'être |\u2212⟩, qui émet vers <var>z</var>′ un photon gauche, d'amplitude \u2212<var>a</var>. Avec la matrice de rotation du spin 1 :",
+    "eq.cos": "cos",
+    "val.18.1": "Exacte dans le modèle : seul le moment cinétique et la parité des états interviennent, et le photon est émis par une transition dipolaire électrique, d'un état de spin 1 vers un état de spin 0. Ce qui reste approché est <var>a</var>, que les symétries ne donnent pas : il demande le calcul de l'atome.",
+    "val.18.2": "Exacte dans le même modèle ; le signe \u2212 vient de la parité impaire de l'état initial. Il ne se voit pas sur une intensité, mais il fixe la polarisation à θ quelconque, mélange cohérent des deux polarisations circulaires.",
+    "s2.p2": "Les intensités sont les carrés. Vers le haut, que du droit ; vers le bas, que du gauche ; à 90°, autant des deux. La somme, l'intensité totale par unité d'angle solide, ne dépend que de θ :",
+    "val.18.2a": "Exacte pour la transition <var>m</var> = +1 → 0, à un facteur constant près : c'est la loi d'un dipôle classique qui tourne autour de <var>z</var>. Pour des atomes non orientés, la moyenne sur <var>m</var> efface toute direction privilégiée, et le rayonnement devient isotrope.",
+
+    "s3.sec": "Explorer l'émission",
+    "s3.h2": "Intensités et polarisation selon la direction",
+    "s3.p1": "Le diagramme polaire donne, pour chaque direction autour de l'atome, l'intensité de la lumière droite (bleu), gauche (orange) et totale (vert). La flèche est la direction d'observation choisie ; l'ellipse, la polarisation qu'on y voit.",
+    "fig.aria": "Diagramme polaire des intensités émises en polarisation circulaire droite, gauche et totale par un atome de spin 1, m égal à plus 1, en fonction de l'angle à l'axe z",
+    "fig.ellipse.aria": "Ellipse de polarisation de la lumière émise dans la direction choisie",
+    "fig.legend.r": "droite, (1 + cos θ)²/4",
+    "fig.legend.l": "gauche, (1 \u2212 cos θ)²/4",
+    "fig.legend.total": "totale, (1 + cos² θ)/2",
+    "fig.theta": "Direction d'observation θ",
+    "fig.z": "z",
+    "fig.k.r": "Intensité droite",
+    "fig.k.l": "Intensité gauche",
+    "fig.f.amp": "amplitude {v} a",
+    "fig.k.ellipse": "Rapport des axes de l'ellipse",
+    "fig.f.droite": "circulaire droite",
+    "fig.f.gauche": "circulaire gauche",
+    "fig.f.lineaire": "linéaire, dans le plan perpendiculaire à z",
+    "fig.f.elliptique": "elliptique",
+    "fig.caption": "Le rapport des axes de l'ellipse vaut |cos θ| : la superposition de (1 + cos θ)/2 de droit et de (1 \u2212 cos θ)/2 de gauche, avec le signe \u2212, est une polarisation elliptique dont le grand axe reste perpendiculaire au plan qui contient <var>z</var> et la direction d'observation. Un dipôle classique qui tourne autour de <var>z</var> donne exactement la même chose.",
+
+    "s4.sec": "Décrire le système",
+    "s4.h2": "Pourquoi « dipolaire »",
+    "s4.p1": "Le raisonnement suppose que le photon ne voit l'atome que comme un point : l'atome est petit devant la longueur d'onde. Le nombre sans dimension est <var>ka</var>, la taille <var>a</var> de l'atome multipliée par le nombre d'onde de la lumière.",
+    "sys.title": "Un atome de sodium qui émet sa raie jaune",
+    "sys1.body": "Pour un atome de 0,1\u00a0nm et la raie à 589\u00a0nm, <var>ka</var> = {ka}. Les transitions qui demandent de voir la structure de l'atome, dipolaires magnétiques ou quadripolaires, sont plus faibles d'un facteur de l'ordre de (<var>ka</var>)<sup>2</sup> = {ka2}. C'est pourquoi on appelle « dipolaire électrique » la transition permise la plus forte.",
+    "sys2.body": "Le photon emporte un moment cinétique ħ et l'atome passe d'une parité à l'autre. Deux états de spin 0 ne peuvent donc pas se désexciter par un seul photon : le photon ne peut pas emporter un moment cinétique nul dans sa direction de propagation.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "La polarisation de la lumière des atomes",
+    "hist.intro": "La polarisation de la lumière émise par des atomes orientés a été observée avant d'être comprise, dans un champ magnétique qui choisit l'axe <var>z</var>.",
+    "hist.events": {
+      zeeman: { who: "Pieter Zeeman", what: "observe que les raies du sodium s'élargissent dans un champ magnétique intense, puis, avec le cadmium, qu'elles se dédoublent.", context: "Les composantes correspondent à des valeurs différentes de m. Observées le long du champ, elles sont polarisées circulairement, en sens contraires : c'est la règle de cette leçon, vue de l'axe." },
+      nobel: { who: "Pieter Zeeman et Hendrik Lorentz", what: "reçoivent le prix Nobel de physique pour l'effet Zeeman et sa théorie.", context: "Lorentz l'explique par un électron lié qui oscille dans l'atome : un dipôle classique, qui donne la même dépendance angulaire que (18.2a)." },
+      mot: { who: "Raab et ses collègues", what: "piègent des atomes de sodium neutres par la pression de radiation dans la Physical Review Letters.", context: "Le piège magnéto-optique se sert de faisceaux polarisés circulairement, de sens opposés deux à deux : un photon droit ou gauche ne peut être absorbé que par une transition dont il conserve le moment cinétique." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      piege: { name: "Les pièges magnéto-optiques", text: "Toutes les expériences d'atomes froids commencent par un piège magnéto-optique : six faisceaux laser, polarisés circulairement, et un champ magnétique qui croît en s'éloignant du centre. Les règles de sélection de cette leçon font qu'un atome écarté absorbe davantage les photons qui le repoussent vers le centre. Les horloges atomiques à atomes froids en dépendent." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      axe: { prompt: "Un atome de spin 1, m = +1, se désexcite vers un état de spin 0. Pourquoi le photon émis le long de +z est-il forcément polarisé circulairement à droite ?",
+        options: { a: "Parce que la lumière est toujours polarisée à droite.", b: "Parce qu'il doit emporter la composante +ħ du moment cinétique selon z, et qu'un photon gauche emporterait \u2212ħ.", c: "Parce que l'atome tourne vers la droite.", d: "Parce que la parité l'impose." },
+        why: "La composante J_z se conserve. Vers +z, un photon droit porte +ħ selon sa direction, soit +ħ selon z : il emporte tout. Un photon gauche porterait \u2212ħ, ce qui laisserait l'atome à m = +2 : impossible pour un état de spin 0." },
+      bas: { prompt: "Quelle est la polarisation du photon émis vers \u2212z ?",
+        options: { a: "Circulaire droite, comme vers le haut.", b: "Linéaire.", c: "Aucun photon n'est émis vers le bas.", d: "Circulaire gauche : vers \u2212z, c'est un photon gauche qui porte +ħ selon z." },
+        hint: "Le sens « droit » ou « gauche » se définit par rapport à la direction de propagation.",
+        why: "Un photon gauche qui va vers \u2212z porte \u2212ħ selon \u2212z, donc +ħ selon z. L'amplitude est \u2212a : même intensité que vers le haut, signe opposé, imposé par la parité." },
+      quatrevingtdix: { prompt: "Dans le plan perpendiculaire à z (θ = 90°), quelle polarisation observe-t-on ?",
+        options: { a: "Linéaire : autant de droit que de gauche, avec le signe \u2212, ce qui donne une polarisation rectiligne perpendiculaire à z.", b: "Circulaire droite.", c: "Non polarisée.", d: "Aucune lumière n'est émise à 90°." },
+        why: "À 90°, les amplitudes valent a/2 et \u2212a/2 : un mélange cohérent égal de droit et de gauche, une polarisation linéaire. Le rapport des axes de l'ellipse, |cos θ|, est nul. Un dipôle qui tourne dans le plan xy, vu de côté, oscille en ligne droite." },
+      parite: { prompt: "Quel rôle joue la parité dans ce raisonnement ?",
+        options: { a: "Aucun : seul le moment cinétique compte.", b: "Elle interdit toute émission.", c: "Elle fixe le signe relatif des amplitudes vers le haut et vers le bas : avec un état initial impair et un état final pair, l'amplitude vers le bas est \u2212a.", d: "Elle fixe la valeur de a." },
+        why: "L'inversion suivie d'une rotation de 180° change un photon droit vers le haut en photon gauche vers le bas. Les parités des états fixent le facteur : \u22121 ici. Ce signe ne change aucune intensité vers le haut ou vers le bas, mais il fixe la polarisation dans les directions obliques." },
+      somme: { prompt: "Quelle est l'intensité totale émise à θ = 60°, rapportée à celle émise le long de l'axe ?",
+        options: { a: "1, elle est isotrope.", b: "0,625, soit (1 + cos²60°)/2.", c: "0,5.", d: "0,25." },
+        hint: "Additionnez (1 + cos θ)²/4 et (1 \u2212 cos θ)²/4.",
+        why: "cos 60° = 0,5 : (1,5² + 0,5²)/4 = (2,25 + 0,25)/4 = 0,625. C'est (1 + cos²θ)/2. Faites varier θ sur la figure." },
+      taille: { prompt: "Qu'est-ce qui justifie le mot « dipolaire » pour une raie visible d'un atome ?",
+        options: { a: "L'atome est très petit devant la longueur d'onde : ka ≈ 10⁻³, et les termes qui voient sa structure sont plus faibles d'un facteur (ka)² ≈ 10⁻⁶.", b: "L'atome a deux pôles magnétiques.", c: "L'atome contient deux électrons.", d: "Le photon a deux polarisations." },
+        why: "Pour a = 0,1 nm et λ = 589 nm, ka = 2πa/λ ≈ 1,1 × 10⁻³. Le photon ne voit l'atome que comme un point muni d'un dipôle : c'est l'approximation dipolaire, et les autres transitions sont des millions de fois plus lentes." },
+      conservation: { prompt: "Pourquoi un atome ne peut-il pas passer d'un état de spin 0 à un autre état de spin 0 en émettant un seul photon ?",
+        options: { a: "Parce que les deux états ont la même énergie.", b: "Parce que la parité serait violée dans tous les cas.", c: "Parce que l'atome serait trop lourd.", d: "Parce qu'un photon emporte toujours ±ħ selon sa direction : il ne peut pas emporter un moment cinétique nul." },
+        why: "Le photon n'a que deux états, ±ħ le long de sa direction : pas d'état m = 0. Un passage 0 → 0 à un photon est donc strictement interdit ; il se fait par deux photons ou par d'autres voies, beaucoup plus lentement." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 18, §18-1 (texte original en anglais). Notations SI. Zeeman, Lorentz et le prix Nobel de 1902 : Wikipédia, « Zeeman effect ». Raab et al., Physical Review Letters (1987), et la polarisation des faisceaux du piège : Wikipédia, « Magneto-optical trap ». Calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["chemin", "a"],
+  ["capteur", "b"],
+  ["enveloppe", "c"],
+  ["chauffage", "d"],
+  ["petit", "a"],
+  ["boucle", "b"],
+  ["duree", "c"],
+  ["maximum", "d"]
+ ]
+}

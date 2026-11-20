@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Écoulement stationnaire : le théorème de Bernoulli</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .duo { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; align-items: start; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-fluides" data-i18n="monde.fluides"></a><span class="aux">›</span><a href="/racoon/etape?id=fluide-parfait" data-i18n="etape.fluide-parfait"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fluides" href="/racoon/atlas?piste=fluides" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/equations-du-mouvement-d-un-fluide" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mover accent="true"><mi>v</mi><mo>→</mo></mover><mo>·</mo><mo>∇</mo><mrow><mo>(</mo><mfrac><mi>p</mi><mi>ρ</mi></mfrac><mo>+</mo><mi>φ</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi>v</mi><mn>2</mn></msup><mo>)</mo></mrow><mo>=</mo><mn>0</mn></math><span class="n">(40.12)</span></div>
+    <p class="validite" data-i18n-html="val.40.12"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mfrac><mi>p</mi><mi>ρ</mi></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi>v</mi><mn>2</mn></msup><mo>+</mo><mi>φ</mi><mo>=</mo><mtext data-i18n="eq.cste"></mtext><mspace width="0.6em"/><mtext data-i18n="eq.ligne"></mtext></math><span class="n">(40.13)</span></div>
+    <p class="validite" data-i18n-html="val.40.13"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="eq"><math display="block"><mfrac><mi>p</mi><mi>ρ</mi></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi>v</mi><mn>2</mn></msup><mo>+</mo><mi>φ</mi><mo>=</mo><mtext data-i18n="eq.cste"></mtext><mspace width="0.6em"/><mtext data-i18n="eq.partout"></mtext></math><span class="n">(40.14)</span></div>
+    <p class="validite" data-i18n-html="val.40.14"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>ρ</mi><mn>1</mn></msub><msub><mi>A</mi><mn>1</mn></msub><msub><mi>v</mi><mn>1</mn></msub><mo>=</mo><msub><mi>ρ</mi><mn>2</mn></msub><msub><mi>A</mi><mn>2</mn></msub><msub><mi>v</mi><mn>2</mn></msub></math><span class="n">(40.15)</span></div>
+    <p class="validite" data-i18n-html="val.40.15"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mfrac><msub><mi>p</mi><mn>1</mn></msub><msub><mi>ρ</mi><mn>1</mn></msub></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msubsup><mi>v</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msub><mi>φ</mi><mn>1</mn></msub><mo>+</mo><msub><mi>U</mi><mn>1</mn></msub><mo>=</mo><mfrac><msub><mi>p</mi><mn>2</mn></msub><msub><mi>ρ</mi><mn>2</mn></msub></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msubsup><mi>v</mi><mn>2</mn><mn>2</mn></msubsup><mo>+</mo><msub><mi>φ</mi><mn>2</mn></msub><mo>+</mo><msub><mi>U</mi><mn>2</mn></msub></math><span class="n">(40.17)</span></div>
+    <p class="validite" data-i18n-html="val.40.17"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys"></p>
+    </div>
+    <figure>
+      <svg class="fig" id="venturi" viewBox="0 0 640 320" role="img" data-i18n-attr="aria-label:ven.aria"></svg>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="q" data-i18n="ven.q"></label><output id="qr" for="q"></output></div>
+            <input id="q" type="range" min="0" max="3" step="0.05" value="1"></div>
+          <div class="ctl"><div class="row"><label for="d" data-i18n="ven.d"></label><output id="dr" for="d"></output></div>
+            <input id="d" type="range" min="0.3" max="0.95" step="0.01" value="0.6"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="ven.k.v"></span><span class="v" id="vv"></span><span class="f" id="fv"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="ven.k.dp"></span><span class="v" id="vdp"></span><span class="f" id="fdp"></span></div>
+        </div>
+      </div>
+      <p id="vnote"></p>
+      <figcaption data-i18n-html="ven.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>v</mi><mtext data-i18n="eq.sortie"></mtext></msub><mo>=</mo><msqrt><mn>2</mn><mi>g</mi><mi>h</mi></msqrt></math><span class="n">(40.18)</span></div>
+    <p class="validite" data-i18n-html="val.40.18"></p>
+    <p data-i18n-html="s4.p2"></p>
+    <figure class="chart">
+      <div class="duo">
+        <svg class="fig" id="cuve" viewBox="0 0 320 300" role="img" data-i18n-attr="aria-label:tor.aria"></svg>
+        <svg class="fig" id="niveau" role="img" data-i18n-attr="aria-label:tor.aria2"></svg>
+      </div>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="dt" data-i18n="tor.d"></label><output id="dtr" for="dt"></output></div>
+          <input id="dt" type="range" min="5" max="30" step="1" value="15"></div>
+        <div class="seg" role="group" id="orifice" data-i18n-attr="aria-label:tor.choix">
+          <button type="button" data-c="1" data-i18n="tor.ideal"></button>
+          <button type="button" data-c="0.62" aria-pressed="true" data-i18n="tor.mince"></button>
+          <button type="button" data-c="0.5" data-i18n="tor.borda"></button>
+        </div>
+        <div class="controls"><button class="btn tinted" type="button" id="go" data-i18n="tor.go"></button></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="tor.k.v"></span><span class="v" id="tv"></span><span class="f" id="tf"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="tor.k.T"></span><span class="v" id="tT"></span><span class="f" id="tTf"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="tor.caption"></figcaption>
+    </figure>
+    <div class="box warn"><b data-i18n="s4.warn.title"></b>
+      <p data-i18n-html="s4.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/theoreme-de-bernoulli.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/fluides.js"></script>
+<script src="/racoon/fluides-parfait.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const g = Constantes.g_CPGE, EAU = Fluides.DYN.eau;
+const VEN = { D1: 0.05, H1: 1.2 };                              // pipe diameter (m), water column over the axis at section 1 (m)
+
+/* ---------- the system, in numbers ---------- */
+(() => {
+  const v = FluidesParfait.venturi(1e-3, VEN.D1, 0.6 * VEN.D1, EAU.rho);
+  $("sys").innerHTML = t("sys.body", { D: F.num(100 * VEN.D1, 2), v1: F.fix(v.v1, 2), v2: F.fix(v.v2, 2),
+    re: F.sci(Fluides.reynolds(v.v2, 0.6 * VEN.D1, EAU.nu), 1), ma: F.sci(Fluides.compressibilite(v.v2, Fluides.CSON_EAU), 1) });
+})();
+
+/* ---------- the Venturi tube ---------- */
+(() => {
+  const svg = $("venturi"), P = Plot.el, notes = textOf("ven.notes", ["normal", "vide"]);
+  const AX = 250, X = [60, 180, 290, 350, 460, 580], cols = [120, 320, 520];   // axis y (px), profile x, manometer x
+  const PX = 110 / VEN.H1;                                       // px per metre of water column
+  function draw() {
+    const Q = +$("q").value * 1e-3, r = +$("d").value, D2 = r * VEN.D1, v = FluidesParfait.venturi(Q, VEN.D1, D2, EAU.rho);
+    const R1 = 34, R2 = R1 * r, h1 = VEN.H1, h2 = h1 - v.dp / (EAU.rho * g);
+    svg.innerHTML = "";
+    const prof = s => [[X[0], AX - s * R1], [X[1], AX - s * R1], [X[2], AX - s * R2], [X[3], AX - s * R2], [X[4], AX - s * R1], [X[5], AX - s * R1]];
+    const gw = P("g", { class: "c-tint" }, svg);
+    P("polygon", { points: prof(1).concat(prof(-1).reverse()).map(q => q.join(",")).join(" "), class: "fill", opacity: 0.25 }, gw);
+    const gl = P("g", { class: "c-label" }, svg);
+    [1, -1].forEach(s => P("polyline", { points: prof(s).map(q => q.join(",")).join(" "), class: "stroke bold" }, gl));
+    /* streamlines: the area between two of them is constant, so they squeeze in the throat */
+    const gs = P("g", { class: "c-label-2" }, svg);
+    [-0.6, -0.2, 0.2, 0.6].forEach(f => P("polyline", { points: prof(1).map(q => [q[0], AX - f * (AX - q[1])].join(",")).join(" "), class: "stroke thin dash" }, gs));
+    /* manometers: open tubes on the pipe, water rises to p/(ρg) above the axis */
+    const radius = [R1, R2, R1], heads = [h1, h2, h1], gm = P("g", { class: "c-label" }, svg), gh = P("g", { class: "c-tint" }, svg);
+    cols.forEach((x, i) => {
+      const top = AX - radius[i];
+      P("polyline", { points: [[x - 6, 10], [x - 6, top], [x + 6, top], [x + 6, 10]].map(q => q.join(",")).join(" "), class: "stroke thin" }, gm);
+      const level = AX - Math.max(heads[i], 0) * PX, y = Math.max(Math.min(level, top), 10);
+      if (heads[i] * PX > radius[i]) P("rect", { x: x - 5, y, width: 10, height: top - y, class: "fill" }, gh);
+      P("text", { x: x + 12, y: Math.max(y, 22) + 4, class: "note" }, gm).textContent = heads[i] > 0 ? F.qty(F.fix(heads[i], 2), "m") : t("ven.vide");
+    });
+    P("line", { x1: 20, x2: 620, y1: AX, y2: AX, class: "stroke thin dash" }, gm);
+    $("qr").textContent = F.qty(F.fix(Q * 1000, 2), "L·s⁻¹"); $("dr").textContent = F.fix(r, 2);
+    $("vv").textContent = F.qty(F.fix(v.v2, 2), "m·s⁻¹"); $("fv").innerHTML = t("ven.f.v", { v1: F.fix(v.v1, 2), k: F.fix(1 / (r * r), 2) });
+    $("vdp").textContent = F.si(v.dp, "Pa"); $("fdp").innerHTML = t("ven.f.dp", { h: F.fix(v.dp / (EAU.rho * g), 3) });
+    $("vnote").innerHTML = h2 > 0 ? notes.normal : notes.vide;
+  }
+  $("q").oninput = $("d").oninput = draw; draw();
+})();
+
+/* ---------- Torricelli: a draining tank ---------- */
+(() => {
+  const svg = $("cuve"), P = Plot.el, A = 0.1, h0 = 0.5, zt = 0.3;   // tank section (m²), level at start, height of the hole over the floor (m)
+  let Cc = 0.62, run = null, start = 0;
+  let x, y, curves, dot, tmax = 600;
+  const axes = T => {
+    tmax = Math.ceil(T / 100) * 100;
+    $("niveau").innerHTML = "";
+    const ax = Plot.axes($("niveau"), { fmt: F, w: 320, h: 300, pad: { l: 52, b: 44 },
+      x: { domain: [0, tmax], label: t("tor.x") }, y: { domain: [0, 0.55], label: t("tor.y") } });
+    x = ax.x; y = ax.y; curves = P("g", {}, ax.g); dot = P("circle", { r: 5, class: "dot" }, ax.g);
+  };
+  const S = 300 / 1.1, Y = z => 290 - S * z, Xc = 10, Wc = 80;
+  function state() {
+    const d = +$("dt").value * 1e-3, a = Math.PI * d * d / 4, T = FluidesParfait.tempsVidange(A, a, h0, Cc, g), run = FluidesParfait.vidange(A, a, h0, Cc, g, 1);
+    return { d, a, T, run };
+  }
+  function tank(h, s) {
+    svg.innerHTML = "";
+    const gl = P("g", { class: "c-label" }, svg), gw = P("g", { class: "c-tint" }, svg);
+    P("rect", { x: Xc, y: Y(zt + h), width: Wc, height: S * h, class: "fill", opacity: 0.35 }, gw);
+    P("polyline", { points: [[Xc, Y(zt + 0.6)], [Xc, Y(zt)], [Xc + Wc, Y(zt)], [Xc + Wc, Y(zt + 0.6)]].map(q => q.join(",")).join(" "), class: "stroke bold" }, gl);
+    P("line", { x1: Xc + Wc, x2: 320, y1: Y(0), y2: Y(0), class: "stroke thin" }, gl);
+    P("line", { x1: Xc + Wc - 10, x2: Xc + Wc + 4, y1: Y(zt + 0.01), y2: Y(zt + 0.01), class: "stroke thin" }, gl);
+    if (h > 0) {   // the jet: launched horizontally at v, it falls zt: range 2√(h zt) with Cc changing nothing in v
+      const v = FluidesParfait.torricelli(h, g, Cc * s.a / A), pts = [];
+      for (let i = 0; i <= 30; i++) { const tt = Math.sqrt(2 * zt / g) * i / 30; pts.push([Xc + Wc + S * v * tt, Y(zt + 0.01 - g * tt * tt / 2)]); }
+      P("polyline", { points: pts.map(q => q.map(n => n.toFixed(1)).join(",")).join(" "), class: "stroke bold" }, gw);
+      P("text", { x: Xc + 4, y: Y(zt + h) - 6, class: "note" }, gl).textContent = "h = " + F.qty(F.fix(h, 3), "m");
+    }
+  }
+  function curvesDraw(s) {
+    curves.innerHTML = "";
+    let d = ""; s.run.t.forEach((tt, i) => { if (tt <= tmax) d += (d ? "L" : "M") + x(tt).toFixed(1) + " " + y(s.run.h[i]).toFixed(1); });
+    Plot.el("path", { d, class: "curve" }, curves);
+    let e = ""; for (let i = 0; i <= 100; i++) { const tt = s.T * i / 100; e += (i ? "L" : "M") + x(tt).toFixed(1) + " " + y(h0 * (1 - tt / s.T) ** 2).toFixed(1); }
+    Plot.el("path", { d: e, class: "ref" }, curves);
+  }
+  function at(s, tt) {
+    const i = s.run.t.findIndex(u => u >= tt); return i < 0 ? 0 : s.run.h[i];
+  }
+  function show(tt) {
+    const s = state(), h = Math.max(at(s, tt), 0);
+    tank(h, s); dot.setAttribute("cx", x(Math.min(tt, tmax))); dot.setAttribute("cy", y(h));
+    $("tv").textContent = F.qty(F.fix(FluidesParfait.torricelli(h, g, Cc * s.a / A), 2), "m·s⁻¹");
+    $("tf").innerHTML = t("tor.f.v", { q: F.fix(1000 * Cc * s.a * FluidesParfait.torricelli(h, g, Cc * s.a / A), 3) });
+    $("tT").textContent = F.si(s.T, "s"); $("tTf").innerHTML = t("tor.f.T", { m: F.fix(s.T / 60, 1), r: F.sci(Cc * s.a / A, 1) });
+  }
+  function reset() { cancelAnimationFrame(run); run = null; const s = state(); axes(s.T); curvesDraw(s); $("dtr").textContent = F.qty(F.fix(+$("dt").value, 0), "mm"); show(0); }
+  $("dt").oninput = reset;
+  document.querySelectorAll("#orifice button").forEach(b => b.onclick = () => {
+    Cc = +b.dataset.c; document.querySelectorAll("#orifice button").forEach(q => q.setAttribute("aria-pressed", q === b)); reset(); });
+  $("go").onclick = () => {   // the whole draining in 8 s of animation
+    cancelAnimationFrame(run); start = performance.now();
+    const T = state().T;
+    const loop = now => { const tt = T * (now - start) / 8000; show(Math.min(tt, T)); if (tt < T) run = requestAnimationFrame(loop); };
+    run = requestAnimationFrame(loop);
+  };
+  reset();
+})();
+
+/* ---------- history ---------- */
+(() => {
+  const EVENTS = [["torricelli", 1644, "idea"], ["pitot", 1732, "experiment"], ["bernoulli", 1738, "idea"], ["venturi", 1797, "experiment"], ["herschel", 1888, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["debit", "pitot"], uses = textOf("uses.items", USES);
+  const rhoAir = 1.225, dp = 0.5 * rhoAir * 70 * 70;             // a light aircraft at 70 m·s⁻¹, sea level (ISO 2533 density)
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text.replace("{dp}", F.num(dp, 2))}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["ligne", "b"], ["venturi", "a"], ["torricelli", "d"], ["vidange", "c"], ["feuilles", "b"], ["irrot", "a"], ["jet", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 403 });
+})();
+</script>
+</body>
+</html>

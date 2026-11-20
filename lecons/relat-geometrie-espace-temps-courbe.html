@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Géométrie dans l'espace-temps</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-relativite" data-i18n="monde.relativite"></a><span class="aux">›</span><a href="/racoon/etape?id=rel-gravitation-horloges" data-i18n="etape.rel-gravitation-horloges"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-relat" href="/racoon/atlas?piste=relat" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/relat-jumeaux" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi>τ</mi><mo>=</mo><msubsup><mo>∫</mo><mi>A</mi><mi>B</mi></msubsup><msqrt><mn>1</mn><mo>−</mo><mfrac><msup><mi>v</mi><mn>2</mn></msup><msup><mi>c</mi><mn>2</mn></msup></mfrac></msqrt><mspace width="0.1em"/><mi>d</mi><mi>t</mi></math></div>
+    <p class="validite" data-i18n-html="val.tau"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>τ</mi><mo>≤</mo><msqrt><msup><mi>T</mi><mn>2</mn></msup><mo>−</mo><mfrac><msup><mi>D</mi><mn>2</mn></msup><msup><mi>c</mi><mn>2</mn></msup></mfrac></msqrt></math></div>
+    <p class="validite" data-i18n-html="val.max"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mi>τ</mi><mo>≈</mo><mi>T</mi><mo>−</mo><mfrac><mn>1</mn><mrow><mn>2</mn><msup><mi>c</mi><mn>2</mn></msup></mrow></mfrac><msubsup><mo>∫</mo><mn>0</mn><mi>T</mi></msubsup><msup><mi>v</mi><mn>2</mn></msup><mspace width="0.1em"/><mi>d</mi><mi>t</mi></math></div>
+    <p class="validite" data-i18n-html="val.lent"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="diagramme" role="img" data-i18n-attr="aria-label:fig.aria.diagramme"></svg>
+      <svg class="fig" id="courbe" role="img" data-i18n-attr="aria-label:fig.aria.courbe"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.trajet"></span><span class="c-warn" data-i18n="fig.legend.droit"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="sd" data-i18n="fig.d"></label><output id="sdr" for="sd"></output></div>
+            <input id="sd" type="range" min="0" max="30" step="1" value="20"></div>
+          <div class="ctl"><div class="row"><label for="sp" data-i18n="fig.p"></label><output id="spr" for="sp"></output></div>
+            <input id="sp" type="range" min="-50" max="150" step="1" value="85"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.tau"></span><span class="v" id="vtau"></span><span class="f" id="ftau"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.droit"></span><span class="v" id="vdroit"></span><span class="f" id="fdroit"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.approx"></span><span class="v" id="vapprox"></span><span class="f" id="fapprox"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/relat-geometrie-espace-temps-courbe.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/relativite.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const R = Relativite, c = R.c;
+
+/* ---------- de A à B en 100 s : le trajet droit et uniforme marque le plus long temps ---------- */
+(() => {
+  const T = 100, sd = $("sd"), sp = $("sp"), dia = $("diagramme"), cou = $("courbe");
+  function draw() {
+    const D = +sd.value * c, p = +sp.value / 100;                        // D: the distance light covers in sd.value seconds
+    const s = R.deuxEtapes(D, T, p), droit = D > 0 ? R.tempsPropreDroit(D, T) : T;
+    /* the worldline in the (x, t) plane of the frame where A and B are fixed; x in Gm */
+    dia.innerHTML = "";
+    const G = 1e9, xm = p * D / G;
+    const P = Plot.axes(dia, { fmt: F, w: 640, h: 300, pad: { l: 56, b: 44 }, x: { domain: [-5, 15], label: t("fig.xaxis") }, y: { domain: [0, 100], label: t("fig.taxis") } });
+    Plot.el("path", { d: Plot.path([[P.x(0), P.y(0)], [P.x(D / G), P.y(T)]]), class: "ref" }, P.g);
+    Plot.el("path", { d: Plot.path([[P.x(0), P.y(0)], [P.x(xm), P.y(T / 2)], [P.x(D / G), P.y(T)]]), class: "curve" }, P.g);
+    /* the light cone of A, for scale */
+    Plot.el("path", { d: Plot.path([[P.x(0), P.y(0)], [P.x(15), P.y(15 * G / c)]]), class: "zero" }, P.g);
+    for (const [x, y] of [[0, 0], [D / G, T]]) Plot.el("circle", { cx: P.x(x), cy: P.y(y), r: 5, class: "dot" }, P.g);
+    Plot.el("text", { x: P.x(0) + 8, y: P.y(0) - 8, class: "note" }, P.g).textContent = t("fig.A");
+    Plot.el("text", { x: P.x(D / G) + 8, y: P.y(T) + 14, class: "note" }, P.g).textContent = t("fig.B");
+    /* proper time against the share p, for this D */
+    cou.innerHTML = "";
+    const ps = Array.from({ length: 201 }, (_, i) => -0.5 + i * 0.01), taus = ps.map(q => R.deuxEtapes(D, T, q).tau);
+    const lo = Math.floor(Math.min(...taus) / 5) * 5;
+    const Q = Plot.axes(cou, { fmt: F, w: 640, h: 220, pad: { l: 56, b: 44 }, x: { domain: [-0.5, 1.5], label: t("fig.paxis") }, y: { domain: [Math.min(lo, 95), 100], label: t("fig.tauaxis") } });
+    Plot.el("line", { x1: Q.x(-0.5), x2: Q.x(1.5), y1: Q.y(droit), y2: Q.y(droit), class: "ref" }, Q.g);
+    Plot.el("path", { d: Plot.path(ps.map((q, i) => [Q.x(q), Q.y(taus[i])])), class: "curve" }, Q.g);
+    Plot.el("circle", { cx: Q.x(p), cy: Q.y(s.tau), r: 5, class: "dot" }, Q.g);
+    $("sdr").textContent = t("fig.dval", { d: F.si(D, "m"), s: F.num(+sd.value, 2) });
+    $("spr").textContent = F.num(p, 3);
+    $("vtau").textContent = F.si(s.tau, "s", { sig: 4 });
+    $("ftau").textContent = t("fig.f.vitesses", { v1: F.num(s.v1 / c, 2), v2: F.num(s.v2 / c, 2) });
+    $("vdroit").textContent = F.si(droit, "s", { sig: 4 });
+    $("fdroit").textContent = t("fig.f.perte", { d: F.si(droit - s.tau, "s", { sig: 2 }) });
+    $("vapprox").textContent = F.si(s.approx, "s", { sig: 4 });
+    $("fapprox").textContent = t("fig.f.ecart", { d: F.si(s.approx - s.tau, "s", { sig: 2 }) });
+  }
+  sd.oninput = sp.oninput = draw; draw();
+})();
+
+/* ---------- le système décrit : un avion de ligne, dix heures à 250 m·s⁻¹ et 10 km d'altitude ---------- */
+(() => {
+  const v = 250, h = 10e3, T = 10 * 3600, g = Constantes.g_CPGE;
+  const s = R.deuxEtapes(v * T, T, 0.5), perte = T - s.tau, gain = R.decalageUniforme(g, h) * T;
+  $("sys1").innerHTML = t("sys1.body", { v: F.si(v, "m·s⁻¹"), T: F.si(T, "s"), b2: F.sci((v / c) ** 2, 2), perte: F.si(perte, "s", { prefix: "n", sig: 2 }),
+    h: F.si(h, "m"), phi: F.sci(R.decalageUniforme(g, h), 2), gain: F.si(gain, "s", { prefix: "n", sig: 2 }) });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["minkowski", 1908, "idea"], ["langevin", 1911, "idea"], ["hafele", 1971, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["muons"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["immobile", "c"], ["droit", "a"], ["carre", "d"], ["long", "b"], ["allerretour", "a"], ["deuxvitesses", "c"], ["avion", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 424 });
+})();
+</script>
+</body>
+</html>

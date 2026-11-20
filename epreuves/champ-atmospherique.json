@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["charge", "a"],
+  ["mat", "b"],
+  ["altitude", "c"],
+  ["colonne", "d"],
+  ["relaxation", "a"],
+  ["fumee", "b"],
+  ["universel", "c"],
+  ["bilan", "d"]
+ ]
+}

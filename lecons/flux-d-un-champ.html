@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le flux d'un champ de vecteurs</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-outils" data-i18n="monde.outils"></a><span class="aux">›</span><a href="/racoon/etape?id=flux-et-gauss" data-i18n="etape.flux-et-gauss"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fond" href="/racoon/atlas?piste=fond" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/integrale-curviligne-gradient" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi mathvariant="normal">d</mi><mi>Φ</mi><mo>=</mo><mover accent="true"><mi>h</mi><mo>→</mo></mover><mo>·</mo><mover accent="true"><mi>n</mi><mo>→</mo></mover><mspace width="0.15em"/><mi mathvariant="normal">d</mi><mi>a</mi><mo>=</mo><mrow><mo>|</mo><mover accent="true"><mi>h</mi><mo>→</mo></mover><mo>|</mo></mrow><mspace width="0.15em"/><mi data-i18n="eq.cos"></mi><mi>θ</mi><mspace width="0.15em"/><mi mathvariant="normal">d</mi><mi>a</mi></math><span class="n">(3.10)</span></div>
+    <p class="validite" data-i18n-html="val.3.10"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi>Φ</mi><mo>=</mo><msub><mo>∫</mo><mi>S</mi></msub><mover accent="true"><mi>h</mi><mo>→</mo></mover><mo>·</mo><mover accent="true"><mi>n</mi><mo>→</mo></mover><mspace width="0.15em"/><mi mathvariant="normal">d</mi><mi>a</mi></math><span class="n">(3.11)</span></div>
+    <p class="validite" data-i18n-html="val.3.11"></p>
+    <div class="box def"><b data-i18n="s1.def.title"></b>
+      <p data-i18n-html="s1.def.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys"></p>
+    </div>
+    <figure>
+      <svg class="fig" id="capteur" viewBox="0 0 640 340" role="img" data-i18n-attr="aria-label:capteur.aria"></svg>
+      <div class="legend"><span class="c-warn" data-i18n="capteur.legend.h"></span><span class="c-label" data-i18n="capteur.legend.s"></span><span class="c-tint" data-i18n="capteur.legend.n"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="dsl" data-i18n="capteur.d"></label><output id="dread" for="dsl"></output></div>
+            <input id="dsl" type="range" min="0.1" max="2" step="0.05" value="1"></div>
+          <div class="ctl"><div class="row"><label for="thsl" data-i18n="capteur.th"></label><output id="thread" for="thsl"></output></div>
+            <input id="thsl" type="range" min="-180" max="180" step="5" value="30"></div>
+          <div class="ctl"><div class="row"><label for="asl" data-i18n="capteur.a"></label><output id="aread" for="asl"></output></div>
+            <input id="asl" type="range" min="0.02" max="0.4" step="0.02" value="0.1"></div>
+          <button class="btn" type="button" id="inverse" data-i18n="capteur.inverse"></button>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="capteur.k.phi"></span><span class="v" id="vphi"></span><span class="f" data-i18n="capteur.f.phi"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="capteur.k.approx"></span><span class="v" id="vapprox"></span><span class="f" id="fapprox"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="capteur.k.part"></span><span class="v" id="vpart"></span><span class="f" data-i18n="capteur.f.part"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="capteur.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msub><mo>∮</mo><mi>S</mi></msub><mover accent="true"><mi>h</mi><mo>→</mo></mover><mo>·</mo><mover accent="true"><mi>n</mi><mo>→</mo></mover><mspace width="0.15em"/><mi mathvariant="normal">d</mi><mi>a</mi><mo>=</mo><mo>−</mo><mfrac><mrow><mi mathvariant="normal">d</mi><mi>Q</mi></mrow><mrow><mi mathvariant="normal">d</mi><mi>t</mi></mrow></mfrac></math><span class="n">(3.13)</span></div>
+    <p class="validite" data-i18n-html="val.3.13"></p>
+    <p id="sphere"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>Φ</mi><mi>S</mi></msub><mo>=</mo><msub><mi>Φ</mi><mrow><mi>S</mi><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>Φ</mi><mrow><mi>S</mi><mn>2</mn></mrow></msub><mo>,</mo><mspace width="1.2em"/><msub><mover accent="true"><mi>n</mi><mo>→</mo></mover><mn>1</mn></msub><mo>=</mo><mo>−</mo><msub><mover accent="true"><mi>n</mi><mo>→</mo></mover><mn>2</mn></msub><mspace width="0.5em"/><mtext data-i18n="eq.coupe"></mtext></math><span class="n">(3.16a)</span></div>
+    <p class="validite" data-i18n-html="val.3.16"></p>
+    <div class="box warn"><b data-i18n="s3.warn.title"></b>
+      <p data-i18n-html="s3.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/flux-d-un-champ.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/lecons/chaleur.js"></script>
+<script src="/racoon/lecons/diffusion.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+
+/* ---------- a point source of W, isotropic: h = W r⃗ / (4π r³) ---------- */
+const W = 100, SOURCE = p => { const r = Math.hypot(...p); return p.map(x => W * x / (4 * Math.PI * r ** 3)); };
+$("sys").innerHTML = t("sys.body", { W: F.num(W, 3), h1: F.fix(Diffusion.sourcePonctuelle(W, 1), 2), src: F.sci(0.01 / 1, 1) });
+$("sphere").innerHTML = t("s3.sphere", { W: F.num(W, 3), h1: F.fix(Diffusion.sourcePonctuelle(W, 1), 2), h3: F.fix(Diffusion.sourcePonctuelle(W, 3), 3),
+  s1: F.fix(4 * Math.PI, 1), s3: F.fix(4 * Math.PI * 9, 0) });
+
+(() => {
+  const svg = $("capteur"), P = Plot.el, K = 260, S = [60, 170];
+  let signe = 1;
+  const arrow = (A, B, cls, parent) => Plot.fleche(parent, A, B, { cls });
+  const label = (p, text, parent) => { const e = P("text", { x: p[0], y: p[1], "text-anchor": "middle" }, parent); e.textContent = text; return e; };
+  const S3 = ["dsl", "thsl", "asl"].map($);
+  function draw() {
+    svg.innerHTML = "";
+    const d = +S3[0].value, th = +S3[1].value * Math.PI / 180, a = +S3[2].value;
+    /* rays of the source */
+    const rays = P("g", { class: "c-warn", opacity: 0.35 }, svg);
+    for (let k = 0; k < 36; k++) { const f = 2 * Math.PI * k / 36; const c = Math.cos(f), s = -Math.sin(f), L = Math.min(c > 0 ? (640 - S[0]) / c : c < 0 ? -S[0] / c : 1e9, s > 0 ? (340 - S[1]) / s : s < 0 ? -S[1] / s : 1e9);
+      P("line", { x1: S[0] + 10 * c, y1: S[1] + 10 * s, x2: S[0] + L * c, y2: S[1] + L * s, class: "stroke thin" }, rays); }
+    P("circle", { cx: S[0], cy: S[1], r: 6, class: "fill c-warn" }, svg);
+    label([S[0], S[1] + 24], t("capteur.source"), svg);
+    /* the square, seen edge on: centre (d, 0), along (−sin θ, cos θ) */
+    const C = [S[0] + K * d, S[1]], e = [-Math.sin(th), Math.cos(th)], A1 = [C[0] + K * a / 2 * e[0], C[1] - K * a / 2 * e[1]], A2 = [C[0] - K * a / 2 * e[0], C[1] + K * a / 2 * e[1]];
+    [A1, A2].forEach(Q => P("line", { x1: S[0], y1: S[1], x2: Q[0], y2: Q[1], class: "stroke thin dash c-label-2" }, svg));
+    P("line", { x1: A1[0], y1: A1[1], x2: A2[0], y2: A2[1], class: "stroke bold c-label" }, svg);
+    const n = [signe * Math.cos(th), signe * Math.sin(th)];
+    arrow(C, [C[0] + 50 * n[0], C[1] - 50 * n[1]], "c-tint", svg);
+    label([C[0] + 64 * n[0], C[1] - 64 * n[1] + 4], t("capteur.nlabel"), svg);
+    /* the flux, numerically and with the field at the centre */
+    const u = [-Math.sin(th) * a, Math.cos(th) * a, 0], v = [0, 0, a];
+    const phi = signe * AnaVec.fluxParallelogramme(SOURCE, [d, 0, 0], u, v, 60);
+    const approx = signe * Diffusion.sourcePonctuelle(W, d) * a * a * Math.cos(th);
+    $("dread").textContent = F.qty(F.fix(d, 2), "m");
+    $("thread").textContent = F.qty(S3[1].value, "°");
+    $("aread").textContent = F.qty(F.fix(a, 2), "m");
+    $("vphi").textContent = F.qty(F.num(phi, 3), "W");
+    $("vapprox").textContent = F.qty(F.num(approx, 3), "W");
+    $("fapprox").textContent = Math.abs(phi) > 1e-9 ? t("capteur.f.approx", { e: F.num(100 * (approx / phi - 1), 2) }) : t("capteur.f.nul");
+    $("vpart").textContent = F.qty(F.num(100 * phi / W, 3), "%");
+  }
+  S3.forEach(s => s.oninput = draw);
+  $("inverse").onclick = () => { signe = -signe; draw(); };
+  draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["fourier", 1807, "idea"], ["faraday", 1831, "experiment"], ["maxwell", 1855, "idea"], ["davies", 2010, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["geothermie", "solaire"], uses = textOf("uses.items", USES);
+  const R = Constantes.R_E_mean, terre = { flux: F.num(47e12 / (4 * Math.PI * R * R) * 1e3, 2) };
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text.replace("{flux}", terre.flux)}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["incline", "a"], ["normale", "b"], ["distance", "c"], ["sphere", "d"], ["electrique", "a"], ["uniforme", "b"], ["decoupe", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 302 });
+})();
+</script>
+</body>
+</html>

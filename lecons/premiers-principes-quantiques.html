@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Premiers principes de la mécanique quantique</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .duo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 12px; align-items: center; }
+  @media (max-width: 560px) { .duo { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-quantique-amplitudes" data-i18n="monde.quantique-amplitudes"></a><span class="aux">›</span><a href="/racoon/etape?id=observer-et-incertitude" data-i18n="etape.observer-et-incertitude"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-quant" href="/racoon/atlas?piste=quant" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/observer-les-electrons" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>P</mi><mo>=</mo><msup><mrow><mo>|</mo><mi>φ</mi><mo>|</mo></mrow><mn>2</mn></msup></math><span class="n">(37.6)</span></div>
+    <p class="validite" data-i18n-html="val.37.6"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mi>φ</mi><mo>=</mo><msub><mi>φ</mi><mn>1</mn></msub><mo>+</mo><msub><mi>φ</mi><mn>2</mn></msub><mo>,</mo><mspace width="1em"/><mi>P</mi><mo>=</mo><msup><mrow><mo>|</mo><msub><mi>φ</mi><mn>1</mn></msub><mo>+</mo><msub><mi>φ</mi><mn>2</mn></msub><mo>|</mo></mrow><mn>2</mn></msup></math><span class="n">(37.7)</span></div>
+    <p class="validite" data-i18n-html="val.37.7"></p>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="eq"><math display="block"><mi>P</mi><mo>=</mo><msub><mi>P</mi><mn>1</mn></msub><mo>+</mo><msub><mi>P</mi><mn>2</mn></msub></math><span class="n">(37.8)</span></div>
+    <p class="validite" data-i18n-html="val.37.8"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="chart">
+      <div class="duo">
+        <svg class="fig" id="plan" viewBox="0 0 240 240" role="img" data-i18n-attr="aria-label:fig.aria.plan"></svg>
+        <svg class="fig" id="ecran" role="img" data-i18n-attr="aria-label:fig.aria.ecran"></svg>
+      </div>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.p"></span><span class="c-label-2" data-i18n="fig.legend.p1"></span><span class="c-warn" data-i18n="fig.legend.somme"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="sx" data-i18n="fig.x"></label><output id="sxr" for="sx"></output></div>
+            <input id="sx" type="range" min="-8" max="8" step="0.02" value="2.2"></div>
+          <div class="ctl"><div class="row"><label for="ss" data-i18n="fig.sigma"></label><output id="ssr" for="ss"></output></div>
+            <input id="ss" type="range" min="0" max="3" step="0.05" value="0"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.p"></span><span class="v" id="vp"></span><span class="f" id="fp"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.cache"></span><span class="v" id="vc"></span><span class="f" id="fc"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <div class="eq"><math display="block"><mi>P</mi><mo>=</mo><msub><mi>P</mi><mn>1</mn></msub><mo>+</mo><msub><mi>P</mi><mn>2</mn></msub><mo>+</mo><mn>2</mn><msqrt><mrow><msub><mi>P</mi><mn>1</mn></msub><msub><mi>P</mi><mn>2</mn></msub></mrow></msqrt><mspace width="0.1em"/><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>/</mo><mn>2</mn></mrow></msup><mspace width="0.1em"/><mi data-i18n="eq.cos"></mi><mi>δ</mi></math></div>
+    <p class="validite" data-i18n-html="val.brouille"></p>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s5.sec"></span>
+    <h2 data-i18n="s5.h2"></h2>
+    <p data-i18n-html="s5.p1"></p>
+    <p data-i18n-html="s5.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/premiers-principes-quantiques.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/quantique-amplitudes.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const Q = QuantAmp;
+
+/* the system of « Observer les électrons »: 50 keV electrons, holes 1 µm apart and 0,2 µm wide, screen at 1 m */
+const LAMBDA_E = Q.broglie(Q.impulsion(Q.m_e, 50e3 * Q.e)), FENTES = { lambda: LAMBDA_E, d: 1e-6, a: 0.2e-6, L: 1 };
+const INTERFRANGE = Q.interfrangeFentes(LAMBDA_E, FENTES.L, FENTES.d);
+
+/* ---------- two amplitudes as arrows, the probability on the screen, a jittered experiment ---------- */
+(() => {
+  const plan = $("plan"), ecran = $("ecran"), sx = $("sx"), ss = $("ss");
+  const X = 8e-6, xs = Array.from({ length: 481 }, (_, i) => -X + i * 2 * X / 480);
+  function draw() {
+    const x = +sx.value * 1e-6, sigma = +ss.value, V = Q.contrasteBrouille(sigma);
+    const r = Q.probaAvecTemoin(x, FENTES, V), a = Q.amplitudesDeuxFentes(x, FENTES);
+    /* the complex plane: φ1 from the origin, φ2 from its head, the sum */
+    plan.innerHTML = "";
+    const c = 120, s = 55, px = z => [c + s * z.re, c - s * z.im];
+    Plot.el("line", { x1: 10, x2: 230, y1: c, y2: c, class: "zero" }, plan);
+    Plot.el("line", { x1: c, x2: c, y1: 10, y2: 230, class: "zero" }, plan);
+    const O = px({ re: 0, im: 0 }), A = px(a.phi1), S = px({ re: a.phi1.re + a.phi2.re, im: a.phi1.im + a.phi2.im });
+    Plot.fleche(plan, O, A, { cls: "c-label-2", tete: 9, min: 2 });
+    Plot.fleche(plan, A, S, { cls: "c-label-2", tete: 9, min: 2 });
+    Plot.fleche(plan, O, S, { cls: "c-tint", tete: 10, min: 2 });
+    const tag = (p, txt) => { const e = Plot.el("text", { x: p[0], y: p[1], "text-anchor": "middle" }, plan); e.textContent = txt; };
+    const cote = (P0, P1, sgn) => { const dx = P1[0] - P0[0], dy = P1[1] - P0[1], l = Math.hypot(dx, dy) || 1;   // label beside an arrow
+      return [(P0[0] + P1[0]) / 2 - sgn * 16 * dy / l, (P0[1] + P1[1]) / 2 + sgn * 16 * dx / l + 4]; };
+    tag(cote(O, A, 1), t("fig.phi1"));
+    tag(cote(A, S, 1), t("fig.phi2"));
+    /* the screen */
+    ecran.innerHTML = "";
+    const P = Plot.axes(ecran, { fmt: F, w: 480, h: 240, pad: { l: 48, b: 40 }, x: { domain: [-8, 8], label: t("fig.xaxis") }, y: { domain: [0, 4.2], label: t("fig.yaxis") } });
+    const pts = xs.map(u => Q.probaAvecTemoin(u, FENTES, V));
+    Plot.el("path", { d: Plot.path(xs.map((u, i) => [P.x(u * 1e6), P.y(pts[i].somme)])), class: "ref" }, P.g);
+    Plot.el("path", { d: Plot.path(xs.map((u, i) => [P.x(u * 1e6), P.y(pts[i].P1)])), class: "stroke thin dash c-label-2" }, P.g);
+    Plot.el("path", { d: Plot.path(xs.map((u, i) => [P.x(u * 1e6), P.y(pts[i].P)])), class: "curve" }, P.g);
+    Plot.el("circle", { cx: P.x(x * 1e6), cy: P.y(r.P), r: 5, class: "dot" }, P.g);
+    $("sxr").textContent = F.qty(F.num(+sx.value, 3), "µm");
+    $("ssr").textContent = F.qty(F.num(sigma, 2), "rad");
+    $("vp").textContent = F.num(r.P, 2);
+    $("fp").textContent = t("fig.f.p", { s: F.num(r.somme, 2), v: F.num(V, 2) });
+    const rap = r.P / r.P1;
+    $("vc").textContent = F.num(rap, 2);
+    $("fc").textContent = t(rap < 1 ? "fig.f.moins" : "fig.f.plus");
+  }
+  sx.oninput = ss.oninput = draw; draw();
+})();
+
+/* ---------- the system described: how still must the wall be? ---------- */
+(() => {
+  const sigma = 0.3, s = sigma * INTERFRANGE / (2 * Math.PI);
+  const P = Q.impulsion(Q.m_e, 50e3 * Q.e), v = Q.vitessesOnde(Q.m_e, P).groupe;
+  $("sys1").innerHTML = t("sys1.body", { i: F.si(INTERFRANGE, "m"), s: F.si(s, "m"), v: F.num(Q.contrasteBrouille(sigma), 2), t: F.si(FENTES.L / v, "s") });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["born", 1926, "idea"], ["bell", 1964, "idea"], ["aspect", 1982, "experiment"], ["nobel", 2022, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["hasard"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["ideale", "c"], ["carre", "a"], ["somme", "d"], ["ouvrir", "b"], ["appareil", "c"], ["cache", "a"], ["brouille", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 377 });
+})();
+</script>
+</body>
+</html>

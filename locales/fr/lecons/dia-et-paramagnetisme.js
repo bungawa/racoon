@@ -1,0 +1,103 @@
+/* Leçon « Diamagnétisme et paramagnétisme » (Feynman II.34.1) : textes en français.
+   Une autre langue = locales/<langue>/lecons/dia-et-paramagnetisme.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Diamagnétisme et paramagnétisme",
+    "crumb.jour": "Dia- et paramagnétisme",
+    "h1": "Diamagnétisme et paramagnétisme",
+    "lede": "Le fer colle à l'aimant ; le bismuth, l'eau et le cuivre s'en écartent un peu ; l'aluminium et le dioxygène en sont un peu attirés. Toute matière répond au champ magnétique, mais faiblement, et dans un sens qui révèle ce que font ses atomes.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : force sur un dipôle",
+
+    "s1.sec": "Le phénomène",
+    "s1.h2": "Trois réponses au champ",
+    "s1.p1": "Approchons un échantillon d'un électroaimant. Le fer, le nickel, le cobalt, et le gadolinium en dessous de 293\u00a0K, sont fortement attirés : ce sont les corps ferromagnétiques. Tous les autres corps réagissent aussi, mais mille à un million de fois moins. Certains sont repoussés des régions où le champ est fort : ils sont <em>diamagnétiques</em>, comme le bismuth, le cuivre, l'eau. D'autres y sont attirés : ils sont <em>paramagnétiques</em>, comme l'aluminium ou le dioxygène.",
+    "s1.p2": "Pour voir ces forces, on suspend un petit barreau à un fil entre deux pôles, l'un pointu, l'autre plat : le champ est plus intense près de la pointe. Le barreau se déplace de quelques millimètres vers la pointe ou s'en éloigne. Une précaution : à l'établissement du courant, des courants induits dans l'échantillon le secouent ; on lit le déplacement une fois le champ établi. Dans chaque cas, le champ fait apparaître dans la matière une aimantation <var>M</var>, moment magnétique par unité de volume :",
+    "val.aimantation": "Exacte comme définition de la susceptibilité χ, sans dimension, à condition que |χ| ≪ 1 : le champ dans la matière diffère alors du champ appliqué d'une fraction |χ|, et la forme de l'échantillon ne compte pas. χ < 0 : diamagnétique ; χ > 0 : paramagnétique. La proportionnalité vaut tant que l'aimantation reste loin de la saturation, ce qui est toujours le cas d'un diamagnétique, et d'un paramagnétique quand l'énergie magnétique de ses atomes est petite devant <var>k</var><sub>B</sub><var>T</var>.",
+    "s1.p3": "À 293\u00a0K <span class=\"aux\">(20\u00a0°C)</span>, χ vaut \u22121,66 × 10⁻⁴ pour le bismuth, \u22129,0 × 10⁻⁶ pour l'eau, \u22129,6 × 10⁻⁶ pour le cuivre, +2,2 × 10⁻⁵ pour l'aluminium. Pour le fer, l'aimantation n'est pas proportionnelle au champ, et elle est des milliers de fois plus grande.",
+
+    "s2.sec": "La force",
+    "s2.h2": "Un dipôle induit dans un champ qui varie",
+    "s2.p1": "Un petit échantillon de volume <var>V</var> porte le moment χ<var>V</var><var>B</var>/<var>μ</var><sub>0</sub>, parallèle au champ. Dans un champ uniforme, il ne subit aucune force. Dans un champ qui varie, il subit la force (15.11a), mais son moment naît avec le champ : l'énergie d'un moment induit vaut la moitié de \u2212<var>μ</var>·<var>B</var>, soit \u2212χ<var>V</var><var>B</var><sup>2</sup>/(2<var>μ</var><sub>0</sub>). Sa dérivée donne la force selon <var>x</var> :",
+    "val.force": "Approximation : |χ| ≪ 1, et un échantillon petit devant la longueur <var>B</var>/|d<var>B</var>/d<var>x</var>| sur laquelle le champ change. Le signe dit tout : χ > 0 pousse vers le champ fort, χ < 0 l'en écarte. La force est proportionnelle à <var>B</var>\u00a0d<var>B</var>/d<var>x</var> : doubler le champ quadruple la force.",
+    "s2.p2": "Une boucle de courant permanente, de moment fixé, subit une force proportionnelle à d<var>B</var>/d<var>x</var> seulement. Ici, le moment lui-même croît avec <var>B</var> : d'où le produit <var>B</var>\u00a0d<var>B</var>/d<var>x</var>, et des forces minuscules dans les champs ordinaires, comme le montre la figure plus bas.",
+
+    "s3.sec": "Deux mécanismes",
+    "s3.h2": "Courants induits et moments qui s'alignent",
+    "s3.p1": "<strong>Diamagnétisme.</strong> Dans la plupart des atomes et des molécules, les moments des électrons se compensent : le moment total est nul. Quand on établit le champ, la loi de Faraday crée un champ électrique qui tourne autour de chaque atome et modifie le mouvement des électrons. Le moment induit est opposé au champ, comme le veut la loi de Lenz. Cet effet existe dans toute matière, et il ne dépend presque pas de la température. La leçon « Diamagnétisme » en fait le calcul.",
+    "s3.p2": "<strong>Paramagnétisme.</strong> D'autres atomes portent un moment permanent, de l'ordre du magnéton de Bohr. Le champ tend à aligner ces moments, l'agitation thermique les désordonne. Il en reste un petit alignement moyen, parallèle au champ, d'autant plus fort que la température est basse. Quand il existe, ce terme l'emporte en général sur le diamagnétisme, toujours présent. La leçon « Moments magnétiques et moment cinétique » relie ces moments au mouvement des électrons.",
+    "s3.p3": "Une description honnête de ces effets demande la mécanique quantique. La physique classique, appliquée jusqu'au bout, n'en donne aucun : les raisonnements qui suivent sont des modèles, utiles pour voir les mécanismes, pas des démonstrations.",
+    "ferro.title": "Pourquoi le fer est-il si différent ?",
+    "ferro.body": "Deux moments d'un magnéton de Bohr distants de {d} ont une énergie d'interaction magnétique d'environ {U}, soit <var>k</var><sub>B</sub><var>T</var> à {T}. L'agitation thermique défait donc tout ordre dû à cette seule interaction au-dessus de quelques centièmes de kelvin. Or le fer reste aimanté jusqu'à sa température de Curie, {Tc}, environ {r} fois plus haut. Ce qui aligne les moments du fer n'est pas leur interaction magnétique : c'est un effet quantique, l'interaction d'échange.",
+
+    "s4.sec": "Ordres de grandeur",
+    "s4.h2": "Peser une force minuscule",
+    "s4.p1": "Le système : un échantillon de 1\u00a0cm³ dans un champ d'intensité <var>B</var> qui tombe à zéro sur la longueur <var>L</var>, d'où d<var>B</var>/d<var>x</var> ≈ <var>B</var>/<var>L</var>. On compare la force à son poids. Le nombre sans dimension qui décide est |χ|<var>B</var><sup>2</sup>/(<var>μ</var><sub>0</sub><var>ρ</var><var>g</var><var>L</var>).",
+    "fig.choix": "Matériau de l'échantillon",
+    "mat.bismuth": "Bismuth",
+    "mat.eau": "Eau",
+    "mat.cuivre": "Cuivre",
+    "mat.aluminium": "Aluminium",
+    "fig.b": "Champ B à l'échantillon",
+    "fig.l": "Longueur L sur laquelle le champ tombe",
+    "fig.k.f": "Force magnétique",
+    "fig.f.loin": "vers le champ faible (χ = {chi})",
+    "fig.f.vers": "vers le champ fort (χ = {chi})",
+    "fig.k.p": "Poids",
+    "fig.f.p": "force/poids : {r}",
+    "fig.k.lev": "Pour équilibrer le poids, il faut |B\u00a0dB/dx|",
+    "fig.lev": "{v}\u00a0T²·m⁻¹",
+    "fig.f.lev": "ici, B²/L = {v}\u00a0T²·m⁻¹",
+    "fig.caption": "Un aimant de laboratoire donne 1\u00a0T qui tombe sur quelques centimètres : la force sur le bismuth est quelques pour cent de son poids, mesurable à la balance. Pour faire flotter de l'eau, il faut <var>B</var><sup>2</sup>/<var>L</var> de l'ordre de 10³\u00a0T²·m⁻¹ : une dizaine de teslas qui varient sur moins de 10\u00a0cm. Le paramagnétisme de l'aluminium, du même ordre en valeur absolue, tire dans l'autre sens.",
+    "sys.title": "Décrire le système avant d'appliquer la loi",
+    "sys1.body": "Une grenouille est faite surtout d'eau, χ = {chi}. Pour qu'elle flotte, il faut |<var>B</var>\u00a0d<var>B</var>/d<var>z</var>| ≈ {BdB}\u00a0T²·m⁻¹. Avec {B} au point d'équilibre, l'ordre de grandeur de l'expérience de Nijmegen, le champ doit décroître vers le haut de {G}, c'est-à-dire changer notablement sur {L}. L'aimantation de l'eau vaut alors {M}, et le champ dans l'animal ne diffère du champ appliqué que de |χ| ≈ 10⁻⁵ : la formule de la force s'applique. Aucun organe n'est soulevé à part : chaque gramme d'eau porte sa propre force, à peu près comme dans la chute libre.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Du bismuth repoussé à la grenouille qui flotte",
+    "hist.intro": "Ces effets faibles ont été vus tard, classés ensuite, puis rendus spectaculaires par les champs intenses.",
+    "hist.events": {
+      brugmans: { who: "Anton Brugmans", what: "observe que le bismuth est repoussé par un aimant.", context: "Une curiosité isolée : on pensait alors que seul un petit nombre de corps réagissaient aux aimants." },
+      faraday: { who: "Michael Faraday", what: "montre que toute matière réagit à un électroaimant puissant, attirée ou repoussée, et appelle « diamagnétiques » les corps repoussés, sur une suggestion de William Whewell.", context: "Faraday suspend ses échantillons entre des pôles très rapprochés : le verre lourd, le bismuth, l'eau s'écartent du champ fort." },
+      curie: { who: "Pierre Curie", what: "soutient sa thèse sur les propriétés magnétiques des corps à diverses températures.", context: "Il y établit que la susceptibilité d'un paramagnétique varie comme l'inverse de la température, et qu'un ferromagnétique perd son aimantation au-dessus d'une température critique, aujourd'hui appelée température de Curie." },
+      geim: { who: "Andre Geim et Michael Berry", what: "font flotter une grenouille vivante dans l'aimant à haut champ de Nijmegen, et en publient l'analyse dans l'European Journal of Physics.", context: "L'animal est simplement de l'eau diamagnétique dans un champ d'environ 10\u00a0T. L'expérience leur vaut le prix Ig Nobel de physique en 2000." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      balance: { name: "Balances de susceptibilité", text: "En chimie, la balance de Gouy pèse un échantillon dont un bout plonge dans le champ d'un aimant ; celle d'Evans mesure la force que l'échantillon exerce en retour sur de petits aimants mobiles. Le signe de χ dit si une molécule ou un complexe porte des électrons non appariés, donc des moments permanents ; sa grandeur et la température, par la loi de Curie, disent combien. C'est la formule de la force, lue à l'envers." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      signe: { prompt: "Un barreau de bismuth est suspendu près de la pointe d'un électroaimant. Que fait-il quand on établit le courant ?",
+        options: { a: "Il est attiré vers la pointe, comme le fer mais moins.", b: "Il s'écarte de la pointe, vers le champ faible.", c: "Il ne bouge pas : le bismuth n'est pas magnétique.", d: "Il tourne sans se déplacer." },
+        why: "Le bismuth est diamagnétique, χ < 0 : la force χVB\u00a0dB/dx/μ₀ pointe vers les champs faibles." },
+      lenz: { prompt: "Pourquoi le moment induit d'un atome sans moment permanent est-il opposé au champ ?",
+        options: { a: "Le champ électrique induit à l'établissement du champ modifie le mouvement des électrons dans le sens qui s'oppose à la variation du flux.", b: "Les moments des électrons s'alignent sur le champ, puis se retournent.", c: "Le noyau repousse le champ.", d: "L'agitation thermique inverse l'aimantation." },
+        why: "C'est la loi de Lenz à l'échelle d'un atome : un courant induit s'oppose à la cause qui le crée." },
+      temperature: { prompt: "On refroidit de 300\u00a0K à 30\u00a0K un sel paramagnétique et un morceau de bismuth. Que deviennent leurs susceptibilités ?",
+        options: { a: "Les deux augmentent d'un facteur 10.", b: "Les deux restent les mêmes.", c: "Celle du bismuth augmente, celle du sel ne change pas.", d: "Celle du sel augmente nettement, celle du bismuth change peu." },
+        hint: "Quel mécanisme l'agitation thermique contrarie-t-elle ?",
+        why: "L'alignement des moments permanents lutte contre l'agitation thermique : il croît quand T baisse (loi de Curie). Le diamagnétisme vient des courants induits et ne dépend presque pas de la température." },
+      uniforme: { prompt: "Un échantillon d'aluminium est placé au centre d'un long solénoïde, où le champ est uniforme. Quelle force subit-il ?",
+        options: { a: "Une force vers l'axe du solénoïde.", b: "Une force vers la bobine la plus proche.", c: "Aucune force : il faut un champ qui varie.", d: "Une force proportionnelle à B², dans le sens du champ." },
+        why: "La force est proportionnelle à B\u00a0dB/dx : nulle dans un champ uniforme. L'échantillon s'aimante, mais n'est tiré nulle part." },
+      ordre: { prompt: "Un cube d'eau de 1\u00a0cm³ est dans un champ de 1\u00a0T qui décroît sur 1\u00a0cm. Quel est l'ordre de grandeur du rapport de la force magnétique au poids ?",
+        options: { a: "1 : il flotte presque.", b: "Environ 7 × 10⁻² : quelques pour cent.", c: "Environ 10⁻⁹.", d: "Environ 10³." },
+        hint: "|χ|B²/(μ₀ρgL), χ ≈ \u22129 × 10⁻⁶.",
+        why: "9 × 10⁻⁶ × 1/(1,26 × 10⁻⁶ × 10³ × 9,8 × 10⁻²) ≈ 7 × 10⁻². Il faut un champ environ quatre fois plus grand, sur la même longueur, pour le faire flotter." },
+      para: { prompt: "Quand un corps a des atomes à moment permanent, pourquoi parle-t-on de paramagnétisme alors que le diamagnétisme est aussi présent ?",
+        options: { a: "Parce que l'alignement des moments permanents produit en général une aimantation bien plus grande que les courants induits.", b: "Parce que les moments permanents suppriment les courants induits.", c: "Parce que le diamagnétisme n'existe que dans les gaz.", d: "Parce que les deux effets ont le même signe." },
+        why: "Les deux effets coexistent et ont des signes opposés. Le terme paramagnétique l'emporte d'ordinaire, sauf à haute température où l'alignement s'affaiblit." },
+      ferro: { prompt: "L'interaction magnétique entre deux moments atomiques voisins correspond à une température de quelques centièmes de kelvin. Que peut-on en conclure sur le fer, aimanté jusqu'à 1\u202f043\u00a0K ?",
+        options: { a: "Que le fer a des moments atomiques beaucoup plus grands que les autres corps.", b: "Que l'aimantation du fer est due à des courants macroscopiques.", c: "Qu'une autre interaction, beaucoup plus forte, aligne ses moments.", d: "Que le fer n'obéit pas à l'agitation thermique." },
+        why: "Les moments du fer sont de l'ordre du magnéton de Bohr, comme ceux d'autres atomes. Ce qui les aligne est l'interaction d'échange, un effet quantique environ dix mille fois plus fort que l'interaction magnétique directe." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 34, §34-1 (texte original en anglais). Notations SI. Brugmans, Faraday et Whewell : Wikipédia, « Diamagnetism ». Thèse de Pierre Curie (1895) : Wikipédia, « Pierre Curie ». Grenouille de Nijmegen : A. Geim, <i>Physics Today</i>, septembre 1998 ; prix Ig Nobel 2000. Susceptibilités : Wikipédia, « Magnetic susceptibility » ; masses volumiques : LibreTexts, table B7 ; températures de Curie : Wikipédia, « Curie temperature ». Calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

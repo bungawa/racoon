@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["vitre", "a"],
+  ["direction", "b"],
+  ["brewster", "c"],
+  ["signe", "d"],
+  ["metal", "b"],
+  ["uv", "a"],
+  ["prisme", "d"],
+  ["phase", "c"]
+ ]
+}

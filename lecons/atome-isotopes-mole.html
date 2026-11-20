@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atome, isotopes et mole</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-architecture" data-i18n="monde.chim-architecture"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-atome" data-i18n="etape.chim-atome"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/atomes-en-mouvement" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="list keyed" id="echelles"></div>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>r</mi><mtext data-i18n="eq.noyau"></mtext></msub><mo>≈</mo><msub><mi>r</mi><mn>0</mn></msub><msup><mi>A</mi><mrow><mn>1</mn><mo>/</mo><mn>3</mn></mrow></msup><mo>,</mo><mspace width="1em"/><msub><mi>r</mi><mn>0</mn></msub><mo>≈</mo><mn>1,2</mn><mspace width="0.2em"/><mi mathvariant="normal">fm</mi></math></div>
+    <p class="validite" data-i18n-html="val.noyau"></p>
+    <h3 data-i18n="vocab.h3"></h3>
+    <div class="list keyed" id="vocab"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mi>M</mi><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>x</mi><mi>i</mi></msub><msub><mi>M</mi><mi>i</mi></msub><mo>,</mo><mspace width="1em"/><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>x</mi><mi>i</mi></msub><mo>=</mo><mn>1</mn></math></div>
+    <p class="validite" data-i18n-html="val.moyenne"></p>
+    <figure class="chart">
+      <svg class="fig" id="spectre" role="img" data-i18n-attr="aria-label:iso.aria"></svg>
+      <div class="panel">
+        <div class="seg" role="group" id="elements" data-i18n-attr="aria-label:iso.choix"></div>
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="frac" data-i18n="iso.frac"></label><output id="fraco" for="frac"></output></div>
+            <input id="frac" type="range" min="0" max="1" step="0.0001" value="0.7576"></div>
+          <div class="ctl"><div class="row"><label for="masse" data-i18n="iso.masse"></label><output id="masseo" for="masse"></output></div>
+            <input id="masse" type="range" min="-6" max="0" step="0.01" value="-2"></div>
+        </div>
+        <div class="controls"><button class="btn tinted" type="button" id="naturel" data-i18n="iso.naturel"></button></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="iso.k.M"></span><span class="v" id="vM"></span><span class="f" id="fM"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="iso.k.n"></span><span class="v" id="vn"></span><span class="f" id="fn"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="iso.k.N"></span><span class="v" id="vN"></span><span class="f" id="fN"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="iso.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>n</mi><mo>=</mo><mfrac><mi>N</mi><msub><mi>N</mi><mi mathvariant="normal">A</mi></msub></mfrac><mo>=</mo><mfrac><mi>m</mi><mi>M</mi></mfrac><mo>,</mo><mspace width="1em"/><msub><mi>N</mi><mi mathvariant="normal">A</mi></msub><mo>=</mo><mn>6,022&#8239;140&#8239;76</mn><mo>×</mo><msup><mn>10</mn><mn>23</mn></msup><mspace width="0.2em"/><msup><mi>mol</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math></div>
+    <p class="validite" data-i18n-html="val.mole"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>M</mi><mi>i</mi></msub><mo>=</mo><msub><mi>A</mi><mrow><mi mathvariant="normal">r</mi><mo>,</mo><mi>i</mi></mrow></msub><msub><mi>M</mi><mi mathvariant="normal">u</mi></msub><mo>≈</mo><msub><mi>A</mi><mi>i</mi></msub><mspace width="0.2em"/><mi mathvariant="normal">g</mi><mo>·</mo><msup><mi>mol</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math></div>
+    <p class="validite" id="valA" data-i18n-html="val.A"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/atome-isotopes-mole.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+const fill = (s, v) => s.replace(/\{(\w+)\}/g, (m, k) => v[k] != null ? v[k] : m);
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), C = ChimArchi, Cst = Constantes;
+const molaire = M => F.qty(F.fix(M * 1e3, 4), "g·mol⁻¹");   // M en kg·mol⁻¹, affichée en g·mol⁻¹, l'usage de la chimie
+const sym = t("el.symboles");
+
+/* ---------- échelles de l'atome ---------- */
+(() => {
+  const ROWS = ["taille", "noyau", "masses", "charge"], txt = textOf("echelles.items", ROWS);
+  const v = { taille: F.si(1e-10, "m"), noyau: F.si(C.rayonNoyau(35), "m"), rapport: F.sci(C.rayonNoyau(35) / C.RAYON_COVALENT[17], 1),
+    mp: F.si(Cst.m_p, "kg"), me: F.si(Cst.m_e, "kg"), r: F.num(Cst.m_p / Cst.m_e, 4), e: F.si(Cst.e, "C") };
+  $("echelles").innerHTML = ROWS.map(id => `<div><span class="k">${txt[id].k}</span><span>${fill(txt[id].text, v)}</span></div>`).join("");
+  const VOC = ["element", "atome", "corps", "espece", "entite"], voc = textOf("vocab.items", VOC);
+  $("vocab").innerHTML = VOC.map(id => `<div><span class="k">${voc[id].k}</span><span>${voc[id].text}</span></div>`).join("");
+})();
+
+/* ---------- isotopes : spectre de masse et masse molaire ---------- */
+(() => {
+  const ELTS = ["H", "C", "Si", "Cl", "Cu"];
+  $("elements").innerHTML = ELTS.map(s => `<button type="button" data-e="${s}" aria-pressed="false">${sym[C.ISOTOPES[s].Z]}</button>`).join("");
+  let el = "Cl";
+  const frac = $("frac"), masse = $("masse"), svg = $("spectre");
+  const majeur = e => C.ISOTOPES[e].isotopes.reduce((b, i) => (i.x > b.x ? i : b));
+  function draw() {
+    const E = C.ISOTOPES[el], f = +frac.value, comp = C.composition(el, f), M = C.masseMolaire(comp), Mnat = C.masseMolaire(E.isotopes);
+    const m = Math.pow(10, +masse.value), q = C.quantiteMatiere(m, M), A = E.isotopes.map(i => i.A), maj = majeur(el);
+    svg.innerHTML = "";
+    const P = Plot.axes(svg, { fmt: F, w: 640, h: 240, pad: { l: 52, b: 44 },
+      x: { domain: [Math.min(...A) - 1.5, Math.max(...A) + 1.5], label: t("iso.x") }, y: { domain: [0, 1], label: t("iso.y") } });
+    comp.forEach(i => {
+      Plot.el("line", { x1: P.x(i.masse), x2: P.x(i.masse), y1: P.y(0), y2: P.y(i.x), class: "stroke bold c-tint" }, P.g);
+      Plot.el("text", { x: P.x(i.masse), y: P.y(Math.min(i.x, 0.9)) - 8, "text-anchor": "middle", class: "note" }, P.g).textContent = F.sup(i.A) + sym[E.Z];
+    });
+    Plot.el("line", { x1: P.x(M / C.Mu), x2: P.x(M / C.Mu), y1: P.y(0), y2: P.y(1), class: "ref" }, P.g);
+    $("fraco").textContent = F.qty(F.num(100 * f, 4), "%");
+    $("masseo").textContent = F.si(m * 1e3, "g");   // m en kg, lue en grammes
+    $("vM").textContent = molaire(M);
+    $("fM").innerHTML = t("iso.f.M", { a: F.fix(E.intervalle[0], 3), b: F.fix(E.intervalle[1], 3), d: F.num(Math.abs(M - Mnat) * 1e3, 2) });
+    $("vn").textContent = F.si(q.n, "mol");
+    $("fn").innerHTML = t("iso.f.n");
+    $("vN").textContent = F.sci(q.N, 3);
+    $("fN").innerHTML = t("iso.f.N", { maj: F.sup(maj.A) + sym[E.Z] });
+    document.querySelectorAll("#elements [data-e]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.e === el)));
+  }
+  const naturel = () => { frac.value = majeur(el).x; draw(); };
+  document.querySelectorAll("#elements [data-e]").forEach(b => b.onclick = () => { el = b.dataset.e; naturel(); });
+  $("naturel").onclick = naturel;
+  frac.oninput = masse.oninput = draw; draw();
+})();
+
+/* ---------- M ≈ A g/mol : le défaut de masse, chiffré ---------- */
+(() => {
+  const all = Object.values(C.ISOTOPES).flatMap(e => e.isotopes.map(i => ({ Z: e.Z, i, d: C.defautMasse(e.Z, i.A, i.masse) })));
+  const pire = all.reduce((b, x) => (Math.abs(x.d.ecartA) > Math.abs(b.d.ecartA) ? x : b));
+  const cl = C.defautMasse(17, 35, C.ISOTOPES.Cl.isotopes[0].masse), c12 = C.quantiteMatiere(0.012, 12 * C.Mu);
+  $("valA").innerHTML = t("val.A", { pire: F.num(100 * Math.abs(pire.d.ecartA), 2), iso: F.sup(pire.i.A) + sym[pire.Z], cl: F.num(100 * cl.relatif, 2),
+    mu: F.sci(C.Mu / 1e-3 - 1, 2), c12: F.fix(c12.n, 10) });
+  $("sys").innerHTML = t("sys.body", { defaut: F.num(100 * cl.relatif, 2), mev: F.num(cl.parNucleonMeV, 3),
+    me: F.sci(17 * Cst.m_e / (C.ISOTOPES.Cl.isotopes[0].masse * Cst.u), 2), mn: F.num(100 * (Cst.m_n - Cst.m_p) / Cst.m_p, 2) });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["dalton", 1808, "idea"], ["soddy", 1913, "idea"], ["aston", 1919, "experiment"], ["carbone12", 1961, "idea"],
+    ["mole1971", 1971, "idea"], ["silicium", 2011, "experiment"], ["si2019", 2019, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["kilogramme"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["isotope", "b"], ["moyenne", "c"], ["chlore", "a"], ["mole", "d"], ["defaut", "b"], ["vide", "c"], ["vocab", "a"], ["mu", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 811 });
+})();
+</script>
+</body>
+</html>

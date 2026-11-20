@@ -1,0 +1,102 @@
+/* Leçon « Éléments de circuit réels » (Feynman II.23.1) : textes en français.
+   Une autre langue = locales/<langue>/lecons/elements-de-circuit-reels.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Éléments de circuit réels",
+    "crumb.jour": "Éléments de circuit réels",
+    "h1": "Éléments de circuit réels",
+    "lede": "Une résistance, une bobine ou un condensateur réels ne se comportent en éléments idéaux que dans une bande de fréquences. Au-delà, leurs propres champs s'en mêlent : il faut un schéma équivalent de plus en plus riche, puis un autre objet.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : impédances",
+
+    "s1.sec": "Deux bornes",
+    "s1.h2": "Vu de ses bornes, tout dipôle linéaire se résume à ℰ et z",
+    "s1.p1": "Prenez un réseau quelconque d'impédances et de générateurs idéaux, et regardez-le par deux bornes. Imposez une tension <var>V</var> et calculez le courant <var>I</var> : toutes les équations du réseau sont linéaires, donc <var>I</var> dépend linéairement de <var>V</var>. La relation la plus générale de ce type s'écrit avec deux nombres complexes, une force électromotrice ℰ et une impédance <var>z</var> :",
+    "val.23.1": "Exacte : pour un dipôle linéaire, à une fréquence donnée ; ℰ(ω) et <var>z</var>(ω) changent avec la fréquence, parfois de façon compliquée. Fausse pour un dipôle non linéaire (diode, bobine à noyau de fer près de la saturation) : on ne peut alors que linéariser autour d'un point de fonctionnement, pour de petites variations.",
+    "s1.p2": "C'est la relation que donnerait un seul générateur ℰ(ω) en série avec une seule impédance <var>z</var>(ω) : le théorème de Thévenin, vu dans « Circuits équivalents ». Reste la question inverse. On mesure <var>z</var>(ω) d'un objet réel, une bobine par exemple. Peut-on construire avec des éléments idéaux un réseau qui ait la même impédance ? Pour toute fonction <var>z</var>(ω) qui a un sens physique, oui, aussi précisément qu'on le souhaite, avec un nombre fini d'éléments. Mais il en faut d'autant plus que la précision demandée est grande et la bande de fréquences large.",
+
+    "s2.sec": "Éléments parasites",
+    "s2.h2": "Une résistance a aussi une inductance et une capacité",
+    "s2.p1": "Le courant qui traverse une résistance crée un champ magnétique : elle a donc une inductance. La tension entre ses bornes exige des charges à ses deux bouts, qui changent avec la tension : elle a donc une capacité. Son schéma équivalent est <var>R</var> en série avec une petite inductance <var>L</var>, le tout en parallèle sur une petite capacité <var>C</var>. Ces éléments, dits parasites, se négligent tant que ω<var>L</var> ≪ <var>R</var> et 1/(ω<var>C</var>) ≫ <var>R</var>. En montant en fréquence, ils finissent par compter, et la résistance devient un circuit résonant.",
+    "sysR.title": "Le système décrit : une résistance de catalogue",
+    "sysR.body": "Une résistance de {R}, avec {L} pour ses fils et {C} entre ses bouts. Ses fils comptent autant que <var>R</var> vers {fL}, sa capacité vers {fC}. L'écart de son impédance à <var>R</var> vaut {e1} à 1\u00a0MHz, mais déjà {e2} à 100\u00a0MHz : les deux défauts ont des signes opposés et se compensent en partie, mais la capacité l'emporte.",
+    "s2.p2": "Une bobine réelle a d'abord la résistance de son fil. On pourrait vouloir la répartir le long du fil, par petits morceaux de résistance et d'inductance en série. Mais une suite d'éléments en série n'a qu'une impédance totale : la somme des résistances plus iω fois la somme des inductances. À basse fréquence, une bobine est donc :",
+    "val.rl": "Approximation : néglige les capacités entre spires et l'effet de peau, qui fait croître <var>r</var> avec la fréquence. Pour la bobine de la figure ci-dessous, l'écart à l'échelle complète reste sous 0,1\u00a0% jusqu'à 1\u00a0MHz ; il vaut 0,3\u00a0% à 2\u00a0MHz et 7\u00a0% à 10\u00a0MHz, à cause des capacités négligées.",
+
+    "s3.sec": "Une bobine réelle",
+    "s3.h2": "Plus la fréquence monte, plus le schéma s'allonge",
+    "s3.p1": "En montant en fréquence, les charges qui s'accumulent sur le fil pour produire les tensions deviennent importantes. Tout se passe comme si de petits condensateurs reliaient les spires voisines, et chaque spire au reste du bobinage. Le schéma le plus simple ajoute une seule capacité <var>C</var><sub>s</sub> en parallèle sur <var>r</var> + iω<var>L</var> :",
+    "val.simple": "Approximation : une seule capacité équivalente, calée ici sur la première résonance de la bobine. Pour la bobine de la figure, il reproduit l'impédance de l'échelle à 0,4\u00a0% près à 5\u00a0MHz, à 2\u00a0% à 10\u00a0MHz, à 5\u00a0% à la moitié de la première résonance ; il ignore toutes les résonances suivantes.",
+    "s3.p2": "Le système de la figure : une bobine de 10\u00a0µH, de 0,5\u00a0Ω, découpée en <var>N</var> cellules. Chaque cellule porte sa part de résistance et d'inductance, une capacité vers la cellule voisine (0,2\u00a0pF au total), et une capacité vers l'autre extrémité du bobinage (5\u00a0pF au total, répartie sur les nœuds). La figure compare iω<var>L</var>, le schéma simple et l'échelle de cellules. Le curseur de fréquence lit les valeurs.",
+    "fig.aria": "Module de l'impédance d'une bobine réelle en fonction de la fréquence, en échelle logarithmique",
+    "fig.legend.ideal": "inductance idéale, ωL",
+    "fig.legend.simple": "schéma simple, une capacité",
+    "fig.legend.echelle": "échelle de N cellules",
+    "fig.n": "Nombre de cellules N",
+    "fig.f": "Fréquence lue",
+    "fig.xaxis": "fréquence (Hz)",
+    "fig.yaxis": "|z| (Ω)",
+    "fig.k.z": "|<var>z</var>| de l'échelle",
+    "fig.f.ind": "inductive ; ω<var>L</var> = {L}",
+    "fig.f.cap": "capacitive ; ω<var>L</var> = {L}",
+    "fig.k.ecart": "Écart du schéma simple",
+    "fig.f.ecart": "avec <var>C</var><sub>s</sub> = {C}",
+    "fig.k.res": "Première résonance",
+    "fig.f.res": "{n} résonances sous 250\u00a0MHz",
+    "fig.caption": "À basse fréquence, |<var>z</var>| tend vers la résistance du fil ; au-dessus de quelques dizaines de kilohertz, la bobine suit ω<var>L</var>. À la première résonance, le courant ne traverse presque plus la bobine. Au-dessus, |<var>z</var>| décroît : la bobine est devenue capacitive. Le schéma simple suit l'échelle jusque-là, puis rate toutes les résonances suivantes ; plus <var>N</var> est grand, plus l'échelle en montre.",
+    "s3.p3": "À haute fréquence, le courant préfère passer par les capacités entre spires plutôt que de faire le tour de chaque spire contre la force électromotrice d'induction : il prend le chemin de moindre impédance. Ce n'est pas une barrière infranchissable, seulement le signe que l'objet conçu comme une inductance n'en est plus une. Pour les hautes fréquences, il faut un autre dessin.",
+
+    "s4.sec": "Décrire le système",
+    "s4.h2": "Un élément localisé doit être petit devant la longueur d'onde",
+    "s4.p1": "Chaque cellule de l'échelle est encore un élément localisé : on y suppose le courant le même en tout point au même instant. Cela suppose que la lumière traverse la cellule en un temps très court devant la période, donc qu'elle soit très petite devant la longueur d'onde λ = <var>c</var>/<var>f</var>. On compare deux longueurs à λ : la taille de la bobine, et la longueur de son fil.",
+    "sys.title": "Le système décrit : la bobine de la figure",
+    "sys1.body": "Une bobine de {L} et {r}, longue de {taille}, enroulée avec {fil} de fil. Le fil l'emporte sur l'inductance sous {fr}. Sa première résonance tombe à {f1}, où λ = {lambda}. La bobine entière ne mesure que {q1} λ, mais son fil mesure {q2} λ : il n'est plus petit devant la longueur d'onde. C'est pourquoi un seul élément localisé ne suffit plus, et pourquoi il faut découper le fil en cellules.",
+    "s4.p2": "Le même critère vaut pour tout composant. Quand le composant entier n'est plus petit devant λ, aucun schéma à éléments localisés ne le décrit bien. Il faut revenir aux équations de Maxwell complètes, avec les champs entre les conducteurs : c'est ce que fait « Condensateur aux hautes fréquences » pour deux disques.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Imiter une impédance avec des éléments idéaux",
+    "hist.intro": "Que toute impédance raisonnable puisse être imitée par un réseau d'éléments idéaux est devenu un théorème dans les laboratoires du téléphone, puis un outil quotidien avec la simulation.",
+    "hist.events": {
+      foster: { who: "Ronald M. Foster", what: "publie « A Reactance Theorem » dans le Bell System Technical Journal.", context: "Pour un dipôle sans pertes, fait de bobines et de condensateurs, la réactance croît toujours avec la fréquence, et ses zéros et ses pôles alternent. Il en déduit des réseaux canoniques qui réalisent toute réactance de ce type. Le résultat inspire à Wilhelm Cauer son programme de synthèse des réseaux." },
+      brune: { who: "Otto Brune", what: "soutient au MIT une thèse sur la synthèse d'un dipôle d'impédance donnée.", context: "Il montre que les impédances réalisables par un réseau passif fini sont exactement les fonctions qu'il appelle « positives réelles », et donne une méthode pour construire le réseau." },
+      spice: { who: "Laurence Nagel et Donald Pederson", what: "décrivent le simulateur de circuits SPICE dans un mémorandum de l'université de Californie à Berkeley.", context: "Le programme résout les équations de Kirchhoff d'un réseau de modèles de composants. Ses successeurs servent aujourd'hui à simuler les cartes électroniques avec les modèles équivalents des composants, éléments parasites compris." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      ceramique: { name: "Condensateurs céramiques multicouches", text: "Leurs fabricants publient la courbe mesurée de l'impédance en fonction de la fréquence et un schéma équivalent : la capacité, une résistance série et une inductance série. La courbe descend, passe par un minimum égal à la résistance série à la fréquence de résonance propre, puis remonte : au-dessus, le condensateur se comporte comme une inductance. Pour une même capacité, un boîtier plus petit a une inductance plus faible et résonne plus haut." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      lineaire: { prompt: "Pourquoi un réseau quelconque d'impédances et de générateurs idéaux se réduit-il, vu de deux bornes, à I = (V \u2212 ℰ)/z ?",
+        options: { a: "Parce que toutes les impédances du réseau sont égales.", b: "Parce que les générateurs idéaux ont une impédance nulle.", c: "Parce que ses équations sont linéaires : le courant ne peut dépendre de la tension que linéairement.", d: "Parce que le réseau ne contient qu'une maille." },
+        why: "La relation linéaire la plus générale entre I et V a deux paramètres : une pente 1/z et une ordonnée \u2212ℰ/z. Ils dépendent de la fréquence, mais la forme reste la même." },
+      parasite: { prompt: "D'où vient l'inductance parasite d'une résistance ?",
+        options: { a: "Du champ magnétique que crée le courant qui la traverse.", b: "Des charges accumulées à ses deux bouts.", c: "De la chaleur qu'elle dissipe.", d: "De la résistance de ses fils." },
+        why: "Tout courant crée un champ magnétique, donc un flux qui change quand le courant change : c'est une inductance. Les charges aux bouts donnent, elles, la capacité parasite." },
+      serie: { prompt: "On répartit la résistance et l'inductance d'une bobine en dix petits morceaux en série. À basse fréquence, que change ce découpage ?",
+        options: { a: "Il divise l'impédance par dix.", b: "Il ajoute une résonance.", c: "Il rend l'impédance capacitive.", d: "Rien : des éléments en série n'ont qu'une impédance totale, Σr + iωΣL." },
+        why: "Des impédances en série s'additionnent. Le découpage ne compte que lorsqu'on ajoute des capacités entre les morceaux." },
+      saut: { prompt: "À très haute fréquence, par où passe le courant dans une bobine réelle ?",
+        options: { a: "Toujours le long du fil, spire après spire.", b: "En grande partie par les capacités entre spires, le chemin de moindre impédance.", c: "Nulle part : l'impédance devient infinie à toute fréquence élevée.", d: "Seulement à la surface du noyau." },
+        why: "L'impédance d'une capacité, 1/(ωC), diminue quand la fréquence monte, celle d'une inductance, ωL, augmente. Le courant saute d'une spire à l'autre au lieu de faire le tour." },
+      capacitif: { prompt: "Juste au-dessus de la première résonance de la bobine de la figure, comment se comporte-t-elle ?",
+        options: { a: "Comme un condensateur : la partie imaginaire de z est négative et |z| décroît.", b: "Comme une inductance plus grande.", c: "Comme une résistance pure de 0,5 Ω.", d: "Comme un circuit ouvert à toute fréquence plus haute." },
+        why: "Au-dessus de la résonance d'un circuit L parallèle à C, la branche capacitive l'emporte. Placez le curseur au-dessus de la première résonance : la figure indique « capacitive »." },
+      modele: { prompt: "Le schéma simple, avec une seule capacité, est calé sur la première résonance de la bobine. Que lui manque-t-il ?",
+        options: { a: "La résistance du fil.", b: "L'inductance à basse fréquence.", c: "Toutes les résonances au-dessus de la première.", d: "Rien, il est exact à toute fréquence." },
+        why: "Un circuit à une inductance et une capacité n'a qu'une résonance. L'échelle de cellules en a plusieurs, et d'autant plus que le découpage est fin." },
+      longueur: { prompt: "La bobine mesure 3 cm et son fil 2,5 m. Sa première résonance est vers 34 MHz, où λ ≈ 9 m. Qu'est-ce qui interdit de la traiter comme un seul élément localisé ?",
+        options: { a: "Sa taille, 3 cm, comparable à λ.", b: "Sa résistance de 0,5 Ω.", c: "Rien : un élément localisé vaut à toute fréquence.", d: "La longueur de son fil, près de 0,3 λ, qui n'est pas petite devant la longueur d'onde." },
+        hint: "Comparez chaque longueur à λ : laquelle n'est pas petite ?",
+        why: "Le courant ne peut être le même tout le long du fil que si le fil est très court devant λ. Ici il en fait près du tiers : il faut le découper en cellules, chacune assez petite." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 23, §23-1 (texte original en anglais). Notations SI. Foster : Bell System Technical Journal, vol. 3, n<sup>o</sup> 2, avril 1924 ; Wikipédia, « Foster's reactance theorem ». Brune : thèse de doctorat, MIT, 1931, notice DSpace@MIT. SPICE : Nagel et Pederson, mémorandum M382 du laboratoire de recherche en électronique de l'université de Californie à Berkeley, 12 avril 1973. Condensateurs céramiques : guides techniques de Murata sur l'impédance et la résistance série équivalente. Résistance de catalogue : modèle de l'étape « Impédances et réseaux en régime sinusoïdal ». Bobine et calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

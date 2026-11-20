@@ -1,0 +1,103 @@
+/* Leçon « Force d'un électron sur lui-même » (Feynman II.28.4) : textes en français.
+   Une autre langue = locales/<langue>/lecons/force-d-un-electron-sur-lui-meme.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Force d'un électron sur lui-même",
+    "crumb.jour": "Force d'un électron sur lui-même",
+    "h1": "Force d'un électron sur lui-même",
+    "lede": "Une boule chargée tient ensemble malgré la répulsion de toutes ses parties, et il faut pousser plus fort pour l'accélérer que si elle était neutre. Les deux faits viennent de la même chose : chaque morceau de charge agit sur les autres, avec un retard. Le calcul donne la masse électromagnétique, le freinage par rayonnement, et une infinité si l'électron est un point.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : masse électromagnétique",
+
+    "s1.sec": "Décrire le système",
+    "s1.h2": "Une sphère chargée ne tient pas seule",
+    "s1.p1": "Le modèle de « Masse électromagnétique » : la charge <var>q</var><sub>e</sub> de l'électron répartie uniformément sur une sphère de rayon <var>a</var>. L'impulsion du champ d'une telle sphère, à vitesse <var>v</var> ≪ <var>c</var>, est (2/3)[<var>q</var><sub>e</sub><sup>2</sup>/(4π<var>ε</var><sub>0</sub><var>a</var><var>c</var><sup>2</sup>)]<var>v</var>. Son énergie au repos est <var>U</var> = <var>q</var><sub>e</sub><sup>2</sup>/(8π<var>ε</var><sub>0</sub><var>a</var>). La relativité exige que l'impulsion d'un système isolé soit son énergie fois <var>v</var>/<var>c</var><sup>2</sup>. Ici, la masse tirée de l'impulsion vaut 4/3 de <var>U</var>/<var>c</var><sup>2</sup>. Le calcul n'a pas d'erreur d'algèbre : il a oublié quelque chose.",
+    "s1.p2": "Ce qu'il a oublié : toutes les forces entre les morceaux de la sphère sont répulsives. Laissée à elle-même, la charge s'envolerait. L'énergie et l'impulsion du champ ne se conservent seules que si aucune autre force n'agit ; or il en faut une, qui retient la charge sur la sphère. Sur chaque élément de surface, le champ tire vers l'extérieur avec la pression",
+    "val.pression": "Exacte en électrostatique pour une charge surfacique : c'est la moyenne des champs juste à l'intérieur (nul) et juste à l'extérieur (<var>σ</var>/<var>ε</var><sub>0</sub>), multipliée par <var>σ</var>. Ce qui est approché, c'est le modèle : une coquille sans épaisseur, au repos, décrite par la physique classique.",
+    "sys.title": "Le système décrit : la sphère qui porterait toute la masse",
+    "sys1.body": "Choisissons <var>a</var> pour que la masse tirée de l'impulsion soit exactement celle de l'électron : <var>a</var> = {a}, les deux tiers du rayon classique. La pression qui tire la surface vers l'extérieur vaut alors {p}. Elle s'exerce sur une sphère si petite que la force entre ses deux hémisphères ne fait que {f}, le poids d'un objet de 830\u00a0g, mais rien de connu ne tient à cette échelle une pression de cet ordre. Masse tirée de l'impulsion : {mi} ; masse tirée de l'énergie : {me} ; rapport {r}.",
+    "s1.p3": "Poincaré a montré que ces forces de cohésion, qu'on appelle depuis les contraintes de Poincaré, doivent entrer dans le bilan d'énergie et d'impulsion. Avec elles, les deux masses deviennent égales, comme la relativité l'exige. Mais chacune contient alors une part électromagnétique et une part due aux contraintes, dont la valeur dépend de ce qu'on suppose sur elles. On ne peut plus dire que toute la masse est électromagnétique : l'électrodynamique seule ne fait pas une théorie cohérente de l'électron.",
+
+    "s2.sec": "La force par le retard",
+    "s2.h2": "Pourquoi il faut pousser plus fort",
+    "s2.p1": "Une charge accélérée gagne une impulsion de champ. Quelque chose doit l'avoir fournie : celui qui pousse exerce une force en plus de celle qu'exige l'inertie mécanique. D'où vient la force opposée, celle qui retient l'électron ? De l'électron lui-même. Au repos, chaque morceau de charge repousse chaque autre, et les forces s'annulent par paires. À vitesse constante aussi, bien que chaque morceau sente les autres là où ils étaient un instant plus tôt. Quand l'électron accélère, le champ qu'un morceau reçoit d'un autre est parti d'une position et d'une vitesse anciennes. L'action et la réaction ne sont plus exactement opposées, et la somme ne s'annule plus. L'électron se freine lui-même.",
+    "s2.p2": "Le calcul est long. Son résultat, pour un mouvement rectiligne selon <var>x</var>, est une série de dérivées successives de la position. <var>F</var> est la force qu'il faut exercer en plus de celle qu'exige la masse mécanique ; la force de l'électron sur lui-même est \u2212<var>F</var>.",
+    "val.28.9": "Approximation : mouvement rectiligne, lent (<var>v</var> ≪ <var>c</var>), et lent à l'échelle du temps que met la lumière à traverser l'électron. La série avance en puissances de <var>a</var>ω/<var>c</var> pour un mouvement de pulsation ω : pour <var>a</var> ≈ 2\u00a0fm, elle vaut tant que ω ≪ <var>c</var>/<var>a</var> ≈ 10<sup>23</sup>\u00a0s<sup>\u22121</sup>, donc pour des photons d'énergie très inférieure à 100\u00a0MeV. α et γ, de l'ordre de 1, dépendent de la répartition de la charge ; α = 2/3 pour une charge sur une sphère. Le modèle est classique.",
+    "s2.p3": "Le premier terme est proportionnel à l'accélération : c'est une masse. Avec α = 2/3, c'est exactement la masse électromagnétique tirée de l'impulsion du champ, (2/3)<var>q</var><sub>e</sub><sup>2</sup>/(4π<var>ε</var><sub>0</sub><var>a</var><var>c</var><sup>2</sup>), et elle varie comme 1/<var>a</var>. Le deuxième terme ne dépend ni du rayon ni de la répartition : son coefficient est toujours 2/3. C'est le freinage par rayonnement, celui de « La résistance de rayonnement ». Le troisième et tous les suivants contiennent <var>a</var> au numérateur. Faites tendre <var>a</var> vers 0 : ces derniers disparaissent, le freinage reste, et la masse devient infinie. L'infini vient de la force d'un morceau de l'électron sur un autre, quand on rapproche ces morceaux jusqu'au point.",
+
+    "s3.sec": "Un modèle calculable",
+    "s3.h2": "L'haltère : deux demi-charges qui se poussent",
+    "s3.p1": "Pour voir la série sortir du retard, il suffit de deux morceaux. Le système : deux charges <var>q</var><sub>e</sub>/2 reliées par une tige rigide de longueur <var>d</var>, perpendiculaire au mouvement, qui oscillent ensemble selon <var>x</var> à la pulsation ω. Chaque moitié reçoit le champ exact de l'autre, émis un temps <var>d</var>/<var>c</var> plus tôt (champ de Liénard et Wiechert, sans aucune approximation). Le développement du même calcul en puissances de ω<var>d</var>/<var>c</var> donne",
+    "val.28.9a": "Approximation : mouvement lent, ici <var>v</var>/<var>c</var> ≤ 10<sup>\u22123</sup> (les termes négligés sont d'ordre (<var>v</var>/<var>c</var>)<sup>2</sup> = 10<sup>\u22126</sup>), et ω<var>d</var>/<var>c</var> ≪ 1 : l'erreur des trois termes croît comme (ω<var>d</var>/<var>c</var>)<sup>3</sup>, 0,03\u00a0% pour 0,1 et 3\u00a0% pour 0,5 (figure). La force de chaque moitié sur elle-même est laissée de côté : pour une charge ponctuelle, elle est infinie.",
+    "fig.aria": "Force à exercer sur l'haltère pendant une période d'oscillation, calcul exact et série",
+    "fig.legend.exact": "calcul exact (champs retardés)",
+    "fig.legend.masse": "terme de masse seul",
+    "fig.legend.serie": "trois termes de la série",
+    "fig.d": "Longueur d de l'haltère",
+    "fig.w": "ωd/c",
+    "fig.xaxis": "temps, en périodes",
+    "fig.yaxis": "F / (m ω² A)",
+    "fig.k.masse": "Masse électromagnétique <var>U</var>/<var>c</var><sup>2</sup>",
+    "fig.f.masse": "{r} fois la masse de l'électron",
+    "fig.k.reaction": "Freinage / inertie",
+    "fig.f.reaction": "(4/3) ωd/c : le terme en x⃛ contre le terme en ẍ",
+    "fig.k.ecart": "Écart série – calcul exact",
+    "fig.f.ecart": "inertie effective : {r} % de moins que U/c²",
+    "fig.caption": "La force à exercer sur l'haltère pendant une période, en unités de l'amplitude du terme de masse. Le terme de masse seul (tirets) est en phase avec l'accélération. Le calcul exact s'en décale : la part en phase avec la vitesse est le freinage, qui prend de l'énergie à chaque période. Raccourcissez l'haltère : la masse croît comme 1/d, la forme de la courbe ne change pas, car elle ne dépend que de ωd/c. Augmentez ωd/c : le freinage grandit devant l'inertie, et la série à trois termes s'écarte du calcul exact.",
+    "s3.p2": "Trois choses se lisent sur ce modèle. À vitesse constante, la force est nulle : le champ d'une charge en mouvement uniforme pointe depuis sa position présente, juste en face de l'autre moitié. La masse du premier terme vaut <var>U</var>/<var>c</var><sup>2</sup>, avec <var>U</var> l'énergie électrostatique des deux moitiés ; elle atteint celle de l'électron pour <var>d</var> = <var>r</var><sub>0</sub>/4 ≈ 0,7\u00a0fm. Le terme en x⃛ a un coefficient 1/3 au lieu de 2/3. La puissance rayonnée par les deux moitiés est proportionnelle à (<var>q</var><sub>1</sub> + <var>q</var><sub>2</sub>)<sup>2</sup> = <var>q</var><sub>1</sub><sup>2</sup> + <var>q</var><sub>2</sub><sup>2</sup> + 2<var>q</var><sub>1</sub><var>q</var><sub>2</sub> ; la force d'une moitié sur l'autre ne paie que le terme croisé 2<var>q</var><sub>1</sub><var>q</var><sub>2</sub>, la moitié du total. L'autre moitié reviendrait à la force de chaque demi-charge sur elle-même, celle qu'on a laissée de côté.",
+
+    "s4.sec": "Une impasse",
+    "s4.h2": "Une structure que personne n'a vue",
+    "s4.p1": "Dès qu'on met des forces non électriques dans l'électron, l'idée simple d'une masse toute électromagnétique se perd. Il faudrait dire combien valent ces contraintes, comment l'électron se déforme, s'il peut vibrer. Une théorie de ce genre prédirait des modes d'oscillation de l'électron, qu'aucune expérience n'a montrés. L'électron qu'on observe se comporte comme un point.",
+    "s4.p2": "Or un point rend le premier terme de (28.9) infini. Le terme en x⃛, lui, ne dépend pas du rayon et il est nécessaire : sans lui, une charge qui rayonne perdrait de l'énergie sans que personne n'ait à la fournir. Garder l'un sans l'autre, c'est le problème de « Tentatives de modifier la théorie de Maxwell ».",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "De l'inertie électromagnétique aux contraintes de Poincaré",
+    "hist.intro": "En vingt-cinq ans, l'idée d'une masse due au seul champ est passée d'un espoir à une contradiction, puis à un compromis.",
+    "hist.events": {
+      thomson: { who: "J. J. Thomson", what: "montre qu'une sphère chargée en mouvement emporte une énergie magnétique qui s'ajoute à son énergie cinétique.", context: "Tout se passe comme si sa masse augmentait d'une quantité proportionnelle au carré de la charge divisé par le rayon : la première masse électromagnétique." },
+      abraham: { who: "Max Abraham", what: "publie « Prinzipien der Dynamik des Elektrons », une dynamique de l'électron fondée sur le seul électromagnétisme.", context: "Son électron est une sphère rigide, qui garde sa forme en mouvement. Le travail paraît dans les Annalen der Physik, daté de 1902 ou de 1903 selon les références." },
+      lorentz: { who: "Hendrik Lorentz", what: "publie à Amsterdam son électron déformable, qui se contracte dans le sens du mouvement.", context: "Il y avance que toutes les forces, électriques ou non, doivent se transformer de la même façon d'un référentiel à l'autre." },
+      poincare: { who: "Henri Poincaré", what: "présente le 5 juin à l'Académie des sciences la note « Sur la dynamique de l'électron ».", context: "Le mémoire complet, paru en 1906 dans les Rendiconti del Circolo matematico di Palermo, ajoute à l'électron de Lorentz une pression non électrique qui le tient ensemble : les contraintes de Poincaré." },
+      fermi: { who: "Enrico Fermi", what: "montre, dans la Physikalische Zeitschrift, d'où vient le facteur 4/3.", context: "Le calcul habituel impose à l'électron une rigidité incompatible avec la relativité ; traitée de façon covariante, la masse électromagnétique devient U/c². Le travail est resté longtemps peu connu." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      thomson: { name: "Opacité des étoiles", text: "Le rayon classique de l'électron, r₀ = qₑ²/(4πε₀mₑc²) = 2,82 × 10⁻¹⁵\u00a0m, est la longueur qui sort de ce calcul ; il ne mesure pas la taille de l'électron. Elle sert pourtant partout : la section efficace de diffusion de la lumière par un électron libre vaut (8π/3) r₀² = 6,65 × 10⁻²⁹\u00a0m². Les modèles d'étoiles en tirent l'opacité d'un gaz complètement ionisé, environ 0,02(1 + X)\u00a0m²·kg⁻¹ pour une fraction massique d'hydrogène X." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      quatretiers: { prompt: "Pour une sphère chargée en surface, la masse tirée de l'impulsion du champ vaut 4/3 de U/c². Qu'en conclure ?",
+        options: { a: "La relativité est fausse pour les électrons.", b: "Il y a une erreur d'algèbre dans le calcul de l'impulsion.", c: "Le bilan oublie les forces non électriques qui tiennent la charge sur la sphère.", d: "L'énergie du champ n'a pas de masse." },
+        why: "Les forces électriques entre morceaux de la sphère sont toutes répulsives : sans autre force, la sphère éclate. Énergie et impulsion du seul champ ne forment pas un système isolé. Avec les contraintes de Poincaré, les deux masses s'accordent." },
+      explose: { prompt: "Une sphère de rayon 1,9\u00a0fm porte la charge de l'électron. Que vaut, en ordre de grandeur, la pression électrostatique qui tire sa surface vers l'extérieur ?",
+        options: { a: "Environ 10²⁹\u00a0Pa.", b: "Environ 10⁵\u00a0Pa, la pression atmosphérique.", c: "Zéro, puisque le champ est nul à l'intérieur.", d: "Environ 10¹¹\u00a0Pa." },
+        hint: "p = σ²/(2ε₀) avec σ = q/(4πa²) : la pression varie comme 1/a⁴.",
+        why: "σ = 1,6 × 10⁻¹⁹/(4π × (1,9 × 10⁻¹⁵)²) ≈ 3,6 × 10⁹\u00a0C·m⁻², d'où p ≈ (3,6 × 10⁹)²/(2 × 8,85 × 10⁻¹²) ≈ 7 × 10²⁹\u00a0Pa. Le champ est nul dedans, mais pas dehors : la surface sent la moyenne des deux." },
+      uniforme: { prompt: "L'électron avance à vitesse constante. Que vaut la somme des forces de ses parties les unes sur les autres ?",
+        options: { a: "Elle freine l'électron, à cause du retard.", b: "Elle l'accélère, à cause du retard.", c: "Elle dépend du sens du mouvement.", d: "Elle est nulle." },
+        why: "Le retard existe, mais pour un mouvement uniforme le champ de chaque morceau pointe depuis sa position présente : les forces s'annulent par paires. Il n'y a de force nette que si l'électron accélère." },
+      retard: { prompt: "Pourquoi les forces internes d'un électron accéléré ne s'annulent-elles plus ?",
+        options: { a: "Parce que la charge se déplace vers l'arrière de la sphère.", b: "Parce que chaque morceau reçoit le champ que les autres ont émis plus tôt, depuis une position et une vitesse anciennes.", c: "Parce que le champ magnétique n'obéit pas au principe d'action et de réaction en statique.", d: "Parce que la masse mécanique s'y ajoute." },
+        why: "L'influence électromagnétique met un temps fini à aller d'un morceau à l'autre. Pendant l'accélération, l'action d'un morceau sur un autre et la réaction ne sont plus exactement opposées : la somme retient l'électron." },
+      pointe: { prompt: "Dans (28.9), que se passe-t-il quand le rayon a tend vers zéro ?",
+        options: { a: "Le terme de masse devient infini, le terme en x⃛ reste, les suivants disparaissent.", b: "Tous les termes s'annulent.", c: "Tous les termes deviennent infinis.", d: "Le terme en x⃛ devient infini, le terme de masse reste fini." },
+        why: "Le terme de masse va comme 1/a, le terme en x⃛ ne dépend pas de a, les suivants contiennent a au numérateur." },
+      reaction: { prompt: "Pourquoi ne peut-on pas simplement supprimer le terme en x⃛ de (28.9) ?",
+        options: { a: "Parce qu'il est le plus grand des termes.", b: "Parce qu'il donne la masse de l'électron.", c: "Parce qu'il fait payer l'énergie rayonnée : sans lui, une charge accélérée rayonnerait gratuitement.", d: "Parce qu'il dépend de la répartition de la charge." },
+        why: "Une charge accélérée rayonne. La puissance fournie contre le terme en x⃛, moyennée sur un mouvement périodique, est exactement la puissance rayonnée : c'est le freinage par rayonnement." },
+      haltere: { prompt: "Pour l'haltère de la page, deux charges qe/2 à la distance d, le coefficient du terme en x⃛ est 1/3 au lieu de 2/3. Pourquoi ?",
+        options: { a: "Parce que l'haltère est plus petit que la sphère.", b: "Parce que la force d'une moitié sur l'autre ne paie que le terme croisé du rayonnement ; le reste reviendrait à la force de chaque moitié sur elle-même, laissée de côté.", c: "Parce que l'haltère ne rayonne pas.", d: "Parce que le mouvement est perpendiculaire à la tige." },
+        hint: "La puissance rayonnée est proportionnelle au carré de la charge totale, (q₁ + q₂)².",
+        why: "(q₁ + q₂)² = q₁² + q₂² + 2q₁q₂ ; avec q₁ = q₂ = qe/2, le terme croisé fait la moitié. Seul ce terme vient de l'action d'une moitié sur l'autre." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 28, §28-4 (texte original en anglais). Notations SI. Thomson : <i>Philosophical Magazine</i>, 5e série, vol. 11, 1881. Abraham : Wikisource, « Prinzipien der Dynamik des Elektrons ». Lorentz : <i>Proceedings of the Royal Academy of Sciences of Amsterdam</i>, vol. 6, 1904. Poincaré : <i>Comptes rendus</i>, vol. 140, 1905 ; <i>Rendiconti del Circolo matematico di Palermo</i>, vol. 21, 1906. Fermi : <i>Physikalische Zeitschrift</i>, vol. 23, 1922 ; Binder, <i>Foundations of Physics</i>, 2024. Rayon classique et section efficace de Thomson : CODATA 2022. Opacité : cours de structure stellaire de l'université de Princeton. Modèle de l'haltère et calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["surface", "a"],
+  ["vitre", "b"],
+  ["lac", "c"],
+  ["transverse", "d"],
+  ["eau", "a"],
+  ["calcite", "b"],
+  ["normale", "c"],
+  ["snell", "d"]
+ ]
+}

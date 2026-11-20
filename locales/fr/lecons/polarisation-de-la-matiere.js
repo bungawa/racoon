@@ -1,0 +1,100 @@
+/* Leçon « Polarisation de la matière » (Feynman II.32.1) : textes en français.
+   Une autre langue = locales/<langue>/lecons/polarisation-de-la-matiere.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Polarisation de la matière",
+    "crumb.jour": "Polarisation de la matière",
+    "h1": "Polarisation de la matière",
+    "lede": "La lumière qui traverse un verre secoue ses électrons. Chacun devient un petit dipôle qui oscille à la fréquence de l'onde, mais pas toujours en même temps qu'elle : en dessous de sa résonance il suit le champ, au-dessus il s'y oppose, et près d'elle il prend un quart de période de retard. Ce retard, c'est l'absorption. Tout tient dans une seule grandeur complexe, la polarisabilité α(ω).",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : l'oscillateur forcé amorti",
+
+    "s1.sec": "Décrire le système",
+    "s1.h2": "Un électron tenu par un ressort",
+    "s1.p1": "Dans « L’indice de réfraction », la lumière fait osciller les électrons d'un gaz, et leurs ondes ajoutées retardent l'onde qui passe. On reprend ici le même modèle, avec un frottement en plus. Un électron de charge <var>q</var><sub>e</sub> et de masse <var>m</var> est rappelé vers sa position d'équilibre comme par un ressort de pulsation propre ω<sub>0</sub> ; une force proportionnelle à sa vitesse, de coefficient γ, résume tout ce qui lui prend de l'énergie. Le champ électrique <var>E</var> de l'onde le pousse selon <var>x</var> :",
+    "val.32.1": "Approximation : modèle classique de l'électron lié, que la mécanique quantique justifie dans les cas simples. Il néglige la force magnétique <var>q</var><var>v</var> ∧ <var>B</var>, plus petite que la force électrique dans le rapport <var>v</var>/<var>c</var>, environ 6 × 10<sup>\u221212</sup> sous un faisceau de 1\u00a0kW·m<sup>\u22122</sup>. Le ressort reste linéaire tant que <var>x</var> est très petit devant la taille de l'atome, 10<sup>\u221210</sup>\u00a0m ; un champ proche du champ de liaison, 5 × 10<sup>11</sup>\u00a0V·m<sup>\u22121</sup>, le casse (optique non linéaire, ionisation). Le champ est pris uniforme sur l'atome : taille ≪ λ.",
+    "s1.p2": "Pour une onde sinusoïdale, on écrit le champ <var>E</var> = <var>E</var><sub>0</sub> e<sup><var>i</var>ω<var>t</var></sup> (la partie réelle est le champ physique) et l'on cherche <var>x</var> à la même pulsation. Chaque dérivée devient un facteur <var>i</var>ω, et l'équation différentielle devient une simple division :",
+    "val.32.3": "Approximation : c'est le régime établi de (32.1). Il ne vaut qu'après la disparition du régime transitoire, au bout d'une durée de l'ordre de 2/γ, et seulement pour un champ sinusoïdal ; pour un champ quelconque, on somme les composantes sinusoïdales, ce que permet la linéarité. Les mêmes limites que (32.1) : <var>x</var> ≪ 10<sup>\u221210</sup>\u00a0m.",
+    "sys.title": "Le système décrit : un électron dans un faisceau de lumière",
+    "sys1.body": "Un faisceau de lumière verte (500\u00a0nm) de {I} porte un champ d'amplitude {E}. Il agit sur un électron dont la résonance est dans l'ultraviolet, à 100\u00a0nm, comme celles d'un verre. Le champ de liaison de l'atome d'hydrogène, <var>e</var>/(4πε<sub>0</sub><var>a</var><sub>0</sub><sup>2</sup>), vaut {Eat} : le faisceau en est une fraction {r}. Le déplacement de l'électron, {x}, vaut {xa} fois le rayon de Bohr : la réponse est linéaire, et de très loin. Rapport ω/ω<sub>0</sub> = {w} : on est en dessous de la résonance. Le rapport <var>v</var>/<var>c</var> de la force magnétique à la force électrique vaut {b}.",
+
+    "s2.sec": "Polarisabilité",
+    "s2.h2": "Un nombre complexe qui dépend de la fréquence",
+    "s2.p1": "Le moment dipolaire induit est <var>p</var> = <var>q</var><sub>e</sub><var>x</var>. Il est proportionnel au champ, et le coefficient de proportionnalité définit la polarisabilité α de l'atome, qui a la dimension d'un volume :",
+    "val.32.6": "Exacte comme définition de α, une fois <var>p</var> proportionnel à <var>E</var>. L'expression de α est celle du modèle (32.1) : un seul électron, une seule résonance, en régime sinusoïdal établi. Statique, avec ω<sub>0</sub> à 100\u00a0nm, elle donne 9 × 10<sup>\u221230</sup>\u00a0m<sup>3</sup>, le même ordre de grandeur que la polarisabilité de la molécule d'azote, 2,2 × 10<sup>\u221229</sup>\u00a0m<sup>3</sup>, tirée de son indice dans « Ondes dans un diélectrique ».",
+    "s2.p2": "Un atome réel a plusieurs résonances : les fréquences des transitions entre ses niveaux. La mécanique quantique donne une somme de termes de la même forme, chacun pesé par une force d'oscillateur <var>f</var><sub><var>k</var></sub>, un nombre de l'ordre de 1 :",
+    "val.32.7": "Approximation : la forme est celle de la mécanique quantique pour une réponse linéaire, loin de la saturation des transitions. Les ω<sub>0<var>k</var></sub>, γ<sub><var>k</var></sub> et <var>f</var><sub><var>k</var></sub> ne se calculent pas ici : on les mesure. Les termes des résonances de l'infrarouge, celles des ions plus lourds, s'ajoutent de la même façon, avec un <var>f</var><sub><var>k</var></sub> qui contient le rapport des masses.",
+
+    "s3.sec": "Suivre, s'opposer, absorber",
+    "s3.h2": "La polarisabilité de part et d'autre de la résonance",
+    "s3.p1": "La figure trace α(ω), rapportée à sa valeur statique α(0) = <var>q</var><sub>e</sub><sup>2</sup>/(<var>m</var>ε<sub>0</sub>ω<sub>0</sub><sup>2</sup>), pour l'électron du système décrit. La partie réelle dit quelle part de <var>p</var> suit <var>E</var> ; la partie imaginaire, comptée positivement, celle qui a un quart de période de retard. Choisissez la pulsation de l'onde et l'amortissement.",
+    "fig.aria": "Parties réelle et imaginaire de la polarisabilité en fonction de la pulsation de l'onde",
+    "fig.legend.re": "Re α/α(0) : la part en phase avec E",
+    "fig.legend.im": "\u2212Im α/α(0) : la part en quadrature, qui absorbe",
+    "fig.w": "Pulsation de l'onde ω/ω₀",
+    "fig.g": "Amortissement γ/ω₀",
+    "fig.xaxis": "ω/ω₀",
+    "fig.yaxis": "α/α(0)",
+    "fig.k.retard": "Retard de <var>p</var> sur <var>E</var>",
+    "fig.f.retard": "soit {T} de retard",
+    "fig.k.alpha": "|α|",
+    "fig.f.alpha": "Re α/α(0) = {re} ; \u2212Im α/α(0) = {im}",
+    "fig.k.x": "Déplacement |<var>x</var>| à 1\u00a0kW·m<sup>\u22122</sup>",
+    "fig.f.x": "{r} fois le rayon de Bohr",
+    "fig.caption": "Loin sous la résonance, α est réelle et vaut α(0) : le dipôle suit le champ sans retard. Elle croît en approchant ω<sub>0</sub>, s'annule à ω<sub>0</sub> où le retard vaut 90°, puis devient négative : au-dessus, le dipôle oscille à l'opposé du champ. La partie imaginaire n'est grande que sur une largeur de l'ordre de γ autour de ω<sub>0</sub>. Réduire γ affine et grandit le pic.",
+    "s3.p2": "Le dipôle qui a un quart de période de retard est celui qui prend de l'énergie à l'onde : la force <var>q</var><sub>e</sub><var>E</var> fait alors en moyenne un travail positif sur l'électron, que le frottement dissipe. Sans retard, ou avec une demi-période de retard, ce travail est nul en moyenne. C'est pourquoi la partie imaginaire de α est la mesure de l'absorption, et pourquoi elle est négative avec la convention e<sup><var>i</var>ω<var>t</var></sup> : un milieu qui ne produit pas d'énergie a toujours Im α ≤ 0. Sa conséquence sur l'onde est dans « Indice de réfraction complexe ».",
+
+    "s4.sec": "De l'atome à la matière",
+    "s4.h2": "Un moment dipolaire par unité de volume",
+    "s4.p1": "Avec <var>N</var> atomes par unité de volume, tous polarisés de la même façon, le moment dipolaire par unité de volume est <var>P</var> = <var>N</var><var>p</var>, la polarisation de « Vecteur polarisation P » :",
+    "val.32.8": "Approximation : <var>E</var> est ici le champ qui agit sur chaque atome. Dans un gaz, c'est le champ moyen, tant que <var>N</var>α ≪ 1 (6 × 10<sup>\u22124</sup> pour l'azote à 273\u00a0K <span class=\"aux\">(0\u00a0°C)</span> sous 101\u00a0kPa). Dans un liquide ou un solide, les voisins polarisés ajoutent un champ <var>P</var>/(3ε<sub>0</sub>) du même ordre, et <var>P</var> n'est plus ε<sub>0</sub><var>N</var>α<var>E</var> : c'est l'objet de « Ondes dans un diélectrique ». <var>P</var> est une moyenne sur un volume qui contient beaucoup d'atomes, mais petit devant λ.",
+    "s4.p2": "Deux choses distinguent ce <var>P</var> de celui de l'électrostatique. Il dépend de la fréquence : à basse fréquence, la réponse est forte ; très au-dessus de toutes les résonances, elle est faible et de signe opposé. Et il n'est pas exactement en phase avec <var>E</var>. Pour les champs statiques, α(0) est la polarisabilité de « Polarisation électronique ». Ce qu'il faut maintenant, c'est mettre ce <var>P</var> dans les équations de Maxwell : c'est « Équations de Maxwell dans un diélectrique ».",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Des oscillateurs avant les électrons",
+    "hist.intro": "Le modèle de l'oscillateur est né pour expliquer la dispersion, vingt-cinq ans avant la découverte de l'électron ; la mécanique quantique en a gardé la forme.",
+    "hist.events": {
+      sellmeier: { who: "Wolfgang Sellmeier", what: "publie dans les Annalen der Physik und Chemie sa théorie des vibrations des particules d'un corps entraînées par la lumière.", context: "Chaque bande d'absorption y est une résonance, et l'indice suit une somme de termes en 1/(νₖ² \u2212 ν²). Elle explique la dispersion « anormale » que Christiansen puis Kundt venaient d'observer près des bandes d'absorption de certains liquides." },
+      ladenburg: { who: "Rudolf Ladenburg", what: "publie dans la Zeitschrift für Physik une interprétation quantique du « nombre d'électrons de dispersion ».", context: "Le poids de chaque terme de dispersion devient une propriété d'une transition de l'atome de Bohr. C'est l'ancêtre des forces d'oscillateur de (32.7)." },
+      kramers: { who: "Hendrik Kramers", what: "donne une formule quantique de la dispersion.", context: "Elle garde la forme d'une somme sur des oscillateurs, dont les fréquences sont celles des transitions de l'atome. Elle est l'un des points de départ de la mécanique des matrices de Heisenberg." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      verres: { name: "Catalogues de verres optiques", text: "Les fiches techniques des verres de Schott donnent pour chaque verre trois coefficients <var>B</var><sub><var>k</var></sub> et trois <var>C</var><sub><var>k</var></sub> d'une formule de Sellmeier, <var>n</var><sup>2</sup> \u2212 1 = Σ <var>B</var><sub><var>k</var></sub>λ<sup>2</sup>/(λ<sup>2</sup> \u2212 <var>C</var><sub><var>k</var></sub>), du proche ultraviolet à 2,3\u00a0µm. Chaque terme est un oscillateur de (32.7) sans amortissement. Pour le borosilicate le plus courant du catalogue, deux résonances sont dans l'ultraviolet, vers 77 et 141\u00a0nm, et une dans l'infrarouge, vers 10\u00a0µm. Les logiciels de calcul de systèmes optiques s'en servent pour chaque longueur d'onde." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      ressort: { prompt: "Dans (32.1), que représente la pulsation ω₀ ?",
+        options: { a: "La pulsation de l'onde lumineuse.", b: "La pulsation à laquelle l'électron tourne autour du noyau.", c: "La pulsation à laquelle l'électron oscillerait seul, écarté puis lâché : une résonance de l'atome.", d: "La fréquence des chocs de l'électron." },
+        why: "ω₀ est la pulsation propre du ressort qui rappelle l'électron. Pour un vrai atome, ce sont les pulsations de ses transitions, mesurées sur ses raies d'absorption." },
+      retard: { prompt: "L'onde a exactement la pulsation ω₀ de l'oscillateur. Comment le dipôle p oscille-t-il par rapport au champ E ?",
+        options: { a: "Avec un quart de période de retard : α est purement imaginaire.", b: "En phase, avec une amplitude infinie.", c: "En opposition de phase.", d: "En avance d'un quart de période." },
+        why: "À ω = ω₀, le dénominateur de (32.6) se réduit à iγω₀ : α = \u2212i × (réel positif). Le retard est de 90°, et le dipôle prend de l'énergie à l'onde." },
+      dessus: { prompt: "Très au-dessus de la résonance (ω ≫ ω₀), que devient α ?",
+        options: { a: "Elle tend vers α(0).", b: "Elle devient infinie.", c: "Elle est purement imaginaire.", d: "Elle est réelle, négative, et décroît comme 1/ω² : l'électron se comporte comme s'il était libre." },
+        hint: "Que reste-t-il du dénominateur de (32.6) quand ω² domine tout ?",
+        why: "α ≈ \u2212q²/(mε₀ω²). Le ressort et le frottement ne comptent plus : seule l'inertie freine l'électron, qui oscille à l'opposé du champ." },
+      imag: { prompt: "Que signifie physiquement la partie imaginaire de α ?",
+        options: { a: "Rien : seule la partie réelle d'un champ complexe est physique.", b: "La part du dipôle qui a un quart de période de retard, celle qui prend de l'énergie à l'onde.", c: "La part du dipôle perpendiculaire au champ.", d: "Une erreur de signe de la convention e^(iωt)." },
+        why: "Le champ fait un travail moyen non nul sur l'électron seulement par la part de son mouvement en quadrature. Ce travail est dissipé par le frottement γ : c'est l'absorption." },
+      lineaire: { prompt: "Pourquoi peut-on dire que la polarisation est proportionnelle au champ, même sous un faisceau de 1 kW·m⁻² ?",
+        options: { a: "Parce que le champ de l'onde est près d'un milliard de fois plus faible que le champ qui lie l'électron à l'atome.", b: "Parce que l'électron est très léger.", c: "Parce que la lumière est une onde transversale.", d: "Parce que γ est petit." },
+        why: "Un champ de l'ordre de 10³ V·m⁻¹ contre un champ de liaison de 5 × 10¹¹ V·m⁻¹ : le déplacement de l'électron est de l'ordre de 10⁻⁸ fois la taille de l'atome, et le ressort est parfaitement linéaire. Il faut des lasers à impulsions intenses pour voir les écarts." },
+      somme: { prompt: "Dans (32.7), que fait le facteur f_k de chaque terme ?",
+        options: { a: "Il compte le nombre d'électrons de l'atome.", b: "Il donne la fréquence de la résonance k.", c: "Il mesure la force de chaque résonance, un nombre de l'ordre de 1 que donne la mécanique quantique.", d: "Il corrige l'effet du champ des atomes voisins." },
+        why: "Chaque transition de l'atome agit comme un oscillateur de poids f_k. Le champ des voisins est une autre correction, qui apparaît dans un milieu dense." },
+      statique: { prompt: "Un électron a sa résonance à 100 nm (ω₀ ≈ 1,9 × 10¹⁶ rad·s⁻¹). Quelle est sa polarisabilité statique α(0) = q²/(mε₀ω₀²) ?",
+        options: { a: "Environ 9 × 10⁻²⁰ m³.", b: "Environ 9 × 10⁻³⁰ m³, quelques fois le volume 4πa₀³ d'un atome d'hydrogène.", c: "Environ 9 × 10⁻⁴⁰ m³.", d: "Environ 1 m³." },
+        hint: "q²/(mε₀) ≈ 3,2 × 10³ m³·s⁻².",
+        why: "3,2 × 10³/(1,9 × 10¹⁶)² ≈ 9 × 10⁻³⁰ m³. La polarisabilité est un volume de la taille de l'atome : un électron très lié (ω₀ grand) se laisse peu déplacer." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 32, §32-1 (texte original en anglais). Notations SI, convention e<sup><var>i</var>ω<var>t</var></sup>. Sellmeier : W. Sellmeier, <i>Annalen der Physik und Chemie</i> (1872) ; M. Jordi Taltavull, <i>Optical dispersion and Bohr's atomic model</i>, Max Planck Research Library (2018). Ladenburg : <i>Zeitschrift für Physik</i> 4, 451–468 (1921) ; M. Jordi Taltavull, <i>The European Physical Journal H</i> (2020). Kramers : A. Duncan et M. Janssen, arXiv physics/0610192. Schott, fiches techniques des verres optiques (coefficients de Sellmeier). Électron, faisceau et calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["noeud", "a"],
+  ["epais", "b"],
+  ["surlefil", "c"],
+  ["centre", "d"],
+  ["carre", "a"],
+  ["axe", "b"],
+  ["galva", "c"],
+  ["gradient", "d"]
+ ]
+}

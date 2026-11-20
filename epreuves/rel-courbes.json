@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["cercle", "a"],
+  ["carre", "b"],
+  ["plaque", "c"],
+  ["cylindre", "d"],
+  ["dehors", "a"],
+  ["six", "b"],
+  ["soleil", "c"],
+  ["compact", "d"]
+ ]
+}

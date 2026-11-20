@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Impédances</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-ondes-milieux" data-i18n="monde.ondes-milieux"></a><span class="aux">›</span><a href="/racoon/etape?id=circuits-impedances" data-i18n="etape.circuits-impedances"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/auto-inductance" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi>V</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><mover><mi>V</mi><mo>^</mo></mover><msup><mi>e</mi><mrow><mi>i</mi><mi>ω</mi><mi>t</mi></mrow></msup></math><span class="n">(22.1)</span></div>
+    <p class="validite" data-i18n-html="val.22.1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mfrac><mi>V</mi><mi>I</mi></mfrac><mo>=</mo><mfrac><mover><mi>V</mi><mo>^</mo></mover><mover><mi>I</mi><mo>^</mo></mover></mfrac><mo>=</mo><mi>z</mi></math><span class="n">(22.5)</span></div>
+    <p class="validite" data-i18n-html="val.22.5"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mi>V</mi><mo>=</mo><mi>i</mi><mi>ω</mi><mi>L</mi><mi>I</mi></math><span class="n">(22.4)</span></div>
+    <p class="validite" data-i18n-html="val.22.4"></p>
+    <div class="eq"><math display="block"><msub><mi>z</mi><mi>L</mi></msub><mo>=</mo><mi>i</mi><mi>ω</mi><mi>L</mi></math><span class="n">(22.6)</span></div>
+    <p class="validite" data-i18n-html="val.22.6"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>z</mi><mi>C</mi></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mi>i</mi><mi>ω</mi><mi>C</mi></mrow></mfrac></math><span class="n">(22.9)</span></div>
+    <p class="validite" data-i18n-html="val.22.9"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>z</mi><mi>R</mi></msub><mo>=</mo><mi>R</mi></math><span class="n">(22.10)</span></div>
+    <p class="validite" data-i18n-html="val.22.10"></p>
+    <p data-i18n-html="s3.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="list keyed" id="composants"></div>
+    <p data-i18n-html="s4.p2"></p>
+    <figure class="chart">
+      <svg class="fig" id="trace" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.reel"></span><span class="c-label-2" data-i18n="fig.legend.ideal"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" role="group" id="mode" data-i18n-attr="aria-label:fig.composant">
+            <button type="button" data-m="bobine" data-i18n="fig.bobine"></button>
+            <button type="button" data-m="condensateur" data-i18n="fig.condensateur"></button>
+            <button type="button" data-m="resistance" data-i18n="fig.resistance"></button>
+          </div>
+          <div class="ctl"><div class="row"><label for="lf" data-i18n="fig.f"></label><output id="lfv" for="lf"></output></div>
+            <input id="lf" type="range" min="0" max="9" step="0.01" value="4.3"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="fig.k.z"></span><span class="v" id="vz"></span><span class="f" id="fz"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig.k.ecart"></span><span class="v" id="ve"></span><span class="f" id="fe"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig.k.taille"></span><span class="v" id="vt"></span><span class="f" id="ft"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s4.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/impedances.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/ondes-milieux.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const M = OndesMilieux;
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+(() => { const IDS = ["bobine", "condensateur", "resistance"]; keyed($("composants"), t("composants.tag"), IDS, textOf("composants.items", IDS)); })();
+
+/* ---------- quand un composant réel est-il son modèle idéal ? ---------- */
+(() => {
+  const TOL = 0.01, F0 = 1, F1 = 1e9, Z0 = 1e-2, Z1 = 1e10, seg = $("mode"), lf = $("lf");
+  let type = "bobine";
+  const clampZ = z => Math.min(Z1, Math.max(Z0, z));
+  const LF = Array.from({ length: 451 }, (_, i) => 9 * i / 450);
+  function draw() {
+    const f = 10 ** +lf.value, w = 2 * Math.PI * f, s = M.composant(type, w), d = M.domaineIdeal(type, TOL);
+    const svg = $("trace"); svg.innerHTML = "";
+    const P = Plot.axes(svg, { fmt: F, w: 640, h: 280, pad: { l: 60, b: 44 }, x: { scale: "log", domain: [F0, F1], label: t("fig.xaxis") }, y: { scale: "log", domain: [Z0, Z1], label: t("fig.yaxis") } });
+    if (d) { const a = Math.max(F0, d.wmin / (2 * Math.PI)), b = Math.min(F1, d.wmax / (2 * Math.PI));
+      Plot.el("rect", { x: P.x(a), y: P.y(Z1), width: P.x(b) - P.x(a), height: P.y(Z0) - P.y(Z1), class: "area" }, P.g); }
+    const pts = LF.map(l => M.composant(type, 2 * Math.PI * 10 ** l));
+    Plot.el("path", { d: Plot.path(LF.map((l, i) => [P.x(10 ** l), P.y(clampZ(Math.hypot(pts[i].Zideal.re, pts[i].Zideal.im)))])), class: "stroke thin dash c-label-2" }, P.g);
+    Plot.el("path", { d: Plot.path(LF.map((l, i) => [P.x(10 ** l), P.y(clampZ(pts[i].module))])), class: "curve" }, P.g);
+    Plot.el("circle", { cx: P.x(f), cy: P.y(clampZ(s.module)), r: 5, class: "dot" }, P.g);
+    $("lfv").textContent = F.si(f, "Hz");
+    $("vz").textContent = F.si(s.module, "Ω");
+    $("fz").textContent = t("fig.f.z", { phi: F.qty(F.fix(s.phase, 2), "rad"), nature: t(Math.abs(s.Z.im) < 0.01 * s.module ? "fig.nature.r" : s.Z.im > 0 ? "fig.nature.l" : "fig.nature.c") });
+    $("ve").textContent = s.ecart < 1e-3 ? F.sci(s.ecart, 2) : F.qty(F.num(100 * s.ecart, 3), "%");
+    $("fe").textContent = d ? t(d.wmin === 0 ? "fig.f.domaine0" : "fig.f.domaine", { a: F.si(d.wmin / (2 * Math.PI), "Hz"), b: F.si(d.wmax / (2 * Math.PI), "Hz") }) : t("fig.f.jamais");
+    $("vt").textContent = F.sci(s.rapportTaille, 2);
+    $("ft").textContent = t("fig.f.taille", { l: F.si(s.lambda, "m"), d: F.si(s.taille, "m") });
+    seg.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.m === type)));
+  }
+  seg.querySelectorAll("button").forEach(x => x.onclick = () => { type = x.dataset.m; draw(); });
+  lf.oninput = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["henry", 1832, "experiment"], ["heaviside", 1886, "idea"], ["steinmetz", 1893, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["fiche", "mesureur"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["continu", "c"], ["phase", "a"], ["ideal", "d"], ["fil", "b"], ["haut", "c"], ["taille", "a"], ["fer", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 221 });
+})();
+</script>
+</body>
+</html>

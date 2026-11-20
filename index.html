@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-i18n="page.title">Parcours</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page carte">
+  <header class="head">
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags"><a class="chip plain" href="/racoon/atlas" data-i18n="head.atlas"></a><a class="chip plain" href="/racoon/questions" data-i18n="head.questions"></a><a class="chip plain" href="/racoon/programmes" data-i18n="head.programmes"></a><a class="chip plain" href="/racoon/progression" data-i18n="head.progression"></a></div>
+  </header>
+
+  <section class="card">
+    <div class="stats">
+      <div class="stat"><span class="k" data-i18n="bilan.k"></span><span class="v" id="bilan"></span><span class="f" id="bilanf"></span>
+        <div class="meter" role="progressbar" aria-valuemin="0" id="bilanbar" data-i18n-attr="aria-label:bilan.k"><i></i></div></div>
+      <div class="stat"><span class="k" data-i18n="ici.k"></span><span class="v"><a class="btn grand" id="ici" href="/racoon/"></a></span><span class="f" id="icif"></span></div>
+    </div>
+    <div class="legend"><span class="s-acquise" data-i18n="etat.acquise"></span><span class="ring s-ouverte" data-i18n="etat.ouverte"></span><span class="ring s-grisee" data-i18n="etat.grisee"></span><span class="ring s-a-venir" data-i18n="etat.a-venir"></span></div>
+    <p class="caption" id="status" role="status"></p>
+  </section>
+
+  <div class="group" id="mondes"></div>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/index.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/progression.js"></script>
+<script src="/racoon/gist.js"></script>
+<script>
+/* the old notion map lived here: its links /?notion= and /?piste= now open the Atlas */
+if (/[?&](notion|piste)=/.test(location.search)) location.replace("/racoon/atlas" + location.search + location.hash);
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = Parcours, el = Plot.el;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+let data = null, acquis = [];
+const best = id => acquis.find(a => a.etape === id);
+const etatLabel = id => { const s = P.etat(data, acquis, id), b = best(id); return s === "acquise" && b ? t("etat.score", { score: b.score, total: b.total }) : t("etat." + s); };
+
+/* ---------- the map: one card per monde, its étapes on a winding road ---------- */
+function render() {
+  const ici = P.courante(data, acquis), avec = P.ordre(data).filter(id => data.etapes[id].lecons.length && !data.etapes[id].bonus);
+  const faites = avec.filter(id => P.etat(data, acquis, id) === "acquise").length, bar = $("bilanbar");
+  $("bilan").textContent = t("bilan.v", { n: faites, total: avec.length });
+  $("bilanf").textContent = t("bilan.f", { lecons: P.ordreLecons(data).length });
+  bar.setAttribute("aria-valuemax", avec.length); bar.setAttribute("aria-valuenow", faites);
+  bar.firstElementChild.style.width = 100 * faites / avec.length + "%";
+  if (ici) { $("ici").textContent = t("etape." + ici); $("ici").href = "/racoon/etape?id=" + ici; $("icif").textContent = t("monde." + data.etapes[ici].monde) + " · " + t("etape." + ici + ".but"); }
+  else { $("ici").textContent = t("ici.fin"); $("ici").href = "/racoon/atlas"; $("icif").textContent = ""; }
+
+  let rang = 0;
+  $("mondes").innerHTML = data.mondes.map(m => {
+    const bonus = m.etapes.every(id => data.etapes[id].bonus), n = m.etapes.filter(id => P.etat(data, acquis, id) === "acquise").length;
+    return `<section class="card monde" id="monde-${esc(m.id)}" aria-labelledby="h-${esc(m.id)}">
+      <span class="sec">${esc(bonus ? t("monde.bonus") : t("monde.rang", { n: ++rang }))}</span>
+      <h2 id="h-${esc(m.id)}">${esc(t("monde." + m.id))}</h2>
+      <p class="caption">${esc(t("monde." + m.id + ".sous"))}</p>
+      <span class="bilan">${esc(t("monde.bilan", { n, total: m.etapes.length }))}</span>
+      <ol class="chemin" aria-label="${esc(t("chemin.aria", { monde: t("monde." + m.id) }))}">${m.etapes.map((id, i) => {
+        const s = P.etat(data, acquis, id), here = id === ici;
+        return `<li class="s-${s}${here ? " courante" : ""}" data-id="${esc(id)}">
+          <a class="etape" href="/racoon/etape?id=${esc(id)}" aria-label="${esc(t(here ? "etape.aria.ici" : "etape.aria", { n: i + 1, titre: t("etape." + id), etat: etatLabel(id) }))}"${here ? ' aria-current="step"' : ""}>
+            <span class="pastille" aria-hidden="true">${i + 1}</span><span class="nom">${esc(t("etape." + id))}</span><span class="etat">${esc(etatLabel(id))}</span></a></li>`;
+      }).join("")}</ol></section>`;
+  }).join("");
+  layout();
+}
+
+/* place the étapes in rows that turn back at each end (a snake), and draw the road through their markers */
+const CELL = 150, MARK = 32;                                // cell width; centre of the marker below the top of its cell
+function layout() {
+  document.querySelectorAll("#mondes .chemin").forEach(ol => {
+    const items = [...ol.children].filter(li => li.tagName === "LI"), W = ol.clientWidth;
+    if (!W) return;
+    const cols = Math.max(2, Math.min(items.length, Math.floor(W / CELL))), w = Math.min(190, W / cols), off = (W - cols * w) / 2;
+    items.forEach(li => { li.style.width = w + "px"; });
+    const rowH = Math.max(...items.map(li => li.offsetHeight)) + 36;
+    const pts = items.map((li, i) => {
+      const r = Math.floor(i / cols), k = i % cols, c = r % 2 ? cols - 1 - k : k, x = off + c * w, y = r * rowH;
+      li.style.left = x + "px"; li.style.top = y + "px";
+      return { x: x + w / 2, y: y + MARK + 4, fait: li.classList.contains("s-acquise") };
+    });
+    ol.style.height = Math.ceil(items.length / cols) * rowH - 30 + "px";
+    ol.querySelector("svg.trace")?.remove();
+    const svg = el("svg", { class: "trace", "aria-hidden": "true" });
+    ol.prepend(svg);
+    pts.slice(1).forEach((b, i) => {
+      const a = pts[i], d = a.y === b.y ? `M${a.x} ${a.y} C${(a.x + b.x) / 2} ${a.y - 14} ${(a.x + b.x) / 2} ${b.y + 14} ${b.x} ${b.y}`
+        : `M${a.x} ${a.y} C${a.x + (a.x > W / 2 ? 1 : -1) * w * .55} ${a.y} ${b.x + (b.x > W / 2 ? 1 : -1) * w * .55} ${b.y} ${b.x} ${b.y}`;
+      el("path", { d, class: a.fait && b.fait ? "fait" : "" }, svg);
+    });
+  });
+}
+new ResizeObserver(() => data && layout()).observe($("mondes"));
+
+(async () => {
+  const get = url => fetch(url, { cache: "no-store" }).then(r => r.ok ? r.json() : Promise.reject(r.status));
+  const [parcours] = await Promise.allSettled([get("/racoon/parcours.json")]);
+  if (parcours.status !== "fulfilled") { $("status").textContent = t("load.parcours"); return; }
+  data = parcours.value;
+  acquis = Progression.page().acquis();                  // kept in this browser (public/progression.js)
+  Gist.page().demarrer().then(r => { if (r.change) { acquis = Progression.page().acquis(); render(); } });   // a linked Gist may know more
+  render();
+  if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
+})();
+</script>
+</body>
+</html>

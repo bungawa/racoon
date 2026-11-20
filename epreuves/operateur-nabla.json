@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["divergence", "a"],
+  ["rotationnel", "b"],
+  ["fourier", "c"],
+  ["vitre", "d"],
+  ["identites", "a"],
+  ["moyenne", "b"],
+  ["polaire", "c"],
+  ["deuxnablas", "d"]
+ ]
+}

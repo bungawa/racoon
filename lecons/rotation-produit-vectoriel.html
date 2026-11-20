@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Les équations de la rotation en produit vectoriel</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-solide" data-i18n="monde.solide"></a><span class="aux">›</span><a href="/racoon/etape?id=rotation-espace" data-i18n="etape.rotation-espace"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-solide" href="/racoon/atlas?piste=solide" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/moments-en-trois-dimensions" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msub><mover accent="true"><mi>L</mi><mo>→</mo></mover><mi>O</mi></msub><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mover accent="true"><mrow><mi>O</mi><mi>P</mi></mrow><mo>→</mo></mover><mi>i</mi></msub><mo>∧</mo><msub><mi>m</mi><mi>i</mi></msub><msub><mover accent="true"><mi>v</mi><mo>→</mo></mover><mi>i</mi></msub></math><span class="n">(20.12a)</span></div>
+    <p class="validite" data-i18n-html="val.def"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mi mathvariant="normal">d</mi><msub><mover accent="true"><mi>L</mi><mo>→</mo></mover><mi>O</mi></msub></mrow><mrow><mi mathvariant="normal">d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mover accent="true"><mrow><mi>O</mi><mi>P</mi></mrow><mo>→</mo></mover><mi>i</mi></msub><mo>∧</mo><msub><mover accent="true"><mi>F</mi><mo>→</mo></mover><mrow><mi>i</mi><mo>,</mo><mi data-i18n="eq.ext"></mi></mrow></msub></math><span class="n">(20.14)</span></div>
+    <p class="validite" data-i18n-html="val.loi"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mover accent="true"><mi>v</mi><mo>→</mo></mover><mo>=</mo><mover accent="true"><mi>ω</mi><mo>→</mo></mover><mo>∧</mo><mover accent="true"><mrow><mi>O</mi><mi>P</mi></mrow><mo>→</mo></mover></math></div>
+    <p class="validite" data-i18n-html="val.vitesse"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mi>P</mi><mo>=</mo><mover accent="true"><mi mathvariant="script">M</mi><mo>→</mo></mover><mo>·</mo><mover accent="true"><mi>ω</mi><mo>→</mo></mover></math></div>
+    <p class="validite" data-i18n-html="val.puissance"></p>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="eq"><math display="block"><mover accent="true"><mi>ω</mi><mo>→</mo></mover><mo>=</mo><msub><mover accent="true"><mi>ω</mi><mo>→</mo></mover><mn>1</mn></msub><mo>+</mo><msub><mover accent="true"><mi>ω</mi><mo>→</mo></mover><mn>2</mn></msub></math></div>
+    <p class="validite" data-i18n-html="val.somme"></p>
+    <p data-i18n-html="s2.p4"></p>
+    <figure>
+      <svg class="fig" id="dessus" viewBox="0 0 640 300" role="img" data-i18n-attr="aria-label:sim.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="sim.legend.xy"></span><span class="c-warn" data-i18n="sim.legend.yx"></span><span class="c-ok ring" data-i18n="sim.legend.unique"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="al" data-i18n="sim.alpha"></label><output id="alv" for="al"></output></div>
+            <input id="al" type="range" min="1" max="90" step="1" value="30"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="sim.k.ordre"></span><span class="v" id="vordre"></span><span class="f" id="fordre"></span></div>
+          <div class="stat"><span class="k" data-i18n="sim.k.somme"></span><span class="v" id="vsomme"></span><span class="f" id="fsomme"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="sim.caption"></figcaption>
+    </figure>
+    <figure class="chart">
+      <svg class="fig" id="ecarts" role="img" data-i18n-attr="aria-label:ch.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="ch.legend.ordre"></span><span class="c-warn" data-i18n="ch.legend.somme"></span><span class="c-label-2 ring" data-i18n="ch.legend.pente"></span></div>
+      <figcaption data-i18n-html="ch.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="list keyed" id="sys"></div>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/rotation-produit-vectoriel.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/cinematique.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/dynamique.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/lecons/travail.js"></script>
+<script src="/racoon/lecons/algebre-vectorielle.js"></script>
+<script src="/racoon/solide.js"></script>
+<script src="/racoon/lecons/rotation-espace.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+const fill = (s, v) => s.replace(/\{(\w+)\}/g, (m, k) => k in v ? v[k] : m);
+const DEG = 180 / Math.PI, X = [1, 0, 0], Y = [0, 1, 0], Z = [0, 0, 1];
+
+/* ---------- deux rotations finies d'angle α, autour de x puis de y, et l'inverse ---------- */
+(() => {
+  const P = Plot.el, svg = $("dessus");
+  /* the gaps over the whole range, for the chart: computed once */
+  const AS = Array.from({ length: 61 }, (_, i) => 0.5 * Math.pow(180, i / 60));          // 0,5° to 90°
+  const G = AS.map(a => RotEsp.ordreRotations(X, Y, a / DEG));
+  const ch = $("ecarts");
+  const { x: Xc, y: Yc, g } = Plot.axes(ch, { fmt: F, w: 640, h: 280, pad: { b: 44 },
+    x: { domain: [0.5, 100], scale: "log", label: t("ch.x") }, y: { domain: [1e-3, 1000], scale: "log", label: t("ch.y") } });
+  const line = (arr, cls) => P("path", { d: arr.map((v, i) => (i ? "L" : "M") + Xc(AS[i]).toFixed(1) + " " + Yc(Math.max(v, 1e-3)).toFixed(1)).join(""), class: cls }, g);
+  line(G.map(q => q.ordre * DEG), "curve");
+  line(G.map(q => q.somme * DEG), "ref");
+  line(AS.map(a => (a / DEG) ** 2 * DEG), "zero");
+  const dots = P("g", {}, g);
+
+  function upd() {
+    const a = +$("al").value, r = a / DEG;
+    $("alv").textContent = F.qty(F.num(a, 3), "°");
+    const Rx = AlgVec.rotation(X, r), Ry = AlgVec.rotation(Y, r);
+    const xy = AlgVec.appliquer(Ry, AlgVec.appliquer(Rx, Z)), yx = AlgVec.appliquer(Rx, AlgVec.appliquer(Ry, Z));
+    const un = AlgVec.appliquer(AlgVec.rotation([1, 1, 0], r * Math.SQRT2), Z);
+    const o = RotEsp.ordreRotations(X, Y, r);
+    $("vordre").textContent = F.qty(F.num(o.ordre * DEG, 3), "°");
+    $("fordre").textContent = t("sim.f.ordre", { p: F.qty(F.num(r * r * DEG, 3), "°"), q: F.num(o.ordre / (r * r), 3) });
+    $("vsomme").textContent = F.qty(F.num(o.somme * DEG, 3), "°");
+    $("fsomme").textContent = t("sim.f.somme", { p: F.qty(F.num(r * r * DEG / 2, 3), "°"), q: F.num(o.somme / (r * r), 3) });
+    /* top view: where the tip of the vertical unit vector ends up, seen from above */
+    svg.innerHTML = "";
+    const cx = 320, cy = 150, K = 120, gg = P("g", {}, svg);
+    P("circle", { cx, cy, r: K, class: "stroke thin c-label-2" }, gg);
+    P("line", { x1: cx - K - 10, y1: cy, x2: cx + K + 10, y2: cy, class: "stroke thin c-label-2" }, gg);
+    P("line", { x1: cx, y1: cy + K + 10, x2: cx, y2: cy - K - 10, class: "stroke thin c-label-2" }, gg);
+    P("text", { x: cx + K + 14, y: cy + 4 }, gg).textContent = t("fig.x");
+    P("text", { x: cx + 4, y: cy - K - 14 }, gg).textContent = t("fig.y");
+    P("circle", { cx, cy, r: 3, class: "fill c-label-2" }, gg);
+    [[xy, "c-tint", "fill"], [yx, "c-warn", "fill"], [un, "c-ok", "stroke"]].forEach(([v, c, kind]) => {
+      P("line", { x1: cx, y1: cy, x2: cx + K * v[0], y2: cy - K * v[1], class: "stroke thin " + c }, gg);
+      P("circle", { cx: cx + K * v[0], cy: cy - K * v[1], r: kind === "fill" ? 5 : 8, class: kind + " " + c }, gg);
+    });
+    const g2 = P("g", {}, svg);
+    P("text", { x: 16, y: 24 }, g2).textContent = t("fig.titre");
+    dots.innerHTML = "";
+    P("circle", { cx: Xc(a), cy: Yc(o.ordre * DEG), r: 5, class: "dot" }, dots);
+    P("circle", { cx: Xc(a), cy: Yc(Math.max(o.somme * DEG, 1e-3)), r: 5, class: "dot" }, dots);
+  }
+  $("al").oninput = upd; upd();
+})();
+
+/* ---------- décrire le système ---------- */
+(() => {
+  const IDS = ["rigide", "galileen", "interieur"], items = textOf("sys.items", IDS);
+  const rho = 7850, E = 2.1e11, v = 0.1 * 1000;                  // acier ; disque de 10 cm de rayon à 1 000 rad/s
+  const vals = { def: F.sci(rho * v * v / E, 1), cor: F.sci(Constantes.Omega_E, 2) };
+  keyed($("sys"), t("sys.tag"), IDS, Object.fromEntries(IDS.map(id => [id, { name: items[id].name, text: fill(items[id].text, vals) }])));
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["euler", 1776, "idea"], ["rodrigues", 1840, "idea"], ["iphone", 2010, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["gyrometre"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["vitesse", "c"], ["sens", "a"], ["ordre", "d"], ["petit", "b"], ["terre", "c"], ["puissance", "a"], ["interieur", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 2002 });
+})();
+</script>
+</body>
+</html>

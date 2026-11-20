@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Champs irrotationnels et champs à flux conservatif</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-outils" data-i18n="monde.outils"></a><span class="aux">›</span><a href="/racoon/etape?id=circulation-et-stokes" data-i18n="etape.circulation-et-stokes"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fond" href="/racoon/atlas?piste=fond" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/theoreme-de-stokes" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mover accent="true"><mo>∇</mo><mo>→</mo></mover><mo>∧</mo><mo stretchy="false">(</mo><mover accent="true"><mo>∇</mo><mo>→</mo></mover><mi>φ</mi><mo stretchy="false">)</mo><mo>=</mo><mover accent="true"><mn>0</mn><mo>→</mo></mover></math></div>
+    <p class="validite" data-i18n-html="val.rotgrad"></p>
+    <div class="box warn"><b data-i18n="s1.warn.title"></b>
+      <p data-i18n-html="s1.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mo>∮</mo><mi>S</mi></msub><msub><mrow><mo stretchy="false">(</mo><mover accent="true"><mo>∇</mo><mo>→</mo></mover><mo>∧</mo><mover accent="true"><mi>C</mi><mo>→</mo></mover><mo stretchy="false">)</mo></mrow><mi>n</mi></msub><mspace width="0.1em"/><mi mathvariant="normal">d</mi><mi>a</mi><mo>=</mo><mn>0</mn></math><span class="n">(3.39)</span></div>
+    <p class="validite" data-i18n-html="val.3.39"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><msub><mo>∫</mo><mi>V</mi></msub><mover accent="true"><mo>∇</mo><mo>→</mo></mover><mo>·</mo><mo stretchy="false">(</mo><mover accent="true"><mo>∇</mo><mo>→</mo></mover><mo>∧</mo><mover accent="true"><mi>C</mi><mo>→</mo></mover><mo stretchy="false">)</mo><mspace width="0.1em"/><mi mathvariant="normal">d</mi><mi>V</mi><mo>=</mo><mn>0</mn><mspace width="1.2em"/><mo>⇒</mo><mspace width="1.2em"/><mover accent="true"><mo>∇</mo><mo>→</mo></mover><mo>·</mo><mo stretchy="false">(</mo><mover accent="true"><mo>∇</mo><mo>→</mo></mover><mo>∧</mo><mover accent="true"><mi>C</mi><mo>→</mo></mover><mo stretchy="false">)</mo><mo>=</mo><mn>0</mn></math><span class="n">(3.41)</span></div>
+    <p class="validite" data-i18n-html="val.3.41"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys"></p>
+    </div>
+    <figure>
+      <svg class="fig" id="champ" viewBox="0 0 640 400" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="panel">
+        <div class="seg" role="group" id="champs" data-i18n-attr="aria-label:fig.choix">
+          <button type="button" data-c="selle" aria-pressed="true" data-i18n="champ.selle"></button>
+          <button type="button" data-c="etirement" data-i18n="champ.etirement"></button>
+          <button type="button" data-c="bloc" data-i18n="champ.bloc"></button>
+          <button type="button" data-c="cellules" data-i18n="champ.cellules"></button>
+          <button type="button" data-c="tourbillon" data-i18n="champ.tourbillon"></button>
+          <button type="button" data-c="rankine" data-i18n="champ.rankine"></button>
+          <button type="button" data-c="source" data-i18n="champ.source"></button>
+        </div>
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="cx" data-i18n="fig.cx"></label><output id="cxr" for="cx"></output></div>
+            <input id="cx" type="range" min="-12" max="12" step="0.5" value="5"></div>
+          <div class="ctl"><div class="row"><label for="cy" data-i18n="fig.cy"></label><output id="cyr" for="cy"></output></div>
+            <input id="cy" type="range" min="-8" max="8" step="0.5" value="2"></div>
+          <div class="ctl"><div class="row"><label for="rr" data-i18n="fig.r"></label><output id="rrr" for="rr"></output></div>
+            <input id="rr" type="range" min="1" max="8" step="0.5" value="3"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.rot"></span><span class="v" id="vrot"></span><span class="f" id="frot"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.circ"></span><span class="v" id="vcirc"></span><span class="f" data-i18n="fig.f.circ"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.div"></span><span class="v" id="vdiv"></span><span class="f" id="fdiv"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.flux"></span><span class="v" id="vflux"></span><span class="f" data-i18n="fig.f.flux"></span></div>
+        </div>
+      </div>
+      <p id="note"></p>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="panel">
+      <div class="controls"><button class="btn tinted" type="button" id="tirage" data-i18n="id.tirer"></button></div>
+      <div class="stats">
+        <div class="stat"><span class="k" data-i18n-html="id.k.grad"></span><span class="v" id="vgrad"></span><span class="f" data-i18n="id.f.grad"></span></div>
+        <div class="stat"><span class="k" data-i18n-html="id.k.rotgrad"></span><span class="v" id="vrotgrad"></span><span class="f" data-i18n="id.f.zero"></span></div>
+        <div class="stat"><span class="k" data-i18n-html="id.k.rot"></span><span class="v" id="vrota"></span><span class="f" data-i18n="id.f.rot"></span></div>
+        <div class="stat"><span class="k" data-i18n-html="id.k.divrot"></span><span class="v" id="vdivrot"></span><span class="f" data-i18n="id.f.zero"></span></div>
+      </div>
+    </div>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/irrotationnel-et-flux-conservatif.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/lecons/circulation.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = Plot.el;
+const C2 = "m²·s⁻¹";
+
+/* ---------- the system: an eddy with a core ---------- */
+const EDDY = { G: 20, rc: 2 };
+(() => {
+  const vmax = EDDY.G / (2 * Math.PI * EDDY.rc), rot = EDDY.G / (Math.PI * EDDY.rc * EDDY.rc), R = 6;
+  $("sys").innerHTML = t("sys.body", { G: F.num(EDDY.G, 2), rc: F.num(EDDY.rc, 1), v: F.fix(vmax, 1), rot: F.fix(rot, 2), R: F.num(R, 1), q: F.fix((EDDY.rc / R) ** 2, 2) });
+})();
+
+/* ---------- test a field: zero or not, everywhere; circulation and flux on a loop ---------- */
+(() => {
+  const svg = $("champ"), S = 20, X = x => 320 + S * x, Y = y => 200 - S * y;
+  const FIELDS = { selle: [0.1], etirement: [0.1], bloc: [0.1], cellules: [1, Math.PI / 8], tourbillon: [EDDY.G], rankine: [EDDY.G, EDDY.rc], source: [EDDY.G] };
+  const notes = textOf("fig.notes", Object.keys(FIELDS));
+  const sl = { cx: $("cx"), cy: $("cy"), rr: $("rr") };
+  /* the sample: 200 points of the window, fixed, none closer than 0,5 m to the centre */
+  const rnd = Quiz.rng(37), PTS = [];
+  while (PTS.length < 200) { const p = [-16 + 32 * rnd(), -10 + 20 * rnd()]; if (Math.hypot(...p) > 0.5) PTS.push(p); }
+  let nom = "selle";
+  const arrow = (x, y, v, parent) => {
+    const n = Math.hypot(v[0], v[1]); if (!(n > 0)) return;
+    const L = Math.min(1.4 * n, 1.8);
+    Plot.fleche(parent, [X(x), Y(y)], [X(x + L * v[0] / n), Y(y + L * v[1] / n)], { cls: "c-label-2", tete: 6, trait: "stroke thin" });
+  };
+  const verdict = (v, ref) => v / ref < Circ.SEUIL ? t("fig.nul", { e: F.sci(v / ref, 0) }) : t("fig.nonnul", { e: F.sci(v / ref, 1) });
+  function draw() {
+    let R = +sl.rr.value, cx = +sl.cx.value, cy = +sl.cy.value;
+    cx = Math.max(-16 + R, Math.min(16 - R, cx)); cy = Math.max(-10 + R, Math.min(10 - R, cy));
+    sl.cx.value = cx; sl.cy.value = cy;
+    const f = Circ.CHAMPS[nom](...FIELDS[nom]), c = [cx, cy];
+    svg.innerHTML = "";
+    if (nom === "rankine") P("circle", { cx: X(0), cy: Y(0), r: S * EDDY.rc, class: "fill c-tint", "fill-opacity": "0.15" }, svg);
+    for (let x = -15; x <= 15; x += 2) for (let y = -9; y <= 9; y += 2) arrow(x, y, f.F([x, y]), svg);
+    if (f.singulier) P("circle", { cx: X(0), cy: Y(0), r: 4, class: "fill c-warn" }, svg);
+    P("circle", { cx: X(cx), cy: Y(cy), r: S * R, class: "stroke bold c-tint" }, svg);
+    const tx = X(cx), ty = Y(cy + R);
+    P("polygon", { points: [tx - 8, ty, tx + 2, ty - 6, tx + 2, ty + 6].join(" "), class: "fill c-tint" }, svg);
+    $("cxr").textContent = F.qty(F.fix(cx, 1), "m"); $("cyr").textContent = F.qty(F.fix(cy, 1), "m"); $("rrr").textContent = F.qty(F.fix(R, 1), "m");
+    const test = Circ.tester(f.F, PTS, 16);
+    $("vrot").textContent = F.qty(F.sci(test.rot, 1), "s⁻¹"); $("frot").textContent = verdict(test.rot, test.ref);
+    $("vdiv").textContent = F.qty(F.sci(test.div, 1), "s⁻¹"); $("fdiv").textContent = verdict(test.div, test.ref);
+    const passe = f.singulier && Math.abs(Math.hypot(cx, cy) - R) < 0.3;
+    $("vcirc").textContent = passe ? "–" : F.qty(F.fix(AnaVec.circulation(f.F, AnaVec.cercle(c, R), 1440), 2), C2);
+    $("vflux").textContent = passe ? "–" : F.qty(F.fix(AnaVec.fluxPlan(f.F, AnaVec.cercle(c, R), 1440), 2), C2);
+    $("note").innerHTML = notes[nom];
+  }
+  document.querySelectorAll("#champs button").forEach(b => b.onclick = () => {
+    nom = b.dataset.c; document.querySelectorAll("#champs button").forEach(x => x.setAttribute("aria-pressed", x === b)); draw(); });
+  Object.values(sl).forEach(s => s.oninput = draw);
+  const toWorld = e => { const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; const q = pt.matrixTransform(svg.getScreenCTM().inverse()); return [(q.x - 320) / S, (200 - q.y) / S]; };
+  let drag = null;
+  svg.addEventListener("pointerdown", e => { const [x, y] = toWorld(e); if (Math.hypot(x - sl.cx.value, y - sl.cy.value) <= +sl.rr.value) { drag = [x - sl.cx.value, y - sl.cy.value]; svg.setPointerCapture(e.pointerId); } });
+  svg.addEventListener("pointermove", e => { if (!drag) return; const [x, y] = toWorld(e); sl.cx.value = Math.round(2 * (x - drag[0])) / 2; sl.cy.value = Math.round(2 * (y - drag[1])) / 2; draw(); });
+  svg.addEventListener("pointerup", () => drag = null);
+  draw();
+})();
+
+/* ---------- the two identities, on fields drawn at random ---------- */
+(() => {
+  const rnd = Quiz.rng(2026);
+  function tirer() {
+    const { phi, A } = Circ.aleatoire(rnd);
+    let g = 0, rg = 0, ra = 0, dr = 0;
+    for (let i = 0; i < 5; i++) {
+      const p = [4 * rnd() - 2, 4 * rnd() - 2, 4 * rnd() - 2];
+      g = Math.max(g, AnaVec.norme(AnaVec.gradient(phi, p)));
+      rg = Math.max(rg, AnaVec.norme(Circ.rotGrad(phi, p, 1e-3)));
+      ra = Math.max(ra, AnaVec.norme(AnaVec.rotationnel(A, p)));
+      dr = Math.max(dr, Math.abs(Circ.divRot(A, p, 1e-3)));
+    }
+    $("vgrad").textContent = F.num(g, 3); $("vrotgrad").textContent = F.sci(rg, 1);
+    $("vrota").textContent = F.num(ra, 3); $("vdivrot").textContent = F.sci(dr, 1);
+  }
+  $("tirage").onclick = tirer; tirer();
+})();
+
+/* ---------- history ---------- */
+(() => {
+  const EVENTS = [["stokes", 1849, "idea"], ["helmholtz", 1858, "idea"], ["ab", 1959, "idea"], ["tonomura", 1986, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["potentiel", "aimant"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["potentiel", "a"], ["rotgrad", "c"], ["tourbillon", "b"], ["divrot", "d"], ["selle", "a"], ["source", "c"], ["flux", "b"], ["bloc", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 337 });
+})();
+</script>
+</body>
+</html>

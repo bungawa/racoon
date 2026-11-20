@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>L'intervalle d'espace-temps</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-relativite" data-i18n="monde.relativite"></a><span class="aux">›</span><a href="/racoon/etape?id=rel-intervalles" data-i18n="etape.rel-intervalles"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-relat" href="/racoon/atlas?piste=relat" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/relat-geometrie-espace-temps" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msup><mi>c</mi><mn>2</mn></msup><msup><mi>t</mi><mrow><mo>′</mo><mn>2</mn></mrow></msup><mo>−</mo><msup><mi>x</mi><mrow><mo>′</mo><mn>2</mn></mrow></msup><mo>−</mo><msup><mi>y</mi><mrow><mo>′</mo><mn>2</mn></mrow></msup><mo>−</mo><msup><mi>z</mi><mrow><mo>′</mo><mn>2</mn></mrow></msup><mo>=</mo><msup><mi>c</mi><mn>2</mn></msup><msup><mi>t</mi><mn>2</mn></msup><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><msup><mi>z</mi><mn>2</mn></msup></math><span class="n">(17.3)</span></div>
+    <p class="validite" data-i18n-html="val.17.3"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mtable columnalign="right left" rowspacing="0.6em"><mtr><mtd><msup><mi>x</mi><mo>′</mo></msup></mtd><mtd><mo>=</mo><mfrac><mrow><mi>x</mi><mo>−</mo><mi>u</mi><mi>t</mi></mrow><msqrt><mn>1</mn><mo>−</mo><msup><mi>u</mi><mn>2</mn></msup></msqrt></mfrac><mo>,</mo><mspace width="1em"/><msup><mi>y</mi><mo>′</mo></msup><mo>=</mo><mi>y</mi><mo>,</mo><mspace width="1em"/><msup><mi>z</mi><mo>′</mo></msup><mo>=</mo><mi>z</mi></mtd></mtr><mtr><mtd><msup><mi>t</mi><mo>′</mo></msup></mtd><mtd><mo>=</mo><mfrac><mrow><mi>t</mi><mo>−</mo><mi>u</mi><mi>x</mi></mrow><msqrt><mn>1</mn><mo>−</mo><msup><mi>u</mi><mn>2</mn></msup></msqrt></mfrac></mtd></mtr></mtable></math><span class="n">(17.4)</span></div>
+    <p class="validite" data-i18n-html="val.17.4"></p>
+    <div class="eq"><math display="block"><msup><mi>t</mi><mrow><mo>′</mo><mn>2</mn></mrow></msup><mo>−</mo><msup><mi>x</mi><mrow><mo>′</mo><mn>2</mn></mrow></msup><mo>−</mo><msup><mi>y</mi><mrow><mo>′</mo><mn>2</mn></mrow></msup><mo>−</mo><msup><mi>z</mi><mrow><mo>′</mo><mn>2</mn></mrow></msup><mo>=</mo><msup><mi>t</mi><mn>2</mn></msup><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><msup><mi>z</mi><mn>2</mn></msup></math><span class="n">(17.5)</span></div>
+    <p class="validite" data-i18n-html="val.17.5"></p>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <figure class="chart">
+      <svg class="fig" id="diag" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-ok" data-i18n="fig.legend.p"></span><span class="ring c-tint" data-i18n="fig.legend.pp"></span><span class="c-ko" data-i18n="fig.legend.gal"></span><span class="c-warn" data-i18n="fig.legend.lumiere"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" role="group" id="genre">
+            <button type="button" data-g="temps" data-i18n="fig.g.temps"></button>
+            <button type="button" data-g="espace" data-i18n="fig.g.espace"></button>
+            <button type="button" data-g="lumiere" data-i18n="fig.g.lumiere"></button>
+          </div>
+          <div class="ctl"><div class="row"><label for="sb" data-i18n="fig.beta"></label><output id="sbr" for="sb"></output></div>
+            <input id="sb" type="range" min="-90" max="90" step="1" value="50"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.p"></span><span class="v" id="vp"></span><span class="f" id="fp"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.s2"></span><span class="v" id="vs"></span><span class="f" id="fs"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.gal"></span><span class="v" id="vg"></span><span class="f" id="fg"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.genre"></span><span class="v" id="vk"></span><span class="f" id="fk"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p3"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/relat-intervalle.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/relativite.js"></script>
+<script src="/racoon/minkowski.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I.fallback : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const R = Relativite, M = Minkowski, C = R.c;
+const m = v => F.qty(F.num(Math.abs(v) < 1e-9 ? 0 : v, 3), "m"), m2 = v => F.qty(F.num(Math.abs(v) < 1e-9 ? 0 : v, 3), "m²");
+
+/* ---------- un événement P, un observateur à u : l'intervalle ne bouge pas ---------- */
+(() => {
+  const svg = $("diag"), sb = $("sb"), seg = $("genre");
+  const PRESETS = { temps: [3, 5], espace: [6, 2], lumiere: [4, 4] };
+  let P = PRESETS.temps.slice(), c = null;
+  function draw() {
+    const b = +sb.value / 100, e = { t: P[1] / C, x: P[0] };
+    c = M.cadre(svg, { W: 420, H: 420, x0: -10, x1: 10, t0: -10, t1: 10, pad: 10 });
+    M.fond(c, { x: t("fig.ax.x"), t: t("fig.ax.ct"), pas: 2 });
+    const s2 = R.intervalle2(e), genre = R.genre(e, undefined, 1e-9);
+    if (genre !== "lumiere") M.hyperbole(c, s2, "c-ok");
+    M.repere(c, b, { x: t("fig.ax.xp"), t: t("fig.ax.ctp"), pas: 2 });
+    /* P read by R′ and placed on the ground's straight axes: it slides along the hyperbola; Galileo's reading leaves it */
+    const p = R.lorentz(e, b * C), q = R.galileeEvt(e, b * C), Pp = [p.x, C * p.t], Pg = [q.x, C * q.t];
+    const inside = a => Math.abs(a[0]) <= 10 && Math.abs(a[1]) <= 10;
+    if (inside(Pg)) M.point(c, Pg, 4, "c-ko");
+    if (inside(Pp)) { const g = c.layer("c-tint"); Plot.el("circle", { cx: c.sx(Pp[0]), cy: c.sy(Pp[1]), r: 7, class: "stroke bold" }, g); }
+    M.point(c, P, 6, "c-ok", t("fig.ax.p"));
+    $("sbr").textContent = t("fig.beta.v", { b: F.num(b, 2) });
+    $("vp").textContent = t("fig.p.v", { x: m(Pp[0]), ct: m(Pp[1]) });
+    $("fp").textContent = t("fig.p.f", { x: m(P[0]), ct: m(P[1]), dt: F.si(p.t, "s", { prefix: "n" }) });
+    $("vs").textContent = m2(R.intervalle2(p));
+    $("fs").textContent = t("fig.s.f", { v: m2(s2) });
+    $("vg").textContent = m2(R.intervalle2(q));
+    $("fg").textContent = t("fig.g.f", { v: m2(R.intervalle2(q) - s2) });
+    $("vk").textContent = t("fig.genre." + genre);
+    if (genre === "temps") { const ml = R.memeLieu(e); $("fk").textContent = t("fig.k.temps", { u: F.num(ml.u[0] / C, 3), tau: F.si(Math.abs(ml.tau), "s", { prefix: "n" }) }); }
+    else if (genre === "espace") { const u = R.vitesseSimultanee(e); $("fk").textContent = t("fig.k.espace", { u: F.num(u / C, 3), d: m(Math.sqrt(-s2)) }); }
+    else $("fk").textContent = t("fig.k.lumiere");
+    seg.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.g === genre)));
+  }
+  seg.querySelectorAll("button").forEach(x => x.onclick = () => { P = PRESETS[x.dataset.g].slice(); draw(); });
+  /* drag P; on a light line within 0,15 m it snaps onto it, so that s² = 0 can be reached by hand */
+  M.glisser(svg, () => c, ([x, ct]) => {
+    x = Math.max(-9.5, Math.min(9.5, x)); ct = Math.max(-9.5, Math.min(9.5, ct));
+    if (Math.abs(Math.abs(x) - Math.abs(ct)) < 0.15) ct = Math.sign(ct || 1) * Math.abs(x);
+    P = [+x.toFixed(2), +ct.toFixed(2)]; draw();
+  });
+  sb.oninput = draw; draw();
+})();
+
+/* ---------- le système décrit : deux éclairs à 1 km et 1 µs d'écart ---------- */
+(() => {
+  const L = 1000, dt = 1e-6, e = { t: dt, x: L }, s2 = R.intervalle2(e);
+  $("sys1").innerHTML = t("sys1.body", { L: F.si(L, "m"), dt: F.si(dt, "s", { prefix: "µ" }), cdt: F.si(C * dt, "m"), s2: F.qty(F.sci(s2, 2), "m²"),
+    r: F.num(L / (C * dt), 3), u: F.num(R.vitesseSimultanee(e) / C, 2), d: F.si(Math.sqrt(-s2), "m") });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["lure", 1969, "experiment"], ["cgpm75", 1975, "idea"], ["metre", 1983, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["llr"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["accord", "c"], ["metre", "a"], ["remettre", "d"], ["genre", "b"], ["lumiere", "a"], ["horloge", "c"], ["simultanes", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 1702 });
+})();
+</script>
+</body>
+</html>

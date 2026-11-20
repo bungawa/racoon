@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["fourier", "b"],
+  ["temps", "d"],
+  ["vitre", "a"],
+  ["serie", "c"],
+  ["surface", "b"],
+  ["arqs", "a"],
+  ["delta", "d"],
+  ["cave", "c"]
+ ]
+}

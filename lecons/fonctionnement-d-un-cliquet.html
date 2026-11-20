@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fonctionnement d'un cliquet</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-statistique" data-i18n="monde.statistique"></a><span class="aux">›</span><a href="/racoon/etape?id=irreversibilite" data-i18n="etape.irreversibilite"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-thermo" href="/racoon/atlas?piste=thermo" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/la-loi-de-boltzmann" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>R</mi><mtext data-i18n="eq.avant"></mtext></msub><mo>=</mo><mfrac><mn>1</mn><mi>τ</mi></mfrac><msup><mi>e</mi><mrow><mo>−</mo><mi>ε</mi><mo>/</mo><mi>k</mi><mi>T</mi></mrow></msup></math></div>
+    <p class="validite" data-i18n-html="val.avant"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>R</mi><mtext data-i18n="eq.arriere"></mtext></msub><mo>=</mo><mfrac><mn>1</mn><mi>τ</mi></mfrac><msup><mi>e</mi><mrow><mo>−</mo><mi>ε</mi><mo>/</mo><mi>k</mi><mi>T</mi></mrow></msup><mo>=</mo><msub><mi>R</mi><mtext data-i18n="eq.avant"></mtext></msub></math></div>
+    <p class="validite" data-i18n-html="val.egal"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="traj" role="img" data-i18n-attr="aria-label:sim.aria"></svg>
+      <div class="legend"><span class="c-label-2" data-i18n="sim.legend.roues"></span><span class="c-tint" data-i18n="sim.legend.moy"></span></div>
+      <svg class="fig" id="histo" role="img" data-i18n-attr="aria-label:sim.aria2"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="sim.legend.histo"></span><span class="c-warn" data-i18n="sim.legend.boltz"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="eps" data-i18n="sim.eps"></label><output id="epsv" for="eps"></output></div>
+            <input id="eps" type="range" min="0" max="5" step="0.5" value="3"></div>
+          <div class="ctl"><div class="row"><label for="asy" data-i18n="sim.a"></label><output id="asyv" for="asy"></output></div>
+            <input id="asy" type="range" min="0.05" max="0.5" step="0.05" value="0.2"></div>
+          <button class="btn tinted" type="button" id="refaire" data-i18n="sim.refaire"></button>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="sim.k.sauts"></span><span class="v" id="vsauts"></span><span class="f" data-i18n="sim.f.sauts"></span></div>
+          <div class="stat"><span class="k" data-i18n="sim.k.z"></span><span class="v" id="vz"></span><span class="f" data-i18n="sim.f.z"></span></div>
+          <div class="stat"><span class="k" data-i18n="sim.k.t"></span><span class="v" id="vt"></span><span class="f" data-i18n="sim.f.t"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="sim.caption"></figcaption>
+    </figure>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p data-i18n-html="sys.inner"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/fonctionnement-d-un-cliquet.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/statistique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const S = Statistique;
+
+/* ---------- une roue brownienne dans une dent de scie, une seule température ---------- */
+(() => {
+  const N = 200, MONTRE = 6, TMAX = 20, PAS = 250, BINS = 40;
+  const se = $("eps"), sa = $("asy"), svg = $("traj"), svh = $("histo");
+  let s, rand, traces, moy, hist, id = 0;
+  function start() {
+    rand = Quiz.rng(4610 + id++);
+    s = S.cliquetBrownien({ N, eps: +se.value, a: +sa.value, dt: 2e-4 }, rand);
+    traces = Array.from({ length: MONTRE }, (_, i) => [[0, s.x[i]]]); moy = [[0, 0]]; hist = new Float64Array(BINS);
+    $("epsv").textContent = F.num(+se.value, 2); $("asyv").textContent = F.num(+sa.value, 2);
+  }
+  function draw() {
+    let m = 0, big = 4;
+    for (let i = 0; i < N; i++) { m += s.x[i]; big = Math.max(big, Math.abs(s.x[i])); }
+    const yr = Math.ceil(1.1 * big);
+    svg.innerHTML = "";
+    const ax = Plot.axes(svg, { fmt: F, w: 640, h: 260, pad: { b: 44, l: 56 }, x: { domain: [0, TMAX], label: t("sim.x") }, y: { domain: [-yr, yr], label: t("sim.y") } });
+    Plot.el("line", { x1: ax.x(0), x2: ax.x(TMAX), y1: ax.y(0), y2: ax.y(0), class: "stroke thin dash c-label" }, ax.g);
+    traces.forEach(tr => Plot.el("path", { d: Plot.path(tr.map(([u, x]) => [ax.x(u), ax.y(x)])), class: "stroke thin c-label-2" }, ax.g));
+    Plot.el("path", { d: Plot.path(moy.map(([u, x]) => [ax.x(u), ax.y(x)])), class: "stroke bold c-tint" }, ax.g);
+    svh.innerHTML = "";
+    let tot = 0; for (const h of hist) tot += h;
+    let Z = 0; for (let k = 0; k < 400; k++) Z += Math.exp(-S.dent((k + 0.5) / 400, s.eps, s.a).U) / 400;
+    const top = Math.max(1.2 / Z, ...Array.from(hist, h => tot ? 1.1 * h * BINS / tot : 0));
+    const ah = Plot.axes(svh, { fmt: F, w: 640, h: 200, pad: { b: 44, l: 56 }, x: { domain: [0, 1], label: t("sim.xh") }, y: { domain: [0, top], label: t("sim.yh") } });
+    if (tot) hist.forEach((h, k) => { const d = h * BINS / tot;
+      Plot.el("rect", { x: ah.x(k / BINS) + 1, y: ah.y(d), width: ah.x(1 / BINS) - ah.x(0) - 2, height: ah.y(0) - ah.y(d), class: "fill c-tint" }, ah.g); });
+    const pts = []; for (let k = 0; k <= 200; k++) { const y = k / 200; pts.push([ah.x(y), ah.y(Math.exp(-S.dent(Math.min(y, 0.99999), s.eps, s.a).U) / Z)]); }
+    Plot.el("path", { d: Plot.path(pts), class: "stroke c-warn" }, ah.g);
+    const n = s.avant + s.arriere;
+    $("vsauts").textContent = t("sim.v.sauts", { av: F.num(s.avant, 6), ar: F.num(s.arriere, 6) });
+    $("vz").textContent = n ? F.num((s.avant - s.arriere) / Math.sqrt(n), 2) : "—";
+    $("vt").textContent = F.num(s.t, 3);
+    return m / N;
+  }
+  function tick() {
+    if (s.t < TMAX) {
+      S.pasCliquet(s, PAS, rand);
+      let m = 0; for (let i = 0; i < N; i++) { m += s.x[i]; const y = s.x[i] - Math.floor(s.x[i]); hist[Math.min(BINS - 1, Math.floor(y * BINS))]++; }
+      traces.forEach((tr, i) => tr.push([s.t, s.x[i]])); moy.push([s.t, m / N]);
+      draw();
+      requestAnimationFrame(tick);
+    }
+  }
+  const relance = () => { const running = s && s.t < TMAX; start(); draw(); if (!running) requestAnimationFrame(tick); };
+  se.oninput = relance; sa.oninput = relance; $("refaire").onclick = relance;
+  start(); draw(); requestAnimationFrame(tick);
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["smoluchowski", 1912, "idea"], ["feynman", 1962, "idea"], ["kelly", 1997, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["moteurs", "nobel"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["second", "c"], ["amorti", "a"], ["chaud", "d"], ["asym", "b"], ["taille", "a"], ["histo", "c"], ["kelly", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 461 });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+/* Leçon « Élimination E2, stéréochimie et régiosélectivité » : textes en français. Une autre langue = locales/<langue>/lecons/elimination-e2.js, mêmes clés.
+   Texte seulement : dessins, alcènes et descripteurs calculés, années, pourcentages, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Élimination E2, stéréochimie et régiosélectivité",
+    "crumb.jour": "Élimination E2",
+    "h1": "Élimination E2, stéréochimie et régiosélectivité",
+    "lede": "Le réactif qui substitue un brome est souvent aussi une base. Au lieu d'attaquer le carbone, il peut arracher un proton voisin : une liaison double se forme et le brome part. Quel proton, et quelle liaison double ? La géométrie de la molécule décide.",
+    "tag.piste": "Chimie",
+    "tag.prereq": "Prérequis : « Substitutions nucléophiles SN2 et SN1 »",
+    "chim.sym": "{s}",
+
+    "s1.sec": "1 · Décrire le système",
+    "s1.h2": "Trois liaisons changent en un seul acte",
+    "s1.p1": "Le système : un halogénoalcane dont un carbone voisin du carbone fonctionnel, dit carbone β, porte au moins un hydrogène, et une base B⁻ concentrée, l'ion hydroxyde ou un alcoolate, dans un alcool. Bilan : un alcène, l'acide BH et l'ion X⁻. Dans l'<b>élimination bimoléculaire E2</b>, tout a lieu dans un seul acte élémentaire : la base prend le proton, le doublet de la liaison C–H devient la liaison π, le brome part avec le doublet de C–Br.",
+    "meca.aria": "Mécanisme E2 : l'ion hydroxyde arrache un hydrogène du carbone 3, la liaison double se forme entre les carbones 2 et 3, l'ion bromure part",
+    "meca.caption": "2-bromobutane et ion hydroxyde. Trois flèches, un seul acte : la base prend H, la liaison C–H devient la liaison double, C–Br se rompt. H et Br sont dessinés de part et d'autre de la liaison C2–C3, dans le plan de la feuille.",
+    "s1.validite": "Approximation : un seul acte bimoléculaire, des concentrations à la place des activités. On néglige la substitution concurrente, qui consomme aussi le substrat : la vitesse de disparition de R–X vaut (k<sub>E</sub> + k<sub>S</sub>)[RX][B⁻] pour une substitution nucléophile bimoléculaire (SN2) parallèle de constante k<sub>S</sub>, et la loi écrite décrit seule la disparition à 1 % près tant que k<sub>S</sub> &lt; k<sub>E</sub>/100. Une voie monomoléculaire par carbocation, la substitution nucléophile monomoléculaire (SN1) ou l'élimination E1, hors programme, ajouterait un terme sans [B⁻].",
+    "s1.p2": "Ordre 1 par rapport à la base et au substrat, comme la SN2 de la leçon « Substitutions nucléophiles SN2 et SN1 ». Ce qui distingue les deux : le site attaqué. Le carbone fonctionnel pour la substitution, un hydrogène du carbone β pour l'élimination.",
+
+    "s2.sec": "2 · Stéréochimie",
+    "s2.h2": "H et Br de part et d'autre : anti-périplanaire",
+    "s2.p1": "Pour que le doublet de C–H passe en douceur dans la liaison π pendant que C–Br se rompt, les quatre atomes H, Cβ, Cα, Br doivent être dans un même plan, H et Br de part et d'autre : conformation <b>anti-périplanaire</b>. Regardez le long de la liaison Cα–Cβ, le carbone qui porte Br devant. Tournez le carbone de derrière.",
+    "nw.aria": "Projection de Newman le long de la liaison entre le carbone qui porte le brome et le carbone β",
+    "nw.ariaP": "Alcène formé quand un hydrogène est anti du brome",
+    "nw.substrat": "Substrat",
+    "nw.phi": "Rotation du carbone de derrière",
+    "nw.substrats": {
+      bromomethylpentaneRR: "(2R,3R)-2-bromo-3-méthylpentane",
+      bromomethylpentaneRS: "(2R,3S)-2-bromo-3-méthylpentane",
+      bromobutane: "(R)-2-bromobutane",
+    },
+    "nw.pasAnti": "Aucun groupe de derrière n'est anti du brome : pas d'élimination E2 dans cette conformation.",
+    "nw.antiC": "{g} est anti du brome : un groupe carboné ne part pas. Tournez encore.",
+    "nw.anti": "H anti du brome : l'élimination donne l'alcène {d}. Les groupes qui étaient du même côté dans la projection le restent dans l'alcène.",
+    "nw.antiSans": "H anti du brome : l'alcène formé n'a pas de stéréoisomère.",
+    "nw.caption": "Le brome devant, en haut. L'alcène s'affiche quand un hydrogène est à moins de 10° de l'opposé du brome. Descripteur Z ou E calculé sur l'alcène construit, les groupes gardant leur côté.",
+    "s2.prop.titre": "Stéréospécificité",
+    "s2.prop.corps": "Dans le (2R,3R)-2-bromo-3-méthylpentane, le carbone β n'a qu'un hydrogène : une seule conformation le met anti du brome, donc un seul alcène, le 3-méthylpent-2-ène E. Le diastéréoisomère (2R,3S) donne l'autre, Z. Deux stéréoisomères du réactif, deux stéréoisomères du produit : l'E2 est <b>stéréospécifique</b>.",
+    "s2.p2": "Avec le 2-bromobutane, le carbone 3 porte deux hydrogènes. L'un ou l'autre peut être anti du brome : les deux alcènes, E et Z, se forment. L'alcène E, où les deux méthyles s'évitent, est en général majoritaire : la réaction est seulement <b>stéréosélective</b>, et la sélectivité vient de la gêne entre groupes dans l'état de transition.",
+
+    "s3.sec": "3 · Régiosélectivité",
+    "s3.h2": "Quel carbone β ?",
+    "s3.p1": "Le 2-bromo-2-méthylbutane a trois carbones β : deux méthyles équivalents et un CH₂. Ils mènent à deux alcènes. Le <b>degré de substitution</b> compte les carbones liés aux deux carbones de la liaison double.",
+    "rg.alcenes": { deg3: "2-méthylbut-2-ène", deg2: "2-méthylbut-1-ène" },
+    "rg.lu": "{n} : {d} carbones sur la liaison double.",
+    "s3.p2": "Règle de Zaïtsev, une tendance valable avec une base peu encombrée : l'alcène le plus substitué, le plus stable, est majoritaire. Avec une base encombrée, la proportion s'inverse. Mesures de H. C. Brown et de ses collaborateurs, base à 1 mol·L⁻¹ :",
+    "rg.bases": { ethanolate: "Éthanolate de potassium", tbutanolate: "tert-butanolate de potassium" },
+    "rg.parts": "2-méthylbut-2-ène {z}, 2-méthylbut-1-ène {h}.",
+    "s3.p3": "La base volumineuse atteint mal l'hydrogène du CH₂, entouré, et prend plutôt celui d'un méthyle en bout de chaîne : c'est le produit dit de Hofmann. La règle de Zaïtsev décrit l'état de transition le plus bas quand rien ne gêne l'approche de la base ; elle cesse de valoir quand l'encombrement l'emporte sur la stabilité de l'alcène.",
+
+    "s4.sec": "4 · Substitution ou élimination",
+    "s4.h2": "La même rencontre, deux issues",
+    "s4.p1": "Un ion hydroxyde face au 2-bromobutane peut substituer ou éliminer. Les deux réactions sont en compétition, et leur proportion se règle par les conditions. Un nucléophile est souvent une base : sa basicité se mesure par le pKa de son acide conjugué (leçon « Couples acide-base et diagramme de prédominance »).",
+    "s4.tend.titre": "Tendances",
+    "s4.tend.corps": "<b>Élimination favorisée</b> : base forte et encombrée (tert-butanolate), carbone fonctionnel tertiaire ou secondaire, température élevée, car l'élimination produit plus d'entités qu'elle n'en consomme et son entropie de réaction est plus grande. <b>Substitution favorisée</b> : nucléophile peu basique (I⁻, <span class=\"no-sigle\">HS⁻</span>), carbone primaire, température modérée. Ces règles s'appliquent à un réactif donné ; elles ne prédisent pas un rapport chiffré.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Deux règles opposées, une explication",
+    "hist.intro": "Deux chimistes du XIXe siècle ont énoncé des règles de sens contraire sur la position de la liaison double. Un siècle plus tard, des mesures systématiques ont montré qu'elles décrivent deux régimes d'un même mécanisme.",
+    "hist.events": {
+      hofmann: { who: "August Wilhelm von Hofmann", what: "décompose des hydroxydes d'ammonium quaternaire en alcènes.", context: "Publié dans les Philosophical Transactions de la Royal Society. L'alcène le moins substitué domine : c'est encore aujourd'hui le produit dit de Hofmann." },
+      zaitsev: { who: "Alexandre Zaïtsev", what: "énonce que l'élimination d'un halogénure d'hydrogène donne surtout l'alcène le plus substitué.", context: "Publié dans les Annalen der Chemie de Liebig sous le nom de Saytzeff. La règle porte son nom." },
+      brown: { who: "Herbert C. Brown, Ichiro Moritani et Yuzuru Okamoto", what: "comparent des bases de taille croissante sur le même halogénoalcane.", context: "Dans le Journal of the American Chemical Society. Plus la base est encombrée, plus l'alcène le moins substitué domine : la taille de la base, et non seulement la stabilité de l'alcène, fixe la régiosélectivité." },
+    },
+    "uses.h3": "Aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      chloroprene: { name: "Caoutchouc synthétique", text: "Le chloroprène, monomère du polychloroprène (néoprène des combinaisons de plongée), s'obtient industriellement en éliminant HCl du 3,4-dichlorobut-1-ène par la soude aqueuse ; le chloroprène est distillé à mesure qu'il se forme." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      loi: { prompt: "On double la concentration de la base ; la vitesse de formation de l'alcène double. Qu'en conclure ?",
+        options: { a: "La base n'intervient qu'après l'acte déterminant.", b: "La base participe à l'acte déterminant, comme dans une E2.", c: "C'est forcément une substitution.", d: "La réaction est d'ordre 2 par rapport à la base." },
+        why: "v = k[RX][B⁻] : ordre 1 par rapport à la base. Dans l'E2, la base arrache le proton dans le seul acte, qui est donc déterminant." },
+      anti: { prompt: "Pourquoi l'E2 exige-t-elle H et le nucléofuge anti-périplanaires ?",
+        options: { a: "Le doublet de C–H doit se recouvrir avec l'orbitale de C–X qui se rompt ; ce recouvrement est maximal quand les deux liaisons sont dans un même plan, de part et d'autre.", b: "La base et le nucléofuge se repoussent.", c: "C'est la conformation la moins stable, donc la plus réactive.", d: "La liaison double se forme toujours du côté du brome." },
+        why: "Les deux liaisons qui se rompent alimentent la même liaison π. Il faut que leurs orbitales soient parallèles : même plan. Anti est aussi décalé, donc plus bas en énergie que syn." },
+      diastereo: { prompt: "Deux diastéréoisomères du 2-bromo-3-méthylpentane subissent une E2 vers le 3-méthylpent-2-ène. Que donnent-ils ?",
+        options: { a: "Le même alcène, car le produit n'a plus de centre stéréogène.", b: "Chacun un mélange égal de Z et de E.", c: "Aucun alcène : le carbone 3 a trop de substituants.", d: "Des alcènes de configurations opposées, Z pour l'un et E pour l'autre." },
+        hint: "Le carbone 3 n'a qu'un hydrogène : combien de conformations le placent anti du brome ?",
+        why: "Une seule conformation réactive par diastéréoisomère : la position des groupes y est fixée par la configuration. Inverser le carbone 3 échange les deux groupes de derrière, donc échange Z et E. C'est la stéréospécificité." },
+      zaitsev: { prompt: "Le 2-bromo-2-méthylbutane est chauffé avec l'éthanolate de potassium. Quel alcène domine ?",
+        options: { a: "Le 2-méthylbut-1-ène, car les méthyles ont plus d'hydrogènes.", b: "Les deux à parts égales.", c: "Le 2-méthylbut-2-ène, trisubstitué, selon la règle de Zaïtsev : environ 70 %.", d: "Le pent-2-ène." },
+        why: "Base peu encombrée : l'alcène le plus substitué, le plus stable, l'emporte, 70 % contre 30 % dans les mesures de Brown. Le nombre d'hydrogènes (six contre deux) ne suffit pas à renverser la tendance." },
+      encombree: { prompt: "Même substrat, avec le tert-butanolate de potassium. Que change la base ?",
+        options: { a: "Elle atteint mieux les hydrogènes des méthyles, en bout de chaîne : le 2-méthylbut-1-ène devient majoritaire, environ 72 %.", b: "Rien : la régiosélectivité ne dépend que du substrat.", c: "Elle favorise la substitution.", d: "Elle rend la réaction stéréospécifique." },
+        why: "Le CH₂ interne est entouré ; une base volumineuse y accède mal. L'alcène le moins substitué, dit de Hofmann, l'emporte : 72 % contre 28 %." },
+      sansH: { prompt: "Le 1-bromo-2,2-diméthylpropane (bromure de néopentyle) est traité par une base forte. Peut-il subir une E2 ?",
+        options: { a: "Oui, vers le 2,2-diméthylpropène.", b: "Non : son unique carbone β est quaternaire et ne porte aucun hydrogène.", c: "Oui, puisqu'il est primaire.", d: "Non, car il est tertiaire." },
+        why: "L'E2 enlève un hydrogène sur le carbone β. Ici, le carbone β porte trois méthyles et le carbone fonctionnel : aucun hydrogène, aucune E2." },
+      concurrence: { prompt: "Pour obtenir surtout l'alcène à partir du 2-bromobutane, quelles conditions choisir ?",
+        options: { a: "Iodure de sodium, température ambiante.", b: "Eau, température ambiante.", c: "Base diluée, à froid.", d: "Base forte concentrée, comme un alcoolate, et chauffage." },
+        why: "Base forte et concentrée pour l'E2, chauffage parce que l'élimination augmente le nombre d'entités : son entropie de réaction, positive, la favorise d'autant plus que la température est élevée. L'iodure, nucléophile peu basique, substitue." },
+    },
+
+    "foot": "Source : programme officiel de chimie de PCSI (B.O. spécial n°\u00a01 du 11 février 2021), partie « Réactivité des espèces organiques et premières applications en synthèse » : β-élimination E2, mécanisme limite, propriétés cinétiques et stéréochimiques, régiosélectivité, compétition entre substitution et élimination. Données : H. C. Brown, I. Moritani, Y. Okamoto, <i>J. Am. Chem. Soc.</i> 78, 2193 (1956), tableau IV. Histoire : A. W. Hofmann, <i>Phil. Trans. R. Soc. Lond.</i> 141, 357 (1851) ; A. Saytzeff, <i>Justus Liebigs Ann. Chem.</i> 179, 296 (1875) ; Wikipédia (anglais), « Zaitsev's rule », « Hofmann elimination », « Chloroprene » ; brevet des États-Unis n°\u00a03009968. Alcènes et descripteurs calculés par cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

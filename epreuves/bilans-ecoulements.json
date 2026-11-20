@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["pelton", "c"],
+  ["pompe", "a"],
+  ["huile", "b"],
+  ["rugueux", "d"],
+  ["elargissement", "c"],
+  ["epaisseur", "a"],
+  ["parfait", "b"],
+  ["tuyere", "d"]
+ ]
+}

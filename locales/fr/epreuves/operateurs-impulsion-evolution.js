@@ -1,0 +1,17 @@
+/* Épreuve de l'étape « Impulsion, moment cinétique et évolution » : textes en français. */
+(function (root) {
+  const T = {
+    "epreuve.items": {
+      onde: {"prompt": "On applique (ħ/i) d/dx à ψ(x) = e^(ikx) avec k = 10¹⁰ m⁻¹. Que trouve-t-on ?", "options": {"a": "1,05 × 10⁻²⁴ kg·m·s⁻¹ fois ψ : un état propre de p̂.", "b": "ψ multiplié par ik.", "c": "0.", "d": "ħ/k fois ψ."}, "why": "(20.57) : (ħ/i)(ik)e^(ikx) = ħk e^(ikx), ħk = 1,05 × 10⁻²⁴ kg·m·s⁻¹. Leçon « L'opérateur quantité de mouvement »."},
+      reelle: {"prompt": "L'état fondamental d'une boîte, √(2/L) sin(πx/L), a quelle quantité de mouvement moyenne ?", "options": {"a": "πħ/L.", "b": "0, la fonction d'onde est réelle ; on mesure ±πħ/L, moyenne nulle.", "c": "h/L.", "d": "Elle n'est pas définie."}, "why": "(20.58) avec ψ réelle donne une dérivée totale nulle. sin = (e^(ikx) \u2212 e^(\u2212ikx))/2i : deux sens à poids égaux. Leçon « L'opérateur quantité de mouvement »."},
+      incertitude: {"prompt": "Un électron est confiné dans un paquet de Δx = 0,05 nm. Quel Δp au minimum ?", "options": {"a": "2,1 × 10⁻²⁴ kg·m·s⁻¹.", "b": "1,05 × 10⁻²⁴ kg·m·s⁻¹.", "c": "1,05 × 10⁻³⁴ kg·m·s⁻¹.", "d": "5,3 × 10⁻²⁵ kg·m·s⁻¹."}, "hint": "Δx Δp ≥ ħ/2, égalité pour une gaussienne.", "why": "ħ/(2Δx) = 1,055 × 10⁻³⁴/10⁻¹⁰ ≈ 1,05 × 10⁻²⁴ kg·m·s⁻¹. Leçon « L'opérateur quantité de mouvement »."},
+      lz: {"prompt": "Que vaut ℒ_z = (ħ/i)(x∂/∂y \u2212 y∂/∂x) appliqué à ψ = x + iy ?", "options": {"a": "0.", "b": "\u2212ħψ.", "c": "ħψ : un état propre de L_z, m = +1.", "d": "iħψ."}, "why": "x∂ψ/∂y \u2212 y∂ψ/∂x = ix \u2212 y = i(x + iy) ; fois ħ/i : ħψ. En polaires, x + iy = r e^(iφ). Leçon « Le moment cinétique comme opérateur »."},
+      commut: {"prompt": "Quelle relation est fausse ?", "options": {"a": "X̂p̂ₓ \u2212 p̂ₓX̂ = iħ.", "b": "L̂ₓL̂_y \u2212 L̂_yL̂ₓ = iħL̂_z.", "c": "X̂p̂_y \u2212 p̂_yX̂ = 0.", "d": "L̂ₓL̂_y = L̂_yL̂ₓ."}, "why": "(20.75) : les composantes du moment cinétique ne commutent pas. Les trois autres sont vraies. Leçon « Le moment cinétique comme opérateur »."},
+      anneau: {"prompt": "Une particule sur un anneau est dans l'état (√3 e^(iφ) + e^(\u22122iφ))/2. Que vaut ⟨L_z⟩ ?", "options": {"a": "ħ/4.", "b": "ħ/2.", "c": "\u2212ħ/4.", "d": "3ħ/4."}, "why": "P(+1) = 3/4, P(\u22122) = 1/4 : ⟨L_z⟩ = (3/4)ħ \u2212 (1/4)(2ħ) = ħ/4. Leçon « Le moment cinétique comme opérateur »."},
+      conserve: {"prompt": "Pour un potentiel central, pourquoi ⟨L_z⟩ est-il constant au cours du temps ?", "options": {"a": "Parce que L_z est petit.", "b": "Parce que L̂_z commute avec Ĥ : (20.82) donne une dérivée nulle.", "c": "Parce que l'énergie est quantifiée.", "d": "Il ne l'est pas."}, "why": "Un potentiel central est invariant par rotation : L̂_z commute avec Ĥ. Leçon « L'évolution des valeurs moyennes »."},
+      ehrenfest: {"prompt": "Un paquet d'électron large de 0,15 nm, centré à 0,5 nm, dans un puits V = bx⁴. Le rapport ⟨F⟩/F(⟨x⟩) vaut environ :", "options": {"a": "1,00.", "b": "0,73.", "c": "2,0.", "d": "1,27."}, "hint": "⟨x³⟩ = ⟨x⟩³ + 3⟨x⟩Δx² pour un paquet symétrique.", "why": "1 + 3(Δx/⟨x⟩)² = 1 + 3 × 0,09 = 1,27 : la force moyenne dépasse la force au point moyen, et ⟨x⟩ décroche de Newton. Leçon « L'évolution des valeurs moyennes »."},
+    },
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else (root.LOCALES = root.LOCALES || {}).fr = Object.assign((root.LOCALES || {}).fr || {}, T);
+})(typeof self !== "undefined" ? self : this);

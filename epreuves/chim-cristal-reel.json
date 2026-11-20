@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["fraction", "a"],
+  ["paire", "b"],
+  ["dopage", "c"],
+  ["nacl", "d"],
+  ["formule", "a"],
+  ["densite", "b"],
+  ["pression", "c"],
+  ["agcl", "d"]
+ ]
+}

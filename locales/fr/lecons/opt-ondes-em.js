@@ -1,0 +1,103 @@
+/* Leçon « Les ondes électromagnétiques » (Feynman I.29.1) : textes en français.
+   Une autre langue = locales/<langue>/lecons/opt-ondes-em.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Les ondes électromagnétiques",
+    "crumb.jour": "Les ondes électromagnétiques",
+    "h1": "Les ondes électromagnétiques",
+    "lede": "Une charge qui accélère crée loin d'elle un champ électrique qui ne dit pas ce qu'elle fait, mais ce qu'elle faisait il y a r/c. Photographié à un instant, ce champ est l'histoire de son accélération lue à l'envers ; regardé au fil du temps, il s'éloigne de la source à la vitesse c. C'est ce qu'on appelle une onde.",
+    "tag.piste": "Optique et rayonnement",
+    "tag.prereq": "Prérequis : le rayonnement",
+
+    "eq.sin": "sin",
+    "eq.cos": "cos",
+
+    "s1.sec": "1 · Décrire le système",
+    "s1.h2": "Le champ d'une charge qui accélère",
+    "s1.p1": "Le système : une seule charge <var>q</var>, qui bouge un peu le long d'un axe, et un observateur à la distance <var>r</var>, dans une direction qui fait l'angle θ avec cet axe. Trois nombres sans dimension disent ce qu'on peut négliger. Le déplacement de la charge devant <var>r</var> : petit, la charge reste en pratique à l'origine. Sa vitesse devant <var>c</var> : petite, aucun effet relativiste. Et <var>r</var> devant la longueur sur laquelle le champ change, la longueur d'onde λ ou, pour une impulsion de durée τ, la longueur <var>c</var>τ : grand, on est dans la zone d'onde. Alors, seul le terme le plus lent à décroître du champ de la charge, celui de « Le rayonnement », reste :",
+    "val.29.1": "Approximation : champ lointain d'une charge lente. Négligés : les termes en 1/<var>r</var>\u00a0² et 1/<var>r</var>\u00a0³, plus petits que celui-ci d'un facteur de l'ordre de λ/(2π<var>r</var>), soit 5\u00a0% à trois longueurs d'onde et 0,5\u00a0% à trente ; les corrections de l'ordre de <var>v</var>/<var>c</var>, qui vaut au plus 1,7\u00a0% pour la charge de la figure ; le déplacement de la charge devant <var>r</var> : 1,6\u00a0cm pour la bosse, jusqu'à 0,5\u00a0m après la poussée, devant 13\u00a0m. Elle cesse de valoir près de la source (<var>r</var> de l'ordre de λ ou moins) et pour une charge relativiste, traitée dans « Les sources en mouvement ».",
+    "s1.p2": "Le champ est perpendiculaire à la ligne de visée, dans le plan qui la contient avec l'accélération ; le facteur sin θ l'annule le long de l'axe du mouvement. Le signe moins dit qu'une charge positive qui accélère vers le haut crée, sur le côté, un champ vers le bas. Le point important est l'argument de <var>a</var> : l'accélération n'est pas prise à l'instant <var>t</var>, mais à l'instant <var>t</var> \u2212\u00a0<var>r</var>/<var>c</var>, l'accélération retardée. Le champ en <var>r</var> apporte la nouvelle de ce que faisait la charge il y a <var>r</var>/<var>c</var>.",
+
+    "s2.sec": "2 · Photographier le champ",
+    "s2.h2": "Une photo du champ est l'histoire de la charge, à l'envers",
+    "s2.p1": "Au lieu de rester en un point et d'y regarder le champ changer, figeons l'instant <var>t</var> et regardons le champ en tous les points d'une droite perpendiculaire à l'axe du mouvement (θ\u00a0=\u00a090°). Le système de la figure : une charge <var>e</var>, au repos jusqu'à <var>t</var>\u00a0=\u00a00, qui subit ensuite une accélération de crête 10<sup>15</sup>\u00a0m·s<sup>\u22122</sup> pendant τ\u00a0=\u00a010\u00a0ns, de trois façons : elle part puis freine et s'arrête (« bosse ») ; elle part et garde sa vitesse (« poussée ») ; elle oscille à la période τ, lâchée du repos. On trace <var>r</var>\u00a0<var>E</var>, le champ multiplié par <var>r</var>, pour ôter la décroissance en 1/<var>r</var> et ne garder que la forme.",
+    "fig.aria.histoire": "Accélération de la charge en fonction de l'instant d'émission",
+    "fig.aria.photo": "Champ électrique multiplié par la distance, en fonction de la distance, à un instant donné",
+    "fig.legend.champ": "en haut, a(t′) ; en bas, r E(r) à l'instant t",
+    "fig.legend.point": "l'observateur à la distance r et son instant retardé t \u2212 r/c",
+    "fig.bosse": "Bosse",
+    "fig.poussee": "Poussée",
+    "fig.oscillation": "Oscillation",
+    "fig.t": "Instant de la photo t",
+    "fig.r": "Distance de l'observateur r",
+    "fig.xhist": "instant d'émission t′ (ns)",
+    "fig.yhist": "a / a₀",
+    "fig.xphoto": "distance r (m)",
+    "fig.yphoto": "r E, relatif",
+    "fig.k.ret": "Instant retardé <var>t</var> \u2212\u00a0<var>r</var>/<var>c</var>",
+    "fig.f.ret": "retard <var>r</var>/<var>c</var> : {r}",
+    "fig.k.e": "Champ <var>E</var> en <var>r</var>",
+    "fig.f.e": "accélération retardée : {a}\u00a0m·s<sup>\u22122</sup>",
+    "fig.k.v": "Plus grande vitesse <var>v</var>/<var>c</var>",
+    "fig.f.v": "soit {v} : effets relativistes négligeables",
+    "fig.caption": "En haut, l'accélération de la charge en fonction de l'instant <var>t</var>′ où elle a lieu ; le trait vertical marque l'instant de la photo, le point l'instant retardé de l'observateur. En bas, la photo : <var>r</var>\u00a0<var>E</var> en fonction de <var>r</var> à l'instant <var>t</var> ; le trait vertical marque le front, à <var>r</var>\u00a0=\u00a0<var>c</var><var>t</var>, au-delà duquel le champ est encore celui de la charge au repos. La courbe du bas est celle du haut retournée de gauche à droite et changée de signe, puisque la charge est positive ; l'échelle des temps devenue une échelle des distances : 1\u00a0ns pour 30\u00a0cm.",
+    "s2.p2": "Avancez l'instant <var>t</var> : toute la courbe du bas glisse vers la droite, sans se déformer, de 30\u00a0cm par nanoseconde. Ajouter Δ<var>t</var> au temps change <var>t</var> \u2212\u00a0<var>r</var>/<var>c</var> comme retirer <var>c</var>Δ<var>t</var> à la distance ; faire les deux à la fois ne le change pas, et le champ garde sa valeur. Dire que le champ est retardé, ou qu'il se propage vers l'extérieur à la vitesse <var>c</var>, c'est dire la même chose : voilà pourquoi on dit que la lumière est une onde. Notez aussi ce que la photo ne montre pas : le champ rayonné ne dépend que de l'accélération. Après la poussée, la charge file à vitesse constante, et la photo redevient plate derrière l'impulsion.",
+
+    "s3.sec": "3 · Une charge qui oscille",
+    "s3.h2": "L'onde sinusoïdale",
+    "s3.p1": "Le cas le plus utile est celui d'une charge qui oscille : son déplacement vaut <var>x</var>\u00a0=\u00a0<var>x</var><sub>0</sub>\u00a0cos\u00a0ω<var>t</var>, et son accélération s'en déduit en dérivant deux fois.",
+    "val.29.2": "Exacte : c'est la cinématique du mouvement <var>x</var>\u00a0=\u00a0<var>x</var><sub>0</sub>\u00a0cos\u00a0ω<var>t</var>, avec <var>a</var><sub>0</sub>\u00a0=\u00a0\u2212ω²<var>x</var><sub>0</sub>, l'accélération maximale. Ce qui reste approché, c'est que le mouvement soit sinusoïdal : il l'est si la force de rappel est linéaire, c'est-à-dire si l'amplitude est petite devant l'échelle où elle cesse de l'être, et si l'amortissement est faible sur une période.",
+    "val.29.3": "Approximation : celle de (29.1), avec en plus une amplitude petite devant la longueur d'onde : la vitesse maximale vaut ω<var>x</var><sub>0</sub>, et <var>v</var><sub>0</sub>/<var>c</var>\u00a0=\u00a02π<var>x</var><sub>0</sub>/λ. Une émission qui dure depuis toujours : le régime transitoire du départ, qu'on voit sur la figure, est oublié.",
+    "s3.p2": "Le champ en un point oscille à la pulsation ω, comme la charge, mais avec la phase ω(<var>t</var> \u2212\u00a0<var>r</var>/<var>c</var>) : un observateur plus loin voit la même oscillation, plus tard. Photographiée, cette onde est une sinusoïde dans l'espace, que la figure montre en mode « Oscillation » derrière le front. Les grandeurs qui la décrivent dans le temps et dans l'espace sont dans « Les ondes sinusoïdales » ; l'énergie qu'elle emporte, dans « L’énergie du rayonnement ».",
+    "sys.title": "Le système décrit : un électron qui oscille à 100\u00a0MHz",
+    "sys1.body": "Un électron oscille à {f}, avec une accélération de crête {a0}\u00a0m·s<sup>\u22122</sup> : son amplitude vaut <var>x</var><sub>0</sub>\u00a0=\u00a0{x0}. La longueur d'onde vaut λ\u00a0=\u00a0{lam}. La vitesse maximale, rapportée à <var>c</var>, vaut {b} : la cinématique de Galilée suffit. L'amplitude devant λ vaut {xr} : la charge est un point. Un observateur à {r} est à {rl} longueurs d'onde : les termes négligés dans (29.1) n'y pèsent que {zone}\u00a0% du terme gardé. Dans le plan perpendiculaire au mouvement, l'amplitude du champ y vaut {E}. Un tel champ est minuscule : une antenne réelle fait osciller ensemble un très grand nombre d'électrons, et leurs champs s'additionnent.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Du champ instantané au champ retardé",
+    "hist.intro": "Jusqu'au milieu du XIXe siècle, les forces électriques passaient pour instantanées. Il a fallu deux théories et une expérience pour qu'on lise dans le champ ce que faisait la charge un peu plus tôt.",
+    "hist.events": {
+      maxwell: { who: "James Clerk Maxwell", what: "publie « A Dynamical Theory of the Electromagnetic Field », lu devant la Royal Society le 8 décembre 1864.", context: "Ses équations admettent des ondes de champ électrique et magnétique dont la vitesse, calculée avec des mesures électriques, est celle de la lumière. Il en conclut que la lumière est une onde électromagnétique." },
+      lorenz: { who: "Ludvig Lorenz", what: "publie à Copenhague une théorie qui identifie les vibrations de la lumière à des courants électriques.", context: "Il remplace l'action instantanée par des potentiels retardés : l'effet d'une charge en un point dépend de son état à l'instant où un signal parti d'elle à la vitesse de la lumière aurait dû partir. Il semble avoir travaillé sans connaître l'article de Maxwell." },
+      hertz: { who: "Heinrich Hertz", what: "détecte à l'automne, à Karlsruhe, les ondes émises par un circuit à étincelles.", context: "En réfléchissant ces ondes sur une plaque de métal, il forme des ondes stationnaires dont il mesure la longueur d'onde, et en déduit une vitesse de propagation compatible avec celle de la lumière. Les résultats paraissent en 1888." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      gps: { name: "Positionnement par satellites", text: "Les satellites GPS, à environ 20\u00a0200\u00a0km d'altitude, émettent notamment sur 1\u202f575,42\u00a0MHz des signaux datés. Le récepteur au sol compare la date d'émission à celle de réception : le retard <var>r</var>/<var>c</var>, environ 67\u00a0ms pour un satellite au zénith, donne la distance. Avec quatre satellites, il en tire sa position et l'heure. C'est le retard de (29.1), mesuré à quelques milliardièmes de seconde près." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      retard: { prompt: "Une charge a été accélérée brièvement à 9\u00a0h\u00a000\u00a0min\u00a000\u00a0s. À quel instant un observateur à 300\u00a0m en voit-il l'effet sur le champ ?",
+        options: { a: "À 9\u00a0h\u00a000\u00a0min\u00a000\u00a0s exactement : le champ suit la charge.", b: "1\u00a0s plus tard.", c: "1\u00a0µs plus tard : il faut r/c pour que la nouvelle arrive.", d: "Jamais : seul le champ statique atteint 300\u00a0m." },
+        why: "Le champ en r dépend de l'accélération à l'instant t \u2212r/c. 300\u00a0m divisés par 3\u202f×\u202f10⁸\u00a0m·s⁻¹ donnent 1\u00a0µs." },
+      photo: { prompt: "Une charge accélère fort au début de son mouvement, puis de moins en moins. Sur une photo du champ prise plus tard, où le champ est-il le plus fort (une fois le facteur 1/r ôté) ?",
+        options: { a: "Le plus loin de la charge, près du front : c'est là qu'arrive ce qu'elle a fait en premier.", b: "Le plus près de la charge.", c: "Partout pareil : le champ ne dépend pas de la distance.", d: "À mi-chemin, quelle que soit l'histoire." },
+        hint: "Plus le point est loin, plus l'instant retardé est ancien.",
+        why: "En r, on lit l'accélération à t \u2212r/c. Les points éloignés montrent les instants anciens : la photo est l'histoire retournée, le début du mouvement près du front." },
+      axe: { prompt: "La charge oscille verticalement. Que reçoit un observateur placé à la verticale de la charge, sur l'axe du mouvement ?",
+        options: { a: "Le champ le plus fort, puisqu'il est dans la direction du mouvement.", b: "Un champ dirigé vers lui.", c: "La moitié du champ reçu sur le côté.", d: "Rien : le facteur sin\u00a0θ s'annule, le champ rayonné est nul le long de l'axe." },
+        why: "(29.1) contient sin\u00a0θ, où θ est l'angle entre l'accélération et la ligne de visée. Seule compte la partie de l'accélération perpendiculaire à la ligne de visée." },
+      sens: { prompt: "Un proton accélère vers le haut. Sur le côté, dans le plan perpendiculaire, de quel côté pointe son champ rayonné, une fois la nouvelle arrivée ?",
+        options: { a: "Vers le haut, comme l'accélération.", b: "Vers le bas : c'est le signe moins de (29.1).", c: "Vers le proton.", d: "À l'opposé du proton." },
+        why: "Pour une charge positive, le champ rayonné est opposé à la partie de l'accélération perpendiculaire à la ligne de visée. Il n'a pas de composante le long de cette ligne." },
+      front: { prompt: "La charge était au repos jusqu'à t\u00a0=\u00a00. Que vaut le champ rayonné, à l'instant t\u00a0=\u00a020\u00a0ns, à 9\u00a0m de la charge ?",
+        options: { a: "Zéro : la nouvelle du départ, partie à t\u00a0=\u00a00, n'est qu'à 6\u00a0m.", b: "La valeur que donne l'accélération à 20\u00a0ns.", c: "La moitié de cette valeur.", d: "Une valeur infinie, au front." },
+        hint: "Combien de mètres la lumière parcourt-elle en 20\u00a0ns ?",
+        why: "En 20\u00a0ns, la lumière parcourt 6\u00a0m. À 9\u00a0m, l'instant retardé est négatif : la charge y était encore au repos, son champ rayonné est nul." },
+      distance: { prompt: "On s'éloigne d'une charge oscillante de 10\u00a0m à 20\u00a0m, dans la zone d'onde. Comment change l'amplitude du champ rayonné ?",
+        options: { a: "Elle est divisée par 4.", b: "Elle ne change pas.", c: "Elle est divisée par 2 : elle décroît en 1/r.", d: "Elle est divisée par 8." },
+        why: "Le champ rayonné décroît en 1/r, bien plus lentement que le champ de Coulomb en 1/r². L'énergie, proportionnelle au carré du champ, décroît en 1/r² : c'est l'objet de « L’énergie du rayonnement »." },
+      zone: { prompt: "Un émetteur radio fonctionne à 1\u00a0MHz, soit λ\u00a0=\u00a0300\u00a0m. Peut-on utiliser (29.1) pour un récepteur à 30\u00a0m ?",
+        options: { a: "Oui, partout, dès qu'on est hors de l'émetteur.", b: "Non : 30\u00a0m n'est qu'un dixième de longueur d'onde, les termes en 1/r² et 1/r³ dominent.", c: "Oui, car 30\u00a0m est grand devant la taille de l'antenne.", d: "Non, car la fréquence est trop basse pour rayonner." },
+        hint: "Comparez r à λ/(2π), environ 48\u00a0m.",
+        why: "Les termes négligés sont de l'ordre de λ/(2πr) par rapport au terme rayonné, soit plus de 1 à 30\u00a0m : on est dans la zone proche. (29.1) suppose r grand devant quelques longueurs d'onde." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. I, chap. 29, §29-1 (texte original en anglais). Notations SI. Maxwell : Royal Society, <i>Philosophical Transactions</i> 155 (1865), lu le 8 décembre 1864. Lorenz : H. Kragh, « Ludvig Lorenz (1867) on Light and Electricity », arXiv 1803.06371. Hertz : Wikipédia, « Heinrich Hertz ». GPS : Bowditch, <i>The American Practical Navigator</i>, chap. 22. Charges, durées et calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

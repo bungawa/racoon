@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Particule dans un champ magnétique uniforme</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-mecanique" data-i18n="monde.mecanique"></a><span class="aux">›</span><a href="/racoon/etape?id=particule-chargee" data-i18n="etape.particule-chargee"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-meca" href="/racoon/atlas?piste=meca" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/force-de-lorentz" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi>m</mi><mfrac><msup><mi>v</mi><mn>2</mn></msup><mi>R</mi></mfrac><mo>=</mo><mo stretchy="false">|</mo><mi>q</mi><mo stretchy="false">|</mo><mi>v</mi><mi>B</mi><mspace width="0.6em"/><mo>⟹</mo><mspace width="0.6em"/><mi>R</mi><mo>=</mo><mfrac><mrow><mi>m</mi><mi>v</mi></mrow><mrow><mo stretchy="false">|</mo><mi>q</mi><mo stretchy="false">|</mo><mi>B</mi></mrow></mfrac><mo>,</mo><mspace width="1em"/><msub><mi>ω</mi><mi mathvariant="normal">c</mi></msub><mo>=</mo><mfrac><mi>v</mi><mi>R</mi></mfrac><mo>=</mo><mfrac><mrow><mo stretchy="false">|</mo><mi>q</mi><mo stretchy="false">|</mo><mi>B</mi></mrow><mi>m</mi></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.3.1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="box prop"><b data-i18n="s1.prop.title"></b>
+      <p data-i18n-html="s1.prop.body"></p>
+    </div>
+    <div class="box warn"><b data-i18n="s1.warn.title"></b>
+      <p data-i18n-html="s1.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>R</mi><mo>=</mo><mfrac><mrow><mi>m</mi><msub><mi>v</mi><mo>⊥</mo></msub></mrow><mrow><mo stretchy="false">|</mo><mi>q</mi><mo stretchy="false">|</mo><mi>B</mi></mrow></mfrac><mo>,</mo><mspace width="1em"/><mi>h</mi><mo>=</mo><msub><mi>v</mi><mo>∥</mo></msub><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><msub><mi>ω</mi><mi mathvariant="normal">c</mi></msub></mfrac><mo>=</mo><mfrac><mrow><mn>2</mn><mi>π</mi><mi>m</mi><msub><mi>v</mi><mo>∥</mo></msub></mrow><mrow><mo stretchy="false">|</mo><mi>q</mi><mo stretchy="false">|</mo><mi>B</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.3.2"></p>
+    <figure>
+      <svg class="fig" id="hel" viewBox="0 0 640 300" role="img" data-i18n-attr="aria-label:hel.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="hel.legend.traj"></span><span class="c-label-2" data-i18n="hel.legend.B"></span><span class="c-warn" data-i18n="hel.legend.point"></span></div>
+      <div class="panel">
+        <div class="seg" role="group" data-i18n-attr="aria-label:hel.choice">
+          <button type="button" data-p="electron" aria-pressed="true" data-i18n="hel.electron"></button>
+          <button type="button" data-p="proton" aria-pressed="false" data-i18n="hel.proton"></button>
+        </div>
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="hB" data-i18n="hel.B"></label><output id="hBo" for="hB"></output></div>
+            <input id="hB" type="range" min="-5" max="0.5" step="0.01" value="-2"></div>
+          <div class="ctl"><div class="row"><label for="hE" data-i18n="hel.Ec"></label><output id="hEo" for="hE"></output></div>
+            <input id="hE" type="range" min="0" max="9" step="0.01" value="3"></div>
+          <div class="ctl"><div class="row"><label for="hA" data-i18n="hel.alpha"></label><output id="hAo" for="hA"></output></div>
+            <input id="hA" type="range" min="0" max="90" step="1" value="70"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="hel.k.R"></span><span class="v" id="vR"></span><span class="f" id="fR"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="hel.k.T"></span><span class="v" id="vT"></span><span class="f" id="fT"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="hel.k.pas"></span><span class="v" id="vpas"></span><span class="f" id="fpas"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="hel.k.rel"></span><span class="v" id="vrel"></span><span class="f" id="frel"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="hel.caption"></figcaption>
+    </figure>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>f</mi><mi mathvariant="normal">c</mi></msub><mo>=</mo><mfrac><mrow><mo stretchy="false">|</mo><mi>q</mi><mo stretchy="false">|</mo><mi>B</mi></mrow><mrow><mn>2</mn><mi>π</mi><mi>m</mi></mrow></mfrac><mo>,</mo><mspace width="1em"/><msub><mi>E</mi><mrow><mi mathvariant="normal">c</mi><mo>,</mo><mi data-i18n="eq.max"></mi></mrow></msub><mo>=</mo><mfrac><mrow><msup><mi>q</mi><mn>2</mn></msup><msup><mi>B</mi><mn>2</mn></msup><msubsup><mi>R</mi><mi data-i18n="eq.max"></mi><mn>2</mn></msubsup></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.3.3"></p>
+    <div class="list keyed" id="cyc"></div>
+    <div class="box warn"><b data-i18n="s3.warn.title"></b>
+      <p data-i18n-html="s3.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/particule-champ-magnetique.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/cinematique.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/dynamique.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/lecons/particule-chargee.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+const fill = (s, v) => s.replace(/\{(\w+)\}/g, (m, k) => v[k] != null ? v[k] : m);
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const P = Charge.PARTICULES, e = Charge.E0, C = Charge.C;
+const len = x => F.si(x, "m");
+
+/* ---------- cercle et hélice : vue le long de B, vue de côté ---------- */
+(() => {
+  const svg = $("hel"), El = Plot.el;
+  let nom = "electron", anim = 0;
+  const label = (x, y, key, anchor) => { El("text", { x, y, "text-anchor": anchor || "middle" }, svg).textContent = t(key); };
+  function compute() {
+    const p = P[nom], B = Math.pow(10, +$("hB").value), ec = Math.pow(10, +$("hE").value) * e, alpha = +$("hA").value * Math.PI / 180;
+    return { p, B, ec, alpha, rel: Charge.larmor(p.q, p.m, B, ec, alpha, { rel: true }), cl: Charge.larmor(p.q, p.m, B, ec, alpha) };
+  }
+  function draw() {
+    cancelAnimationFrame(anim);
+    const s = compute(), h = s.rel;
+    svg.innerHTML = "";
+    /* left: seen from the tip of B (B towards the reader); right: from the side, B upwards */
+    const cx = 160, cy = 150, R0 = 100;
+    El("circle", { cx, cy, r: 6, class: "stroke thin c-label-2" }, svg); El("circle", { cx, cy, r: 1.6, class: "fill c-label-2" }, svg);
+    label(cx, 285, "hel.face");
+    const sideX = 470, top = 30, bot = 270;
+    El("line", { x1: 600, y1: bot, x2: 600, y2: top, class: "stroke thin c-label-2" }, svg);
+    El("polygon", { points: `600,${top - 6} 595,${top + 4} 605,${top + 4}`, class: "fill c-label-2" }, svg);
+    label(612, top + 8, "hel.Blabel", "start"); label(sideX, 285, "hel.cote");
+    const turns = 3, N = 360, Rp = h.R, H = Math.abs(h.pas) * turns;
+    const k = h.R > 0 ? Math.min(R0 / Rp, H > 0 ? (bot - top) / H : Infinity) : (H > 0 ? (bot - top) / H : 1);   // one scale for both views
+    let dF = "", dS = "";
+    for (let i = 0; i <= N; i++) {
+      const tt = h.T * turns * i / N, x = h.pos(tt), X = x[0] - h.centre[0], Y = x[1] - h.centre[1];
+      dF += (i ? "L" : "M") + (cx + k * X).toFixed(1) + " " + (cy - k * Y).toFixed(1);
+      dS += (i ? "L" : "M") + (sideX + k * X).toFixed(1) + " " + (bot - k * x[2]).toFixed(1);
+    }
+    El("path", { d: dF, class: "stroke c-tint" }, svg); El("path", { d: dS, class: "stroke c-tint" }, svg);
+    const dotF = El("circle", { r: 6, class: "fill c-warn" }, svg), dotS = El("circle", { r: 6, class: "fill c-warn" }, svg);
+    const t0 = performance.now();
+    const step = now => {
+      const u = ((now - t0) / 4000) % 1, tt = h.T * turns * u, x = h.pos(tt);
+      dotF.setAttribute("cx", cx + k * (x[0] - h.centre[0])); dotF.setAttribute("cy", cy - k * (x[1] - h.centre[1]));
+      dotS.setAttribute("cx", sideX + k * (x[0] - h.centre[0])); dotS.setAttribute("cy", bot - k * x[2]);
+      anim = requestAnimationFrame(step);
+    };
+    anim = requestAnimationFrame(step);
+    $("hBo").textContent = F.si(s.B, "T");
+    $("hEo").textContent = F.si(s.ec / e, "eV");
+    $("hAo").textContent = F.num(+$("hA").value, 3) + "°";
+    $("vR").textContent = len(h.R);
+    $("fR").textContent = t("hel.f.newton", { x: len(s.cl.R) });
+    $("vT").textContent = F.si(h.T, "s");
+    $("fT").textContent = t("hel.f.T", { f: F.si(h.f, "Hz"), x: F.si(s.cl.T, "s") });
+    $("vpas").textContent = len(Math.abs(h.pas));
+    $("fpas").textContent = t(h.R > 0 ? "hel.f.pas" : "hel.f.droit", { r: F.num(Math.abs(h.pas) / h.R, 3) });
+    $("vrel").textContent = F.sci(s.cl.rel, 2);
+    $("frel").textContent = t(h.gamma - 1 < 0.01 ? "hel.f.newtonOK" : "hel.f.einstein", { g: F.num(h.gamma, 4) });
+  }
+  document.querySelectorAll("[data-p]").forEach(btn => btn.onclick = () => {
+    nom = btn.dataset.p; document.querySelectorAll("[data-p]").forEach(b => b.setAttribute("aria-pressed", String(b === btn))); draw();
+  });
+  ["hB", "hE", "hA"].forEach(id => $(id).oninput = draw); draw();
+})();
+
+/* ---------- le système décrit, chiffré ---------- */
+(() => {
+  const el = P.electron, h = Charge.larmor(el.q, el.m, 5e-5, 1e3 * e, Math.PI / 2, { rel: true });
+  const n = Charge.negligeables({ q: el.q, m: el.m, v: h.v, B: 5e-5 });
+  $("sys").innerHTML = t("sys.body", { R: F.num(h.R, 2), T: F.si(h.T, "s"), rel: F.sci(n.rel, 1), pB: F.sci(n.poidsB, 1) });
+})();
+
+/* ---------- le cyclotron : trois cas ---------- */
+(() => {
+  const ROWS = [["lawrence", "proton", 1e6], ["therapie", "proton", 230e6], ["electron", "electron", 1e6]];
+  const txt = textOf("cyc.items", ROWS.map(r => r[0]));
+  $("cyc").innerHTML = ROWS.map(([id, nom, eV]) => {
+    const p = P[nom], B = 1, R = Charge.champPour(p.q, p.m, eV * e, 1) / B, c = Charge.cyclotron(p.q, p.m, B, R, 1e4);
+    return `<div><span class="k">${txt[id].k}</span><span>${fill(txt[id].text, { rel: F.sci(c.rel, 2), g: F.num(c.gamma, 4), d: F.num(c.desaccord * 100, 2), R: F.num(R * 100, 3) })}</span></div>`;
+  }).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["aston", 1919, "experiment"], ["lawrence", 1932, "experiment"], ["vanallen", 1958, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const p = P.proton, cy = Charge.cyclotron(p.q, p.m, 1, Charge.champPour(p.q, p.m, 230e6 * e, 1), 1e4);
+  const USES = ["therapie"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${fill(uses[id].text, { g: F.num(cy.gamma, 3), d: F.num(cy.desaccord * 100, 2) })}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["norme", "a"], ["rayon", "b"], ["periode", "c"], ["sens", "d"], ["helice", "a"], ["cyclotron", "b"], ["electron", "c"], ["terre", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 213 });
+})();
+</script>
+</body>
+</html>

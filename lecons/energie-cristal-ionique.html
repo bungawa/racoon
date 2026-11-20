@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Énergie électrostatique d'un cristal ionique</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-electrostatique" data-i18n="monde.electrostatique"></a><span class="aux">›</span><a href="/racoon/etape?id=energie-condensateur" data-i18n="etape.energie-condensateur"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/energie-distribution-de-charges" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>U</mi><mn>1</mn></msub><mo>=</mo><mfrac><msup><mi>e</mi><mn>2</mn></msup><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub><mi>a</mi></mrow></mfrac><mrow><mo>(</mo><mo>−</mo><mfrac><mn>2</mn><mn>1</mn></mfrac><mo>+</mo><mfrac><mn>2</mn><mn>2</mn></mfrac><mo>−</mo><mfrac><mn>2</mn><mn>3</mn></mfrac><mo>+</mo><mfrac><mn>2</mn><mn>4</mn></mfrac><mo>−</mo><mo>…</mo><mo>)</mo></mrow></math><span class="n">(8.19)</span></div>
+    <p class="validite" data-i18n-html="val.8.19"></p>
+    <div class="eq"><math display="block"><msub><mi>U</mi><mn>1</mn></msub><mo>=</mo><mo>−</mo><mn>2</mn><mi data-i18n="eq.ln"></mi><mn>2</mn><mspace width="0.15em"/><mfrac><msup><mi>e</mi><mn>2</mn></msup><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub><mi>a</mi></mrow></mfrac><mo>=</mo><mo>−</mo><mn>1,386</mn><mspace width="0.15em"/><mfrac><msup><mi>e</mi><mn>2</mn></msup><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub><mi>a</mi></mrow></mfrac></math><span class="n">(8.20)</span></div>
+    <p class="validite" data-i18n-html="val.8.20"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="eq"><math display="block"><mfrac><msup><mi>e</mi><mn>2</mn></msup><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub><mi>a</mi></mrow></mfrac><mrow><mo>(</mo><mo>−</mo><mfrac><mn>1</mn><mn>1</mn></mfrac><mo>+</mo><mfrac><mn>2</mn><msqrt><mn>2</mn></msqrt></mfrac><mo>−</mo><mfrac><mn>2</mn><msqrt><mn>5</mn></msqrt></mfrac><mo>+</mo><mfrac><mn>2</mn><msqrt><mn>10</mn></msqrt></mfrac><mo>−</mo><mo>…</mo><mo>)</mo></mrow></math><span class="n">(8.21)</span></div>
+    <p class="validite" data-i18n-html="val.8.21"></p>
+    <p data-i18n-html="s1.p4"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>φ</mi><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>ρ</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><mn>4</mn><mi>e</mi></mrow><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub><mi>a</mi></mrow></mfrac><munder><mo>∑</mo><mrow><mi>m</mi><mspace width="0.3em"/><mtext data-i18n="eq.impair"></mtext></mrow></munder><msub><mi>K</mi><mn>0</mn></msub><mrow><mo>(</mo><mfrac><mrow><mi>m</mi><mi>π</mi><mi>ρ</mi></mrow><mi>a</mi></mfrac><mo>)</mo></mrow><mi data-i18n="eq.cos"></mi><mfrac><mrow><mi>m</mi><mi>π</mi><mi>x</mi></mrow><mi>a</mi></mfrac></math><span class="n">(8.21a)</span></div>
+    <p class="validite" data-i18n-html="val.8.21a"></p>
+    <div class="panel">
+      <div class="ctl"><div class="row"><label for="rhosl" data-i18n="ra.rho"></label><output id="rhoread" for="rhosl"></output></div>
+        <input id="rhosl" type="range" min="25" max="400" step="5" value="100"></div>
+      <div class="stats">
+        <div class="stat"><span class="k" data-i18n-html="ra.k.rang"></span><span class="v" id="vrang"></span><span class="f" data-i18n="ra.f.rang"></span></div>
+        <div class="stat"><span class="k" data-i18n-html="ra.k.direct"></span><span class="v" id="vdirect"></span><span class="f" data-i18n="ra.f.direct"></span></div>
+        <div class="stat"><span class="k" data-i18n-html="ra.k.seule"></span><span class="v" id="vseule"></span><span class="f" data-i18n="ra.f.seule"></span></div>
+      </div>
+    </div>
+    <p data-i18n-html="s2.p2"></p>
+    <figure>
+      <svg class="fig" id="sommes" viewBox="0 0 640 320" role="img" data-i18n-attr="aria-label:so.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="so.legend.rangees"></span><span class="c-ok" data-i18n="so.legend.cubes"></span><span class="c-warn" data-i18n="so.legend.spheres"></span></div>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="Rsl" data-i18n="so.R"></label><output id="Rread" for="Rsl"></output></div>
+          <input id="Rsl" type="range" min="2" max="24" step="1" value="4"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="so.k.rangees"></span><span class="v" id="vrangees"></span><span class="f" id="frangees"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="so.k.cubes"></span><span class="v" id="vcubes"></span><span class="f" id="fcubes"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="so.k.spheres"></span><span class="v" id="vspheres"></span><span class="f" data-i18n="so.f.spheres"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="so.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/energie-cristal-ionique.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/lecons/cristaux.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/physique-fondamentale.js"></script>
+<script src="/racoon/lecons/champs-em.js"></script>
+<script src="/racoon/electrostatique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const ES = Electrostatique, X = Cristaux, EV = ES.E;
+const pct = e => F.qty(F.num(100 * e, 2), "%");
+const MADELUNG = ES.madelungLignes(12).total;
+
+/* ---------- le système décrit : le sel, ions ponctuels au repos ---------- */
+(() => {
+  const a = X.STRUCTURES.NaCl.a / 2, u = ES.K * ES.E * ES.E / a, U = MADELUNG * u, kT = Constantes.k_B * 300, n = 9.4;
+  const BH = 787e3 / Constantes.N_A;                                              // J per ion pair, Born–Haber (« Les liaisons chimiques dans les cristaux »)
+  $("sys1").innerHTML = t("sys1.body", { a: F.si(a, "m", { prefix: "p" }), u: F.qty(F.num(u / EV, 3), "eV"), U: F.qty(F.num(U / EV, 3), "eV"),
+    kt: pct(kT / U), rep: F.qty(F.num(U * (1 - 1 / n) / EV, 3), "eV"), bh: F.qty(F.num(BH / EV, 3), "eV"), ecart: pct(1 - U * (1 - 1 / n) / BH) });
+})();
+
+/* ---------- le potentiel d'une rangée alternée, vu de côté ---------- */
+(() => {
+  const sl = $("rhosl");
+  function draw() {
+    const rho = +sl.value / 100, phi = ES.ligneAlternee(rho, 0), N = 20000;
+    const direct = (ES.ligneDirecte(rho, 0, N) + ES.ligneDirecte(rho, 0, N + 1)) / 2;
+    $("rhoread").textContent = F.num(rho, 3);
+    $("vrang").textContent = F.sci(phi, 3);
+    $("vdirect").textContent = F.sci(direct, 3);
+    $("vseule").textContent = F.sci(phi * rho, 2);
+  }
+  sl.oninput = draw; draw();
+})();
+
+/* ---------- trois ordres de sommation pour la même somme ---------- */
+(() => {
+  const svg = $("sommes"), Rsl = $("Rsl"), RMAX = 12;
+  const L = ES.madelungLignes(RMAX), S = ES.madelungSpheres(RMAX);
+  const C = Array.from({ length: RMAX }, (_, i) => [i + 1, X.madelungNaCl(i + 1)]);
+  const lignes = [[0, L.propre]].concat(L.couches.map(c => [c.rho, c.cumul]));     // the value once every row closer than ρ is in
+  const marche = (pts, r) => { let v = NaN; for (const [x, y] of pts) if (x <= r + 1e-9) v = y; return v; };
+  const Y0 = 1e-10, Y1 = 30, clip = v => Math.max(Y0, Math.min(Y1, Math.abs(v - MADELUNG)));   // the distance to the limit, log scale
+  function draw() {
+    const R = +Rsl.value / 2;
+    svg.innerHTML = "";
+    const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 320, pad: { b: 44 }, x: { domain: [0, RMAX], label: t("so.x"), fmt: v => F.num(v, 2) },
+      y: { scale: "log", domain: [Y0, Y1], label: t("so.y") } });
+    const stairs = pts => { const out = []; pts.forEach(([px, py], i) => { if (i) out.push([x(px), y(clip(pts[i - 1][1]))]); out.push([x(px), y(clip(py))]); });
+      out.push([x(RMAX), y(clip(pts[pts.length - 1][1]))]); return out; };
+    Plot.el("path", { d: Plot.path(stairs(S.map(s => [s.r, s.M]))), class: "stroke thin" }, Plot.el("g", { class: "c-warn" }, g));
+    const gc = Plot.el("g", { class: "c-ok" }, g);
+    Plot.el("path", { d: Plot.path(C.map(([n, m]) => [x(n), y(clip(m))])), class: "stroke" }, gc);
+    C.forEach(([n, m]) => Plot.el("circle", { cx: x(n), cy: y(clip(m)), r: 3.5, class: "fill" }, gc));
+    Plot.el("path", { d: Plot.path(stairs(lignes)), class: "stroke bold" }, Plot.el("g", { class: "c-tint" }, g));
+    Plot.el("line", { x1: x(R), x2: x(R), y1: y(Y0), y2: y(Y1), class: "stroke thin" }, Plot.el("g", { class: "c-label-2" }, g));
+    const vl = marche(lignes, R), n = Math.floor(R), vc = n >= 1 ? X.madelungNaCl(n) : NaN, vs = marche(S.map(s => [s.r, s.M]), R);
+    $("Rread").textContent = F.num(R, 3);
+    $("vrangees").textContent = F.fix(vl, 7);
+    $("frangees").textContent = t("so.f.ecart", { e: F.sci(Math.abs(vl - MADELUNG), 1) });
+    $("vcubes").textContent = F.fix(vc, 7);
+    $("fcubes").textContent = t("so.f.cube", { n: F.num(n, 2), e: F.sci(Math.abs(vc - MADELUNG), 1) });
+    $("vspheres").textContent = F.fix(vs, 3);
+  }
+  Rsl.oninput = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["bornlande", 1918, "idea"], ["evjen", 1932, "idea"], ["emersleben", 1951, "idea"], ["borwein", 1985, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["ordres"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["compter", "c"], ["moities", "a"], ["voisine", "d"], ["distance", "b"], ["spheres", "c"], ["points", "a"], ["thermique", "d"], ["ecart", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 83 });
+})();
+</script>
+</body>
+</html>

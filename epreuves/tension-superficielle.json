@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["laplace", "a"],
+  ["energie", "b"],
+  ["temperature", "c"],
+  ["jurin", "d"],
+  ["moitie", "a"],
+  ["lc", "b"],
+  ["wilhelmy", "c"],
+  ["biais", "d"]
+ ]
+}

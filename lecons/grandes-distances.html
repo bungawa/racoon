@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Les grandes distances</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-mesurer" data-i18n="monde.mesurer"></a><span class="aux">›</span><a href="/racoon/etape?id=les-distances" data-i18n="etape.les-distances"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fond" href="/racoon/atlas?piste=fond" data-i18n="tag.piste"></a>
+      <span class="chip plain" data-i18n="tag.prereq"></span>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq">
+      <math display="block"><mi>d</mi><mo>=</mo><mfrac><mrow><mi>b</mi><mspace width="0.2em"></mspace><mi data-i18n="fn.sin"></mi><mi>α</mi><mspace width="0.2em"></mspace><mi data-i18n="fn.sin"></mi><mi>β</mi></mrow><mrow><mi data-i18n="fn.sin"></mi><mo>(</mo><mi>α</mi><mo>+</mo><mi>β</mi><mo>)</mo></mrow></mfrac></math>
+      
+    </div>
+    <p class="validite" data-i18n="eq1.validite"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="eq">
+      <math display="block"><mi>d</mi><mo>=</mo><mfrac><mi>b</mi><mrow><mn>2</mn><mi data-i18n="fn.tan"></mi><mi>p</mi></mrow></mfrac><mo>≈</mo><mfrac><mi>b</mi><mrow><mn>2</mn><mi>p</mi></mrow></mfrac><mspace width="2em"></mspace><mfrac><mrow><mi>Δ</mi><mi>d</mi></mrow><mi>d</mi></mfrac><mo>≈</mo><mfrac><mrow><mi>Δ</mi><mi>p</mi></mrow><mi>p</mi></mfrac></math>
+      
+    </div>
+    <p class="validite" data-i18n="eq2.validite"></p>
+    <figure>
+      <svg class="fig" id="tri" viewBox="0 0 640 300" role="img" data-i18n-attr="aria-label:tri.aria"></svg>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="bsl" data-i18n="tri.base"></label><output id="bread" for="bsl"></output></div>
+          <input id="bsl" type="range" min="0" max="12" step="0.01" value="11.48"></div>
+        <div class="ctl"><div class="row"><label for="psl" data-i18n="tri.angle"></label><output id="pread" for="psl"></output></div>
+          <input id="psl" type="range" min="-11" max="-0.3" step="0.01" value="-5.82"></div>
+        <div class="seg" id="inst" role="group" data-i18n-attr="aria-label:tri.inst"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="tri.k.d"></span><span class="v" id="vd"></span><span class="f" id="fd"></span></div>
+          <div class="stat"><span class="k" data-i18n="tri.k.range"></span><span class="v" id="vr"></span><span class="f" id="fr"></span></div>
+          <div class="stat"><span class="k" data-i18n="tri.k.rel"></span><span class="v" id="ve"></span><span class="f" id="fe"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="tri.caption"></figcaption>
+    </figure>
+    <figure class="chart">
+      <svg id="errchart" role="img" data-i18n-attr="aria-label:err.aria"></svg>
+      <figcaption data-i18n-html="err.caption"></figcaption>
+    </figure>
+    <div class="box rem"><b data-i18n="s1.rem.title"></b>
+      <p data-i18n-html="s1.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq">
+      <math display="block"><mi>d</mi><mo>=</mo><mfrac><mrow><mi>c</mi><mspace width="0.1em"></mspace><mi>Δ</mi><mi>t</mi></mrow><mn>2</mn></mfrac></math>
+      
+    </div>
+    <p class="validite" data-i18n="eq3.validite"></p>
+    <figure>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="tsl" data-i18n="echo.time"></label><output id="tread" for="tsl"></output></div>
+          <input id="tsl" type="range" min="-6" max="4" step="0.01" value="0.408"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="echo.k.d"></span><span class="v" id="ed"></span><span class="f" id="ef"></span></div>
+          <div class="stat"><span class="k" data-i18n="echo.k.mm"></span><span class="v" id="emm"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="echo.caption"></figcaption>
+    </figure>
+    <div class="box warn"><b data-i18n="s2.warn.title"></b>
+      <p data-i18n-html="s2.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq">
+      <math display="block"><mi>φ</mi><mo>=</mo><mfrac><mi>L</mi><mrow><mn>4</mn><mi>π</mi><msup><mi>d</mi><mn>2</mn></msup></mrow></mfrac><mspace width="1em"></mspace><mo>⟹</mo><mspace width="1em"></mspace><mi>d</mi><mo>=</mo><msqrt><mfrac><mi>L</mi><mrow><mn>4</mn><mi>π</mi><mi>φ</mi></mrow></mfrac></msqrt></math>
+      
+    </div>
+    <p class="validite" data-i18n="eq4.validite"></p>
+    <div class="list keyed" id="ladder"></div>
+    <p data-i18n="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/grandes-distances.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/grandes-distances.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I.fallback : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const len = d => isFinite(d) ? F.qty(F.sci(d, 3), "m") : t("tri.infinite");
+const rad = a => F.qty(F.sci(a, 3), "rad");
+const arcsec = a => F.num(a / Dist.ARCSEC, 3) + "″";
+
+/* ---------- §5-6 : triangulation et parallaxe ---------- */
+(() => {
+  /* instruments: angular uncertainty Δp in rad (eye ≈ 1′, Bessel 1838 ±0,0136″, Hipparcos ≈ 1 mas, Gaia ≈ 24 µas) */
+  const INST = [["oeil", 60 * Dist.ARCSEC], ["bessel", 0.0136 * Dist.ARCSEC], ["hipparcos", 1e-3 * Dist.ARCSEC], ["gaia", 24e-6 * Dist.ARCSEC]];
+  const names = textOf("tri.instruments", INST.map(i => i[0]));
+  let dp = INST[1][1];
+  const seg = $("inst");
+  seg.innerHTML = INST.map(([id]) => `<button type="button" data-id="${id}"></button>`).join("");
+  seg.querySelectorAll("button").forEach((b, i) => { b.textContent = names[INST[i][0]];
+    b.onclick = () => { dp = INST[i][1]; seg.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); upd(); }; });
+  seg.children[1].setAttribute("aria-pressed", "true");
+
+  /* sketch: angles are far too small to draw, so the apex height follows log(d/b) */
+  const svg = $("tri"), A = 250, B = 390, Y = 262, X = (A + B) / 2;
+  const hOf = d => isFinite(d) ? 30 + 210 * Math.min(Math.max((Math.log10(d / b) + 1) / 14, 0), 1) : 250;
+  const band = Plot.el("line", { class: "stroke bold c-warn" }, svg);
+  const la = Plot.el("line", { class: "stroke thin c-label-2" }, svg), lb = Plot.el("line", { class: "stroke thin c-label-2" }, svg);
+  const axis = Plot.el("line", { x1: X, x2: X, y1: Y, class: "stroke thin dash c-label-2" }, svg);
+  Plot.el("line", { x1: A, x2: B, y1: Y, y2: Y, class: "stroke bold c-tint" }, svg);
+  Plot.el("circle", { cx: A, cy: Y, r: 5, class: "fill c-tint" }, svg); Plot.el("circle", { cx: B, cy: Y, r: 5, class: "fill c-tint" }, svg);
+  const star = Plot.el("circle", { r: 7, class: "fill c-warn" }, svg);
+  Plot.el("text", { x: X, y: Y + 26, "text-anchor": "middle" }, svg).textContent = t("tri.lab.base");
+  Plot.el("text", { x: A - 10, y: Y + 4, "text-anchor": "end" }, svg).textContent = "A";
+  Plot.el("text", { x: B + 10, y: Y + 4 }, svg).textContent = "B";
+  const lstar = Plot.el("text", { x: X + 14, "text-anchor": "start" }, svg), ld = Plot.el("text", { x: X + 8, "text-anchor": "start" }, svg);
+  const lband = Plot.el("text", { x: X - 14, "text-anchor": "end" }, svg);
+
+  /* chart: Δd/d as a function of d, for the current baseline and instrument */
+  const { x, y, g } = Plot.axes($("errchart"), { fmt: F, w: 640, h: 300, pad: { b: 44 },
+    x: { scale: "log", domain: [1e3, 1e27], label: t("err.x") }, y: { scale: "log", domain: [1e-8, 1e2], label: t("err.y") } });
+  Plot.el("line", { x1: x(1e3), x2: x(1e27), y1: y(1), y2: y(1), class: "ref" }, g);
+  Plot.el("text", { x: x(1e3) + 6, y: y(1) - 6, class: "note" }, g).textContent = t("err.limit");
+  const MARKS = [["lune", 3.84e8], ["soleil", Dist.AU], ["proxima", 4.0e16], ["centre", 2.6e20], ["andromede", 2.4e22]];
+  const marks = textOf("err.marks", MARKS.map(m => m[0]));
+  MARKS.forEach(([id, d], i) => { Plot.el("line", { x1: x(d), x2: x(d), y1: y(1e2), y2: y(1e-8), class: "grid" }, g);
+    Plot.el("text", { x: x(d) + 4, y: y(1e-7) - 12 * (i % 2), class: "note" }, g).textContent = marks[id]; });
+  const curve = Plot.el("path", { class: "curve" }, g), dot = Plot.el("circle", { r: 6, class: "dot" }, g);
+
+  const bsl = $("bsl"), psl = $("psl");
+  let b = 0;
+  function upd() {
+    b = Math.pow(10, +bsl.value);
+    const p = Math.pow(10, +psl.value), r = Dist.interval(b, p, dp);
+    $("bread").textContent = len(b);
+    $("pread").textContent = rad(p) + " · " + arcsec(p);
+    $("vd").textContent = len(r.d);
+    $("fd").textContent = t("tri.f.d", { au: F.sci(r.d / Dist.AU, 3), pc: F.sci(r.d / Dist.PC, 3) });
+    $("vr").textContent = len(r.near) + " – " + len(r.far);
+    $("fr").textContent = t("tri.f.range", { dp: rad(dp) });
+    $("ve").textContent = F.qty(F.num(100 * r.rel, 3), "%");
+    $("fe").textContent = r.rel >= 1 ? t("tri.f.lost") : t("tri.f.ok");
+    const hs = hOf(r.d), hn = hOf(r.near), hf = hOf(r.far);
+    [la, lb].forEach((l, i) => { l.setAttribute("x1", i ? B : A); l.setAttribute("y1", Y); l.setAttribute("x2", X); l.setAttribute("y2", Y - hs); });
+    axis.setAttribute("y2", Y - hs);
+    star.setAttribute("cx", X); star.setAttribute("cy", Y - hs);
+    band.setAttribute("x1", X); band.setAttribute("x2", X); band.setAttribute("y1", Y - hn); band.setAttribute("y2", Y - hf);
+    lstar.setAttribute("y", Y - hs + 4); lstar.textContent = t("tri.lab.target");
+    ld.setAttribute("y", Y - hs / 2); ld.textContent = t("tri.lab.d");
+    lband.setAttribute("y", Math.max(Y - hf, 12) + 4); lband.textContent = r.far === Infinity ? t("tri.lab.open") : t("tri.lab.band");
+    let d = "";
+    for (let i = 0; i <= 240; i++) { const D = Math.pow(10, 3 + 24 * i / 240), e = Dist.relError(b, D, dp);
+      d += (d ? "L" : "M") + x(D).toFixed(1) + " " + y(Math.min(Math.max(e, 1e-8), 1e2)).toFixed(1); }
+    curve.setAttribute("d", d);
+    const D = Math.min(Math.max(r.d, 1e3), 1e27);
+    dot.setAttribute("cx", x(D)); dot.setAttribute("cy", y(Math.min(Math.max(r.rel, 1e-8), 1e2)));
+  }
+  bsl.oninput = psl.oninput = upd; upd();
+})();
+
+/* ---------- §5-6 : écho radar ou laser ---------- */
+(() => {
+  const TARGETS = [["lune", 3.84e8], ["venus", 4.1e10], ["soleil", Dist.AU], ["jupiter", 6.3e11]];
+  const near = textOf("echo.targets", TARGETS.map(x => x[0]));
+  const tsl = $("tsl");
+  const upd = () => {
+    const dt = Math.pow(10, +tsl.value), d = Dist.echo(dt);
+    $("tread").textContent = F.si(dt, "s");
+    $("ed").textContent = len(d);
+    const best = TARGETS.reduce((a, c) => Math.abs(Math.log10(c[1] / d)) < Math.abs(Math.log10(a[1] / d)) ? c : a);
+    $("ef").textContent = Math.abs(Math.log10(best[1] / d)) < 0.15 ? t("echo.near", { what: near[best[0]] }) : t("echo.none");
+    $("emm").textContent = F.si(Dist.roundTrip(1e-3), "s");
+  };
+  tsl.oninput = upd; upd();
+})();
+
+/* ---------- l'échelle des distances ---------- */
+(() => {
+  const RUNGS = [["radar", 8, 13], ["parallaxe", 16, 20], ["couleur", 17, 21], ["cepheides", 19, 23], ["galaxies", 22, 26]];
+  const txt = textOf("ladder.rows", RUNGS.map(r => r[0]));
+  $("ladder").innerHTML = RUNGS.map(([id, a, z]) => `<div><span class="k">${F.qty("10" + F.sup(a) + "–10" + F.sup(z), "m")}</span><span><strong>${txt[id].name}.</strong> ${txt[id].text}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["cassini", 1672, "experiment"], ["delambre", 1792, "experiment"], ["bessel", 1838, "experiment"], ["leavitt", 1912, "idea"], ["turner", 1913, "idea"],
+    ["hubble", 1924, "experiment"], ["venus", 1961, "experiment"], ["apollo", 1969, "experiment"], ["hipparcos", 1989, "experiment"], ["uai", 2012, "use"], ["gaia", 2013, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["llr", "gaia", "geodesie", "cosmo"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["base", "a"], ["double", "b"], ["orbit", "c"], ["echo", "a"], ["candle", "d"], ["scale", "a"], ["ladder", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 5 });
+})();
+</script>
+</body>
+</html>

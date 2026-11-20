@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["rondpoint", "b"],
+  ["pente", "c"],
+  ["pas", "d"],
+  ["galileen", "a"],
+  ["altitude", "b"],
+  ["train", "c"],
+  ["bilan", "d"],
+  ["conditions", "a"]
+ ]
+}

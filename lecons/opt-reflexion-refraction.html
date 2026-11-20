@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Réflexion et réfraction</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-optique-geometrique" data-i18n="monde.optique-geometrique"></a><span class="aux">›</span><a href="/racoon/etape?id=opt-lumiere-fermat" data-i18n="etape.opt-lumiere-fermat"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-optique" href="/racoon/atlas?piste=optique" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/opt-nature-lumiere" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>θ</mi><mi mathvariant="normal">r</mi></msub><mo>=</mo><msub><mi>θ</mi><mi mathvariant="normal">i</mi></msub></math><span class="n">(26.1)</span></div>
+    <p class="validite" data-i18n-html="val.2.1"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure class="chart">
+      <svg id="ptol" role="img" data-i18n-attr="aria-label:pt.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="pt.legend.snell"></span><span class="c-warn" data-i18n="pt.legend.ptol"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="nsl" data-i18n="pt.n"></label><output id="nread" for="nsl"></output></div>
+            <input id="nsl" type="range" min="1.2" max="1.5" step="0.001" value="1.333"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="pt.k.max"></span><span class="v" id="vmax"></span><span class="f" id="fmax"></span></div>
+          <div class="stat"><span class="k" data-i18n="pt.k.fit"></span><span class="v" id="vfit"></span><span class="f" id="ffit"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="pt.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="list keyed" id="diffs"></div>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="eq"><math display="block"><msub><mi>n</mi><mn>1</mn></msub><mspace width="0.1em"/><mi data-i18n="fn.sin"></mi><mspace width="0.2em"/><msub><mi>θ</mi><mn>1</mn></msub><mo>=</mo><msub><mi>n</mi><mn>2</mn></msub><mspace width="0.1em"/><mi data-i18n="fn.sin"></mi><mspace width="0.2em"/><msub><mi>θ</mi><mn>2</mn></msub></math><span class="n">(26.2)</span></div>
+    <p class="validite" data-i18n-html="val.2.2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi data-i18n="fn.sin"></mi><mspace width="0.2em"/><msub><mi>θ</mi><mi mathvariant="normal">ℓ</mi></msub><mo>=</mo><mfrac><msub><mi>n</mi><mn>2</mn></msub><msub><mi>n</mi><mn>1</mn></msub></mfrac><mspace width="1em"/><mo stretchy="false">(</mo><msub><mi>n</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>n</mi><mn>2</mn></msub><mo stretchy="false">)</mo></math><span class="n">(26.2a)</span></div>
+    <p class="validite" data-i18n-html="val.2.3"></p>
+    <figure>
+      <svg class="fig" id="rayon" viewBox="0 0 640 300" role="img" data-i18n-attr="aria-label:ry.aria"></svg>
+      <div class="legend"><span class="c-label" data-i18n="ry.legend.i"></span><span class="c-warn" data-i18n="ry.legend.r"></span><span class="c-tint" data-i18n="ry.legend.t"></span></div>
+      <div class="panel">
+        <label class="field"><span data-i18n="ry.choice"></span>
+          <select id="couple">
+            <option value="air_eau" data-i18n="couple.air_eau"></option>
+            <option value="eau_air" data-i18n="couple.eau_air"></option>
+            <option value="air_verre" data-i18n="couple.air_verre"></option>
+            <option value="verre_air" data-i18n="couple.verre_air"></option>
+            <option value="diamant_air" data-i18n="couple.diamant_air"></option>
+            <option value="coeur_gaine" data-i18n="couple.coeur_gaine"></option>
+          </select></label>
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="tsl" data-i18n="ry.theta"></label><output id="tread" for="tsl"></output></div>
+            <input id="tsl" type="range" min="0" max="89.5" step="0.5" value="40"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="ry.k.t2"></span><span class="v" id="vt2"></span><span class="f" id="ft2"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="ry.k.lim"></span><span class="v" id="vlim"></span><span class="f" id="flim"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="ry.caption"></figcaption>
+    </figure>
+    <div class="box warn"><b data-i18n="s3.warn.title"></b>
+      <p data-i18n-html="s3.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/opt-reflexion-refraction.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/optique-geometrique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), O = OptiqueGeometrique, DEG = Math.PI / 180;
+const deg = r => F.num(r / DEG, 3) + "°";
+
+/* ---------- Ptolémée contre Snell-Descartes ---------- */
+(() => {
+  const svg = $("ptol"), fit = O.indiceAjuste(O.PTOLEMEE);
+  const par = a => { const k = (a - 10) / 10; return 8 + 7.75 * k - 0.25 * k * k; };   // la parabole qui passe par les huit valeurs
+  $("vfit").textContent = F.num(fit.n, 3);
+  $("ffit").textContent = t("pt.f.fit", { e: F.num(fit.max, 2) });
+  const d = O.differences(O.PTOLEMEE.map(r => r[1]));
+  $("diffs").innerHTML = O.PTOLEMEE.map(([a, w], i) => `<div><span class="k">${a}°</span><span>${t("pt.row", { w: F.num(w, 3),
+    d1: i ? F.num(d.d1[i - 1], 2) + "°" : "–", d2: i > 1 ? F.num(d.d2[i - 2], 2) + "°" : "–" })}</span></div>`).join("");
+  function draw() {
+    svg.innerHTML = "";
+    const n = +$("nsl").value;
+    const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 300, x: { domain: [0, 90], label: t("pt.x") }, y: { domain: [0, 60], label: t("pt.y") } });
+    let ds = "", dp = "";
+    for (let i = 0; i <= 180; i++) { const a = i / 2; ds += (i ? "L" : "M") + x(a).toFixed(1) + " " + y(O.refraction(a * DEG, 1, n) / DEG).toFixed(1); }
+    for (let a = 10; a <= 80; a += 0.5) dp += (a > 10 ? "L" : "M") + x(a).toFixed(1) + " " + y(par(a)).toFixed(1);
+    Plot.el("path", { d: ds, class: "curve" }, g);
+    Plot.el("path", { d: dp, class: "ref" }, g);
+    O.PTOLEMEE.forEach(([a, w]) => Plot.el("circle", { cx: x(a), cy: y(w), r: 4.5, class: "dot" }, g));
+    const e = O.PTOLEMEE.map(([a, w]) => w - O.refraction(a * DEG, 1, n) / DEG), k = e.reduce((m, v, i) => Math.abs(v) > Math.abs(e[m]) ? i : m, 0);
+    $("nread").textContent = F.fix(n, 3);
+    $("vmax").textContent = F.num(Math.abs(e[k]), 2) + "°";
+    $("fmax").textContent = t("pt.f.max", { a: O.PTOLEMEE[k][0] });
+  }
+  $("nsl").oninput = draw; draw();
+})();
+
+/* ---------- rayon incident, réfléchi, réfracté ---------- */
+(() => {
+  const N = O.INDICE, COUPLES = { air_eau: [N.air, N.eau], eau_air: [N.eau, N.air], air_verre: [N.air, N.verre], verre_air: [N.verre, N.air],
+    diamant_air: [N.diamant, N.air], coeur_gaine: [1.4475, 1.444] };
+  const svg = $("rayon"), P = Plot.el, Cx = 320, Cy = 150, R = 140;
+  function draw() {
+    svg.innerHTML = "";
+    const [n1, n2] = COUPLES[$("couple").value], th = +$("tsl").value * DEG, t2 = O.refraction(th, n1, n2), lim = O.angleCritique(n1, n2);
+    P("rect", { x: 0, y: Cy, width: 640, height: 150, class: "fill c-tint", "fill-opacity": n2 > n1 ? 0.12 : 0.05 }, svg);
+    P("rect", { x: 0, y: 0, width: 640, height: Cy, class: "fill c-tint", "fill-opacity": n1 > n2 ? 0.12 : 0.05 }, svg);
+    P("line", { x1: 0, x2: 640, y1: Cy, y2: Cy, class: "stroke thin c-label-2" }, svg);
+    P("line", { x1: Cx, x2: Cx, y1: 6, y2: 294, class: "stroke thin dash c-label-2" }, svg);
+    P("text", { x: 12, y: 22 }, svg).textContent = "n₁ = " + F.fix(n1, n1 === N.air ? 6 : 4);
+    P("text", { x: 12, y: 288 }, svg).textContent = "n₂ = " + F.fix(n2, n2 === N.air ? 6 : 4);
+    const A = [Cx - R * Math.sin(th), Cy - R * Math.cos(th)];
+    Plot.fleche(svg, A, [Cx, Cy], { cls: "c-label", tete: 10 });
+    Plot.fleche(svg, [Cx, Cy], [Cx + R * Math.sin(th), Cy - R * Math.cos(th)], { cls: "c-warn", tete: 10, trait: t2 === null ? "stroke bold" : "stroke thin" });
+    if (t2 !== null) Plot.fleche(svg, [Cx, Cy], [Cx + R * Math.sin(t2), Cy + R * Math.cos(t2)], { cls: "c-tint", tete: 10 });
+    P("text", { x: Cx - 26, y: Cy - 50, "text-anchor": "end" }, svg).textContent = "θ₁";
+    if (t2 !== null) P("text", { x: Cx + 10 + 40 * Math.sin(t2), y: Cy + 60 }, svg).textContent = "θ₂";
+    $("tread").textContent = deg(th);
+    $("vt2").textContent = t2 === null ? t("ry.totale") : deg(t2);
+    $("ft2").textContent = t2 === null ? t("ry.f.totale") : t("ry.f.dev", { d: F.num(Math.abs(th - t2) / DEG, 3) });
+    $("vlim").textContent = lim === null ? t("ry.nolim") : deg(lim);
+    $("flim").textContent = lim === null ? t("ry.f.nolim", { t: deg(Math.asin(n1 / n2)) }) : t("ry.f.lim");
+  }
+  $("couple").onchange = $("tsl").oninput = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["ptolemee", 150, "experiment"], ["ibnsahl", 984, "idea"], ["harriot", 1602, "idea"], ["snell", 1621, "idea"], ["descartes", 1637, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["fibre", "refractometre"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["miroir", "a"], ["ptolemee", "b"], ["snell", "c"], ["plongeur", "d"], ["normale", "a"], ["inverse", "b"], ["fibre", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 262 });
+})();
+</script>
+</body>
+</html>

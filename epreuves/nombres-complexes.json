@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["produit", "a"],
+  ["puissance", "c"],
+  ["amorti", "d"],
+  ["modele", "b"],
+  ["serie", "c"],
+  ["quart", "a"],
+  ["racine", "b"],
+  ["derivee", "d"]
+ ]
+}

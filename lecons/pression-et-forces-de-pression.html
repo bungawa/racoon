@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pression et forces de pression</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-fluides" data-i18n="monde.fluides"></a><span class="aux">›</span><a href="/racoon/etape?id=statique-fluides" data-i18n="etape.statique-fluides"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fluides" href="/racoon/atlas?piste=fluides" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/gradient" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi mathvariant="normal">d</mi><mover accent="true"><mi>F</mi><mo>→</mo></mover><mo>=</mo><mi>p</mi><mspace width="0.15em"></mspace><mi mathvariant="normal">d</mi><mi>S</mi><mspace width="0.15em"></mspace><mover accent="true"><mi>n</mi><mo>→</mo></mover></math></div>
+    <p class="validite" data-i18n-html="val.def"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="box rem"><b data-i18n="s1.sys.title"></b>
+      <p data-i18n-html="s1.sys.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>F</mi><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi>h</mi></msubsup><mi>ρ</mi><mi>g</mi><mi>z</mi><mspace width="0.15em"></mspace><mi>b</mi><mspace width="0.15em"></mspace><mi mathvariant="normal">d</mi><mi>z</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>ρ</mi><mi>g</mi><mi>b</mi><msup><mi>h</mi><mn>2</mn></msup></math></div>
+    <p class="validite" data-i18n-html="val.paroi"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <figure class="chart">
+      <div class="seg" role="group" data-i18n-attr="aria-label:wall.fluide">
+        <button type="button" id="f-eau" aria-pressed="true"></button>
+        <button type="button" id="f-eauDeMer" aria-pressed="false"></button>
+        <button type="button" id="f-mercure" aria-pressed="false"></button>
+      </div>
+      <svg class="fig" id="wall" viewBox="0 0 640 300" role="img" data-i18n-attr="aria-label:wall.aria"></svg>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="h" data-i18n="wall.h"></label><output id="hv" for="h"></output></div>
+            <input id="h" type="range" min="0.1" max="10" step="0.1" value="0.5"></div>
+          <div class="ctl"><div class="row"><label for="b" data-i18n="wall.b"></label><output id="bv" for="b"></output></div>
+            <input id="b" type="range" min="0.2" max="5" step="0.1" value="1"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="wall.k.p"></span><span class="v" id="vp"></span><span class="f" id="fp"></span></div>
+          <div class="stat"><span class="k" data-i18n="wall.k.F"></span><span class="v" id="vF"></span><span class="f" id="fF"></span></div>
+          <div class="stat"><span class="k" data-i18n="wall.k.z"></span><span class="v" id="vz"></span></div>
+          <div class="stat"><span class="k" data-i18n="wall.k.M"></span><span class="v" id="vM"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="wall.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="eq"><math display="block"><mi>F</mi><mo>=</mo><mi mathvariant="normal">Δ</mi><mi>p</mi><mspace width="0.15em"></mspace><mi>π</mi><msup><mi>R</mi><mn>2</mn></msup></math></div>
+    <p class="validite" data-i18n-html="val.hemi"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi mathvariant="normal">d</mi><mover accent="true"><mi>F</mi><mo>→</mo></mover><mo>=</mo><mo>−</mo><mover accent="true"><mi data-i18n="eq.grad"></mi><mo>→</mo></mover><mspace width="0.15em"></mspace><mi>p</mi><mspace width="0.15em"></mspace><mi mathvariant="normal">d</mi><mi>τ</mi></math></div>
+    <p class="validite" data-i18n-html="val.vol"></p>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/pression-et-forces-de-pression.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/fluides.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = Plot.el;
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+
+/* ---------- la paroi d'un bassin ---------- */
+(() => {
+  const FLUIDES = ["eau", "eauDeMer", "mercure"], NAMES = textOf("wall.fluides", FLUIDES), svg = $("wall"), g = Constantes.g0;
+  let fl = "eau";
+  const text = (x, y, s, anchor) => { P("text", { x, y, "text-anchor": anchor || "middle" }, svg).textContent = s; };
+  function upd() {
+    const rho = Fluides.RHO[fl], h = +$("h").value, b = +$("b").value, r = Fluides.resultanteRectangle({ b, h2: h, rho, g });
+    const pf = Fluides.pressionProfondeur(h, { rho, g, p0: 0 });
+    FLUIDES.forEach(id => $("f-" + id).setAttribute("aria-pressed", String(id === fl)));
+    $("hv").textContent = F.qty(F.num(h, 3), "m"); $("bv").textContent = F.qty(F.num(b, 3), "m");
+    $("vp").textContent = F.si(pf, "Pa"); $("fp").textContent = t("wall.f.p", { r: F.num(pf / Constantes.atm, 3) });
+    $("vF").textContent = F.si(r.F, "N"); const m = r.F / g; $("fF").textContent = t("wall.f.F", { m: F.qty(m < 1e5 ? F.num(m, 3) : F.sci(m, 3), "kg") });
+    $("vz").textContent = t("wall.f.z", { z: F.qty(F.num(r.zc, 3), "m") });
+    $("vM").textContent = F.si(r.moment, "N·m");
+    /* drawing: the liquid at the left of the wall, pressure arrows growing with depth, the resultant at 2h/3 */
+    svg.innerHTML = "";
+    const top = 30, H = 240, x0 = 40, xw = 360, sc = 0.85 * H / h, hy = h * sc, ys = top + H - hy;   // the liquid fills the drawing
+    P("rect", { x: x0, y: ys, width: xw - x0, height: hy, class: "area" }, svg);
+    P("line", { x1: x0, y1: ys, x2: xw, y2: ys, class: "stroke thin c-tint" }, svg);
+    P("line", { x1: xw, y1: top - 10, x2: xw, y2: top + H, class: "stroke bold c-label" }, svg);
+    P("line", { x1: x0, y1: top + H, x2: xw + 40, y2: top + H, class: "stroke c-label-2" }, svg);
+    const L = 200;                                                  // arrow length at the bottom, whatever h
+    for (let i = 1; i <= 8; i++) { const z = h * i / 8, y = ys + z * sc, l = L * z / h;
+      Plot.fleche(svg, [xw - l, y], [xw, y], { cls: "c-tint", tete: 7 }); }
+    P("line", { x1: xw - L, y1: top + H, x2: xw, y2: ys, class: "stroke thin dash c-label-2" }, svg);
+    const yc = ys + r.zc * sc;
+    Plot.fleche(svg, [xw + 6, yc], [xw + 96, yc], { cls: "c-warn" });
+    text(xw + 100, yc + 4, t("wall.Fl"), "start");
+    text(xw + 100, yc + 22, t("wall.zl"), "start");
+    text(x0 + 6, ys - 8, t("wall.surface"), "start");
+  }
+  ["h", "b"].forEach(id => $(id).oninput = upd);
+  FLUIDES.forEach(id => { $("f-" + id).textContent = NAMES[id]; $("f-" + id).onclick = () => { fl = id; upd(); }; });
+  upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["stevin", 1586, "idea"], ["guericke", 1672, "experiment"], ["bramah", 1795, "use"], ["pascal", 1971, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["freins", "barrage", "ventouse"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["normale", "c"], ["surface", "a"], ["forme", "d"], ["centre", "b"], ["hemi", "a"], ["uniforme", "c"], ["mercure", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

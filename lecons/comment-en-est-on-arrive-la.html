@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Comment en est-on arrivé là ?</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-panorama" data-i18n="monde.panorama"></a><span class="aux">›</span><a href="/racoon/etape?id=physique-et-sciences" data-i18n="etape.physique-et-sciences"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fond" href="/racoon/atlas?piste=fond" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/temps-longs" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="box warn"><b data-i18n="s1.warn.title"></b>
+      <p data-i18n-html="s1.warn.body"></p>
+    </div>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="eq">
+      <math display="block"><msub><mi>t</mi><mi mathvariant="normal">H</mi></msub><mo>=</mo><mfrac><mn>1</mn><msub><mi>H</mi><mn>0</mn></msub></mfrac></math>
+    </div>
+    <p class="validite" data-i18n="eq1.validite"></p>
+    <p data-i18n-html="s1.p4"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n="s2.p1"></p>
+    <figure class="chart">
+      <svg id="tl" viewBox="0 0 640 190" role="img" data-i18n-attr="aria-label:tl.aria"></svg>
+      <div class="panel">
+        <div class="controls">
+          <label class="field"><span data-i18n="tl.pick"></span><select id="ev"></select></label>
+          <div class="seg" role="group" data-i18n-attr="aria-label:tl.scale"><button type="button" id="log" aria-pressed="true" data-i18n="tl.log"></button><button type="button" id="lin" aria-pressed="false" data-i18n="tl.lin"></button></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="stat.ago"></span><span class="v" id="vago"></span><span class="f" id="fago"></span></div>
+          <div class="stat"><span class="k" data-i18n="stat.cal"></span><span class="v" id="vcal"></span><span class="f" id="fcal"></span></div>
+        </div>
+        <p id="evtext"></p>
+      </div>
+      <figcaption data-i18n-html="tl.caption"></figcaption>
+    </figure>
+    <div class="box rem"><b data-i18n="s2.rem.title"></b>
+      <p data-i18n-html="s2.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n="s3.p1"></p>
+    <div class="list keyed" id="verre"></div>
+    <p data-i18n="s3.p2"></p>
+    <blockquote class="thesis" data-i18n="s3.thesis"></blockquote>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/comment-en-est-on-arrive-la.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/sciences-voisines.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const $ = id => document.getElementById(id);
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+
+/* ---------- §3-7 : l'histoire du monde sur une échelle de temps, logarithmique ou linéaire ---------- */
+(() => {
+  const V = Voisines, T = 13.8e9;                                     // âge de l'Univers, années
+  const EVENTS = [["bigbang", 13.8e9], ["soleil", 4.567e9], ["zircon", 4.404e9], ["vie", 3.5e9], ["oxygene", 2.4e9],
+    ["cambrien", 538.8e6], ["kpg", 66.0e6], ["sapiens", 3.0e5], ["ecriture", 5.2e3]];
+  const txt = textOf("tl.events", EVENTS.map(e => e[0])), months = t("cal.mois");
+  const svg = $("tl"), L = 30, R = 610, Y = 120, LO = 1e3, HI = 2e10, LIN = 14e9;
+  let mode = "log", sel = "soleil";
+  const sel$ = $("ev");
+  sel$.innerHTML = EVENTS.map(([id]) => `<option value="${id}">${txt[id].name}</option>`).join("");
+  sel$.value = sel;
+  const X = age => mode === "log" ? L + (Math.log10(HI) - Math.log10(age)) / (Math.log10(HI) - Math.log10(LO)) * (R - L) : L + (LIN - age) / LIN * (R - L);
+  const axis = Plot.el("g", { class: "axes" }, svg), marks = Plot.el("g", {}, svg);
+  const draw = () => {
+    axis.innerHTML = ""; marks.innerHTML = "";
+    Plot.el("line", { x1: L, x2: R, y1: Y, y2: Y, class: "axis" }, axis);
+    const ticks = mode === "log" ? [3, 4, 5, 6, 7, 8, 9, 10].map(e => [Math.pow(10, e), "10" + F.sup(e)]) : [0, 2, 4, 6, 8, 10, 12, 14].map(g => [g * 1e9, F.num(g, 2)]);
+    ticks.forEach(([a, lab]) => { const x = Math.max(L, Math.min(R, a ? X(a) : R));
+      Plot.el("line", { x1: x, x2: x, y1: 20, y2: Y, class: "grid" }, axis);
+      Plot.el("text", { x, y: Y + 16, "text-anchor": "middle", class: "tick" }, axis).textContent = lab; });
+    Plot.el("text", { x: (L + R) / 2, y: Y + 40, "text-anchor": "middle", class: "label" }, axis).textContent = t(mode === "log" ? "tl.x.log" : "tl.x.lin");
+    Plot.el("text", { x: R, y: 14, "text-anchor": "end", class: "label" }, axis).textContent = t("tl.now");
+    EVENTS.forEach(([id, age]) => {
+      const x = X(age), on = id === sel;
+      Plot.el("circle", { cx: x, cy: Y, r: on ? 8 : 4, class: "dot" }, marks);
+      if (on) Plot.el("text", { x: Math.max(L + 40, Math.min(R - 40, x)), y: Y - 16, "text-anchor": "middle", class: "note" }, marks).textContent = txt[id].name;
+    });
+    const age = EVENTS.find(e => e[0] === sel)[1], d = V.cosmicDate(age, T);
+    $("vago").textContent = F.qty(F.sci(age * V.YEAR, 2), "s");
+    $("fago").textContent = t("stat.ago.f", { a: F.sci(age, 3) });
+    $("vcal").textContent = t("cal.date", { d: d.day, m: months[d.month] });
+    $("fcal").textContent = t("cal.heure", { h: d.h, min: String(d.min).padStart(2, "0"), s: String(d.s).padStart(2, "0") });
+    $("evtext").textContent = txt[sel].text;
+  };
+  const scale = m => { mode = m; ["log", "lin"].forEach(k => $(k).setAttribute("aria-pressed", String(k === m))); draw(); };
+  $("log").onclick = () => scale("log"); $("lin").onclick = () => scale("lin");
+  sel$.onchange = () => { sel = sel$.value; draw(); };
+  draw();
+})();
+
+/* ---------- §3-7 : le verre de vin ---------- */
+(() => {
+  const PARTS = ["physique", "geologie", "astronomie", "chimie", "biologie", "psychologie"], txt = textOf("verre.items", PARTS);
+  $("verre").innerHTML = PARTS.map(id => `<div><span class="k">${txt[id].k}</span><span>${txt[id].text}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["darwin", 1859, "idea"], ["kelvin", 1862, "idea"], ["holmes", 1911, "experiment"], ["lemaitre", 1927, "idea"],
+    ["hubble", 1929, "experiment"], ["patterson", 1956, "experiment"], ["penzias", 1965, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["zircons", "planck"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["question", "a"], ["kelvin", "a"], ["hubble", "a"], ["log", "a"], ["calendrier", "a"], ["lois", "a"], ["verre", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

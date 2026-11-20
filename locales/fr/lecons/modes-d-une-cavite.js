@@ -1,0 +1,101 @@
+/* Leçon « Modes d'une cavité » (Feynman II.23.4) : textes en français.
+   Une autre langue = locales/<langue>/lecons/modes-d-une-cavite.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Modes d'une cavité",
+    "crumb.jour": "Modes d'une cavité",
+    "h1": "Modes d'une cavité",
+    "lede": "Une boîte métallique ne résonne pas à une seule fréquence. Chaque façon d'agencer les champs qui respecte les équations de Maxwell et les parois est un mode, avec sa propre fréquence ; leur nombre croît comme le cube de la fréquence.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : cavité résonante",
+    "mode.TM": "TM",
+    "mode.TE": "TE",
+
+    "s1.sec": "Une mesure",
+    "s1.h2": "Trois résonances au lieu d'une",
+    "s1.p1": "Le système : une boîte cylindrique de 7,62\u00a0cm de diamètre et de 6,35\u00a0cm de haut, munie d'une boucle d'entrée et d'une boucle de sortie. (23.18) prévoit une résonance à 3010\u00a0MHz. En balayant le générateur autour de 3000\u00a0MHz, Feynman rapporte un maximum à 3050\u00a0MHz : 1,3\u00a0% plus haut. Les trous des boucles ne l'expliquent pas, car ils abaissent un peu la fréquence ; restent l'étalonnage du générateur ou la mesure du diamètre. L'accord est bon.",
+    "s1.p2": "Plus surprenant : en s'éloignant de 3000\u00a0MHz, on trouve deux autres résonances, vers 3300\u00a0MHz et vers 3820\u00a0MHz. Serait-ce le deuxième zéro de <var>J</var><sub>0</sub> qui tombe sur la paroi, avec une oscillation complète du champ du centre au bord ? Ce zéro est à 5,520, plus du double du premier : ce mode résonne au-dessus de 6900\u00a0MHz. Il existe, mais il n'explique pas 3300.",
+
+    "s2.sec": "D'autres arrangements des champs",
+    "s2.h2": "Un mode par façon de remplir la boîte",
+    "s2.p1": "« Cavité résonante » n'a considéré qu'un arrangement : <var>E</var> parallèle à l'axe, <var>B</var> en cercles horizontaux. D'autres sont possibles. Les seules exigences sont que les champs satisfassent les équations de Maxwell dans la boîte, et que le champ électrique arrive perpendiculairement sur les parois. La boîte ne sait pas où sont son fond et ses côtés : il existe un mode où le champ électrique traverse la boîte d'un côté à l'autre, à peu près selon un diamètre. Pour voir pourquoi sa fréquence est proche de la première, partez d'un cube.",
+    "cube.title": "Le système décrit : un cube, puis un cylindre",
+    "cube.body": "Dans un cube de {L} de côté, les modes les plus bas sont au nombre de {n}, tous à {f} : un champ électrique vertical, un champ gauche-droite, un champ avant-arrière, que rien ne distingue. Déformez le cube en un cylindre de même diamètre et de même hauteur : les fréquences montent d'environ 8\u00a0%, car le cylindre est plus petit que le cube, et la symétrie rompue les sépare un peu. Le mode à champ électrique axial passe à {f1} ({n1}), le mode à champ transverse à {f2} ({n2}).",
+    "s2.p2": "Pour un cylindre droit de rayon <var>a</var> et de hauteur <var>h</var>, chaque mode porte trois indices. Dans les modes TM, le champ magnétique est perpendiculaire à l'axe ; dans les modes TE, c'est le champ électrique. <var>m</var> compte les oscillations du champ autour de l'axe, <var>n</var> le rang du zéro de la fonction de Bessel <var>J</var><sub><var>m</var></sub> (TM) ou de sa dérivée (TE) qui tombe sur la paroi, <var>p</var> les demi-oscillations le long de l'axe :",
+    "val.modes": "Exacte pour un cylindre droit à parois parfaitement conductrices et lisses : <var>j</var><sub><var>mn</var></sub> est le zéro de <var>J</var><sub><var>m</var></sub> pour les modes TM (<var>p</var> ≥ 0) ou de <var>J</var>′<sub><var>m</var></sub> pour les modes TE (<var>p</var> ≥ 1). Les modes de <var>m</var> ≥ 1 existent en deux orientations à la même fréquence. Pour une vraie boîte, les trous, les boucles et la pénétration du champ dans les parois déplacent un peu chaque fréquence.",
+    "fig.aria": "Fréquences des modes les plus bas d'une boîte cylindrique en fonction de sa hauteur, pour un diamètre choisi",
+    "fig.legend.tm": "modes TM",
+    "fig.legend.te": "modes TE",
+    "fig.legend.mesure": "résonances observées, boîte de 7,62 cm",
+    "fig.d": "Diamètre",
+    "fig.h": "Hauteur h",
+    "fig.xaxis": "hauteur h (cm)",
+    "fig.yaxis": "fréquence (GHz)",
+    "fig.k.m1": "Premier mode",
+    "fig.k.m2": "Deuxième mode",
+    "fig.k.m3": "Troisième mode",
+    "fig.f.simple": "{nom}",
+    "fig.f.double": "{nom}, deux orientations",
+    "fig.caption": "Chaque courbe est un mode : sa fréquence en fonction de la hauteur de la boîte, pour le diamètre choisi. Les modes TM de <var>p</var> = 0, dont le champ ne varie pas le long de l'axe, ne dépendent pas de la hauteur : ce sont les droites horizontales. Avec 7,62\u00a0cm de diamètre et 6,35\u00a0cm de haut, les trois premiers modes, TM010, TE111 et TM011, tombent près des trois résonances observées, marquées par les cercles. Augmentez la hauteur : TE111 passe sous TM010.",
+    "s2.p3": "Le calcul donne le mode transverse TE111 à 3300\u00a0MHz et le mode TM011 à 3827\u00a0MHz, très près des résonances observées. Dans TM011, le champ électrique ne traverse pas toute la boîte : il va des côtés vers le fond et le couvercle. Plus haut en fréquence, les modes se multiplient, chacun avec son arrangement compliqué des champs, et chacun se calcule en résolvant les équations de Maxwell dans la boîte.",
+
+    "s3.sec": "Reconnaître un mode",
+    "s3.h2": "Un fil qui sonde le champ électrique",
+    "s3.p1": "À une résonance donnée, quel mode est excité ? Introduisez un petit fil par un trou. Si le champ électrique est parallèle au fil, il y fait circuler des courants assez grands, qui prélèvent de l'énergie aux champs : la résonance s'affaiblit nettement. Si le champ est perpendiculaire au fil, l'effet est bien plus faible.",
+    "s3.p2": "Pour trouver la direction du champ, on coude le bout du fil et on le fait tourner : l'effet est grand quand le bout coudé est parallèle à <var>E</var>, petit quand il lui est perpendiculaire. Un petit objet métallique déplacé dans la boîte décale aussi la fréquence propre, d'autant plus que le champ est intense là où il se trouve : c'est ainsi qu'on cartographie les champs des cavités d'accélérateurs.",
+
+    "s4.sec": "Toujours plus de modes",
+    "s4.h2": "Le nombre de modes croît comme le cube de la fréquence",
+    "s4.p1": "Chaque mode correspond à une façon de loger une onde dans la boîte. À une fréquence élevée, la longueur d'onde est petite devant la boîte, et le nombre de façons croît comme le volume de la boîte divisé par le cube de la longueur d'onde. Le nombre de modes sous la fréquence <var>f</var>, les deux polarisations comptées, tend vers une loi qui ne dépend que du volume <var>V</var> :",
+    "val.weyl": "Approximation : le terme dominant, valable quand la boîte mesure de nombreuses longueurs d'onde ; il ne dépend pas de la forme. Les termes suivants dépendent de la surface et des arêtes et diminuent le compte : pour la boîte cylindrique de la figure, l'écart relatif passe de 30\u00a0% vers 5\u00a0GHz à 2\u00a0% vers 20\u00a0GHz.",
+    "sys.title": "Le système décrit : compter les modes de la boîte",
+    "sys1.body": "La boîte de 7,62\u00a0cm de diamètre et 6,35\u00a0cm de haut a un volume de {V}. Sous 5\u00a0GHz, elle a {n5} modes, orientations comptées, pour {w5} prévus par la loi du volume ; sous 10\u00a0GHz, {n10} pour {w10} ; sous 20\u00a0GHz, {n20} pour {w20}. Les premiers modes se comptent un par un ; loin au-dessus, seul le volume compte. C'est ce comptage qui, appliqué au rayonnement thermique d'une cavité, conduit au corps noir.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Des tubes, des valeurs propres et des perles",
+    "hist.intro": "Les modes d'une cavité ont été calculés bien avant qu'on sache en produire, puis comptés par les mathématiciens, puis mesurés pour les accélérateurs.",
+    "hist.events": {
+      rayleigh: { who: "Lord Rayleigh", what: "publie « On the Passage of Electric Waves through Tubes, or the Vibrations of Dielectric Cylinders ».", context: "Il traite des tubes de section rectangulaire et circulaire à parois parfaitement conductrices, et montre que chaque type d'onde a une fréquence critique sous laquelle il ne se propage pas. Le travail est ensuite oublié, puis retrouvé quand on redécouvre les guides d'onde." },
+      weyl: { who: "Hermann Weyl", what: "publie « Über die asymptotische Verteilung der Eigenwerte ».", context: "Il démontre que le nombre de fréquences propres d'un domaine sous une valeur donnée croît, à grande fréquence, comme une loi qui ne dépend que de l'aire ou du volume du domaine." },
+      slater: { who: "L. C. Maier et J. C. Slater", what: "publient « Field Strength Measurements in Resonant Cavities ».", context: "Un petit objet métallique placé dans une cavité décale sa fréquence propre d'une quantité qui dépend du champ local. En déplaçant une aiguille, une sphère ou un disque, on mesure les champs point par point : c'est la base de la méthode de la perle tirée, toujours utilisée sur les cavités d'accélérateurs." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      four: { name: "Four à micro-ondes", text: "La cavité du four, nourrie à 2450\u00a0MHz, est grande devant la longueur d'onde de 12\u00a0cm : de nombreux modes s'y superposent en ondes stationnaires, avec des points chauds et des points froids. Un brasseur métallique en rotation change sans cesse les modes excités, et le plateau tournant promène les aliments d'un point à l'autre, pour égaliser le chauffage en moyenne." },
+      chambre: { name: "Chambres réverbérantes", text: "Pour éprouver la résistance d'un appareil aux perturbations électromagnétiques, on le place dans une grande cavité métallique où un brasseur tourne : la superposition de très nombreux modes l'éclaire de toutes les directions et de toutes les polarisations. La norme EN 61000-4-21 en décrit l'étalonnage et les essais." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      ecart: { prompt: "La boîte de 7,62 cm de diamètre résonne à 3050 MHz au lieu des 3010 MHz prévus. Pourquoi les trous des boucles ne peuvent-ils pas expliquer l'écart ?",
+        options: { a: "Parce que les trous ne touchent pas le champ.", b: "Parce que des trous abaissent la fréquence, alors que la mesure est plus haute.", c: "Parce que l'écart est trop grand pour un trou.", d: "Ils l'expliquent entièrement." },
+        why: "Les trous abaissent légèrement la fréquence ; l'écart va dans l'autre sens. L'étalonnage du générateur ou la mesure du diamètre sont plus probables." },
+      second: { prompt: "Le mode où le deuxième zéro de J0 tombe sur la paroi explique-t-il la résonance vers 3300 MHz ?",
+        options: { a: "Oui, exactement.", b: "Oui, à 10 % près.", c: "Non, il résonne plus bas, vers 1500 MHz.", d: "Non : le deuxième zéro, 5,520, est plus du double du premier, et ce mode résonne au-dessus de 6900 MHz." },
+        why: "La fréquence est proportionnelle au zéro qui tombe sur la paroi : 5,520/2,405 × 3010 MHz ≈ 6910 MHz." },
+      conditions: { prompt: "Quelles conditions un mode doit-il satisfaire ?",
+        options: { a: "Les équations de Maxwell dans la boîte, et un champ électrique perpendiculaire aux parois.", b: "Un champ électrique parallèle à l'axe partout.", c: "Un champ magnétique nul sur les parois.", d: "Une fréquence égale à 2,405c/a." },
+        why: "Un conducteur parfait annule le champ électrique tangent à sa surface : E y arrive à angle droit. Le reste est libre, d'où la variété des modes." },
+      cube: { prompt: "Pourquoi un cube a-t-il trois modes les plus bas à la même fréquence ?",
+        options: { a: "Parce que ses arêtes résonnent séparément.", b: "Parce qu'il a trois paires de faces de surfaces différentes.", c: "Parce que les trois directions du champ électrique sont équivalentes par symétrie.", d: "Par hasard." },
+        why: "Rien ne distingue « haut-bas » de « gauche-droite » ou « avant-arrière » dans un cube. Déformé en cylindre, il perd cette symétrie et les fréquences se séparent un peu." },
+      transverse: { prompt: "Sur la carte des modes, on augmente la hauteur de la boîte à diamètre fixe. Que devient le mode TM010 ?",
+        options: { a: "Sa fréquence baisse comme 1/h.", b: "Sa fréquence ne change pas, et le mode TE111 finit par passer en dessous.", c: "Il disparaît.", d: "Sa fréquence double." },
+        hint: "Le champ de TM010 dépend-il de la position le long de l'axe ?",
+        why: "TM010 ne varie pas le long de l'axe : p = 0, sa fréquence ne dépend que du rayon. TE111 a p = 1 et baisse quand h grandit ; il devient le plus bas pour h > 2,03 a." },
+      fil: { prompt: "Un petit fil, introduit par un trou, affaiblit fortement une résonance quand on l'oriente d'une certaine façon. Qu'apprend-on ?",
+        options: { a: "Que le champ électrique de ce mode est parallèle au fil à cet endroit.", b: "Que le champ magnétique y est parallèle au fil.", c: "Que la boîte fuit par le trou.", d: "Que le fil est un supraconducteur." },
+        why: "Un champ électrique le long du fil y pousse des courants qui dissipent l'énergie du mode. Perpendiculaire au fil, il n'y fait presque rien." },
+      compte: { prompt: "Selon la loi du volume, combien de modes de plus trouve-t-on sous une fréquence deux fois plus élevée ?",
+        options: { a: "Deux fois plus.", b: "Quatre fois plus.", c: "Autant.", d: "Environ huit fois plus." },
+        why: "N croît comme f³ : 2³ = 8. Pour la boîte de 7,62 cm, on passe de 88 modes sous 10 GHz à 706 sous 20 GHz." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 23, §23-4 (texte original en anglais), dont viennent la boîte et les fréquences mesurées. Notations SI. Rayleigh : <i>Philosophical Magazine</i>, 5<sup>e</sup> série, vol. 43, février 1897, p.\u00a0125. Weyl : Wikipédia, « Weyl law ». Maier et Slater : <i>Journal of Applied Physics</i>, 23, 68 (1952). Four à micro-ondes : brevets américains de brasseurs de modes, dont le n<sup>o</sup> 4 636 605. Chambres réverbérantes : EN 61000-4-21:2011. Calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La physiologie de l’œil</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-optique-geometrique" data-i18n="monde.optique-geometrique"></a><span class="aux">›</span><a href="/racoon/etape?id=opt-retine" data-i18n="etape.opt-retine"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-optique" href="/racoon/atlas?piste=optique" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/opt-oeil-humain" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="box sys"><b data-i18n="s1.sys.title"></b>
+      <p data-i18n-html="s1.sys.body"></p>
+    </div>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi mathvariant="normal">Δ</mi><mi>V</mi><mo>=</mo><mfrac><mrow><msub><mi>n</mi><mi>c</mi></msub><mo>−</mo><mn>1</mn></mrow><mi>R</mi></mfrac><mo>−</mo><mfrac><mrow><msub><mi>n</mi><mi>c</mi></msub><mo>−</mo><msub><mi>n</mi><mi data-i18n="eq.ext"></mi></msub></mrow><mi>R</mi></mfrac><mo>=</mo><mfrac><mrow><msub><mi>n</mi><mi data-i18n="eq.ext"></mi></msub><mo>−</mo><mn>1</mn></mrow><mi>R</mi></mfrac></math><span class="n">(27.7a)</span></div>
+    <p class="validite" data-i18n-html="val.27.3a"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <figure class="chart">
+      <svg class="fig" id="eau" role="img" data-i18n-attr="aria-label:eau.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="eau.legend.flou"></span><span class="c-ok" data-i18n="eau.legend.masque"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="nx" data-i18n="eau.n"></label><output id="nxr" for="nx"></output></div>
+            <input id="nx" type="range" min="1" max="1.376" step="0.001" value="1.333"></div>
+          <div class="ctl"><div class="row"><label for="acc" data-i18n="eau.a"></label><output id="accr" for="acc"></output></div>
+            <input id="acc" type="range" min="0" max="16" step="0.5" value="0"></div>
+          <div class="ctl"><div class="row"><label for="pup" data-i18n="eau.d"></label><output id="pupr" for="pup"></output></div>
+            <input id="pup" type="range" min="1.5" max="8" step="0.1" value="3"></div>
+          <div class="ctl"><label><input id="masque" type="checkbox"> <span data-i18n="eau.masque"></span></label></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="eau.k.face"></span><span class="v" id="vface"></span><span class="f" id="fface"></span></div>
+          <div class="stat"><span class="k" data-i18n="eau.k.dv"></span><span class="v" id="vdv"></span><span class="f" id="fdv"></span></div>
+          <div class="stat"><span class="k" data-i18n="eau.k.flou"></span><span class="v" id="vflou"></span><span class="f" id="fflou"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="eau.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s1.p4"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <figure class="chart">
+      <svg class="fig" id="cortex" role="img" data-i18n-attr="aria-label:cx.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="cx.legend.d"></span><span class="c-warn" data-i18n="cx.legend.m"></span></div>
+      <figcaption data-i18n-html="cx.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p3"></p>
+    <div class="box rem"><b data-i18n="s3.rem.title"></b>
+      <p data-i18n-html="s3.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/opt-physiologie-oeil.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/optique-geometrique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), O = OptiqueGeometrique, P = Plot.el, DEG = Math.PI / 180;
+
+/* ---------- l'œil sous l'eau : (27.7a), puis le flou D ΔV ---------- */
+(() => {
+  const svg = $("eau"), W = 640, H = 300, sn = $("nx"), sa = $("acc"), sd = $("pup"), cm = $("masque");
+  const ns = Array.from({ length: 377 }, (_, i) => 1 + i * 0.001);
+  function draw() {
+    const nExt = +sn.value, A = +sa.value, D = +sd.value * 1e-3, lunettes = cm.checked;
+    const e = O.sousLEau({ nExt, A, D, lunettes });
+    svg.innerHTML = "";
+    const ym = Math.max(2, 5 * Math.ceil(O.sousLEau({ nExt: O.CORNEE.n, D }).flou / DEG * 1.1 / 5));
+    const ax = Plot.axes(svg, { fmt: F, w: W, h: H, x: { domain: [1, 1.376], label: t("eau.ax.x") }, y: { domain: [0, ym], label: t("eau.ax.y") } });
+    const courbe = m => ns.map(n => [ax.x(n), ax.y(Math.min(ym, O.sousLEau({ nExt: n, A, D, lunettes: m }).flou / DEG))]);
+    P("path", { d: Plot.path(courbe(false)), class: "stroke bold c-tint" }, svg);
+    P("path", { d: Plot.path(courbe(true)), class: "stroke dash c-ok" }, svg);
+    [[1, "eau.m.air"], [O.INDICE.eau, "eau.m.eau"], [O.CORNEE.n, "eau.m.cornee"]].forEach(([n, key]) => {
+      P("line", { x1: ax.x(n), x2: ax.x(n), y1: ax.y(0), y2: ax.y(ym), class: "stroke thin c-label-2" }, svg);
+      P("text", { x: ax.x(n) + (n === 1 ? 4 : -4), y: ax.y(ym) + 14, "text-anchor": n === 1 ? "start" : "end", class: "tick" }, svg).textContent = t(key);
+    });
+    P("circle", { cx: ax.x(nExt), cy: ax.y(Math.min(ym, e.flou / DEG)), r: 6, class: "fill " + (lunettes ? "c-ok" : "c-tint") }, svg);
+    $("nxr").textContent = F.fix(nExt, 3); $("accr").textContent = F.qty(F.num(A, 3), "m⁻¹"); $("pupr").textContent = F.qty(F.num(+sd.value, 2), "mm");
+    $("vface").textContent = F.qty(F.num(e.face, 3), "m⁻¹");
+    $("fface").textContent = t("eau.f.face").replace("{air}", F.qty(F.num(e.faceAir, 3), "m⁻¹"));
+    $("vdv").textContent = F.qty(F.num(e.dV, 3), "m⁻¹");
+    $("fdv").textContent = t(e.dV > 0 ? "eau.f.reste" : "eau.f.net").replace("{a}", F.qty(F.num(e.utilisee, 3), "m⁻¹"));
+    $("vflou").textContent = e.flou / DEG >= 0.1 ? F.num(e.flou / DEG, 2) + "°" : F.num(e.flou / DEG * 60, 2) + "′";
+    $("fflou").textContent = t("eau.f.flou").replace("{x}", F.num(e.flou / (1 / 60 * DEG), 2));
+  }
+  sn.oninput = sa.oninput = sd.oninput = cm.onchange = draw;
+  draw();
+})();
+
+/* ---------- le grandissement cortical de Horton et Hoyt ---------- */
+(() => {
+  const svg = $("cortex"), W = 640, H = 300, E = Array.from({ length: 401 }, (_, i) => i * 0.2);
+  const ax = Plot.axes(svg, { fmt: F, w: W, h: H, pad: { r: 56 }, x: { domain: [0, 80], label: t("cx.ax.x") }, y: { domain: [0, 90], label: t("cx.ax.y") } });
+  P("path", { d: Plot.path(E.map(e => [ax.x(e), ax.y(O.distanceCorticale(e))])), class: "stroke bold c-tint" }, svg);
+  /* M sur une échelle à droite : 0 à 24 mm/° ramené à 0 à 90 */
+  const k = 90 / 24;
+  P("path", { d: Plot.path(E.map(e => [ax.x(e), ax.y(k * O.grandissementCortical(e))])), class: "stroke dash c-warn" }, svg);
+  [0, 6, 12, 18].forEach(m => { P("text", { x: W - 50, y: ax.y(k * m) + 4, class: "tick" }, svg).textContent = F.num(m, 2); });
+  P("text", { x: W - 50, y: ax.y(k * 24) + 4, class: "tick" }, svg).textContent = t("cx.ax.m");
+  [[10, "cx.p.dix"]].forEach(([e, key]) => {
+    P("circle", { cx: ax.x(e), cy: ax.y(O.distanceCorticale(e)), r: 5, class: "fill c-tint" }, svg);
+    P("text", { x: ax.x(e) + 8, y: ax.y(O.distanceCorticale(e)) + 16, class: "tick" }, svg).textContent =
+      t(key).replace("{d}", F.qty(F.num(O.distanceCorticale(e), 2), "mm")).replace("{p}", F.qty(F.num(100 * O.distanceCorticale(e) / O.distanceCorticale(80), 2), "%"));
+  });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["inouye", 1909, "experiment"], ["sperry", 1943, "experiment"], ["nobel", 1981, "idea"], ["horton", 1991, "experiment"], ["moken", 2003, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["masque", "champ"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["eau", "c"], ["perte", "a"], ["masque", "d"], ["gradient", "b"], ["envers", "c"], ["chiasma", "a"], ["centre", "b"], ["salamandre", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 362 });
+})();
+</script>
+</body>
+</html>

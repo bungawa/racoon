@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["radiotelescope", "a"],
+  ["verre", "b"],
+  ["fm", "c"],
+  ["sinus", "d"],
+  ["prisme", "a"],
+  ["rapport", "b"],
+  ["plat", "c"],
+  ["foucault", "d"]
+ ]
+}

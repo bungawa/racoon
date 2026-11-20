@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["ionosonde", "a"],
+  ["neutralite", "b"],
+  ["puissance", "c"],
+  ["groupe", "d"],
+  ["evanescence", "a"],
+  ["bifrequence", "b"],
+  ["cone", "c"],
+  ["lawson", "d"]
+ ]
+}

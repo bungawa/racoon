@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["superpos", "a"],
+  ["miroir", "b"],
+  ["force", "c"],
+  ["jauge", "d"],
+  ["circulation", "a"],
+  ["poisson", "b"],
+  ["composante", "c"],
+  ["derivee", "d"]
+ ]
+}

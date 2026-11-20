@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Les réseaux cristallins</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-solide" data-i18n="monde.solide"></a><span class="aux">›</span><a href="/racoon/etape?id=cristaux-1" data-i18n="etape.cristaux-1"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-solide" href="/racoon/atlas?piste=solide" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/geometrie-interne-des-cristaux" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="list keyed" id="cubes"></div>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi>C</mi><mo>=</mo><mfrac><mrow><mi>N</mi><mo>·</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>π</mi><msup><mrow><mo>(</mo><mi>d</mi><mo>/</mo><mn>2</mn><mo>)</mo></mrow><mn>3</mn></msup></mrow><msup><mi>a</mi><mn>3</mn></msup></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.compacite"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure>
+      <div class="stage"><canvas id="vue"></canvas><div class="overlay" id="vueinfo"></div></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" id="structures" role="group" data-i18n-attr="aria-label:v3.structure">
+            <button type="button" data-s="cp" data-i18n="v3.s.cp"></button><button type="button" data-s="cc" data-i18n="v3.s.cc"></button><button type="button" data-s="cfc" data-i18n="v3.s.cfc"></button><button type="button" data-s="ABC" data-i18n="v3.s.abc"></button><button type="button" data-s="AB" data-i18n="v3.s.ab"></button>
+          </div>
+          <button class="btn tinted" type="button" id="axe" data-i18n="v3.axe"></button>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="v3.k.z1"></span><span class="v" id="vz1"></span><span class="f" data-i18n="v3.f.z1"></span></div>
+          <div class="stat"><span class="k" data-i18n="v3.k.z2"></span><span class="v" id="vz2"></span><span class="f" id="fz2"></span></div>
+          <div class="stat"><span class="k" data-i18n="v3.k.z3"></span><span class="v" id="vz3"></span><span class="f" id="fz3"></span></div>
+          <div class="stat"><span class="k" data-i18n="v3.k.c"></span><span class="v" id="vc"></span></div>
+        </div>
+      </div>
+      <div class="legend" id="legende"></div>
+      <figcaption data-i18n-html="v3.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mi>h</mi><mo>=</mo><mi>d</mi><msqrt><mfrac><mn>2</mn><mn>3</mn></mfrac></msqrt><mo>,</mo><mspace width="1em"></mspace><mfrac><mi>c</mi><mi>a</mi></mfrac><mo>=</mo><mfrac><mrow><mn>2</mn><mi>h</mi></mrow><mi>d</mi></mfrac><mo>=</mo><msqrt><mfrac><mn>8</mn><mn>3</mn></mfrac></msqrt><mo>≈</mo><mn>1,633</mn></math></div>
+    <p class="validite" data-i18n-html="val.h"></p>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="box rem"><b data-i18n="s2.rem.title"></b>
+      <p data-i18n-html="s2.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/reseaux-cristallins.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/lecons/cristaux.js"></script>
+<script src="/racoon/vue-cristal.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), X = Cristaux;
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+const seg = (el, attr, cb) => { const bs = [...el.querySelectorAll("button")];
+  const pick = b => { bs.forEach(x => x.setAttribute("aria-pressed", String(x === b))); cb(b.dataset[attr]); };
+  bs.forEach(b => b.onclick = () => pick(b)); pick(bs[0]); };
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- trois cubes ---------- */
+(() => { const IDS = ["cp", "cc", "cfc"]; keyed($("cubes"), t("cubes.tag"), IDS, textOf("cubes.items", IDS)); })();
+
+/* ---------- empilements et cubes en 3D ---------- */
+(() => {
+  const D = 2.556e-10;                       // nearest-neighbour distance of copper, a/√2 with a = 361,49 pm
+  const AR = { cp: D, cc: 2 * D / Math.sqrt(3), cfc: D * Math.SQRT2 };
+  const COUL = { X: "--tint", A: "--tint", B: "--el-o", C: "--el-n" }, CLS = { X: "c-tint", A: "c-tint", B: "el-o", C: "el-n" };
+  const vue = VueCristal.monter($("vue"), $("vueinfo"), { hors: t("v3.hors"), reduit: reduce });
+  const centreDe = (P, c) => P.reduce((b, p) => (Math.hypot(p[0] - c[0], p[1] - c[1], p[2] - c[2]) < Math.hypot(b[0] - c[0], b[1] - c[1], b[2] - c[2]) ? p : b));
+  let nom = "cp";
+  function couches(seq, n) { return X.empilement(seq, n, D).map(o => ({ e: o.couche, r: o.r })); }
+  function upd() {
+    let at, P, c, C, maille = 0;
+    if (AR[nom]) {
+      const a = AR[nom], s = X.cubique(nom, a);
+      at = X.atomes(s, 2); maille = a;
+      P = X.atomes(s, 4).map(o => o.r); c = centreDe(P, [2 * a, 2 * a, 2 * a]); C = X.compacite(s);
+    } else {
+      const seq = (nom + nom + nom + nom).slice(0, 9), n = 9;
+      at = couches(seq.slice(0, 6), 5);
+      const big = X.empilement(seq, n, D); P = big.map(o => o.r);
+      c = big[Math.floor(seq.length / 2) * n * n + Math.floor(n / 2) * n + Math.floor(n / 2)].r; C = X.compaciteEmpilement();
+    }
+    const sh = X.coquilles(P, c, 1.8 * D);
+    if (vue) vue.montrer(at, { dLiaison: D, maille, rayons: { X: 0.3, A: 0.3, B: 0.3, C: 0.3 }, couleurs: COUL });
+    $("vz1").textContent = String(sh[0].z);
+    $("vz2").textContent = String(sh[1].z);
+    $("fz2").textContent = t("v3.f.dist", { r: F.fix(sh[1].d / D, 3) });
+    $("vz3").textContent = String(sh[2].z);
+    $("fz3").textContent = t("v3.f.dist", { r: F.fix(sh[2].d / D, 3) });
+    $("vc").textContent = F.qty(F.num(100 * C, 3), "%");
+    const es = [...new Set(at.map(a => a.e))];
+    $("legende").innerHTML = es.map(e => `<span class="${CLS[e]}">${t("v3.e." + e)}</span>`).join("");
+  }
+  seg($("structures"), "s", s => { nom = s; upd(); });
+  $("axe").onclick = () => { if (vue) vue.regarder(AR[nom] ? [1, 1, 1] : [0, 0, 1]); };
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["kepler", 1611, "idea"], ["gauss", 1831, "idea"], ["hales", 1998, "idea"], ["flyspeck", 2014, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["acier"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["noeuds", "c"], ["motifhc", "a"], ["troisieme", "d"], ["coquille", "b"], ["fer", "c"], ["diagonale", "a"], ["choix", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

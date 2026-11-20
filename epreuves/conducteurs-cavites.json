@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["interieur", "a"],
+  ["densite", "b"],
+  ["pointes", "c"],
+  ["cavite", "d"],
+  ["paroi", "a"],
+  ["terre", "b"],
+  ["cavendish", "c"],
+  ["echelle", "d"]
+ ]
+}

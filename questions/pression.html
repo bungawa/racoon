@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-i18n="h1">C'est quoi la pression ?</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/questions" data-i18n="crumb.questions"></a><span class="aux">›</span><span data-i18n="crumb.titre"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-solide" href="/racoon/atlas?piste=thermo" data-i18n="tag.piste"></a>
+      <span class="chip plain" data-i18n="tag.genre"></span>
+      <span class="chip plain" data-i18n="tag.duree"></span>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n="s1.p1"></p>
+    <p data-i18n="s1.p2"></p>
+    <p data-i18n="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <div class="box def"><b data-i18n="s2.def.title"></b>
+      <p data-i18n-html="s2.def.body"></p>
+    </div>
+    <div class="eq">
+      <math display="block"><mi>P</mi><mo>=</mo><mfrac><mi>F</mi><mi>S</mi></mfrac><mo>,</mo><mspace width="1em"/><mn>1</mn><mspace width="0.2em"/><mi mathvariant="normal">Pa</mi><mo>=</mo><mn>1</mn><mspace width="0.2em"/><mi mathvariant="normal">N</mi><mo>·</mo><msup><mi mathvariant="normal">m</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup></math>
+      <span class="n">(1)</span>
+    </div>
+    <p class="validite" data-i18n="val.1"></p>
+    <p data-i18n-html="s2.p1"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq">
+      <math display="block"><mi>P</mi><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><msup><mi>n</mi><mo>*</mo></msup><mi>m</mi><mo>⟨</mo><msup><mi>v</mi><mn>2</mn></msup><mo>⟩</mo><mo>=</mo><msup><mi>n</mi><mo>*</mo></msup><msub><mi>k</mi><mi mathvariant="normal">B</mi></msub><mi>T</mi></math>
+      <span class="n">(2)</span>
+    </div>
+    <p class="validite" data-i18n="val.2"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="list keyed" id="chocs"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq">
+      <math display="block"><mfrac><mrow><mi>d</mi><mi>P</mi></mrow><mrow><mi>d</mi><mi>z</mi></mrow></mfrac><mo>=</mo><mi>ρ</mi><mi>g</mi><mspace width="0.5em"/><mo>⇒</mo><mspace width="0.5em"/><mi>P</mi><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>P</mi><mn>0</mn></msub><mo>+</mo><mi>ρ</mi><mi>g</mi><mi>z</mi></math>
+      <span class="n">(3)</span>
+    </div>
+    <p class="validite" data-i18n="val.3"></p>
+    <figure class="chart">
+      <svg id="gwater" role="img" data-i18n-attr="aria-label:water.aria"></svg>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="zsl" data-i18n="water.depth"></label><output id="zread" for="zsl"></output></div>
+          <input id="zsl" type="range" min="0" max="40" step="0.5" value="10"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="water.p"></span><span class="v" id="wp"></span><span class="f" id="wbar"></span></div>
+          <div class="stat"><span class="k" data-i18n="water.over"></span><span class="v" id="wover"></span><span class="f" data-i18n="water.over.f"></span></div>
+          <div class="stat"><span class="k" data-i18n="water.vol"></span><span class="v" id="wvol"></span><span class="f" data-i18n="water.vol.f"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="water.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s4.p2"></p>
+    <figure class="chart">
+      <svg id="gair" role="img" data-i18n-attr="aria-label:air.aria"></svg>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="hsl" data-i18n="air.alt"></label><output id="hread" for="hsl"></output></div>
+          <input id="hsl" type="range" min="0" max="11000" step="5" value="1465"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="air.p"></span><span class="v" id="ap"></span><span class="f" id="aratio"></span></div>
+          <div class="stat"><span class="k" data-i18n="air.t"></span><span class="v" id="at"></span></div>
+          <div class="stat"><span class="k" data-i18n="air.flux"></span><span class="v" id="aflux"></span><span class="f" data-i18n="air.flux.f"></span></div>
+        </div>
+      </div>
+      <div class="legend"><span class="c-tint" data-i18n="air.legend.isa"></span><span class="c-warn" data-i18n="air.legend.iso"></span></div>
+      <figcaption data-i18n-html="air.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="lim.sec"></span>
+    <h2 data-i18n="lim.h2"></h2>
+    <div class="box prop"><b data-i18n="lim.bien.title"></b><p data-i18n="lim.bien.body"></p></div>
+    <div class="box warn"><b data-i18n="lim.mal.title"></b><p data-i18n="lim.mal.body"></p></div>
+    <div class="box rem"><b data-i18n="lim.ouvert.title"></b><p data-i18n="lim.ouvert.body"></p></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="liens.sec"></span>
+    <h2 data-i18n="liens.h2"></h2>
+    <p data-i18n="liens.intro"></p>
+    <div class="list stack" id="liens"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/locales/fr/questions/pression.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/questions/pression.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+F.autoTypo(document.querySelector("main"));
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+const $ = id => document.getElementById(id);
+const Pr = Pression, T_AIR = 288.15;
+const bar = p => t("unit.bar", { v: F.num(p / 1e5, 3) });
+
+/* ---------- chocs moléculaires dans l'air au sol ---------- */
+(() => {
+  const n = Pr.numberDensity(Pr.P0, T_AIR), v = Pr.meanSpeed(T_AIR), phi = Pr.wallFlux(Pr.P0, T_AIR);
+  const ROWS = [["n", F.qty(F.sci(n, 3), "m⁻³")], ["v", F.si(v, "m·s⁻¹")], ["phi", F.qty(F.sci(phi, 2), "m⁻²·s⁻¹")], ["masse", F.qty(F.num(Pr.P0 / Pr.G0, 3), "kg")]];
+  const txt = textOf("chocs.rows", ROWS.map(r => r[0]));
+  $("chocs").innerHTML = ROWS.map(([id, val]) => `<div><span class="k">${txt[id].name}</span><span>${txt[id].text}</span><span class="v">${val}</span></div>`).join("");
+})();
+
+/* ---------- eau : pression en fonction de la profondeur ---------- */
+(() => {
+  const ZMAX = 40, { x, y, g } = Plot.axes($("gwater"), { fmt: F, w: 640, h: 260, pad: { b: 44 },
+    x: { domain: [0, ZMAX], label: t("water.x") }, y: { domain: [0, 500], label: t("water.y") } });
+  Plot.el("path", { d: `M${x(0)} ${y(Pr.water(0) / 1e3)}L${x(ZMAX)} ${y(Pr.water(ZMAX) / 1e3)}`, class: "curve" }, g);
+  Plot.el("line", { x1: x(0), x2: x(ZMAX), y1: y(Pr.P0 / 1e3), y2: y(Pr.P0 / 1e3), class: "ref" }, g);
+  const dot = Plot.el("circle", { r: 6, class: "dot" }, g), sl = $("zsl");
+  const upd = () => {
+    const z = +sl.value, p = Pr.water(z);
+    dot.setAttribute("cx", x(z)); dot.setAttribute("cy", y(p / 1e3));
+    $("zread").textContent = F.qty(F.num(z, 3), "m");
+    $("wp").textContent = F.si(p, "Pa", { prefix: "k" });
+    $("wbar").textContent = bar(p);
+    $("wover").textContent = F.qty(F.num((p - Pr.P0) * 1e-4, 3), "N");
+    $("wvol").textContent = F.qty(F.num(100 * Pr.boyle(1, Pr.P0, p), 3), "%");
+  };
+  sl.oninput = upd; upd();
+})();
+
+/* ---------- air : atmosphère type et modèle isotherme ---------- */
+(() => {
+  const H = 11000, { x, y, g } = Plot.axes($("gair"), { fmt: F, w: 640, h: 260, pad: { b: 44 },
+    x: { domain: [0, 11], label: t("air.x") }, y: { domain: [0, 110], label: t("air.y") } });
+  let d1 = "", d2 = "";
+  for (let h = 0; h <= H; h += 250) {
+    d1 += (h ? "L" : "M") + x(h / 1e3).toFixed(1) + " " + y(Pr.isa(h) / 1e3).toFixed(1);
+    d2 += (h ? "L" : "M") + x(h / 1e3).toFixed(1) + " " + y(Pr.isothermal(h, T_AIR) / 1e3).toFixed(1);
+  }
+  Plot.el("path", { d: d2, class: "ref" }, g);
+  Plot.el("path", { d: d1, class: "curve" }, g);
+  Plot.el("line", { x1: x(1.465), x2: x(1.465), y1: y(0), y2: y(110), class: "zero" }, g);
+  Plot.el("text", { x: x(1.465) + 6, y: y(8), class: "note" }, g).textContent = t("air.puy");
+  const dot = Plot.el("circle", { r: 6, class: "dot" }, g), sl = $("hsl");
+  const upd = () => {
+    const h = +sl.value, p = Pr.isa(h), T = Pr.isaTemperature(h);
+    dot.setAttribute("cx", x(h / 1e3)); dot.setAttribute("cy", y(p / 1e3));
+    $("hread").textContent = F.si(h, "m", h >= 1000 ? { prefix: "k" } : {});
+    $("ap").textContent = F.si(p, "Pa", { prefix: "k" });
+    $("aratio").textContent = t("air.ratio", { r: F.num(100 * p / Pr.P0, 3) });
+    $("at").innerHTML = F.kelvin(T);
+    $("aflux").textContent = F.qty(F.sci(Pr.wallFlux(p, T), 2), "m⁻²·s⁻¹");
+  };
+  sl.oninput = upd; upd();
+})();
+
+/* ---------- notions liées ---------- */
+(() => {
+  const NOTIONS = ["gaz_cinetique", "statique_fluides", "mesure"], txt = textOf("liens.items", NOTIONS);
+  $("liens").innerHTML = NOTIONS.map(id => `<div><a href="/racoon/atlas?notion=${id}"><b>${txt[id].name}</b></a><span>${txt[id].text}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["torricelli", 1643, "experiment"], ["perier", 1648, "experiment"], ["guericke", 1654, "experiment"], ["bernoulli", 1738, "idea"], ["pascal", 1971, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["pneu", "plongee", "altimetre"], uses = textOf("uses.items", USES);
+  const vals = { pneu: F.qty(F.num(Pr.contactArea(300, 2.2e5), 2), "m²"), plongee: "", altimetre: F.qty(F.num(Pr.P0 * Pr.M_AIR * Pr.G0 / (Pr.R * Pr.T0), 2), "Pa") };
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text.replace("{v}", vals[id])}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["profond", "a"], ["forme", "a"], ["pneu", "a"], ["chocs", "a"], ["chauffe", "a"], ["ballon", "a"], ["oreilles", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 3 });
+})();
+</script>
+</body>
+</html>

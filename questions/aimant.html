@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-i18n="h1">C'est quoi un aimant ?</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  #compass { cursor: grab; }
+  #compass:active { cursor: grabbing; }
+  .relier a { font-weight: 600; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/questions" data-i18n="crumb.questions"></a><span class="aux">›</span><span data-i18n="crumb.titre"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <span class="chip plain" data-i18n="tag.prereq"></span>
+      <span class="chip plain" data-i18n="tag.duree"></span>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="obs.sec"></span>
+    <h2 data-i18n="obs.h2"></h2>
+    <p data-i18n="obs.p1"></p>
+    <p data-i18n="obs.p2"></p>
+    <p data-i18n="obs.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="champ.sec"></span>
+    <h2 data-i18n="champ.h2"></h2>
+    <p data-i18n="champ.p1"></p>
+    <p data-i18n="champ.p2"></p>
+    <div class="eq">
+      <math display="block"><mi>B</mi><mo>=</mo><mfrac><msub><mi>μ</mi><mn>0</mn></msub><mrow><mn>4</mn><mi>π</mi></mrow></mfrac><mo>·</mo><mfrac><mrow><mn>2</mn><mi>m</mi></mrow><msup><mi>r</mi><mn>3</mn></msup></mfrac></math>
+      <span class="n">(1)</span>
+    </div>
+    <p class="validite" data-i18n="val.1"></p>
+    <p data-i18n="champ.p3"></p>
+    <figure>
+      <div class="stage"><svg class="fig" id="field" viewBox="-300 -225 600 450" role="img" data-i18n-attr="aria-label:fig.aria"></svg></div>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="msl" data-i18n="fig.m"></label><output id="mread" for="msl"></output></div>
+          <input id="msl" type="range" min="0" max="100" step="1" value="80"></div>
+        <label class="ctl"><span><input id="earth" type="checkbox" checked> <span data-i18n="fig.terre"></span></span></label>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="fig.k.r"></span><span class="v" id="sr"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig.k.b"></span><span class="v" id="sb"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig.k.ratio"></span><span class="v" id="sratio"></span><span class="f" id="sfollow"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n="fig.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="oom.sec"></span>
+    <h2 data-i18n="oom.h2"></h2>
+    <p data-i18n="oom.intro"></p>
+    <div class="list scale" id="oom" role="table" data-i18n-attr="aria-label:oom.aria"></div>
+    <p class="caption" data-i18n="oom.caption"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="dedans.sec"></span>
+    <h2 data-i18n="dedans.h2"></h2>
+    <p data-i18n="dedans.p1"></p>
+    <p data-i18n-html="dedans.p2"></p>
+    <div class="box rem"><b data-i18n="dedans.rem.title"></b>
+      <p data-i18n="dedans.rem.body"></p>
+    </div>
+    <p data-i18n="dedans.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="ferro.sec"></span>
+    <h2 data-i18n="ferro.h2"></h2>
+    <p data-i18n="ferro.p1"></p>
+    <p data-i18n-html="ferro.p2"></p>
+    <p data-i18n="ferro.p3"></p>
+    <p data-i18n="ferro.p4"></p>
+    <figure class="chart">
+      <svg id="weiss" role="img" data-i18n-attr="aria-label:weiss.aria"></svg>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="tsl" data-i18n="weiss.t"></label><output id="tread" for="tsl"></output></div>
+          <input id="tsl" type="range" min="0" max="1400" step="1" value="293"></div>
+      </div>
+      <figcaption data-i18n-html="weiss.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="limites.sec"></span>
+    <h2 data-i18n="limites.h2"></h2>
+    <div class="box prop"><b data-i18n="limites.bien.title"></b><p data-i18n="limites.bien.body"></p></div>
+    <div class="box warn"><b data-i18n="limites.mal.title"></b><p data-i18n="limites.mal.body"></p></div>
+    <div class="box rem"><b data-i18n="limites.ouvert.title"></b><p data-i18n="limites.ouvert.body"></p></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="relier.sec"></span>
+    <h2 data-i18n="relier.h2"></h2>
+    <p data-i18n="relier.intro"></p>
+    <div class="list stack relier" id="relier"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/locales/fr/questions/aimant.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/questions/aimant.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+
+/* ---------- champ du dipôle et boussole ---------- */
+(() => {
+  const svg = document.getElementById("field"), S = 1000;           // 1 unité du dessin = 1 mm ; y physique vers le haut
+  const X = x => x * S, Y = y => -y * S;
+  const msl = document.getElementById("msl"), earth = document.getElementById("earth");
+  const g = Plot.el("g", {}, svg);
+  for (const C of [0.03, 0.05, 0.08, 0.12, 0.18, 0.27, 0.4, 0.6]) for (const s of [1, -1]) {
+    const d = Aimant.ligne(C, 160).map(([x, y], i) => (i ? "L" : "M") + X(x).toFixed(2) + " " + Y(s * y).toFixed(2)).join("");
+    Plot.el("path", { d, class: "stroke thin c-label-2" }, g);
+  }
+  Plot.el("rect", { x: -20, y: -7, width: 20, height: 14, class: "fill c-label-2" }, g);
+  Plot.el("rect", { x: 0, y: -7, width: 20, height: 14, class: "fill t-em" }, g);
+  Plot.el("text", { x: 10, y: 24, "text-anchor": "middle" }, g).textContent = t("fig.n");
+  Plot.el("text", { x: -10, y: 24, "text-anchor": "middle" }, g).textContent = t("fig.s");
+  Plot.el("text", { x: -288, y: -205 }, g).textContent = t("fig.nord");
+
+  const cg = Plot.el("g", { id: "compass", tabindex: "0", role: "slider", "aria-label": t("fig.compass") }, svg);
+  Plot.el("circle", { r: 24, class: "fill c-label-2", "fill-opacity": "0.15" }, cg);
+  Plot.el("circle", { r: 24, class: "stroke thin c-label-2" }, cg);
+  const needle = Plot.el("g", {}, cg);
+  Plot.el("polygon", { points: "0,-4.5 21,0 0,4.5", class: "fill t-em" }, needle);
+  Plot.el("polygon", { points: "0,-4.5 -21,0 0,4.5", class: "fill c-label-2" }, needle);
+  Plot.el("circle", { r: 3, class: "fill c-label" }, cg);
+
+  let p = [0.12, 0.08];                                               // position de la boussole, m
+  const mOf = () => Math.pow(10, -2 + 2.5 * msl.value / 100);
+  const clamp = ([x, y]) => {
+    x = Math.max(-0.28, Math.min(0.28, x)); y = Math.max(-0.2, Math.min(0.2, y));
+    if (Math.abs(x) < 0.045 && Math.abs(y) < 0.03) y = y < 0 ? -0.03 : 0.03;   // pas dans l'aimant
+    return [x, y];
+  };
+  function upd() {
+    const m = mOf(), bH = earth.checked ? Aimant.B_TERRE_H : 0;
+    const [dx, dy] = Aimant.dipole(m, p[0], p[1]), b = Math.hypot(dx, dy);
+    const ang = Math.atan2(dy + bH, dx) * 180 / Math.PI;
+    cg.setAttribute("transform", `translate(${X(p[0]).toFixed(2)} ${Y(p[1]).toFixed(2)})`);
+    needle.setAttribute("transform", `rotate(${(-ang).toFixed(1)})`);
+    document.getElementById("mread").textContent = F.si(m, "A·m²");
+    document.getElementById("sr").textContent = F.si(Math.hypot(p[0], p[1]), "m");
+    document.getElementById("sb").textContent = F.si(b, "T");
+    const ratio = b / Aimant.B_TERRE_H;
+    document.getElementById("sratio").textContent = F.num(ratio, 2);
+    document.getElementById("sfollow").textContent = t(ratio > 1 ? "fig.f.aimant" : "fig.f.terre");
+    cg.setAttribute("aria-valuetext", F.si(Math.hypot(p[0], p[1]), "m"));
+  }
+  const toWorld = e => { const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY;
+    const q = pt.matrixTransform(svg.getScreenCTM().inverse()); return [q.x / S, -q.y / S]; };
+  let drag = false;
+  cg.addEventListener("pointerdown", e => { drag = true; cg.setPointerCapture(e.pointerId); e.preventDefault(); });
+  cg.addEventListener("pointermove", e => { if (drag) { p = clamp(toWorld(e)); upd(); } });
+  cg.addEventListener("pointerup", () => drag = false);
+  cg.addEventListener("pointercancel", () => drag = false);
+  cg.addEventListener("keydown", e => {
+    const k = { ArrowLeft: [-0.01, 0], ArrowRight: [0.01, 0], ArrowUp: [0, 0.01], ArrowDown: [0, -0.01] }[e.key];
+    if (k) { p = clamp([p[0] + k[0], p[1] + k[1]]); upd(); e.preventDefault(); }
+  });
+  msl.oninput = earth.onchange = upd;
+  msl.value = Math.round((Math.log10(Aimant.moment(1.3, 1e-6)) + 2) / 2.5 * 100);
+  upd();
+})();
+
+/* ---------- ordres de grandeur ---------- */
+(() => {
+  const ROWS = [["cerveau", 1e-13], ["terre", 3.1e-5, 5.8e-5], ["frigo", 1e-3, 1e-2], ["neo", 0.1], ["remanence", 1.0, 1.4], ["irm", 1.5, 3], ["record", 45.5], ["magnetar", 1e10]];
+  const txt = textOf("oom.rows", ROWS.map(r => r[0])), lo = -13, hi = 10;
+  const pos = v => (Math.log10(v) - lo) / (hi - lo) * 100;
+  const fmt = (a, b) => { if (b == null) return a >= 1e4 || a < 1e-9 ? F.qty(F.sci(a, 1), "T") : F.si(a, "T");
+    const e = Math.floor(Math.log10(b) / 3) * 3, p = Object.keys(F.PREFIX).find(k => F.PREFIX[k] === Math.pow(10, e)) || "";
+    return F.qty(F.num(a / F.PREFIX[p], 3) + "\u2013" + F.num(b / F.PREFIX[p], 3), p + "T"); };
+  document.getElementById("oom").innerHTML = ROWS.map(([id, a, b]) => `<div role="row"><span role="cell">${txt[id]}</span><span class="track" aria-hidden="true"><i style="left:${pos(b == null ? a : Math.sqrt(a * b)).toFixed(1)}%"></i></span><span class="v" role="cell">${fmt(a, b)}</span></div>`).join("");
+})();
+
+/* ---------- Weiss : aimantation du fer en fonction de T ---------- */
+(() => {
+  const TC = 1043, svg = document.getElementById("weiss");
+  const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 280, x: { domain: [0, 1400], label: t("weiss.x") }, y: { domain: [0, 1.05], label: t("weiss.y") } });
+  let d = "";
+  for (let i = 0; i <= 280; i++) { const T = i * 5; d += (i ? "L" : "M") + x(T).toFixed(1) + " " + y(Aimant.weiss(T / TC)).toFixed(1); }
+  Plot.el("path", { d, class: "curve" }, g);
+  Plot.el("line", { x1: x(TC), x2: x(TC), y1: y(0), y2: y(1.05), class: "ref" }, g);
+  Plot.el("text", { x: x(TC) + 6, y: y(0.9), class: "note" }, g).textContent = t("weiss.tc");
+  const dot = Plot.el("circle", { r: 6, class: "dot" }, g);
+  const sl = document.getElementById("tsl"), out = document.getElementById("tread");
+  const upd = () => { const T = +sl.value, m = Aimant.weiss(T / TC);
+    dot.setAttribute("cx", x(T)); dot.setAttribute("cy", y(m));
+    out.innerHTML = t("weiss.readout", { t: F.kelvin(T), m: F.fix(m, 2) }); };
+  sl.oninput = upd; upd();
+})();
+
+/* ---------- relier ---------- */
+(() => {
+  const NOTIONS = ["magnetostatique", "magnetisme_atomique", "ferromagnetisme", "spin_demi"], txt = textOf("relier.items", NOTIONS);
+  document.getElementById("relier").innerHTML = NOTIONS.map(id => `<div><a href="/racoon/atlas?notion=${id}">${txt[id].name}</a><span>${txt[id].text}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["gilbert", 1600, "idea"], ["oersted", 1820, "experiment"], ["curie", 1895, "experiment"], ["weiss", 1907, "idea"], ["bohrvl", 1911, "idea"],
+    ["sterngerlach", 1922, "experiment"], ["spin", 1925, "idea"], ["heisenberg", 1928, "idea"], ["ndfeb", 1984, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount(document.getElementById("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["irm", "moteurs", "disques", "boussole"], uses = textOf("uses.items", USES);
+  document.getElementById("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["casse", "a"], ["alu", "a"], ["loin", "a"], ["curie", "a"], ["clou", "a"], ["quantique", "a"], ["spin", "a"], ["ordre", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount(document.getElementById("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

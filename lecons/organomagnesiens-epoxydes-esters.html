@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Organomagnésiens sur les époxydes et les esters</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .deux { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; align-items: center; }
+  .deux svg { width: 100%; height: 160px; }
+  .large svg { width: 100%; max-width: 520px; height: 170px; margin: 0 auto; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-organique" data-i18n="monde.chim-organique"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-liaisons-cc" data-i18n="etape.chim-liaisons-cc"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/hydrogenation-epoxydation" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <figure class="large">
+      <svg class="fig no-sigle" id="epox" role="img" data-i18n-attr="aria-label:epox.aria"></svg>
+      <figcaption data-i18n-html="epox.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure>
+      <div class="deux">
+        <svg class="fig no-sigle" id="est1" role="img" data-i18n-attr="aria-label:est.aria1"></svg>
+        <svg class="fig no-sigle" id="est2" role="img" data-i18n-attr="aria-label:est.aria2"></svg>
+      </div>
+      <figcaption data-i18n-html="est.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p2"></p>
+    <figure class="chart">
+      <svg id="g" role="img" data-i18n-attr="aria-label:g.aria"></svg>
+      <div class="legend"><span class="c-label-2" data-i18n="g.ester"></span><span class="c-tint" data-i18n="g.cetone"></span><span class="c-warn" data-i18n="g.alcool"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="lr" data-i18n="g.r"></label><output id="lrr" for="lr"></output></div>
+            <input id="lr" type="range" min="-2" max="2" step="0.05" value="1"></div>
+          <div class="ctl"><div class="row"><label for="ng" data-i18n="g.n"></label><output id="ngr" for="ng"></output></div>
+            <input id="ng" type="range" min="0" max="3" step="0.05" value="1"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="g.k.ester"></span><span class="v" id="vE"></span></div>
+          <div class="stat"><span class="k" data-i18n="g.k.cetone"></span><span class="v" id="vK"></span><span class="f" id="fK"></span></div>
+          <div class="stat"><span class="k" data-i18n="g.k.alcool"></span><span class="v" id="vA"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="g.caption"></figcaption>
+    </figure>
+    <div class="eq"><math display="block"><msub><mi>x</mi><mi mathvariant="normal">K</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>x</mi><mi mathvariant="normal">E</mi></msub><mo>−</mo><msubsup><mi>x</mi><mi mathvariant="normal">E</mi><mi>r</mi></msubsup></mrow><mrow><mi>r</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo>,</mo><mspace width="1em"/><mi>r</mi><mo>=</mo><mfrac><msub><mi>k</mi><mn>2</mn></msub><msub><mi>k</mi><mn>1</mn></msub></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.ester"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="list keyed" id="bilans"></div>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/organomagnesiens-epoxydes-esters.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script src="/racoon/statistique.js"></script>
+<script src="/racoon/chim-organique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const O = ChimOrga, sym = s => t("chim.sym", { s }), $ = id => document.getElementById(id);
+const peindre = (svg, d) => { svg.setAttribute("viewBox", d.viewBox); svg.innerHTML = d.html; };
+
+/* ---------- époxyde : le carbone nucléophile attaque le carbone le moins encombré ---------- */
+(() => {
+  /* 0 : carbone de l'organomagnésien, dessiné en carbanion ; 1 : O ; 2 : CH₂ du cycle ; 3 : CH du cycle ; 4 : méthyle */
+  const m = O.mol("C -1.5 -0.4 q-1 h3; O 0.5 0.75; C -0.1 -0.25; C 1.1 -0.25; C 1.966 -0.75 | 1-2 1-3 2-3 3-4");
+  peindre($("epox"), O.schema(m, { texte: sym, echelle: 44, doublets: [0], fleches: [{ de: 0, vers: [0, 2] }, { de: [1, 2], vers: 1, cote: -1 }] }));
+})();
+
+/* ---------- ester : addition, puis départ de l'alcoolate ---------- */
+(() => {
+  const a = O.mol("C -1.4 0.2 q-1 h3; C 0.2 0; O 0.2 1.1; O 1.1 -0.5; C 2 0 h3; C -0.4 -0.95 h3 | 1=2 1-3 3-4 1-5");
+  peindre($("est1"), O.schema(a, { texte: sym, echelle: 38, carbones: true, doublets: [0], fleches: [{ de: 0, vers: [0, 1] }, { de: [1, 2], vers: 2 }] }));
+  const b = O.mol("C -0.9 0.2 h3; C 0.2 0; O 0.2 1.1 q-1; O 1.1 -0.5; C 2 0 h3; C -0.4 -0.95 h3 | 0-1 1-2 1-3 3-4 1-5");
+  peindre($("est2"), O.schema(b, { texte: sym, echelle: 38, carbones: true, doublets: [2], fleches: [{ de: 2, vers: [2, 1] }, { de: [1, 3], vers: 3, cote: -1 }] }));
+})();
+
+/* ---------- deux additions consécutives : ce qui reste après nG équivalents ---------- */
+(() => {
+  const svg = $("g");
+  const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 280, x: { domain: [0, 3], label: t("g.x") }, y: { domain: [0, 1], label: t("g.y") } });
+  const cE = Plot.el("path", { class: "axis" }, g), cK = Plot.el("path", { class: "curve" }, g), cA = Plot.el("path", { class: "ref" }, g), dot = Plot.el("circle", { r: 6, class: "dot" }, g);
+  function maj() {
+    const r = Math.pow(10, +$("lr").value), n = +$("ng").value, N = 150, xs = Array.from({ length: N + 1 }, (_, i) => 3 * i / N);
+    const pts = xs.map(v => O.grignardEster(r, v));
+    cE.setAttribute("d", Plot.path(xs.map((v, i) => [x(v), y(pts[i].E)])));
+    cK.setAttribute("d", Plot.path(xs.map((v, i) => [x(v), y(pts[i].K)])));
+    cA.setAttribute("d", Plot.path(xs.map((v, i) => [x(v), y(pts[i].A)])));
+    const p = O.grignardEster(r, n), kmax = Math.max(...pts.map(q => q.K));
+    dot.setAttribute("cx", x(n)); dot.setAttribute("cy", y(p.K));
+    $("lrr").textContent = F.num(r, 2); $("ngr").textContent = F.fix(n, 2);
+    $("vE").textContent = t("g.v.pc", { x: F.fix(100 * p.E, 1) });
+    $("vK").textContent = t("g.v.pc", { x: F.fix(100 * p.K, 1) });
+    $("fK").textContent = t("g.f.max", { x: F.fix(100 * kmax, 1) });
+    $("vA").textContent = t("g.v.pc", { x: F.fix(100 * p.A, 1) });
+  }
+  $("lr").oninput = $("ng").oninput = maj; maj();
+})();
+
+/* ---------- bilans : quel électrophile, quel alcool ---------- */
+(() => {
+  const IDS = ["oxirane", "methanoate", "ester", "lactone", "carbonate"], b = textOf("s3.bilans", IDS);
+  $("bilans").innerHTML = IDS.map(id => `<div><span class="k">${b[id].k}</span><span>${b[id].v}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["wurtz", 1859, "experiment"], ["barbier", 1899, "experiment"], ["grignard", 1900, "experiment"], ["nobel", 1912, "idea"], ["weinreb", 1981, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["medicaments", "oxyde"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["site", "b"], ["chaine", "d"], ["stereo", "a"], ["deux", "c"], ["cetone", "a"], ["un", "b"], ["weinreb", "d"], ["formiate", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

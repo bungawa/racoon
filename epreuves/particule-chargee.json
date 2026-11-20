@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["poids", "a"],
+  ["canon", "b"],
+  ["deviation", "c"],
+  ["relativite", "d"],
+  ["travail", "a"],
+  ["rayon", "b"],
+  ["periode", "c"],
+  ["filtre", "d"]
+ ]
+}

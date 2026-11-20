@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Les autres formes d'énergie</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-atomes-energie" data-i18n="monde.atomes-energie"></a><span class="aux">›</span><a href="/racoon/etape?id=energie-premiere-approche" data-i18n="etape.energie-premiere-approche"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fond" href="/racoon/atlas?piste=fond" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/energie-cinetique" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>E</mi><mtext data-i18n="eq.el"></mtext></msub><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>k</mi><msup><mi>x</mi><mn>2</mn></msup></math></div>
+    <p class="validite" data-i18n-html="val.4.7"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>Q</mi><mo>=</mo><mi>m</mi><mi>c</mi><mspace width="0.1em"/><mi mathvariant="normal">Δ</mi><mi>T</mi></math></div>
+    <p class="validite" data-i18n-html="val.4.8"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="box warn"><b data-i18n="s2.warn.title"></b>
+      <p data-i18n-html="s2.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><mi>E</mi><mo>=</mo><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup></math></div>
+    <p class="validite" data-i18n-html="val.4.9"></p>
+    <p data-i18n-html="s3.p3"></p>
+    <div class="box rem"><b data-i18n="s3.rem.title"></b>
+      <p data-i18n-html="s3.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <figure>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="esl" data-i18n="oom.e"></label><output id="eread" for="esl"></output></div>
+          <input id="esl" type="range" min="0" max="15" step="any" value="6.5563"></div>
+        <div class="controls">
+          <button class="btn" type="button" data-e="0" data-i18n="oom.p.joule"></button>
+          <button class="btn" type="button" data-e="6.5563" data-i18n="oom.p.kwh"></button>
+          <button class="btn" type="button" data-e="6.9243" data-i18n="oom.p.jour"></button>
+          <button class="btn" type="button" data-e="12" data-i18n="oom.p.tj"></button>
+        </div>
+        <p class="caption" id="ehint"></p>
+        <div class="list scale" id="oom" role="table" data-i18n-attr="aria-label:oom.aria"></div>
+      </div>
+      <figcaption data-i18n-html="oom.caption"></figcaption>
+    </figure>
+    <div class="box prop"><b data-i18n="s4.prop.title"></b>
+      <p data-i18n-html="s4.prop.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/autres-formes-energie.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/energie.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+
+/* ---------- ordres de grandeur : quelle masse de chaque « réservoir » pour une énergie donnée ---------- */
+(() => {
+  const FORMS = ["chute", "chauffe", "batterie", "tnt", "sucre", "graisse", "essence", "uranium", "masse"], txt = textOf("oom.rows", FORMS);
+  const esl = $("esl"), LO = -18, HI = 6;                       // track: masses from 10⁻¹⁸ kg to 10⁶ kg
+  const mass = m => m >= 1000 ? F.qty(F.num(m / 1000, 3), "t") : m >= 1e-15 ? F.si(m * 1000, "g") : F.qty(F.sci(m, 3), "kg");
+  function upd() {
+    const E = Math.pow(10, +esl.value);
+    $("eread").textContent = F.si(E, "J");
+    $("ehint").textContent = t("oom.kwh", { k: F.num(E / Energie.KWH, 3) });
+    $("oom").innerHTML = FORMS.map(f => { const m = Energie.massFor(E, f), pos = Math.max(0, Math.min(1, (Math.log10(m) - LO) / (HI - LO)));
+      return `<div role="row"><span role="cell">${txt[f]}</span><span class="track" aria-hidden="true"><i style="left:${(pos * 100).toFixed(1)}%"></i></span><span class="v" role="cell">${mass(m)}</span></div>`; }).join("");
+  }
+  document.querySelectorAll("[data-e]").forEach(b => b.onclick = () => { esl.value = b.dataset.e; upd(); });
+  esl.oninput = upd; upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["hooke", 1678, "idea"], ["rumford", 1798, "experiment"], ["joule", 1850, "experiment"], ["einstein", 1905, "idea"], ["cockcroft", 1932, "experiment"], ["fission", 1938, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["tep", "centrale"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["ressort", "a"], ["chaleur", "a"], ["frottement", "a"], ["chimie", "a"], ["noyau", "a"], ["masse", "a"], ["sucre", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 44 });
+})();
+</script>
+</body>
+</html>

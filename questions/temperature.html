@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-i18n="h1">C'est quoi la température ?</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  #box { aspect-ratio: 16 / 9; }
+  .relier a { font-weight: 600; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/questions" data-i18n="crumb.questions"></a><span class="aux">›</span><span data-i18n="crumb.titre"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-thermo" href="/racoon/atlas?piste=thermo" data-i18n="tag.piste"></a>
+      <span class="chip plain" data-i18n="tag.prereq"></span>
+      <span class="chip plain" data-i18n="tag.duree"></span>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="obs.sec"></span>
+    <h2 data-i18n="obs.h2"></h2>
+    <p data-i18n="obs.p1"></p>
+    <p data-i18n="obs.p2"></p>
+    <p data-i18n="obs.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="egal.sec"></span>
+    <h2 data-i18n="egal.h2"></h2>
+    <p data-i18n="egal.p1"></p>
+    <p data-i18n="egal.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="agit.sec"></span>
+    <h2 data-i18n="agit.h2"></h2>
+    <p data-i18n="agit.p1"></p>
+    <p data-i18n="agit.p2"></p>
+    <div class="eq">
+      <math display="block"><mrow><mo>⟨</mo><msub><mi>E</mi><mi mathvariant="normal">c</mi></msub><mo>⟩</mo></mrow><mo>=</mo><mrow><mo>⟨</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>m</mi><msup><mi>v</mi><mn>2</mn></msup><mo>⟩</mo></mrow><mo>=</mo><mfrac><mn>3</mn><mn>2</mn></mfrac><msub><mi>k</mi><mi mathvariant="normal">B</mi></msub><mi>T</mi></math>
+      <span class="n">(1)</span>
+    </div>
+    <p class="validite" data-i18n="val.1"></p>
+    <p data-i18n-html="agit.p3"></p>
+    <figure>
+      <div class="stage" id="box"><canvas id="gas" role="img" data-i18n-attr="aria-label:gaz.aria"></canvas><div class="overlay" id="gread"></div></div>
+      <div class="panel">
+        <div class="controls">
+          <label class="field"><span data-i18n="gaz.gaz"></span>
+            <select id="gaz"><option value="he" data-i18n="gaz.he"></option><option value="ar" data-i18n="gaz.ar" selected></option><option value="xe" data-i18n="gaz.xe"></option></select></label>
+          <div class="ctl"><div class="row"><label for="tsl" data-i18n="gaz.t"></label><output id="tread" for="tsl"></output></div>
+            <input id="tsl" type="range" min="10" max="1000" step="1" value="300"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="gaz.k.ec"></span><span class="v" id="sec"></span><span class="f" id="smev"></span></div>
+          <div class="stat"><span class="k" data-i18n="gaz.k.vq"></span><span class="v" id="svq"></span></div>
+          <div class="stat"><span class="k" data-i18n="gaz.k.vp"></span><span class="v" id="svp"></span></div>
+        </div>
+      </div>
+      <div class="chart"><svg id="hist" role="img" data-i18n-attr="aria-label:gaz.hist.aria"></svg></div>
+      <figcaption data-i18n="gaz.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="zero.sec"></span>
+    <h2 data-i18n="zero.h2"></h2>
+    <p data-i18n-html="zero.p1"></p>
+    <p data-i18n-html="zero.p2"></p>
+    <div class="list scale" id="ladder" role="table" data-i18n-attr="aria-label:zero.aria"></div>
+    <p class="caption" data-i18n="zero.caption"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="kelvin.sec"></span>
+    <h2 data-i18n="kelvin.h2"></h2>
+    <p data-i18n-html="kelvin.p1"></p>
+    <p data-i18n-html="kelvin.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="limites.sec"></span>
+    <h2 data-i18n="limites.h2"></h2>
+    <div class="box prop"><b data-i18n="limites.bien.title"></b><p data-i18n="limites.bien.body"></p></div>
+    <div class="box warn"><b data-i18n="limites.mal.title"></b><p data-i18n="limites.mal.body"></p></div>
+    <div class="box rem"><b data-i18n="limites.ouvert.title"></b><p data-i18n="limites.ouvert.body"></p></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="relier.sec"></span>
+    <h2 data-i18n="relier.h2"></h2>
+    <p data-i18n="relier.intro"></p>
+    <div class="list stack relier" id="relier"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/locales/fr/questions/temperature.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/questions/temperature.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const onTheme = f => { f(); matchMedia("(prefers-color-scheme: dark)").addEventListener("change", f); new MutationObserver(f).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] }); };
+const P = Temperature;
+
+/* ---------- gaz : atomes de Maxwell et histogramme ---------- */
+(() => {
+  const N = 400, canvas = document.getElementById("gas"), ctx = canvas.getContext("2d"), rand = Quiz.rng(5);
+  const gaz = document.getElementById("gaz"), tsl = document.getElementById("tsl"), svg = document.getElementById("hist");
+  const VIS = 0.15 / 433;                                // 433 m·s⁻¹ (argon, 300 K) ↦ 15 % de la boîte par seconde
+  let T = +tsl.value, m = P.masseAtome(gaz.value), ink = {};
+  const x = new Float64Array(N), y = new Float64Array(N), v = [];
+  onTheme(() => ink = { dot: css("--tint"), wall: css("--label-2") });
+  const sample = () => { m = P.masseAtome(gaz.value); v.length = 0;
+    for (let i = 0; i < N; i++) { x[i] = rand(); y[i] = rand(); v.push(P.tirage(rand, T, m)); } };
+
+  function histogram() {
+    svg.innerHTML = "";
+    const vq = P.vQuad(T, m), vmax = 3.5 * vq, nb = 28, w = vmax / nb, counts = new Array(nb).fill(0);
+    v.forEach(([a, b, c]) => { const k = Math.floor(Math.hypot(a, b, c) / w); if (k < nb) counts[k]++; });
+    const dens = counts.map(c => c / (N * w)), peak = P.maxwell(P.vProb(T, m), T, m);
+    const top = 1.15 * Math.max(peak, ...dens);
+    const sc = Math.pow(10, Math.floor(Math.log10(top)));             // densité affichée en multiples de 10^k
+    const { x: X, y: Y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 240, x: { domain: [0, vmax], label: t("gaz.x") },
+      y: { domain: [0, top / sc], label: t("gaz.y") + " × 10" + F.sup(Math.round(Math.log10(sc))), fmt: u => F.num(u, 3) } });
+    dens.forEach((d, k) => Plot.el("rect", { x: X(k * w) + 1, y: Y(d / sc), width: Math.max(X(w) - X(0) - 2, 1), height: Y(0) - Y(d / sc), class: "area" }, g));
+    let path = "";
+    for (let i = 0; i <= 200; i++) { const u = i * vmax / 200; path += (i ? "L" : "M") + X(u).toFixed(1) + " " + Y(P.maxwell(u, T, m) / sc).toFixed(1); }
+    Plot.el("path", { d: path, class: "curve" }, g);
+  }
+  function readouts() {
+    const E = P.ecMoy(T);
+    document.getElementById("tread").innerHTML = F.kelvin(T);
+    document.getElementById("gread").innerHTML = t("gaz.readout", { t: F.kelvin(T) });
+    document.getElementById("sec").textContent = F.qty(F.sci(E, 3), "J");
+    document.getElementById("smev").textContent = F.qty(F.num(P.meV(E), 3), "meV");
+    document.getElementById("svq").textContent = F.qty(F.num(P.vQuad(T, m), 3), "m·s⁻¹");
+    document.getElementById("svp").textContent = F.qty(F.num(P.vProb(T, m), 3), "m·s⁻¹");
+  }
+  tsl.oninput = () => { const T2 = +tsl.value, k = P.facteur(T, T2); v.forEach(u => { u[0] *= k; u[1] *= k; u[2] *= k; }); T = T2; histogram(); readouts(); };
+  gaz.onchange = () => { sample(); histogram(); readouts(); };
+  sample(); histogram(); readouts();
+
+  function size() { const r = canvas.getBoundingClientRect(), d = Math.min(devicePixelRatio, 2); canvas.width = r.width * d; canvas.height = r.height * d; }
+  new ResizeObserver(size).observe(canvas); size();
+  let last = performance.now(), visible = true;
+  new IntersectionObserver(e => visible = e[0].isIntersecting).observe(canvas);
+  function frame(now) {
+    requestAnimationFrame(frame);
+    const dt = reduce ? 0 : Math.min((now - last) / 1000, 0.05); last = now;
+    if (!visible) return;
+    const cw = canvas.width, ch = canvas.height, ar = cw / ch;
+    for (let i = 0; i < N; i++) {
+      x[i] += v[i][0] * VIS * dt / ar; y[i] += v[i][1] * VIS * dt;
+      if (x[i] < 0) { x[i] = -x[i]; v[i][0] = -v[i][0]; } if (x[i] > 1) { x[i] = 2 - x[i]; v[i][0] = -v[i][0]; }
+      if (y[i] < 0) { y[i] = -y[i]; v[i][1] = -v[i][1]; } if (y[i] > 1) { y[i] = 2 - y[i]; v[i][1] = -v[i][1]; }
+      x[i] = Math.min(Math.max(x[i], 0), 1); y[i] = Math.min(Math.max(y[i], 0), 1);
+    }
+    ctx.clearRect(0, 0, cw, ch);
+    ctx.fillStyle = ink.dot; const r = Math.max(1.5, ch / 160);
+    for (let i = 0; i < N; i++) { ctx.beginPath(); ctx.arc(r + x[i] * (cw - 2 * r), r + y[i] * (ch - 2 * r), r, 0, 6.283); ctx.fill(); }
+  }
+  requestAnimationFrame(frame);
+})();
+
+/* ---------- échelle des températures ---------- */
+(() => {
+  const ROWS = [["record", 38e-12], ["cmb", 2.725], ["helium", 4.2], ["azote", 77], ["glace", 273.15], ["corps", 310], ["soleil", 5772], ["coeur", 1.5e7]];
+  const txt = textOf("zero.rows", ROWS.map(r => r[0])), lo = -11, hi = 8;
+  const fmt = T => T < 1 ? F.si(T, "K") : T < 1e5 ? F.qty(F.num(T, 4), "K") : F.qty(F.sci(T, 2), "K");
+  document.getElementById("ladder").innerHTML = ROWS.map(([id, T]) => `<div role="row"><span role="cell">${txt[id]}</span><span class="track" aria-hidden="true"><i style="left:${((Math.log10(T) - lo) / (hi - lo) * 100).toFixed(1)}%"></i></span><span class="v" role="cell">${fmt(T)}</span></div>`).join("");
+})();
+
+/* ---------- relier ---------- */
+(() => {
+  const NOTIONS = ["gaz_cinetique", "brownien", "thermo", "boltzmann"], txt = textOf("relier.items", NOTIONS);
+  document.getElementById("relier").innerHTML = NOTIONS.map(id => `<div><a href="/racoon/atlas?notion=${id}">${txt[id].name}</a><span>${txt[id].text}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["celsius", 1742, "idea"], ["thomson", 1848, "idea"], ["maxwell", 1860, "idea"], ["boltzmann", 1872, "idea"], ["triple", 1954, "use"], ["k2019", 2019, "use"], ["record", 2021, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount(document.getElementById("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["frontal", "cryo", "acoustique"], uses = textOf("uses.items", USES);
+  document.getElementById("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["rampe", "a"], ["thermo", "a"], ["gaz", "a"], ["double", "a"], ["celsius", "a"], ["zero", "a"], ["seule", "a"], ["triple", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount(document.getElementById("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

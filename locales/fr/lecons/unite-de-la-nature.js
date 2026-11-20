@@ -1,0 +1,97 @@
+/* Leçon « L'unité sous-jacente de la nature » (Feynman II.12.7) : textes en français.
+   Une autre langue = locales/<langue>/lecons/unite-de-la-nature.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "L'unité sous-jacente de la nature",
+    "h1": "L'unité sous-jacente de la nature",
+    "tag.piste": "Électromagnétisme",
+    "hist.sec": "Histoire et pratique",
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "sys.title": "Décrire le système avant d'appliquer la loi",
+    "crumb.jour": "L'unité de la nature",
+    "lede": "La chaleur, les neutrons, une membrane, l'eau idéale, la lumière : cinq sujets, et à chaque fois les équations de l'électrostatique. Pourquoi ? Dire « c'est l'unité de la nature » ne répond à rien. La vraie raison est plus modeste et plus instructive : ces équations sont ce qui reste de n'importe quel mécanisme compliqué quand on le regarde d'assez loin pour qu'il paraisse lisse.",
+    "tag.prereq": "Prérequis : Diffusion des neutrons",
+    "eq.voisins": "4 voisins",
+
+    "s1.sec": "La question",
+    "s1.h2": "Les mêmes équations, mais pas la même étoffe",
+    "s1.p1": "Depuis la leçon « Mêmes équations, mêmes solutions », un savoir acquis en électrostatique a servi pour la conduction de la chaleur, la membrane tendue, la diffusion des neutrons, l'écoulement autour d'une sphère et l'éclairement d'une table. Apprendre un sujet, c'était en apprendre plusieurs. Reste la question : pourquoi les équations de phénomènes si différents se ressemblent-elles ?",
+    "s1.p2": "On pourrait répondre : « C'est l'unité sous-jacente de la nature. » Mais qu'est-ce que cela veut dire ? Si cela veut dire que les équations sont semblables, on n'a rien expliqué. Si cela veut dire que tout est fait de la même étoffe et obéit donc aux mêmes lois, l'explication sonne bien, mais elle est fausse ici : le potentiel électrique n'est pas la même chose physique que la température, ni que la densité de neutrons, et la hauteur d'une membrane n'a rien d'une température.",
+
+    "s2.sec": "Une réponse",
+    "s2.h2": "Ce qui reste quand tout est lisse",
+    "s2.p1": "Regardons de plus près : les équations ne sont pas vraiment identiques. Celle de la diffusion des neutrons n'est qu'une approximation, bonne quand la distance d'observation est grande devant le libre parcours moyen (leçon « Diffusion des neutrons »). De près, on verrait chaque neutron filer en ligne droite, se cogner, repartir. Rien de lisse là-dedans. L'équation différentielle suppose une répartition continue ; elle remplace un mouvement compliqué par son imitation la plus simple.",
+    "s2.p2": "Voilà peut-être l'indice. Ce que ces phénomènes ont en commun, c'est l'<b>espace</b> dans lequel ils se déroulent. Dès que les choses varient doucement dans l'espace, ce qui compte, ce sont les taux de variation des grandeurs avec la position : des dérivées. Les lois de la physique ne privilégient aucune direction : les dérivées doivent donc se grouper en gradients et en divergences. Et les équations de l'électrostatique sont les plus simples que l'on puisse écrire avec seulement des dérivées d'espace sous forme vectorielle. Tout problème simple, ou toute simplification d'un problème compliqué, doit leur ressembler. On peut le vérifier sur le mécanisme le plus pauvre qui soit : un marcheur sur un quadrillage de maille <var>h</var>, qui saute au hasard vers l'un de ses quatre voisins. Appelons φ la probabilité qu'un marcheur parti d'un nœud finisse sur un bord donné. Elle obéit à une règle sans aucune dérivée :",
+    "val.12.4a": "Exacte pour la marche sur réseau : le premier pas mène à chacun des quatre voisins avec la probabilité 1/4, et la suite ne dépend pas du passé. Aucune hypothèse de continuité : c'est une règle de comptage.",
+    "s2.p3": "Supposons maintenant que φ varie peu d'un nœud à l'autre, et développons chaque terme autour du nœud central :",
+    "val.12.4b": "Exacte comme développement, si φ est assez régulière. Si l'on ne garde que le premier terme, (12.4a) devient ∇²φ = 0 : l'équation de Laplace, (12.4) sans charges. L'erreur relative est de l'ordre de (<var>h</var>/ℓ)², où ℓ est la distance sur laquelle φ varie : 1\u00a0% pour une maille dix fois plus petite que ℓ. Le terme suivant garde la trace du quadrillage : il distingue les axes des diagonales.",
+    "fig.aria": "Carré quadrillé dont le côté supérieur est au potentiel 1 et les trois autres à 0 ; trajets au hasard de marcheurs partis d'un point intérieur jusqu'à un bord",
+    "fig.legend.traces": "trois marcheurs, du départ jusqu'à un bord",
+    "fig.legend.haut": "bord où φ = 1",
+    "fig.un": "φ = 1",
+    "fig.zero": "φ = 0 sur les trois autres côtés",
+    "ctl.n": "Finesse du quadrillage",
+    "n.val": "{n} mailles par côté ; h = {h}",
+    "ctl.N": "Nombre de marcheurs",
+    "btn.relancer": "Relancer les marcheurs",
+    "k.marche": "Fraction arrivée en haut",
+    "f.marche": "{p} pas en moyenne ; à {z} écart-type de la valeur du réseau",
+    "k.reseau": "Valeur exacte sur le réseau",
+    "f.reseau": "à {e}\u00a0% de la valeur continue",
+    "k.continu": "Équation de Laplace",
+    "f.continu": "potentiel au même point, milieu continu",
+    "fig.caption": "Le côté du haut est porté au potentiel 1, les trois autres à 0. Des marcheurs partent du point marqué, à mi-largeur et au quart de la hauteur. La fraction qui finit en haut estime le potentiel en ce point. Deux écarts se superposent. Le bruit du comptage décroît comme 1/√<var>N</var> : il faut cent fois plus de marcheurs pour un chiffre de plus. L'écart du réseau au milieu continu décroît comme <var>h</var>² : avec 4 mailles par côté il vaut 3\u00a0%, avec 64 mailles 0,015\u00a0%. Aucun marcheur ne connaît l'équation de Laplace ; elle n'apparaît que dans leur moyenne.",
+    "sys1.body": "Le système : un carré, un quadrillage, des marcheurs sans mémoire. Deux nombres sans dimension disent quand l'équation lisse suffit. Le premier est (<var>h</var>/ℓ)², la maille contre la distance sur laquelle la solution varie : c'est le rapport du libre parcours moyen à la taille du système dans la leçon « Diffusion des neutrons », ou de la distance entre atomes à la taille de l'objet pour la chaleur. Le second est 1/√<var>N</var>, le bruit du nombre : dans un gramme de matière, <var>N</var> est de l'ordre de 10²² et le bruit de 10⁻¹¹. Quand les deux sont petits, le détail du mécanisme (quadrillage carré ou non, sauts égaux ou non) ne laisse aucune trace : mille mécanismes différents donnent la même équation.",
+
+    "s3.sec": "Et l'électricité ?",
+    "s3.h2": "L'électrostatique est-elle aussi une imitation lisse ?",
+    "s3.p1": "La même remarque vaudrait-elle pour l'électrostatique elle-même ? L'équation ∇²φ = \u2212ρ/ε<sub>0</sub> serait-elle l'imitation lisse d'un monde microscopique bien plus compliqué, fait de petits « X-ons » visibles seulement à très petite distance, et que nos mesures, toujours faites à grande échelle, ne distinguent pas ? L'idée n'a rien d'absurde. La théorie la plus complète de l'électrodynamique a bien des difficultés aux très courtes distances. À l'époque où Feynman enseigne, ses équations sont vérifiées jusqu'à environ 10⁻¹⁶\u00a0m ; en deçà, on ne sait pas.",
+    "s3.p2": "Personne, pourtant, n'a réussi à écrire une théorie de ce genre. Et il se trouve, pour des raisons que l'on ne comprend pas, que la relativité et la mécanique quantique réunies semblent interdire toute équation fondamentalement différente de (12.4) qui ne mène pas à une contradiction. Pas un désaccord avec l'expérience : une contradiction interne, comme des probabilités dont la somme ne vaut pas un, ou des énergies qui sortent en nombres complexes.",
+    "s3.p3": "Mais supposer que ∇²φ = \u2212ρ/ε<sub>0</sub> vaut à toutes les distances, si petites soient-elles, mène à ses propres absurdités : l'énergie électrique d'un électron ponctuel est infinie (leçon « Énergie d'une charge ponctuelle »). La leçon s'arrête donc sur une question ouverte. Une loi peut être d'une simplicité parfaite et n'être que la moyenne d'autre chose ; on ne le sait qu'en allant voir à l'échelle où elle cesse d'être lisse.",
+
+    "hist.h2": "Du lisse au granulaire, et retour",
+    "hist.intro": "L'équation de la chaleur a servi de modèle à celle de la diffusion ; un demi-siècle plus tard, on a compris qu'elles décrivent toutes deux la moyenne d'un mouvement au hasard.",
+    "hist.events": {
+      fourier: { who: "Joseph Fourier", what: "publie la « Théorie analytique de la chaleur » : le flux de chaleur est proportionnel au gradient de température.", context: "L'équation qui en découle ne dit rien de ce qu'est la chaleur ; c'est sa force." },
+      fick: { who: "Adolf Fick", what: "remarque que la diffusion d'un sel dans l'eau se décrit par les mêmes mathématiques que la conduction de la chaleur.", context: "Il reprend délibérément la démarche de Fourier." },
+      einstein: { who: "Albert Einstein", what: "relie le mouvement brownien à la diffusion : c'est le carré moyen du déplacement d'un grain, et non son déplacement moyen, qui croît comme le temps.", context: "L'équation lisse de Fick devient la moyenne de marches au hasard, comme dans la leçon « Marche aléatoire et mouvement brownien »." },
+      kakutani: { who: "Kakutani", what: "démontre que la solution de l'équation de Laplace en un point s'obtient en lançant de ce point un mouvement brownien et en moyennant la valeur trouvée sur le bord à l'arrivée.", context: "C'est l'énoncé exact de ce que fait la figure." },
+    },
+    "uses.items": {
+      puces: { name: "Calculer les capacités d'une puce", text: "Entre les fils d'un circuit intégré, les capacités parasites se calculent en résolvant l'équation de Laplace. Une des méthodes en usage ne maille rien : elle lance des marches au hasard d'un conducteur à l'autre et fait la moyenne, comme la figure." },
+    },
+
+    "quiz.items": {
+      etoffe: { prompt: "Pourquoi « tout est fait de la même étoffe » n'explique-t-il pas que la chaleur, les neutrons et le potentiel électrique obéissent aux mêmes équations ?",
+        options: { a: "Parce que ces équations sont en réalité toutes différentes.", b: "Parce que ces grandeurs ne sont pas la même chose physique : une température n'est pas un potentiel, ni une densité de particules.", c: "Parce que la chaleur n'obéit à aucune équation.", d: "Parce que l'explication est vraie mais trop simple." },
+        why: "L'analogie porte sur la forme des équations, pas sur la nature des grandeurs. Il faut donc chercher ce que les phénomènes ont en commun en dehors de leur substance : l'espace où ils se déroulent, et le fait qu'on les regarde d'assez loin." },
+      lisse: { prompt: "Pourquoi une équation avec des gradients apparaît-elle dès que les grandeurs varient doucement dans l'espace ?",
+        options: { a: "Parce qu'alors seuls comptent les taux de variation avec la position, et que l'absence de direction privilégiée impose de les grouper en gradients et divergences.", b: "Parce que le gradient est la seule opération mathématique possible.", c: "Parce que les grandeurs lisses sont constantes.", d: "Parce que toutes les forces dérivent d'un potentiel." },
+        why: "Variation douce : on peut développer et ne garder que les premières dérivées utiles. Isotropie : les lois s'écrivent sous forme vectorielle. Les combinaisons les plus simples sont celles de l'électrostatique." },
+      gradient: { prompt: "L'équation de diffusion des neutrons est une approximation. À quelle condition est-elle bonne ?",
+        options: { a: "Quand les neutrons sont très rapides.", b: "Quand il y a très peu de neutrons.", c: "Quand on regarde sur des distances grandes devant le libre parcours moyen.", d: "Quand le milieu absorbe tous les neutrons." },
+        why: "À l'échelle du libre parcours, chaque neutron suit une ligne brisée. L'équation lisse décrit la densité moyenne, et son erreur est de l'ordre du carré du rapport du libre parcours à la taille du système." },
+      maille: { prompt: "Dans la figure, on passe de 8 à 16 mailles par côté. Comment change l'écart entre la valeur du réseau et celle de l'équation de Laplace ?",
+        options: { a: "Il ne change pas.", b: "Il est divisé par 2.", c: "Il est divisé par 16.", d: "Il est divisé par 4 environ." },
+        hint: "(12.4b) : le premier terme négligé est en h⁴, le terme gardé en h².",
+        why: "L'erreur relative est en (h/ℓ)². Diviser la maille par 2 la divise par 4. C'est ainsi que le détail microscopique s'efface : très vite." },
+      bruit: { prompt: "Avec 1\u00a0000 marcheurs, l'estimation du potentiel a une incertitude d'environ 0,009. Combien de marcheurs faut-il pour la ramener à 0,000\u00a09 ?",
+        options: { a: "10\u00a0000.", b: "100\u00a0000.", c: "3\u00a0200.", d: "1\u00a0000\u00a0000." },
+        why: "L'incertitude d'un comptage décroît comme 1/√N : dix fois moins de bruit demande cent fois plus de marcheurs. La matière ordinaire en a tant, 10²² par gramme, que ce bruit ne se voit pas." },
+      moyenne: { prompt: "Que dit exactement la règle (12.4a), et que devient-elle quand la maille est petite ?",
+        options: { a: "La valeur en un nœud est la moyenne de ses quatre voisins ; à la limite, c'est l'équation de Laplace.", b: "La valeur en un nœud est la somme de ses voisins ; à la limite, c'est l'équation de Poisson.", c: "La valeur est la même en tous les nœuds.", d: "La valeur en un nœud dépend du chemin suivi pour y arriver." },
+        why: "Moyenne des voisins moins valeur centrale = (h²/4)∇²φ + termes en h⁴. La propriété de moyenne est la forme discrète de ∇²φ = 0 : une fonction harmonique vaut en chaque point la moyenne de ses valeurs autour." },
+      xons: { prompt: "Peut-on affirmer que ∇²φ = \u2212ρ/ε0 est, elle aussi, l'imitation lisse d'un mécanisme plus fin ?",
+        options: { a: "Oui : c'est démontré depuis longtemps.", b: "Non : elle est exacte à toutes les distances, sans difficulté.", c: "On ne sait pas : aucune théorie de ce genre n'a réussi, mais l'équation tenue pour exacte à toute distance donne une énergie infinie à une charge ponctuelle.", d: "Non : la question n'a pas de sens." },
+        why: "Les deux positions ont leur difficulté. Un mécanisme sous-jacent : personne n'en a construit un qui soit cohérent avec la relativité et la mécanique quantique. Une validité à toute échelle : l'énergie du champ d'un point diverge. La question reste ouverte." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 12 (texte original en anglais), §12-7. Marche au hasard sur réseau, solution discrète et série exacte calculées ici.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

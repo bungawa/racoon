@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Éléments de circuit réels</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-ondes-milieux" data-i18n="monde.ondes-milieux"></a><span class="aux">›</span><a href="/racoon/etape?id=cavites-resonantes" data-i18n="etape.cavites-resonantes"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/impedances" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi>I</mi><mo>=</mo><mfrac><mn>1</mn><mi>z</mi></mfrac><mo>(</mo><mi>V</mi><mo>−</mo><mi>ℰ</mi><mo>)</mo></math><span class="n">(23.1)</span></div>
+    <p class="validite" data-i18n-html="val.23.1"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="box rem"><b data-i18n="sysR.title"></b>
+      <p id="sysR"></p>
+    </div>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mi>z</mi><mo>=</mo><mi>r</mi><mo>+</mo><mi>i</mi><mi>ω</mi><mi>L</mi></math></div>
+    <p class="validite" data-i18n-html="val.rl"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>z</mi><mo>=</mo><mfrac><mrow><mi>r</mi><mo>+</mo><mi>i</mi><mi>ω</mi><mi>L</mi></mrow><mrow><mn>1</mn><mo>−</mo><mi>L</mi><msub><mi>C</mi><mi>s</mi></msub><msup><mi>ω</mi><mn>2</mn></msup><mo>+</mo><mi>i</mi><mi>r</mi><msub><mi>C</mi><mi>s</mi></msub><mi>ω</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.simple"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <figure class="chart">
+      <svg class="fig" id="trace" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-label-2" data-i18n="fig.legend.ideal"></span><span class="c-warn" data-i18n="fig.legend.simple"></span><span class="c-tint" data-i18n="fig.legend.echelle"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="sn" data-i18n="fig.n"></label><output id="snr" for="sn"></output></div>
+            <input id="sn" type="range" min="2" max="40" step="1" value="20"></div>
+          <div class="ctl"><div class="row"><label for="sf" data-i18n="fig.f"></label><output id="sfr" for="sf"></output></div>
+            <input id="sf" type="range" min="4" max="8.4" step="0.01" value="6"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.z"></span><span class="v" id="vz"></span><span class="f" id="fz"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.ecart"></span><span class="v" id="vecart"></span><span class="f" id="fecart"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.res"></span><span class="v" id="vres"></span><span class="f" id="fres"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/elements-de-circuit-reels.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/ondes-milieux.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const M = OndesMilieux, B = M.BOBINE, TAU = 2 * Math.PI, cmod = z => Math.hypot(z.re, z.im);
+
+/* ---------- une résistance de 1 kΩ : ses éléments parasites à 1 MHz et à 100 MHz ---------- */
+(() => {
+  const p = M.COMPOSANTS.resistance, e1 = M.composant("resistance", TAU * 1e6).ecart, e2 = M.composant("resistance", TAU * 1e8).ecart;
+  $("sysR").innerHTML = t("sysR.body", { R: F.si(p.R, "Ω"), L: F.si(p.Ls, "H"), C: F.si(p.Cp, "F"), e1: F.qty(F.num(100 * e1, 2), "%"), e2: F.qty(F.num(100 * e2, 2), "%"),
+    fL: F.si(p.R / (TAU * p.Ls), "Hz"), fC: F.si(1 / (TAU * p.R * p.Cp), "Hz") });
+})();
+
+/* ---------- la bobine : idéale, schéma simple, échelle de N cellules ---------- */
+(() => {
+  const trace = $("trace"), sn = $("sn"), sf = $("sf"), f0 = 1e4, f1 = 2.5e8;
+  const fs = Array.from({ length: 501 }, (_, i) => f0 * Math.pow(f1 / f0, i / 500));
+  function draw() {
+    const N = +sn.value, f = Math.pow(10, +sf.value), o = { N };
+    const fit = M.ajusterSimple(o), Zl = w => M.bobineEchelle(w, o), Zs = w => M.bobineSimple(w, o, fit.Cs);
+    trace.innerHTML = "";
+    const P = Plot.axes(trace, { fmt: F, w: 640, h: 300, pad: { l: 64, b: 44 }, x: { scale: "log", domain: [f0, f1], label: t("fig.xaxis") }, y: { scale: "log", domain: [1e-1, 1e8], label: t("fig.yaxis") } });
+    const clip = v => Math.min(1e8, Math.max(1e-1, v)), line = (g, cls) => Plot.el("path", { d: Plot.path(fs.map(x => [P.x(x), P.y(clip(g(TAU * x)))])), class: cls }, P.g);
+    line(w => w * B.L, "stroke thin c-label-2");
+    line(w => cmod(Zs(w)), "stroke c-warn");
+    line(w => cmod(Zl(w)), "curve");
+    Plot.el("line", { x1: P.x(f), x2: P.x(f), y1: P.y(1e-1), y2: P.y(1e8), class: "stroke thin c-label-2" }, P.g);
+    Plot.el("circle", { cx: P.x(f), cy: P.y(clip(cmod(Zl(TAU * f)))), r: 5, class: "dot" }, P.g);
+    const w = TAU * f, zl = Zl(w), zs = Zs(w), nres = fit.toutes.filter(r => r.f <= f1).length;
+    $("snr").textContent = F.num(N, 2);
+    $("sfr").textContent = F.si(f, "Hz");
+    $("vz").textContent = F.si(cmod(zl), "Ω");
+    $("fz").innerHTML = t(zl.im >= 0 ? "fig.f.ind" : "fig.f.cap", { L: F.si(w * B.L, "Ω") });
+    $("vecart").textContent = F.qty(F.num(100 * cmod({ re: zs.re - zl.re, im: zs.im - zl.im }) / cmod(zl), 2), "%");
+    $("fecart").innerHTML = t("fig.f.ecart", { C: F.si(fit.Cs, "F") });
+    $("vres").textContent = F.si(fit.premiere.f, "Hz");
+    $("fres").textContent = t("fig.f.res", { n: F.num(nres, 2) });
+  }
+  sn.oninput = sf.oninput = draw; draw();
+})();
+
+/* ---------- le système décrit : la bobine contre la longueur d'onde ---------- */
+(() => {
+  const fit = M.ajusterSimple(), f = fit.premiere.f, lambda = Constantes.c / f;
+  $("sys1").innerHTML = t("sys1.body", { L: F.si(B.L, "H"), r: F.si(B.r, "Ω"), taille: F.qty(F.num(100 * B.taille, 2), "cm"), fil: F.si(B.fil, "m"),
+    fr: F.si(B.r / (TAU * B.L), "Hz"), f1: F.si(f, "Hz"), lambda: F.si(lambda, "m"), q1: F.num(B.taille / lambda, 2), q2: F.num(B.fil / lambda, 2) });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["foster", 1924, "idea"], ["brune", 1931, "idea"], ["spice", 1973, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["ceramique"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["lineaire", "c"], ["parasite", "a"], ["serie", "d"], ["saut", "b"], ["capacitif", "a"], ["modele", "c"], ["longueur", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 231 });
+})();
+</script>
+</body>
+</html>

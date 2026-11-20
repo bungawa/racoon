@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["pompage", "c"],
+  ["cascade", "a"],
+  ["orbite", "b"],
+  ["pierre", "d"],
+  ["plan", "a"],
+  ["train", "c"],
+  ["masse", "d"],
+  ["ressort", "b"]
+ ]
+}

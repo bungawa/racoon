@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Forces fondamentales et champs</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-mecanique" data-i18n="monde.mecanique"></a><span class="aux">›</span><a href="/racoon/etape?id=les-forces" data-i18n="etape.les-forces"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-meca" href="/racoon/atlas?piste=meca" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/forces-moleculaires" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msub><mover accent="true"><mi>F</mi><mo>→</mo></mover><mrow><mn>1</mn><mo>→</mo><mn>2</mn></mrow></msub><mo>=</mo><mo>−</mo><mi>G</mi><mfrac><mrow><msub><mi>m</mi><mn>1</mn></msub><msub><mi>m</mi><mn>2</mn></msub></mrow><msup><mi>r</mi><mn>2</mn></msup></mfrac><mspace width="0.1em"/><msub><mover accent="true"><mi>u</mi><mo>→</mo></mover><mrow><mn>1</mn><mo>→</mo><mn>2</mn></mrow></msub></math><span class="n">(12.9a)</span></div>
+    <p class="validite" data-i18n-html="val.12.19"></p>
+    <div class="eq"><math display="block"><msub><mover accent="true"><mi>F</mi><mo>→</mo></mover><mrow><mn>1</mn><mo>→</mo><mn>2</mn></mrow></msub><mo>=</mo><mfrac><mrow><msub><mi>q</mi><mn>1</mn></msub><msub><mi>q</mi><mn>2</mn></msub></mrow><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub><msup><mi>r</mi><mn>2</mn></msup></mrow></mfrac><mspace width="0.1em"/><msub><mover accent="true"><mi>u</mi><mo>→</mo></mover><mrow><mn>1</mn><mo>→</mo><mn>2</mn></mrow></msub></math><span class="n">(12.2)</span></div>
+    <p class="validite" data-i18n-html="val.12.20"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="box warn"><b data-i18n="s1.warn.title"></b>
+      <p data-i18n-html="s1.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mover accent="true"><mi>F</mi><mo>→</mo></mover><mo>=</mo><mi>q</mi><mspace width="0.1em"/><mover accent="true"><mi>E</mi><mo>→</mo></mover><mo stretchy="false">(</mo><mi>M</mi><mo stretchy="false">)</mo><mo>,</mo><mspace width="1em"/><mover accent="true"><mi>F</mi><mo>→</mo></mover><mo>=</mo><mi>m</mi><mspace width="0.1em"/><mover accent="true"><mi>g</mi><mo>→</mo></mover><mo stretchy="false">(</mo><mi>M</mi><mo stretchy="false">)</mo></math><span class="n">(12.5)</span></div>
+    <p class="validite" data-i18n-html="val.12.21"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mover accent="true"><mi>E</mi><mo>→</mo></mover><mo stretchy="false">(</mo><mi>M</mi><mo stretchy="false">)</mo><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><mfrac><msub><mi>q</mi><mi>i</mi></msub><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub></mrow></mfrac><mfrac><mover accent="true"><mrow><msub><mi>P</mi><mi>i</mi></msub><mi>M</mi></mrow><mo>→</mo></mover><mrow><msub><mi>P</mi><mi>i</mi></msub><msup><mi>M</mi><mn>3</mn></msup></mrow></mfrac></math><span class="n">(12.7)</span></div>
+    <p class="validite" data-i18n-html="val.12.22"></p>
+    <figure>
+      <svg class="fig" id="champ" viewBox="0 0 640 340" role="img" data-i18n-attr="aria-label:ch.aria"></svg>
+      <div class="legend"><span class="c-label" data-i18n="ch.legend.e1"></span><span class="c-warn" data-i18n="ch.legend.e2"></span><span class="c-tint" data-i18n="ch.legend.e"></span><span class="c-label-2" data-i18n="ch.legend.carte"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="qsl" data-i18n="ch.q2"></label><output id="qread" for="qsl"></output></div>
+            <input id="qsl" type="range" min="-2" max="2" step="0.25" value="-1"></div>
+          <div class="ctl"><div class="row"><label for="pxsl" data-i18n="ch.px"></label><output id="pxread" for="pxsl"></output></div>
+            <input id="pxsl" type="range" min="-150" max="150" step="5" value="0"></div>
+          <div class="ctl"><div class="row"><label for="pysl" data-i18n="ch.py"></label><output id="pyread" for="pysl"></output></div>
+            <input id="pysl" type="range" min="-90" max="90" step="5" value="40"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="ch.k.e1"></span><span class="v" id="ve1"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="ch.k.e2"></span><span class="v" id="ve2"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="ch.k.e"></span><span class="v" id="ve"></span><span class="f" id="fe"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="ch.caption"></figcaption>
+    </figure>
+    <div class="box rem"><b data-i18n="s2.rem.title"></b>
+      <p data-i18n-html="s2.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>α</mi><mo>=</mo><mfrac><msup><mi>e</mi><mn>2</mn></msup><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub><mi>ħ</mi><mi>c</mi></mrow></mfrac><mo>≈</mo><mfrac><mn>1</mn><mn>137</mn></mfrac><mo>,</mo><mspace width="1em"/><msub><mi>α</mi><mi>G</mi></msub><mo>=</mo><mfrac><mrow><mi>G</mi><msubsup><mi>m</mi><mi mathvariant="normal">p</mi><mn>2</mn></msubsup></mrow><mrow><mi>ħ</mi><mi>c</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.12.23"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><mi>λ</mi><mo>∼</mo><mfrac><mi>ħ</mi><mrow><mi>m</mi><mi>c</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.12.24"></p>
+    <div class="list keyed" id="ordres"></div>
+    <p class="caption" data-i18n-html="ordres.caption"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/forces-fondamentales-et-champs.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const VM = "V·m⁻¹";
+
+/* ---------- superposition : champ de deux charges ponctuelles ---------- */
+(() => {
+  const svg = $("champ"), P = Plot.el, qsl = $("qsl"), pxsl = $("pxsl"), pysl = $("pysl");
+  const S = 1600, O = [320, 170], Q1 = 1e-9, D = 0.05;                 // px per metre, origin, charge 1, half-distance
+  const px = X => O[0] + S * X, py = Y => O[1] - S * Y;
+  const arrow = (x1, y1, x2, y2, cls) => Plot.fleche(svg, [x1, y1], [x2, y2], { cls, tete: 8 });
+  function draw() {
+    svg.innerHTML = "";
+    const q2 = +qsl.value * 1e-9, src = [{ q: Q1, x: -D, y: 0 }].concat(q2 ? [{ q: q2, x: D, y: 0 }] : []);
+    /* map: direction everywhere, length growing with log |E| */
+    for (let i = 16; i < 640; i += 32) for (let j = 14; j < 340; j += 32) {
+      const X = (i - O[0]) / S, Y = (O[1] - j) / S;
+      if (src.some(s => Math.hypot(X - s.x, Y - s.y) < 0.012)) continue;
+      const e = Forces.field(src, X, Y); if (!(e.e > 0)) continue;
+      const L = Math.max(4, Math.min(14, 4 + 4 * Math.log10(e.e / 100)));
+      arrow(i - L * e.ex / e.e / 2, j + L * e.ey / e.e / 2, i + L * e.ex / e.e / 2, j - L * e.ey / e.e / 2, "c-label-2 thin");
+    }
+    /* the charges */
+    src.forEach((s, k) => {
+      P("circle", { cx: px(s.x), cy: py(s.y), r: 9, class: "fill " + (s.q > 0 ? "c-ko" : "c-tint") }, svg);
+      const l = P("text", { x: px(s.x), y: py(s.y) + 26, "text-anchor": "middle" }, svg); l.textContent = t(k ? "ch.lab.q2" : "ch.lab.q1");
+    });
+    /* the probe: each contribution and their vector sum, on one linear scale */
+    const X = pxsl.value / 1000, Y = pysl.value / 1000;
+    const e1 = Forces.field(src.slice(0, 1), X, Y), e2 = q2 ? Forces.field(src.slice(1), X, Y) : { ex: 0, ey: 0, e: 0 }, e = Forces.field(src, X, Y);
+    const ok = [e1, e2, e].every(v => isFinite(v.e));
+    if (ok) {
+      const k = 90 / Math.max(e1.e, e2.e, e.e, 1e-30), M = [px(X), py(Y)];
+      arrow(M[0], M[1], M[0] + k * e1.ex, M[1] - k * e1.ey, "c-label dash");
+      if (q2) arrow(M[0], M[1], M[0] + k * e2.ex, M[1] - k * e2.ey, "c-warn dash");
+      arrow(M[0], M[1], M[0] + k * e.ex, M[1] - k * e.ey, "c-tint bold");
+      P("circle", { cx: M[0], cy: M[1], r: 4, class: "fill c-label" }, svg);
+      const l = P("text", { x: M[0] + 8, y: M[1] + 16 }, svg); l.textContent = t("ch.lab.m");
+    }
+    $("qread").textContent = F.qty(F.num(+qsl.value, 3), "nC");
+    $("pxread").textContent = F.qty(F.num(+pxsl.value, 3), "mm");
+    $("pyread").textContent = F.qty(F.num(+pysl.value, 3), "mm");
+    const show = v => ok ? F.si(v.e, VM) : "–";
+    $("ve1").textContent = show(e1); $("ve2").textContent = show(e2); $("ve").textContent = show(e);
+    $("fe").textContent = ok ? t("ch.f.electron", { f: F.si(Forces.E * e.e, "N") }) : t("ch.f.sur");
+  }
+  qsl.oninput = pxsl.oninput = pysl.oninput = draw; draw();
+})();
+
+/* ---------- ordres de grandeur des quatre interactions ---------- */
+(() => {
+  const V = {
+    grav: { v: F.sci(Forces.alphaG(Forces.MP), 2) },
+    em: { v: F.num(1 / Forces.alpha(), 6) },
+    faible: { v: F.sci(Forces.range(Forces.MW), 2) },
+    forte: { v: F.num(Forces.range(Forces.MPI), 2) },
+    pp: { v: F.sci(Forces.ratioEG(Forces.E, Forces.MP), 3) },
+    ee: { v: F.sci(Forces.ratioEG(Forces.E, Forces.ME), 3) },
+  };
+  const ROWS = Object.keys(V), txt = textOf("ordres.items", ROWS);
+  $("ordres").innerHTML = ROWS.map(id => `<div><span class="k">${txt[id].k}</span><span>${txt[id].text.replace("{v}", V[id].v)}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["newton", 1687, "idea"], ["coulomb", 1785, "experiment"], ["cavendish", 1798, "experiment"], ["faraday", 1852, "idea"], ["maxwell", 1865, "idea"], ["yukawa", 1935, "idea"], ["wz", 1983, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["grace", "electrostatique"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["neutre", "a"], ["rapport", "a"], ["champ", "a"], ["superposition", "a"], ["milieu", "a"], ["portee", "a"], ["gravite", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 124 });
+})();
+</script>
+</body>
+</html>

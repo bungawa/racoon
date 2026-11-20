@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le principe d'incertitude de Heisenberg</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-quantique-amplitudes" data-i18n="monde.quantique-amplitudes"></a><span class="aux">›</span><a href="/racoon/etape?id=observer-et-incertitude" data-i18n="etape.observer-et-incertitude"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-quant" href="/racoon/atlas?piste=quant" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/premiers-principes-quantiques" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi>Δ</mi><mi>x</mi><mspace width="0.1em"/><mi>Δ</mi><msub><mi>p</mi><mi>x</mi></msub><mo>≥</mo><mfrac><mi>ℏ</mi><mn>2</mn></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.heisenberg"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>Δ</mi><mo>=</mo><mfrac><mrow><mi>p</mi><mi>d</mi></mrow><mi>L</mi></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.recul"></p>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>V</mi><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mrow><mo>(</mo><mi>Δ</mi><msub><mi>σ</mi><mi>x</mi></msub><mo>/</mo><mi>ℏ</mi><mo>)</mo></mrow><mn>2</mn></msup><mo>/</mo><mn>2</mn></mrow></msup><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>Δ</mi><mn>2</mn></msup><mo>/</mo><mo>(</mo><mn>8</mn><msubsup><mi>σ</mi><mi>p</mi><mn>2</mn></msubsup><mo>)</mo></mrow></msup><mo>,</mo><mspace width="1em"/><msup><mi>D</mi><mn>2</mn></msup><mo>+</mo><msup><mi>V</mi><mn>2</mn></msup><mo>=</mo><mn>1</mn></math></div>
+    <p class="validite" data-i18n-html="val.complementarite"></p>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="mur" role="img" data-i18n-attr="aria-label:fig.aria.mur"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.t1"></span><span class="c-warn" data-i18n="fig.legend.t2"></span></div>
+      <svg class="fig" id="ecran" role="img" data-i18n-attr="aria-label:fig.aria.ecran"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.p"></span><span class="c-warn" data-i18n="fig.legend.somme"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="ssp" data-i18n="fig.sp"></label><output id="sspr" for="ssp"></output></div>
+            <input id="ssp" type="range" min="-1.3" max="1" step="0.01" value="-0.6"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.juste"></span><span class="v" id="vj"></span><span class="f" id="fj"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.v"></span><span class="v" id="vv"></span><span class="f" id="fv"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.sx"></span><span class="v" id="vx"></span><span class="f" id="fx"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s5.sec"></span>
+    <h2 data-i18n="s5.h2"></h2>
+    <p data-i18n-html="s5.p1"></p>
+    <div class="eq"><math display="block"><mi>Δ</mi><mi>y</mi><mspace width="0.1em"/><mi>Δ</mi><msub><mi>p</mi><mi>y</mi></msub><mo>≈</mo><mi>h</mi><mo>=</mo><mn>4</mn><mi>π</mi><mo>⋅</mo><mfrac><mi>ℏ</mi><mn>2</mn></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.fente"></p>
+    <p data-i18n-html="s5.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s6.sec"></span>
+    <h2 data-i18n="s6.h2"></h2>
+    <p data-i18n-html="s6.p1"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+      <p id="sys2"></p>
+    </div>
+    <p data-i18n-html="s6.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/incertitude-de-heisenberg.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/quantique-amplitudes.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const Q = QuantAmp;
+
+/* the system of « Observer les électrons »: 50 keV electrons, holes 1 µm apart and 0,2 µm wide, screen at 1 m */
+const P_E = Q.impulsion(Q.m_e, 50e3 * Q.e), LAMBDA_E = Q.broglie(P_E), FENTES = { lambda: LAMBDA_E, d: 1e-6, a: 0.2e-6, L: 1 };
+const DELTA = Q.reculPlaque(P_E, FENTES.d, FENTES.L), INTERFRANGE = Q.interfrangeFentes(LAMBDA_E, FENTES.L, FENTES.d);
+
+/* ---------- the wall on rollers: its momentum known to σp ---------- */
+(() => {
+  const mur = $("mur"), ecran = $("ecran"), ssp = $("ssp");
+  const X = 8e-6, xs = Array.from({ length: 481 }, (_, i) => -X + i * 2 * X / 480);
+  const us = Array.from({ length: 401 }, (_, i) => -4 + i * 0.02);                  // wall momentum in units of Δ
+  function draw() {
+    const r = Math.pow(10, +ssp.value), w = Q.plaqueHeisenberg(r * DELTA, DELTA);
+    /* the two recoil distributions of the wall, means ∓Δ/2, standard deviation σp, in units of Δ */
+    mur.innerHTML = "";
+    const g = (u, m) => Math.exp(-((u - m) ** 2) / (2 * r * r)) / (r * Math.sqrt(2 * Math.PI));
+    const top = 1.1 * g(0.5, 0.5);
+    const A = Plot.axes(mur, { fmt: F, w: 640, h: 180, pad: { l: 56, b: 40 }, x: { domain: [-4, 4], label: t("fig.xaxis.mur") }, y: { domain: [0, top], label: t("fig.yaxis.mur"), fmt: () => "" } });
+    Plot.el("path", { d: Plot.path(us.map(u => [A.x(u), A.y(g(u, 0.5))])), class: "curve" }, A.g);
+    Plot.el("path", { d: Plot.path(us.map(u => [A.x(u), A.y(g(u, -0.5))])), class: "stroke c-warn" }, A.g);
+    /* the screen: fringes smeared by the random position of the wall */
+    ecran.innerHTML = "";
+    const P = Plot.axes(ecran, { fmt: F, w: 640, h: 200, pad: { l: 56, b: 40 }, x: { domain: [-8, 8], label: t("fig.xaxis") }, y: { domain: [0, 4.2], label: t("fig.yaxis") } });
+    const pts = xs.map(x => Q.probaAvecTemoin(x, FENTES, w.V));
+    Plot.el("path", { d: Plot.path(xs.map((x, i) => [P.x(x * 1e6), P.y(pts[i].somme)])), class: "ref" }, P.g);
+    Plot.el("path", { d: Plot.path(xs.map((x, i) => [P.x(x * 1e6), P.y(pts[i].P)])), class: "curve" }, P.g);
+    $("sspr").textContent = t("fig.f.sp", { r: F.num(r, 2), s: F.qty(F.sci(r * DELTA, 2), "kg·m·s⁻¹") });
+    $("vj").textContent = F.qty(F.num(100 * w.Pjuste, 3), "%");
+    $("fj").textContent = t("fig.f.juste", { d: F.num(w.D, 2) });
+    $("vv").textContent = F.num(w.V, 2);
+    $("fv").textContent = t("fig.f.v", { r: F.num(w.recouvrement, 2) });
+    $("vx").textContent = F.num(w.sigmaX / INTERFRANGE, 2);
+    $("fx").textContent = t("fig.f.sx", { s: F.si(w.sigmaX, "m") });
+  }
+  ssp.oninput = draw; draw();
+})();
+
+/* ---------- the system described: an electron, a wall of one gram, a single atom ---------- */
+(() => {
+  const M = 1e-3, w = Q.plaqueHeisenberg(DELTA / 4, DELTA);
+  $("sys1").innerHTML = t("sys1.body", { p: F.qty(F.sci(P_E, 3), "kg·m·s⁻¹"), D: F.qty(F.sci(DELTA, 2), "kg·m·s⁻¹"), sp: F.qty(F.sci(DELTA / 4, 2), "kg·m·s⁻¹"),
+    sx: F.si(w.sigmaX, "m"), i: F.si(INTERFRANGE, "m"), dv: F.qty(F.sci(DELTA / 4 / M, 1), "m·s⁻¹") });
+  $("sys2").innerHTML = t("sys2.body", { le: F.si(LAMBDA_E, "m"), ang: F.sci(LAMBDA_E / FENTES.a, 2), r: F.sci(Q.h / (FENTES.a * P_E), 2) });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["heisenberg", 1927, "idea"], ["kennard", 1927, "idea"], ["ustc", 2025, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["ligo"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["enonce", "b"], ["recul", "c"], ["flou", "a"], ["compromis", "d"], ["facteur", "b"], ["mur", "c"], ["protege", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 378 });
+})();
+</script>
+</body>
+</html>

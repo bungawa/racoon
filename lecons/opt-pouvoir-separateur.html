@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le pouvoir séparateur</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-optique-geometrique" data-i18n="monde.optique-geometrique"></a><span class="aux">›</span><a href="/racoon/etape?id=opt-systemes-optiques" data-i18n="etape.opt-systemes-optiques"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-optique" href="/racoon/atlas?piste=optique" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/opt-aberrations" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>t</mi><mn>2</mn></msub><mo>−</mo><msub><mi>t</mi><mn>1</mn></msub><mo>&gt;</mo><mfrac><mn>1</mn><mi>ν</mi></mfrac></math><span class="n">(27.17)</span></div>
+    <p class="validite" data-i18n-html="val.27.17"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="eq"><math display="block"><mi>d</mi><mo>&gt;</mo><mfrac><mi>λ</mi><mrow><mn>2</mn><mi>n</mi><mspace width="0.1em"/><mi data-i18n="fn.sin"></mi><mspace width="0.2em"/><mi>θ</mi></mrow></mfrac></math><span class="n">(27.17a)</span></div>
+    <p class="validite" data-i18n-html="val.27.17a"></p>
+    <p data-i18n-html="s1.p4"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mi>I</mi><mo stretchy="false">(</mo><mi>α</mi><mo stretchy="false">)</mo></mrow><msub><mi>I</mi><mn>0</mn></msub></mfrac><mo>=</mo><msup><mrow><mo>[</mo><mfrac><mrow><mn>2</mn><msub><mi>J</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow><mi>v</mi></mfrac><mo>]</mo></mrow><mn>2</mn></msup><mo separator="true">,</mo><mspace width="1em"/><mi>v</mi><mo>=</mo><mfrac><mrow><mi>π</mi><mi>D</mi><mspace width="0.1em"/><mi data-i18n="fn.sin"></mi><mspace width="0.2em"/><mi>α</mi></mrow><mi>λ</mi></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.27.17b"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>α</mi><mtext data-i18n="eq.min"></mtext></msub><mo>=</mo><mn>1,22</mn><mspace width="0.1em"/><mfrac><mi>λ</mi><mi>D</mi></mfrac></math><span class="n">(27.17c)</span></div>
+    <p class="validite" data-i18n-html="val.27.17c"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="profil" role="img" data-i18n-attr="aria-label:ps.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="ps.legend.somme"></span><span class="c-label-2" data-i18n="ps.legend.une"></span><span class="c-warn" data-i18n="ps.legend.rayleigh"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="ssl" data-i18n="ps.s"></label><output id="sread" for="ssl"></output></div>
+            <input id="ssl" type="range" min="0.5" max="3" step="0.02" value="1.22"></div>
+          <div class="ctl"><div class="row"><label for="dsl" data-i18n="ps.D"></label><output id="dread" for="dsl"></output></div>
+            <input id="dsl" type="range" min="0" max="4" step="1" value="0"></div>
+          <div class="ctl"><div class="row"><label for="lsl" data-i18n="ps.l"></label><output id="lread" for="lsl"></output></div>
+            <input id="lsl" type="range" min="400" max="700" step="10" value="550"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="ps.k.creux"></span><span class="v" id="vc"></span><span class="f" id="fc"></span></div>
+          <div class="stat"><span class="k" data-i18n="ps.k.angle"></span><span class="v" id="va"></span><span class="f" id="fa"></span></div>
+          <div class="stat"><span class="k" data-i18n="ps.k.retard"></span><span class="v" id="vr"></span><span class="f" id="fr"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="ps.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="box rem"><b data-i18n="s3.rem.title"></b>
+      <p data-i18n-html="s3.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/opt-pouvoir-separateur.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/optique-geometrique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), O = OptiqueGeometrique;
+const rad = v => F.si(v, "rad", { sig: 3 });
+
+/* ---------- deux étoiles incohérentes vues par une pupille circulaire, (27.17), tache d'Airy, (27.17c) ---------- */
+(() => {
+  const svg = $("profil"), ss = $("ssl"), ds = $("dsl"), ls = $("lsl"), W = 640, H = 300, XM = 3;    // abscisse en unités de λ/D
+  const DS = [0.005, 0.1, 1, 8, 39];                                                                  // diamètres (m) : pupille de l'œil … 39 m
+  function draw() {
+    svg.innerHTML = "";
+    const r = +ss.value, D = DS[+ds.value], lam = +ls.value * 1e-9, s = Math.PI * r;
+    const p = O.deuxSources(s, { vmax: Math.PI * XM, N: 301 });
+    const ax = Plot.axes(svg, { fmt: F, w: W, h: H, x: { domain: [-XM, XM], label: t("ps.ax.x") }, y: { domain: [0, 1.6], label: t("ps.ax.y") } });
+    const P = (u, i) => [ax.x(u), ax.y(i)], vs = p.v.map(v => v / Math.PI);
+    [-1, 1].forEach(sg => Plot.el("path", { d: Plot.path(vs.map(u => P(u, O.airy(Math.PI * u - sg * s / 2)))), class: "stroke thin dash c-label-2" }, svg));
+    Plot.el("path", { d: Plot.path(vs.map((u, k) => P(u, p.I[k]))), class: "stroke c-tint" }, svg);
+    [-0.61, 0.61].forEach(u => Plot.el("line", { x1: ax.x(u), x2: ax.x(u), y1: ax.y(0), y2: ax.y(1.6), class: "stroke thin dash c-warn" }, svg));
+    const R = O.resolution({ lambda: lam, D }), sep = r * lam / D;
+    $("sread").textContent = t("ps.s.read", { r: F.num(r, 3), q: F.num(r / 1.2197, 2) });
+    $("dread").textContent = F.si(D, "m", { sig: 2 });
+    $("lread").textContent = F.si(lam, "m", { prefix: "n", sig: 3 });
+    $("vc").textContent = p.creux < 1 - 1e-6 ? F.qty(F.num(100 * p.creux, 3), "%") : "–";
+    $("fc").textContent = t(p.creux > 1 - 1e-6 ? "ps.f.une" : p.creux > 0.735 + 1e-3 ? "ps.f.sparrow" : "ps.f.separees");
+    $("va").textContent = rad(sep);
+    $("fa").textContent = t("ps.f.angle", { R: rad(R.rayleigh), arc: F.num(sep / (Math.PI / 180 / 3600), 3) });
+    $("vr").textContent = t("ps.r.v", { n: F.num(r, 3) });
+    $("fr").textContent = t(r >= 1 ? "ps.f.retard.oui" : "ps.f.retard.non");
+  }
+  [ss, ds, ls].forEach(c => c.oninput = draw); draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["airy", 1835, "idea"], ["abbe", 1873, "idea"], ["rayleigh", 1879, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["immersion", "elt"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["grossir", "c"], ["retard", "a"], ["immersion", "d"], ["oeil", "b"], ["bleu", "a"], ["rayleigh", "c"], ["fermat", "b"], ["miroir", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 277 });
+})();
+</script>
+</body>
+</html>

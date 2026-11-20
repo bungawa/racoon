@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>L'électromagnétisme dans la science et la technique</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-mecanique" data-i18n="monde.mecanique"></a><span class="aux">›</span><a href="/racoon/etape?id=champs-em" data-i18n="etape.champs-em"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/que-sont-les-champs" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>c</mi><mo>=</mo><mfrac><mn>1</mn><msqrt><mrow><msub><mi>ε</mi><mn>0</mn></msub><msub><mi>μ</mi><mn>0</mn></msub></mrow></msqrt></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.c"></p>
+    <div class="stats">
+      <div class="stat"><span class="k" data-i18n-html="c.k.calc"></span><span class="v" id="vc"></span><span class="f" data-i18n="c.f.calc"></span></div>
+      <div class="stat"><span class="k" data-i18n="c.k.def"></span><span class="v" id="vcdef"></span><span class="f" data-i18n="c.f.def"></span></div>
+    </div>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mi>λ</mi><mo>=</mo><mfrac><mi>c</mi><mi>f</mi></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.lambda"></p>
+    <figure>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="fsl" data-i18n="on.f"></label><output id="fread" for="fsl"></output></div>
+          <input id="fsl" type="range" min="1" max="20" step="0.1" value="8"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="on.k.lambda"></span><span class="v" id="vl"></span><span class="f" id="fl"></span></div>
+          <div class="stat"><span class="k" data-i18n="on.k.bande"></span><span class="v" id="vb"></span><span class="f" id="fb"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="on.k.antenne"></span><span class="v" id="va"></span><span class="f" data-i18n="on.f.antenne"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="on.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="box rem"><b data-i18n="s2.rem.title"></b>
+      <p data-i18n-html="s2.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/electromagnetisme-science-technique.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/physique-fondamentale.js"></script>
+<script src="/racoon/lecons/champs-em.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const len = x => x >= 1e3 ? F.si(x / 1e3, "km", { prefix: "" }) : F.si(x, "m");
+
+/* ---------- c à partir de deux constantes de l'électricité et du magnétisme ---------- */
+$("vc").textContent = F.qty(F.num(ChampsEM.cMaxwell(), 10), "m·s⁻¹");
+$("vcdef").textContent = F.qty(F.num(Constantes.c, 10), "m·s⁻¹");
+
+/* ---------- du secteur aux rayons gamma : longueur d'onde, domaine, antenne ---------- */
+(() => {
+  const fsl = $("fsl"), BANDES = Fondamentale.BANDS.map(b => b.id), txt = textOf("on.bandes", BANDES);
+  function upd() {
+    const f = 10 ** +fsl.value, o = ChampsEM.onde(f);
+    $("fread").textContent = F.si(f, "Hz");
+    $("vl").textContent = len(o.lambda);
+    $("fl").textContent = t("on.f.lambda", { e: txt[o.bande].echelle });
+    $("vb").textContent = txt[o.bande].nom;
+    $("fb").textContent = txt[o.bande].usage;
+    $("va").textContent = len(o.antenne);
+  }
+  fsl.oninput = upd; upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["morse", 1844, "use"], ["edison", 1882, "use"], ["marconi", 1901, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["reseau", "fm", "wifi"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["grecs", "c"], ["vitesse", "a"], ["lambda", "d"], ["antenne", "b"], ["chimie", "a"], ["reseau", "c"], ["meme", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 16 });
+})();
+</script>
+</body>
+</html>

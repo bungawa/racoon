@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-i18n="h1">C'est quoi… ?</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page outil">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><span data-i18n="crumb.questions"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+  </header>
+  <section class="card">
+    <div class="list stack" id="liste"></div>
+    <p class="caption" id="status" role="status"></p>
+  </section>
+</main>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/locales/fr/questions/index.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/sections.js"></script>
+<script src="/racoon/ingenieur-data.js"></script>
+<script src="/racoon/graph.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t, D = I.pick;
+Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang).autoTypo(document.querySelector("main"));
+const BY = new Map(Graphe.NOEUDS.map(n => [n.id, n]));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+fetch("/racoon/questions/index.json", { cache: "no-store" }).then(r => r.ok ? r.json() : Promise.reject(r.status)).then(list => {
+  document.getElementById("liste").innerHTML = list.map(q => `<div><a href="${esc(q.chemin)}"><b>${esc(D(q.titre))}</b></a>
+    <div class="tags">${q.notions.map(id => `<a class="chip plain" href="/racoon/atlas?notion=${esc(id)}">${esc(D(BY.get(id).titre))}</a>`).join("")}</div></div>`).join("");
+}).catch(() => { document.getElementById("status").textContent = t("erreur"); });
+</script>
+</body>
+</html>

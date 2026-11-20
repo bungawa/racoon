@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-i18n="h1">Isolé, fermé, ouvert : quel système choisir ?</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/questions" data-i18n="crumb.questions"></a><span class="aux">›</span><span data-i18n="crumb.titre"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-thermo" href="/racoon/atlas?piste=thermo" data-i18n="tag.piste"></a>
+      <a class="chip t-thermo" href="/racoon/atlas?notion=thermo" data-i18n="tag.n.thermo"></a>
+      <a class="chip t-thermo" href="/racoon/atlas?notion=machines_thermiques" data-i18n="tag.n.machines_thermiques"></a>
+      <span class="chip plain" data-i18n="tag.genre"></span>
+      <span class="chip plain" data-i18n="tag.duree"></span>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="list keyed" id="types"></div>
+    <div class="box rem"><b data-i18n="s1.sys.title"></b>
+      <p data-i18n-html="s1.sys.body"></p>
+    </div>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq">
+      <math display="block"><mi mathvariant="normal">Δ</mi><mi>U</mi><mo>=</mo><mi>W</mi><mo>+</mo><mi>Q</mi></math>
+      <span class="n">(1)</span>
+    </div>
+    <p class="validite" data-i18n-html="val.ferme"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <p id="isole"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq">
+      <math display="block"><msub><mi>w</mi><mi mathvariant="normal">u</mi></msub><mo>=</mo><mi>w</mi><mo>+</mo><msub><mi>p</mi><mn>2</mn></msub><msub><mi>v</mi><mn>2</mn></msub><mo>−</mo><msub><mi>p</mi><mn>1</mn></msub><msub><mi>v</mi><mn>1</mn></msub></math>
+      <span class="n">(2)</span>
+    </div>
+    <p class="validite" data-i18n-html="val.transvasement"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq">
+      <math display="block"><mi mathvariant="normal">Δ</mi><mi>h</mi><mo>=</mo><msub><mi>w</mi><mi mathvariant="normal">u</mi></msub><mo>+</mo><mi>q</mi><mo>,</mo><mspace width="1em"></mspace><mi>h</mi><mo>=</mo><mi>u</mi><mo>+</mo><mi>p</mi><mi>v</mi></math>
+      <span class="n">(3)</span>
+    </div>
+    <p class="validite" data-i18n-html="val.ouvert"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure>
+      <div class="panel">
+        <div class="chart"><svg class="fig" id="pv" role="img" data-i18n-attr="aria-label:fig.aria"></svg></div>
+        <div class="legend"><span class="c-tint" data-i18n="fig.leg.courbe"></span><span class="c-tint ring" data-i18n="fig.leg.aire"></span></div>
+        <div class="controls">
+          <div class="seg" id="mode"><button type="button" data-v="ferme" aria-pressed="true" data-i18n="mode.ferme"></button><button type="button" data-v="ouvert" aria-pressed="false" data-i18n="mode.ouvert"></button></div>
+          <div class="ctl"><div class="row"><label for="pisl" data-i18n="ctl.pi"></label><output id="piread" for="pisl"></output></div>
+            <input id="pisl" type="range" min="1.1" max="4" step="0.05" value="2"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="k.T2"></span><span class="v" id="vT2"></span></div>
+          <div class="stat"><span class="k" data-i18n="k.ferme"></span><span class="v" id="vf"></span><span class="f" data-i18n="f.ferme"></span></div>
+          <div class="stat"><span class="k" data-i18n="k.ouvert"></span><span class="v" id="vo"></span><span class="f" data-i18n="f.ouvert"></span></div>
+          <div class="stat"><span class="k" data-i18n="k.transv"></span><span class="v" id="vt"></span><span class="f" data-i18n="f.transv"></span></div>
+        </div>
+        <p id="lecture" role="status"></p>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/locales/fr/questions/systemes-thermodynamiques.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/questions/systemes-thermodynamiques.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+F.autoTypo(document.querySelector("main"));
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+const $ = id => document.getElementById(id);
+const kj = x => F.qty(F.num(x / 1e3, 3), "kJ·kg⁻¹");
+
+/* ---------- les trois systèmes ---------- */
+(() => {
+  const IDS = ["isole", "ferme", "ouvert"], txt = textOf("types.items", IDS);
+  $("types").innerHTML = IDS.map(id => `<div><span class="k">${txt[id].name}</span><span>${txt[id].text}</span></div>`).join("");
+  $("isole").innerHTML = t("s1.isole", { dS: F.qty(F.num(Systemes.isole({ v1: 1, v2: 2 }).dS, 3), "J·kg⁻¹·K⁻¹") });
+})();
+
+/* ---------- interactif : la même compression, deux aires ---------- */
+(() => {
+  const svg = $("pv"), sl = $("pisl"), W = 640, H = 300;
+  let mode = "ferme";
+  function draw() {
+    const pi = +sl.value, a = Systemes.adiabatique({ pi }), pts = Systemes.courbe({ pi }, 80);
+    svg.innerHTML = "";
+    const A = Plot.axes(svg, { fmt: F, w: W, h: H, pad: { b: 44 },
+      x: { domain: [0, 0.95], label: t("fig.x"), fmt: v => F.num(v, 2) }, y: { domain: [0, 420], label: t("fig.y"), fmt: v => F.num(v, 3) } });
+    const P = ([v, p]) => [A.x(v), A.y(p / 1e3)];
+    const aire = mode === "ferme"
+      ? [[a.v1, 0], ...pts, [a.v2, 0]]                       // sous la courbe, jusqu'à l'axe des volumes : −∫p dv
+      : [[0, a.p1], ...pts, [0, a.p2]];                      // à gauche de la courbe, jusqu'à l'axe des pressions : ∫v dp
+    Plot.el("path", { d: Plot.path(aire.map(P)) + "Z", class: "area" }, A.g);
+    Plot.el("path", { d: Plot.path(pts.map(P)), class: "curve" }, A.g);
+    [[a.v1, a.p1, "1"], [a.v2, a.p2, "2"]].forEach(([v, p, n]) => {
+      const [x, y] = P([v, p]); Plot.el("circle", { cx: x, cy: y, r: 4, class: "dot" }, A.g);
+      Plot.el("text", { x: x + 8, y: y - 6, class: "note" }, A.g).textContent = t("fig.etat" + n);
+    });
+    $("piread").textContent = F.num(pi, 3);
+    $("vT2").innerHTML = F.kelvin(a.T2);
+    $("vf").textContent = kj(a.ferme); $("vo").textContent = kj(a.ouvert); $("vt").textContent = kj(a.transvasement);
+    $("lecture").textContent = t("lecture." + mode, { r: F.num(a.ouvert / a.ferme, 3) });
+  }
+  document.querySelectorAll("#mode button").forEach(b => b.onclick = () => {
+    mode = b.dataset.v; document.querySelectorAll("#mode button").forEach(x => x.setAttribute("aria-pressed", String(x === b))); draw();
+  });
+  sl.oninput = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["clausius", 1850, "idea"], ["mollier", 1904, "idea"], ["onnes", 1909, "idea"], ["porter", 1922, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["turbine", "turbo"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["frontiere", "c"], ["ferme", "a"], ["poussee", "b"], ["rapport", "d"], ["isole", "a"], ["turbine", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 7 });
+})();
+</script>
+</body>
+</html>

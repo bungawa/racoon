@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le rayonnement synchrotron cosmique</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-optique-ondulatoire" data-i18n="monde.optique-ondulatoire"></a><span class="aux">›</span><a href="/racoon/etape?id=opt-synchrotron-doppler" data-i18n="etape.opt-synchrotron-doppler"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-optique" href="/racoon/atlas?piste=optique" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/etape?id=opt-sources-rapides" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>ω</mi><mi>B</mi></msub><mo>=</mo><mfrac><mrow><mi>e</mi><mi>B</mi></mrow><mrow><mi>γ</mi><msub><mi>m</mi><mi>e</mi></msub></mrow></mfrac></math><span class="n">(34.8p)</span></div>
+    <p class="validite" data-i18n-html="val.34.8p"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>ν</mi><mi>c</mi></msub><mo>=</mo><mfrac><mn>3</mn><mrow><mn>4</mn><mi>π</mi></mrow></mfrac><msup><mi>γ</mi><mn>2</mn></msup><mfrac><mrow><mi>e</mi><mi>B</mi><mspace width="0.1em"/><mi data-i18n="eq.sin"></mi><mi>α</mi></mrow><msub><mi>m</mi><mi>e</mi></msub></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.nuc"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><mi>P</mi><mo>=</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><msub><mi>σ</mi><mi>T</mi></msub><mi>c</mi><msup><mi>β</mi><mn>2</mn></msup><msup><mi>γ</mi><mn>2</mn></msup><mfrac><msup><mi>B</mi><mn>2</mn></msup><mrow><mn>2</mn><msub><mi>μ</mi><mn>0</mn></msub></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.puissance"></p>
+    <div class="eq"><math display="block"><mi>τ</mi><mo>=</mo><mfrac><mrow><mi>γ</mi><msub><mi>m</mi><mi>e</mi></msub><msup><mi>c</mi><mn>2</mn></msup></mrow><mi>P</mi></mfrac><mo>,</mo><mspace width="1em"/><mi>γ</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><mfrac><msub><mi>γ</mi><mn>0</mn></msub><mrow><mn>1</mn><mo>+</mo><mi>t</mi><mo>/</mo><mi>τ</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.tau"></p>
+    <figure class="chart">
+      <svg class="fig" id="refroid" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.tau"></span><span class="c-warn" data-i18n="fig.legend.age"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="sb" data-i18n="fig.B"></label><output id="sbr" for="sb"></output></div>
+            <input id="sb" type="range" min="-9" max="-7" step="0.01" value="-7.52"></div>
+          <div class="ctl"><div class="row"><label for="sn" data-i18n="fig.nu"></label><output id="snr" for="sn"></output></div>
+            <input id="sn" type="range" min="7" max="19" step="0.01" value="14.7"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.gamma"></span><span class="v" id="vg"></span><span class="f" id="fg"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.tau"></span><span class="v" id="vt"></span><span class="f" id="ft"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.bilan"></span><span class="v" id="vb"></span><span class="f" id="fb"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s5.sec"></span>
+    <h2 data-i18n="s5.h2"></h2>
+    <p data-i18n-html="s5.p1"></p>
+    <p data-i18n-html="s5.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/opt-synchrotron-cosmique.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/optique-ondulatoire.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const O = OptOnd, MEC2 = Constantes.m_e * O.c ** 2, EV = Constantes.e, AN = 365.25 * 86400;
+const AGE = new Date().getFullYear() - 1054;                                  // years since the explosion
+
+/* ---------- combien de temps un électron garde son énergie ---------- */
+(() => {
+  const svg = $("refroid"), sb = $("sb"), sn = $("sn");
+  function draw() {
+    const B = 10 ** +sb.value, nu = 10 ** +sn.value;
+    svg.innerHTML = "";
+    const P = Plot.axes(svg, { fmt: F, w: 640, h: 260, pad: { l: 56, b: 40 }, x: { scale: "log", domain: [1e7, 1e19], label: t("fig.xaxis") }, y: { scale: "log", domain: [1e-2, 1e8], label: t("fig.yaxis") } });
+    const clip = v => Math.min(1e8, Math.max(1e-2, v));
+    const xs = Array.from({ length: 121 }, (_, i) => 10 ** (7 + i * 0.1));
+    const tau = f => O.tempsRefroidissement(O.gammaPourFrequence(f, B), B) / AN;
+    Plot.el("path", { d: Plot.path(xs.map(f => [P.x(f), P.y(clip(tau(f)))])), class: "curve" }, P.g);
+    Plot.el("line", { x1: P.x(1e7), x2: P.x(1e19), y1: P.y(AGE), y2: P.y(AGE), class: "stroke c-warn" }, P.g);
+    const g = O.gammaPourFrequence(nu, B), ta = tau(nu);
+    Plot.el("circle", { cx: P.x(nu), cy: P.y(clip(ta)), r: 5, class: "dot" }, P.g);
+    $("sbr").textContent = F.si(B, "T");
+    $("snr").textContent = F.si(nu, "Hz");
+    $("vg").textContent = F.sci(g, 2);
+    $("fg").textContent = t("fig.f.gamma", { E: F.si(g * MEC2 / EV, "eV") });
+    $("vt").textContent = F.qty(F.num(ta, 2), t("fig.ans"));
+    $("ft").textContent = t("fig.f.tau", { s: F.si(ta * AN, "s") });
+    $("vb").textContent = F.num(ta / AGE, 2);
+    $("fb").textContent = t(ta < AGE ? "fig.f.court" : "fig.f.long", { a: F.num(AGE, 3) });
+  }
+  sb.oninput = sn.oninput = draw; draw();
+})();
+
+/* ---------- le système décrit : un électron qui éclaire le visible, dans 30 nT ---------- */
+(() => {
+  const B = 3e-8, nu = 5e14, g = O.gammaPourFrequence(nu, B), s = O.gyration(g, B), P = O.puissanceSynchrotron(g, B);
+  const tau = O.tempsRefroidissement(g, B), parTour = P * s.periode / (g * MEC2), photon = Constantes.h * O.frequenceCritique(g, B) / (g * MEC2);
+  $("sys1").innerHTML = t("sys1.body", { B: F.si(B, "T"), nu: F.si(nu, "Hz"), g: F.sci(g, 2), E: F.si(g * MEC2 / EV, "eV"), un: F.sci(1 - s.beta, 2),
+    f: F.si(s.f, "Hz"), T: F.si(s.periode, "s"), R: F.si(s.rayon, "m"), tour: F.sci(parTour, 1), ph: F.sci(photon, 1),
+    tau: F.qty(F.num(tau / AN, 2), t("fig.ans")), age: F.num(AGE, 3) });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["etoile", 1054, "experiment"], ["bevis", 1731, "experiment"], ["messier", 1758, "experiment"], ["chklovski", 1953, "idea"], ["polarisation", 1954, "experiment"], ["pulsar", 1968, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["etalon"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["continu", "c"], ["gyration", "a"], ["gamma2", "d"], ["polar", "b"], ["xray", "a"], ["source", "c"], ["champ", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 341 });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["types", "a"],
+  ["clivage", "b"],
+  ["additivite", "c"],
+  ["coordinence", "d"],
+  ["cycle", "a"],
+  ["tendance", "b"],
+  ["madelung", "c"],
+  ["bornlande", "d"]
+ ]
+}

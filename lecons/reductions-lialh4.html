@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Réductions par LiAlH₄, hydrolyse des nitriles et des amides</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .equation { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; justify-content: center; }
+  .equation svg { width: 150px; max-width: 40%; height: 110px; flex: none; }
+  .equation svg.seul { width: 60px; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-organique" data-i18n="monde.chim-organique"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-complements-synthese" data-i18n="etape.chim-complements-synthese"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mrow><mi mathvariant="normal">L</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">A</mi><mi mathvariant="normal">l</mi></mrow><msub><mi mathvariant="normal">H</mi><mn>4</mn></msub><mo>+</mo><mn>4</mn><mspace width="0.1em"/><msub><mi mathvariant="normal">H</mi><mn>2</mn></msub><mi mathvariant="normal">O</mi><mo>⟶</mo><mrow><mi mathvariant="normal">L</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">O</mi><mi mathvariant="normal">H</mi></mrow><mo>+</mo><mrow><mi mathvariant="normal">A</mi><mi mathvariant="normal">l</mi></mrow><msub><mrow><mo>(</mo><mi mathvariant="normal">O</mi><mi mathvariant="normal">H</mi><mo>)</mo></mrow><mn>3</mn></msub><mo>+</mo><mn>4</mn><mspace width="0.1em"/><msub><mi mathvariant="normal">H</mi><mn>2</mn></msub></math></div>
+    <p class="validite" data-i18n-html="s1.validite"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="substrat" data-i18n="red.substrat"></label></div><select id="substrat"></select></div>
+        <div class="seg" role="group" id="reactif"><button type="button" data-r="LiAlH4" aria-pressed="true" data-i18n="red.LiAlH4"></button><button type="button" data-r="NaBH4" aria-pressed="false" data-i18n="red.NaBH4"></button><button type="button" data-r="hydrolyse" aria-pressed="false" data-i18n="red.hydrolyse"></button></div>
+      </div>
+      <div class="equation no-sigle" id="bilan"></div>
+      <p class="readout" id="redlecture" aria-live="polite"></p>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="masse" data-i18n="red.masse"></label><output id="massev" for="masse"></output></div>
+          <input id="masse" type="range" min="1" max="20" step="0.5" value="10"></div>
+        <div class="ctl"><div class="row"><label for="exces" data-i18n="red.exces"></label><output id="excesv" for="exces"></output></div>
+          <input id="exces" type="range" min="0" max="100" step="5" value="25"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="red.mLAH"></span><span class="v" id="mlah"></span></div>
+          <div class="stat"><span class="k" data-i18n="red.h2reaction"></span><span class="v" id="h2r"></span></div>
+          <div class="stat"><span class="k" data-i18n="red.h2trempe"></span><span class="v" id="h2t"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="red.caption"></figcaption>
+    </figure>
+    <div class="box prop"><b data-i18n="s2.prop.titre"></b>
+      <p data-i18n-html="s2.prop.corps"></p>
+    </div>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi mathvariant="normal">R</mi><mo>–</mo><mi mathvariant="normal">C</mi><mo>≡</mo><mi mathvariant="normal">N</mi><mo>+</mo><mn>2</mn><mspace width="0.1em"/><msub><mi mathvariant="normal">H</mi><mn>2</mn></msub><mi mathvariant="normal">O</mi><mo>+</mo><msup><mi mathvariant="normal">H</mi><mo>+</mo></msup><mo>⟶</mo><mi mathvariant="normal">R</mi><mo>–</mo><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">O</mi><mi mathvariant="normal">O</mi><mi mathvariant="normal">H</mi></mrow><mo>+</mo><mi mathvariant="normal">N</mi><msubsup><mi mathvariant="normal">H</mi><mn>4</mn><mo>+</mo></msubsup></math></div>
+    <p class="validite" data-i18n-html="s3.validite"></p>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/reductions-lialh4.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script src="/racoon/chim-organique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I.fallback : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const O = ChimOrga, sym = s => t("chim.sym", { s }), $ = id => document.getElementById(id);
+const peindre = (svg, m, o) => { const d = O.dessin(m, Object.assign({ texte: sym }, o)); svg.setAttribute("viewBox", d.viewBox); svg.innerHTML = d.html; };
+const svgVide = aria => { const s = document.createElementNS("http://www.w3.org/2000/svg", "svg"); s.setAttribute("class", "fig no-sigle"); s.setAttribute("role", "img"); s.setAttribute("aria-label", aria); return s; };
+const signe = n => (n > 0 ? "+" : n < 0 ? "\u2212" : "") + Math.abs(n);
+
+/* ---------- réduire ou hydrolyser : produits, hydrures, nombres d'oxydation, masses ---------- */
+(() => {
+  const IDS = Object.keys(O.TRANSFORMATIONS), PRODUITS = ["butan1ol", "butan2ol", "ethanol", "eau", "butanamine", "dimethylbutanamine", "acideButanoique", "ammoniac", "dimethylamine"];
+  const noms = textOf("red.noms", IDS.concat(PRODUITS));
+  $("substrat").innerHTML = IDS.map(id => `<option value="${id}">${noms[id]}</option>`).join("");
+  let r = "LiAlH4";
+  const no = m => O.nombreOxydation(m, O.carboneFonctionnel(m));
+  function maj() {
+    const id = $("substrat").value, s = O.molecule(id), p = O.TRANSFORMATIONS[id][r];
+    $("bilan").innerHTML = "";
+    const add = (m, nom) => { const v = svgVide(nom); $("bilan").appendChild(v); if (m.atomes.length > 1) peindre(v, m, { surligne: [O.carboneFonctionnel(m)], echelle: 28 });
+      else { v.classList.add("seul"); peindre(v, m, { etiquettes: { 0: t("red.formule." + m.atomes[0].e) }, echelle: 28 }); } };
+    const mot = k => { const e = document.createElement("span"); e.className = "aux"; e.textContent = t(k); $("bilan").appendChild(e); };
+    add(s, noms[id]);
+    mot("red.fleche");
+    if (p) p.forEach((q, k) => { if (k) mot("red.plus"); add(O.molecule(q), noms[q]); });
+    else mot("red.rien");
+    const h = O.hydruresConsommes(s), n1 = no(s);
+    if (!p) $("redlecture").textContent = t("red.lecture.rien." + r, { s: noms[id] });
+    else if (r === "hydrolyse") $("redlecture").textContent = t("red.lecture.hyd", { s: noms[id], p: p.map(q => noms[q]).join(t("red.et")), n: signe(n1) });
+    else $("redlecture").textContent = t("red.lecture.red", { s: noms[id], p: p.map(q => noms[q]).join(t("red.et")), h: h.carbone, hm: h.mobiles, n1: signe(n1), n2: signe(no(O.molecule(p[0]))) });
+    document.querySelectorAll("#reactif button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.r === r)));
+    /* masses : pour LiAlH₄ seulement */
+    const m = +$("masse").value * 1e-3, ex = +$("exces").value / 100, M = O.masseMolaire(O.formuleBrute(s)), n = m / M;
+    $("massev").textContent = t("red.g", { m: F.fix(m * 1e3, 1) }); $("excesv").textContent = t("red.pc", { x: F.fix(ex * 100, 0) });
+    const mL = O.masseLiAlH4(m, M, h.total, ex), nLAH = mL / O.masseMolaire(O.LIALH4);
+    $("mlah").textContent = t("red.g", { m: F.num(mL * 1e3, 3) });
+    $("h2r").textContent = t("red.L", { v: F.num(O.dihydrogeneTrempe(n * h.mobiles / 4).V * 1e3, 3) });
+    $("h2t").textContent = t("red.L", { v: F.num(O.dihydrogeneTrempe(nLAH * ex / (1 + ex)).V * 1e3, 3) });
+  }
+  $("substrat").onchange = maj;
+  $("reactif").onclick = e => { const b = e.target.closest("button"); if (!b) return; r = b.dataset.r; maj(); };
+  ["masse", "exces"].forEach(id => { $(id).oninput = maj; });
+  $("substrat").value = "butanoateEthyle";
+  maj();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["finholt", 1947, "experiment"], ["nystrom", 1947, "experiment"], ["borohydrure", 1953, "experiment"], ["nobel", 1979, "use"], ["acrylamide", 1985, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["fieser", "acrylamide"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["ester", "b"], ["nabh4", "d"], ["acide", "c"], ["amide", "a"], ["nitrile", "b"], ["oxydation", "c"], ["hydrolyse", "d"], ["trempe", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

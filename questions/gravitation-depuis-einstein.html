@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-i18n="h1">D'où vient la loi de la gravitation ?</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .defile { overflow-x: auto; }
+  #tab { width: 100%; border-collapse: collapse; }
+  #tab th, #tab td { padding: 8px 6px; text-align: right; vertical-align: top; }
+  #tab th:first-child, #tab td:first-child { text-align: left; }
+  .duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: center; }
+  @media (max-width: 560px) { .duo { grid-template-columns: 1fr; } }
+  .duo h3 { margin: 0 0 6px; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/questions" data-i18n="crumb.questions"></a><span class="aux">›</span><span data-i18n="crumb.titre"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-meca" href="/racoon/atlas?piste=meca" data-i18n="tag.piste"></a>
+      <a class="chip t-meca" href="/racoon/atlas?notion=gravitation" data-i18n="tag.n.gravitation"></a>
+      <a class="chip t-meca" href="/racoon/atlas?notion=dynamique" data-i18n="tag.n.dynamique"></a>
+      <a class="chip t-relat" href="/racoon/atlas?notion=espace_temps" data-i18n="tag.n.espace_temps"></a>
+      <a class="chip t-relat" href="/racoon/atlas?notion=relativite_generale" data-i18n="tag.n.relativite_generale"></a>
+      <span class="chip plain" data-i18n="tag.genre"></span>
+      <span class="chip plain" data-i18n="tag.duree"></span>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n="s1.p1"></p>
+    <p data-i18n="s1.p2"></p>
+    <p data-i18n="s1.p3"></p>
+    <div class="box rem"><b data-i18n="s1.sys.title"></b>
+      <p data-i18n-html="s1.sys.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n="s2.p1"></p>
+    <div class="eq">
+      <math display="block"><msub><mi>G</mi><mrow><mi>μ</mi><mi>ν</mi></mrow></msub><mo>=</mo><mfrac><mrow><mn>8</mn><mi>π</mi><mi>G</mi></mrow><msup><mi>c</mi><mn>4</mn></msup></mfrac><msub><mi>T</mi><mrow><mi>μ</mi><mi>ν</mi></mrow></msub></math>
+      <span class="n">(1)</span>
+    </div>
+    <p class="validite" data-i18n="val.einstein"></p>
+    <p id="s2p2"></p>
+
+    <h3 data-i18n="s2.e1.h3"></h3>
+    <p data-i18n="s2.e1.p"></p>
+    <div class="eq">
+      <math display="block"><msub><mi>g</mi><mn>00</mn></msub><mo>≈</mo><mo>−</mo><mrow><mo>(</mo><mn>1</mn><mo>+</mo><mfrac><mrow><mn>2</mn><mi>Φ</mi></mrow><msup><mi>c</mi><mn>2</mn></msup></mfrac><mo>)</mo></mrow></math>
+      <span class="n">(2)</span>
+    </div>
+    <p class="validite" data-i18n="val.faible"></p>
+    <p data-i18n-html="s2.e1.p2"></p>
+
+    <h3 data-i18n="s2.e2.h3"></h3>
+    <p data-i18n-html="s2.e2.p"></p>
+    <div class="eq">
+      <math display="block"><mfrac><mrow><msup><mi mathvariant="normal">d</mi><mn>2</mn></msup><msup><mi>x</mi><mi>μ</mi></msup></mrow><mrow><mi mathvariant="normal">d</mi><msup><mi>τ</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><msubsup><mi mathvariant="normal">Γ</mi><mrow><mi>α</mi><mi>β</mi></mrow><mi>μ</mi></msubsup><mfrac><mrow><mi mathvariant="normal">d</mi><msup><mi>x</mi><mi>α</mi></msup></mrow><mrow><mi mathvariant="normal">d</mi><mi>τ</mi></mrow></mfrac><mfrac><mrow><mi mathvariant="normal">d</mi><msup><mi>x</mi><mi>β</mi></msup></mrow><mrow><mi mathvariant="normal">d</mi><mi>τ</mi></mrow></mfrac><mo>=</mo><mn>0</mn></math>
+      <span class="n">(3)</span>
+    </div>
+    <p class="validite" data-i18n="val.geodesique"></p>
+    <p data-i18n-html="s2.e2.p2"></p>
+    <div class="eq">
+      <math display="block"><mfrac><mrow><msup><mi mathvariant="normal">d</mi><mn>2</mn></msup><mover><mi>x</mi><mo>→</mo></mover></mrow><mrow><mi mathvariant="normal">d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mo>−</mo><mover><mo>∇</mo><mo>→</mo></mover><mi>Φ</mi></math>
+      <span class="n">(4)</span>
+    </div>
+    <p class="validite" data-i18n="val.lent"></p>
+    <p data-i18n="s2.e2.p3"></p>
+    <div class="eq">
+      <math display="block"><mi mathvariant="normal">d</mi><mi>τ</mi><mo>≈</mo><mrow><mo>(</mo><mn>1</mn><mo>+</mo><mfrac><mi>Φ</mi><msup><mi>c</mi><mn>2</mn></msup></mfrac><mo>−</mo><mfrac><msup><mi>v</mi><mn>2</mn></msup><mrow><mn>2</mn><msup><mi>c</mi><mn>2</mn></msup></mrow></mfrac><mo>)</mo></mrow><mi mathvariant="normal">d</mi><mi>t</mi></math>
+      <span class="n">(5)</span>
+    </div>
+    <p class="validite" data-i18n="val.propre"></p>
+
+    <h3 data-i18n="s2.e3.h3"></h3>
+    <p data-i18n-html="s2.e3.p"></p>
+    <div class="eq">
+      <math display="block"><msub><mi>R</mi><mn>00</mn></msub><mo>≈</mo><mfrac><mrow><msup><mo>∇</mo><mn>2</mn></msup><mi>Φ</mi></mrow><msup><mi>c</mi><mn>2</mn></msup></mfrac><mo>=</mo><mfrac><mrow><mn>4</mn><mi>π</mi><mi>G</mi><mi>ρ</mi></mrow><msup><mi>c</mi><mn>2</mn></msup></mfrac><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><msup><mo>∇</mo><mn>2</mn></msup><mi>Φ</mi><mo>=</mo><mn>4</mn><mi>π</mi><mi>G</mi><mi>ρ</mi></math>
+      <span class="n">(6)</span>
+    </div>
+    <p class="validite" data-i18n="val.poisson"></p>
+    <p id="s2e3p2"></p>
+
+    <h3 data-i18n="s2.e4.h3"></h3>
+    <p data-i18n-html="s2.e4.p"></p>
+    <div class="eq">
+      <math display="block"><mi>Φ</mi><mo>=</mo><mo>−</mo><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><mi>r</mi></mfrac><mo>,</mo><mspace width="1em"/><mover><mi>F</mi><mo>→</mo></mover><mo>=</mo><mo>−</mo><mi>m</mi><mover><mo>∇</mo><mo>→</mo></mover><mi>Φ</mi><mo>=</mo><mo>−</mo><mfrac><mrow><mi>G</mi><mi>M</mi><mi>m</mi></mrow><msup><mi>r</mi><mn>2</mn></msup></mfrac><msub><mover><mi>u</mi><mo>→</mo></mover><mi>r</mi></msub></math>
+      <span class="n">(7)</span>
+    </div>
+    <p class="validite" data-i18n="val.newton"></p>
+    <p data-i18n-html="s2.fin"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="ch.sec"></span>
+    <h2 data-i18n="ch.h2"></h2>
+    <p data-i18n-html="ch.p1"></p>
+    <figure>
+      <div class="panel">
+        <div class="duo">
+          <div class="chart"><h3 data-i18n="ch.newton.h3"></h3><svg class="fig" id="chN" role="img" data-i18n-attr="aria-label:ch.newton.aria"></svg></div>
+          <div class="chart"><h3 data-i18n="ch.einstein.h3"></h3><svg class="fig" id="chE" role="img" data-i18n-attr="aria-label:ch.einstein.aria"></svg></div>
+          <div><h3 data-i18n="ch.cone.h3"></h3>
+            <div class="stage"><canvas id="chcone" role="img" data-i18n-attr="aria-label:ch.cone.aria"></canvas><div class="overlay" id="chconeread"></div></div></div>
+          <div class="stats">
+            <div class="stat"><span class="k" data-i18n="ch.z"></span><span class="v" id="chz"></span></div>
+            <div class="stat"><span class="k" data-i18n="ch.v"></span><span class="v" id="chv"></span></div>
+            <div class="stat"><span class="k" data-i18n="ch.acc"></span><span class="v" id="chacc"></span></div>
+            <div class="stat"><span class="k" data-i18n="ch.accmain"></span><span class="v" id="chmain"></span><span class="f" data-i18n="ch.acc.f"></span></div>
+          </div>
+        </div>
+        <div class="legend"><span class="c-ko" data-i18n="ch.leg.pomme"></span><span class="c-ok" data-i18n="ch.leg.main"></span><span class="c-label" data-i18n="ch.leg.sol"></span><span class="c-tint" data-i18n="ch.leg.instant"></span></div>
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="chsl" data-i18n="ch.t"></label><output id="chread" for="chsl"></output></div>
+            <input id="chsl" type="range" min="0" max="1" step="0.001" value="0"></div>
+          <div class="ctl"><div class="row"><label for="chroll" data-i18n="ch.roll"></label><output id="chrollread" for="chroll"></output></div>
+            <input id="chroll" type="range" min="0" max="1" step="0.01" value="0.75"></div>
+          <button class="btn tinted" type="button" id="chgo" data-i18n="ch.go"></button>
+        </div>
+        <p id="chetat" role="status"></p>
+      </div>
+      <figcaption data-i18n-html="ch.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="ch.cone.caption"></p>
+    <p data-i18n-html="ch.p2"></p>
+    <div class="eq">
+      <math display="block"><mi>Z</mi><mo>=</mo><mi>z</mi><mo>−</mo><mi>h</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>g</mi><msup><mi>t</mi><mn>2</mn></msup></math>
+      <span class="n">(8)</span>
+    </div>
+    <p class="validite" data-i18n="val.chute"></p>
+    <p data-i18n-html="ch.p3"></p>
+    <p id="chmaree"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n="s3.p1"></p>
+    <figure>
+      <div class="defile">
+        <table id="tab">
+          <thead><tr><th data-i18n="tab.cas"></th><th data-i18n="tab.phi"></th><th data-i18n="tab.v2"></th><th data-i18n="tab.dyn"></th><th data-i18n="tab.p"></th></tr></thead>
+          <tbody id="tabrows"></tbody>
+        </table>
+      </div>
+      <figcaption data-i18n="tab.caption"></figcaption>
+    </figure>
+    <div class="list keyed" id="systemes"></div>
+    <p data-i18n-html="s3.p2"></p>
+    <h3 data-i18n="s3.gps.h3"></h3>
+    <p data-i18n="s3.gps.p"></p>
+    <div class="list keyed" id="gps"></div>
+    <p data-i18n-html="s3.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="int.sec"></span>
+    <h2 data-i18n="int.h2"></h2>
+    <p data-i18n-html="int.p"></p>
+    <figure>
+      <div class="panel">
+        <div class="controls">
+          <label class="field"><span data-i18n="int.cas"></span>
+            <select id="cas">
+              <option value="terre" data-i18n="cas.terre"></option>
+              <option value="gps" data-i18n="cas.gps"></option>
+              <option value="mercure" data-i18n="cas.mercure"></option>
+              <option value="soleil" data-i18n="cas.soleil"></option>
+              <option value="neutrons" data-i18n="cas.neutrons"></option>
+              <option value="autre" data-i18n="cas.autre"></option>
+            </select></label>
+          <label class="field"><span data-i18n="int.mesure"></span>
+            <select id="mesure">
+              <option value="tp" data-i18n="mesure.tp"></option>
+              <option value="gravimetre" data-i18n="mesure.gravimetre"></option>
+              <option value="lune" data-i18n="mesure.lune"></option>
+              <option value="cesium" data-i18n="mesure.cesium"></option>
+              <option value="optique" data-i18n="mesure.optique"></option>
+            </select></label>
+        </div>
+        <div class="ctl"><div class="row"><label for="msl" data-i18n="int.m"></label><output id="mread" for="msl"></output></div>
+          <input id="msl" type="range" min="20" max="32" step="0.01" value="24.78"></div>
+        <div class="ctl"><div class="row"><label for="rsl" data-i18n="int.r"></label><output id="rread" for="rsl"></output></div>
+          <input id="rsl" type="range" min="3" max="12" step="0.01" value="6.8"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="int.phi"></span><span class="v" id="ophi"></span></div>
+          <div class="stat"><span class="k" data-i18n="int.v2"></span><span class="v" id="ov2"></span></div>
+          <div class="stat"><span class="k" data-i18n="int.dyn"></span><span class="v" id="odyn"></span></div>
+          <div class="stat"><span class="k" data-i18n="int.pr"></span><span class="v" id="op"></span><span class="f" data-i18n="int.pr.f"></span></div>
+          <div class="stat"><span class="k" data-i18n="int.u"></span><span class="v" id="ou"></span></div>
+          <div class="stat"><span class="k" data-i18n="int.z"></span><span class="v" id="oz"></span><span class="f" data-i18n="int.z.f"></span></div>
+          <div class="stat"><span class="k" data-i18n="int.dh"></span><span class="v" id="odh"></span><span class="f" data-i18n="int.dh.f"></span></div>
+        </div>
+        <p id="verdict" role="status"></p>
+      </div>
+      <figcaption data-i18n-html="int.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="lim.sec"></span>
+    <h2 data-i18n="lim.h2"></h2>
+    <p data-i18n="lim.p"></p>
+    <div class="list keyed" id="limites"></div>
+    <div class="box prop"><b data-i18n="lim.bien.title"></b><p data-i18n="lim.bien.body"></p></div>
+    <div class="box rem"><b data-i18n="lim.ouvert.title"></b><p data-i18n="lim.ouvert.body"></p></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/locales/fr/questions/gravitation-depuis-einstein.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/questions/gravitation-depuis-einstein.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+F.autoTypo(document.querySelector("main"));
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+const $ = id => document.getElementById(id);
+const vars = (s, v) => s.replace(/\{(\w+)\}/g, (m, k) => k in v ? v[k] : m);
+const sci = x => x >= 0.01 && x < 100 ? F.num(x, 2) : F.sci(x, 2);
+const len = x => x < 1e4 ? F.si(x, "m", { sig: 2 }) : F.qty(F.sci(x, 2), "m");
+const usj = x => F.qty((x > 0 ? "+" : "") + F.fix(x * 1e6, 1), t("unit.usj"));   // s par jour → « +38,6 µs/j »
+const G = Gravite;
+
+/* ---------- le modèle d'Einstein : nombres du texte ---------- */
+(() => {
+  $("s2p2").innerHTML = t("s2.p2", { kappa: F.qty(F.sci(G.kappa(), 2), "s²·m⁻¹·kg⁻¹") });
+  const rhoE = G.GM_EARTH / G.G / (4 / 3 * Math.PI * Math.pow(G.R_EARTH, 3));
+  $("s2e3p2").innerHTML = t("s2.e3.p2", { lc: len(G.curvatureLength(rhoE)),
+    exT: F.si(G.excessRadius(G.GM_EARTH), "m", { sig: 2 }), exS: F.si(G.excessRadius(G.GM_SUN), "m", { sig: 2 }) });
+})();
+
+/* ---------- interactif : une pomme lâchée, Newton et Einstein ---------- */
+(() => {
+  const C = G.chute(2, 0), S = G.secteur(2, 6), W = 320, H = 240, P = { l: 22, r: 8, t: 8, b: 24 }, el = Plot.el;
+  const sl = $("chsl"), go = $("chgo"), roll = $("chroll");
+  const LIGNES = [], EVTS = [];   // hauteurs de la grille, tous les 0,5 m ; événements de la pomme, tous les 0,1 s, puis l'impact
+  for (let k = 0; k <= 6; k++) LIGNES.push(k / 2);
+  for (let k = 0; k / 10 < C.T - 1e-9; k++) EVTS.push(k / 10);
+  EVTS.push(C.T);
+  const pas = (f, n) => Array.from({ length: n + 1 }, (_, i) => f(i / n));       // f(u), u = t/T de 0 à 1
+  const L = 34;   // longueur d'une flèche qui vaut g, en pixels
+
+  /* une vue : f(u, z) → pixels, pomme(u) → pixels de la pomme, fleche(g, u) : la flèche de l'instant,
+     versU(x, y) : l'instant désigné par un point du dessin (clic ou glissé) */
+  function vue(svg, f, pomme, fleche, versU) {
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    const grille = el("g", {}, svg);
+    EVTS.forEach(t => el("path", { class: "grid", d: Plot.path(pas(v => f(t / C.T, 3 * v), 12)) }, grille));   // instants
+    LIGNES.forEach(z => el("path", { class: z === 0 ? "stroke bold c-label" : "grid", d: Plot.path(pas(u => f(u, z), 60)) }, grille));
+    const instant = el("path", { class: "stroke c-tint" }, svg);                                          // l'instant choisi
+    el("path", { class: "stroke c-ok", d: Plot.path(pas(u => f(u, C.h), 60)) }, svg);                       // la main
+    el("path", { class: "stroke thin dash c-ko", d: Plot.path(pas(pomme, 80)) }, svg);
+    const passe = el("path", { class: "stroke bold c-ko" }, svg), points = el("g", {}, svg);
+    EVTS.forEach(t => { const [x, y] = pomme(t / C.T); el("circle", { cx: x, cy: y, r: 3, class: "fill c-ko" }, points); });
+    const [x0, y0] = pomme(0), [x1, y1] = pomme(1);
+    el("text", { x: x0 + 4, y: y0 - 8 }, svg).textContent = t("ch.lacher");
+    el("text", { x: x1 - 4, y: y1 - 8, "text-anchor": "end" }, svg).textContent = t("ch.impact");
+    const fl = el("g", {}, svg), surMain = el("circle", { r: 4, class: "fill c-ok" }, svg), surSol = el("circle", { r: 4, class: "fill c-label" }, svg);
+    const ici = el("circle", { r: 6, class: "fill c-tint" }, svg);
+    const choisir = e => {
+      if (e.type === "pointermove" && !e.buttons) return;
+      const q = new DOMPoint(e.clientX, e.clientY).matrixTransform(svg.getScreenCTM().inverse());
+      choisirU(Math.min(1, Math.max(0, versU(q.x, q.y))));
+    };
+    svg.addEventListener("pointerdown", choisir); svg.addEventListener("pointermove", choisir);
+    const poser = (c, [x, y]) => { c.setAttribute("cx", x); c.setAttribute("cy", y); };
+    return u => {
+      instant.setAttribute("d", Plot.path(pas(v => f(u, 3 * v), 12)));
+      passe.setAttribute("d", Plot.path(pas(v => pomme(v * u), 40)));
+      poser(ici, pomme(u)); poser(surMain, f(u, C.h)); poser(surSol, f(u, 0));
+      fl.innerHTML = ""; fleche(fl, u);
+    };
+  }
+
+  /* Newton : le référentiel du sol, le temps à plat, la hauteur verticale */
+  const xN = Plot.linScale(0, C.T, P.l, W - P.r), yN = Plot.linScale(-0.3, 3.3, H - P.b, P.t);
+  const fN = (u, z) => [xN(u * C.T), yN(z)], pN = u => fN(u, C.z(u * C.T));
+  const svgN = $("chN");
+  const majN = vue(svgN, fN, pN, (g, u) => { const [x, y] = pN(u); Plot.fleche(g, [x + 10, y], [x + 10, y + L], { cls: "c-ko" }); },   // le poids
+    x => (x - P.l) / (W - P.l - P.r));
+  el("text", { x: xN(C.T), y: H - 6, "text-anchor": "end" }, svgN).textContent = t("ch.axe.t");
+  el("text", { x: 12, y: P.t + 4, transform: "rotate(-90 12 " + (P.t + 4) + ")", "text-anchor": "end" }, svgN).textContent = t("ch.axe.z");
+
+  /* Einstein : la même grille sur une feuille où la pomme libre suit une droite ; instants = rayons, hauteurs = arcs */
+  const coin = LIGNES.flatMap(z => pas(u => S.plan(u, z), 30)), m = 12;
+  const X = coin.map(q => q[0]), Y = coin.map(q => q[1]), x0 = Math.min(...X), y0 = Math.min(...Y);
+  const k = Math.min((W - 2 * m) / (Math.max(...X) - x0), (H - 2 * m) / (Math.max(...Y) - y0));
+  const dx = (W - k * (Math.max(...X) - x0)) / 2, dy = (H - k * (Math.max(...Y) - y0)) / 2;
+  const px = q => [dx + k * (q[0] - x0), H - dy - k * (q[1] - y0)];
+  const fE = (u, z) => px(S.plan(u, z)), pE = u => fE(u, S.zPomme(u)), O = px([0, S.R]);
+  const majE = vue($("chE"), fE, pE, (g, u) => {   // la main : l'accéléromètre lit g, vers le centre de la feuille
+    const [x, y] = fE(u, C.h), d = Math.hypot(O[0] - x, O[1] - y);
+    Plot.fleche(g, [x, y], [x + L * (O[0] - x) / d, y + L * (O[1] - y) / d], { cls: "c-ok" });
+  }, (x, y) => S.instant(Math.atan2(x - O[0], y - O[1])));   // l'angle autour du centre des arcs, ramené à l'instant
+
+  let tt = 0, majCone = () => {};
+  const show = () => {
+    tt = +sl.value * C.T; const u = +sl.value;
+    majN(u); majE(u); majCone(u);
+    $("chread").textContent = F.si(tt, "s", { sig: 2 });
+    $("chz").textContent = F.si(Math.max(0, C.z(tt)), "m", { sig: 2 });   // à l'impact, l'arrondi de C.z laisserait −4 × 10⁻¹⁶ m
+    $("chv").textContent = F.qty(F.num(Math.abs(C.v(tt)), 2), "m·s⁻¹");
+    $("chacc").textContent = F.qty(F.num(C.accelerometre(tt), 2), "m·s⁻²");
+    $("chmain").textContent = F.qty(F.num(C.g, 2), "m·s⁻²");
+    $("chetat").textContent = t(tt <= 0 ? "ch.etat.lacher" : tt < C.T ? "ch.etat.chute" : "ch.etat.sol");
+  };
+  let anim = null;
+  function choisirU(u) { cancelAnimationFrame(anim); sl.value = u; show(); }
+  sl.oninput = () => { cancelAnimationFrame(anim); show(); };
+  go.onclick = () => {   // ralenti trois fois : la chute de 0,64 s dure environ 2 s à l'écran
+    cancelAnimationFrame(anim); const t0 = performance.now(), D = 3000 * C.T;
+    const step = now => { sl.value = Math.min(1, (now - t0) / D); show(); if (+sl.value < 1) anim = requestAnimationFrame(step); };
+    anim = requestAnimationFrame(step);
+  };
+
+  /* la feuille d'Einstein roulée en cône (three.js) : mêmes lignes, même pomme */
+  const showRoll = () => { $("chrollread").textContent = F.qty(F.num(100 * roll.value, 2), "%"); };
+  showRoll();
+  (() => {
+    const canvas = $("chcone");
+    if (!self.THREE) { $("chconeread").textContent = t("ch.cone.offline"); roll.oninput = showRoll; return; }
+    const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(35, 4 / 3, 0.01, 50);
+    cam.up.set(0, 0, 1);
+    const V = (u, z) => new THREE.Vector3(...S.cone(u, z, +roll.value).map(c => c / S.R));
+    /* comme les dessins plans : la feuille a la couleur du fond, opaque (elle cache ce qui passe derrière) ; la grille, des traits fins --sep */
+    const mats = { grille: new THREE.LineBasicMaterial({ transparent: true, depthWrite: false }), sol: new THREE.MeshBasicMaterial(),
+      main: new THREE.MeshBasicMaterial(), pomme: new THREE.MeshBasicMaterial(), point: new THREE.MeshBasicMaterial(), ici: new THREE.MeshBasicMaterial(),
+      feuille: new THREE.MeshBasicMaterial({ side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 }) };   // un peu en retrait : les traits restent dessus
+    /* Le cône (axe vertical dans S.cone) est posé ainsi : tout le tourne sur son axe, la génératrice de l'instant dans le plan x = 0 ;
+       incline le bascule pour que le plan tangent le long de cette génératrice soit le plan de l'écran, génératrice vers le bas ;
+       la feuille s'enroule alors vers la vue. À plat, c'est le dessin d'Einstein de face, tourné pour que l'instant soit vertical. */
+    const incline = new THREE.Group(), tout = new THREE.Group(), groupe = new THREE.Group();
+    scene.add(incline); incline.add(tout); tout.add(groupe);
+    const ici = new THREE.Mesh(new THREE.SphereGeometry(0.022, 20, 14), mats.ici); tout.add(ici);
+    const ligne = (pts, mat) => groupe.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), mat));
+    const tube = (pts, mat) => groupe.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 120, 0.005, 6), mat));   // une ligne WebGL ne fait qu'un pixel
+    function construire() {
+      groupe.children.forEach(o => o.geometry.dispose()); groupe.clear();
+      const NU = 48, NZ = 6, pos = [], idx = [];   // la feuille, entre le sol et 3 m
+      for (let i = 0; i <= NU; i++) for (let j = 0; j <= NZ; j++) pos.push(...V(i / NU, 3 * j / NZ).toArray());
+      for (let i = 0; i < NU; i++) for (let j = 0; j < NZ; j++) { const a = i * (NZ + 1) + j, b = a + NZ + 1; idx.push(a, b, a + 1, b, b + 1, a + 1); }
+      const fg = new THREE.BufferGeometry(); fg.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3)); fg.setIndex(idx);
+      groupe.add(new THREE.Mesh(fg, mats.feuille));
+      EVTS.forEach(t => ligne(pas(v => V(t / C.T, 3 * v), 12), mats.grille));
+      LIGNES.forEach(z => z === 0 ? tube(pas(u => V(u, z), 60), mats.sol) : ligne(pas(u => V(u, z), 60), mats.grille));
+      tube(pas(u => V(u, C.h), 60), mats.main);
+      tube(pas(u => V(u, S.zPomme(u)), 80), mats.pomme);
+      EVTS.forEach(t => { const s = new THREE.Mesh(new THREE.SphereGeometry(0.011, 12, 8), mats.point); s.position.copy(V(t / C.T, S.zPomme(t / C.T))); groupe.add(s); });
+    }
+    const boule = mat => new THREE.Mesh(new THREE.SphereGeometry(0.014, 16, 10), mat);
+    const trait = new THREE.Mesh(new THREE.BufferGeometry(), mats.ici), surMain = boule(mats.main), surSol = boule(mats.sol);
+    tout.add(trait, surMain, surSol);
+    majCone = u => {   // le même instant que sur les dessins plans : la pomme, la main, le sol
+      const g = V(u, 1.5), rho = Math.hypot(g.x, g.y);       // un point de la génératrice : à rho de l'axe, à −g.z sous le sommet
+      tout.rotation.z = -Math.atan2(g.x, -g.y);              // la génératrice dans le plan x = 0, côté y < 0
+      incline.rotation.x = Math.atan2(rho, -g.z);            // puis verticale, vers le bas : à plat (g.z = 0), un quart de tour
+      ici.position.copy(V(u, S.zPomme(u))); surMain.position.copy(V(u, C.h)); surSol.position.copy(V(u, 0));
+      trait.geometry.dispose(); trait.geometry = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pas(v => V(u, 3 * v), 12)), 24, 0.004, 6);
+    };
+    roll.oninput = () => { showRoll(); construire(); majCone(+sl.value); };
+    const couleurs = () => {
+      const sep = css("--sep");                                 // #rrggbb ou #rrggbbaa : three.js veut la couleur et l'opacité à part
+      mats.grille.color.set(sep.slice(0, 7)); mats.grille.opacity = sep.length === 9 ? parseInt(sep.slice(7), 16) / 255 : 1;
+      mats.sol.color.set(css("--label")); mats.main.color.set(css("--ok"));
+      mats.pomme.color.set(css("--ko")); mats.point.color.set(css("--ko")); mats.ici.color.set(css("--tint")); mats.feuille.color.set(css("--fill"));
+    };
+    couleurs(); matchMedia("(prefers-color-scheme: dark)").addEventListener("change", couleurs);
+    new MutationObserver(couleurs).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+    function resize() { const r = canvas.getBoundingClientRect(); renderer.setSize(r.width, r.height, false); cam.aspect = r.width / r.height; cam.updateProjectionMatrix(); }
+    new ResizeObserver(resize).observe(canvas); resize();
+    let visible = true; new IntersectionObserver(e => visible = e[0].isIntersecting).observe(canvas);
+    /* la vue, fixe (ni souris ni doigt : seuls l'instant et l'enroulement changent le dessin) : de face, le sommet O en haut,
+       la génératrice de l'instant au centre, de z = −1 (le sol, r = R) à −0,5 (3 m) en unités de R */
+    cam.position.set(0, -1.9, -0.68); cam.lookAt(0, 0, -0.68);   // assez près pour que la feuille à plat, tournée d’un bord à l’autre, tienne dans le cadre
+    construire();
+    (function tick() { requestAnimationFrame(tick); if (visible) renderer.render(scene, cam); })();
+  })();
+  show();
+  const m2 = G.maree(G.GM_EARTH, G.R_EARTH, 1, C.tf);
+  $("chmaree").innerHTML = t("ch.maree", { lat: F.qty(F.sci(m2.lat, 2), "m·s⁻²"), dlat: F.si(m2.dLat, "m", { sig: 2 }),
+    dvert: F.si(m2.dVert, "m", { sig: 2 }), tf: F.si(C.tf, "s", { sig: 2 }) });
+})();
+
+/* ---------- ce qu'on a jeté : tableau des cas ---------- */
+(() => {
+  const ids = G.CASES.map(c => c.id), txt = textOf("tab.rows", ids);
+  $("tabrows").innerHTML = G.CASES.map(c => {
+    const e = G.terms(c);
+    return `<tr><td><b>${txt[c.id].name}</b></td>` + [e.phi, e.v2, e.dyn, e.p].map(x => `<td>${sci(x)}</td>`).join("") + "</tr>";
+  }).join("");
+  $("systemes").innerHTML = G.CASES.map(c => `<div><span class="k">${txt[c.id].name}</span><span>${vars(txt[c.id].text,
+    { v: F.si(c.v, "m·s⁻¹", { sig: 3, prefix: c.v < 1e3 ? "" : "k" }) })}</span></div>`).join("");
+  const g = G.gpsPerDay(), ROWS = [["alt", g.alt], ["vitesse", g.speed], ["bilan", g.net]], gt = textOf("gps.rows", ROWS.map(r => r[0]));
+  const d = F.si(G.C * g.net, "m", { sig: 2 });
+  $("gps").innerHTML = ROWS.map(([id, x]) => `<div><span class="k">${gt[id].name}</span><span>${vars(gt[id].text, { d })}</span><span class="v">${usj(x)}</span></div>`).join("");
+})();
+
+/* ---------- interactif : Newton suffit-il ? ---------- */
+(() => {
+  const cas = $("cas"), mes = $("mesure"), msl = $("msl"), rsl = $("rsl");
+  const caseOf = () => cas.value === "autre" ? G.custom(Math.pow(10, +msl.value), Math.pow(10, +rsl.value)) : G.CASES.find(c => c.id === cas.value);
+  const show = () => {
+    const c = caseOf(), e = G.terms(c), u = G.MESURES.find(m => m.id === mes.value).u;
+    $("mread").textContent = F.qty(F.sci(c.GM / G.G, 3), "kg");
+    $("rread").textContent = F.qty(F.sci(c.r, 3), "m");
+    $("ophi").textContent = sci(e.phi); $("ov2").textContent = sci(e.v2); $("odyn").textContent = sci(e.dyn); $("op").textContent = sci(e.p);
+    $("ou").textContent = sci(u);
+    const r = G.verdict(Math.max(e.phi, e.v2, e.dyn), u);
+    $("oz").textContent = sci(r.z);
+    $("odh").textContent = len(G.Z_SEUIL * u / G.gOverC2());
+    const rs = G.schwarzschildRadius(c.GM);
+    $("verdict").textContent = c.r <= rs ? t("v.trou", { rs: F.si(rs, "m", { sig: 3 }) })
+      : e.phi > G.HORS ? t("v.hors", { phi: sci(e.phi) })
+      : t(r.visible ? "v.visible" : "v.invisible", { z: sci(r.z) });
+  };
+  const preset = () => { if (cas.value !== "autre") { const c = caseOf(); msl.value = Math.log10(c.GM / G.G); rsl.value = Math.log10(c.r); } show(); };
+  cas.onchange = preset; mes.onchange = show;
+  msl.oninput = rsl.oninput = () => { cas.value = "autre"; show(); };
+  preset();
+})();
+
+/* ---------- limites ---------- */
+(() => {
+  const m = G.PLANETS[0], n = G.CASES.find(c => c.id === "neutrons");
+  const ROWS = [
+    ["mercure", F.num(G.perihelionPerCentury(G.GM_SUN, m.a, m.e), 3)],
+    ["deviation", F.num(G.deflection(G.GM_SUN, G.R_SUN) / G.ARCSEC, 3)],
+    ["shapiro", F.si(G.shapiro(G.GM_SUN, G.AU, G.PLANETS[1].a, G.R_SUN), "s", { sig: 2 })],
+    ["ondes", F.qty(F.sci(3 * G.GM_SUN / G.G * G.C * G.C, 2), "J")],
+    ["trous", F.si(G.schwarzschildRadius(G.GM_SUN), "m", { sig: 3 })],
+  ];
+  const txt = textOf("lim.rows", ROWS.map(r => r[0]));
+  const v = { n: F.num(G.deflectionNewton(G.GM_SUN, G.R_SUN) / G.ARCSEC, 2) + "″",
+    pct: F.qty(F.num(100 * (G.redshiftExact(n.GM, n.r) / G.redshiftWeak(n.GM, n.r) - 1), 2), "%") };
+  $("limites").innerHTML = ROWS.map(([id, x]) => `<div><span class="k">${txt[id].name}</span><span>${vars(txt[id].text, v)}</span><span class="v">${t("lim.v." + id, { x })}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["newton", 1687, "idea"], ["leverrier", 1859, "experiment"], ["equivalence", 1907, "idea"], ["einstein", 1915, "idea"], ["eddington", 1919, "experiment"],
+    ["pound", 1959, "experiment"], ["shapiro", 1964, "idea"], ["nts", 1977, "use"], ["ligo", 2015, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["gps", "tt", "ondes"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["universel", "a"], ["kappa", "a"], ["orbite", "a"], ["gps", "a"], ["pression", "a"], ["mesure", "a"], ["lumiere", "a"], ["ondes", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 15 });
+})();
+</script>
+</body>
+</html>

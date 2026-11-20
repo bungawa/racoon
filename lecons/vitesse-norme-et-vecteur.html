@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vitesse : norme et vecteur</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-mecanique" data-i18n="monde.mecanique"></a><span class="aux">›</span><a href="/racoon/etape?id=lois-de-newton" data-i18n="etape.lois-de-newton"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-meca" href="/racoon/atlas?piste=meca" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/quantite-de-mouvement-et-force" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="box def"><b data-i18n="s1.def.title"></b>
+      <p data-i18n-html="s1.def.body"></p>
+    </div>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>=</mo><msub><mi>v</mi><mi>x</mi></msub><mspace width="0.1em"/><mi mathvariant="normal">Δ</mi><mi>t</mi><mo>,</mo><mspace width="0.8em"/><mi mathvariant="normal">Δ</mi><mi>y</mi><mo>=</mo><msub><mi>v</mi><mi>y</mi></msub><mspace width="0.1em"/><mi mathvariant="normal">Δ</mi><mi>t</mi><mo>,</mo><mspace width="0.8em"/><mi mathvariant="normal">Δ</mi><mi>z</mi><mo>=</mo><msub><mi>v</mi><mi>z</mi></msub><mspace width="0.1em"/><mi mathvariant="normal">Δ</mi><mi>t</mi></math><span class="n">(9.4)</span></div>
+    <p class="validite" data-i18n-html="val.9.4"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="eq"><math display="block"><mrow><mo>|</mo><mi mathvariant="normal">Δ</mi><mover accent="true"><mi>r</mi><mo>→</mo></mover><mo>|</mo></mrow><mo>=</mo><msqrt><mi mathvariant="normal">Δ</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi mathvariant="normal">Δ</mi><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mi mathvariant="normal">Δ</mi><msup><mi>z</mi><mn>2</mn></msup></msqrt></math></div>
+    <p class="validite" data-i18n-html="val.pyth"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>v</mi><mtext data-i18n="eq.moy"></mtext></msub><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>s</mi></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>t</mi></mrow></mfrac><mo>,</mo><mspace width="1.2em"/><msub><mover accent="true"><mi>v</mi><mo>→</mo></mover><mtext data-i18n="eq.moy"></mtext></msub><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Δ</mi><mover accent="true"><mi>r</mi><mo>→</mo></mover></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>t</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.moy"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys"></p>
+    </div>
+    <figure>
+      <svg class="fig" id="lap" viewBox="0 0 640 320" role="img" data-i18n-attr="aria-label:lap.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="lap.legend.s"></span><span class="c-warn" data-i18n="lap.legend.dr"></span><span class="c-label" data-i18n="lap.legend.v"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="fsl" data-i18n="lap.frac"></label><output id="fread" for="fsl"></output></div>
+            <input id="fsl" type="range" min="0" max="100" step="1" value="25"></div>
+          <div class="ctl"><div class="row"><label for="vsl" data-i18n="lap.v"></label><output id="vread" for="vsl"></output></div>
+            <input id="vsl" type="range" min="2" max="20" step="1" value="10"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="lap.k.s"></span><span class="v" id="vs"></span><span class="f" id="fdr"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="lap.k.vs"></span><span class="v" id="vvs"></span><span class="f" data-i18n="lap.f.vs"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="lap.k.vv"></span><span class="v" id="vvv"></span><span class="f" id="fratio"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="lap.k.dv"></span><span class="v" id="vdv"></span><span class="f" data-i18n="lap.f.dv"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="lap.caption"></figcaption>
+    </figure>
+    <div class="box warn"><b data-i18n="s2.warn.title"></b>
+      <p data-i18n-html="s2.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msub><mover accent="true"><mi>v</mi><mo>→</mo></mover><mrow><mi>M</mi><mo>/</mo><mi mathvariant="script">R</mi></mrow></msub><mo>=</mo><msub><mover accent="true"><mi>v</mi><mo>→</mo></mover><mrow><mi>M</mi><mo>/</mo><mi mathvariant="script">R</mi><mo>′</mo></mrow></msub><mo>+</mo><msub><mover accent="true"><mi>v</mi><mo>→</mo></mover><mrow><mi mathvariant="script">R</mi><mo>′</mo><mo>/</mo><mi mathvariant="script">R</mi></mrow></msub></math></div>
+    <p class="validite" data-i18n-html="val.galilee"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="box rem"><b data-i18n="s3.rem.title"></b>
+      <p data-i18n-html="s3.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/vitesse-norme-et-vecteur.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/cinematique.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/dynamique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const MS = "m·s⁻¹";
+
+/* ---------- le système décrit, chiffré ---------- */
+$("sys").innerHTML = t("sys.body", Dyna.chiffres("piste", F));
+
+/* ---------- un tour de piste : chemin et déplacement, vitesse et vecteur vitesse ---------- */
+(() => {
+  const svg = $("lap"), P = Plot.el, R = 50, C0 = [200, 160], K = 2.4, VL = 70;     // 1 m = 2,4 px
+  const arrow = (x1, y1, x2, y2, cls, parent) => Plot.fleche(parent, [x1, y1], [x2, y2], { cls, tete: 10 });
+  const label = (x, y, key, parent, anchor) => { const e = P("text", { x, y, "text-anchor": anchor || "middle" }, parent); e.textContent = t(key); return e; };
+  const scr = p => [C0[0] + K * p[0], C0[1] - K * p[1]];
+  const fsl = $("fsl"), vsl = $("vsl");
+  function draw() {
+    svg.innerHTML = "";
+    const frac = fsl.value / 100, v = +vsl.value, r = Dyna.tour(R, v, frac), c = Cine.circle(R, v);
+    P("circle", { cx: C0[0], cy: C0[1], r: K * R, class: "stroke thin dash c-label-2" }, svg);
+    P("circle", { cx: C0[0], cy: C0[1], r: 3, class: "fill c-label-2" }, svg);
+    const M0 = scr(c.pos(0)), M1 = scr(c.pos(r.t));
+    /* the path travelled */
+    if (frac >= 1) P("circle", { cx: C0[0], cy: C0[1], r: K * R, class: "stroke bold c-tint" }, svg);
+    else if (frac > 0) P("path", { d: `M${M0[0].toFixed(1)} ${M0[1].toFixed(1)} A${K * R} ${K * R} 0 ${frac > 0.5 ? 1 : 0} 0 ${M1[0].toFixed(1)} ${M1[1].toFixed(1)}`, class: "stroke bold c-tint" }, svg);
+    /* the displacement and its components */
+    if (r.dist > 1e-9) {
+      P("line", { x1: M0[0], y1: M0[1], x2: M1[0], y2: M0[1], class: "stroke thin dash c-label-2" }, svg);
+      P("line", { x1: M1[0], y1: M0[1], x2: M1[0], y2: M1[1], class: "stroke thin dash c-label-2" }, svg);
+      arrow(M0[0], M0[1], M1[0], M1[1], "c-warn", svg);
+      label((M0[0] + M1[0]) / 2, M0[1] + 16, "lap.dx", svg); label(M1[0] + 8, (M0[1] + M1[1]) / 2, "lap.dy", svg, "start");
+    }
+    /* the two velocities: same length, other direction */
+    [[M0, r.v0, "lap.v0"], [M1, r.v1, "lap.v1"]].forEach(([M, u, key], i) => {
+      const e = [u[0] / v, -u[1] / v];
+      P("circle", { cx: M[0], cy: M[1], r: 5, class: "fill c-label" }, svg);
+      arrow(M[0], M[1], M[0] + VL * e[0], M[1] + VL * e[1], "c-label", svg);
+      label(M[0] + VL * e[0] + 12 * e[0], M[1] + VL * e[1] + 12 * e[1] + (i ? 0 : -4), key, svg, e[0] < -0.3 ? "end" : e[0] > 0.3 ? "start" : "middle");
+    });
+    label(C0[0], C0[1] + 18, "lap.centre", svg);
+    label(500, 40, "lap.side", svg);
+    const lines = [["lap.side.t", F.si(r.t, "s", { prefix: "" })], ["lap.side.s", F.si(r.s, "m", { prefix: "" })], ["lap.side.d", F.si(r.dist, "m", { prefix: "" })]];
+    lines.forEach(([k, val], i) => { const e = P("text", { x: 500, y: 76 + 26 * i, "text-anchor": "middle" }, svg); e.textContent = t(k, { x: val }); });
+    $("fread").textContent = F.qty(fsl.value, "%");
+    $("vread").textContent = F.qty(vsl.value, MS);
+    $("vs").textContent = F.si(r.s, "m", { prefix: "" });
+    $("fdr").textContent = t("lap.f.dr", { d: F.si(r.dist, "m", { prefix: "" }) });
+    $("vvs").textContent = F.qty(F.num(r.vitesse, 3), MS);
+    $("vvv").textContent = F.qty(F.num(r.vmoy, 3), MS);
+    $("fratio").textContent = t("lap.f.ratio", { p: F.num(r.vmoy / r.vitesse * 100, 3) });
+    $("vdv").textContent = F.qty(F.num(r.dv, 3), MS);
+  }
+  fsl.oninput = vsl.oninput = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["galilee", 1624, "idea"], ["hamilton", 1843, "idea"], ["gibbs", 1881, "idea"], ["wilson", 1901, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["compteur", "radar"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["compteur", "a"], ["tour", "a"], ["rondpoint", "a"], ["pluie", "a"], ["composantes", "a"], ["inegalite", "a"], ["tapis", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 92 });
+})();
+</script>
+</body>
+</html>

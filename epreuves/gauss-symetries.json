@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["surface", "a"],
+  ["distance", "b"],
+  ["fini", "c"],
+  ["coaxial", "d"],
+  ["plan", "a"],
+  ["armatures", "b"],
+  ["coquille", "c"],
+  ["force", "d"]
+ ]
+}

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Transition vitreuse et propriétés mécaniques des polymères</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-organique" data-i18n="monde.chim-organique"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-polymeres" data-i18n="etape.chim-polymeres"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/degre-de-polymerisation" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="list keyed" id="tables"></div>
+    <p class="aux" data-i18n-html="tables.note"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="courbe" role="img" data-i18n-attr="aria-label:mod.aria"></svg>
+      <div class="panel">
+        <label class="field"><span data-i18n="mod.poly"></span>
+          <select id="poly"><option value="polyisoprene" data-i18n="poly.polyisoprene"></option><option value="pp" data-i18n="poly.pp"></option><option value="pet" data-i18n="poly.pet"></option><option value="pa66" data-i18n="poly.pa66"></option><option value="pvc" data-i18n="poly.pvc"></option><option value="ps" data-i18n="poly.ps"></option><option value="pmma" data-i18n="poly.pmma"></option><option value="polycarbonate" data-i18n="poly.polycarbonate"></option></select></label>
+        <div class="ctl"><div class="row"><label for="temp" data-i18n-html="mod.T"></label><output id="tempv" for="temp"></output></div>
+          <input id="temp" type="range" min="150" max="600" step="1" value="298"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="mod.k.etat"></span><span class="v" id="vetat"></span><span class="f" id="fetat"></span></div>
+          <div class="stat"><span class="k" data-i18n="mod.k.e"></span><span class="v" id="ve"></span><span class="f" data-i18n="mod.f.e"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="mod.k.tg"></span><span class="v" id="vtg"></span><span class="f" data-i18n="mod.f.tg"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="mod.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>G</mi><mo>=</mo><mfrac><mrow><mi>ρ</mi><mi>R</mi><mi>T</mi></mrow><msub><mi>M</mi><mi>c</mi></msub></mfrac><mo>,</mo><mspace width="1em"></mspace><mi>E</mi><mo>=</mo><mn>3</mn><mi>G</mi></math></div>
+    <p class="validite" data-i18n-html="val.g"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><mi>σ</mi><mo>=</mo><mi>G</mi><mrow><mo>(</mo><mi>λ</mi><mo>−</mo><mfrac><mn>1</mn><msup><mi>λ</mi><mn>2</mn></msup></mfrac><mo>)</mo></mrow></math></div>
+    <p class="validite" data-i18n-html="val.nh"></p>
+    <figure class="chart">
+      <svg class="fig" id="traction" role="img" data-i18n-attr="aria-label:cao.aria"></svg>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="mc" data-i18n-html="cao.mc"></label><output id="mcv" for="mc"></output></div>
+          <input id="mc" type="range" min="1" max="20" step="0.5" value="5"></div>
+        <div class="ctl"><div class="row"><label for="tc" data-i18n-html="cao.T"></label><output id="tcv" for="tc"></output></div>
+          <input id="tc" type="range" min="250" max="400" step="1" value="300"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="cao.k.g"></span><span class="v" id="vg"></span><span class="f" data-i18n="cao.f.g"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="cao.k.e"></span><span class="v" id="vec"></span><span class="f" data-i18n="cao.f.e"></span></div>
+          <div class="stat"><span class="k" data-i18n="cao.k.s2"></span><span class="v" id="vs2"></span><span class="f" id="fs2"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="cao.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="list keyed" id="familles"></div>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/transition-vitreuse.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script src="/racoon/chim-organique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = ChimOrga.Polymeres;
+const IDS = Object.keys(P.POLYMERES);
+/* schematic moduli: glassy plateau 3 GPa, rubbery plateau 1 MPa, half crystalline; same for every polymer */
+const MOD = { Ev: 3e9, Ec: 1e6, xc: 0.5 };
+const Pa = x => F.si(x, "Pa", { sig: 2 });
+
+/* ---------- table of Tg and Tf ---------- */
+(() => {
+  const txt = textOf("tables.items", IDS);
+  $("tables").innerHTML = IDS.map(id => { const p = P.POLYMERES[id];
+    return `<div><span class="k">${t("poly." + id)}</span><span>${txt[id]}</span><span class="v">${t(p.Tf ? "tables.tgtf" : "tables.tg", { tg: F.kelvin(p.Tg), tf: p.Tf ? F.kelvin(p.Tf) : "" })}</span></div>`; }).join("");
+})();
+
+/* ---------- modulus against temperature ---------- */
+(() => {
+  const svg = $("courbe"), sel = $("poly"), sl = $("temp");
+  sel.value = "ps";
+  function draw() {
+    const id = sel.value, p = P.POLYMERES[id], T = +sl.value, o = Object.assign({ Tg: p.Tg, Tf: p.Tf }, MOD);
+    svg.innerHTML = "";
+    const ax = Plot.axes(svg, { fmt: F, w: 640, h: 280, pad: { b: 44, l: 60 },
+      x: { domain: [150, 600], label: t("mod.x") }, y: { scale: "log", domain: [1e2, 1e10], label: t("mod.y") } });
+    const pts = [];
+    for (let T1 = 150; T1 <= 600; T1 += 2) pts.push([ax.x(T1), ax.y(Math.max(P.moduleT(o, T1), 1e2))]);
+    Plot.el("path", { d: Plot.path(pts), class: "stroke bold c-tint" }, ax.g);
+    [[p.Tg, "mod.tg"], [p.Tf, "mod.tf"]].forEach(([v, k]) => { if (!v) return;
+      Plot.el("line", { x1: ax.x(v), x2: ax.x(v), y1: ax.y(1e2), y2: ax.y(1e10), class: "stroke thin dash c-label-2" }, ax.g);
+      Plot.el("text", { x: ax.x(v) + 4, y: ax.y(3e9), class: "note" }, ax.g).textContent = t(k); });
+    const E = P.moduleT(o, T), etat = P.etat(id, T);
+    Plot.el("circle", { cx: ax.x(T), cy: ax.y(Math.max(E, 1e2)), r: 5, class: "fill c-label" }, ax.g);
+    $("tempv").innerHTML = F.kelvin(T);
+    $("vetat").textContent = t("etat." + etat);
+    $("fetat").textContent = t("etat.f." + (etat === "caoutchoutique" && p.reticule ? "reseau" : etat === "caoutchoutique" ? "lineaire" : etat));
+    $("ve").textContent = Pa(E);
+    $("vtg").textContent = F.num(T / p.Tg, 3);
+  }
+  sl.oninput = draw; sel.onchange = draw; draw();
+})();
+
+/* ---------- rubber elasticity ---------- */
+(() => {
+  const svg = $("traction"), sM = $("mc"), sT = $("tc"), RHO = 1e3, DT = 50;
+  function draw() {
+    const Mc = +sM.value, T = +sT.value, c = P.moduleCaoutchouc(RHO, T, Mc), c2 = P.moduleCaoutchouc(RHO, T + DT, Mc);
+    svg.innerHTML = "";
+    const smax = 3 * c2.G * 2.2;
+    const ax = Plot.axes(svg, { fmt: F, w: 640, h: 280, pad: { b: 44, l: 60 },
+      x: { domain: [1, 3], label: t("cao.x") }, y: { domain: [0, smax / 1e6], label: t("cao.y") } });
+    const courbe = (f, cls) => { const pts = []; for (let l = 1; l <= 3.0001; l += 0.02) pts.push([ax.x(l), ax.y(Math.min(f(l), smax) / 1e6)]);
+      Plot.el("path", { d: Plot.path(pts), class: cls }, ax.g); };
+    courbe(l => P.tractionCaoutchouc(c.G, l), "stroke bold c-tint");
+    courbe(l => P.tractionCaoutchouc(c2.G, l), "stroke c-tint dash");
+    courbe(l => c.E * (l - 1), "stroke thin c-label-2");
+    [[2.6, P.tractionCaoutchouc(c.G, 2.6), "cao.l.t"], [2.6, P.tractionCaoutchouc(c2.G, 2.6), "cao.l.t2"], [1.6, Math.min(c.E * 0.6, smax * 0.95), "cao.l.hooke"]]
+      .forEach(([l, s, k]) => Plot.el("text", { x: ax.x(l) + 4, y: ax.y(s / 1e6) + (k === "cao.l.t" ? 16 : -6), class: "note" }, ax.g).textContent = t(k, { dt: DT }));
+    $("mcv").textContent = F.qty(F.num(Mc, 3), "kg·mol⁻¹");
+    $("tcv").innerHTML = F.kelvin(T);
+    $("vg").textContent = Pa(c.G); $("vec").textContent = Pa(c.E);
+    $("vs2").textContent = Pa(P.tractionCaoutchouc(c.G, 2));
+    $("fs2").textContent = t("cao.f.s2", { h: Pa(c.E) });
+  }
+  [sM, sT].forEach(s => s.oninput = draw); draw();
+})();
+
+/* ---------- families ---------- */
+(() => {
+  const IDF = ["vitreux", "semicristallin", "elastomere", "thermodur"], txt = textOf("familles", IDF);
+  $("familles").innerHTML = IDF.map(id => `<div><span class="k">${txt[id].k}</span><span>${txt[id].text}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["gough", 1805, "experiment"], ["goodyear", 1839, "experiment"], ["joule", 1859, "experiment"], ["foxflory", 1950, "idea"], ["wlf", 1955, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["dsc", "dma", "traction", "plastifiant"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["etat", "b"], ["pp", "c"], ["entropie", "a"], ["module", "d"], ["reticulation", "b"], ["hooke", "a"], ["cinetique", "c"], ["pneu", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 1955 });
+})();
+</script>
+</body>
+</html>

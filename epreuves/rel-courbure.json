@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["rectangle", "a"],
+  ["fusee", "b"],
+  ["rayon", "c"],
+  ["duree", "d"],
+  ["compromis", "a"],
+  ["action", "b"],
+  ["lumiere", "c"],
+  ["observateur", "d"]
+ ]
+}

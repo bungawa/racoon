@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Binaires solide-liquide, eutectiques et composés définis</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-solutions" data-i18n="monde.chim-solutions"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-binaires" data-i18n="etape.chim-binaires"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n-html="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/binaires-liquide-vapeur" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="box rem"><b data-i18n="s1.sys.title"></b>
+      <p data-i18n-html="s1.sys.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi data-i18n="eq.ln"></mi><msub><mi>x</mi><mi mathvariant="normal">A</mi></msub><mo>=</mo><mo>−</mo><mfrac><mrow><msub><mi mathvariant="normal">Δ</mi><mi data-i18n="eq.fus"></mi></msub><msub><mi>H</mi><mi mathvariant="normal">A</mi></msub></mrow><mi>R</mi></mfrac><mrow><mo>(</mo><mfrac><mn>1</mn><mi>T</mi></mfrac><mo>−</mo><mfrac><mn>1</mn><msub><mi>T</mi><mrow><mi data-i18n="eq.fus"></mi><mo>,</mo><mi mathvariant="normal">A</mi></mrow></msub></mfrac><mo>)</mo></mrow></math></div>
+    <p class="validite" data-i18n-html="val.schroder"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <figure class="chart">
+      <svg class="fig" id="sl" role="img" data-i18n-attr="aria-label:sl.aria"></svg>
+      <div class="panel">
+        <div class="seg" role="group" id="sys">
+          <button type="button" data-m="BiCd" data-i18n="sl.sys.bicd"></button>
+          <button type="button" data-m="PbSn" data-i18n="sl.sys.pbsn"></button>
+        </div>
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="slx" data-i18n="sl.x"></label><output id="slxv" for="slx"></output></div>
+            <input id="slx" type="range" min="0" max="1000" step="1" value="300"></div>
+          <div class="ctl"><div class="row"><label for="slT" data-i18n="sl.T"></label><output id="slTv" for="slT"></output></div>
+            <input id="slT" type="range" min="0" max="1000" step="1" value="600"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="sl.k.dom"></span><span class="v" id="sldom"></span><span class="f" id="sldomf"></span></div>
+          <div class="stat"><span class="k" data-i18n="sl.k.liq"></span><span class="v" id="slliq"></span><span class="f" id="slliqf"></span></div>
+          <div class="stat"><span class="k" data-i18n="sl.k.v"></span><span class="v" id="slv"></span><span class="f" id="slvf"></span></div>
+        </div>
+      </div>
+      <div class="legend"><span class="c-tint" data-i18n="sl.leg.modele"></span><span class="c-warn" data-i18n="sl.leg.mes"></span></div>
+      <figcaption data-i18n-html="sl.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>v</mi><mi>p</mi></msub><mo>=</mo><mi>c</mi><mo>+</mo><mn>1</mn><mo>−</mo><mi>φ</mi><mo>=</mo><mn>2</mn><mo>+</mo><mn>1</mn><mo>−</mo><mn>3</mn><mo>=</mo><mn>0</mn></math></div>
+    <p class="validite" data-i18n-html="val.eutectique"></p>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <figure>
+      <svg class="fig" id="cd" viewBox="0 0 640 300" role="img" data-i18n-attr="aria-label:cd.aria"></svg>
+      <figcaption data-i18n-html="cd.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="box rem"><b data-i18n="s4.rem.title"></b>
+      <p data-i18n-html="s4.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/binaires-solide-liquide.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/chim-solutions.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = Plot.el, B = ChimSolutions.Binaires;
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+
+/* ---------- diagramme solide-liquide : modèle idéal et mesures ---------- */
+(() => {
+  const svg = $("sl"), sx = $("slx"), sT = $("slT");
+  /* measured points, x = fraction of the second metal: pure bodies, eutectic, ends of the eutectic line */
+  const SYS = {
+    BiCd: { a: "Bi", b: "Cd", T: [340, 620], E: [0.553, 419.15], fin: [0, 1] },
+    PbSn: { a: "Pb", b: "Sn", T: [300, 620], E: [0.741, 455.35], fin: [0.289, 0.980] },
+  };
+  const DOM = textOf("sl.dom", ["L", "L+a", "L+b", "a+b", "a", "b"]);
+  let cur = "BiCd", ax;
+  const xOf = () => +sx.value / 1000, TOf = () => SYS[cur].T[0] + (SYS[cur].T[1] - SYS[cur].T[0]) * +sT.value / 1000;
+  function dessiner() {
+    const S = SYS[cur];
+    svg.textContent = "";
+    ax = Plot.axes(svg, { fmt: F, w: 640, h: 380, pad: { b: 44, l: 60 },
+      x: { domain: [0, 1], label: t("sl.xlab." + cur), fmt: v => F.num(v, 2) }, y: { domain: S.T, label: t("sl.ylab") } });
+    const { x, y, g } = ax, c = B.courbesSL(S.a, S.b, 120);
+    P("path", { d: Plot.path(c.a.concat(c.b).map(([xa, T]) => [x(1 - xa), y(T)])), class: "stroke c-tint" }, g);
+    P("path", { d: Plot.path([[x(0), y(c.E.T)], [x(1), y(c.E.T)]]), class: "stroke thin c-tint" }, g);
+    const TA = B.CORPS[S.a].Tf, TB = B.CORPS[S.b].Tf, [xE, TE] = S.E;
+    P("path", { d: Plot.path([[x(0), y(TA)], [x(xE), y(TE)], [x(1), y(TB)]]), class: "stroke thin dash c-warn" }, g);
+    P("path", { d: Plot.path([[x(S.fin[0]), y(TE)], [x(S.fin[1]), y(TE)]]), class: "stroke thin dash c-warn" }, g);
+    [[0, TA], [xE, TE], [1, TB]].forEach(([u, T]) => P("circle", { cx: x(u), cy: y(T), r: 4, class: "fill c-warn" }, g));
+    ax.dot = P("circle", { r: 6, class: "dot" }, g);
+    ax.conode = P("path", { class: "stroke thin dash c-label-2" }, g);
+  }
+  function upd() {
+    const S = SYS[cur], xb = xOf(), T = TOf(), { x, y } = ax, e = B.etatSL(S.a, S.b, 1 - xb, T);
+    $("slxv").textContent = F.fix(xb, 3); $("slTv").innerHTML = F.kelvin(T);
+    ax.dot.setAttribute("cx", x(xb)); ax.dot.setAttribute("cy", y(T));
+    const d = DOM[e.domaine], nom = { a: S.a, b: S.b };
+    $("sldom").textContent = d.name.replace("{a}", nom.a).replace("{b}", nom.b); $("sldomf").textContent = d.text.replace("{a}", nom.a).replace("{b}", nom.b);
+    if (e.domaine === "L+a" || e.domaine === "L+b") {
+      const xl = 1 - e.xL, xs = e.domaine === "L+a" ? 0 : 1;
+      ax.conode.setAttribute("d", Plot.path([[x(xs), y(T)], [x(xl), y(T)]]));
+      $("slliq").textContent = F.fix(xl, 3); $("slliqf").textContent = t("sl.f.frac", { f: F.num(100 * e.fL, 3) });
+    } else {
+      ax.conode.setAttribute("d", "");
+      $("slliq").textContent = e.domaine === "L" ? F.fix(xb, 3) : "–"; $("slliqf").textContent = t(e.domaine === "L" ? "sl.f.tout" : "sl.f.rien");
+    }
+    const phi = { L: 1, "L+a": 2, "L+b": 2, "a+b": 2, a: 1, b: 1 }[e.domaine], c = e.domaine === "a" || e.domaine === "b" ? 1 : 2;
+    $("slv").textContent = String(c + 1 - phi); $("slvf").textContent = t("sl.f.v", { c, phi });
+  }
+  const segs = $("sys").querySelectorAll("button");
+  const choisir = m => { cur = m; segs.forEach(bt => bt.setAttribute("aria-pressed", String(bt.dataset.m === m))); dessiner(); upd(); };
+  segs.forEach(bt => bt.onclick = () => choisir(bt.dataset.m));
+  sx.oninput = sT.oninput = upd;
+  choisir(cur);
+})();
+
+/* ---------- allure d'un diagramme à composé défini à fusion congruente ---------- */
+(() => {
+  const svg = $("cd"), l = 60, r = 620, h = 250, top = 20, X = u => l + (r - l) * u, Y = v => h - (h - top) * v;
+  P("path", { d: Plot.path([[l, top], [l, h], [r, h], [r, top]]), class: "stroke thin c-label-2" }, svg);
+  const liq = [[0, 0.62], [0.06, 0.5], [0.11, 0.36], [0.2, 0.62], [1 / 3, 0.9], [0.45, 0.68], [0.55, 0.45], [0.7, 0.58], [1, 0.8]].map(([u, v]) => [X(u), Y(v)]);
+  P("path", { d: "M" + liq.map(p => p.map(n => n.toFixed(1)).join(" ")).join("L"), class: "stroke c-tint" }, svg);
+  P("path", { d: Plot.path([[X(0), Y(0.36)], [X(1 / 3), Y(0.36)]]), class: "stroke thin c-tint" }, svg);
+  P("path", { d: Plot.path([[X(1 / 3), Y(0.45)], [X(1), Y(0.45)]]), class: "stroke thin c-tint" }, svg);
+  P("path", { d: Plot.path([[X(1 / 3), Y(0.9)], [X(1 / 3), h]]), class: "stroke c-warn" }, svg);
+  const L = textOf("cd.labels", ["A", "B", "AB", "liq", "E1", "E2", "fus", "s1", "s2"]);
+  [["A", 0, -0.08, "middle"], ["B", 1, -0.08, "middle"], ["AB", 1 / 3, -0.08, "middle"], ["liq", 0.62, 0.86, "middle"], ["E1", 0.11, 0.3, "middle"],
+   ["E2", 0.55, 0.39, "middle"], ["fus", 1 / 3, 0.95, "middle"], ["s1", 0.16, 0.18, "middle"], ["s2", 0.68, 0.22, "middle"]]
+    .forEach(([k, u, v, a]) => { P("text", { x: X(u), y: Y(v) + (v < 0 ? 4 : 0), "text-anchor": a }, svg).textContent = L[k]; });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["gibbs", 1876, "idea"], ["guthrie", 1884, "experiment"], ["schroder", 1893, "idea"], ["roozeboom", 1900, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["sel", "melange", "soudure"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["liquidus", "b"], ["eutectique", "d"], ["variance", "a"], ["modele", "c"], ["pbsn", "b"], ["congruent", "a"], ["sel", "c"], ["solide", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

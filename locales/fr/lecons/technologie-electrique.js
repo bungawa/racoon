@@ -1,0 +1,102 @@
+/* Leçon « Technologie électrique » (Feynman II.16.4) : textes en français.
+   Une autre langue = locales/<langue>/lecons/technologie-electrique.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Technologie électrique",
+    "crumb.jour": "Technologie électrique",
+    "h1": "Technologie électrique",
+    "lede": "L'induction n'apporte rien de nouveau aux lois de la physique quand on passe du laboratoire au réseau électrique. Elle apporte des contraintes chiffrées : transporter l'énergie sous haute tension, empêcher les noyaux de fer de chauffer, refroidir des machines où se perd un pour cent de puissances immenses.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : transformateurs et inductances",
+    "eq.pertes": "pertes",
+    "eq.foucault": "F",
+
+    "s1.sec": "Du barrage à la prise",
+    "s1.h2": "Une chaîne de machines à induction",
+    "s1.p1": "Au pied d'un barrage, l'eau fait tourner des turbines, qui entraînent des alternateurs : de gros électroaimants tournent dans des enroulements fixes, comme la spire de « Moteurs et générateurs » mais à l'envers. Des transformateurs élèvent la tension, des lignes la transportent sur des centaines de kilomètres, d'autres transformateurs l'abaissent par étapes, et des moteurs la reconvertissent en travail à l'autre bout. À chaque maillon, il n'y a que des courants, des champs et la règle du flux. Le reste est de l'ingénierie : du fer pour canaliser le champ, des entrefers minces pour qu'il reste intense, des conducteurs de cuivre massifs pour les gros courants.",
+    "s1.p2": "On prête à Faraday une réplique à qui lui demandait à quoi servait sa découverte : « à quoi sert un nouveau-né ? ». L'attribution n'a pas de source sûre ; la même réplique est déjà rapportée en 1783, prêtée à Benjamin Franklin devant le premier vol d'un ballon. Elle dit bien ce que l'induction est devenue en un demi-siècle.",
+
+    "s2.sec": "Transport",
+    "s2.h2": "Pourquoi la haute tension",
+    "s2.p1": "Le système : une ligne triphasée de trois conducteurs de cuivre de longueur ℓ et de section <var>S</var>, qui livre la puissance <var>P</var> à une charge résistive sous la tension <var>U</var> entre conducteurs. Le courant dans chaque conducteur est <var>I</var> = <var>P</var>/(√3\u00a0<var>U</var>), et l'effet Joule dans les trois vaut 3<var>R</var><var>I</var><sup>2</sup>. La part de la puissance perdue :",
+    "val.ligne": "Approximation : facteur de puissance égal à 1 (charge résistive), pertes faibles devant <var>P</var> (on prend la tension de la charge égale à <var>U</var>) et ligne courte devant la longueur d'onde, 6\u202f000\u00a0km à 50\u00a0Hz : son inductance et sa capacité sont négligées. Au-delà de 20\u00a0% de pertes, la page n'affiche plus de pourcentage : le modèle ne vaut plus. Résistivité du cuivre à 293\u00a0K <span class=\"aux\">(20\u00a0°C)</span> ; elle croît d'environ 0,4\u00a0% par kelvin.",
+    "fig.aria": "Part de la puissance perdue dans la ligne en fonction de la tension, à puissance, longueur et section fixées",
+    "fig.legend.f": "pertes rapportées à la puissance livrée",
+    "fig.legend.tout": "pertes égales à la puissance : impossible",
+    "fig.u": "Tension entre conducteurs U",
+    "fig.p": "Puissance livrée P",
+    "fig.l": "Longueur ℓ",
+    "fig.s": "Section de chaque conducteur S",
+    "fig.xaxis": "U (V)",
+    "fig.yaxis": "pertes / P",
+    "fig.k.f": "Part de la puissance perdue",
+    "fig.f.f": "{p} en chaleur ; résistance d'un conducteur : {R}",
+    "fig.trop": "hors du modèle",
+    "fig.f.trop": "R P/U² = {x} : la ligne ne peut pas livrer cette puissance",
+    "fig.k.i": "Courant dans chaque conducteur",
+    "fig.f.i": "densité de courant : {j}",
+    "fig.caption": "Échelles logarithmiques. La droite de pente \u22122 dit tout : diviser la tension par 10 multiplie les pertes par 100. Une ligne de 400\u00a0kV livre 1\u00a0GW sur 200\u00a0km avec 4\u00a0% de pertes ; à 40\u00a0kV, la même ligne perdrait quatre fois plus que ce qu'elle livre. Doubler la section divise les pertes par deux seulement, au prix de deux fois plus de cuivre ; la tension est le levier, et le transformateur la rend possible.",
+    "sys.title": "Décrire le système avant d'appliquer la loi",
+    "sys1.body": "En 1891, la première ligne triphasée à longue distance relie un alternateur de {P} à Francfort, à {l}, sous 15\u00a0kV. Ses trois fils de cuivre ont {d} de diamètre. Dans ce modèle, à pleine puissance, chaque conducteur a une résistance de {R} et porte {I} : les pertes valent {f15} de la puissance, à la limite de ce que le modèle permet. La mesure d'époque donne un rendement d'environ 75\u00a0% de la turbine à la charge, alternateur et transformateurs compris : l'ordre de grandeur est le même. À 1\u00a0kV, <var>R</var><var>P</var>/<var>U</var><sup>2</sup> vaudrait {x1} : il faudrait des conducteurs de {S1} de section pour garder les mêmes pertes. Le nombre sans dimension <var>R</var><var>P</var>/<var>U</var><sup>2</sup> décide de tout.",
+
+    "s3.sec": "Le fer des transformateurs",
+    "s3.h2": "Des tôles, pas des blocs",
+    "s3.p1": "Le noyau d'un transformateur est lui-même un conducteur dans un champ alternatif : des courants de Foucault y circulent et le chauffent. Pour une tôle d'épaisseur <var>e</var> et de résistivité ρ, dans un champ alternatif d'amplitude <var>B</var><sub>0</sub> parallèle à la tôle, le champ électrique induit croît linéairement depuis le plan médian. Moyennée sur l'épaisseur et sur la période, la puissance dissipée par unité de volume vaut :",
+    "val.tole": "Approximation : tôle mince devant l'épaisseur de peau (le champ pénètre toute la tôle) et large devant <var>e</var>, champ sinusoïdal. La perméabilité du fer réduit l'épaisseur de peau d'un facteur √μ<sub>r</sub> par rapport à un métal non magnétique : pour un bloc massif, le champ ne pénètre plus et la formule surestime les pertes. Les pertes par hystérésis, de même ordre, s'y ajoutent : voir « Cycle d'hystérésis ».",
+    "sys2.title": "Ordre de grandeur",
+    "sys2.body": "Tôle d'acier électrique de {e}, de résistivité {rho}, dans {B} à 50\u00a0Hz : {p}, soit {pk} avec la masse volumique du fer. Un noyau massif de {E} d'épaisseur multiplierait ces pertes par {x}, si le champ y pénétrait encore. Et même bien feuilleté, un transformateur de 100\u00a0MW qui perd 1\u00a0% doit évacuer {P} de chaleur.",
+    "s3.p2": "Le fer est donc découpé en tôles minces isolées entre elles, perpendiculaires aux courants induits : chaque tôle ne laisse que des boucles étroites, qui enlacent peu de flux. Les transformateurs de distribution atteignent 98 à 99\u00a0% de rendement, et le rendement croît avec la taille. Le pour cent qui reste chauffe la machine : les gros transformateurs baignent dans une huile qui isole et refroidit les enroulements.",
+
+    "s4.sec": "Et demain",
+    "s4.h2": "Des conducteurs sans résistance",
+    "s4.p1": "Un supraconducteur transporte le courant sans effet Joule. Le froid coûte de l'énergie et du matériel, mais il permet de porter de grands courants sous tension modérée, dans un câble compact : la contrainte <var>R</var><var>P</var>/<var>U</var><sup>2</sup> disparaît. Les supraconducteurs dits à haute température critique, des céramiques, le restent à des températures bien plus hautes que l'étain, supraconducteur seulement sous 3,72\u00a0K : le froid est alors bien plus facile à produire.",
+    "s4.p2": "Depuis 2014, un câble supraconducteur d'environ 1\u00a0km relie deux postes de transformation au centre d'Essen, en Allemagne, sous 10\u00a0kV : il est prévu pour 40\u00a0MW, environ cinq fois ce que porterait un câble de cuivre de même taille, et il est refroidi vers {T}. Il remplace une liaison à 110\u00a0kV.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Les réseaux alternatifs",
+    "hist.intro": "En quelques années, transformateurs, alternateurs et moteurs à champ tournant forment un système complet ; il n'a guère changé de principe depuis.",
+    "hist.events": {
+      stanley: { who: "William Stanley", what: "met en service commercial aux États-Unis, pour Westinghouse, un transformateur redessiné d'après celui de Gaulard et Gibbs.", context: "Le transformateur permet de produire et de distribuer à une tension, de consommer à une autre : c'est l'argument décisif du courant alternatif contre le courant continu." },
+      lauffen: { who: "Oskar von Miller, Mikhaïl Dolivo-Dobrovolsky et Charles Brown", what: "transportent, fin août, la puissance d'un alternateur d'environ 220 kW de Lauffen am Neckar à Francfort, sur 175 km, en triphasé sous 15 kV, avec un rendement d'ensemble d'environ 75 %.", context: "La démonstration est faite pour l'Exposition électrotechnique internationale de Francfort. Elle convainc que le triphasé à haute tension est la voie du transport à grande distance." },
+      boulder: { who: "Barrage Hoover (alors Boulder Dam)", what: "produit son premier courant le 11 septembre, sur le Colorado.", context: "Officiellement Boulder Dam de 1933 à 1947, c'est l'exemple que prenait le cours d'origine : turbines, alternateurs, transformateurs et lignes à haute tension, toute la chaîne de l'induction." },
+      ampacity: { who: "Projet AmpaCity", what: "met en service le 30 avril à Essen un câble supraconducteur de 1 km, sous 10 kV, pour 40 MW.", context: "Le câble, en céramique supraconductrice, est refroidi vers 73 K, environ deux cents degrés sous la glace fondante. C'est une démonstration de ce que la supraconductivité peut apporter à la distribution urbaine." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      huile: { name: "Transformateurs à huile", text: "Les gros transformateurs sont remplis d'une huile, souvent minérale et très raffinée, qui circule entre les enroulements : elle évacue la chaleur des pertes et isole électriquement les spires. Leur noyau est en acier au silicium feuilleté, pour sa perméabilité élevée et pour limiter les courants de Foucault." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      tension: { prompt: "On transporte la même puissance sur la même ligne, mais sous une tension dix fois plus élevée. Que deviennent les pertes en ligne ?",
+        options: { a: "Elles sont divisées par 100.", b: "Elles sont divisées par 10.", c: "Elles sont multipliées par 100.", d: "Elles ne changent pas, la résistance de la ligne étant la même." },
+        why: "À puissance fixée, I = P/(√3 U) est divisé par 10, et les pertes 3RI² par 100." },
+      courant: { prompt: "Pourquoi n'élève-t-on pas la tension pour diminuer les pertes à la sortie d'une centrale à courant continu de 1890 ?",
+        options: { a: "Parce que le courant continu ne se transporte pas.", b: "Parce que les pertes ne dépendent pas de la tension en continu.", c: "Parce qu'aucun transformateur ne fonctionne en continu : un flux constant n'induit rien.", d: "Parce que la haute tension continue est interdite." },
+        why: "Le transformateur repose sur dφ/dt. En continu, la tension se fixait à la production : il fallait des centrales près des clients. Les convertisseurs électroniques ont levé cette limite bien plus tard." },
+      section: { prompt: "Une ligne perd 8\u00a0% de la puissance qu'elle livre. On double la section des conducteurs. Combien perd-elle ?",
+        options: { a: "2\u00a0%.", b: "16\u00a0%.", c: "8\u00a0%, la section ne joue pas.", d: "4\u00a0%." },
+        why: "R = ρℓ/S est divisée par deux, donc les pertes R P²/U² aussi. Il a fallu deux fois plus de cuivre ; doubler la tension aurait divisé les pertes par quatre." },
+      lauffen: { prompt: "La ligne de 1891 peut transporter 220\u00a0kW sur 175\u00a0km sous 15\u00a0kV. Que donnerait le même fil de cuivre sous 1\u00a0kV ?",
+        options: { a: "Des pertes 15 fois plus grandes, environ.", b: "Des pertes calculées plus grandes que la puissance elle-même : la ligne ne pourrait pas fonctionner.", c: "Les mêmes pertes, la puissance étant la même.", d: "Des pertes 15 fois plus petites." },
+        hint: "Les pertes relatives sont proportionnelles à 1/U².",
+        why: "Le rapport (15)² = 225 fait passer environ 23\u00a0% à environ 51 fois la puissance : le modèle n'a plus de sens, la ligne ne peut rien livrer." },
+      feuillete: { prompt: "Pourquoi le noyau d'un transformateur est-il fait de tôles minces isolées, plutôt que d'un bloc de fer ?",
+        options: { a: "Pour le rendre plus léger.", b: "Pour augmenter le flux.", c: "Parce que les pertes par courants de Foucault croissent comme le carré de l'épaisseur : des tôles dix fois plus minces chauffent cent fois moins.", d: "Pour réduire les pertes par hystérésis." },
+        why: "p = π²f²B₀²e²/(6ρ) : l'épaisseur entre au carré. Les tôles isolées coupent les grandes boucles de courant induit. L'hystérésis, elle, ne dépend pas de l'épaisseur : on la réduit par le choix de l'acier." },
+      chaleur: { prompt: "Un transformateur de 100\u00a0MW a un rendement de 99\u00a0%. Que faut-il prévoir ?",
+        options: { a: "L'évacuation d'environ 1\u00a0MW de chaleur, par exemple par une huile qui circule entre les enroulements.", b: "Rien : 1\u00a0% est négligeable.", c: "Une alimentation de secours.", d: "Un refroidissement à l'azote liquide." },
+        why: "1\u00a0% de 100\u00a0MW, c'est 1\u00a0MW en continu, la puissance de mille radiateurs domestiques dans une seule cuve : sans refroidissement, l'isolant brûlerait." },
+      supra: { prompt: "Qu'apporte un câble supraconducteur à la distribution d'électricité ?",
+        options: { a: "Une tension plus élevée sans transformateur.", b: "Des courants intenses sans effet Joule, donc une grande puissance sous tension modérée dans un câble compact, au prix d'un refroidissement permanent.", c: "La suppression de toute perte, refroidissement compris.", d: "La possibilité de transporter du courant continu sur de longues distances." },
+        why: "R = 0 supprime la contrainte R P/U². Il reste à refroidir le câble en continu ; le bilan inclut l'énergie de la machine frigorifique." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 16, §16-4 (texte original en anglais). Notations SI. Réplique du nouveau-né : <i>Papers of Benjamin Franklin</i>, vol. 40, note des éditeurs à la lettre à Joseph Banks du 30 août 1783 (Founders Online). Stanley : Wikipédia, « Transformer ». Lauffen–Francfort : Engineering and Technology History Wiki, « Milestones: Long Distance Electric Power Transmission Using Three-Phase Alternating Current, 1891 ». Barrage Hoover : Wikipédia, « Hoover Dam ». Fils de 4\u00a0mm de la ligne de 1891 : Wikipédia, « International Electrotechnical Exhibition ». AmpaCity : communiqué 050/2014 de l'Institut de technologie de Karlsruhe ; Institution of Mechanical Engineers, « World's longest superconductor cable provides hope », 2014. Rendement et refroidissement des transformateurs : Wikipédia, « Transformer ». Résistivités et masse volumique du fer : Wikipédia, « Electrical resistivity and conductivity », « Density ». Lignes, tôles et calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

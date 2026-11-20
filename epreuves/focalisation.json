@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["tubes", "a"],
+  ["ions", "b"],
+  ["courant", "c"],
+  ["inverse", "d"],
+  ["correcteur", "a"],
+  ["indice", "b"],
+  ["quadripole", "c"],
+  ["maille", "d"]
+ ]
+}

@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Structure des complexes</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .om { max-width: 420px; margin: 0 auto; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-solutions" data-i18n="monde.chim-solutions"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-complexes-catalyse" data-i18n="etape.chim-complexes-catalyse"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/diagramme-orbitales-moleculaires" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="box def"><b data-i18n="def.title"></b>
+      <p data-i18n-html="def.body"></p>
+    </div>
+    <p data-i18n-html="s1.p2"></p>
+    <h3 data-i18n="noms.h3"></h3>
+    <p data-i18n-html="noms.p"></p>
+    <div class="list keyed" id="noms"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>x</mi><mo>=</mo><mi>z</mi><mo>−</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>q</mi><mi>i</mi></msub></math></div>
+    <p class="validite" data-i18n-html="val.no"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>N</mi><mi>e</mi></msub><mo>=</mo><msub><mi>n</mi><mi>d</mi></msub><mo>+</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>δ</mi><mi>i</mi></msub><mo>,</mo><mspace width="1em"/><msub><mi>n</mi><mi>d</mi></msub><mo>=</mo><mi>g</mi><mo>−</mo><mi>x</mi></math></div>
+    <p class="validite" data-i18n-html="val.ne"></p>
+    <figure>
+      <div class="panel">
+        <div class="controls">
+          <label class="field"><span data-i18n="cpt.choix"></span>
+            <select id="choix"></select></label>
+          <div class="ctl"><label><input id="spin" type="checkbox"> <span data-i18n="cpt.spin"></span></label></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="cpt.k.x"></span><span class="v" id="vx"></span><span class="f" data-i18n="cpt.f.x"></span></div>
+          <div class="stat"><span class="k" data-i18n="cpt.k.d"></span><span class="v" id="vd"></span><span class="f" data-i18n="cpt.f.d"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="cpt.k.ne"></span><span class="v" id="vne"></span><span class="f" id="fne"></span></div>
+          <div class="stat"><span class="k" data-i18n="cpt.k.s"></span><span class="v" id="vs"></span><span class="f" id="fs"></span></div>
+        </div>
+      </div>
+      <div class="list keyed" id="detail"></div>
+      <figcaption data-i18n-html="cpt.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure>
+      <svg class="fig om" id="om" viewBox="0 0 420 300" role="img" data-i18n-attr="aria-label:om.aria"></svg>
+      <figcaption id="omcap"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>N</mi><mi>e</mi></msub><mo>≤</mo><mn>18</mn></math></div>
+    <p class="validite" data-i18n-html="val.18"></p>
+    <div class="box warn"><b data-i18n="s3.warn.title"></b>
+      <p data-i18n-html="s3.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="box rem"><b data-i18n="s4.rem.title"></b>
+      <p data-i18n-html="s4.rem.body"></p>
+    </div>
+    <p data-i18n-html="s4.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/structure-des-complexes.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/chim-solutions.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), CS = ChimSolutions;
+/* a formula is notation, the same in every language: it goes through the table only to be marked as such */
+const fx = c => t("fx", { f: CS.ecrireComplexe(c) });
+
+/* ---------- the complexes of the page: structure here, names and remarks in the table ---------- */
+const P = [
+  ["cr", "Cr", [["CO", 6]], 0, "oct"], ["fe5", "Fe", [["CO", 5]], 0, "bpt"], ["ni", "Ni", [["CO", 4]], 0, "tet"],
+  ["v", "V", [["CO", 6]], 0, "oct"], ["co", "Co", [["NH3", 6]], 3, "oct"], ["coen", "Co", [["en", 3]], 3, "oct"],
+  ["fe4", "Fe", [["CN", 6]], -4, "oct"], ["fe3", "Fe", [["CN", 6]], -3, "oct"], ["feaq", "Fe", [["H2O", 6]], 2, "oct", "haut"],
+  ["ni2", "Ni", [["H2O", 6]], 2, "oct"], ["cu", "Cu", [["H2O", 6]], 2, "oct"], ["rh", "Rh", [["Cl", 1], ["PPh3", 3]], 0, "pc"],
+  ["zeise", "Pt", [["Cl", 3], ["C2H4", 1]], -1, "pc"], ["cispt", "Pt", [["Cl", 2], ["NH3", 2]], 0, "pc"], ["fc", "Fe", [["C5H5", 2]], 0, "sandwich"],
+].map(([id, m, L, z, geom, spin]) => ({ id, c: { m, L, z }, geom, spin: spin || "bas" }));
+const NOMS = textOf("cx", P.map(p => p.id));
+
+/* ---------- names ---------- */
+$("noms").innerHTML = ["co", "fe4", "rh", "zeise", "cispt", "ni"].map(id => {
+  const p = P.find(q => q.id === id);
+  return `<div><span class="k">${fx(p.c)}</span><span>${NOMS[id].nom}</span><span class="v">${t("geom." + p.geom)}</span></div>`;
+}).join("");
+
+/* ---------- counter and orbital diagram, one state ---------- */
+(() => {
+  const sel = $("choix"), spin = $("spin"), svg = $("om");
+  sel.innerHTML = P.map(p => `<option value="${p.id}">${fx(p.c)}</option>`).join("");
+  sel.value = "co";
+  /* electrons per orbital: one in each first, then the second (Hund) */
+  const slots = (n, orb) => Array.from({ length: orb }, (_, i) => (n > i ? 1 : 0) + (n > orb + i ? 1 : 0));
+  function diagram(p, r) {
+    svg.innerHTML = "";
+    if (p.geom !== "oct") {
+      Plot.el("text", { x: 210, y: 150, "text-anchor": "middle" }, svg).textContent = t("om.hors", { g: t("geom." + p.geom) });
+      $("omcap").innerHTML = t("om.caphors");
+      return;
+    }
+    const haut = spin.checked, m = CS.ml6(r.d, !haut);
+    const y = { li: 262, t2g: 168, eg: haut ? 128 : 78, anti: 30 }, w = 34, gap = 12;
+    const row = (yy, n, x0, cls, fill, label) => {
+      const s = slots(fill, n);
+      for (let i = 0; i < n; i++) {
+        const x = x0 + i * (w + gap);
+        Plot.el("line", { x1: x, x2: x + w, y1: yy, y2: yy, class: "stroke bold " + cls }, svg);
+        if (s[i] >= 1) Plot.el("text", { x: x + w / 2 - (s[i] === 2 ? 7 : 0), y: yy - 4, "text-anchor": "middle", class: "fill " + cls }, svg).textContent = "↑";
+        if (s[i] === 2) Plot.el("text", { x: x + w / 2 + 7, y: yy - 4, "text-anchor": "middle", class: "fill " + cls }, svg).textContent = "↓";
+      }
+      Plot.el("text", { x: 300, y: yy + 4 }, svg).textContent = label;
+    };
+    row(y.anti, 4, 60, "c-label-2", 0, t("om.anti"));
+    row(y.eg, 2, 106, m.eg ? "c-warn" : "c-label-2", m.eg, t("om.eg"));
+    row(y.t2g, 3, 83, "c-tint", m.t2g, t("om.t2g"));
+    row(y.li, 6, 14, "c-label-2", 12, t("om.li"));
+    Plot.el("line", { x1: 40, x2: 40, y1: y.t2g, y2: y.eg, class: "stroke thin dash c-label-2" }, svg);
+    Plot.el("text", { x: 46, y: (y.t2g + y.eg) / 2 + 4 }, svg).textContent = t("om.delta");
+    $("omcap").innerHTML = t("om.cap", { li: 12, t: m.t2g, e: m.eg, n: m.celibataires, ne: r.Ne });
+  }
+  function upd() {
+    const p = P.find(q => q.id === sel.value), r = CS.complexe(p.c);
+    if (!spin.dataset.touched) spin.checked = p.spin === "haut";
+    $("vx").textContent = r.x > 0 ? "+" + r.x : r.x < 0 ? "−" + -r.x : "0";
+    $("vd").innerHTML = t("cpt.dn", { n: r.d });
+    $("vne").textContent = r.Ne;
+    $("fne").textContent = t(r.Ne === 18 ? "cpt.f.ne18" : r.Ne < 18 ? "cpt.f.neBas" : "cpt.f.neHaut", { e: Math.abs(18 - r.Ne) });
+    $("vs").textContent = r.s;
+    $("fs").textContent = t("geom." + p.geom);
+    const lig = p.c.L.map(([id, k]) => { const l = CS.LIGANDS[id];
+      return t("cpt.lig", { k, f: t("fx", { f: l.f }), type: t(l.q ? "cpt.X" : "cpt.L"), q: l.q ? F.num(k * l.q, 3) : "0", e: k * l.e }); }).join(" ; ");
+    $("detail").innerHTML = `<div><span class="k">${t("cpt.ligands")}</span><span>${lig}</span></div>`
+      + `<div><span class="k">${t("cpt.nom")}</span><span>${NOMS[p.id].nom}</span></div>`
+      + `<div><span class="k">${t("cpt.note")}</span><span>${NOMS[p.id].note}</span></div>`;
+    diagram(p, r);
+  }
+  sel.onchange = () => { delete spin.dataset.touched; upd(); };
+  spin.onchange = () => { spin.dataset.touched = "1"; upd(); };
+  upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["zeise", 1827, "experiment"], ["mond", 1890, "experiment"], ["werner", 1893, "idea"], ["king", 1911, "experiment"],
+    ["langmuir", 1921, "idea"], ["ferrocene", 1951, "experiment"], ["dewar", 1953, "idea"], ["nobel1973", 1973, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["mond", "cisplatine", "hemoglobine"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["no", "c"], ["ne", "a"], ["seize", "d"], ["pourquoi", "b"], ["retro", "a"], ["alcene", "c"], ["spin", "b"], ["nom", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 1827 });
+})();
+</script>
+</body>
+</html>

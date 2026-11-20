@@ -1,0 +1,95 @@
+/* Leçon « La matrice de projection du spin 1 » (Feynman III.12.6) : textes en français.
+   Une autre langue = locales/<langue>/lecons/matrice-de-projection-spin1.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "La matrice de projection du spin 1",
+    "crumb.jour": "La matrice du spin 1",
+    "h1": "La matrice de projection du spin 1",
+    "lede": "La matrice qui dit comment un état de spin 1 se voit dans un appareil tourné, (5.38), avait été donnée sans démonstration. L'hydrogène en fournit une : son triplet est un spin 1, fait de deux spins 1/2 dont on connaît déjà les rotations.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : les états dans un champ magnétique hyperfin",
+    "eq.cos": "cos",
+    "eq.sin": "sin",
+
+    "s1.sec": "1 · Deux spins dans un repère tourné",
+    "s1.h2": "Tourner l'électron et le proton ensemble",
+    "s1.p1": "Le système : les deux spins 1/2 de l'atome d'hydrogène, vus d'abord dans un repère <var>S</var>, puis dans un repère <var>T</var> tourné. Seules comptent les orientations des spins ; on suppose les deux particules sans interaction pendant le changement de repère, qui n'est qu'un changement de description. Pour un spin 1/2, on connaît les quatre amplitudes <var>a</var> = ⟨+<var>T</var>|+<var>S</var>⟩, <var>b</var> = ⟨\u2212<var>T</var>|+<var>S</var>⟩, <var>c</var> = ⟨+<var>T</var>|\u2212<var>S</var>⟩, <var>d</var> = ⟨\u2212<var>T</var>|\u2212<var>S</var>⟩, établies dans « La transformation vers un repère tourné ». Pour deux particules, les amplitudes se multiplient :",
+    "val.12.44": "Exacte : l'électron et le proton sont deux systèmes distincts ; l'amplitude d'un état produit dans le nouveau repère est le produit des amplitudes de chacun.",
+    "s1.p2": "Comme les états du triplet sont des combinaisons connues de |++⟩, |+\u2212⟩, |\u2212+⟩, |\u2212\u2212⟩, il suffit de les réécrire dans le repère tourné.",
+
+    "s2.sec": "2 · Le calcul",
+    "s2.h2": "Les trois colonnes de la matrice",
+    "s2.p1": "|+<var>S</var>⟩ = |++⟩ devient le produit de deux états tournés, (<var>a</var>|+⟩ + <var>b</var>|\u2212⟩) pour chaque particule. Les termes croisés <var>ab</var>|+\u2212⟩ + <var>ba</var>|\u2212+⟩ se regroupent en √2 <var>ab</var> |0<var>T</var>⟩ :",
+    "val.12.48": "Exacte : le développement du produit, avec (12.41) dans le repère <var>T</var>.",
+    "val.12.49": "Exacte, de la même façon pour |\u2212\u2212⟩.",
+    "s2.p2": "Pour |0<var>S</var>⟩ = (|+\u2212⟩ + |\u2212+⟩)/√2, on développe les deux produits et on regroupe. Les termes en |+\u2212⟩ \u2212 |\u2212+⟩, ceux du singulet, s'annulent : un état de spin 1 reste de spin 1 dans tout repère.",
+    "val.12.52": "Exacte : la somme de deux produits développés.",
+    "val.12.53": "Exacte : les trois développements, rangés en colonnes. La matrice est unitaire, puisque celle du spin 1/2 l'est.",
+    "s2.p3": "Pour une rotation d'angle α autour de <var>y</var>, les amplitudes du spin 1/2 sont",
+    "val.12.54": "Exacte : les amplitudes du spin 1/2 pour cette rotation, avec la convention de signe de « La transformation vers un repère tourné ». Le demi-angle est la marque du spin 1/2 : un tour complet change leur signe.",
+
+    "s3.sec": "3 · Vérifier",
+    "s3.h2": "On retrouve (5.38)",
+    "s3.p1": "Tournez l'appareil <var>T</var>. Les courbes donnent les probabilités qu'un atome de spin 1 parti de |+<var>S</var>⟩ soit trouvé dans chaque état de <var>T</var>. La page compare la matrice construite ici à (5.38).",
+    "fig.aria": "Probabilités de trouver un état plus S dans les trois états d'un appareil T tourné de alpha autour de y, construites à partir de deux spins un demi",
+    "fig.legend.p": "|⟨+T|+S⟩|² = a⁴",
+    "fig.legend.z": "|⟨0T|+S⟩|² = 2a²b²",
+    "fig.legend.m": "|⟨\u2212T|+S⟩|² = b⁴",
+    "fig.a": "Angle α de l'appareil T autour de y",
+    "fig.x": "α (°)",
+    "fig.y": "probabilité",
+    "fig.k.col": "Colonne |+<var>S</var>⟩ : probabilités",
+    "fig.f.col": "+T ; 0T ; \u2212T, somme 1",
+    "fig.k.ecart": "Écart maximal à (5.38)",
+    "fig.f.ecart": "zéro aux arrondis près",
+    "fig.k.unit": "Écart de R†R à la matrice unité",
+    "fig.f.unit": "la matrice est unitaire",
+    "tab.coin": "⟨jT|iS⟩",
+    "fig.caption": "a⁴ = cos⁴(α/2) = ((1 + cos α)/2)², la probabilité de garder +. À α = 90°, les probabilités sont 1/4, 1/2, 1/4 ; à α = 180°, l'état est entièrement |\u2212<var>T</var>⟩. Le tableau donne la matrice entière, colonne <var>i</var> pour l'état de départ, ligne <var>j</var> pour l'état d'arrivée.",
+    "s3.p2": "Les amplitudes du spin 1, contrairement à celles du spin 1/2, ne contiennent que des carrés et des produits de deux amplitudes : elles ne dépendent que de l'angle entier α. Un tour complet ramène le spin 1 à son état de départ, sans changement de signe. La même méthode construit les matrices de tout spin <var>j</var> à partir de 2<var>j</var> spins 1/2.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Les matrices de rotation",
+    "hist.intro": "Ces matrices, une par valeur du spin, sont devenues un outil de base de la physique atomique et moléculaire.",
+    "hist.events": {
+      sg: { who: "Otto Stern et Walther Gerlach", what: "montrent qu'un moment magnétique atomique ne prend que quelques orientations dans un champ : la question « quelle orientation dans un appareil tourné ? » devient mesurable.", context: "Expérience faite à Francfort au début de l'année." },
+      wigner: { who: "Eugene Wigner", what: "introduit les matrices qui décrivent la rotation des états de moment cinétique, appelées depuis matrices D de Wigner.", context: "Celle de cette page en est le cas j = 1, pour une rotation autour de y." },
+      livre: { who: "Eugene Wigner", what: "publie Gruppentheorie und ihre Anwendungen auf die Quantenmechanik der Atomspektren, qui fonde sur ces matrices la classification des spectres atomiques.", context: "Il est traduit en anglais en 1959." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      molecules: { name: "Rotation des molécules", text: "Les états de rotation d'une molécule se transforment par ces mêmes matrices, à toutes les valeurs du moment cinétique ; les spectroscopistes s'en servent pour calculer les intensités des raies de rotation." },
+      mesure: { name: "Mesures de spin dans un repère tourné", text: "Chaque fois qu'on prépare un spin selon un axe et qu'on le mesure selon un autre, en résonance magnétique comme en physique atomique, la probabilité des résultats se lit dans une colonne de cette matrice." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      produit: { prompt: "Pourquoi l'amplitude ⟨+′+′|++⟩ est-elle le produit de deux amplitudes de spin 1/2 ?",
+        options: { a: "Parce que les spins sont parallèles.", b: "Parce que le triplet est symétrique.", c: "Par définition du repère tourné.", d: "Parce que l'électron et le proton sont deux systèmes distincts, et que les amplitudes de deux événements indépendants se multiplient." },
+        why: "Changer de repère ne fait pas interagir les particules : chacune se transforme comme un spin 1/2, et l'amplitude de l'ensemble est le produit, (12.44)." },
+      zero: { prompt: "Dans l'expression de |0S⟩ dans le repère T, pourquoi le singulet n'apparaît-il jamais ?",
+        options: { a: "Parce qu'un état de spin 1 reste de spin 1 dans une rotation : les termes en |+\u2212⟩ \u2212 |\u2212+⟩ s'annulent exactement.", b: "Par une approximation.", c: "Parce que le singulet a une énergie plus basse.", d: "Parce que α est petit." },
+        why: "Le singulet ne change pas dans une rotation et le triplet se transforme en lui-même : une rotation ne mélange pas les spins totaux différents." },
+      demi: { prompt: "Les amplitudes du spin 1/2 contiennent α/2. Pourquoi celles du spin 1 ne dépendent-elles que de α ?",
+        options: { a: "Parce qu'on a fait une erreur.", b: "Parce que le spin 1 est classique.", c: "Parce qu'elles sont des produits de deux amplitudes de spin 1/2 : cos²(α/2), sin(α/2)cos(α/2), sin²(α/2) s'écrivent avec cos α et sin α.", d: "Parce que α est mesuré en degrés." },
+        why: "cos²(α/2) = (1 + cos α)/2, 2 sin(α/2) cos(α/2) = sin α. Le spin 1 retrouve son état après un tour, le spin 1/2 change de signe." },
+      tour: { prompt: "Après une rotation de 360°, que devient la matrice du spin 1 ? Et les amplitudes a, b, c, d du spin 1/2 ?",
+        options: { a: "Les deux restent les mêmes.", b: "La matrice du spin 1 redevient la matrice unité ; les amplitudes du spin 1/2 changent de signe.", c: "Les deux changent de signe.", d: "La matrice du spin 1 change de signe." },
+        hint: "Essayez α = 360° dans la figure.",
+        why: "À α = 2π, a = d = \u22121, b = c = 0 : le spin 1/2 change de signe. Les produits a², ad + bc, d² valent 1 : le spin 1 n'en garde aucune trace." },
+      prob: { prompt: "Un atome de spin 1 est dans |+S⟩. On le mesure dans un appareil tourné de 90°. Quelles probabilités trouve-t-on pour +, 0 et \u2212 ?",
+        options: { a: "1/3, 1/3, 1/3.", b: "1/2, 0, 1/2.", c: "1/4, 1/2, 1/4.", d: "1, 0, 0." },
+        why: "a² = cos²45° = 1/2, b² = 1/2 : a⁴ = 1/4, 2a²b² = 1/2, b⁴ = 1/4. Ce sont les coefficients du binôme : deux spins 1/2 qui, chacun, ont une chance sur deux d'être + dans le nouveau repère." },
+      pourquoi: { prompt: "Qu'apporte ce calcul par rapport à (5.38), donnée plus tôt ?",
+        options: { a: "Une démonstration : (5.38) découle des seules amplitudes du spin 1/2, appliquées à un spin 1 fait de deux spins 1/2.", b: "Une approximation plus précise.", c: "Une matrice différente, valable seulement pour l'hydrogène.", d: "Rien de nouveau." },
+        why: "La matrice d'un spin 1 ne dépend pas de ce dont il est fait. Celle obtenue avec l'hydrogène vaut donc pour tout spin 1, et coïncide avec (5.38)." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 12, §12-6 (texte original en anglais). Notations SI. Wigner : article « Wigner D-matrix » de Wikipédia en anglais ; Stern et Gerlach : article « Stern–Gerlach experiment », même source. Calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else (root.LOCALES = root.LOCALES || {}).fr = Object.assign((root.LOCALES || {}).fr || {}, T);
+})(typeof self !== "undefined" ? self : this);

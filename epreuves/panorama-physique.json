@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["gps", "b"],
+  ["seuil", "d"],
+  ["grains", "a"],
+  ["confine", "c"],
+  ["yukawa", "a"],
+  ["photon", "b"],
+  ["newton", "c"],
+  ["gravite", "d"]
+ ]
+}

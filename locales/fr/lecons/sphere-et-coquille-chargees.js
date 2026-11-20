@@ -1,0 +1,97 @@
+/* Leçon « Sphère et coquille sphérique chargées » (Feynman II.5.7) : textes en français.
+   Une autre langue = locales/<langue>/lecons/sphere-et-coquille-chargees.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Sphère et coquille sphérique chargées",
+    "crumb.jour": "Sphère et coquille",
+    "h1": "Sphère et coquille sphérique chargées",
+    "lede": "Dans une boule uniformément chargée, le champ croît comme la distance au centre. Dans une coquille, il est nul partout, et il saute de σ/ε0 à la traversée de la paroi. Ce saut dit aussi quelle force la charge de la paroi subit : la moitié du champ extérieur.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : plan chargé et deux plans chargés",
+
+    "s1.sec": "La boule",
+    "s1.h2": "Dedans, un champ proportionnel à la distance",
+    "s1.p1": "Une boule de rayon <var>R</var> porte une densité de charge ρ uniforme. La symétrie sphérique rend le champ radial et de même norme sur toute sphère centrée (leçon « Champ d'une sphère chargée ») : dehors, c'est le champ d'une charge ponctuelle, (4.39). Dedans, la sphère de Gauss de rayon <var>r</var> a un flux 4π<var>r</var>²<var>E</var> et contient (4/3)π<var>r</var>³ρ. Le champ est nul au centre, croît linéairement, et rejoint (4.39) à la surface.",
+    "val.5.7": "Approximation : densité uniforme, lissée. Elle vaut pour une moyenne sur des volumes qui contiennent beaucoup de charges ; près d'une charge isolée, son propre champ domine. Une densité qui dépend de <var>r</var> donne <var>E</var> = <var>Q</var>(<var>r</var>)/(4πε<sub>0</sub><var>r</var>²), plus seulement linéaire.",
+    "sys.title": "Décrire le système avant d'appliquer la loi",
+    "sys1.body": "Le noyau de plomb 208 (82 protons, 208 nucléons), pris comme une boule uniforme de rayon <var>R</var> = <var>r</var><sub>0</sub><var>A</var><sup>1/3</sup>, <var>r</var><sub>0</sub> ≈ 1,25\u00a0fm : <var>R</var> ≈ {r}, ρ ≈ {rho}. Le champ à sa surface vaut {e}, et décroît linéairement jusqu'à zéro au centre d'après (5.7). Ce qu'on néglige : la surface diffuse du noyau : la densité passe de 90\u00a0% à 10\u00a0% de sa valeur centrale sur environ 2,3\u00a0fm (profil de Woods–Saxon, paramètre de diffusion <var>a</var> ≈ 0,5\u00a0fm, épaisseur 4<var>a</var>\u202fln\u202f3), soit {err} du rayon ; le grain des protons, dont l'écart mutuel, de l'ordre du femtomètre, n'est pas petit devant <var>R</var> : (5.7) ne donne que le champ moyen.",
+
+    "s2.sec": "La coquille",
+    "s2.h2": "Une coquille : rien dedans, une charge ponctuelle dehors",
+    "s2.p1": "Videz la boule : il reste une coquille mince de rayon <var>R</var>, qui porte <var>Q</var> répartie uniformément, σ = <var>Q</var>/(4π<var>R</var>²). Toute sphère de Gauss intérieure ne contient aucune charge, et la symétrie impose un champ de même norme sur elle : ce champ est nul, en tout point intérieur, pas seulement au centre. Dehors, la sphère de Gauss contient <var>Q</var>.",
+    "val.coquille": "Approximation : coquille sphérique et charge uniforme ; l'exposant de la loi de Coulomb exactement 2, sur lequel repose la loi de Gauss. Un trou dans la coquille, de taille <var>h</var>, laisse entrer un champ qui ne se fait sentir qu'à des distances de l'ordre de <var>h</var> autour de lui. L'étape « Conducteurs en équilibre et cavités » mesure par là l'exposant.",
+    "s2.p2": "Une coquille réelle a une épaisseur. Prenons-la uniformément chargée entre <var>R</var><sub>1</sub> et <var>R</var><sub>2</sub> : le champ, nul jusqu'à <var>R</var><sub>1</sub>, monte à travers la paroi jusqu'à σ/ε<sub>0</sub> en <var>R</var><sub>2</sub> (σ rapportée à la surface extérieure). <var>R</var><sub>1</sub> = 0 redonne la boule de (5.7), <var>R</var><sub>1</sub> → <var>R</var><sub>2</sub> la coquille mince.",
+    "co.aria": "Champ d'une coquille sphérique chargée uniformément dans son épaisseur, en fonction de la distance au centre, comparé à la coquille mince et à la boule pleine",
+    "co.legend.epaisse": "coquille uniforme entre R1 et R2",
+    "co.legend.mince": "coquille mince",
+    "co.legend.boule": "boule pleine, (5.7) puis (4.39)",
+    "co.x": "distance au centre r/R2",
+    "co.y": "E/E(R2)",
+    "co.r1": "Rayon intérieur R1/R2",
+    "co.k.subi": "Champ subi par la charge de la paroi, en moyenne",
+    "co.f.subi": "en unités de E(R2) : 1/2 si mince, 3/4 pour la boule",
+    "co.k.montee": "Épaisseur sur laquelle le champ monte",
+    "co.f.montee": "R2 \u2212 R1, en unités de R = R2",
+    "co.k.discret": "Somme de Coulomb de 2\u00a0000 charges sur une coquille mince, en un point intérieur",
+    "co.f.discret": "|E|/E(R), à 0,47 R du centre, hors de l'axe",
+    "co.caption": "Dehors, toutes les courbes se confondent : seule compte la charge totale. Dedans, le champ reste nul jusqu'à <var>R</var><sub>1</sub> quelle que soit l'épaisseur. Amincissez la paroi : la montée devient un saut de 0 à σ/ε<sub>0</sub>, c'est (5.4) appliquée à la paroi. La charge de la paroi subit un champ moyen qui tend vers la moitié du champ extérieur. La dernière ligne remplace la coquille mince par 2\u00a0000 charges ponctuelles et additionne leurs champs de Coulomb, sans Gauss : en un point intérieur quelconque, il reste de l'ordre de 10<sup>\u22125</sup> du champ extérieur.",
+
+    "s3.sec": "La paroi vue de près",
+    "s3.h2": "La force sur une couche chargée",
+    "s3.p1": "De près, la paroi d'une grosse coquille est un plan. Le champ total vaut 0 dedans et σ/ε<sub>0</sub> dehors : le saut de (5.4). Une petite pièce de la paroi crée à elle seule ±σ/(2ε<sub>0</sub>) de part et d'autre, (5.3) ; le reste de la coquille crée donc σ/(2ε<sub>0</sub>) des deux côtés, la moyenne des deux valeurs. C'est ce champ, et lui seul, qui pousse la pièce : une charge ne se pousse pas elle-même. La paroi est tirée vers l'extérieur, quel que soit le signe de σ.",
+    "val.pression": "Approximation : paroi mince devant le rayon de courbure, et σ uniforme à l'échelle de l'épaisseur. Pour une paroi épaisse, le champ subi n'est plus σ/(2ε<sub>0</sub>) en tout point de l'épaisseur, mais la force totale par unité d'aire reste σ²/(2ε<sub>0</sub>) à une correction près de l'ordre de l'épaisseur rapportée au rayon. Le même résultat vaut à la surface de tout conducteur à l'équilibre.",
+    "sys2.body": "Une sphère conductrice de 10\u00a0cm de rayon, portée à 30\u00a0kV dans l'air. Le champ à sa surface vaut φ/<var>R</var> = {e}, σ = ε<sub>0</sub><var>E</var> ≈ {sigma}, et la paroi est tirée vers l'extérieur par {p}, soit {rap} fois la pression atmosphérique normale. Ce qu'on néglige : la tige qui porte la sphère et les objets voisins, qui rendent σ non uniforme ; le champ reste ici dix fois sous le seuil où l'air devient conducteur, environ 3\u00a0MV·m<sup>\u22121</sup>.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Le champ nul dans une enceinte, le champ dans un noyau",
+    "hist.intro": "Le champ nul à l'intérieur d'une enceinte chargée a été vu avant d'être calculé. Le champ à l'intérieur d'une boule chargée sert encore à estimer l'énergie des noyaux.",
+    "hist.events": {
+      cage: { who: "Michael Faraday", what: "construit une pièce tapissée de feuilles métalliques, envoie contre l'extérieur les décharges d'un générateur électrostatique, et ne détecte aucune charge sur les parois intérieures à l'électroscope.", context: "La charge d'un conducteur réside sur sa surface extérieure et n'agit pas sur ce qu'il enferme : la cage de Faraday." },
+      seau: { who: "Michael Faraday", what: "descend une boule chargée dans un seau métallique sans toucher les parois : le seau prend sur sa face intérieure une charge égale et opposée à celle de la boule. Publié en 1844.", context: "La surface de Gauss tracée dans le métal du seau, où le champ est nul, a un flux nul : la charge qu'elle contient est nulle." },
+      rutherford: { who: "Ernest Rutherford", what: "publie en mai, dans le Philosophical Magazine, le modèle d'un atome dont la charge est concentrée, au centre, dans une très petite région.", context: "Il borne le rayon de cette région, pour l'or, à moins de 3,4 × 10⁻¹⁴ m. Hors du noyau, l'alpha voit le champ d'un point ; seul un projectile qui y pénètre verrait le champ intérieur de (5.7)." },
+      weizsacker: { who: "Carl Friedrich von Weizsäcker", what: "propose la formule semi-empirique de la masse des noyaux.", context: "Son terme de Coulomb est l'énergie d'une boule uniformément chargée, calculée avec le champ (5.7) dedans et (4.39) dehors ; il croît comme Z² et décroît comme le rayon." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      irm: { name: "Salles d'imagerie par résonance magnétique", text: "La salle d'examen est construite comme une cage de Faraday : les signaux radio extérieurs n'y entrent pas et ne faussent pas les mesures qui servent à faire l'image." },
+      noyaux: { name: "Énergie de liaison des noyaux", text: "Dans la formule semi-empirique, le coefficient du terme de Coulomb vaut environ 0,7\u00a0MeV dans les ajustements ; le modèle de la boule uniforme, (3/5) K e²/r0 avec r0 ≈ 1,25\u00a0fm, en donne une estimation voisine, 0,69\u00a0MeV." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      lineaire: { prompt: "Dans une boule uniformément chargée, on passe de r = R/4 à r = R/2. Le champ :",
+        options: { a: "est divisé par 4.", b: "double : (5.7), E ∝ r.", c: "ne change pas.", d: "est multiplié par 8, comme la charge intérieure." },
+        why: "La charge intérieure est multipliée par 8, l'aire de la sphère de Gauss par 4 : le champ double." },
+      dedans: { prompt: "Une coquille sphérique mince porte une charge uniforme. Où le champ est-il nul ?",
+        options: { a: "En tout point intérieur.", b: "Au centre seulement, par symétrie.", c: "Nulle part.", d: "Près de la paroi seulement." },
+        why: "Toute sphère de Gauss intérieure centrée ne contient aucune charge, et la symétrie impose sur elle un champ radial de même norme : il est nul, pour tout rayon intérieur." },
+      decentre: { prompt: "Un point est dans une coquille chargée, tout près de la paroi d'un côté. La charge proche le repousse fortement. Pourquoi le champ y est-il quand même nul ?",
+        options: { a: "Parce que la charge proche est petite.", b: "Parce que la paroi est conductrice.", c: "Il ne l'est pas : il n'est nul qu'au centre.", d: "Parce que la charge opposée, plus loin, est vue sous le même angle solide en plus grande quantité, et que le champ décroît exactement en 1/r²." },
+        hint: "Comparez, pour un petit cône issu du point, la charge interceptée de chaque côté et la distance.",
+        why: "Pour deux cônes opposés de même angle solide, la charge interceptée croît comme r² et son champ décroît comme 1/r² : ils se compensent. C'est l'argument de Newton pour la gravitation, et la somme de 2\u00a0000 charges de la figure le confirme." },
+      epaisse: { prompt: "Une coquille chargée uniformément entre R1 = R/2 et R. Que vaut le champ à r = R/4 ?",
+        options: { a: "Celui de (5.7), ρr/(3ε0).", b: "La moitié du champ extérieur.", c: "Zéro : la sphère de Gauss de rayon R/4 ne contient aucune charge.", d: "Celui d'une charge ponctuelle Q au centre." },
+        why: "Ce qui compte est la charge à l'intérieur de la sphère de Gauss. Sous R1, il n'y en a pas : le champ est nul, quelle que soit l'épaisseur de la paroi." },
+      subi: { prompt: "La paroi d'une coquille mince porte σ. Quel champ pousse une petite pièce de cette paroi ?",
+        options: { a: "σ/(2ε0), la moyenne de 0 dedans et σ/ε0 dehors.", b: "σ/ε0, le champ juste à l'extérieur.", c: "Zéro, le champ à l'intérieur.", d: "Aucun : une charge ne subit pas le champ d'une coquille." },
+        why: "La pièce crée elle-même ±σ/(2ε0) ; le reste de la coquille fournit σ/(2ε0) des deux côtés. Une charge ne se pousse pas elle-même : seul le champ des autres compte." },
+      pression: { prompt: "Une sphère conductrice de 10\u00a0cm est portée à 30\u00a0kV. Quelle force par mètre carré tire sa paroi vers l'extérieur ?",
+        options: { a: "Environ 300\u00a0kPa.", b: "Environ 0,4\u00a0Pa : ε0E²/2 avec E = 300\u00a0kV·m⁻¹.", c: "Environ 4\u00a0kPa.", d: "Zéro : le champ est nul dans le métal." },
+        hint: "σ = ε0E, et la force par unité d'aire vaut σ²/(2ε0).",
+        why: "E = φ/R = 3 × 10⁵\u00a0V·m⁻¹ ; 8,854 × 10⁻¹² × (3 × 10⁵)²/2 ≈ 0,40\u00a0Pa. Environ quatre millionièmes de la pression atmosphérique : les forces électrostatiques sur des objets macroscopiques sont faibles." },
+      noyau: { prompt: "On assimile le noyau de plomb 208, de rayon 7,4\u00a0fm, à une boule uniforme de 82 charges élémentaires. Que vaut le champ moyen à 3,7\u00a0fm du centre ?",
+        options: { a: "Le même qu'à la surface.", b: "Le quadruple de celui de la surface, en 1/r².", c: "La moitié de celui de la surface, environ 10²¹\u00a0V·m⁻¹.", d: "Zéro, comme dans une coquille." },
+        why: "(5.7) : E ∝ r à l'intérieur. À la surface, K × 82e/R² ≈ 2,2 × 10²¹\u00a0V·m⁻¹ ; à mi-rayon, la moitié." },
+      deux: { prompt: "Deux coquilles concentriques, de rayons 5\u00a0cm et 10\u00a0cm, portent chacune +1\u00a0nC. Que vaut le champ à 7\u00a0cm du centre ?",
+        options: { a: "Celui de 2\u00a0nC au centre.", b: "Zéro, on est entre deux coquilles.", c: "Celui de 1\u00a0nC à 3\u00a0cm, la paroi la plus proche.", d: "Celui de 1\u00a0nC au centre, environ 1,8\u00a0kV·m⁻¹ : la coquille extérieure ne crée rien à l'intérieur." },
+        why: "La sphère de Gauss de 7\u00a0cm ne contient que la coquille intérieure : K × 10⁻⁹/0,07² ≈ 1\u00a0830\u00a0V·m⁻¹. La coquille extérieure n'agit pas dedans." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 5 (texte original en anglais), §5-7. Exemples du noyau et de la sphère, et calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

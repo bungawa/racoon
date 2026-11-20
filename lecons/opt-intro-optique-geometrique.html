@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Introduction à l'optique géométrique</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-optique-geometrique" data-i18n="monde.optique-geometrique"></a><span class="aux">›</span><a href="/racoon/etape?id=opt-dioptre-lentille" data-i18n="etape.opt-dioptre-lentille"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-optique" href="/racoon/atlas?piste=optique" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/opt-fermat-enonce-precis" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="box def"><b data-i18n="s1.sys.title"></b>
+      <p data-i18n-html="s1.sys.body"></p>
+    </div>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>Δ</mi><mo>=</mo><msqrt><mrow><msup><mi>d</mi><mn>2</mn></msup><mo>+</mo><msup><mi>h</mi><mn>2</mn></msup></mrow></msqrt><mo>−</mo><mi>d</mi><mo>≈</mo><mfrac><msup><mi>h</mi><mn>2</mn></msup><mrow><mn>2</mn><mi>d</mi></mrow></mfrac></math><span class="n">(27.1)</span></div>
+    <p class="validite" data-i18n-html="val.27.1"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <figure class="chart">
+      <svg id="ecart" role="img" data-i18n-attr="aria-label:ex.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="ex.legend.ecart"></span><span class="c-warn" data-i18n="ex.legend.quart"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="dsl" data-i18n="ex.d"></label><output id="dread" for="dsl"></output></div>
+            <input id="dsl" type="range" min="-2" max="0" step="0.05" value="-1"></div>
+          <div class="ctl"><div class="row"><label for="hsl" data-i18n="ex.h"></label><output id="hread" for="hsl"></output></div>
+            <input id="hsl" type="range" min="-4" max="-1" step="0.05" value="-2"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="ex.k.exact"></span><span class="v" id="vexact"></span><span class="f" id="fapprox"></span></div>
+          <div class="stat"><span class="k" data-i18n="ex.k.ecart"></span><span class="v" id="vecart"></span><span class="f" id="fecart"></span></div>
+          <div class="stat"><span class="k" data-i18n="ex.k.zone"></span><span class="v" id="vzone"></span><span class="f" id="fzone"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="ex.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="box rem"><b data-i18n="s3.rem.title"></b>
+      <p data-i18n-html="s3.rem.body"></p>
+    </div>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/opt-intro-optique-geometrique.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/optique-geometrique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), O = OptiqueGeometrique, LAMBDA = 550e-9;
+
+/* ---------- (27.1) : l'erreur de h²/2d, en longueurs d'onde, contre le quart d'onde ---------- */
+(() => {
+  const svg = $("ecart"), ds = $("dsl"), hs = $("hsl"), H = [1e-4, 1e-1];
+  const mm = v => F.si(v, "m", { prefix: "m", sig: 3 });
+  function draw() {
+    svg.innerHTML = "";
+    const d = Math.pow(10, +ds.value), h = Math.pow(10, +hs.value), e = O.exces(h, d), hz = O.hParaxial(d, LAMBDA);
+    const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 300, x: { scale: "log", domain: H, label: t("ex.x") }, y: { scale: "log", domain: [1e-6, 1e4], label: t("ex.y") } });
+    const pts = [];
+    for (let k = 0; k <= 120; k++) { const hv = H[0] * Math.pow(H[1] / H[0], k / 120), r = Math.abs(O.exces(hv, d).ecart) / LAMBDA; if (r > 1e-6 && r < 1e4) pts.push([x(hv), y(r)]); }
+    Plot.el("path", { d: Plot.path(pts), class: "curve" }, g);
+    Plot.el("line", { x1: x(H[0]), x2: x(H[1]), y1: y(0.25), y2: y(0.25), class: "ref" }, g);
+    if (hz > H[0] && hz < H[1]) Plot.el("line", { x1: x(hz), x2: x(hz), y1: y(1e-6), y2: y(1e4), class: "zero" }, g);
+    const r = Math.abs(e.ecart) / LAMBDA;
+    if (r > 1e-6 && r < 1e4) Plot.el("circle", { cx: x(h), cy: y(r), r: 5, class: "dot" }, g);
+    $("dread").textContent = mm(d);
+    $("hread").textContent = mm(h);
+    $("vexact").textContent = F.si(e.exact, "m", { sig: 4 });
+    $("fapprox").textContent = t("ex.f.approx", { approx: F.si(e.approx, "m", { sig: 4 }) });
+    $("vecart").textContent = F.si(Math.abs(e.ecart), "m", { sig: 2 });
+    $("fecart").textContent = t("ex.f.ecart", { l: F.num(r, 2) });
+    $("vzone").textContent = mm(hz);
+    $("fzone").textContent = t(h < hz ? "ex.f.dedans" : "ex.f.dehors");
+  }
+  ds.oninput = draw; hs.oninput = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["haytham", 1011, "idea", "1011–1021"], ["hamilton", 1827, "idea"], ["gauss", 1841, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind, label]) => Object.assign({ year, kind }, label ? { label } : {}, txt[id])), { t });
+  const USES = ["conception", "lunettes"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["rayon", "c"], ["exces", "a"], ["quart", "d"], ["sphere", "b"], ["gauss", "a"], ["trace", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 271 });
+})();
+</script>
+</body>
+</html>

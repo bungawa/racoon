@@ -1,0 +1,103 @@
+/* Leçon « Le champ de force nucléaire » (Feynman II.28.6) : textes en français.
+   Une autre langue = locales/<langue>/lecons/champ-de-force-nucleaire.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Le champ de force nucléaire",
+    "crumb.jour": "Le champ de force nucléaire",
+    "h1": "Le champ de force nucléaire",
+    "lede": "La force nucléaire est intense mais s'éteint au-delà d'un femtomètre ou deux, quand la force électrique ne s'éteint jamais. En ajoutant un seul terme à l'équation d'onde du champ électromagnétique, Yukawa obtint un champ de courte portée, et la masse de son quantum : celle du pion.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : tentatives de modifier la théorie de Maxwell",
+
+    "s1.sec": "Par analogie",
+    "s1.h2": "Un champ dont la portée est finie",
+    "s1.p1": "La masse des nucléons n'est électromagnétique que pour une petite part, celle que mesurent les écarts entre particules sœurs de « Tentatives de modifier la théorie de Maxwell ». Le reste pourrait venir de l'énergie d'un autre champ, celui des forces nucléaires, beaucoup plus intenses. Ces forces ont leur propre théorie de champ, bâtie par analogie avec l'électrodynamique. En électrodynamique, le quadripotentiel obéit à □<sup>2</sup><var>A</var><sub>μ</sub> = sources, où □<sup>2</sup> = (1/<var>c</var><sup>2</sup>)∂<sup>2</sup>/∂<var>t</var><sup>2</sup> \u2212 ∇<sup>2</sup> est l'opérateur de « L'électrodynamique en notation quadridimensionnelle ». Loin des sources, □<sup>2</sup><var>A</var><sub>μ</sub> = 0 décrit des ondes libres : les photons.",
+    "s1.p2": "Le champ nucléaire devrait avoir ses propres « photons ». Le pion n'a pas de polarisation : son champ φ est un scalaire. Mais □<sup>2</sup>φ = 0 donnerait un potentiel en 1/<var>r</var> autour d'une source immobile, de portée infinie comme celui de Coulomb. Pour raccourcir la portée sans perdre l'invariance relativiste, Yukawa ajouta à l'opérateur une constante invariante fois φ :",
+    "val.28.17": "Approximation : c'est un modèle, celui d'un champ scalaire libre, linéaire et classique, avec □<sup>2</sup> = (1/<var>c</var><sup>2</sup>)∂<sup>2</sup>/∂<var>t</var><sup>2</sup> \u2212 ∇<sup>2</sup>. μ<sup>2</sup> est un scalaire invariant. Les forces nucléaires réelles ne s'y réduisent pas : à moins d'un femtomètre environ, la structure des nucléons compte, et la théorie actuelle des interactions fortes est celle des quarks et des gluons.",
+
+    "s2.sec": "La solution statique",
+    "s2.h2": "Le potentiel de Yukawa",
+    "s2.p1": "Cherchons le champ d'une source ponctuelle immobile, placée à l'origine. Rien ne dépend du temps, et (28.17) devient",
+    "val.28.17a": "Exacte à partir de (28.17) pour un champ indépendant du temps, partout hors de la source. Elle suppose la source immobile ; un nucléon d'un noyau bouge, et son mouvement corrige le potentiel.",
+    "s2.p2": "Pour une solution à symétrie sphérique, ∇<sup>2</sup>φ = (1/<var>r</var>)∂<sup>2</sup>(<var>r</var>φ)/∂<var>r</var><sup>2</sup>. En prenant <var>r</var>φ pour inconnue :",
+    "val.28.17b": "Exacte : c'est (28.17a) pour φ ne dépendant que de <var>r</var>, en dehors de l'origine.",
+    "s2.p3": "C'est l'équation d'une exponentielle : <var>r</var>φ = <var>K</var>e<sup>±μ<var>r</var></sup>. Le signe + ferait croître φ sans limite loin de la source ; il reste",
+    "val.28.18": "Exacte pour une source ponctuelle immobile du champ de (28.17), à toute distance non nulle. <var>K</var> se règle sur l'intensité mesurée des forces ; il est négatif pour une attraction. Le modèle cesse de valoir à la taille des nucléons, voisine de la portée elle-même : voir le système décrit plus bas.",
+    "s2.p4": "C'est le potentiel de Yukawa. À courte distance, μ<var>r</var> ≪ 1, il se confond avec un potentiel de Coulomb en 1/<var>r</var>. Au-delà de 1/μ, l'exponentielle l'éteint : à 3/μ, il ne vaut plus que 5\u00a0% du potentiel de Coulomb de même <var>K</var>, à 10/μ, 4,5 × 10<sup>\u22125</sup>. La longueur 1/μ est la portée. L'expérience montre que les forces nucléaires ne s'étendent guère au-delà de 10<sup>\u221215</sup>\u00a0m : μ ≈ 10<sup>15</sup>\u00a0m<sup>\u22121</sup>.",
+
+    "s3.sec": "Les ondes libres",
+    "s3.h2": "La masse du quantum",
+    "s3.p1": "Loin de toute source, (28.17) admet des ondes planes φ = φ<sub>0</sub>e<sup><var>i</var>(ω<var>t</var> \u2212 <var>k</var><var>z</var>)</sup>, à condition que",
+    "val.28.17c": "Exacte pour une onde plane du champ libre de (28.17). Pour μ = 0, on retrouve ω = <var>k</var><var>c</var>, la lumière. Pour μ > 0, aucune onde de pulsation inférieure à μ<var>c</var> ne se propage : c'est la relation de dispersion d'un plasma, ω<sup>2</sup> = ω<sub>p</sub><sup>2</sup> + <var>k</var><sup>2</sup><var>c</var><sup>2</sup>, avec μ<var>c</var> à la place de ω<sub>p</sub>.",
+    "s3.p2": "La mécanique quantique associe à l'onde une particule d'énergie <var>E</var> = ħω et d'impulsion <var>p</var> = ħ<var>k</var>. La relation devient celle d'une particule de masse <var>m</var> :",
+    "val.28.17d": "Exacte, une fois admises les relations <var>E</var> = ħω et <var>p</var> = ħ<var>k</var> de la mécanique quantique : c'est la relation entre énergie et impulsion de la relativité restreinte pour une masse μħ/<var>c</var>. Ce qui est approché, c'est le lien entre μ et une portée mesurée, qui n'est connue qu'en ordre de grandeur.",
+    "fig.aria": "Potentiel de Yukawa et potentiel de Coulomb en fonction de la distance, pour la portée choisie",
+    "fig.legend.yukawa": "Yukawa, e^(\u2212r/R)/r",
+    "fig.legend.coulomb": "Coulomb, 1/r",
+    "fig.r": "Portée R = 1/μ",
+    "fig.xaxis": "distance r (fm)",
+    "fig.yaxis": "potentiel × 1 fm / K",
+    "fig.k.masse": "Énergie de masse du quantum, ħ<var>c</var>/<var>R</var>",
+    "fig.f.masse": "masse {kg}",
+    "fig.k.pion": "Rapport à la masse du pion chargé",
+    "fig.f.pion": "139,57 MeV, Particle Data Group 2024",
+    "fig.k.reste": "Yukawa / Coulomb à 2\u00a0fm",
+    "fig.f.reste": "ce qui reste de la force à la distance de deux nucléons voisins",
+    "fig.caption": "Les deux potentiels, de même constante <var>K</var>, en échelle logarithmique. Avec la portée 1\u00a0fm de l'estimation, le quantum aurait une énergie de masse de 197\u00a0MeV ; avec 1,41\u00a0fm, c'est exactement le pion chargé. Une portée dix fois plus courte donne une particule dix fois plus lourde. Descendez à 0,0025\u00a0fm : c'est la portée de l'interaction faible, dont le boson W a une énergie de masse de 80,4\u00a0GeV.",
+    "s3.p3": "Avec μ = 10<sup>15</sup>\u00a0m<sup>\u22121</sup>, la masse vaut 3,5 × 10<sup>\u221228</sup>\u00a0kg, soit 197\u00a0MeV. Le pion chargé a une énergie de masse de 139,57\u00a0MeV, le pion neutre de 134,98\u00a0MeV : le bon ordre de grandeur, pour une portée qu'on ne connaissait qu'à un facteur près. Par analogie avec l'électrodynamique, le pion est le « photon » du champ nucléaire. Un photon de masse nulle donne une force de portée infinie ; un quantum massif, une force de portée ħ/(<var>m</var><var>c</var>). Le même lien entre masse et portée revient, avec la mécanique quantique, dans « Les forces nucléaires ».",
+
+    "s4.sec": "Jusqu'où va l'analogie",
+    "s4.h2": "Une théorie de champ poussée hors de son domaine",
+    "s4.p1": "On a appliqué les idées de l'électrodynamique là où rien ne garantit qu'elles valent. Le champ de Yukawa donne aussi une énergie de champ, donc une masse « mésique » des nucléons, sans doute grande puisque les forces le sont. Mais si l'électrodynamique, bien établie, ne parvient pas à expliquer la masse de l'électron, la théorie des mésons, bien plus rudimentaire, ne peut pas faire mieux pour celle des nucléons.",
+    "sys.title": "Le système décrit : un nucléon, source du champ",
+    "sys1.body": "Le pion chargé fixe la portée <var>R</var> = ħ/(<var>m</var><sub>π</sub><var>c</var>) = {R}. La source de (28.18) est un point immobile. Un proton a un rayon de charge de {rp}, soit {x} fois la portée : le potentiel de Yukawa d'une source ponctuelle ne vaut que loin du nucléon, à quelques portées, là où sa taille devient petite devant la distance. Le nucléon est {n} fois plus lourd que le pion : il recule peu quand il émet ou absorbe le quantum, et le traiter comme une source fixe est une bonne première approximation.",
+    "s4.p2": "Le modèle a gardé une part de vrai. La partie la plus lointaine de la force entre nucléons est bien due à l'échange d'un pion, le plus léger des mésons, et elle en a la portée. Plus près, des mésons plus lourds prennent le relais, de portée plus courte : le ρ et le ω, vers 780\u00a0MeV, agissent sur quelques dixièmes de femtomètre. Plus près encore, il faut les quarks : c'est l'objet de la chromodynamique quantique. Les forces nucléaires vues comme forces de contact sont dans « Forces nucléaires ».",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Une particule prédite, puis cherchée dix ans",
+    "hist.intro": "Yukawa déduisit une masse d'une portée. La particule qui avait la bonne masse ne fut pas, d'abord, la bonne particule.",
+    "hist.events": {
+      yukawa: { who: "Hideki Yukawa", what: "publie « On the Interaction of Elementary Particles. I » dans les Proceedings of the Physico-Mathematical Society of Japan.", context: "Un champ de portée finie, dont le quantum aurait une masse de l'ordre de deux cents fois celle de l'électron. Il avait présenté l'idée l'année précédente devant la Société physico-mathématique du Japon." },
+      muon: { who: "Seth Neddermeyer et Carl Anderson", what: "annoncent dans la Physical Review des particules du rayonnement cosmique plus lourdes que l'électron et plus légères que le proton.", context: "On les prit pour le méson de Yukawa. Mais ces particules, les muons, ne subissent pas l'interaction forte : ce sont des cousins de l'électron." },
+      pion: { who: "César Lattes, Hugh Muirhead, Giuseppe Occhialini et Cecil Powell", what: "publient le 24 mai dans Nature des traces de mésons lents dans des émulsions photographiques exposées au rayonnement cosmique.", context: "Avec les articles qui suivent la même année, c'est la découverte du pion, le méson de Yukawa, qui se désintègre en muon." },
+      nobel: { who: "Hideki Yukawa", what: "reçoit seul le prix Nobel de physique, pour sa prédiction des mésons à partir de travaux théoriques sur les forces nucléaires.", context: "Powell le reçoit l'année suivante pour la méthode photographique et ses découvertes sur les mésons." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      psi: { name: "Faisceaux de pions et de muons", text: "À l'Institut Paul Scherrer, en Suisse, un faisceau de protons de 590\u00a0MeV et d'une puissance qui atteint 1,4\u00a0MW frappe des cibles et y crée des pions en abondance. Leurs désintégrations donnent des faisceaux de muons parmi les plus intenses au monde. Avec des muons négatifs, une équipe y a mesuré en 2010 le rayon du proton dans l'hydrogène muonique, plus petit qu'on ne le pensait." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      portee: { prompt: "Que change le terme \u2212μ²φ ajouté à l'équation d'onde dans (28.17) ?",
+        options: { a: "Il rend le champ vectoriel au lieu de scalaire.", b: "Il brise l'invariance relativiste.", c: "Il donne au potentiel d'une source immobile une portée finie, 1/μ.", d: "Il rend l'équation non linéaire." },
+        why: "μ² est un scalaire invariant : l'équation reste relativiste. Le potentiel statique devient K e^(\u2212μr)/r au lieu de K/r : il s'éteint au-delà de 1/μ." },
+      signe: { prompt: "Dans la solution rφ = K e^(±μr), pourquoi garde-t-on le signe moins ?",
+        options: { a: "Parce que le champ ne peut pas devenir infini loin de la source.", b: "Parce que la force est attractive.", c: "Parce que K est négatif.", d: "Parce que le signe plus ne vérifie pas l'équation." },
+        why: "Les deux signes vérifient (28.17b). Mais e^(+μr)/r croît sans limite à grande distance, ce qui n'a pas de sens pour le champ d'une source locale. Le signe de K, lui, dit si la force attire ou repousse." },
+      masse: { prompt: "La portée d'une force est R = 1,4\u00a0fm. Quelle est l'énergie de masse de son quantum ? (ħc = 197\u00a0MeV·fm)",
+        options: { a: "1,4\u00a0MeV.", b: "276\u00a0MeV.", c: "0,511\u00a0MeV.", d: "Environ 140\u00a0MeV." },
+        hint: "m c² = ħc/R.",
+        why: "197/1,4 ≈ 141\u00a0MeV : la masse du pion. Plus la portée est courte, plus le quantum est lourd." },
+      w: { prompt: "Le boson W, quantum de l'interaction faible, a une énergie de masse de 80,4\u00a0GeV. Quelle est la portée de cette interaction ?",
+        options: { a: "Environ 1\u00a0fm, comme la force nucléaire.", b: "Environ 2,5 × 10⁻³\u00a0fm.", c: "Infinie, comme celle de la force électrique.", d: "Environ 400\u00a0fm." },
+        why: "R = ħc/(m c²) = 197\u00a0MeV·fm / 80 400\u00a0MeV ≈ 2,5 × 10⁻³\u00a0fm. Le W est 576 fois plus lourd que le pion : sa portée est 576 fois plus courte." },
+      coulomb: { prompt: "À une distance r très inférieure à la portée 1/μ, à quoi ressemble le potentiel de Yukawa ?",
+        options: { a: "À un potentiel de Coulomb en K/r.", b: "À une constante.", c: "À une exponentielle pure.", d: "Il est nul." },
+        why: "Pour μr ≪ 1, e^(\u2212μr) ≈ 1 : φ ≈ K/r. L'exponentielle n'agit qu'au-delà de la portée." },
+      source: { prompt: "Pourquoi le potentiel de Yukawa d'une source ponctuelle ne décrit-il pas bien la force à moins d'un femtomètre ?",
+        options: { a: "Parce que le pion y devient plus léger.", b: "Parce que la force électrique y domine.", c: "Parce que le nucléon, de rayon voisin de 0,84\u00a0fm, n'y est plus petit devant la distance, et que d'autres mésons plus lourds y comptent.", d: "Parce que la vitesse de la lumière y est plus faible." },
+        why: "Le modèle suppose une source ponctuelle immobile. La portée du pion, 1,4\u00a0fm, n'est pas grande devant la taille du nucléon : seule la partie lointaine de la force a la forme de Yukawa." },
+      muon: { prompt: "Le muon, découvert en 1937, a une masse voisine de celle prédite par Yukawa. Pourquoi n'est-ce pas le quantum du champ nucléaire ?",
+        options: { a: "Parce qu'il est trop lourd.", b: "Parce qu'il ne subit pas l'interaction forte : il traverse la matière sans être absorbé par les noyaux.", c: "Parce qu'il est électriquement neutre.", d: "Parce qu'il n'existe que dans les accélérateurs." },
+        why: "Le quantum de la force nucléaire doit interagir fortement avec les nucléons. Le muon se comporte comme un électron lourd. Le vrai méson de Yukawa, le pion, a été trouvé en 1947." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 28, §28-6 (texte original en anglais). Notations SI. Pour μ = 10<sup>15</sup>\u00a0m<sup>\u22121</sup>, Feynman écrit 3 × 10<sup>\u221225</sup>\u00a0g, soit 170\u00a0MeV : il arrondit la masse vers le bas ; ħμ/<var>c</var> donne 3,5 × 10<sup>\u221228</sup>\u00a0kg, soit 197\u00a0MeV (ħ<var>c</var> = 197,3\u00a0MeV·fm). Yukawa : <i>Proceedings of the Physico-Mathematical Society of Japan</i>, vol. 17, 1935 ; archives Yukawa de l'université d'Osaka. Neddermeyer et Anderson : <i>Physical Review</i>, vol. 51, 1937. Lattes, Muirhead, Occhialini et Powell : <i>Nature</i>, vol. 159, 1947. Prix Nobel 1949 : nobelprize.org. Masses du pion, du boson W et des mésons ρ et ω : Particle Data Group, 2024. ħ<var>c</var> et rayon du proton : CODATA 2022. Institut Paul Scherrer : <i>SciPost Physics Proceedings</i>, vol. 5, 2021, et Wikipédia, « Paul Scherrer Institute ». Calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

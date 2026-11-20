@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Comparer les solides par leurs données physiques</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-architecture" data-i18n="monde.chim-architecture"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-types-cristaux" data-i18n="etape.chim-types-cristaux"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/quatre-types-de-cristaux" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>X</mi><mi mathvariant="normal">f</mi></msub><mo>=</mo><mfrac><msub><mi>E</mi><mtext data-i18n="eq.coh"></mtext></msub><mrow><mi>R</mi><msub><mi>T</mi><mi mathvariant="normal">f</mi></msub></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.xf"></p>
+    <figure class="chart">
+      <svg class="fig" id="carte" role="img" data-i18n-attr="aria-label:ca.aria"></svg>
+      <div class="panel">
+        <div class="seg" id="filtre" role="group" data-i18n-attr="aria-label:ca.filtre">
+          <button type="button" data-f="tous" data-i18n="ca.tous"></button><button type="button" data-f="metallique" data-i18n="type.metallique"></button><button type="button" data-f="ionique" data-i18n="type.ionique"></button><button type="button" data-f="covalent" data-i18n="type.covalent"></button><button type="button" data-f="moleculaire" data-i18n="type.moleculaire"></button>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="ca.k.xf"></span><span class="v" id="vxf"></span><span class="f" id="fxf"></span></div>
+        </div>
+      </div>
+      <div class="legend"><span class="c-tint" data-i18n="type.metallique"></span><span class="el-o" data-i18n="type.ionique"></span><span class="c-ok" data-i18n="type.covalent"></span><span class="c-warn" data-i18n="type.moleculaire"></span></div>
+      <figcaption data-i18n-html="ca.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="list keyed" id="regles"></div>
+    <div class="panel">
+      <div class="stats">
+        <div class="stat"><span class="k" data-i18n="id.k.tf"></span><span class="v" id="itf"></span></div>
+        <div class="stat"><span class="k" data-i18n="id.k.solide"></span><span class="v" id="isolide"></span></div>
+        <div class="stat"><span class="k" data-i18n="id.k.liquide"></span><span class="v" id="iliquide"></span></div>
+        <div class="stat"><span class="k" data-i18n="id.k.eau"></span><span class="v" id="ieau"></span></div>
+        <div class="stat"><span class="k" data-i18n="id.k.marteau"></span><span class="v" id="imarteau"></span></div>
+      </div>
+      <div class="seg" id="reponses" role="group" data-i18n-attr="aria-label:id.choix">
+        <button type="button" data-r="metallique" data-i18n="type.metallique"></button><button type="button" data-r="ionique" data-i18n="type.ionique"></button><button type="button" data-r="covalent" data-i18n="type.covalent"></button><button type="button" data-r="moleculaire" data-i18n="type.moleculaire"></button>
+      </div>
+      <div class="controls"><button class="btn tinted" type="button" id="suivant" data-i18n="id.suivant"></button></div>
+    </div>
+    <p id="verdict" aria-live="polite"></p>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="list keyed" id="limites"></div>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/comparer-les-solides.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/quantique-amplitudes.js"></script>
+<script src="/racoon/quantique-schrodinger.js"></script>
+<script src="/racoon/lecons/tableau-periodique-quantique.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = Plot.el, CA = ChimArchi;
+const seg = (el, attr, cb) => { const bs = [...el.querySelectorAll("button")];
+  const pick = b => { bs.forEach(x => x.setAttribute("aria-pressed", String(x === b))); cb(b.dataset[attr]); };
+  bs.forEach(b => b.onclick = () => pick(b)); return { pick: i => pick(bs[i]), clear: () => bs.forEach(x => x.setAttribute("aria-pressed", "false")) }; };
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+const CLS = { metallique: "c-tint", ionique: "el-o", covalent: "c-ok", moleculaire: "c-warn" };
+const S = CA.SOLIDES, NOM = textOf("sol.nom", S.map(s => s.id)), LONG = textOf("sol.long", S.map(s => s.id));
+
+/* ---------- la carte énergie de cohésion – température de fusion ---------- */
+(() => {
+  const svg = $("carte");
+  const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 340, pad: { b: 44 }, x: { scale: "log", domain: [30, 4000], label: t("ca.x") },
+    y: { scale: "log", domain: [200, 3000], label: t("ca.y") } });
+  [20, 50, 150].forEach(X => {                                  // droites X_f constant : T_f = E/(R X_f), coupées au cadre
+    const RX = Constantes.R * X / 1e3, E0 = Math.max(30, 200 * RX), E1 = Math.min(4000, 3000 * RX);
+    P("path", { d: Plot.path([E0, E1].map(E => [x(E), y(E / RX)])), class: "stroke thin dash" }, P("g", { class: "c-label-2" }, g));
+    P("text", { x: x(E1) - 40, y: y(E1 / RX) + 14, class: "note" }, g).textContent = t("ca.ligne", { x: X });
+  });
+  const pts = S.map(s => { const gp = P("g", { class: CLS[s.type] }, g);
+    P("circle", { cx: x(s.E / 1e3), cy: y(s.Tf), r: 5, class: "fill" }, gp);
+    P("text", { x: x(s.E / 1e3) + 7, y: y(s.Tf) + 4, class: "note" }, gp).textContent = NOM[s.id];
+    return { s, gp }; });
+  seg($("filtre"), "f", f => {
+    pts.forEach(({ s, gp }) => gp.setAttribute("opacity", f === "tous" || f === s.type ? 1 : 0.15));
+    const xs = S.filter(s => f === "tous" || s.type === f).map(s => CA.cohesionSurRT(s.E, s.Tf));
+    $("vxf").textContent = t("ca.v", { a: F.num(Math.min(...xs), 2), b: F.num(Math.max(...xs), 2) });
+    $("fxf").textContent = t("ca.f." + f, { n: xs.length });
+  }).pick(0);
+})();
+
+/* ---------- identifier un solide ---------- */
+(() => {
+  const IDS = ["r1", "r2", "r3", "r4"]; keyed($("regles"), t("reg.tag"), IDS, textOf("reg.items", IDS));
+  const rand = Quiz.rng(23), ordre = S.map((s, i) => i).sort(() => rand() - 0.5);
+  let k = 0, fait = false;
+  const rep = seg($("reponses"), "r", r => {
+    if (fait) return;
+    fait = true;
+    const s = S[ordre[k]], devine = CA.typeDevine(s);
+    $("verdict").innerHTML = t(r === s.type ? "id.juste" : "id.faux", { nom: LONG[s.id], type: t("type." + s.type), regle: t("id.regle." + devine),
+      x: F.num(CA.cohesionSurRT(s.E, s.Tf), 2) });
+  });
+  function montre() {
+    const s = S[ordre[k]]; fait = false; rep.clear();
+    $("itf").innerHTML = F.kelvin(s.Tf);
+    const V = t("id.v"); ["solide", "liquide", "eau", "marteau"].forEach(p => { $("i" + p).textContent = V[p][s[p]]; });
+    $("verdict").textContent = t("id.attente", { i: k + 1, n: S.length });
+  }
+  $("suivant").onclick = () => { k = (k + 1) % S.length; montre(); };
+  montre();
+})();
+
+/* ---------- limites ---------- */
+(() => { const IDS = ["graphite", "mercure", "glace", "agcl"]; keyed($("limites"), t("lim.tag"), IDS, textOf("lim.items", IDS)); })();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["mohs", 1812, "idea"], ["lindemann", 1910, "idea"], ["pauling", 1932, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["refractaire", "inconnu"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["iode", "c"], ["silicium", "a"], ["cuivre", "d"], ["xf", "b"], ["sel", "a"], ["graphite", "c"], ["inconnu", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 97 });
+})();
+</script>
+</body>
+</html>

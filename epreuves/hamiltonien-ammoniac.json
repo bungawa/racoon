@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["compose", "a"],
+  ["euler", "b"],
+  ["hermitienne", "c"],
+  ["stationnaire", "d"],
+  ["melange", "a"],
+  ["doublet", "b"],
+  ["periode", "c"],
+  ["phase", "d"]
+ ]
+}

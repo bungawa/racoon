@@ -1,0 +1,17 @@
+/* Épreuve de l'étape « Supraconductivité » : textes en français. */
+(function (root) {
+  const T = {
+    "epreuve.items": {
+      paires: {"prompt": "Pourquoi les électrons d'un supraconducteur peuvent-ils tous se placer dans un seul état ?", "options": {"a": "Parce qu'ils s'apparient, et qu'une paire de spin entier est un boson.", "b": "Parce que le principe d'exclusion cesse sous Tc.", "c": "Parce qu'ils deviennent neutres.", "d": "Parce que le réseau cesse de vibrer."}, "why": "Les électrons restent des fermions ; les paires, bosons, se condensent. Leçon « La supraconductivité »."},
+      azote: {"prompt": "Lequel de ces matériaux est supraconducteur dans l'azote liquide à 77 K ?", "options": {"a": "Le plomb (Tc ≈ 7 K).", "b": "Le nitrure de niobium (Tc ≈ 16 K).", "c": "Le mercure (Tc ≈ 4,2 K).", "d": "L'oxyde d'yttrium, de baryum et de cuivre (Tc ≈ 92 K)."}, "why": "Seul un matériau de Tc supérieure à 77 K l'est : les cuprates découverts en 1987. Leçon « La supraconductivité »."},
+      london: {"prompt": "La longueur de pénétration du modèle de London vaut √(m/(μ₀ n q²)). Pour n = 1,5 × 10²⁸ paires par m³, de charge 2e et de masse 2mₑ, elle vaut environ :", "options": {"a": "3 µm.", "b": "30 nm.", "c": "0,3 nm.", "d": "3 mm."}, "why": "√(1,82 × 10⁻³⁰/(1,26 × 10⁻⁶ × 1,5 × 10²⁸ × 1,03 × 10⁻³⁷)) ≈ 3,1 × 10⁻⁸ m. Leçon « L'effet Meissner »."},
+      meissner: {"prompt": "Un métal est refroidi sous Tc dans un champ magnétique. Que fait le champ dans sa masse ?", "options": {"a": "Il reste piégé, comme dans un conducteur parfait.", "b": "Il double.", "c": "Il est expulsé : il ne subsiste que dans une couche de l'ordre de la longueur de pénétration.", "d": "Il tourne."}, "why": "(21.23) : B décroît exponentiellement sous la surface ; l'état final ne dépend pas de l'histoire. Leçon « L'effet Meissner »."},
+      quantum: {"prompt": "Un anneau épais piège 5 quanta de flux. Quel flux traverse son trou ?", "options": {"a": "1,03 × 10⁻¹⁴ Wb.", "b": "2,07 × 10⁻¹⁴ Wb.", "c": "5 × 10⁻¹⁵ Wb.", "d": "4,14 × 10⁻¹⁵ Wb."}, "why": "5 × h/2e = 5 × 2,07 × 10⁻¹⁵ ≈ 1,03 × 10⁻¹⁴ Wb. Leçon « La quantification du flux »."},
+      facteur: {"prompt": "Qu'ont montré les mesures de 1961 sur le flux piégé ?", "options": {"a": "Que le flux n'est pas quantifié.", "b": "Un quantum h/e, comme prévu par London.", "c": "Un quantum h/2e : les porteurs ont la charge 2e.", "d": "Un quantum h/4e."}, "why": "Deaver et Fairbank, Doll et Näbauer : h/2e, la moitié de la prévision de London. Leçon « La quantification du flux »."},
+      rotation: {"prompt": "Une sphère supraconductrice tourne à 1000 rad·s⁻¹. D'après (21.39), quel champ règne dans sa masse ?", "options": {"a": "1,1 × 10⁻⁸ T.", "b": "0.", "c": "1,1 × 10⁻¹¹ T.", "d": "5 × 10⁻⁵ T."}, "why": "rot v = 2ω = \u2212(q/m)B, donc B = (2mₑ/e)ω ≈ 1,14 × 10⁻¹¹ × 1000 T : le moment de London. Leçon « La dynamique de la supraconductivité »."},
+      josephson: {"prompt": "Une jonction Josephson, irradiée à 10 GHz, montre des marches de tension. Quel est leur espacement ?", "options": {"a": "10 µV.", "b": "41 µV.", "c": "4,8 µV.", "d": "20,7 µV."}, "why": "hf/2e = 10¹⁰/(483,6 × 10¹²) ≈ 2,07 × 10⁻⁵ V. Leçon « La jonction Josephson »."},
+    },
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else (root.LOCALES = root.LOCALES || {}).fr = Object.assign((root.LOCALES || {}).fr || {}, T);
+})(typeof self !== "undefined" ? self : this);

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Propagation dans un plasma et ionosphère</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-ondes-milieux" data-i18n="monde.ondes-milieux"></a><span class="aux">›</span><a href="/racoon/etape?id=plasmas" data-i18n="etape.plasmas"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/modele-du-plasma" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><msup><mi>k</mi><mn>2</mn></msup><mo>=</mo><mfrac><mrow><msup><mi>ω</mi><mn>2</mn></msup><mo>−</mo><msubsup><mi>ω</mi><mi mathvariant="normal">p</mi><mn>2</mn></msubsup></mrow><msup><mi>c</mi><mn>2</mn></msup></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.dispersion"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>v</mi><mi>φ</mi></msub><mo>=</mo><mfrac><mi>ω</mi><mi>k</mi></mfrac><mo>=</mo><mfrac><mi>c</mi><msqrt><mrow><mn>1</mn><mo>−</mo><msubsup><mi>ω</mi><mi mathvariant="normal">p</mi><mn>2</mn></msubsup><mo>/</mo><msup><mi>ω</mi><mn>2</mn></msup></mrow></msqrt></mfrac><mo>,</mo><mspace width="1em"/><msub><mi>v</mi><mi mathvariant="normal">g</mi></msub><mo>=</mo><mfrac><mrow><mi mathvariant="normal">d</mi><mi>ω</mi></mrow><mrow><mi mathvariant="normal">d</mi><mi>k</mi></mrow></mfrac><mo>=</mo><mi>c</mi><msqrt><mrow><mn>1</mn><mo>−</mo><msubsup><mi>ω</mi><mi mathvariant="normal">p</mi><mn>2</mn></msubsup><mo>/</mo><msup><mi>ω</mi><mn>2</mn></msup></mrow></msqrt><mo>,</mo><mspace width="1em"/><msub><mi>v</mi><mi>φ</mi></msub><msub><mi>v</mi><mi mathvariant="normal">g</mi></msub><mo>=</mo><msup><mi>c</mi><mn>2</mn></msup></math></div>
+    <p class="validite" data-i18n-html="val.vitesses"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><munder><mi>E</mi><mo>_</mo></munder><mo>=</mo><msub><munder><mi>E</mi><mo>_</mo></munder><mn>0</mn></msub><msup><mi mathvariant="normal">e</mi><mrow><mo>−</mo><mi>z</mi><mo>/</mo><mi>δ</mi></mrow></msup><msup><mi mathvariant="normal">e</mi><mrow><mi>i</mi><mi>ω</mi><mi>t</mi></mrow></msup><mo>,</mo><mspace width="1em"/><mi>δ</mi><mo>=</mo><mfrac><mi>c</mi><msqrt><mrow><msubsup><mi>ω</mi><mi mathvariant="normal">p</mi><mn>2</mn></msubsup><mo>−</mo><msup><mi>ω</mi><mn>2</mn></msup></mrow></msqrt></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.evanescente"></p>
+    <figure class="chart">
+      <svg class="fig" id="disp" role="img" data-i18n-attr="aria-label:disp.aria"></svg>
+      <svg class="fig" id="champ" role="img" data-i18n-attr="aria-label:champ.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="disp.legend.plasma"></span><span class="c-label-2" data-i18n="disp.legend.vide"></span><span class="c-warn" data-i18n="disp.legend.point"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="df" data-i18n="disp.f"></label><output id="dfo" for="df"></output></div>
+            <input id="df" type="range" min="6" max="8" step="0.005" value="6.85"></div>
+          <div class="ctl"><div class="row"><label for="dn" data-i18n="disp.n"></label><output id="dno" for="dn"></output></div>
+            <input id="dn" type="range" min="10" max="13" step="0.01" value="12"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="disp.k.regime"></span><span class="v" id="vreg"></span><span class="f" id="freg"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="disp.k.vphi"></span><span class="v" id="vvphi"></span><span class="f" id="fvphi"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="disp.k.long"></span><span class="v" id="vlong"></span><span class="f" id="flong"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="disp.k.R"></span><span class="v" id="vR"></span><span class="f" id="fR"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="disp.caption"></figcaption>
+    </figure>
+    <div class="box warn"><b data-i18n="s2.warn.title"></b>
+      <p data-i18n-html="s2.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msup><mi>h</mi><mo>′</mo></msup><mo>=</mo><mfrac><mrow><mi>c</mi><msub><mi>t</mi><mi data-i18n="eq.echo"></mi></msub></mrow><mn>2</mn></mfrac><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><msub><mi>z</mi><mi mathvariant="normal">r</mi></msub></msubsup><mfrac><mrow><mi mathvariant="normal">d</mi><mi>z</mi></mrow><msqrt><mrow><mn>1</mn><mo>−</mo><msubsup><mi>f</mi><mi mathvariant="normal">p</mi><mn>2</mn></msubsup><mo>(</mo><mi>z</mi><mo>)</mo><mo>/</mo><msup><mi>f</mi><mn>2</mn></msup></mrow></msqrt></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.hauteur"></p>
+    <figure class="chart">
+      <svg class="fig" id="iono" role="img" data-i18n-attr="aria-label:iono.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="iono.legend.hv"></span><span class="c-label-2" data-i18n="iono.legend.zr"></span><span class="c-warn" data-i18n="iono.legend.point"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="ifo" data-i18n="iono.fo"></label><output id="ifoo" for="ifo"></output></div>
+            <input id="ifo" type="range" min="2" max="14" step="0.1" value="9"></div>
+          <div class="ctl"><div class="row"><label for="ihm" data-i18n="iono.hm"></label><output id="ihmo" for="ihm"></output></div>
+            <input id="ihm" type="range" min="200" max="450" step="5" value="300"></div>
+          <div class="ctl"><div class="row"><label for="if" data-i18n="iono.f"></label><output id="ifr" for="if"></output></div>
+            <input id="if" type="range" min="1" max="20" step="0.05" value="6"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="iono.k.zr"></span><span class="v" id="vzr"></span><span class="f" id="fzr"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="iono.k.hv"></span><span class="v" id="vhv"></span><span class="f" id="fhv"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="iono.k.muf"></span><span class="v" id="vmuf"></span><span class="f" id="fmuf"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="iono.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><mi>Δ</mi><mi>L</mi><mo>=</mo><mfrac><msup><mi>e</mi><mn>2</mn></msup><mrow><mn>8</mn><msup><mi>π</mi><mn>2</mn></msup><msub><mi>ε</mi><mn>0</mn></msub><msub><mi>m</mi><mi mathvariant="normal">e</mi></msub></mrow></mfrac><mfrac><msub><mi>N</mi><mi mathvariant="normal">c</mi></msub><msup><mi>f</mi><mn>2</mn></msup></mfrac><mo>≈</mo><mn>40,3</mn><mspace width="0.2em"/><mfrac><msub><mi>N</mi><mi mathvariant="normal">c</mi></msub><msup><mi>f</mi><mn>2</mn></msup></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.gnss"></p>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/propagation-dans-un-plasma.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/ondes-milieux.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+const fill = (s, v) => s.replace(/\{(\w+)\}/g, (m, k) => v[k] != null ? v[k] : m);
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), M = OndesMilieux, Cst = Constantes, c = Cst.c, W = f => 2 * Math.PI * f;
+
+/* ---------- dispersion et champ à l'interface ---------- */
+(() => {
+  const disp = $("disp"), champ = $("champ");
+  let anim = 0;
+  function draw() {
+    cancelAnimationFrame(anim);
+    const f = 10 ** +$("df").value, n = 10 ** +$("dn").value, wp = M.pulsationPlasmaElectrons(n), fp = wp / (2 * Math.PI);
+    const x = M.interfacePlasma(W(f), wp), o = x.onde, u = f / fp;
+    /* ω(k) in units of ωp and ωp/c: the plasma branch ω² = ωp² + c²k², the light line ω = ck */
+    disp.innerHTML = "";
+    const P = Plot.axes(disp, { fmt: F, w: 640, h: 240, pad: { l: 56, b: 44 }, x: { domain: [0, 4], label: t("disp.xaxis") }, y: { domain: [0, 4], label: t("disp.yaxis") } });
+    Plot.el("rect", { x: P.x(0), y: P.y(1), width: P.x(4) - P.x(0), height: P.y(0) - P.y(1), class: "area" }, P.g);
+    const K = Array.from({ length: 161 }, (_, i) => i / 40);
+    Plot.el("path", { d: Plot.path(K.map(k => [P.x(k), P.y(Math.min(4, Math.sqrt(1 + k * k)))])), class: "stroke c-tint" }, P.g);
+    Plot.el("path", { d: Plot.path([[P.x(0), P.y(0)], [P.x(4), P.y(4)]]), class: "stroke thin c-label-2" }, P.g);
+    if (u <= 4) Plot.el("circle", { cx: P.x(o.regime === "transparent" ? Math.min(4, o.k.re * c / wp) : 0), cy: P.y(u), r: 6, class: "fill c-warn" }, P.g);
+    Plot.el("text", { x: P.x(3.95), y: P.y(0.5), "text-anchor": "end", class: "tick" }, P.g).innerHTML = t("disp.reactif");
+    /* Re E(z, t) on both sides of the interface, over 4 vacuum wavelengths */
+    const lam = c / f, zs = Array.from({ length: 401 }, (_, i) => (-2 + i / 100) * lam);
+    const t0 = performance.now();
+    const frame = now => {
+      champ.innerHTML = "";
+      const Q = Plot.axes(champ, { fmt: F, w: 640, h: 200, pad: { l: 56, b: 44 }, x: { domain: [-2, 2], label: t("champ.xaxis") }, y: { domain: [-2.2, 2.2], label: t("champ.yaxis") } });
+      Plot.el("rect", { x: Q.x(0), y: Q.y(2.2), width: Q.x(2) - Q.x(0), height: Q.y(-2.2) - Q.y(2.2), class: "area" }, Q.g);
+      const tt = ((now - t0) / 2500) / f;
+      Plot.el("path", { d: Plot.path(zs.map(z => [Q.x(z / lam), Q.y(x.champ(z, tt))])), class: "stroke c-warn" }, Q.g);
+      const env = zs.filter(z => z >= 0).map(z => [Q.x(z / lam), Q.y(x.enveloppe(z))]);
+      Plot.el("path", { d: Plot.path(env), class: "stroke thin c-tint" }, Q.g);
+      anim = requestAnimationFrame(frame);
+    };
+    anim = requestAnimationFrame(frame);
+    $("dfo").textContent = F.si(f, "Hz"); $("dno").textContent = F.qty(F.sci(n, 2), "m⁻³");
+    $("vreg").innerHTML = t("disp.regime." + o.regime); $("freg").innerHTML = t("disp.f.regime", { fp: F.si(fp, "Hz"), u: F.num(u, 3) });
+    $("vvphi").textContent = o.regime === "transparent" ? F.num(o.vphi / c, 4) : "–";
+    $("fvphi").textContent = o.regime === "transparent" ? t("disp.f.vg", { g: F.num(o.vg / c, 4) }) : t("disp.f.pasdonde");
+    $("vlong").textContent = F.si(o.regime === "transparent" ? o.lambda : o.profondeur, "m");
+    $("flong").innerHTML = t(o.regime === "transparent" ? "disp.f.lambda" : "disp.f.delta", { l0: F.si(lam, "m") });
+    $("vR").textContent = F.num(x.R, 4); $("fR").innerHTML = t("disp.f.T", { T: F.num(x.transmis, 4) });
+  }
+  ["df", "dn"].forEach(id => $(id).oninput = draw); draw();
+})();
+
+/* ---------- ionogramme d'une couche de Chapman ---------- */
+(() => {
+  const svg = $("iono"), H = 50e3;
+  function draw() {
+    const fo = +$("ifo").value * 1e6, hm = +$("ihm").value * 1e3, f = +$("if").value * 1e6;
+    const nmax = (W(fo)) ** 2 * Cst.eps0 * Cst.m_e / Cst.e ** 2, L = M.coucheChapman({ nmax, hm, H }), opt = { zmax: 1200e3, points: 1500 };
+    const fs = Array.from({ length: 60 }, (_, i) => fo * (0.08 + 0.919 * (1 - (1 - i / 59) ** 2)));
+    const ig = M.ionogramme(L.n, fs, opt), cur = M.hauteurVirtuelle(L.n, f, opt);
+    svg.innerHTML = "";
+    const P = Plot.axes(svg, { fmt: F, w: 640, h: 260, pad: { l: 56, b: 44 }, x: { domain: [0, 20], label: t("iono.xaxis") }, y: { domain: [0, 1000], label: t("iono.yaxis") } });
+    Plot.el("path", { d: Plot.path(ig.map(p => [P.x(p.f / 1e6), P.y(Math.min(1000, p.hv / 1e3))])), class: "stroke c-tint" }, P.g);
+    Plot.el("path", { d: Plot.path(ig.map(p => [P.x(p.f / 1e6), P.y(p.zr / 1e3)])), class: "stroke thin c-label-2" }, P.g);
+    Plot.el("line", { x1: P.x(fo / 1e6), x2: P.x(fo / 1e6), y1: P.y(0), y2: P.y(1000), class: "zero" }, P.g);
+    if (!cur.traverse) Plot.el("circle", { cx: P.x(f / 1e6), cy: P.y(Math.min(1000, cur.hv / 1e3)), r: 6, class: "fill c-warn" }, P.g);
+    const km = z => F.qty(F.num(z / 1e3, 3), "km");
+    $("ifoo").textContent = F.si(fo, "Hz"); $("ihmo").textContent = km(hm); $("ifr").textContent = F.si(f, "Hz");
+    $("vzr").textContent = cur.traverse ? "–" : km(cur.zr);
+    $("fzr").innerHTML = t(cur.traverse ? "iono.f.traverse" : "iono.f.zr", { n: F.qty(F.sci(nmax, 2), "m⁻³") });
+    $("vhv").textContent = cur.traverse ? "–" : km(cur.hv);
+    $("fhv").textContent = cur.traverse ? t("iono.f.pasecho") : t("iono.f.hv", { t: F.si(cur.retard, "s") });
+    const hv = M.hauteurVirtuelle(L.n, 0.7 * fo, opt).hv, muf = M.frequenceMaxUtilisable(fo, hv, 1000e3);
+    $("vmuf").textContent = F.si(muf.muf, "Hz"); $("fmuf").innerHTML = t("iono.f.muf", { s: F.num(muf.secante, 3), h: km(hv) });
+  }
+  ["ifo", "ihm", "if"].forEach(id => $(id).oninput = draw); draw();
+})();
+
+/* ---------- le système décrit : un signal de navigation à travers l'ionosphère ---------- */
+(() => {
+  const L = M.coucheChapman({ nmax: 1e12, hm: 300e3, H: 50e3 }), f1 = 1575.42e6, f2 = 1227.60e6;
+  let Nc = 0; const dz = 200; for (let z = 0; z < 2000e3; z += dz) Nc += L.n(z + dz / 2) * dz;
+  const X = (L.fo / f1) ** 2;
+  $("sys").innerHTML = t("sys.body", { Nc: F.qty(F.sci(Nc, 2), "m⁻²"), u: F.num(Nc / 1e16, 2), d1: F.si(M.retardIono(Nc, f1), "m"), d2: F.si(M.retardIono(Nc, f2), "m"),
+    X: F.sci(X, 1), fo: F.si(L.fo, "Hz") });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["marconi", 1901, "experiment"], ["kennelly", 1902, "idea"], ["appleton", 1924, "experiment"], ["breit", 1925, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["gnss", "ionosonde"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${fill(uses[id].text, { d: F.si(M.retardIono(1e16, 1575.42e6), "m") })}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["coupure", "a"], ["vphi", "c"], ["vg", "b"], ["evanescent", "d"], ["foF2", "a"], ["hauteur", "b"], ["oblique", "c"], ["gnss", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 702 });
+})();
+</script>
+</body>
+</html>

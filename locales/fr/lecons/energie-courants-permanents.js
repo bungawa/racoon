@@ -1,0 +1,96 @@
+/* Leçon « Énergie des courants permanents » (Feynman II.15.3) : textes en français.
+   Une autre langue = locales/<langue>/lecons/energie-courants-permanents.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Énergie des courants permanents",
+    "crumb.jour": "Énergie des courants permanents",
+    "h1": "Énergie des courants permanents",
+    "lede": "Une petite boucle dans un champ a pour énergie +μ·B, et non \u2212μ·B. Pour un circuit quelconque, c'est le courant fois le flux qui le traverse, ou fois la circulation du potentiel vecteur le long du fil. Pour tous les courants à la fois, ½∫j·A dV : le pendant exact de ½∫ρφ dV, avec la même limite, le régime permanent.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : énergies mécanique et électrique",
+    "eq.circuit": "circuit",
+
+    "s1.sec": "Un circuit dans un champ",
+    "s1.h2": "Le flux, puis la circulation de A",
+    "s1.p1": "Le bilan de la leçon « Énergies mécanique et électrique » l'a montré : quand on déplace des circuits à courants maintenus, l'énergie du système varie de l'opposé de <var>U</var><sub>méca</sub>. On garde au mot énergie son sens habituel : ce qu'il faut fournir, sources comprises, pour amener les circuits là où ils sont. Pour une petite boucle plane de moment <var>μ</var> dans le champ <var>B</var> d'autres courants :",
+    "val.15.16": "Approximation : boucle petite devant la distance sur laquelle <var>B</var> varie (premier ordre en taille × |∇<var>B</var>|/<var>B</var>), circuits rigides, courants permanents. C'est l'énergie d'interaction de la boucle avec les autres courants. L'énergie propre de chaque circuit, qui ne dépend pas de leur position relative, n'y est pas.",
+    "s1.p2": "Un circuit de forme quelconque se découpe en petites boucles qui pavent une surface <var>S</var> qu'il borde, chacune parcourue par <var>I</var>. Sur un côté commun à deux boucles voisines, les deux courants sont opposés et s'annulent : il ne reste que le courant du bord, celui du circuit. L'énergie est la somme des <var>μ</var>·<var>B</var> des petites boucles, de moment <var>I</var>\u00a0d<var>a</var> :",
+    "val.15.17": "Exacte pour un circuit fin et rigide dans le champ statique d'autres sources : <var>U</var> = <var>I</var>Φ, Φ le flux à travers <var>S</var>. Toute surface bordée par le circuit convient, puisque ∇·<var>B</var> = 0. Le fil est supposé fin devant sa distance aux autres conducteurs.",
+    "s1.p3": "Avec <var>B</var> = ∇ ∧ <var>A</var>, le théorème de Stokes change l'intégrale sur la surface en une intégrale le long de son bord Γ :",
+    "val.15.18": "Exacte : théorème de Stokes, pour un potentiel <var>A</var> régulier sur <var>S</var>, le bord orienté avec la normale par la règle de la main droite.",
+    "val.15.19": "Exacte, même domaine que (15.17). <var>A</var> est le potentiel des autres courants, pas celui du circuit lui-même. Ajouter ∇ψ à <var>A</var> ne change pas la circulation sur un circuit fermé : la jauge n'y entre pas. Ni <var>B</var>, ni surface : il suffit de connaître <var>A</var> le long du fil.",
+
+    "s2.sec": "Tous les courants ensemble",
+    "s2.h2": "Le ½ des paires",
+    "s2.p1": "Pour deux circuits, (15.19) donne <var>I</var><sub>1</sub> fois la circulation du potentiel du circuit 2 le long du circuit 1 ; c'est aussi <var>I</var><sub>2</sub> fois la circulation du potentiel du circuit 1 le long du circuit 2. Il n'y a qu'une énergie d'interaction. Pour un grand nombre de filaments, sommer (15.19) sur chacun compte chaque paire deux fois. Pour une distribution continue de courant <var>j</var> :",
+    "val.15.20": "Approximation : courants permanents (∇·<var>j</var> = 0) dans le vide, <var>A</var> créé par toute la distribution, sa propre part comprise. Le résultat ne dépend pas de la jauge : ∫<var>j</var>·∇ψ\u00a0d<var>V</var> = 0 quand ∇·<var>j</var> = 0 et que les courants restent bornés. L'énergie propre y est : finie pour un conducteur épais, infinie pour un fil infiniment fin, dont l'auto-inductance croît comme ln(<var>R</var>/<var>a</var>) quand son rayon <var>a</var> tend vers zéro. Fausse en régime variable : leçon « Ce qui vaut en statique ne vaut pas en dynamique ».",
+    "val.15.21": "Approximation : électrostatique, charges dans le vide, même origine du ½. C'est (8.28), où chaque paire de charges est aussi comptée deux fois.",
+    "s2.p2": "Le parallèle est complet : ρ ↔ <var>j</var>, φ ↔ <var>A</var>, chaque potentiel donné par sa source à travers la même intégrale en 1/<var>r</var>. En électrostatique, ½∫ρφ\u00a0d<var>V</var> se récrit avec le seul champ (leçon « Énergie dans le champ électrostatique ») ; (15.20) de même :",
+    "val.15.20a": "Exacte en régime permanent comme réécriture de (15.20) : <var>j</var> = ∇ ∧ <var>B</var>/μ<sub>0</sub>, puis une intégration par parties, <var>A</var> ∧ <var>B</var> décroissant plus vite que 1/<var>r</var><sup>2</sup> loin des courants. Elle survit au régime variable, avec le terme électrique ε<sub>0</sub><var>E</var><sup>2</sup>/2, ce que (15.20) ne fait pas. Ici μ<sub>0</sub> = 1/(ε<sub>0</sub><var>c</var><sup>2</sup>).",
+    "sys.title": "Décrire le système avant d'appliquer la loi",
+    "sys1.body": "Un câble coaxial : une âme de cuivre de rayon {a}, parcourue par {I} en continu et uniformément répartie, et un retour par une tresse mince de rayon {b}. On tire <var>A</var> du seul champ, en intégrant <var>B</var> depuis la tresse où on le prend nul, puis on calcule ½∫<var>j</var>·<var>A</var>\u00a0d<var>V</var> sur l'âme : {ja} par mètre. Le champ, ∫<var>B</var><sup>2</sup>/(2μ<sub>0</sub>)\u00a0d<var>V</var> de l'axe à la tresse, donne {ch}. Les deux comptes s'accordent sans qu'on ait isolé une « énergie propre » de l'âme. L'inductance par mètre qui s'en déduit, 2<var>U</var>/<var>I</var><sup>2</sup>, vaut {L}. Ce que le modèle suppose : un courant uniforme dans l'âme. En alternatif, l'effet de peau le repousse vers la surface et diminue l'énergie logée dans l'âme : c'est le terme 1/4 de μ<sub>0</sub><var>I</var><sup>2</sup>/(4π)\u00a0×\u00a0(ln(<var>b</var>/<var>a</var>) + 1/4), l'énergie par mètre.",
+
+    "s3.sec": "Deux spires",
+    "s3.h2": "Quatre chemins vers la même énergie",
+    "s3.p1": "Deux spires coaxiales en fil fin : la première, de rayon <var>R</var><sub>1</sub> = 5\u00a0cm, dans le plan <var>z</var> = 0 ; la seconde, de rayon <var>R</var><sub>2</sub>, à la hauteur <var>z</var> ; 10\u00a0A dans chacune, dans le même sens. Leur énergie d'interaction est <var>U</var> = <var>I</var><sub>1</sub><var>I</var><sub>2</sub><var>M</var>, <var>M</var> leur inductance mutuelle. On la calcule de quatre façons : par la circulation de <var>A</var><sub>1</sub> le long de la spire 2, (15.19), où une seule valeur de <var>A</var> suffit par symétrie ; par le flux de <var>B</var><sub>1</sub> à travers le disque de la spire 2, (15.17), avec quatre mille valeurs de <var>B</var> ; par la double intégrale de Neumann, μ<sub>0</sub>/(4π)\u00a0∮∮\u00a0d<var>s</var><sub>1</sub>·d<var>s</var><sub>2</sub>/<var>r</var>, exacte pour des fils fins, qui ne nomme ni <var>A</var> ni <var>B</var> ; et par le dipôle, (15.16), comme si la spire 2 était petite.",
+    "fig.aria": "Vue de côté de deux spires coaxiales, la première fixe, la seconde de rayon et de hauteur réglables",
+    "fig.legend.s1": "spire 1, R₁ = 5\u00a0cm",
+    "fig.legend.s2": "spire 2",
+    "fig.r2": "Rayon R₂ de la spire 2",
+    "fig.z": "Hauteur z de la spire 2",
+    "fig.k.circ": "<var>M</var> par la circulation de <var>A</var>",
+    "fig.f.circ": "<var>U</var> = <var>I</var><sub>1</sub><var>I</var><sub>2</sub><var>M</var> = {u} ; Neumann : {n}",
+    "fig.k.flux": "<var>M</var> par le flux de <var>B</var>",
+    "fig.f.flux": "écart relatif à la circulation : {e}",
+    "fig.k.dip": "<var>M</var> par le dipôle",
+    "fig.f.dip": "écart : {e}\u00a0%",
+    "fig.caption": "Vue de côté : chaque spire est un cercle vu en perspective, ses deux points marquent où elle traverse le plan de la figure. La circulation, le flux et la double intégrale s'accordent à la précision du calcul. Le dipôle n'est juste que pour une spire 2 petite ou lointaine : réduisez <var>R</var><sub>2</sub>, ou éloignez-la. Échangez les rôles en pensée : le flux de la spire 2 à travers la spire 1 donne le même <var>M</var>, ce que la formule de Neumann, symétrique, rend évident.",
+    "s3.p2": "La circulation de <var>A</var> est la plus économe : une valeur de <var>A</var> contre des milliers de valeurs de <var>B</var>. C'est le sens de (15.19) : pour l'énergie, <var>A</var> joue pour les courants le rôle que φ joue pour les charges. La force entre les spires se tire de <var>U</var><sub>méca</sub> = \u2212<var>I</var><sub>1</sub><var>I</var><sub>2</sub><var>M</var>, l'énergie commode à courants maintenus : elle pousse vers les <var>M</var> croissants, et deux spires parcourues dans le même sens s'attirent.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Du potentiel de deux circuits aux aimants géants",
+    "hist.intro": "L'énergie d'interaction de deux courants a donné une formule, puis une définition d'unité ; l'énergie propre des grands aimants est devenue un risque à maîtriser.",
+    "hist.events": {
+      neumann: { who: "Franz Ernst Neumann", what: "donne une forme mathématique aux lois de l'induction des courants électriques.", context: "La double intégrale de l'inductance mutuelle de deux fils porte son nom. Symétrique en ses deux circuits, elle dit que le potentiel de 2 vu par 1 vaut celui de 1 vu par 2." },
+      ampere: { who: "La 9e Conférence générale des poids et mesures (CGPM)", what: "définit l'ampère par la force entre deux conducteurs rectilignes parallèles distants d'un mètre : 2 × 10⁻⁷\u00a0N par mètre de longueur.", context: "La définition avait été proposée en 1946 par le Comité international des poids et mesures (CIPM). La force est la dérivée, à courants maintenus, de l'énergie d'interaction de deux circuits. Elle a servi jusqu'en 2019." },
+      lhc: { who: "Le grand collisionneur de hadrons (LHC) du CERN", what: "le 19 septembre, pendant la montée du courant des dipôles d'un secteur, une jonction cède à 8,7\u00a0kA : un arc électrique libère environ 600\u00a0MJ d'énergie magnétique.", context: "La jonction, sans soudure, avait une résistance de 220\u00a0nΩ au lieu d'environ 1\u00a0nΩ. Il a fallu remplacer 39 dipôles et 14 quadripôles. L'énergie ½∫j·A dV d'un grand ensemble d'aimants se compte en centaines de mégajoules." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      aimants: { name: "Aimants supraconducteurs d'accélérateur", text: "Chacun des huit arcs du LHC stocke environ 1\u00a0GJ d'énergie magnétique à pleine intensité, sous des courants qui atteignent 13\u00a0kA : l'énergie cinétique d'une masse de 400\u00a0000\u00a0kg lancée à 70\u00a0m·s⁻¹. Cette énergie, ½∫<var>j</var>·<var>A</var>\u00a0d<var>V</var> = ∫<var>B</var><sup>2</sup>/(2μ<sub>0</sub>)\u00a0d<var>V</var>, doit être évacuée sans dommage si un aimant perd sa supraconductivité : de grandes résistances de décharge sont alors insérées automatiquement dans le circuit." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      signe: { prompt: "Une petite boucle de moment μ est parallèle au champ B d'une bobine, courants maintenus. Quelle est son énergie d'interaction, sources comprises ?",
+        options: { a: "\u2212μB.", b: "+μB.", c: "Zéro, puisqu'il n'y a pas de couple.", d: "\u22122μB." },
+        why: "(15.16) : U = +μ·B. Le minimum de \u2212μ·B, l'équilibre stable des forces, est un maximum de l'énergie du système : les sources ont fourni deux fois ce que les forces ont travaillé." },
+      surface: { prompt: "Pour calculer U = IΦ, quelle surface bordée par le circuit faut-il prendre ?",
+        options: { a: "La surface plane, s'il en existe une.", b: "La plus petite possible.", c: "N'importe laquelle : le flux de B est le même à travers toutes, car ∇·B = 0.", d: "Celle où B est le plus uniforme." },
+        why: "Deux surfaces de même bord enferment un volume ; le flux sortant de ce volume est nul. C'est ce qui permet ensuite de passer à ∮A·ds, qui ne dépend d'aucune surface." },
+      demi: { prompt: "D'où vient le ½ de U = ½∫j·A dV ?",
+        options: { a: "Chaque paire d'éléments de courant est comptée deux fois quand on somme sur tous les courants.", b: "De la moyenne de cos² sur une période.", c: "De l'énergie cinétique ½mv² des porteurs de charge.", d: "D'une convention, que l'on pourrait remplacer par 1." },
+        why: "Le potentiel A en un point contient la contribution de chaque autre élément ; sommer j·A sur tous les éléments compte l'interaction de 1 avec 2, puis celle de 2 avec 1. Même raison que le ½ de ½∫ρφ dV." },
+      jauge: { prompt: "On remplace A par A + ∇ψ. Que devient ∮A·ds le long d'un circuit fermé ?",
+        options: { a: "Elle augmente de ψ au point de départ.", b: "Elle double.", c: "Elle change, mais l'énergie non.", d: "Rien : la circulation d'un gradient sur une courbe fermée est nulle." },
+        why: "∮∇ψ·ds = ψ(fin) \u2212 ψ(début) = 0 sur une courbe fermée. L'énergie (15.19) ne dépend donc pas de la jauge, comme B." },
+      fin: { prompt: "Pourquoi (15.20) donne-t-elle une énergie infinie pour un fil infiniment fin ?",
+        options: { a: "Parce que A est infini partout.", b: "Parce que l'énergie du champ près du fil, ∫B²/(2μ₀) dV, croît comme ln(1/a) quand le rayon a tend vers zéro.", c: "Parce que j·A y est négatif.", d: "Parce que la formule ne vaut qu'en régime variable." },
+        why: "Le champ en 1/r autour d'un fil donne une énergie par couronne proportionnelle à dr/r : l'intégrale diverge vers r = 0. Un fil réel a un rayon, et l'énergie propre est finie, comme pour le câble coaxial." },
+      deux: { prompt: "Deux spires coaxiales ont une inductance mutuelle de 1,5 × 10⁻⁸\u00a0H et portent 10\u00a0A chacune, dans le même sens. Quelle est leur énergie d'interaction ?",
+        options: { a: "1,5 × 10⁻⁷\u00a0J.", b: "7,5 × 10⁻⁷\u00a0J.", c: "1,5 × 10⁻⁶\u00a0J.", d: "3 × 10⁻⁶\u00a0J." },
+        hint: "U = I₁I₂M, et chaque paire n'est comptée qu'une fois.",
+        why: "10 × 10 × 1,5 × 10⁻⁸ = 1,5 × 10⁻⁶\u00a0J. Ajouter un ½ serait une erreur : il corrige un double compte, absent ici ; doubler compterait la paire deux fois." },
+      dipole: { prompt: "Pour une spire 2 au centre de la spire 1, quand la méthode du dipôle (15.16) donne-t-elle M à 1\u00a0% près ?",
+        options: { a: "Quand R₂ est assez petit devant R₁ : l'écart décroît comme (R₂/R₁)².", b: "Toujours, les spires étant coaxiales.", c: "Quand R₂ = R₁.", d: "Jamais : seule l'intégrale de Neumann est juste." },
+        why: "Le dipôle suppose B uniforme sur la spire 2. Au centre de la spire 1, B varie au second ordre en ρ/R₁ : l'écart relatif est en (R₂/R₁)², sous 1\u00a0% pour R₂ = R₁/10." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 15, §15-3 (texte original en anglais). Notations SI : μ<sub>0</sub> à la place de 1/(ε<sub>0</sub><var>c</var><sup>2</sup>). Neumann : Wikipédia, « Faraday's law of induction » et « Inductance ». Définition de l'ampère de 1948 : National Institute of Standards and Technology, « SI units – electric current ». Incident du LHC : actes de la conférence internationale sur les accélérateurs de particules de 2010, et arXiv:1608.03113. Câble coaxial, deux spires et calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

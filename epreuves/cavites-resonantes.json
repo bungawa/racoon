@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["thevenin", "c"],
+  ["bobine", "a"],
+  ["induit", "d"],
+  ["seuil", "b"],
+  ["boite", "a"],
+  ["qualite", "c"],
+  ["modes", "d"],
+  ["rentrante", "b"]
+ ]
+}

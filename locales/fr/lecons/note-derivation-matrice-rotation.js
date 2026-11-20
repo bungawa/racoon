@@ -1,0 +1,101 @@
+/* Leçon « Note 1 sur la matrice de rotation » (Feynman III.18.7) : textes en français.
+   Une autre langue = locales/<langue>/lecons/note-derivation-matrice-rotation.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Note 1 sur la matrice de rotation",
+    "crumb.jour": "Note 1 : la matrice de rotation",
+    "h1": "Note 1 sur la matrice de rotation",
+    "lede": "La formule générale de la matrice de rotation d'un spin j, (18.35), a l'air tombée du ciel. Elle sort pourtant d'un calcul simple : écrire le spin j comme 2j spins 1/2, tourner chacun d'eux, et compter par le binôme de Newton. Cette note fait le calcul.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : la matrice de rotation d'un spin quelconque",
+    "eq.perm": "perm",
+    "eq.cos": "cos",
+    "eq.sin": "sin",
+
+    "s1.sec": "Le modèle",
+    "s1.h2": "r spins en haut, s en bas",
+    "s1.p1": "Le système : un objet de spin <var>j</var> représenté par 2<var>j</var> spins 1/2, dans un état symétrique par échange, dont <var>r</var> sont en haut et <var>s</var> en bas. Sa composante selon <var>z</var> est la demi-différence :",
+    "val.18.61": "Exacte : <var>j</var> et <var>m</var> en fonction des deux nombres entiers <var>r</var> = <var>j</var> + <var>m</var> et <var>s</var> = <var>j</var> \u2212 <var>m</var>. Le modèle n'est qu'un outil de calcul : la matrice obtenue vaut pour tout objet de spin <var>j</var>.",
+    "val.18.60": "Exacte : la somme porte sur les (<var>r</var> + <var>s</var>)!/(<var>r</var>!<var>s</var>!) arrangements distincts ; le facteur en tête la norme. C'est l'unique état symétrique de cette composante <var>m</var>.",
+
+    "s2.sec": "Le calcul",
+    "s2.h2": "Tourner chaque spin 1/2, puis compter",
+    "s2.p1": "Chaque spin 1/2 tourne avec sa matrice connue :",
+    "val.18.64": "Exacte : convention de Feynman pour la rotation d'un spin 1/2 autour de <var>y</var>. Le spin en bas devient |\u2212⟩<var>C</var> \u2212 |+⟩<var>S</var>.",
+    "s2.p2": "Le produit des <var>r</var> facteurs (|+⟩<var>C</var> + |\u2212⟩<var>S</var>) et des <var>s</var> facteurs (|\u2212⟩<var>C</var> \u2212 |+⟩<var>S</var>), symétrisé, se développe par le binôme. Le coefficient de l'état à <var>r</var>′ spins en haut se lit en comptant de combien de façons on prend <var>r</var>′ \u2212 <var>k</var> facteurs |+⟩ parmi les <var>r</var> premiers et <var>k</var> parmi les <var>s</var> autres :",
+    "val.18.71": "Exacte : la somme porte sur les entiers <var>k</var> qui laissent toutes les factorielles positives ou nulles, et <var>s</var>′ = <var>r</var> + <var>s</var> \u2212 <var>r</var>′. En remplaçant <var>r</var>, <var>s</var>, <var>r</var>′, <var>s</var>′ par <var>j</var> ± <var>m</var> et <var>j</var> ± <var>m</var>′, c'est (18.35) ; la figure le vérifie à 10<sup>\u221215</sup> près.",
+    "s2.p3": "Le terme d'indice <var>k</var> correspond à <var>k</var> spins, partis en bas, qui finissent en haut, et <var>r</var> \u2212 <var>r</var>′ + <var>k</var> spins, partis en haut, qui finissent en bas. Chacun de ces retournements coûte un facteur <var>S</var> ; chaque spin qui garde son sens, un facteur <var>C</var> ; et chaque spin parti en bas qui se retourne apporte un signe \u2212.",
+
+    "s3.sec": "Voir les termes",
+    "s3.h2": "Une somme de quelques termes",
+    "s3.p1": "Choisissez le nombre <var>r</var> de spins en haut au départ, <var>s</var> en bas, le nombre <var>r</var>′ en haut à l'arrivée, et l'angle. Chaque barre bleue est un terme de (18.71) ; la verte, leur somme, comparée à la valeur de (18.35).",
+    "fig.aria": "Termes de la somme qui donne un élément de la matrice de rotation, et leur somme",
+    "fig.legend.terme": "un terme k de (18.71)",
+    "fig.legend.somme": "la somme, B_r′",
+    "fig.r": "Spins en haut au départ, r",
+    "fig.s": "Spins en bas au départ, s",
+    "fig.r2": "Spins en haut à l'arrivée, r′",
+    "fig.theta": "Angle de rotation θ",
+    "fig.somme": "somme",
+    "fig.k": "k = {k}",
+    "fig.k.b": "<var>B<sub>r</sub></var><sub>′</sub> par (18.71)",
+    "fig.f.b": "par (18.35) : {v}",
+    "fig.f.zero": "aucun spin : B = 1",
+    "fig.k.jm": "Élément de matrice calculé",
+    "fig.v.jm": "j = {j}, m = {m} → m′ = {m2}",
+    "fig.f.jm": "{n} arrangements dans l'état de départ",
+    "fig.caption": "Les termes ont souvent des signes opposés et se compensent en partie : c'est ce qui crée les zéros de la matrice de rotation, comme ceux des polynômes de Legendre. À θ = 0, seul le terme où aucun spin ne se retourne survit, et seulement si <var>r</var>′ = <var>r</var>.",
+
+    "s4.sec": "Décrire le système",
+    "s4.h2": "Pourquoi le modèle a le droit de servir",
+    "s4.p1": "Deux faits rendent le calcul légitime. Les états symétriques de 2<var>j</var> spins 1/2 forment un multiplet de spin <var>j</var>, et deux multiplets de même <var>j</var> se transforment de la même façon sous les rotations. Rien n'est approché ; seule la taille du calcul grandit avec <var>j</var>.",
+    "sys.title": "Combien d'états, combien de termes",
+    "sys1.body": "Pour six spins 1/2, il y a 2<sup>6</sup> = {b} états en tout, mais seulement {a} arrangements de trois en haut et trois en bas : l'état |3, 0⟩ est leur somme normée. Le multiplet symétrique n'utilise que 7 des 64 dimensions.",
+    "sys2.body": "La somme sur <var>k</var> n'a jamais plus de <var>s</var> + 1 termes : pour un spin 3, au plus {n}. C'est ce qui rend (18.71) commode pour un calcul à la main.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Le spin j comme 2j points",
+    "hist.intro": "Représenter un spin quelconque par des spins 1/2 est une idée qui a servi aux calculs, puis à la géométrie des états quantiques.",
+    "hist.events": {
+      wigner: { who: "Eugene Wigner", what: "introduit les matrices de rotation des états de moment cinétique.", context: "Elles relient les états |j, m⟩ d'un repère à ceux d'un repère tourné, quel que soit j." },
+      gruppentheorie: { who: "Eugene Wigner", what: "donne dans son livre de théorie des groupes l'expression générale de la matrice de rotation réduite.", context: "C'est la formule que cette note retrouve par le binôme." },
+      majorana: { who: "Ettore Majorana", what: "représente, dans le Nuovo Cimento, l'état pur d'une particule de spin j par 2j points sur une sphère.", context: "Chaque point est la direction d'un spin 1/2 ; l'état symétrique de ces 2j spins est l'état cherché. C'est le modèle de cette note, vu comme une figure." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      qubits: { name: "Les constellations de Majorana", text: "En information quantique, un état symétrique de plusieurs qubits est exactement un spin j écrit avec 2j spins 1/2. Ses 2j points sur la sphère, sa constellation de Majorana, servent à classer et à mesurer l'intrication de tels états et leurs phases géométriques." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      jm: { prompt: "Cinq spins 1/2 dans un état symétrique, quatre en haut et un en bas. Quel état |j, m⟩ représentent-ils ?",
+        options: { a: "|5, 3⟩.", b: "|2, 2⟩.", c: "|5/2, 3/2⟩.", d: "|5/2, 5/2⟩." },
+        why: "j = (r + s)/2 = 5/2 et m = (r \u2212 s)/2 = 3/2, par (18.61)." },
+      perm: { prompt: "Pourquoi l'état (18.60) contient-il le facteur [(r + s)!/(r! s!)]^(\u22121/2) ?",
+        options: { a: "Pour le normer : c'est une somme de (r + s)!/(r! s!) arrangements orthogonaux, chacun de norme 1.", b: "Pour qu'il soit antisymétrique.", c: "Parce que les spins 1/2 sont des fermions.", d: "Par convention, sans conséquence." },
+        why: "La norme au carré d'une somme de N états orthonormés vaut N ; diviser par √N la ramène à 1. N est le nombre de façons de choisir les r spins en haut parmi r + s." },
+      un: { prompt: "Pour un seul spin 1/2 (r = 1, s = 0), que donne (18.71) pour r′ = 0 ?",
+        options: { a: "cos(θ/2).", b: "1.", c: "0.", d: "S = \u2212sin(θ/2) : le spin parti en haut finit en bas." },
+        why: "Un seul terme, k = 0 : S^1 C^0 = S. C'est (18.64) : ⟨\u2212|R_y|+⟩ = \u2212sin(θ/2) dans la convention de Feynman." },
+      binome: { prompt: "D'où viennent les coefficients r!/[(r \u2212 r′ + k)!(r′ \u2212 k)!] et s!/[(s \u2212 k)! k!] ?",
+        options: { a: "De la normalisation des états.", b: "Du binôme de Newton : le nombre de façons de choisir, parmi les r spins partis en haut, ceux qui y restent, et parmi les s partis en bas, ceux qui se retournent.", c: "Des polynômes de Legendre.", d: "De la parité." },
+        why: "Développer (C|+⟩ + S|\u2212⟩)^r donne C^(r\u2212n) S^n avec le coefficient binomial C(r, n) ; de même pour les s autres facteurs. On regroupe ensuite selon le nombre total r′ de spins en haut." },
+      k: { prompt: "À θ = 0, quels termes de (18.71) survivent ?",
+        options: { a: "Celui où aucun spin ne se retourne, k = 0, avec r′ = r : tout terme contenant S s'annule.", b: "Tous.", c: "Aucun.", d: "Seulement ceux de k pair." },
+        why: "S = \u2212sin 0 = 0 : seul survit le terme sans S, qui demande r \u2212 r′ + 2k = 0, donc k = 0 et r′ = r. La matrice est l'identité, comme il se doit." },
+      sym: { prompt: "Pourquoi n'a-t-on besoin que des états symétriques des 2j spins 1/2 ?",
+        options: { a: "Parce que les autres états ont une énergie infinie.", b: "Parce que les spins 1/2 sont des bosons.", c: "Parce que ce sont eux qui forment le multiplet de spin j, et qu'une rotation ne fait pas sortir un état symétrique des états symétriques.", d: "Parce que les états antisymétriques sont nuls." },
+        why: "Une rotation agit de la même façon sur chaque spin : elle commute avec les échanges. Elle garde donc symétriques les états symétriques. Ceux-ci forment le multiplet de plus grand spin, j = (r + s)/2." },
+      verif: { prompt: "Comment s'assurer que (18.71) et (18.35) sont la même formule ?",
+        options: { a: "On ne peut pas : elles diffèrent d'un signe.", b: "En posant r = j + m, s = j \u2212 m, r′ = j + m′, s′ = j \u2212 m′ et en réindexant la somme ; la figure compare les deux numériquement.", c: "En prenant θ = 90°.", d: "En vérifiant qu'elles valent 1 à θ = 0." },
+        why: "La substitution transforme les exposants et les factorielles de l'une en ceux de l'autre. Une seule valeur de θ ne prouverait rien ; la comparaison terme à terme, oui. Les tests de cette page la font pour tous les m et m′ jusqu'à j = 3." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 18, §18-7 (texte original en anglais). Wigner : Wikipédia, « Wigner D-matrix ». Majorana : Nuovo Cimento 9, 43 (1932), cité par arXiv:2003.09939. Constellations de Majorana et intrication : arXiv:2605.15008. Calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

@@ -1,0 +1,98 @@
+/* Leçon « L'effet Hall » (Feynman III.14.3) : textes en français.
+   Une autre langue = locales/<langue>/lecons/effet-hall.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "L'effet Hall",
+    "crumb.jour": "Effet Hall",
+    "h1": "L'effet Hall",
+    "lede": "Un courant électrique ne dit pas le signe de ce qui le porte : des charges positives vers la droite ou négatives vers la gauche font le même courant. Un champ magnétique, lui, le dit. Il pousse les porteurs sur un bord de l'échantillon, et le signe de la tension qui apparaît entre les bords révèle leur charge, et leur nombre.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : les semi-conducteurs dopés",
+    "eq.tr": "tr",
+    "eq.derive": "dérive",
+
+    "s1.sec": "1 · Décrire le système",
+    "s1.h2": "Un courant dans un champ magnétique",
+    "s1.p1": "Une plaque conductrice porte un courant de densité <var>j</var> selon <var>x</var>, dans un champ magnétique <var>B</var> selon <var>z</var>, perpendiculaire à la plaque. Les porteurs dérivent à la vitesse <var>v</var>, et la force <var>q</var><var>v</var> × <var>B</var> les pousse vers un bord. Ils s'y accumulent jusqu'à ce que leur charge crée un champ transverse qui annule, en moyenne, la force magnétique :",
+    "val.14.9": "Approximation : régime établi, une seule sorte de porteurs, tous à la même vitesse de dérive ; l'effet de <var>B</var> sur le mouvement entre deux chocs est négligé, ce qui suppose μ<var>B</var> ≪ 1, μ la mobilité. Sinon, avec deux sortes de porteurs, leurs effets se retranchent en partie.",
+    "s1.p2": "Avec <var>j</var> = <var>N</var><var>q</var><var>v</var>, la vitesse de dérive s'élimine :",
+    "val.14.9a": "Approximation : celle de (14.9). Le coefficient de Hall <var>R</var><sub>H</sub> = 1/(<var>q</var><var>N</var>) ne dépend ni du temps entre les chocs, ni de la masse effective : seulement de la charge des porteurs et de leur densité. Exacte comme définition de <var>R</var><sub>H</sub> ; dans un semi-conducteur réel, un facteur de l'ordre de 1 corrige la dispersion des vitesses.",
+
+    "s2.sec": "2 · Le signe des porteurs",
+    "s2.h2": "Le même bord se remplit",
+    "s2.p1": "Des trous qui vont vers la droite et des électrons qui vont vers la gauche portent le même courant. La force magnétique <var>q</var><var>v</var> × <var>B</var> les pousse vers le même bord, puisque <var>q</var> et <var>v</var> changent de signe ensemble. Mais ce bord se charge positivement avec des trous, négativement avec des électrons : la tension de Hall change de signe.",
+    "fig.aria": "Plaque parcourue par un courant dans un champ magnétique, et charges accumulées sur ses bords",
+    "fig.legend.j": "courant I = 1 mA",
+    "fig.legend.f": "force magnétique sur les porteurs",
+    "fig.legend.v": "charges des bords",
+    "fig.j": "j",
+    "fig.bz": "B sortant",
+    "fig.porteurs.n": "porteurs : électrons, qui dérivent vers la gauche",
+    "fig.porteurs.p": "porteurs : trous, qui dérivent vers la droite",
+    "fig.q": "Porteurs (0 : électrons, 1 : trous)",
+    "fig.q.n": "électrons",
+    "fig.q.p": "trous",
+    "fig.n": "Densité de porteurs, N",
+    "fig.b": "Champ magnétique, B",
+    "fig.k.v": "Tension de Hall, bas moins haut",
+    "fig.f.v.pos": "bord inférieur positif : porteurs positifs",
+    "fig.f.v.neg": "bord inférieur négatif : porteurs négatifs",
+    "fig.f.v.nul": "pas de champ, pas de tension",
+    "fig.k.rh": "Coefficient de Hall, 1/(qN)",
+    "fig.f.rh": "plaque de 5 mm de large et 0,5 mm d'épaisseur",
+    "fig.caption": "La tension vaut <var>I</var><var>B</var>/(<var>q</var><var>N</var><var>e</var><sub>p</sub>), <var>e</var><sub>p</sub> l'épaisseur : elle ne dépend pas de la largeur. Faites monter <var>N</var> jusqu'à 10<sup>29</sup>\u00a0m⁻³, la densité d'électrons d'un métal : la tension devient minuscule. C'est pourquoi les capteurs à effet Hall utilisent des semi-conducteurs.",
+    "s2.p2": "Pour un métal, on s'attendait toujours au signe des électrons. Certains métaux, comme le béryllium, donnent le signe opposé. Ce fut l'une des premières indications que des porteurs positifs, les trous, existent dans un solide : un mystère pour la physique classique, que la théorie des bandes explique.",
+
+    "s3.sec": "Décrire le système",
+    "s3.h2": "Les nombres de la plaque",
+    "s3.p1": "Deux nombres : <var>N</var>, qui fixe la taille de la tension ; μ<var>B</var>, qui dit si (14.9) suffit. Et un troisième, à basse température dans une couche mince : la résistance de Hall se quantifie.",
+    "sys.title": "Le système décrit : plaque de 5\u00a0mm × 0,5\u00a0mm, <var>I</var> = 1\u00a0mA, <var>B</var> = 1\u00a0T",
+    "sys1.body": "Silicium dopé à 10<sup>22</sup> électrons par mètre cube : tension de Hall {v}. Cuivre, 8,5 × 10<sup>28</sup> électrons par mètre cube : {vcu}, presque dix millions de fois moins.",
+    "sys2.body": "Pour les électrons du silicium, μ<var>B</var> = 0,15\u00a0m<sup>2</sup>·V⁻¹·s⁻¹ × 1\u00a0T = {th} : l'angle entre le champ total et le courant reste petit, et (14.9a) s'applique à une dizaine de pour cent près.",
+    "sys3.body": "À très basse température et en champ fort, dans une couche d'électrons à deux dimensions, la résistance de Hall prend des valeurs <var>h</var>/(<var>i</var><var>e</var><sup>2</sup>), <var>i</var> entier ; <var>h</var>/<var>e</var><sup>2</sup> = {rk}\u00a0Ω, exacte depuis que <var>h</var> et <var>e</var> ont des valeurs fixées dans le Système international.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "De la feuille de métal à l'étalon de résistance",
+    "hist.intro": "L'effet Hall a été un défi au bon sens, puis un outil, puis un étalon.",
+    "hist.events": {
+      hall: { who: "Edwin Hall", what: "découvre, pendant sa thèse à l'université Johns Hopkins, la tension transverse que produit un aimant sur un conducteur parcouru par un courant.", context: "American Journal of Mathematics, vol. 2, « On a New Action of the Magnet on Electric Currents »." },
+      klitzing: { who: "Klaus von Klitzing, Gerhard Dorda et Michael Pepper", what: "montrent que la résistance de Hall d'une couche d'électrons à deux dimensions prend des valeurs quantifiées.", context: "Physical Review Letters : une méthode de mesure de la constante de structure fine par la résistance de Hall quantifiée." },
+      nobel: { who: "Klaus von Klitzing", what: "reçoit le prix Nobel de physique pour la découverte de l'effet Hall quantique.", context: "La constante de von Klitzing, R_K = h/e², porte son nom." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      capteurs: { name: "Les capteurs à effet Hall", text: "Une petite plaque de semi-conducteur, un courant, et la tension de Hall mesure le champ magnétique : ces capteurs servent à détecter des aimants, des positions et des courants. Le coefficient de Hall sert aussi au laboratoire à mesurer la densité et le signe des porteurs d'un échantillon." },
+      etalon: { name: "L'étalon de résistance", text: "La constante de von Klitzing, h/e², est figée depuis que h et e ont des valeurs exactes : l'effet Hall quantique réalise une résistance connue sans aucune incertitude de principe." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      signe: { prompt: "Électrons ou trous, les porteurs sont poussés vers le même bord. Pourquoi la tension de Hall change-t-elle pourtant de signe ?",
+        options: { a: "Parce que ce bord se charge positivement avec des trous, négativement avec des électrons.", b: "Parce que le courant change de sens.", c: "Parce que la force magnétique change de sens.", d: "Elle ne change pas de signe." },
+        why: "q et v changent de signe ensemble : q v × B ne change pas. Mais la charge accumulée sur le bord est celle des porteurs." },
+      force: { prompt: "Dans l'état établi, que vaut la force totale moyenne sur un porteur dans la direction transverse ?",
+        options: { a: "q v B.", b: "Elle croît sans cesse.", c: "Zéro : le champ de Hall compense la force magnétique.", d: "q ℰ_tr seulement." },
+        why: "Les charges s'accumulent jusqu'à ce que q ℰ_tr + q v × B = 0 en moyenne : c'est (14.9)." },
+      metal: { prompt: "Pourquoi la tension de Hall d'un métal est-elle bien plus petite que celle d'un semi-conducteur ?",
+        options: { a: "Parce que les électrons d'un métal ne sentent pas le champ magnétique.", b: "Parce que R_H = 1/(qN) et qu'un métal a des millions de fois plus de porteurs : à courant égal, ils vont bien moins vite.", c: "Parce qu'un métal est plus épais.", d: "Parce qu'un métal n'a pas de trous." },
+        why: "Même courant, plus de porteurs : vitesse de dérive plus faible, force magnétique plus faible, champ de Hall plus faible." },
+      densite: { prompt: "Plaque de 0,5 mm d'épaisseur, I = 1 mA, B = 1 T, tension de Hall 1,25 mV. Combien de porteurs par mètre cube ?",
+        options: { a: "10²⁸ m⁻³.", b: "10¹⁶ m⁻³.", c: "Impossible à dire sans la mobilité.", d: "Environ 10²² m⁻³ : N = I·B/(q V e_p)." },
+        hint: "La tension vaut I·B/(q N e_p).",
+        why: "N = 10⁻³ × 1/(1,6 × 10⁻¹⁹ × 1,25 × 10⁻³ × 5 × 10⁻⁴) = 10²² m⁻³. La mobilité n'intervient pas." },
+      equilibre: { prompt: "Pourquoi le coefficient de Hall ne dépend-il pas du temps entre les chocs ?",
+        options: { a: "Parce que les porteurs ne subissent pas de chocs.", b: "Parce que la vitesse de dérive s'élimine : ℰ_tr = vB et j = Nqv donnent ℰ_tr = jB/(Nq).", c: "Parce que le champ magnétique supprime les chocs.", d: "Il en dépend." },
+        why: "Seuls comptent j, B, N et q. C'est ce qui fait de l'effet Hall une mesure directe de la densité de porteurs." },
+      beryllium: { prompt: "Certains métaux, comme le béryllium, donnent une tension de Hall du signe de porteurs positifs. Qu'en conclut-on ?",
+        options: { a: "Que leurs noyaux se déplacent.", b: "Que la mesure est fausse.", c: "Que leur courant est porté, dans la théorie des bandes, par des trous : des électrons dans une bande presque pleine se comportent comme des charges positives.", d: "Que la force magnétique s'inverse dans ces métaux." },
+        why: "Une bande presque pleine se décrit par ses trous, de charge apparente positive. L'effet Hall l'a montré avant que la théorie ne l'explique." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 14, §14-3 (texte original en anglais). Notations SI. Hall, American Journal of Mathematics 2, 287 (1879) ; von Klitzing, Dorda et Pepper, Physical Review Letters (1980). Calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

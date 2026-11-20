@@ -1,0 +1,91 @@
+/* Leçon « Introduction à l'optique géométrique » (Feynman I.27.1) : textes en français. Une autre langue = locales/<langue>/lecons/opt-intro-optique-geometrique.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Introduction à l'optique géométrique",
+    "crumb.jour": "Introduction",
+    "h1": "Introduction à l'optique géométrique",
+    "lede": "Une lentille, un objectif, une paire de lunettes : aucun principe nouveau, seulement le principe de Fermat appliqué à des rayons. Ce qui rend le sujet praticable, c'est une approximation de géométrie élémentaire, et il faut savoir jusqu'où elle tient.",
+    "tag.piste": "Optique et rayonnement",
+    "tag.prereq": "Prérequis : « Énoncé précis du principe de Fermat »",
+
+    "s1.sec": "Le modèle",
+    "s1.h2": "Des rayons, et rien d'autre",
+    "s1.p1": "L'optique géométrique décrit la lumière par des rayons : des lignes droites dans un milieu homogène, brisées à chaque surface par la loi de Snell-Descartes. Elle ne connaît ni la phase, ni les interférences, ni la diffraction. Elle n'ajoute aucun principe : tout ce qui suit découle de « Énoncé précis du principe de Fermat ». Concevoir une lentille revient à suivre chaque rayon, surface après surface, et à vérifier qu'ils se retrouvent en un même point. Long, mais sans mystère.",
+    "s1.sys.title": "Le système : ce qu'on néglige, chiffré",
+    "s1.sys.body": "Lumière visible, λ ≈ 550\u00a0nm ; une pupille de 3\u00a0mm, une lentille de quelques centimètres. Le rapport λ/<var>D</var> vaut 2 × 10⁻⁴ pour la pupille : la diffraction étale l'image d'un point sur 1,22 λ/<var>D</var> ≈ 0,2\u00a0mrad, ce que le modèle des rayons ignore. Il vaut tant que les ouvertures et les rayons de courbure sont très grands devant λ, et tant qu'on ne cherche pas de détail plus fin que cette tache. Milieux homogènes, isotropes et transparents ; une seule couleur à la fois, car l'indice dépend de λ.",
+    "s1.p2": "On appelle <strong>chemin optique</strong> d'un trajet la somme des longueurs parcourues, chacune multipliée par l'indice du milieu : c'est <var>c</var> fois la durée du trajet. Un point A a une image nette A′ quand tous les rayons issus de A passent par A′ : on dit alors que le système est <strong>stigmatique</strong> pour A et A′. Par Fermat, tous ces trajets ont le même chemin optique. Toute l'étape décline cette égalité.",
+
+    "s2.sec": "Un outil de géométrie",
+    "s2.h2": "L'excès de l'hypoténuse",
+    "s2.p1": "Un triangle rectangle très aplati : une base <var>d</var>, une petite hauteur <var>h</var>. De combien l'hypoténuse dépasse-t-elle la base ? On écrit <var>s</var>² = <var>d</var>² + <var>h</var>², donc (<var>s</var> \u2212 <var>d</var>)(<var>s</var> + <var>d</var>) = <var>h</var>² ; et <var>s</var> + <var>d</var> vaut presque 2<var>d</var>.",
+    "val.27.1": "Approximation : on remplace <var>s</var> + <var>d</var> par 2<var>d</var>. L'erreur relative vaut environ (<var>h</var>/<var>d</var>)²/4, et l'écart absolu \u2212<var>h</var>⁴/(8<var>d</var>³) : 0,25\u00a0% pour <var>h</var>/<var>d</var> = 0,1. Le membre de gauche est exact pour un triangle rectangle.",
+    "s2.p2": "En optique, une erreur relative ne suffit pas : il faut comparer l'écart absolu à la longueur d'onde. Deux trajets qui diffèrent d'un quart d'onde arrivent encore à peu près en phase ; au-delà, l'image se brouille. C'est le critère de Rayleigh. Il fixe la hauteur <var>h</var> jusqu'à laquelle (27.1) suffit pour faire une image nette.",
+    "ex.aria": "Écart entre l'excès exact et h²/2d, en longueurs d'onde de 550 nm, en fonction de la hauteur h, comparé au quart d'onde",
+    "ex.legend.ecart": "écart |Δ \u2212 h²/2d|, en longueurs d'onde",
+    "ex.legend.quart": "un quart d'onde",
+    "ex.d": "Base d",
+    "ex.h": "Hauteur h",
+    "ex.x": "hauteur h (m)",
+    "ex.y": "écart / λ",
+    "ex.k.exact": "Excès exact Δ",
+    "ex.f.approx": "h²/2d = {approx}",
+    "ex.k.ecart": "Écart de (27.1)",
+    "ex.f.ecart": "{l} λ",
+    "ex.k.zone": "(27.1) à λ/4 près jusqu'à",
+    "ex.f.dedans": "h est dans cette zone",
+    "ex.f.dehors": "h est hors de cette zone",
+    "ex.caption": "Échelles logarithmiques ; λ = 550\u00a0nm. L'écart croît comme <var>h</var>⁴ : une droite de pente 4. Pour <var>d</var> = 10\u00a0cm, <var>h</var> = 1\u00a0cm, l'excès vaut 0,4988\u00a0mm au lieu de 0,5\u00a0mm ; l'erreur est de 1,2\u00a0µm, plus de deux longueurs d'onde. Elle tombe sous le quart d'onde en dessous de 5,8\u00a0mm. Cette hauteur ne croît que comme <var>d</var>^(3/4) : 1\u00a0mm pour 1\u00a0cm, 3,2\u00a0cm pour 1\u00a0m.",
+    "s2.p3": "Une erreur relative de 0,25\u00a0% peut donc être trop grosse, et c'est toute la difficulté de l'optique : les longueurs se comparent à λ, un demi-micromètre. L'approximation (27.1) n'en reste pas moins le bon outil. Elle donne la position des images ; ce qu'elle oublie, au quatrième ordre en <var>h</var>, ce sont les défauts d'image, les aberrations, qu'étudie l'étape « Systèmes optiques et limites ».",
+
+    "s3.sec": "Le programme",
+    "s3.h2": "Rayons proches de l'axe : les conditions de Gauss",
+    "s3.p1": "Une surface qui enverrait <em>tous</em> les rayons d'un point vers un autre existe, mais sa forme est compliquée : une courbe du quatrième degré, l'ovale de Descartes. On sait mieux fabriquer des sphères : on use deux surfaces l'une contre l'autre, et seule la sphère s'ajuste partout à elle-même. Une sphère ne fait d'image parfaite pour aucun point, sauf cas particuliers. Mais pour les rayons proches de l'axe et peu inclinés sur lui, (27.1) s'applique à chaque morceau de trajet, et tous les chemins optiques deviennent égaux au second ordre en <var>h</var>.",
+    "s3.rem.title": "Conditions de Gauss",
+    "s3.rem.body": "Rayons <strong>paraxiaux</strong> : proches de l'axe optique et peu inclinés sur lui, de sorte que sin θ ≈ tan θ ≈ θ. Le système est alors approximativement stigmatique : chaque point a une image, et un petit objet plan perpendiculaire à l'axe a une image plane, elle aussi perpendiculaire à l'axe. Toutes les formules de l'étape valent dans ces conditions, et seulement dans ces conditions. On les obtient en pratique par un diaphragme qui ne laisse passer que le centre des lentilles.",
+    "s3.p2": "Le plan est simple. « Distance focale d’un dioptre sphérique » : une seule surface sphérique entre deux milieux. « Distance focale d’une lentille » : deux surfaces, très proches. « Le grandissement » : la taille de l'image. Chaque fois, le même raisonnement : égaliser le retard pris dans le verre et l'excès de longueur (27.1) des trajets obliques. Les distances seront algébriques, comptées le long de l'axe dans le sens de la lumière, pour qu'une seule formule couvre tous les cas.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Des rayons rectilignes aux points cardinaux",
+    "hist.intro": "L'optique géométrique s'est faite en trois temps : le rayon comme objet de la physique, une théorie générale des rayons, puis l'approximation des rayons proches de l'axe qui rend le calcul des instruments simple.",
+    "hist.events": {
+      haytham: { who: "Ibn al-Haytham", what: "rédige son « Livre de l'optique » : la lumière va en ligne droite depuis chaque point de l'objet, et la vision se fait par la lumière qui entre dans l'œil.", context: "Il rejette l'idée de rayons sortant de l'œil. Traduit en latin vers 1200, l'ouvrage fonde l'optique des rayons en Europe." },
+      hamilton: { who: "William Rowan Hamilton", what: "présente à l'Académie royale d'Irlande, le 23 avril, sa « Théorie des systèmes de rayons ».", context: "Publiée en 1828, elle décrit tout un système optique par une seule fonction des points de départ et d'arrivée. Hamilton reprendra la méthode pour la mécanique." },
+      gauss: { who: "Carl Friedrich Gauss", what: "publie ses « Recherches dioptriques » : dans l'approximation des rayons proches de l'axe, un système centré se résume à quelques points cardinaux.", context: "Foyers et points principaux : le calcul d'un instrument entier tient en quelques lignes, ce qui donne leur nom aux conditions de Gauss." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      conception: { name: "Conception des objectifs", text: "Les opticiens partent d'un calcul paraxial, qui place les images et fixe les focales, puis tracent un grand nombre de rayons exacts par ordinateur, surface après surface, et déforment les surfaces jusqu'à ce que les écarts de chemin optique tombent sous une fraction de longueur d'onde. C'est la méthode que (27.1) prépare." },
+      lunettes: { name: "Ordonnance de lunettes", text: "Une prescription donne la vergence de chaque verre en dioptries : un nombre paraxial, calculé dans les conditions de Gauss. L'œil regarde à travers le centre du verre, sous de petits angles, ce qui justifie l'approximation." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      rayon: { prompt: "Dans quel cas le modèle des rayons cesse-t-il de valoir ?",
+        options: { a: "Quand la lumière traverse du verre.", b: "Quand les angles dépassent 10°.", c: "Quand une ouverture ou un détail cherché n'est plus très grand devant la longueur d'onde.", d: "Quand l'objet est très loin." },
+        why: "Les rayons ignorent la diffraction, qui étale l'image sur un angle de l'ordre de λ/D. Le verre et les grands angles relèvent encore de l'optique géométrique ; ils sortent seulement des conditions de Gauss." },
+      exces: { prompt: "Base d = 1 m, hauteur h = 1 cm. De combien l'hypoténuse dépasse-t-elle la base ?",
+        options: { a: "50 µm", b: "5 mm", c: "0,1 mm", d: "1 cm" },
+        hint: "Utilisez (27.1).",
+        why: "h²/2d = (10⁻² m)²/(2 × 1 m) = 5 × 10⁻⁵ m = 50 µm. L'excès est du second ordre en h : cent fois plus petit que h, ici." },
+      quart: { prompt: "Pour d = 10 cm, h = 1 cm, l'erreur relative de (27.1) est de 0,25 %. Pourquoi est-ce gênant en optique ?",
+        options: { a: "Ce n'est pas gênant : 0,25 % est négligeable.", b: "Parce que l'œil voit une erreur relative de 0,1 %.", c: "Parce que la formule exacte est plus simple.", d: "Parce que l'erreur absolue, 1,2 µm, dépasse deux longueurs d'onde : les trajets ne sont plus en phase." },
+        why: "Ce qui compte pour la netteté, c'est l'écart de chemin optique comparé à λ, pas l'erreur relative. Au-delà d'environ λ/4, les trajets n'arrivent plus en phase et l'image se brouille." },
+      sphere: { prompt: "Pourquoi les lentilles ont-elles presque toujours des faces sphériques ?",
+        options: { a: "Parce que la sphère donne des images parfaites.", b: "Parce que la sphère est la surface qu'on sait polir avec précision ; elle ne fait de bonne image que près de l'axe.", c: "Parce que la loi de Snell-Descartes l'exige.", d: "Parce que les surfaces non sphériques ne réfractent pas." },
+        why: "La surface parfaite pour un couple de points est un ovale de Descartes, du quatrième degré. La sphère, elle, s'obtient en usant deux surfaces l'une contre l'autre. Près de l'axe, elle se confond avec l'ovale." },
+      gauss: { prompt: "Que demandent les conditions de Gauss ?",
+        options: { a: "Des rayons proches de l'axe et peu inclinés sur lui.", b: "Une lumière d'une seule couleur.", c: "Des lentilles minces.", d: "Des objets à l'infini." },
+        why: "Ce sont des conditions sur les rayons, pas sur le système. Elles rendent le système approximativement stigmatique. Une seule couleur évite un autre défaut, l'aberration chromatique." },
+      trace: { prompt: "Un ordinateur trace des rayons exacts à travers un objectif. Qu'utilise-t-il, à chaque surface ?",
+        options: { a: "La formule h²/2d.", b: "Une loi nouvelle, propre aux systèmes à plusieurs lentilles.", c: "La loi de Snell-Descartes, sans approximation.", d: "La formule de conjugaison de la lentille mince." },
+        why: "Il n'y a pas de principe nouveau : chaque rayon suit Snell-Descartes à chaque face. L'approximation paraxiale sert à obtenir des formules simples à la main, et à démarrer le calcul." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. I, chap. 27 (texte original en anglais), §27-1. Ibn al-Haytham : <i>Kitāb al-Manāẓir</i>, rédigé entre 1011 et 1021. Hamilton : <i>Theory of Systems of Rays</i>, lue le 23 avril 1827, <i>Transactions of the Royal Irish Academy</i>, vol. 15 (1828). Gauss : <i>Dioptrische Untersuchungen</i> (1841). Critère du quart d'onde : Rayleigh.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

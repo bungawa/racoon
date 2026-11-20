@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Moteurs, pompes à chaleur et réfrigérateurs</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-thermo" data-i18n="monde.thermo"></a><span class="aux">›</span><a href="/racoon/etape?id=machines-thermiques-reelles" data-i18n="etape.machines-thermiques-reelles"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-thermo" href="/racoon/atlas?piste=thermo" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/bilans-d-energie-et-d-entropie-en-systeme-ouvert" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="box def"><b data-i18n="s1.sys.title"></b>
+      <p data-i18n-html="s1.sys.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>W</mi><mo>+</mo><msub><mi>Q</mi><mn>1</mn></msub><mo>+</mo><msub><mi>Q</mi><mn>2</mn></msub><mo>=</mo><mn>0</mn></math></div>
+    <p class="validite" data-i18n-html="val.2.1"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mfrac><msub><mi>Q</mi><mn>1</mn></msub><msub><mi>T</mi><mn>1</mn></msub></mfrac><mo>+</mo><mfrac><msub><mi>Q</mi><mn>2</mn></msub><msub><mi>T</mi><mn>2</mn></msub></mfrac><mo>+</mo><msub><mi>S</mi><mi mathvariant="normal">c</mi></msub><mo>=</mo><mn>0</mn><mo>,</mo><mspace width="1em"/><msub><mi>S</mi><mi mathvariant="normal">c</mi></msub><mo>≥</mo><mn>0</mn></math></div>
+    <p class="validite" data-i18n-html="val.2.2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>η</mi><mo>=</mo><mfrac><mrow><mo>&minus;</mo><mi>W</mi></mrow><msub><mi>Q</mi><mn>1</mn></msub></mfrac><mo>=</mo><mn>1</mn><mo>&minus;</mo><mfrac><msub><mi>T</mi><mn>2</mn></msub><msub><mi>T</mi><mn>1</mn></msub></mfrac><mo>&minus;</mo><mfrac><mrow><msub><mi>T</mi><mn>2</mn></msub><msub><mi>S</mi><mi mathvariant="normal">c</mi></msub></mrow><msub><mi>Q</mi><mn>1</mn></msub></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.2.3"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>e</mi><mi mathvariant="normal">P</mi></msub><mo>=</mo><mfrac><mrow><mo>&minus;</mo><msub><mi>Q</mi><mn>1</mn></msub></mrow><mi>W</mi></mfrac><mo>=</mo><msup><mrow><mo>(</mo><mn>1</mn><mo>&minus;</mo><mfrac><msub><mi>T</mi><mn>2</mn></msub><msub><mi>T</mi><mn>1</mn></msub></mfrac><mo>+</mo><mfrac><mrow><msub><mi>T</mi><mn>2</mn></msub><msub><mi>S</mi><mi mathvariant="normal">c</mi></msub></mrow><mrow><mo>&minus;</mo><msub><mi>Q</mi><mn>1</mn></msub></mrow></mfrac><mo>)</mo></mrow><mrow><mo>&minus;</mo><mn>1</mn></mrow></msup></math></div>
+    <p class="validite" data-i18n-html="val.2.4"></p>
+    <div class="eq"><math display="block"><msub><mi>e</mi><mi mathvariant="normal">F</mi></msub><mo>=</mo><mfrac><msub><mi>Q</mi><mn>2</mn></msub><mi>W</mi></mfrac><mo>=</mo><msup><mrow><mo>(</mo><mfrac><msub><mi>T</mi><mn>1</mn></msub><msub><mi>T</mi><mn>2</mn></msub></mfrac><mo>&minus;</mo><mn>1</mn><mo>+</mo><mfrac><mrow><msub><mi>T</mi><mn>1</mn></msub><msub><mi>S</mi><mi mathvariant="normal">c</mi></msub></mrow><msub><mi>Q</mi><mn>2</mn></msub></mfrac><mo>)</mo></mrow><mrow><mo>&minus;</mo><mn>1</mn></mrow></msup></math></div>
+    <p class="validite" data-i18n-html="val.2.5"></p>
+    <p data-i18n-html="s3.p3"></p>
+    <figure class="chart">
+      <svg class="fig" id="pin" role="img" data-i18n-attr="aria-label:pin.aria"></svg>
+      <div class="panel">
+        <div class="seg" role="group" id="modeseg" data-i18n-attr="aria-label:pin.mode">
+          <button type="button" data-m="moteur" data-i18n="mode.moteur"></button>
+          <button type="button" data-m="pac" data-i18n="mode.pac"></button>
+          <button type="button" data-m="frigo" data-i18n="mode.frigo"></button>
+        </div>
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="tc" data-i18n="pin.Tc"></label><output id="tcv" for="tc"></output></div>
+            <input id="tc" type="range" min="260" max="900" step="1" value="308"></div>
+          <div class="ctl"><div class="row"><label for="tf" data-i18n="pin.Tf"></label><output id="tfv" for="tf"></output></div>
+            <input id="tf" type="range" min="200" max="400" step="1" value="280"></div>
+          <div class="ctl"><div class="row"><label for="dt" data-i18n="pin.dT"></label><output id="dtv" for="dt"></output></div>
+            <input id="dt" type="range" min="0" max="60" step="1" value="5"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="pin.k.carnot"></span><span class="v" id="vcarnot"></span></div>
+          <div class="stat"><span class="k" data-i18n="pin.k.e"></span><span class="v" id="ve"></span><span class="f" id="fe"></span></div>
+          <div class="stat"><span class="k" data-i18n="pin.k.sc"></span><span class="v" id="vsc"></span><span class="f" data-i18n="pin.f.sc"></span></div>
+          <div class="stat"><span class="k" data-i18n="pin.k.perdu"></span><span class="v" id="vperdu"></span><span class="f" id="fperdu"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="pin.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><msup><mi>η</mi><mo>*</mo></msup><mo>=</mo><mn>1</mn><mo>&minus;</mo><msqrt><mfrac><msub><mi>T</mi><mn>2</mn></msub><msub><mi>T</mi><mn>1</mn></msub></mfrac></msqrt></math></div>
+    <p class="validite" data-i18n-html="val.2.6"></p>
+    <figure class="chart">
+      <svg class="fig" id="ca" role="img" data-i18n-attr="aria-label:ca.aria"></svg>
+      <figcaption data-i18n-html="ca.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n-html="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/moteurs-pompes-a-chaleur-et-refrigerateurs.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const P = Plot.el, path = Plot.path;
+
+/* ---------- §3 : pincement dans les deux échangeurs ---------- */
+(() => {
+  const DEF = { moteur: { Tc: 838, Tf: 298, dT: 20 }, pac: { Tc: 308, Tf: 280, dT: 5 }, frigo: { Tc: 298, Tf: 255, dT: 5 } };
+  const MESURE = [4.0, 5.7];                           // COP measured at A7/W35 to EN 14511 (Swiss test centre, 2026)
+  let mode = "pac";
+  const set = m => { mode = m; ["Tc", "Tf", "dT"].forEach(k => $(k.toLowerCase()).value = DEF[m][k]); draw(); };
+  const fmtE = e => mode === "moteur" ? F.qty(F.num(100 * e, 3), "%") : F.fix(e, 2);
+  function draw() {
+    let Tc = +$("tc").value, Tf = +$("tf").value;
+    if (Tf > Tc - 5) { Tf = Tc - 5; $("tf").value = Tf; }
+    const dmax = mode === "moteur" ? Math.min(60, Math.floor((Tc - Tf) / 2) - 1) : 60;
+    const dT = Math.min(+$("dt").value, dmax); $("dt").value = dT;
+    const K = s => s + 0.15;                           // sliders in whole kelvins at the usual Celsius points
+    const r = Thermo.pincement(mode, K(Tc), K(Tf), dT), d = Thermo.ditherme(mode, K(Tc), K(Tf), r.sigma);
+    const top = mode === "moteur" ? 1 : Math.min(40, Math.ceil(1.15 * d.carnot));
+    const svg = $("pin"); svg.innerHTML = "";
+    const o = Plot.axes(svg, { fmt: F, w: 640, h: 280, pad: { b: 44, l: 52 }, x: { domain: [0, 60], label: t("pin.x") },
+      y: { domain: [0, top], label: t(mode === "moteur" ? "pin.y.moteur" : "pin.y.cop") } });
+    if (mode === "pac" && Tc === DEF.pac.Tc && Tf === DEF.pac.Tf) {
+      P("rect", { x: o.x(0), width: o.x(60) - o.x(0), y: o.y(MESURE[1]), height: o.y(MESURE[0]) - o.y(MESURE[1]), class: "area" }, o.g);
+      P("text", { x: o.x(59), y: o.y(MESURE[1]) - 6, "text-anchor": "end", class: "note" }, o.g).textContent = t("pin.mesure");
+    }
+    P("line", { x1: o.x(0), x2: o.x(60), y1: o.y(Math.min(d.carnot, top)), y2: o.y(Math.min(d.carnot, top)), class: "ref" }, o.g);
+    P("text", { x: o.x(59), y: o.y(Math.min(d.carnot, top)) + 16, "text-anchor": "end", class: "note" }, o.g).textContent = t("pin.carnot");
+    const pts = [];
+    for (let k = 0; k <= dmax; k++) pts.push([o.x(k), o.y(Math.min(Thermo.pincement(mode, K(Tc), K(Tf), k).e, top))]);
+    P("path", { d: path(pts), class: "curve" }, o.g);
+    P("circle", { cx: o.x(dT), cy: o.y(Math.min(r.e, top)), r: 6, class: "dot" }, o.g);
+    $("tcv").innerHTML = F.kelvin(K(Tc)); $("tfv").innerHTML = F.kelvin(K(Tf)); $("dtv").textContent = F.qty(F.num(dT, 3), "K");
+    $("vcarnot").textContent = fmtE(d.carnot); $("ve").textContent = fmtE(r.e);
+    $("fe").innerHTML = t("pin.f.e", { th: F.kelvin(r.Th), tl: F.kelvin(r.Tl) });
+    $("vsc").textContent = F.si(r.sigma, "K⁻¹"); $("vperdu").textContent = F.si(d.perdu, "J", { sig: 2 });
+    $("fperdu").innerHTML = t("pin.f.perdu", { t0: F.kelvin(d.T0) });
+    $("modeseg").querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.m === mode)));
+  }
+  $("modeseg").querySelectorAll("button").forEach(b => b.onclick = () => set(b.dataset.m));
+  ["tc", "tf", "dt"].forEach(id => $(id).oninput = draw);
+  set("pac");
+})();
+
+/* ---------- §4 : Carnot, Curzon-Ahlborn et trois centrales ---------- */
+(() => {
+  const svg = $("ca");
+  const o = Plot.axes(svg, { fmt: F, w: 640, h: 300, pad: { b: 44, l: 52 }, x: { domain: [0.2, 0.8], label: t("ca.x") }, y: { domain: [0, 0.8], label: t("ca.y") } });
+  const curve = (f, cls) => { const pts = []; for (let i = 0; i <= 120; i++) { const th = 0.2 + 0.6 * i / 120; pts.push([o.x(th), o.y(f(th))]); }
+    P("path", { d: path(pts), class: cls }, o.g); };
+  curve(th => 1 - th, "curve"); curve(th => 1 - Math.sqrt(th), "ref");
+  P("text", { x: o.x(0.25), y: o.y(0.75) - 4, class: "note" }, o.g).textContent = t("ca.carnot");
+  P("text", { x: o.x(0.62), y: o.y(1 - Math.sqrt(0.62)) - 10, class: "note" }, o.g).textContent = t("ca.ca");
+  Thermo.CENTRALES.forEach(c => { const th = c.Tf / c.Tc;
+    P("circle", { cx: o.x(th), cy: o.y(c.eta), r: 6, class: "dot" }, o.g);
+    P("text", { x: o.x(th) + 9, y: o.y(c.eta) + 18, class: "note" }, o.g).textContent = t("ca." + c.id); });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["carnot1824", 1824, "idea"], ["kelvin1852", 1852, "idea"], ["rittinger1856", 1856, "experiment"], ["curzon1975", 1975, "idea"], ["en2022", 2022, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["pac", "scop", "eau", "frigo"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["signes", "c"], ["plus1", "b"], ["carnot", "a"], ["pincement", "d"], ["ambiance", "a"], ["ca", "b"], ["radiateurs", "c"], ["meme", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 7102 });
+})();
+</script>
+</body>
+</html>

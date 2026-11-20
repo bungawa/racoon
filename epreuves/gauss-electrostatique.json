@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["faces", "a"],
+  ["exposant", "b"],
+  ["charge", "c"],
+  ["divergence", "d"],
+  ["dedans", "a"],
+  ["coquilles", "b"],
+  ["lignes", "c"],
+  ["ecart", "d"]
+ ]
+}

@@ -1,0 +1,95 @@
+/* Leçon « La contraction de Lorentz » (Feynman I.15.5) : textes en français.
+   Une autre langue = locales/<langue>/lecons/relat-contraction-longueurs.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "La contraction de Lorentz",
+    "crumb.jour": "La contraction de Lorentz",
+    "h1": "La contraction de Lorentz",
+    "lede": "Une règle qui passe devant nous est plus courte que la même règle au repos, dans la direction du mouvement seulement. Ce n'est ni une compression ni une illusion d'optique : c'est ce que donne une mesure de longueur faite en marquant les deux bouts au même instant.",
+    "tag.piste": "Relativité",
+    "tag.prereq": "Prérequis : la dilatation du temps",
+
+    "s1.sec": "D'où elle vient",
+    "s1.h2": "Le bras de Michelson et Morley",
+    "s1.p1": "Dans l'interféromètre de Michelson et Morley, la lumière fait l'aller-retour le long de deux bras de même longueur, l'un parallèle au mouvement de l'appareil, l'autre perpendiculaire. Le bras perpendiculaire ne peut pas changer de longueur : des repères tracés au croisement diraient sinon qui bouge, comme le montre « La dilatation du temps ». Si les deux bras gardaient la même longueur, l'aller-retour le long du bras parallèle durerait plus longtemps que l'autre, d'un facteur 1/√(1 \u2212 <var>u</var>²/<var>c</var>²). Or l'expérience ne voit aucune différence (« L'expérience de Michelson et Morley »). Il faut donc que le bras parallèle soit plus court, pour l'observateur qui le voit passer, exactement dans ce rapport :",
+    "val.15.6": "Exacte : en relativité restreinte, pour une longueur parallèle à la vitesse relative <var>u</var> de deux référentiels galiléens. <var>L</var><sub>0</sub> est la longueur propre, mesurée là où l'objet est au repos ; <var>L</var><sub>∥</sub> est la distance entre ses deux bouts repérés au même instant du référentiel qui mesure. Les longueurs perpendiculaires à <var>u</var> ne changent pas. Ce qui reste approché : l'objet doit être en mouvement uniforme ; un objet qu'on vient d'accélérer vibre, et sa longueur propre n'est définie qu'à ces vibrations près.",
+    "s1.p2": "Donnons à cette contraction un sens de mesure. Le sol S et le vaisseau S′ ont des axes <var>x</var> parallèles, leurs origines coïncident à <var>t</var> = 0, et S′ avance à <var>u</var>. Le passager repère un point en reportant sa règle : il trouve la coordonnée <var>x</var>′. Pour le sol, la règle du passager est raccourcie, et ces <var>x</var>′ mètres ne valent que <var>x</var>′√(1 \u2212 <var>u</var>²/<var>c</var>²) ; il faut y ajouter <var>u</var><var>t</var>, le chemin fait par l'origine du vaisseau :",
+    "val.15.6h": "Exacte : c'est, retrouvée par la seule contraction, la première équation de « La transformation de Lorentz ». Elle suppose les origines confondues à <var>t</var> = 0 et le mouvement selon <var>x</var>. Pour <var>u</var> ≪ <var>c</var>, elle tend vers <var>x</var>′ = <var>x</var> \u2212 <var>u</var><var>t</var>, la transformation de Galilée, avec un écart relatif de l'ordre de (<var>u</var>/<var>c</var>)²/2 : 4,5 × 10<sup>\u221214</sup> pour un train à 90\u00a0m·s<sup>\u22121</sup>.",
+
+    "s2.sec": "Mesurer une longueur",
+    "s2.h2": "Deux marques au même instant",
+    "s2.p1": "Mesurer une règle au repos est simple : on lit ses deux bouts quand on veut. Une règle qui passe se mesure autrement. Le sol marque sur sa propre règle la position de l'arrière et celle de l'avant, et la longueur est la distance entre les deux marques. Encore faut-il marquer les deux bouts au même instant, lu sur deux horloges du sol synchronisées. La figure montre une règle de 1\u00a0m au repos qui passe à la vitesse <var>v</var>, et ce que lit le sol s'il marque l'avant avec un retard Δ<var>t</var> sur l'arrière.",
+    "fig.aria": "Une règle en mouvement au-dessus de la règle du sol, avec les deux marques et la distance lue",
+    "fig.legend.regle": "règle mobile quand on marque l'arrière (trait plein), puis l'avant (pointillés) ; flèche : sens du mouvement",
+    "fig.legend.marques": "les deux marques et la distance lue",
+    "fig.legend.sol": "règle du sol, un trait tous les 10 cm",
+    "fig.b": "Vitesse v/c de la règle",
+    "fig.bv": "{b}, γ = {g}",
+    "fig.dt": "Retard Δt de la marque avant",
+    "fig.k.lue": "Longueur lue, <var>L</var><sub>0</sub>/γ + <var>v</var>Δ<var>t</var>",
+    "fig.f.lue": "la règle avance de {d} entre les marques",
+    "fig.k.vraie": "Marques simultanées, (15.6)",
+    "fig.f.vraie": "longueur propre : {l0}",
+    "fig.caption": "Avec Δ<var>t</var> = 0, la distance entre les marques est <var>L</var><sub>0</sub>/γ : c'est (15.6). Un retard positif ajoute le chemin fait par la règle pendant ce retard ; un retard négatif le retranche, jusqu'à donner une longueur nulle ou négative. À 0,6\u00a0<var>c</var>, une nanoseconde d'écart fausse la mesure de 18\u00a0cm : la longueur d'un objet qui passe n'a de sens qu'avec une définition de la simultanéité.",
+    "s2.p2": "Le vaisseau mesure la règle du sol de la même façon, et il la trouve plus courte, dans le même rapport. Chacun trouve l'autre contracté, sans contradiction : les deux marques que le sol fait au même instant ne sont pas simultanées pour le vaisseau. Pour lui, l'avant de sa règle a été marqué <var>u</var><var>L</var><sub>0</sub>/<var>c</var>² trop tôt (« La simultanéité »). Il n'y a pas de longueur « vraie » qui départagerait les deux : il y a la longueur propre <var>L</var><sub>0</sub>, sur laquelle tous s'accordent, et la longueur que mesure chaque observateur.",
+
+    "s3.sec": "Ce que la contraction n'est pas",
+    "s3.h2": "Ni une compression, ni une photographie",
+    "s3.p1": "La règle n'est pas comprimée. Dans son propre référentiel, rien ne la presse, et ses atomes sont à leurs distances d'équilibre. Un capteur de contrainte collé dessus indique zéro, et tous les observateurs lisent ce même zéro sur son cadran. La contraction porte sur la façon dont chaque observateur découpe l'espace-temps en instants, pas sur la matière, et elle n'existe que dans la direction du mouvement.",
+    "s3.p2": "Elle n'est pas non plus ce que montrerait une photographie. Un appareil photo recueille au même instant des rayons partis à des instants différents des différentes parties de l'objet, les plus éloignées plus tôt. Roger Penrose et James Terrell ont montré en 1959 que cet effet compense la contraction pour un objet vu sous un petit angle : une sphère rapide paraît encore ronde, un cube paraît tourné. La contraction est le résultat d'une mesure par marques simultanées, pas une image.",
+    "sys.title": "Le système décrit : un train, puis des muons",
+    "sys1.body": "Un train de 200\u00a0m passe à 90\u00a0m·s<sup>\u22121</sup> le long d'un quai. (<var>v</var>/<var>c</var>)² = {b2} : le quai le trouve plus court de {dL}, environ six fois moins que le rayon de Bohr ({a0}), qui donne la taille d'un atome. C'est très loin de ce qu'un télémètre laser, au millimètre près, peut voir : à l'échelle humaine, la contraction est invisible.",
+    "sys2.body": "Un muon descend à γ = {g} vers le sol, à travers 10\u00a0km d'air. Dans son propre référentiel, il vit en moyenne 2,197\u00a0µs ; c'est l'air qui défile, et son épaisseur n'est plus que {h}. Il la traverse en {dur} de son temps propre, et la fraction des muons qui arrivent est {f}\u00a0%, celle que le sol calcule avec la dilatation du temps ({fs}\u00a0%). Les deux descriptions sont deux lectures du même événement : l'arrivée du muon au sol.",
+    "s3.p3": "C'est une règle générale : dilatation et contraction vont ensemble. Ce que l'un explique par une horloge qui ralentit, l'autre l'explique par une distance plus courte, et les nombres comptés au détecteur sont les mêmes. Le même calcul, mené avec la seule transformation de Lorentz, est dans « La dilatation du temps » et « La simultanéité ».",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "D'une hypothèse sur l'éther à une propriété des mesures",
+    "hist.intro": "La contraction est née pour sauver l'éther ; Einstein en a fait une conséquence de la manière de mesurer, et elle reste invisible sur une photographie.",
+    "hist.events": {
+      mm: { who: "Albert Michelson et Edward Morley", what: "publient en novembre, dans l'American Journal of Science, le résultat nul de leur interféromètre.", context: "Le bras parallèle au mouvement de la Terre et le bras perpendiculaire donnent les mêmes temps de trajet, alors que la théorie de l'éther prévoyait un décalage des franges bien visible. C'est ce résultat que la contraction va expliquer." },
+      fitzgerald: { who: "George FitzGerald", what: "propose, dans une courte lettre à la revue Science, que la longueur des corps dépende de leur mouvement à travers l'éther.", context: "La lettre, d'une demi-page, passe inaperçue ; FitzGerald lui-même ne savait pas si elle avait été imprimée. Elle n'est redécouverte qu'en 1967." },
+      lorentz: { who: "Hendrik Lorentz", what: "arrive de façon indépendante à la même hypothèse, dans un article en néerlandais.", context: "Il la rattache ensuite à sa théorie des électrons : les forces qui tiennent la matière changeraient avec son mouvement dans l'éther. Pour lui, la contraction est un effet physique sur les corps." },
+      einstein: { who: "Albert Einstein", what: "déduit la contraction de deux principes : la relativité et la constance de la vitesse de la lumière.", context: "Plus besoin d'éther ni d'hypothèse sur les forces internes : la contraction vient de la façon de mesurer une longueur avec des horloges synchronisées. Elle est réciproque, ce qu'aucune théorie de l'éther ne prévoyait." },
+      terrell: { who: "James Terrell ; Roger Penrose", what: "montrent, chacun de son côté, que la contraction ne se voit pas sur une photographie instantanée.", context: "Les temps de trajet de la lumière depuis les différentes parties de l'objet compensent la contraction : un objet vu sous un petit angle paraît tourné, pas aplati, et une sphère garde un contour circulaire." },
+      vienne: { who: "Dominik Hornof, Peter Schattschneider et leurs collègues, à l'Université technique de Vienne", what: "photographient l'effet Terrell-Penrose avec des impulsions laser et une caméra ultrarapide.", context: "Leur montage ramène la vitesse de la lumière, à l'échelle de l'expérience, à moins de 2 m·s⁻¹ : une sphère et un cube « relativistes » y apparaissent comme prévu en 1959." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      ions: { name: "Collisions d'ions lourds", text: "Au collisionneur RHIC, à Brookhaven, des noyaux d'or accélérés à 100\u00a0GeV par nucléon ont γ ≈ 100. Vu du centre de la collision, chacun est une galette d'environ 0,14\u00a0fm d'épaisseur pour environ 14\u00a0fm de diamètre au repos. Les modèles de ces collisions partent de cette forme aplatie." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      regle: { prompt: "Une règle de 1\u00a0m au repos passe à 0,8\u00a0c, parallèlement à sa longueur. Quelle longueur le sol mesure-t-il en marquant ses deux bouts au même instant ?",
+        options: { a: "1\u00a0m.", b: "0,6\u00a0m.", c: "0,8\u00a0m.", d: "1,67\u00a0m." },
+        hint: "√(1 \u2212 0,64).",
+        why: "√(1 \u2212 0,64) = 0,6 : (15.6) donne 0,6\u00a0m." },
+      transverse: { prompt: "Un vaisseau haut de 10\u00a0m passe à 0,8\u00a0c. Quelle hauteur le sol lui trouve-t-il ?",
+        options: { a: "6\u00a0m.", b: "16,7\u00a0m.", c: "Elle dépend du sens du mouvement.", d: "10\u00a0m : la contraction n'agit que dans la direction du mouvement." },
+        why: "Une longueur perpendiculaire à la vitesse est la même pour les deux observateurs ; sinon, des repères tracés au croisement diraient lequel des deux bouge." },
+      reciproque: { prompt: "Le vaisseau mesure à son tour une règle de 1\u00a0m posée au sol. Que trouve-t-il ?",
+        options: { a: "Une règle plus courte, dans le même rapport.", b: "Une règle plus longue, puisque la sienne est contractée.", c: "1\u00a0m exactement.", d: "Rien : seul le sol peut mesurer une longueur." },
+        why: "Le principe de relativité rend les deux mesures symétriques. Chacun reproche à l'autre d'avoir marqué les deux bouts à deux instants différents." },
+      marques: { prompt: "Une règle de 1\u00a0m au repos passe à 0,6\u00a0c. Le sol marque l'arrière, puis l'avant 1\u00a0ns plus tard. Quelle longueur lit-il ?",
+        options: { a: "0,8\u00a0m.", b: "0,62\u00a0m.", c: "0,98\u00a0m.", d: "1\u00a0m." },
+        hint: "Pendant 1\u00a0ns, la règle avance de 0,6 × 0,3\u00a0m.",
+        why: "La règle contractée mesure 0,8\u00a0m, et elle avance de 0,18\u00a0m pendant le retard : 0,98\u00a0m. Seules des marques simultanées donnent (15.6)." },
+      contrainte: { prompt: "Une règle file à 0,9\u00a0c. Un capteur de contrainte collé dessus indique-t-il une compression ?",
+        options: { a: "Oui, d'autant plus forte que la vitesse est grande.", b: "Non : dans son propre référentiel, rien ne la presse.", c: "Oui, mais seulement pour le sol.", d: "Oui, depuis l'accélération et pour toujours." },
+        why: "La règle est au repos et à l'équilibre dans son référentiel. Un capteur qui indiquerait la vitesse servirait de compteur de vitesse absolue, ce que le principe de relativité interdit." },
+      photo: { prompt: "Une sphère passe à 0,9\u00a0c, loin de l'objectif. Que montre une photographie instantanée ?",
+        options: { a: "Un ellipsoïde aplati dans la direction du mouvement.", b: "Un ellipsoïde allongé dans la direction du mouvement.", c: "Rien de net : l'objet est flou.", d: "Un contour circulaire, la sphère paraissant tournée." },
+        why: "Les rayons qui arrivent ensemble sur le capteur sont partis à des instants différents des différentes parties de la sphère ; pour un objet vu sous un petit angle, cet effet compense la contraction (Terrell et Penrose, 1959)." },
+      muon: { prompt: "Un muon à γ = 10 traverse 10\u00a0km d'air. Dans son propre référentiel, quelle épaisseur d'air doit-il traverser ?",
+        options: { a: "1\u00a0km, en environ 3,3\u00a0µs de son temps propre.", b: "10\u00a0km, en 33\u00a0µs.", c: "100\u00a0km, puisque c'est l'air qui bouge.", d: "Aucune : à cette vitesse, l'air est réduit à une feuille." },
+        why: "10\u00a0km/γ = 1\u00a0km, traversé à presque c en 3,3\u00a0µs. Dans le modèle à vitesse constante, la fraction qui arrive, e^(\u22123,3/2,2) ≈ 22\u00a0%, est celle que le sol calcule avec la dilatation du temps ; de vrais muons à γ = 10 perdraient en route une grande part de leur énergie." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. I, chap. 15, §15-5 (texte original en anglais). Notations SI. Michelson et Morley, <i>American Journal of Science</i> 34 (1887) ; FitzGerald, <i>Science</i> 13 (1889) ; Einstein, <i>Annalen der Physik</i> 17 (1905) ; Terrell, <i>Phys. Rev.</i> 116 (1959) ; Penrose, <i>Proc. Cambridge Phil. Soc.</i> 55 (1959) ; Hornof et al., <i>Communications Physics</i> 8 (2025). Noyaux d'or au RHIC : épaisseur contractée d'après les revues de physique des collisions d'ions lourds. Muon : Particle Data Group, <i>Review of Particle Physics</i>, 2025. Calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Loi de Hess et enthalpies de formation</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-solutions" data-i18n="monde.chim-solutions"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-thermochimie" data-i18n="etape.chim-thermochimie"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/grandeurs-de-reaction" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="box def"><b data-i18n="s1.sys.title"></b>
+      <p data-i18n-html="s1.sys.body"></p>
+    </div>
+    <div class="box def"><b data-i18n="s1.def.title"></b>
+      <p data-i18n-html="s1.def.body"></p>
+    </div>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><msub><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">r</mi></msub><msup><mi>H</mi><mo>°</mo></msup><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>ν</mi><mi>i</mi></msub><mspace width="0.1em"/><msub><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">f</mi></msub><msubsup><mi>H</mi><mi>i</mi><mo>°</mo></msubsup></math></div>
+    <p class="validite" data-i18n-html="val.1"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mtext>(3)</mtext><mo>=</mo><mi>a</mi><mspace width="0.1em"/><mtext>(1)</mtext><mo>+</mo><mi>b</mi><mspace width="0.1em"/><mtext>(2)</mtext><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><msub><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">r</mi></msub><msubsup><mi>H</mi><mn>3</mn><mo>°</mo></msubsup><mo>=</mo><mi>a</mi><mspace width="0.1em"/><msub><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">r</mi></msub><msubsup><mi>H</mi><mn>1</mn><mo>°</mo></msubsup><mo>+</mo><mi>b</mi><mspace width="0.1em"/><msub><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">r</mi></msub><msubsup><mi>H</mi><mn>2</mn><mo>°</mo></msubsup></math></div>
+    <p class="validite" data-i18n-html="val.2"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <figure class="chart">
+      <svg class="fig" id="cycle" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="panel">
+        <div class="seg" role="group" id="rseg" data-i18n-attr="aria-label:fig.reaction">
+          <button type="button" data-r="CH4" data-i18n="r.CH4"></button>
+          <button type="button" data-r="C3H8" data-i18n="r.C3H8"></button>
+          <button type="button" data-r="C2H5OH(l)" data-i18n="r.C2H5OH"></button>
+          <button type="button" data-r="ammoniac" data-i18n="r.ammoniac"></button>
+          <button type="button" data-r="vaporeformage" data-i18n="r.vaporeformage"></button>
+        </div>
+        <div class="seg" role="group" id="eseg" data-i18n-attr="aria-label:fig.eau">
+          <button type="button" data-e="H2O(l)" data-i18n="fig.eau.l"></button>
+          <button type="button" data-e="H2O(g)" data-i18n="fig.eau.g"></button>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="fig.k.eq"></span><span class="v" id="veq"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig.k.h"></span><span class="v" id="vh"></span><span class="f" id="fh"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig.k.pc"></span><span class="v" id="vpc"></span><span class="f" id="fpc"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="list keyed" id="pc"></div>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="box rem"><b data-i18n="s3.rem.title"></b>
+      <p data-i18n-html="s3.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n-html="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/loi-de-hess.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/chim-solutions.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const keyed = (id, k, ids) => { const txt = textOf(k, ids); $(id).innerHTML = ids.map(i => `<div><span class="k">${txt[i].k}</span><span>${txt[i].v}</span></div>`).join(""); };
+
+keyed("pc", "s3.pc", ["methane", "propane", "ethanol", "hydrogene"]);
+
+/* ---------- §2 : le cycle de Hess, par les éléments ---------- */
+(() => {
+  const C = ChimSolutions, P = Plot.el, kJ = x => x / 1000;
+  const MASSE = { C: 12.011, H: 1.008, O: 15.999, N: 14.007 };              // g·mol⁻¹, masses atomiques conventionnelles de l'IUPAC
+  const COMBUSTIBLES = ["CH4", "C3H8", "C2H5OH(l)"];
+  const EQN = { CH4: { "H2O(l)": "eqn.CH4.l", "H2O(g)": "eqn.CH4.g" }, C3H8: { "H2O(l)": "eqn.C3H8.l", "H2O(g)": "eqn.C3H8.g" },
+    "C2H5OH(l)": { "H2O(l)": "eqn.C2H5OH.l", "H2O(g)": "eqn.C2H5OH.g" }, ammoniac: "eqn.ammoniac", vaporeformage: "eqn.vaporeformage" };
+  let r = "CH4", eau = "H2O(l)";
+  function draw() {
+    const comb = COMBUSTIBLES.includes(r), nu = comb ? C.combustion(r, eau) : C.REACTIONS[r];
+    const Hr = Object.keys(nu).filter(id => nu[id] < 0).reduce((s, id) => s - nu[id] * C.ESPECES[id].dfH, 0);
+    const Hp = Object.keys(nu).filter(id => nu[id] > 0).reduce((s, id) => s + nu[id] * C.ESPECES[id].dfH, 0), h = C.drH(nu);
+    const lv = [0, kJ(Hr), kJ(Hp)], lo = Math.min(...lv), hi = Math.max(...lv), m = 0.15 * (hi - lo);
+    const svg = $("cycle"); svg.innerHTML = "";
+    const o = Plot.axes(svg, { fmt: F, w: 640, h: 340, pad: { b: 30, l: 70 }, x: { domain: [0, 3], ticks: 1, fmt: () => "" }, y: { domain: [lo - m, hi + m], label: t("fig.y") } });
+    const niveau = (x, y, lab) => { P("line", { x1: o.x(x - 0.4), x2: o.x(x + 0.4), y1: o.y(y), y2: o.y(y), class: "stroke bold" }, o.g);
+      P("text", { x: o.x(x), y: o.y(y) - 8, "text-anchor": "middle", class: "note" }, o.g).textContent = lab;
+      P("text", { x: o.x(x), y: o.y(y) + 16, "text-anchor": "middle", class: "note" }, o.g).textContent = F.si(1000 * y, "J·mol⁻¹", { sig: 4 }); };
+    niveau(0.5, kJ(Hr), t("fig.reactifs")); niveau(1.5, 0, t("fig.elements")); niveau(2.5, kJ(Hp), t("fig.produits"));
+    Plot.fleche(o.g, [o.x(0.9), o.y(kJ(Hr))], [o.x(1.1), o.y(0)], { cls: "c-label-2", min: 4 });
+    Plot.fleche(o.g, [o.x(1.9), o.y(0)], [o.x(2.1), o.y(kJ(Hp))], { cls: "c-label-2", min: 4 });
+    Plot.fleche(o.g, [o.x(0.75), o.y(kJ(Hr))], [o.x(2.25), o.y(kJ(Hp))], { cls: "c-warn", min: 4 });
+    $("veq").textContent = t(comb ? EQN[r][eau] : EQN[r]);
+    $("vh").textContent = F.si(h, "J·mol⁻¹", { sig: 4 });
+    $("fh").textContent = t(h < 0 ? "fig.f.exo" : "fig.f.endo");
+    if (comb) {
+      const a = C.formule(C.ESPECES[r].f).atomes, M = Object.keys(a).reduce((s, X) => s + a[X] * MASSE[X], 0) / 1000;
+      $("vpc").textContent = F.si(-h / M, "J·kg⁻¹", { sig: 3 }); $("fpc").textContent = t(eau === "H2O(l)" ? "fig.f.pcs" : "fig.f.pci");
+    } else { $("vpc").textContent = "–"; $("fpc").textContent = t("fig.f.sans"); }
+    $("rseg").querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.r === r)));
+    $("eseg").querySelectorAll("button").forEach(b => { b.disabled = !comb; b.setAttribute("aria-pressed", String(comb && b.dataset.e === eau)); });
+  }
+  $("rseg").querySelectorAll("button").forEach(b => b.onclick = () => { r = b.dataset.r; draw(); });
+  $("eseg").querySelectorAll("button").forEach(b => b.onclick = () => { eau = b.dataset.e; draw(); });
+  draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["hess1840", 1840, "idea"], ["codata1989", 1989, "use"], ["atct2004", 2004, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["gaz", "chaudiere"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["reference", "c"], ["zero", "a"], ["calcul", "d"], ["co", "b"], ["etat", "c"], ["pci", "a"], ["fonction", "d"], ["incertitude", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 8102 });
+})();
+</script>
+</body>
+</html>

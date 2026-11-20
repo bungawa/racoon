@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La résistance de rayonnement</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-optique-ondulatoire" data-i18n="monde.optique-ondulatoire"></a><span class="aux">›</span><a href="/racoon/etape?id=opt-amortissement-rayonnement" data-i18n="etape.opt-amortissement-rayonnement"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-optique" href="/racoon/atlas?piste=optique" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/etape?id=opt-absorption" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi>S</mi><mo>=</mo><msub><mi>ε</mi><mn>0</mn></msub><mi>c</mi><mo>⟨</mo><msup><mi>E</mi><mn>2</mn></msup><mo>⟩</mo></math><span class="n">(32.1)</span></div>
+    <p class="validite" data-i18n-html="val.32.1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mover><mi>P</mi><mo>‾</mo></mover><mo>=</mo><msub><mi>R</mi><mtext data-i18n="eq.ray"></mtext></msub><mo>⟨</mo><msup><mi>I</mi><mn>2</mn></msup><mo>⟩</mo></math></div>
+    <p class="validite" data-i18n-html="val.def"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>R</mi><mtext data-i18n="eq.ray"></mtext></msub><mo>=</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mn>3</mn></mfrac><msub><mi>Z</mi><mn>0</mn></msub><msup><mrow><mo>(</mo><mfrac><mi>L</mi><mi>λ</mi></mfrac><mo>)</mo></mrow><mn>2</mn></msup><mo>≈</mo><mn>789</mn><mspace width="0.17em"/><mi mathvariant="normal">Ω</mi><mo>×</mo><msup><mrow><mo>(</mo><mfrac><mi>L</mi><mi>λ</mi></mfrac><mo>)</mo></mrow><mn>2</mn></msup></math><span class="n">(32.6d)</span></div>
+    <p class="validite" data-i18n-html="val.32.6d"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>R</mi><mtext data-i18n="eq.ray"></mtext></msub><mo>=</mo><mfrac><mi>π</mi><mn>6</mn></mfrac><msub><mi>Z</mi><mn>0</mn></msub><msup><mrow><mo>(</mo><mfrac><mi>L</mi><mi>λ</mi></mfrac><mo>)</mo></mrow><mn>2</mn></msup><mo>≈</mo><mn>197</mn><mspace width="0.17em"/><mi mathvariant="normal">Ω</mi><mo>×</mo><msup><mrow><mo>(</mo><mfrac><mi>L</mi><mi>λ</mi></mfrac><mo>)</mo></mrow><mn>2</mn></msup></math><span class="n">(32.6e)</span></div>
+    <p class="validite" data-i18n-html="val.32.6e"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="resist" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.ray"></span><span class="c-warn" data-i18n="fig.legend.court"></span><span class="c-ko" data-i18n="fig.legend.pertes"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="sf" data-i18n="fig.f"></label><output id="sfr" for="sf"></output></div>
+            <input id="sf" type="range" min="5" max="9" step="0.01" value="6"></div>
+          <div class="ctl"><div class="row"><label for="sl" data-i18n="fig.L"></label><output id="slr" for="sl"></output></div>
+            <input id="sl" type="range" min="-2" max="2.5" step="0.01" value="1"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.x"></span><span class="v" id="vx"></span><span class="f" id="fx"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.r"></span><span class="v" id="vr"></span><span class="f" id="fr"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.eta"></span><span class="v" id="veta"></span><span class="f" id="feta"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/opt-resistance-rayonnement.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/optique-ondulatoire.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const O = OptOnd;
+const A = 1e-3, XMAX = 0.75;                                   // copper wire of radius 1 mm; the sinusoidal model up to 0,75 λ
+
+/* ---------- rayonner ou chauffer : un dipôle de cuivre alimenté au centre ---------- */
+(() => {
+  const svg = $("resist"), sf = $("sf"), sl = $("sl");
+  function draw() {
+    const f = 10 ** +sf.value, L = 10 ** +sl.value, lambda = O.c / f, x = L / lambda;
+    svg.innerHTML = "";
+    const P = Plot.axes(svg, { fmt: F, w: 640, h: 260, pad: { l: 56, b: 40 }, x: { scale: "log", domain: [1e-3, XMAX], label: t("fig.xaxis") }, y: { scale: "log", domain: [1e-5, 1e3], label: t("fig.yaxis") } });
+    const xs = Array.from({ length: 161 }, (_, i) => 10 ** (-3 + i * Math.log10(XMAX * 1e3) / 160));
+    const clip = v => Math.min(1e3, Math.max(1e-5, v));
+    Plot.el("path", { d: Plot.path(xs.map(u => [P.x(u), P.y(clip(O.dipoleMince(u * lambda, lambda).R))])), class: "curve" }, P.g);
+    Plot.el("path", { d: Plot.path(xs.map(u => [P.x(u), P.y(clip(O.resistanceDipoleCourt(u * lambda, lambda)))])), class: "ref" }, P.g);
+    Plot.el("path", { d: Plot.path(xs.map(u => [P.x(u), P.y(clip(O.pertesOhmiques({ L: u * lambda, lambda, a: A }).R))])), class: "stroke c-ko" }, P.g);
+    $("sfr").textContent = F.si(f, "Hz");
+    $("slr").textContent = F.si(L, "m");
+    $("vx").textContent = F.num(x, 3);
+    $("fx").textContent = t("fig.f.x", { l: F.si(lambda, "m") });
+    if (x > XMAX || x < 1e-3) {
+      $("vr").textContent = "–"; $("fr").textContent = t(x > XMAX ? "fig.f.long" : "fig.f.court");
+      $("veta").textContent = "–"; $("feta").textContent = "";
+      return;
+    }
+    const R = O.dipoleMince(L, lambda).R, p = O.pertesOhmiques({ L, lambda, a: A }), eta = O.rendement(R, p.R);
+    Plot.el("circle", { cx: P.x(x), cy: P.y(clip(R)), r: 5, class: "dot" }, P.g);
+    $("vr").textContent = F.si(R, "Ω");
+    $("fr").textContent = t("fig.f.r", { c: F.si(O.resistanceDipoleCourt(L, lambda), "Ω"), p: F.si(p.R, "Ω") });
+    $("veta").textContent = F.num(100 * eta, 3) + " %";
+    $("feta").textContent = t("fig.f.eta", { d: F.si(p.delta, "m"), r: F.num(p.delta / A, 2) });
+  }
+  sf.oninput = sl.oninput = draw; draw();
+})();
+
+/* ---------- le système décrit : un dipôle de 10 m à 1 MHz ---------- */
+(() => {
+  const f = 1e6, L = 10, lambda = O.c / f, R = O.dipoleMince(L, lambda).R, p = O.pertesOhmiques({ L, lambda, a: A });
+  $("sys1").innerHTML = t("sys1.body", { l: F.si(lambda, "m"), x: F.num(L / lambda, 2), R: F.si(R, "Ω"), Rp: F.si(p.R, "Ω"),
+    eta: F.num(100 * O.rendement(R, p.R), 2), d: F.si(p.delta, "m"), r: F.num(p.delta / A, 2), rr: F.num(1e3 / lambda, 2) });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["hertz", 1887, "experiment"], ["abraham", 1898, "idea"], ["marconi", 1901, "experiment"], ["carter", 1932, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["vlf", "demi"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["chaleur", "b"], ["double", "c"], ["courant", "a"], ["court", "d"], ["pertes", "b"], ["force", "c"], ["demi", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 321 });
+})();
+</script>
+</body>
+</html>

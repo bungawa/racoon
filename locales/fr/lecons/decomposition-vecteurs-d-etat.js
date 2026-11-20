@@ -1,0 +1,101 @@
+/* Leçon « La décomposition des vecteurs d'état » (Feynman III.8.2) : textes en français.
+   Une autre langue = locales/<langue>/lecons/decomposition-vecteurs-d-etat.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "La décomposition des vecteurs d'état",
+    "crumb.jour": "Décomposer un état",
+    "h1": "La décomposition des vecteurs d'état",
+    "lede": "Un état s'écrit comme une somme d'états de base, avec ses amplitudes pour coefficients. Un appareil devient un opérateur : il transforme un ket en un autre ket. Ce qui sort d'un appareil est un état comme un autre, qu'on peut décomposer à son tour.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : les amplitudes et les vecteurs",
+
+    "s1.sec": "Décrire le système",
+    "s1.h2": "Un état, ses composantes",
+    "s1.p1": "Un système a une base complète d'états |<var>i</var>⟩ : les deux états ±<var>z</var> d'un spin 1/2, les trois d'un spin 1. Un état quelconque |φ⟩ a les composantes <var>C</var><sub><var>i</var></sub> = ⟨<var>i</var>|φ⟩. D'après (8.8) :",
+    "val.8.10": "Exacte pour une base complète. Les <var>C</var><sub><var>i</var></sub> dépendent de la base choisie, l'état non : dans une autre base, d'autres coefficients décrivent le même |φ⟩, et (6.4) les relie.",
+    "s1.p2": "Pour un second état |χ⟩, de composantes <var>D</var><sub><var>i</var></sub> = ⟨<var>i</var>|χ⟩, le bra ⟨χ| a pour coefficients les ⟨χ|<var>i</var>⟩ = <var>D</var><sub><var>i</var></sub>*, par (8.5) :",
+    "val.8.13": "Exacte : le bra est le conjugué du ket, composante par composante. C'est ce qui rend ⟨χ|χ⟩ = Σ |<var>D</var><sub><var>i</var></sub>|<sup>2</sup> réel et positif.",
+    "s1.p3": "Le produit du bra et du ket, avec ⟨<var>j</var>|<var>i</var>⟩ = δ<sub><var>j</var><var>i</var></sub>, donne l'amplitude en composantes :",
+    "val.8.15": "Exacte pour une base orthonormée. C'est le produit scalaire de deux vecteurs, sauf le conjugué sur les composantes du bra. Pour χ = φ, il donne Σ |<var>C</var><sub><var>i</var></sub>|<sup>2</sup> = 1 : la probabilité totale.",
+
+    "s2.sec": "Les appareils",
+    "s2.h2": "Un opérateur transforme un ket",
+    "s2.p1": "Un appareil <var>A</var> est décrit par ses éléments de matrice ⟨<var>i</var>|<var>A</var>|<var>j</var>⟩, comme dans « La machinerie de la mécanique quantique ». Retirons ⟨χ| et |φ⟩ de ⟨χ|<var>A</var>|φ⟩ écrit dans une base. Il reste l'appareil lui-même, écrit comme un <strong>opérateur</strong> :",
+    "val.8.23": "Exacte : c'est la relation de fermeture (8.9) placée de part et d'autre de <var>A</var>. Un opérateur est entièrement défini par sa matrice dans une base ; dans une autre base, la matrice change, l'opérateur non.",
+    "s2.p2": "Appliqué à un ket, l'opérateur en donne un autre, l'état dans lequel sort la particule :",
+    "val.8.25": "Exacte. |ψ⟩ peut avoir une norme plus petite que |φ⟩ si <var>A</var> arrête des particules : un filtre. Le carré de sa norme est alors la probabilité de passer l'appareil, et l'état normé décrit les particules qui ont passé.",
+    "s2.p3": "Toute question sur ce qui sort de <var>A</var> se pose alors sur |ψ⟩, comme sur n'importe quel état :",
+    "val.8.26": "Exacte : on peut calculer ⟨χ|ψ⟩ par les composantes de |ψ⟩, (8.15), ou directement par la matrice de <var>A</var>. Les deux calculs sont identiques, l'un groupant les termes autrement que l'autre.",
+
+    "s3.sec": "Les nombres",
+    "s3.h2": "Ce qui sort d'un appareil",
+    "s3.p1": "Un spin 1/2 est préparé selon la direction θ dans le plan <var>x</var><var>z</var>. Il traverse un appareil <var>A</var> : un filtre +<var>x</var>, un quart de tour autour de <var>x</var>, ou un demi-tour autour de <var>y</var>. À gauche les composantes de |φ⟩, à droite celles de |ψ⟩ = <var>A</var>|φ⟩. On calcule ensuite l'amplitude de trouver ψ dans l'état χ, de deux façons.",
+    "fig.aria.comp": "Les composantes C₊, C₋ de l'état d'entrée et de l'état de sortie dans le plan complexe",
+    "fig.lab.c0": "⟨+z|φ⟩",
+    "fig.lab.c1": "⟨\u2212z|φ⟩",
+    "fig.lab.p0": "⟨+z|ψ⟩",
+    "fig.lab.p1": "⟨\u2212z|ψ⟩",
+    "fig.theta": "Direction de φ, θ",
+    "fig.app": "Appareil A",
+    "fig.a.0": "filtre +x",
+    "fig.a.1": "quart de tour (x)",
+    "fig.a.2": "demi-tour (y)",
+    "fig.fin": "État final χ",
+    "fig.c.0": "+z",
+    "fig.c.1": "+x",
+    "fig.c.2": "+y",
+    "fig.k.psi": "Composantes de |ψ⟩",
+    "fig.f.psi": "⟨ψ|ψ⟩ = {n}",
+    "fig.k.un": "⟨χ|ψ⟩ par les composantes, (8.15)",
+    "fig.k.deux": "⟨χ|<var>A</var>|φ⟩ par la matrice",
+    "fig.f.deux": "les mêmes ; probabilité {p}",
+    "fig.caption": "Les deux calculs donnent toujours le même nombre. Avec le filtre, ⟨ψ|ψ⟩ est plus petit que 1 : c'est la probabilité de passer le filtre, et |ψ⟩ pointe selon +<var>x</var> quelle que soit l'entrée. Avec les rotations, ⟨ψ|ψ⟩ reste égal à 1 : rien n'est perdu, l'état a tourné.",
+    "sys.title": "Le système décrit : un filtre +x",
+    "sys1.body": "Un spin +<var>z</var> traverse un filtre +<var>x</var>, l'opérateur |+<var>x</var>⟩⟨+<var>x</var>|. L'état de sortie a pour norme au carré {n} : une particule sur deux passe, et toutes celles qui passent sont dans l'état +<var>x</var>. Le filtre efface la mémoire, comme dans « Des filtres de Stern et Gerlach en série ».",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Des tableaux de nombres aux opérateurs",
+    "hist.intro": "Que les appareils soient des opérateurs agissant sur des états s'est d'abord écrit en matrices, puis en langage abstrait.",
+    "hist.events": {
+      heisenberg: { who: "Werner Heisenberg", what: "remplace les orbites par des tableaux de nombres liés aux transitions observées, dans un article reçu le 29 juillet.", context: "Ces tableaux se multiplient selon une règle qui dépend de l'ordre." },
+      born: { who: "Max Born et Pascual Jordan", what: "reconnaissent dans cette règle le produit des matrices.", context: "« Zur Quantenmechanik », reçu le 27 septembre, récrit la théorie dans la langue des matrices." },
+      neumann: { who: "John von Neumann", what: "publie les Mathematische Grundlagen der Quantenmechanik.", context: "Les grandeurs physiques et les appareils y sont des opérateurs linéaires sur un espace de Hilbert, indépendants de toute base." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      portes: { name: "Portes logiques quantiques", text: "Dans un ordinateur quantique, chaque porte est un opérateur sur le vecteur d'état, défini par sa matrice dans la base de calcul ; la mesure finale décompose l'état sur cette base. C'est (8.23) et (8.25), appliquées des milliers de fois." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      comp: { prompt: "Que sont les coefficients Cᵢ dans |φ⟩ = Σ |i⟩Cᵢ ?",
+        options: { a: "Des probabilités.", b: "Les amplitudes ⟨i|φ⟩ de trouver φ dans chaque état de base.", c: "Les énergies des états.", d: "Des nombres réels positifs." },
+        why: "(8.10) : Cᵢ = ⟨i|φ⟩, complexes en général. Leurs carrés de modules sont les probabilités." },
+      conj: { prompt: "Quels sont les coefficients du bra ⟨χ| sur les ⟨i| ?",
+        options: { a: "Les Dᵢ.", b: "Les |Dᵢ|².", c: "1/Dᵢ.", d: "Les conjugués Dᵢ*." },
+        why: "(8.13) : ⟨χ|i⟩ = ⟨i|χ⟩* = Dᵢ*." },
+      operateur: { prompt: "Que reste-t-il de ⟨χ|A|φ⟩ quand on retire ⟨χ| et |φ⟩ ?",
+        options: { a: "L'opérateur A = Σ |i⟩⟨i|A|j⟩⟨j|, défini par sa matrice.", b: "Un nombre.", c: "Rien.", d: "Une probabilité." },
+        why: "(8.23). Appliqué à un ket, il donne un ket ; encadré par un bra et un ket, un nombre." },
+      filtre: { prompt: "Un filtre qui ne laisse passer que l'état +x, comme opérateur, s'écrit…",
+        options: { a: "|+z⟩⟨+z|.", b: "1.", c: "|+x⟩⟨+x| : tout ket sort selon +x, avec l'amplitude ⟨+x|φ⟩.", d: "|+x⟩⟨\u2212x|." },
+        why: "|+x⟩⟨+x|φ⟩ est l'état +x, multiplié par l'amplitude d'y être. Sa norme au carré est la probabilité de passer." },
+      deux: { prompt: "On calcule ⟨χ|ψ⟩ avec les composantes de ψ = Aφ, puis ⟨χ|A|φ⟩ avec la matrice de A. Que trouve-t-on ?",
+        options: { a: "Deux résultats différents.", b: "Le même nombre : (8.26).", c: "Des résultats conjugués.", d: "Le premier au carré." },
+        why: "Ce sont les mêmes sommes, groupées autrement : Σᵢ ⟨χ|i⟩(Σⱼ ⟨i|A|j⟩⟨j|φ⟩)." },
+      ordre: { prompt: "Un état traverse A, puis B. Quel opérateur décrit l'ensemble ?",
+        options: { a: "AB.", b: "A + B.", c: "A seul.", d: "BA : |ψ⟩ = B(A|φ⟩)." },
+        why: "On applique A d'abord, puis B au résultat : BA|φ⟩." },
+      norme: { prompt: "Un spin +z traverse un filtre +x. Que vaut ⟨ψ|ψ⟩ ?",
+        options: { a: "1/2 : la probabilité de passer.", b: "1.", c: "0.", d: "2." },
+        why: "|⟨+x|+z⟩|² = 1/2. Un filtre n'est pas unitaire : il réduit la norme." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 8, §8-2 (texte original en anglais). Notations SI. Heisenberg, Zeitschrift für Physik, vol. 33 (1925) ; Born et Jordan, Zeitschrift für Physik, vol. 34 (1925) ; von Neumann (1932). Calculs numériques propres à cette page."
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

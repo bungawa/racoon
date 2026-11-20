@@ -1,0 +1,103 @@
+/* Leçon « Matériaux magnétiques extraordinaires » (Feynman II.37.5) : textes en français.
+   Une autre langue = locales/<langue>/lecons/materiaux-magnetiques-extraordinaires.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Matériaux magnétiques extraordinaires",
+    "crumb.jour": "Matériaux magnétiques extraordinaires",
+    "h1": "Matériaux magnétiques extraordinaires",
+    "lede": "Que se passe-t-il si l'échange préfère les spins opposés, ou si deux familles d'atomes s'ordonnent en sens contraires avec des moments inégaux ? On obtient des corps parfaitement ordonnés sans aimantation, et d'autres, isolants, dont l'aimantation peut changer de signe avec la température. La pierre d'aimant elle-même en fait partie.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : comprendre le ferromagnétisme",
+    "eq.net": "net",
+    "eq.mol": "mol",
+
+    "s1.sec": "1 · Décrire le système",
+    "s1.h2": "Quand l'échange change de signe",
+    "s1.p1": "Dans le fer, l'échange aligne les spins voisins. Dans d'autres corps, il les veut opposés : le λ de « Comprendre le ferromagnétisme » change de signe. Au-dessous d'une température critique, dite de Néel, les spins s'ordonnent alors en alternance. L'ordre est aussi strict que dans le fer, mais les moments se compensent : aucune aimantation spontanée. C'est l'antiferromagnétisme. Le chrome en est un exemple, avec une température de Néel de 311\u00a0K <span class=\"aux\">(38\u00a0°C)</span> ; son ordre est en fait une onde de densité de spin dont la période n'est pas un multiple de celle du réseau.",
+    "s1.p2": "Comment voir un ordre qui ne crée pas de champ ? Avec des neutrons. Un neutron porte un moment magnétique : il est diffracté par les noyaux, mais aussi par les spins. Dans l'oxyde de manganèse MnO, au-dessous de 115\u00a0K, les spins alternés forment un motif deux fois plus grand que la maille des atomes, et des pics de diffraction supplémentaires apparaissent.",
+    "sys.title": "Décrire le système avant d'appliquer la loi",
+    "sys1.body": "Un antiferromagnétique se décrit par deux sous-réseaux, a et b, chacun ferromagnétique, couplés en sens contraire. Le système est donc fait de deux aimantations, et chaque spin ressent le champ moyen de son sous-réseau et celui de l'autre. Si les deux sous-réseaux portent des moments égaux, l'aimantation totale est nulle à toute température. S'ils portent des moments différents, ou s'ils se désordonnent à des rythmes différents, elle ne l'est plus : c'est le cas des ferrites.",
+
+    "s2.sec": "2 · Deux sous-réseaux en champ moyen",
+    "s2.h2": "Ferro, antiferro, ferri",
+    "s2.p1": "On écrit pour chaque sous-réseau l'équation de « Comprendre le ferromagnétisme », avec la fonction de Brillouin <var>B</var><sub><var>j</var></sub> d'un moment de spin <var>j</var>. Le champ moyen sur le sous-réseau a vient des deux sous-réseaux, avec des coefficients <var>w</var> ; <var>p</var><sub>a</sub> et <var>p</var><sub>b</sub> sont les moments des deux sous-réseaux par motif, en magnétons de Bohr, et l'équation du sous-réseau b s'écrit de même :",
+    "val.neel": "Approximation : champ moyen pour chaque sous-réseau, moments de spin pur (<var>g</var>\u00a0=\u00a02), coefficients <var>w</var> constants. <var>w</var><sub>ab</sub>\u00a0<\u00a00 couple les sous-réseaux en sens contraire. Les jeux de paramètres de la figure sont choisis pour montrer chaque cas ; ils ne sont ajustés sur aucun matériau.",
+    "fig.aria": "Moments des deux sous-réseaux et moment total par motif en fonction de la température.",
+    "fig.legend.a": "sous-réseau a",
+    "fig.legend.b": "sous-réseau b",
+    "fig.legend.net": "moment total",
+    "fig.ferro": "Ferro",
+    "fig.anti": "Antiferro",
+    "fig.ferri": "Ferri",
+    "fig.comp": "Compensation",
+    "fig.t": "Température, en fraction de la température d'ordre",
+    "fig.ax.x": "T (K)",
+    "fig.ax.y": "moment par motif (μB)",
+    "fig.k.net": "Moment total",
+    "fig.f.net": "magnétons de Bohr par motif, à {T}",
+    "fig.k.to": "Température d'ordre",
+    "fig.f.to.curie": "point de Curie : les deux sous-réseaux s'ordonnent ensemble, dans le même sens",
+    "fig.f.to.neel": "température de Néel : ordre complet, aimantation nulle",
+    "fig.f.to.ferri": "les deux sous-réseaux se désordonnent ensemble à cette température",
+    "fig.k.comp": "Point de compensation",
+    "fig.aucune": "aucun",
+    "fig.f.comp.non": "le moment total garde son signe",
+    "fig.f.comp.oui": "les deux sous-réseaux s'y compensent exactement, puis le moment total change de signe",
+    "fig.caption": "Ferro : les deux courbes se confondent et s'ajoutent. Antiferro : elles sont opposées et le total reste nul. Ferri : un sous-réseau l'emporte, le total suit leur différence. Compensation : le sous-réseau au plus grand moment est faiblement couplé ; il se désordonne vite, et l'autre prend le dessus à plus haute température. En ce point, un matériau ordonné n'a aucune aimantation.",
+
+    "s3.sec": "3 · Les ferrites",
+    "s3.h2": "Compter les spins, à la manière de Néel",
+    "s3.p1": "Dans le spinelle MgAl<sub>2</sub>O<sub>4</sub>, les ions métalliques occupent deux sortes de sites entre les oxygènes, les uns entourés de quatre oxygènes, les autres de six. Remplaçons-les par des ions de fer : on obtient la magnétite, Fe<sub>3</sub>O<sub>4</sub>, le minéral des pierres d'aimant. L'échange le plus fort couple les deux sortes de sites, en sens contraire ; chaque sous-réseau est donc aimanté dans un sens. Les ions Fe³⁺, de cinq spins parallèles, portent 5\u00a0μ<sub>B</sub> ; les ions Fe²⁺, 4\u00a0μ<sub>B</sub>. Si l'on néglige le moment orbital :",
+    "val.compte": "Approximation : moments de spin seul, tous les spins d'un sous-réseau parallèles (0\u00a0K), répartition des ions sur les sites supposée connue. σ est l'aimantation par unité de masse ; <var>N</var><sub>A</sub> est le nombre d'Avogadro et <var>M</var><sub>mol</sub> la masse molaire du motif.",
+    "ferrites.body": "Magnétite : un Fe³⁺ sur un site, un Fe³⁺ et un Fe²⁺ sur l'autre ; les deux Fe³⁺ se compensent, il reste {nm}\u00a0μ<sub>B</sub> par motif, soit σ\u00a0≈\u00a0{sm} à 0\u00a0K. Les mesures donnent 90 à 92\u00a0A·m²·kg⁻¹ à température ambiante, et un point de Curie vers 850\u00a0K : le décompte de Néel tient à quelques pour cent près. Grenat d'yttrium et de fer, Y<sub>3</sub>Fe<sub>5</sub>O<sub>12</sub> : trois Fe³⁺ sur un type de site, deux sur l'autre, il reste un Fe³⁺, {ny}\u00a0μ<sub>B</sub> par motif, soit σ\u00a0≈\u00a0{sy} à 0\u00a0K. L'ion yttrium ne porte pas de moment.",
+    "s3.p2": "Les ferrites ont une aimantation à saturation plus faible que le fer, puisque leurs sous-réseaux se retranchent. Leur avantage est ailleurs : ce sont des isolants. Un champ qui varie vite y pénètre sans y induire de courants de Foucault, ce qu'aucun métal ne permet. C'est ce qui les rend utiles aux micro-ondes.",
+
+    "s4.sec": "4 · Spirales et questions ouvertes",
+    "s4.h2": "Ce que l'ordre peut encore faire",
+    "s4.p1": "Dans certains métaux des terres rares, les spins d'un plan atomique sont parallèles entre eux, mais tournent d'un angle fixe d'un plan au suivant : l'ordre est une spirale. D'autres dessinent des cônes, mêlant une spirale et une composante ferromagnétique.",
+    "s4.p2": "En 1964, plusieurs questions restaient ouvertes : l'origine quantitative de l'échange, la statistique exacte d'un réseau de spins en interaction, la forme précise de la transition de Curie. Feynman remarquait alors que l'électrisation de l'ambre, la pierre d'aimant et le champ terrestre, les trois premiers phénomènes électriques et magnétiques connus, faisaient partie des moins bien compris. Depuis, la transition a trouvé sa théorie (voir « Propriétés thermodynamiques d'un ferromagnétique »), et la pierre d'aimant, sa description : une ferrite.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "L'ordre caché",
+    "hist.intro": "L'antiferromagnétisme et le ferrimagnétisme ont été prévus avant d'être vus : il a fallu les neutrons pour voir un ordre qui ne crée pas de champ.",
+    "hist.events": {
+      neel: { who: "Louis Néel", what: "publie aux Annales de physique « Propriétés magnétiques des ferrites ; ferrimagnétisme et antiferromagnétisme » : deux sous-réseaux couplés en sens contraire expliquent l'aimantation des ferrites.", context: "Il avait proposé l'antiferromagnétisme vers 1930. Prix Nobel de physique en 1970, pour ses travaux sur les propriétés magnétiques des solides." },
+      shull: { who: "C. G. Shull et J. S. Smart", what: "publient dans la Physical Review la détection de l'antiferromagnétisme de l'oxyde de manganèse par diffraction de neutrons.", context: "C'est la première détermination d'une structure magnétique ; elle confirme les prévisions de Néel." },
+      bertaut: { who: "Félix Bertaut et François Forrat", what: "découvrent les grenats ferrimagnétiques, dont le grenat d'yttrium et de fer.", context: "Néel, dont Bertaut avait été l'élève, en explique l'aimantation par ses sous-réseaux ; Geller et ses collaborateurs les étudient au même moment aux États-Unis." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      filtres: { name: "Les filtres à grenat pour micro-ondes", text: "Le grenat d'yttrium et de fer a une raie de résonance de spin électronique très étroite et un facteur de qualité élevé aux fréquences des micro-ondes. On en fait des filtres pour micro-ondes, et l'on s'en sert aussi dans des rotateurs de Faraday. Un isolant ferrimagnétique y fait ce qu'aucun métal ne pourrait faire." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      anti: { prompt: "Un antiferromagnétique est parfaitement ordonné au-dessous de sa température de Néel. Pourquoi n'a-t-il pas d'aimantation spontanée ?",
+        options: { a: "Parce que ses spins restent désordonnés.", b: "Parce que ses domaines sont orientés au hasard.", c: "Parce que ses spins alternent et que les deux sous-réseaux, de moments égaux, se compensent.", d: "Parce que l'échange y est nul." },
+        why: "L'échange y favorise les spins opposés : deux sous-réseaux aimantés en sens contraires, de moments égaux, donnent une aimantation totale nulle." },
+      neutrons: { prompt: "Comment a-t-on pu voir, en 1949, l'ordre antiferromagnétique de l'oxyde de manganèse, qui ne crée aucun champ extérieur ?",
+        options: { a: "Par diffraction de neutrons : le neutron a un moment magnétique et voit le motif des spins, deux fois plus grand que la maille.", b: "Par diffraction de rayons X, sensibles au spin.", c: "En mesurant l'aimantation avec un magnétomètre très sensible.", d: "En observant les domaines par la méthode de Bitter." },
+        why: "Le motif alterné des spins double la période ; les neutrons, sensibles aux moments, produisent des pics de diffraction supplémentaires au-dessous de 115 K." },
+      magnetite: { prompt: "Dans la magnétite Fe₃O₄, un ion Fe³⁺ occupe un type de site, un Fe³⁺ et un Fe²⁺ l'autre, et les deux sous-réseaux sont opposés. Quel moment par motif le décompte de Néel prévoit-il ?",
+        options: { a: "14 μB, la somme de tous les moments.", b: "Zéro.", c: "5 μB.", d: "4 μB : les deux Fe³⁺ se compensent, il reste le Fe²⁺." },
+        hint: "Fe³⁺ porte 5 μB, Fe²⁺ porte 4 μB.",
+        why: "5 + 4 d'un côté, 5 de l'autre : 4 μB. Ramené à la masse molaire, environ 96 A·m²·kg⁻¹ à 0 K, contre 90 à 92 mesurés à température ambiante." },
+      isolant: { prompt: "Pourquoi utilise-t-on des ferrites plutôt que du fer dans les composants pour micro-ondes, bien que leur aimantation soit plus faible ?",
+        options: { a: "Parce que leur point de Curie est plus élevé.", b: "Parce que ce sont des isolants : un champ rapide y pénètre sans induire de courants de Foucault.", c: "Parce qu'elles n'ont pas de domaines.", d: "Parce qu'elles sont diamagnétiques." },
+        why: "Dans un métal, les courants induits écrantent un champ qui varie vite et dissipent de l'énergie ; un isolant ferrimagnétique n'a pas ce défaut." },
+      compensation: { prompt: "Dans un ferrimagnétique, le sous-réseau de plus grand moment est le plus faiblement couplé. Que peut-il arriver quand la température monte ?",
+        options: { a: "L'aimantation augmente jusqu'au point de Curie.", b: "L'ordre devient ferromagnétique.", c: "Ce sous-réseau se désordonne plus vite, les deux se compensent à une certaine température, puis l'aimantation change de signe.", d: "Rien : l'aimantation garde la même valeur jusqu'au point de Curie." },
+        why: "Le moment total est la différence de deux aimantations qui décroissent différemment ; elle peut s'annuler en un point de compensation, au-dessous de la température d'ordre." },
+      grenat: { prompt: "Dans le grenat d'yttrium et de fer, trois Fe³⁺ occupent un type de site et deux l'autre, en sens contraires. Quel moment par motif reste-t-il à 0 K ?",
+        options: { a: "5 μB, le moment d'un seul Fe³⁺.", b: "25 μB.", c: "Zéro.", d: "15 μB." },
+        why: "3\u00a0×\u00a05\u00a0\u2212\u00a02\u00a0×\u00a05\u00a0=\u00a05 μB. L'yttrium n'a pas de moment." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol.\u00a0II, chap.\u00a037, §37-5 (texte original en anglais). Chrome : arXiv:0705.4636. Oxyde de manganèse et Shull et Smart : <i>Acta Cryst. B</i>, commentaire scientifique, 2024 ; <i>Phys. Rev.</i> vol.\u00a076, p.\u00a01256-1257, 1949. Néel : <i>Ann. Phys.</i> vol.\u00a012, n°\u00a03, p.\u00a0137-198, 1948 ; antiferromagnétisme vers 1930, prix Nobel, élève Bertaut : Wikipédia, « Louis Néel ». Magnétite : université du Minnesota, Institute for Rock Magnetism, « Classes of Magnetic Materials » ; pierre d'aimant : Wikipédia, « Lodestone ». Grenats : Encyclopædia Universalis, « Grenats », les grenats magnétiques ; point de Curie 560\u00a0K et usages : Wikipédia, « Yttrium iron garnet ». Décompte des moments et modèle à deux sous-réseaux : calculs propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

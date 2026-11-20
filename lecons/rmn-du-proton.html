@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RMN du proton</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-organique" data-i18n="monde.chim-organique"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-spectroscopies" data-i18n="etape.chim-spectroscopies"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/resonance-magnetique-nucleaire" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi>ν</mi><mo>=</mo><mfrac><mi>γ</mi><mrow><mn>2</mn><mi>π</mi></mrow></mfrac><mspace width="0.1em"/><msub><mi>B</mi><mn>0</mn></msub><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>σ</mi><mo stretchy="false">)</mo></math></div>
+    <p class="validite" data-i18n-html="s1.validite1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi>δ</mi><mo>=</mo><mfrac><mrow><mi>ν</mi><mo>−</mo><msub><mi>ν</mi><mi data-i18n="eq.ref"></mi></msub></mrow><msub><mi>ν</mi><mi data-i18n="eq.ref"></mi></msub></mfrac></math></div>
+    <p class="validite" data-i18n-html="s1.validite2"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="list keyed no-sigle" id="deplacements"></div>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mfrac><msub><mi>n</mi><mi mathvariant="normal">A</mi></msub><msub><mi>n</mi><mi mathvariant="normal">B</mi></msub></mfrac><mo>=</mo><mfrac><mrow><msub><mi>I</mi><mi mathvariant="normal">A</mi></msub><mo>/</mo><msub><mi>h</mi><mi mathvariant="normal">A</mi></msub></mrow><mrow><msub><mi>I</mi><mi mathvariant="normal">B</mi></msub><mo>/</mo><msub><mi>h</mi><mi mathvariant="normal">B</mi></msub></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="s3.validite"></p>
+    <figure>
+      <div class="chart" id="gspectre"><svg id="cspectre" role="img" data-i18n-attr="aria-label:sp.aria"></svg></div>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="frac" data-i18n="sp.x"></label><output id="xread" for="frac"></output></div>
+          <input id="frac" type="range" min="0" max="100" step="1" value="35"></div>
+        <div class="ctl"><div class="row"><label for="champ" data-i18n="sp.b0"></label><output id="bread" for="champ"></output></div>
+          <input id="champ" type="range" min="141" max="2350" step="1" value="940"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="sp.nu0"></span><span class="v" id="nu0"></span></div>
+          <div class="stat"><span class="k" data-i18n="sp.ecart"></span><span class="v" id="ecarthz"></span><span class="f" data-i18n="sp.ecartf"></span></div>
+          <div class="stat"><span class="k" data-i18n="sp.aires"></span><span class="v" id="aires"></span></div>
+          <div class="stat"><span class="k" data-i18n="sp.deduit"></span><span class="v" id="deduit"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="sp.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="box def"><b data-i18n="s4.def.titre"></b>
+      <p data-i18n-html="s4.def.corps"></p>
+    </div>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/rmn-du-proton.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script src="/racoon/statistique.js"></script>
+<script src="/racoon/chim-organique.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/physique-fondamentale.js"></script>
+<script src="/racoon/lecons/champs-em.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/magnetisme-induction.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I.fallback : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const S = ChimOrga.Spectro, out = id => document.getElementById(id);
+const larmor = B => MagInd.frequencePrecession("proton", B).f;
+
+/* ---------- déplacements chimiques mesurés (CDCl₃, Fulmer et al. 2010) ---------- */
+(() => {
+  const ROWS = [["methane", 0.22], ["acetonitrile", 2.10], ["acetone", 2.17], ["toluene", 2.36], ["methanol", 3.49], ["nitromethane", 4.33],
+    ["dichloromethane", 5.30], ["ethylene", 5.40], ["chloroforme", 7.26], ["benzene", 7.36], ["dmf", 8.02]], txt = textOf("dep.rows", ROWS.map(r => r[0]));
+  out("deplacements").innerHTML = ROWS.map(([id, d]) => `<div><span class="k">${F.qty(F.fix(d, 2), t("u.ppm"))}</span><span>${txt[id]}</span></div>`).join("");
+})();
+
+/* ---------- mélange éthanol + éthanoate d'éthyle : spectre et intégration ---------- */
+(() => {
+  const svg = out("cspectre"), frac = out("frac"), champ = out("champ"), W = 1;   // largeur à mi-hauteur des raies : 1 Hz
+  const D0 = 0, D1 = 4.6;
+  const { x, y, g } = Plot.axes(svg, { fmt: F, w: 560, h: 280, pad: { b: 44, l: 44 },
+    x: { domain: [-D1, -D0], label: t("sp.xaxe"), fmt: v => F.num(Math.abs(v), 3) }, y: { domain: [0, 1.15], label: t("sp.yaxe"), fmt: () => "" } });
+  const spectre = Plot.el("path", { class: "curve" }, g), integ = Plot.el("path", { class: "ref" }, g), notes = Plot.el("g", {}, g);
+  function maj() {
+    const xA = +frac.value / 100, B = +champ.value / 100, nu0 = larmor(B);
+    const rs = S.raies(S.melange([["acetateEthyle", xA], ["ethanol", 1 - xA]]), nu0);
+    const n = 4000, ds = []; for (let i = 0; i <= n; i++) ds.push(D0 + (D1 - D0) * i / n);
+    const ys = S.spectreRMN(rs, ds, nu0, W), ymax = Math.max(...ys);
+    spectre.setAttribute("d", Plot.path(ds.map((d, i) => [x(-d), y(ys[i] / ymax)])));
+    const h = W / 2, tot = rs.reduce((s, r) => s + r.I, 0);                       // intégrale exacte des lorentziennes, de δ = 0 vers la gauche
+    const cum = ds.map(d => rs.reduce((s, r) => s + r.I * (0.5 + Math.atan((d - r.delta) * nu0 / 1e6 / h) / Math.PI), 0) / tot);
+    integ.setAttribute("d", Plot.path(ds.map((d, i) => [x(-d), y(0.05 + 1.05 * cum[i])])));
+    notes.innerHTML = "";
+    [[4.12, "sp.n.ester"], [3.72, "sp.n.ethanol"], [2.05, "sp.n.acetyle"], [1.25, "sp.n.methyles"]].forEach(([d, k], i) =>
+      Plot.el("text", { x: x(-d), y: y(1.12) + 14 * (i % 2), "text-anchor": "middle", class: "note" }, notes).textContent = t(k));
+    const e = S.integrale(rs, 4.0, 4.25), a = S.integrale(rs, 3.6, 3.85);
+    out("xread").textContent = F.qty(F.fix(100 * xA, 0), "%");
+    out("bread").textContent = F.qty(F.fix(B, 2), "T");
+    out("nu0").textContent = F.si(nu0, "Hz", { sig: 4 });
+    out("ecarthz").textContent = F.qty(F.fix((4.12 - 3.72) * nu0 / 1e6, 0), "Hz");
+    out("aires").textContent = e + a > 0 ? t("sp.rapport", { e: F.fix(e / (e + a), 2), a: F.fix(a / (e + a), 2) }) : t("sp.na");
+    out("deduit").textContent = e + a > 0 ? F.qty(F.fix(100 * e / (e + a), 0), "%") : t("sp.na");
+  }
+  frac.oninput = champ.oninput = maj; maj();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["bloch", 1946, "experiment"], ["arnold", 1951, "experiment"], ["tiers", 1958, "idea"], ["varian", 1961, "experiment"], ["ernst", 1966, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount(out("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["paillasse", "irm"], uses = textOf("uses.items", USES);
+  out("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["champ", "c"], ["hertz", "a"], ["electro", "d"], ["chlore", "b"], ["melange", "a"], ["signaux", "c"], ["tms", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount(out("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+/* Leçon « L’énergie du rayonnement » (Feynman I.29.2) : textes en français.
+   Une autre langue = locales/<langue>/lecons/opt-energie-rayonnement.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "L’énergie du rayonnement",
+    "crumb.jour": "L’énergie du rayonnement",
+    "h1": "L’énergie du rayonnement",
+    "lede": "Le champ rayonné décroît en 1/r ; l'énergie qu'il transporte, proportionnelle à son carré, décroît en 1/r². Mais la surface qu'un cône découpe croît en r² : la puissance qui traverse ce cône est la même à 10\u00a0m et à 100\u00a0km. L'énergie rayonnée ne se perd pas en route, et ne revient pas à la source.",
+    "tag.piste": "Optique et rayonnement",
+    "tag.prereq": "Prérequis : les ondes électromagnétiques",
+    "eq.cos": "cos",
+
+    "s1.sec": "1 · Décrire le système",
+    "s1.h2": "L'énergie va comme le carré du champ",
+    "s1.p1": "Pour savoir quelle énergie un champ peut livrer, mettons-y un récepteur : une charge liée à un ressort, un oscillateur linéaire, loin de la source et petit devant la longueur d'onde, de sorte que le champ y est uniforme. Le champ <var>E</var> exerce la force <var>q</var><var>E</var>. Comme l'oscillateur est linéaire, son déplacement, sa vitesse et son accélération sont proportionnels à <var>E</var> ; son énergie cinétique, proportionnelle au carré de la vitesse, l'est donc à <var>E</var>². Doubler le champ quadruple l'énergie reçue. Cela ne dépend pas du récepteur, tant qu'il est linéaire : c'est une propriété du champ.",
+    "s1.p2": "Le facteur qui manque se calcule à partir des équations de Maxwell, dans « L’énergie transportée par une onde électrique ». Dans le vide, la puissance qui traverse un mètre carré perpendiculaire à la propagation, l'intensité, vaut, pour une onde sinusoïdale d'amplitude <var>E</var><sub>0</sub> :",
+    "val.intensite": "Exacte pour une onde plane progressive dans le vide, où <var>B</var>\u00a0=\u00a0<var>E</var>/<var>c</var>. Ce qui reste approché : une onde sphérique n'est plane qu'en zone d'onde, à λ/(2π<var>r</var>) près, 5\u00a0% à trois longueurs d'onde. La moyenne ⟨<var>E</var>²⟩\u00a0=\u00a0<var>E</var><sub>0</sub>²/2 suppose une seule fréquence, sur un nombre entier de périodes. Dans un milieu d'indice <var>n</var>, il faut <var>n</var>ε<sub>0</sub><var>c</var>.",
+    "s1.p3": "C'est la règle de calcul de cette étape : d'un champ on tire une intensité. Un champ de 1\u00a0V·m<sup>\u22121</sup> d'amplitude porte 1,33\u00a0mW·m<sup>\u22122</sup> ; un champ dix fois plus fort, cent fois plus.",
+
+    "s2.sec": "2 · Le cône",
+    "s2.h2": "La même puissance à toute distance",
+    "s2.p1": "Le champ rayonné par une charge oscillante, (29.3) de « Les ondes électromagnétiques », a une amplitude en 1/<var>r</var>. L'intensité décroît donc en 1/<var>r</var>². Prenons un cône de sommet la source, de demi-angle α : il découpe sur une sphère de rayon <var>r</var> une calotte d'aire Ω<var>r</var>², où Ω est l'angle solide. La puissance qui traverse cette calotte est le produit des deux :",
+    "val.cone": "Approximation : l'intensité est prise uniforme sur la calotte. Autour du plan équatorial d'un dipôle, l'écart reste sous 1\u00a0% jusqu'à α\u00a0=\u00a010° (la figure le chiffre) ; au-delà, il faut sommer <var>I</var> sur la calotte, ce que fait la figure. Le produit <var>I</var><var>r</var>² ne dépend de <var>r</var> qu'en zone d'onde, sans absorption : ni sol, ni obstacle, ni milieu.",
+    "fig.aria.cone": "Le cône issu de la source et la calotte qu'il découpe à la distance choisie",
+    "fig.aria.trace": "Intensité moyenne en fonction de la distance, en échelles logarithmiques",
+    "fig.legend.i": "intensité moyenne I(r) dans le plan équatorial",
+    "fig.legend.cap": "calotte découpée par le cône à la distance r",
+    "fig.r": "Distance r",
+    "fig.a": "Demi-angle du cône α",
+    "fig.xaxis": "distance r (m)",
+    "fig.yaxis": "I (W·m⁻²)",
+    "fig.k.e": "Amplitude du champ <var>E</var><sub>0</sub>",
+    "fig.f.e": "à {rl} longueurs d'onde",
+    "fig.k.i": "Intensité <var>I</var>",
+    "fig.f.i": "aire de la calotte : {A}",
+    "fig.k.p": "Puissance dans le cône",
+    "fig.f.p": "{f}\u00a0% du total ; <var>I</var>Ω<var>r</var>² s'en écarte de {u}\u00a0%",
+    "fig.caption": "Le système : un dipôle court, à 100\u00a0MHz (λ\u00a0≈\u00a03\u00a0m), qui rayonne en moyenne 1\u00a0kW dans le vide ; le cône est centré sur le plan équatorial. Déplacez la calotte de 10\u00a0m à 100\u00a0km : le champ est divisé par 10<sup>4</sup>, l'intensité par 10<sup>8</sup>, l'aire multipliée par 10<sup>8</sup>, et la puissance dans le cône ne bouge pas. Seul l'angle du cône la change.",
+    "s2.p2": "Avec un cône qui s'ouvre jusqu'à entourer la source, la calotte devient la sphère entière : la puissance qui la traverse est tout ce que la source rayonne. Pour un dipôle court de moment <var>p</var><sub>0</sub>\u00a0cos\u00a0ω<var>t</var>, cette somme vaut, en moyenne sur une période :",
+    "val.puissance": "Approximation : dipôle petit devant la longueur d'onde (l'antenne de la figure : moins de λ/10), charges lentes, vide, moyenne sur une période. Elle découle de l'intensité en sin²θ et se démontre dans « La puissance rayonnée ». Pour <var>p</var><sub>0</sub>\u00a0≈\u00a07,6\u00a0×\u00a010<sup>\u22129</sup>\u00a0C·m à 100\u00a0MHz, elle donne le 1\u00a0kW de la figure.",
+
+    "s3.sec": "3 · Une énergie qui part pour de bon",
+    "s3.h2": "Ce que la source perd, d'autres le recueillent",
+    "s3.p1": "Puisque la puissance qui traverse une sphère ne dépend pas de son rayon, l'énergie rayonnée est un flux qui ne s'épuise pas : elle s'étale sur une surface toujours plus grande sans diminuer. Une charge qui a oscillé a donc perdu de l'énergie pour de bon : ce qu'elle a envoyé ne lui revient pas, sauf si un obstacle le renvoie. L'énergie existe toujours, et d'autres systèmes peuvent la capter : c'est ce que font une antenne, l'œil ou un panneau solaire. Cette perte freine la charge elle-même : c'est l'objet de « L’amortissement par rayonnement ». Le facteur 1/<var>r</var> du champ n'est donc pas un détail : c'est la seule décroissance compatible avec la conservation de l'énergie dans un cône. Un champ en 1/<var>r</var>² ne transporterait rien jusqu'à l'infini.",
+    "sys.title": "Le système décrit : le Soleil vu de la Terre",
+    "sys1.body": "Au-dessus de l'atmosphère, à une unité astronomique ({au}) du Soleil, on reçoit en moyenne {S} : c'est la valeur nominale de l'Union astronomique internationale. Le rayon du Soleil devant cette distance est petit (0,5\u00a0% environ) : c'est un point, et l'intensité décroît en 1/<var>r</var>². Multipliée par l'aire d'une sphère d'une unité astronomique, 4π<var>r</var>², elle donne la puissance totale du Soleil, {L}\u00a0W, la même à travers toute sphère qui l'entoure. À cinq unités astronomiques, l'intensité tombe à {S5}. La lumière du Soleil n'est pas sinusoïdale ; la règle <var>I</var>\u00a0=\u00a0ε<sub>0</sub><var>c</var>⟨<var>E</var>²⟩ lui donne un champ efficace d'environ {E}. Elle met {t} pour arriver.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "De la loi en 1/r² au bilan de puissance",
+    "hist.intro": "La loi en carré inverse de la lumière est plus ancienne que la lumière électromagnétique ; il a fallu deux siècles et demi pour dire où passe l'énergie.",
+    "hist.events": {
+      kepler: { who: "Johannes Kepler", what: "énonce dans un traité d'optique, publié à Francfort, que la lumière d'une source faiblit comme le carré de la distance.", context: "Son argument est géométrique : la lumière ne se perd pas, elle s'étale sur des sphères dont la surface croît comme le carré du rayon. C'est l'argument du cône, sans champ." },
+      poynting: { who: "John Henry Poynting", what: "lit le 10 janvier devant la Royal Society « On the Transfer of Energy in the Electromagnetic Field ».", context: "Il montre que l'énergie électromagnétique circule dans le champ lui-même, et donne l'expression de son flux. L'intensité d'une onde en est la moyenne." },
+      friis: { who: "Harald Friis", what: "ingénieur aux Bell Telephone Laboratories, publie une formule simple pour la puissance reçue par une antenne.", context: "La puissance émise, étalée sur une sphère en 1/r², est captée sur l'aire effective de l'antenne de réception. La formule suppose les deux antennes en champ lointain, en espace libre." },
+      uai: { who: "Union astronomique internationale", what: "adopte des valeurs nominales pour le Soleil, dont un éclairement de 1\u202f361\u00a0W·m⁻² à une unité astronomique.", context: "Cette valeur est l'éclairement moyen mesuré depuis l'espace au cours du cycle solaire 23, plus bas que celui qu'on admettait avant les radiomètres récents. La luminosité nominale, 3,828\u00a0×\u00a010²⁶\u00a0W, s'en déduit par l'aire d'une sphère d'une unité astronomique de rayon." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      liaison: { name: "Bilan de liaison radio", text: "Pour dimensionner une liaison, un relais ou une station sol de satellite, l'ingénieur part de la puissance émise, la répartit sur la sphère, en 1/r², et la multiplie par l'aire effective de l'antenne de réception : c'est la formule de Friis. Doubler la distance coûte un facteur 4 en puissance reçue, soit 6\u00a0dB. Les pertes du milieu (pluie, gaz, obstacles) s'ajoutent ensuite au bilan." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      carre: { prompt: "Pourquoi l'énergie qu'un champ peut livrer est-elle proportionnelle au carré de ce champ ?",
+        options: { a: "Parce que l'énergie est toujours le carré d'une grandeur.", b: "Parce qu'un récepteur linéaire prend une vitesse proportionnelle au champ, et une énergie cinétique proportionnelle au carré de cette vitesse.", c: "Parce que le champ a deux composantes, électrique et magnétique.", d: "Parce que le champ décroît en 1/r²." },
+        why: "Dans un oscillateur linéaire, déplacement, vitesse et accélération sont proportionnels au champ qui le force ; l'énergie cinétique, en v², l'est au carré du champ." },
+      double: { prompt: "On passe de 2\u00a0km à 4\u00a0km d'un émetteur, en espace libre. Que deviennent l'amplitude du champ et l'intensité ?",
+        options: { a: "Les deux sont divisées par 2.", b: "Les deux sont divisées par 4.", c: "Le champ est divisé par 2, l'intensité par 4.", d: "Le champ est divisé par 4, l'intensité par 16." },
+        why: "Le champ rayonné va en 1/r, l'intensité en E², donc en 1/r²." },
+      cone: { prompt: "Un capteur absorbe toute l'énergie qui traverse un cône fixe issu de la source. On le recule de 1\u00a0km à 3\u00a0km en agrandissant sa surface pour qu'il couvre le même cône. Que reçoit-il ?",
+        options: { a: "La même puissance : l'intensité est 9 fois plus faible, mais la surface 9 fois plus grande.", b: "9 fois moins.", c: "3 fois moins.", d: "9 fois plus." },
+        hint: "L'aire découpée par un cône croît comme r².",
+        why: "I r² ne dépend pas de r en zone d'onde, sans absorption : la puissance dans un angle solide donné est la même à toute distance." },
+      intensite: { prompt: "Une onde sinusoïdale a, dans le vide, une amplitude de champ électrique de 100\u00a0V·m⁻¹. Quelle est son intensité ?",
+        options: { a: "1,33\u00a0mW·m⁻².", b: "1,33\u00a0W·m⁻².", c: "26,6\u00a0W·m⁻².", d: "13,3\u00a0W·m⁻²." },
+        hint: "I = ε₀ c E₀²/2, avec ε₀ c ≈ 2,65\u00a0×\u00a010⁻³\u00a0S.",
+        why: "8,85\u00a0×\u00a010⁻¹² × 3,00\u00a0×\u00a010⁸ × 100²/2 ≈ 13,3\u00a0W·m⁻². Oublier le facteur 1/2 de la moyenne donne 26,6." },
+      champ: { prompt: "On mesure 1\u202f361\u00a0W·m⁻² de lumière solaire au-dessus de l'atmosphère. Quel champ électrique efficace cela représente-t-il ?",
+        options: { a: "Environ 1,4\u00a0V·m⁻¹.", b: "Environ 700\u00a0V·m⁻¹.", c: "Environ 1,4\u00a0×\u00a010⁶\u00a0V·m⁻¹.", d: "Environ 37\u00a0V·m⁻¹." },
+        hint: "E_eff = √(I/(ε₀c)).",
+        why: "1\u202f361/(2,65\u00a0×\u00a010⁻³) ≈ 5,1\u00a0×\u00a010⁵, dont la racine vaut environ 716\u00a0V·m⁻¹." },
+      perdue: { prompt: "Une charge a oscillé un moment, puis s'est arrêtée. Que devient l'énergie qu'elle a rayonnée ?",
+        options: { a: "Elle revient à la charge quand le champ disparaît.", b: "Elle diminue en route, en 1/r², jusqu'à disparaître.", c: "Elle continue de s'éloigner sans diminuer ; la charge l'a perdue, d'autres systèmes peuvent la capter.", d: "Elle reste stockée autour de la charge, dans le champ proche." },
+        why: "La puissance qui traverse une sphère ne dépend pas de son rayon : l'énergie rayonnée part pour de bon. C'est ce qui distingue le terme en 1/r des termes en 1/r² et 1/r³." },
+      frequence: { prompt: "Deux dipôles courts ont le même moment p₀, l'un à 100\u00a0MHz, l'autre à 200\u00a0MHz. Lequel rayonne le plus, et de combien ?",
+        options: { a: "Celui à 200\u00a0MHz, 16 fois plus : la puissance va en ω⁴.", b: "Celui à 200\u00a0MHz, 2 fois plus.", c: "Celui à 200\u00a0MHz, 4 fois plus.", d: "Ils rayonnent autant, à moment égal." },
+        hint: "Le champ est proportionnel à l'accélération, ω² p₀ ; l'intensité à son carré.",
+        why: "L'accélération des charges vaut ω² fois leur déplacement ; la puissance, en carré d'accélération, va en ω⁴ : 2⁴ = 16." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. I, chap. 29, §29-2 (texte original en anglais). Notations SI. Kepler : <i>Ad Vitellionem paralipomena</i>, Francfort, 1604 ; Museo Galileo, notice de l'édition. Poynting : <i>Philosophical Transactions</i> 175 (1884), reçu le 17 décembre 1883, lu le 10 janvier 1884. Friis : « A Note on a Simple Transmission Formula », <i>Proceedings of the Institute of Radio Engineers</i> 34 (1946). Valeurs solaires : Union astronomique internationale, résolution B3 de 2015. Émetteur, cône et calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

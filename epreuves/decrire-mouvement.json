@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["chute", "a"],
+  ["biais", "b"],
+  ["freinage", "c"],
+  ["virage", "d"],
+  ["air", "a"],
+  ["point", "b"],
+  ["numerique", "c"],
+  ["aller", "d"]
+ ]
+}

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Transformateur monophasé</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-ondes-milieux" data-i18n="monde.ondes-milieux"></a><span class="aux">›</span><a href="/racoon/etape?id=conversion-electromecanique" data-i18n="etape.conversion-electromecanique"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/transformateurs-inductances" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mfrac><msub><mi>u</mi><mn>2</mn></msub><msub><mi>u</mi><mn>1</mn></msub></mfrac><mo>=</mo><mfrac><msub><mi>N</mi><mn>2</mn></msub><msub><mi>N</mi><mn>1</mn></msub></mfrac><mo>=</mo><mi>m</mi></math></div>
+    <p class="validite" data-i18n-html="val.tension"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>N</mi><mn>1</mn></msub><msub><mi>i</mi><mn>1</mn></msub><mo>−</mo><msub><mi>N</mi><mn>2</mn></msub><msub><mi>i</mi><mn>2</mn></msub><mo>=</mo><mi>ℛ</mi><mi>φ</mi><mo>,</mo><mspace width="1em"/><mi>ℛ</mi><mo>=</mo><mfrac><mi>ℓ</mi><mrow><msub><mi>μ</mi><mn>0</mn></msub><msub><mi>μ</mi><mi>r</mi></msub><mi>S</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.ampere"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="eq"><math display="block"><mfrac><msub><mi>i</mi><mn>1</mn></msub><msub><mi>i</mi><mn>2</mn></msub></mfrac><mo>=</mo><mi>m</mi></math></div>
+    <p class="validite" data-i18n-html="val.courant"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>u</mi><mn>1</mn></msub><msub><mi>i</mi><mn>1</mn></msub><mo>=</mo><msub><mi>u</mi><mn>2</mn></msub><msub><mi>i</mi><mn>2</mn></msub></math></div>
+    <p class="validite" data-i18n-html="val.puissance"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><msub><munder><mi>Z</mi><mo>_</mo></munder><mn>1</mn></msub><mo>=</mo><mfrac><msub><munder><mi>U</mi><mo>_</mo></munder><mn>1</mn></msub><msub><munder><mi>I</mi><mo>_</mo></munder><mn>1</mn></msub></mfrac><mo>=</mo><mfrac><munder><mi>Z</mi><mo>_</mo></munder><msup><mi>m</mi><mn>2</mn></msup></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.impedance"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><mi>η</mi><mo>=</mo><mfrac><mrow><mi>x</mi><msub><mi>S</mi><mi>n</mi></msub><mi data-i18n="eq.cos"></mi><mi>φ</mi></mrow><mrow><mi>x</mi><msub><mi>S</mi><mi>n</mi></msub><mi data-i18n="eq.cos"></mi><mi>φ</mi><mo>+</mo><msub><mi>P</mi><mn>0</mn></msub><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><msub><mi>P</mi><mi>k</mi></msub></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.rendement"></p>
+    <figure class="chart">
+      <svg class="fig" id="trend" role="img" data-i18n-attr="aria-label:fig1.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig1.legend.t2"></span><span class="c-warn" data-i18n="fig1.legend.t1"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="sx" data-i18n="fig1.x"></label><output id="sxr" for="sx"></output></div>
+            <input id="sx" type="range" min="0" max="150" step="1" value="100"></div>
+          <div class="ctl"><div class="row"><label for="sk" data-i18n="fig1.k"></label><output id="skr" for="sk"></output></div>
+            <input id="sk" type="range" min="30" max="100" step="1" value="100"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig1.k.eta"></span><span class="v" id="veta"></span><span class="f" id="feta"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig1.k.pertes"></span><span class="v" id="vpertes"></span><span class="f" id="fpertes"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig1.k.opt"></span><span class="v" id="vopt"></span><span class="f" id="fopt"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig1.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>P</mi><mtext data-i18n="eq.ligne"></mtext></msub><mo>=</mo><mi>R</mi><msup><mi>I</mi><mn>2</mn></msup><mo>=</mo><mfrac><mrow><mi>R</mi><msup><mi>P</mi><mn>2</mn></msup></mrow><mrow><msup><mi>U</mi><mn>2</mn></msup><msup><mi data-i18n="eq.cos"></mi><mn>2</mn></msup><mi>φ</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.ligne"></p>
+    <figure class="chart">
+      <svg class="fig" id="tline" role="img" data-i18n-attr="aria-label:fig2.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig2.legend.part"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="su" data-i18n="fig2.u"></label><output id="sur" for="su"></output></div>
+            <input id="su" type="range" min="0" max="9" step="1" value="4"></div>
+          <div class="ctl"><div class="row"><label for="sc" data-i18n="fig2.k"></label><output id="scr" for="sc"></output></div>
+            <input id="sc" type="range" min="50" max="100" step="1" value="100"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig2.k.i"></span><span class="v" id="vi"></span><span class="f" id="fi"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig2.k.p"></span><span class="v" id="vp"></span><span class="f" id="fp"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig2.k.chute"></span><span class="v" id="vc"></span><span class="f" id="fc"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig2.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/transformateur-monophase.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/ondes-milieux.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const OM = OndesMilieux;
+const pct = (x, s) => F.qty(F.num(100 * x, s || 3), "%");
+
+/* ---------- le système décrit : un transformateur de table, 230 V → 12 V, 50 VA ---------- */
+(() => {
+  const core = { N1: 800, U1: 230, f: 50, S: 1e-3, l: 0.2 }, N2 = 42, Sn = 50;
+  const fer = OM.noyau(Object.assign({ mur: 5000 }, core)), air = OM.noyau(Object.assign({ mur: 1 }, core));
+  const m = N2 / core.N1, I1n = Sn / core.U1;
+  $("sys1").innerHTML = t("sys1.body", { U2: F.si(m * core.U1, "V"), m: F.num(m, 3), B: F.si(fer.Bmax, "T"), Imu: F.si(fer.Imu, "A"),
+    I1: F.si(I1n, "A"), part: pct(fer.Imu / I1n, 2), air: F.si(air.Imu, "A") });
+})();
+
+/* ---------- rendement d'un transformateur de distribution de 400 kVA ---------- */
+(() => {
+  const Sn = 400e3, T2 = { P0: 387, Pk: 3250 }, T1 = { P0: 430, Pk: 4600 };
+  const svg = $("trend"), sx = $("sx"), sk = $("sk");
+  function draw() {
+    const x = +sx.value / 100, k = +sk.value / 100;
+    const r = OM.rendementTransfo(Object.assign({ Sn, x, cosphi: k }, T2)), r1 = OM.rendementTransfo(Object.assign({ Sn, x, cosphi: k }, T1));
+    svg.innerHTML = "";
+    const P = Plot.axes(svg, { fmt: F, w: 640, h: 240, pad: { l: 64, b: 44 }, x: { domain: [0, 150], label: t("fig1.xaxis") }, y: { domain: [97, 100], label: t("fig1.yaxis") } });
+    const xs = Array.from({ length: 150 }, (_, i) => (i + 1) / 100);
+    for (const [L, cls] of [[T2, "curve"], [T1, "stroke c-warn"]]) {
+      const pts = xs.map(v => [P.x(100 * v), P.y(Math.max(97, 100 * OM.rendementTransfo(Object.assign({ Sn, x: v, cosphi: k }, L)).eta))]);
+      Plot.el("path", { d: Plot.path(pts), class: cls }, P.g);
+    }
+    if (x > 0) Plot.el("circle", { cx: P.x(100 * x), cy: P.y(Math.max(97, 100 * r.eta)), r: 5, class: "dot" }, P.g);
+    $("sxr").textContent = pct(x, 3); $("skr").textContent = F.num(k, 2);
+    $("veta").textContent = pct(r.eta, 4);
+    $("feta").textContent = t("fig1.f.eta", { v: pct(r1.eta, 4) });
+    $("vpertes").textContent = F.si(r.Pfer + r.Pcu, "W");
+    $("fpertes").textContent = t("fig1.f.pertes", { fer: F.si(r.Pfer, "W"), cu: F.si(r.Pcu, "W") });
+    $("vopt").textContent = pct(r.xOpt, 3);
+    $("fopt").textContent = t("fig1.f.opt", { v: pct(r.etaMax, 4) });
+  }
+  sx.oninput = sk.oninput = draw; draw();
+})();
+
+/* ---------- transporter 10 MW sur une ligne de 5 Ω ---------- */
+(() => {
+  const P = 10e6, R = 5, svg = $("tline"), su = $("su"), sc = $("sc");
+  const TENSIONS = [0.4e3, 1e3, 3e3, 10e3, 20e3, 63e3, 90e3, 150e3, 225e3, 400e3], Uof = s => TENSIONS[s];   // usual network voltages
+  function draw() {
+    const U = Uof(+su.value), k = +sc.value / 100, l = OM.ligne({ P, U, R, cosphi: k });
+    svg.innerHTML = "";
+    const A = Plot.axes(svg, { fmt: F, w: 640, h: 240, pad: { l: 64, b: 44 }, x: { scale: "log", domain: [0.1, 1000], label: t("fig2.xaxis") }, y: { scale: "log", domain: [1e-4, 100], label: t("fig2.yaxis") } });
+    /* drawn only where the drop R I/U stays under 20 %: beyond, the model no longer gives the loss */
+    const us = Array.from({ length: 161 }, (_, i) => Math.pow(10, 4 * i / 160 - 1)).filter(u => OM.ligne({ P, U: 1e3 * u, R, cosphi: k }).chute <= 0.2);
+    Plot.el("path", { d: Plot.path(us.map(u => [A.x(u), A.y(Math.max(1e-4, 100 * OM.ligne({ P, U: 1e3 * u, R, cosphi: k }).part))])), class: "curve" }, A.g);
+    if (l.chute <= 0.2) Plot.el("circle", { cx: A.x(U / 1e3), cy: A.y(Math.max(1e-4, 100 * l.part)), r: 5, class: "dot" }, A.g);
+    $("sur").textContent = F.si(U, "V"); $("scr").textContent = F.num(k, 2);
+    $("vi").textContent = F.si(l.I, "A");
+    $("fi").textContent = t("fig2.f.i", { P: F.si(P, "W"), R: F.si(R, "Ω") });
+    $("vp").textContent = l.chute <= 0.2 ? pct(l.part, 3) : "–";
+    $("fp").textContent = l.chute <= 0.2 ? t("fig2.f.p", { v: F.si(l.pertes, "W") }) : t("fig2.f.hors");
+    $("vc").textContent = pct(l.chute, 3);
+    $("fc").textContent = t("fig2.f.chute");
+  }
+  su.oninput = sc.oninput = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["faraday", 1831, "experiment"], ["zbd", 1885, "experiment"], ["stanley", 1886, "experiment"], ["goss", 1934, "idea"], ["ecoconception", 2015, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["reseau", "isolement"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["courant", "b"], ["vide", "c"], ["impedance", "a"], ["lamelles", "d"], ["optimum", "b"], ["tension", "a"], ["facteur", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 521 });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Orbitales atomiques en chimie</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-architecture" data-i18n="monde.chim-architecture"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-orbitales-moleculaires" data-i18n="etape.chim-orbitales-moleculaires"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/fonctions-d-onde-hydrogene" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi>d</mi><mi>P</mi><mo>=</mo><msup><mrow><mo>|</mo><mi>ψ</mi><mo>(</mo><mi>M</mi><mo>)</mo><mo>|</mo></mrow><mn>2</mn></msup><mspace width="0.15em"/><mi>d</mi><mi>τ</mi><mo>,</mo><mspace width="1em"/><mo>∭</mo><msup><mrow><mo>|</mo><mi>ψ</mi><mo>|</mo></mrow><mn>2</mn></msup><mspace width="0.15em"/><mi>d</mi><mi>τ</mi><mo>=</mo><mn>1</mn></math></div>
+    <p class="validite" data-i18n-html="val.born"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>E</mi><mi>n</mi></msub><mo>=</mo><mo>−</mo><mfrac><mrow><mn>13,6</mn><mspace width="0.2em"/><mi mathvariant="normal">eV</mi></mrow><msup><mi>n</mi><mn>2</mn></msup></mfrac><msup><mi>Z</mi><mn>2</mn></msup><mo>,</mo><mspace width="1em"/><msub><mi>r</mi><mi>n</mi></msub><mo>=</mo><mfrac><msup><mi>n</mi><mn>2</mn></msup><mi>Z</mi></mfrac><msub><mi>a</mi><mn>0</mn></msub></math></div>
+    <p class="validite" data-i18n-html="val.hydro"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <figure>
+      <div class="stage"><canvas id="om"></canvas><div class="overlay" id="omread"></div></div>
+      <div class="legend"><span class="c-tint" data-i18n="om.legend.plus"></span><span class="el-o" data-i18n="om.legend.moins"></span></div>
+      <div class="panel">
+        <div class="seg" role="group" id="orbs">
+          <button type="button" data-o="1s" data-i18n="om.b.1s"></button>
+          <button type="button" data-o="2s" data-i18n="om.b.2s"></button>
+          <button type="button" data-o="2pz" data-i18n="om.b.2pz"></button>
+          <button type="button" data-o="3pz" data-i18n="om.b.3pz"></button>
+          <button type="button" data-o="3dz2" data-i18n="om.b.3dz2"></button>
+          <button type="button" data-o="3dxz" data-i18n="om.b.3dxz"></button>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="om.k.noeuds"></span><span class="v" id="vn"></span><span class="f" id="fn"></span></div>
+          <div class="stat"><span class="k" data-i18n="om.k.e"></span><span class="v" id="ve"></span><span class="f" id="fe"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="om.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msup><mi>Z</mi><mo>*</mo></msup><mo>=</mo><mi>Z</mi><mo>−</mo><mi>σ</mi><mo>,</mo><mspace width="1em"/><mi>r</mi><mo>≈</mo><mfrac><msup><mi>n</mi><mn>2</mn></msup><msup><mi>Z</mi><mo>*</mo></msup></mfrac><msub><mi>a</mi><mn>0</mn></msub></math></div>
+    <p class="validite" data-i18n-html="val.slater"></p>
+    <figure class="chart">
+      <svg id="gr" role="img" data-i18n-attr="aria-label:gr.aria"></svg>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="zsl" data-i18n="gr.z"></label><output id="zread" for="zsl"></output></div>
+          <input id="zsl" type="range" min="1" max="18" step="1" value="6"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="gr.k.conf"></span><span class="v" id="vc"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="gr.k.zeff"></span><span class="v" id="vz"></span><span class="f" id="fz"></span></div>
+          <div class="stat"><span class="k" data-i18n="gr.k.r"></span><span class="v" id="vr"></span></div>
+          <div class="stat"><span class="k" data-i18n="gr.k.e"></span><span class="v" id="vs"></span><span class="f" id="fs"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="gr.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="list keyed" id="table"></div>
+    <p data-i18n-html="s3.p3"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sysb"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/orbitales-atomiques.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/quantique-schrodinger.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/quantique-amplitudes.js"></script>
+<script src="/racoon/lecons/tableau-periodique-quantique.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const Q = QuantSchro, CA = ChimArchi, K = Constantes;
+const onTheme = f => { f(); matchMedia("(prefers-color-scheme: dark)").addEventListener("change", f); new MutationObserver(f).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] }); };
+const SUP = "⁰¹²³⁴⁵⁶⁷⁸⁹", conf = Z => CA.configuration(Z).map(c => c.n + "spd"[c.l] + String(c.e).split("").map(d => SUP[d]).join("")).join(" ");
+
+/* ---------- coupe d'une orbitale dans le plan xz : couleur = signe de ψ, intensité = |ψ| ---------- */
+(() => {
+  const ORB = { "1s": [1, "s", 5], "2s": [2, "s", 13], "2pz": [2, "pz", 10], "3pz": [3, "pz", 22], "3dz2": [3, "dz2", 18], "3dxz": [3, "dxz", 18] };
+  const canvas = $("om"), ctx = canvas.getContext("2d"), seg = $("orbs"), N = 160;
+  let cur = "2pz", ink = {};
+  function size() { const r = canvas.getBoundingClientRect(), d = Math.min(devicePixelRatio, 2); canvas.width = Math.round(r.width * d); canvas.height = Math.round(r.height * d); draw(); }
+  const rgb = c => { ctx.fillStyle = c; const h = ctx.fillStyle; return h[0] === "#" ? [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16)) : h.match(/\d+/g).slice(0, 3).map(Number); };
+  const off = document.createElement("canvas"); off.width = off.height = N;
+  function draw() {
+    if (!ink.plus || !canvas.width) return;
+    const [n, nom, L] = ORB[cur], l = Q.lDe(nom), w = canvas.width, h = canvas.height, side = Math.min(w, h);
+    const v = new Float64Array(N * N);
+    let m = 0;
+    for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) {
+      const x = -L + 2 * L * (i + 0.5) / N, z = L - 2 * L * (j + 0.5) / N, p = Q.ondeOrbitale(n, nom, x, 0, z);
+      v[j * N + i] = p; m = Math.max(m, Math.abs(p));
+    }
+    const img = new ImageData(N, N), P = rgb(ink.plus), M = rgb(ink.moins);
+    v.forEach((p, k) => { const c = p > 0 ? P : M; img.data.set([c[0], c[1], c[2], Math.round(255 * Math.min(1, Math.abs(p) / m))], 4 * k); });
+    off.getContext("2d").putImageData(img, 0, 0);
+    ctx.clearRect(0, 0, w, h); ctx.imageSmoothingEnabled = true;
+    ctx.drawImage(off, (w - side) / 2, (h - side) / 2, side, side);
+    ctx.globalAlpha = 1; ctx.fillStyle = ink.noyau; ctx.beginPath(); ctx.arc(w / 2, h / 2, 3, 0, 6.283); ctx.fill();
+    seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.o === cur)));
+    $("vn").textContent = t("om.v.noeuds", { r: n - l - 1, a: l });
+    $("fn").textContent = t("om.f.noeuds", { n, l });
+    const H = CA.hydrogenoide(1, n);
+    $("ve").textContent = F.si(H.E, "eV");
+    $("fe").textContent = t("om.f.e", { r: F.si(H.r, "m", { prefix: "p" }) });
+    $("omread").textContent = t("om.cote", { c: F.si(2 * L * K.a0, "m", { prefix: "p" }) });
+  }
+  seg.querySelectorAll("button").forEach(b => b.onclick = () => { cur = b.dataset.o; draw(); });
+  onTheme(() => { ink = { plus: css("--tint"), moins: css("--el-o"), noyau: css("--label") }; draw(); });
+  new ResizeObserver(size).observe(canvas); size();
+})();
+
+/* ---------- Slater : rayon de l'orbitale de valence, Z = 1 à 18 ---------- */
+(() => {
+  const svg = $("gr"), sl = $("zsl"), PM = 1e-12;
+  const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 280, x: { domain: [0, 19], label: t("gr.x") }, y: { domain: [0, 240], label: t("gr.y") } });
+  const pts = Array.from({ length: 18 }, (_, i) => [i + 1, CA.valenceSlater(i + 1).r / PM]);
+  for (const per of [[1, 2], [3, 10], [11, 18]]) Plot.el("path", { d: Plot.path(pts.slice(per[0] - 1, per[1]).map(([z, r]) => [x(z), y(r)])), class: "curve" }, g);
+  const dot = Plot.el("circle", { r: 6, class: "dot" }, g);
+  const SYM = ["H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne", "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar"];
+  function upd() {
+    const Z = +sl.value, v = CA.valenceSlater(Z), sym = SYM[Z - 1], der = CA.configuration(Z).pop(), tab = (CA.ORBITALES_EV[sym] || {})[der.n + "sp"[der.l]];
+    dot.setAttribute("cx", x(Z)); dot.setAttribute("cy", y(v.r / PM));
+    $("zread").textContent = t("gr.zread", { z: Z, s: sym });
+    $("vc").textContent = conf(Z);
+    $("vz").textContent = F.fix(v.zEff, 2);
+    $("fz").textContent = t("gr.f.zeff", { s: F.fix(Z - v.zEff, 2) });
+    $("vr").textContent = F.si(v.r, "m", { prefix: "p" });
+    $("vs").textContent = F.si(v.E, "eV");
+    $("fs").textContent = tab === undefined ? t("gr.f.sans") : t("gr.f.table", { e: F.si(tab, "eV") });
+  }
+  sl.oninput = upd; upd();
+})();
+
+/* ---------- table des énergies de valence ---------- */
+(() => {
+  const E = CA.ORBITALES_EV, ROWS = ["H", "B", "C", "N", "O", "F"], txt = textOf("table.rows", ROWS);
+  $("table").innerHTML = ROWS.map(s => `<div><span class="k">${txt[s]}</span><span>${Object.entries(E[s]).map(([o, e]) => o + " : " + F.si(e, "eV")).join(" ; ")}</span><span class="v">${E[s]["2s"] !== undefined ? F.si(E[s]["2p"] - E[s]["2s"], "eV") : ""}</span></div>`).join("");
+  const c = CA.valenceSlater(6);
+  $("sysb").innerHTML = t("sys.body", { es: F.si(c.E, "eV"), et: F.si(E.C["2p"], "eV"), rc: F.si(c.r, "m", { prefix: "p" }), rn: F.si(CA.valenceSlater(11).r, "m", { prefix: "p" }) });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["schrodinger", 1926, "idea"], ["slater", 1930, "idea"], ["mulliken", 1932, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["spectro", "calcul"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["densite", "b"], ["phase", "c"], ["rayon", "a"], ["noeuds", "d"], ["zeff", "b"], ["electroneg", "a"], ["polarisable", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 2101 });
+})();
+</script>
+</body>
+</html>

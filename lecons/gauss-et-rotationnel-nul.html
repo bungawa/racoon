@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Théorème de Gauss et rotationnel nul</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-electrostatique" data-i18n="monde.electrostatique"></a><span class="aux">›</span><a href="/racoon/etape?id=equilibre-charges" data-i18n="etape.equilibre-charges"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/lois-de-l-electrostatique" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msub><mo>∯</mo><mi>S</mi></msub><mover accent="true"><mi>E</mi><mo>→</mo></mover><mo>·</mo><mi mathvariant="normal">d</mi><mover accent="true"><mi>S</mi><mo>→</mo></mover><mo>=</mo><mfrac><msub><mi>Q</mi><mi data-i18n="eq.int"></mi></msub><msub><mi>ε</mi><mn>0</mn></msub></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.gauss"></p>
+    <div class="eq"><math display="block"><msub><mo>∮</mo><mi>Γ</mi></msub><mover accent="true"><mi>E</mi><mo>→</mo></mover><mo>·</mo><mi mathvariant="normal">d</mi><mover accent="true"><mi>ℓ</mi><mo>→</mo></mover><mo>=</mo><mn>0</mn></math></div>
+    <p class="validite" data-i18n-html="val.circ"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mover accent="true"><mi>E</mi><mo>→</mo></mover><mo>=</mo><mo>−</mo><mover accent="true"><mo>∇</mo><mo>→</mo></mover><mi>φ</mi><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><mi mathvariant="normal">Δ</mi><mi>φ</mi><mo>=</mo><mo>−</mo><mfrac><mi>ρ</mi><msub><mi>ε</mi><mn>0</mn></msub></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.poisson"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure>
+      <svg class="fig" id="carte" viewBox="0 0 640 400" role="img" data-i18n-attr="aria-label:ca.aria"></svg>
+      <div class="legend"><span class="c-label-2" data-i18n="ca.legend.dir"></span><span class="c-warn" data-i18n="ca.legend.plus"></span><span class="c-label" data-i18n="ca.legend.moins"></span><span class="c-ok" data-i18n="ca.legend.cercle"></span></div>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="omsl" data-i18n="ca.om"></label><output id="omread" for="omsl"></output></div>
+          <input id="omsl" type="range" min="-4" max="4" step="0.5" value="0"></div>
+        <div class="ctl"><div class="row"><label for="e0sl" data-i18n="ca.e0"></label><output id="e0read" for="e0sl"></output></div>
+          <input id="e0sl" type="range" min="-2" max="2" step="0.25" value="0"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="ca.k.flux"></span><span class="v" id="vflux"></span><span class="f" id="fflux"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="ca.k.circ"></span><span class="v" id="vcirc"></span><span class="f" data-i18n="ca.f.circ"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="ca.k.loin"></span><span class="v" id="vloin"></span><span class="f" id="floin"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="ca.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="box prop"><b data-i18n="s3.prop.title"></b>
+      <p data-i18n-html="s3.prop.body"></p>
+    </div>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/gauss-et-rotationnel-nul.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/physique-fondamentale.js"></script>
+<script src="/racoon/lecons/champs-em.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/electrostatique.js"></script>
+<script src="/racoon/carte-champ.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const ES = Electrostatique, NC = 1e-9;
+const Vm = x => F.si(x, "V·m⁻¹");
+
+/* trois charges de quelques nC sur 16 cm, des billes de 1 mm, observées une seconde (positions en m) */
+const CHARGES = [{ q: 2 * NC, x: -0.02, y: 0.005 }, { q: -1 * NC, x: 0.015, y: -0.01 }, { q: 1 * NC, x: 0.05, y: 0.02 }];
+const R = 0.035;
+
+/* ---------- le système décrit, chiffré ---------- */
+(() => {
+  const L = 0.16, T = 1, b = 1e-3, d = 0.035;
+  $("sys").innerHTML = t("sys.body", { ret: F.sci(ES.regime(L, T, 0).retard, 1), ba: F.num(b / d, 2) });
+})();
+
+/* ---------- Gauss seul, rotationnel seul : ajouter un tourbillon, un champ uniforme ---------- */
+(() => {
+  const svg = $("carte"), O = { W: 640, H: 400, x0: -0.08, x1: 0.08, y0: -0.05, y1: 0.05 }, omsl = $("omsl"), e0sl = $("e0sl");
+  const qint = CHARGES.reduce((s, c) => s + (Math.hypot(c.x, c.y) < R ? c.q : 0), 0);
+  function draw() {
+    const om = +omsl.value * 1e5, e0 = +e0sl.value * 1e4, T = ES.tourbillon(om, [0, 0]);
+    const E = p => { const a = ES.champ(CHARGES, p), b = T(p); return a.map((x, i) => x + b[i] + (i === 0 ? e0 : 0)); };
+    const c = CarteChamp.carte(svg, O);
+    CarteChamp.fleches(c, p => (CHARGES.some(s => Math.hypot(p[0] - s.x, p[1] - s.y) < 0.006) ? [NaN, NaN] : E(p)), 20, 12, { cls: "c-label-2", unitaire: true, lmax: 11 });
+    Plot.el("circle", { cx: c.sx(0), cy: c.sy(0), r: c.sx(R) - c.sx(0), class: "stroke dash" }, c.layer("c-ok"));
+    CHARGES.forEach((s, i) => CarteChamp.point(c, [s.x, s.y], 4 + 2.5 * Math.abs(s.q) / NC, s.q > 0 ? "c-warn" : "c-label", t("ca.nom", { i: i + 1 }), -14));
+    const flux = ES.fluxSphere(E, [0, 0, 0], R, 60) * ES.EPS0, circ = AnaVec.circulation(E, AnaVec.cercle([0, 0], R), 2000);
+    const loin = Math.hypot(...E([1, 0])), coul = Math.hypot(...ES.champ(CHARGES, [1, 0]));
+    $("omread").textContent = F.si(om, "V·m⁻²");
+    $("e0read").textContent = Vm(e0);
+    $("vflux").textContent = F.si(flux, "C", { prefix: "n" });
+    $("fflux").textContent = t("ca.f.flux", { q: F.si(qint, "C", { prefix: "n" }) });
+    $("vcirc").textContent = F.si(Math.abs(circ) < 1e-6 ? 0 : circ, "V");
+    $("vloin").textContent = Vm(loin);
+    $("floin").textContent = t("ca.f.loin", { e: Vm(coul) });
+  }
+  omsl.oninput = e0sl.oninput = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["gauss", 1813, "idea"], ["ostrogradski", 1826, "idea"], ["stokes", 1849, "idea"], ["helmholtz", 1858, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["optique"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["deux", "b"], ["tourbillon", "d"], ["uniforme", "a"], ["symetrie", "c"], ["poisson", "b"], ["induction", "a"], ["unicite", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 51 });
+})();
+</script>
+</body>
+</html>

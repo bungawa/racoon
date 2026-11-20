@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rotation d'un solide</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-solide" data-i18n="monde.solide"></a><span class="aux">›</span><a href="/racoon/etape?id=centre-de-masse" data-i18n="etape.centre-de-masse"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-solide" href="/racoon/atlas?piste=solide" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/travail-d-une-force" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi>ω</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">d</mi><mi>θ</mi></mrow><mrow><mi mathvariant="normal">d</mi><mi>t</mi></mrow></mfrac><mo>,</mo><mspace width="1em"></mspace><mi>α</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">d</mi><mi>ω</mi></mrow><mrow><mi mathvariant="normal">d</mi><mi>t</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.omega"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi>Δ</mi><mi>x</mi><mo>=</mo><mo>−</mo><mi>y</mi><mspace width="0.1em"></mspace><mi>Δ</mi><mi>θ</mi><mo>,</mo><mspace width="1em"></mspace><mi>Δ</mi><mi>y</mi><mo>=</mo><mi>x</mi><mspace width="0.1em"></mspace><mi>Δ</mi><mi>θ</mi></math><span class="n">(18.6–7)</span></div>
+    <p class="validite" data-i18n-html="val.petit"></p>
+    <div class="eq"><math display="block"><msub><mi>v</mi><mi>x</mi></msub><mo>=</mo><mo>−</mo><mi>ω</mi><mi>y</mi><mo>,</mo><mspace width="1em"></mspace><msub><mi>v</mi><mi>y</mi></msub><mo>=</mo><mi>ω</mi><mi>x</mi><mo>,</mo><mspace width="1em"></mspace><mi>v</mi><mo>=</mo><mi>ω</mi><mi>r</mi></math><span class="n">(18.8–9)</span></div>
+    <p class="validite" data-i18n-html="val.vitesse"></p>
+    <figure>
+      <svg class="fig" id="plaque" viewBox="0 0 640 340" role="img" data-i18n-attr="aria-label:pl.aria"></svg>
+      <div class="legend"><span class="c-label-2" data-i18n="pl.legend.solide"></span><span class="c-tint" data-i18n="pl.legend.v"></span><span class="c-warn" data-i18n="pl.legend.axe"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="w" data-i18n="pl.w"></label><output id="wv" for="w"></output></div><input id="w" type="range" min="-3" max="3" step="0.1" value="1.5"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="pl.k.vmax"></span><span class="v" id="vmax"></span><span class="f" id="fmax"></span></div>
+          <div class="stat"><span class="k" data-i18n="pl.k.vmin"></span><span class="v" id="vmin"></span><span class="f" id="fmin"></span></div>
+          <div class="stat"><span class="k" data-i18n="pl.k.rapport"></span><span class="v" id="vrap"></span><span class="f" data-i18n="pl.f.rapport"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="pl.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>Δ</mi><mi>W</mi><mo>=</mo><msub><mi>F</mi><mi>x</mi></msub><mi>Δ</mi><mi>x</mi><mo>+</mo><msub><mi>F</mi><mi>y</mi></msub><mi>Δ</mi><mi>y</mi><mo>=</mo><mo>(</mo><mi>x</mi><msub><mi>F</mi><mi>y</mi></msub><mo>−</mo><mi>y</mi><msub><mi>F</mi><mi>x</mi></msub><mo>)</mo><mspace width="0.1em"></mspace><mi>Δ</mi><mi>θ</mi></math><span class="n">(18.10–11)</span></div>
+    <p class="validite" data-i18n-html="val.travail"></p>
+    <div class="box def"><b data-i18n="s2.def.title"></b>
+      <p data-i18n-html="s2.def.body"></p>
+    </div>
+    <div class="eq"><math display="block"><mi>τ</mi><mo>=</mo><mi>x</mi><msub><mi>F</mi><mi>y</mi></msub><mo>−</mo><mi>y</mi><msub><mi>F</mi><mi>x</mi></msub><mo>=</mo><msub><mi>F</mi><mi>t</mi></msub><mspace width="0.1em"></mspace><mi>r</mi><mo>=</mo><mi>F</mi><mspace width="0.1em"></mspace><mi>d</mi></math><span class="n">(18.12)</span></div>
+    <p class="validite" data-i18n-html="val.couple"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <figure>
+      <svg class="fig" id="roue" viewBox="0 0 640 340" role="img" data-i18n-attr="aria-label:ro.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="ro.legend.f"></span><span class="c-warn" data-i18n="ro.legend.d"></span><span class="c-label-2" data-i18n="ro.legend.r"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="rr" data-i18n="ro.r"></label><output id="rrv" for="rr"></output></div><input id="rr" type="range" min="0" max="0.5" step="0.01" value="0.4"></div>
+          <div class="ctl"><div class="row"><label for="phi" data-i18n="ro.phi"></label><output id="phiv" for="phi"></output></div><input id="phi" type="range" min="0" max="180" step="5" value="60"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="ro.k.tau"></span><span class="v" id="vtau"></span></div>
+          <div class="stat"><span class="k" data-i18n="ro.k.d"></span><span class="v" id="vd"></span></div>
+          <div class="stat"><span class="k" data-i18n="ro.k.w"></span><span class="v" id="vw"></span><span class="f" id="fw"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="ro.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="eq"><math display="block"><munder><mo>∑</mo><mi>i</mi></munder><msub><mover accent="true"><mi>F</mi><mo>→</mo></mover><mi>i</mi></msub><mo>=</mo><mover accent="true"><mn>0</mn><mo>→</mo></mover><mo>,</mo><mspace width="1em"></mspace><mi>τ</mi><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>τ</mi><mi>i</mi></msub><mo>=</mo><mn>0</mn></math><span class="n">(18.13a)</span></div>
+    <p class="validite" data-i18n-html="val.equilibre"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="list keyed" id="sys"></div>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/rotation-d-un-solide.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/solide.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/lecons/rotation-plane.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = Plot.el;
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+const fill = (s, v) => s.replace(/\{(\w+)\}/g, (m, k) => k in v ? v[k] : m);
+/* an arrow from (x1, y1) to (x2, y2), in svg pixels */
+const arrow = (svg, x1, y1, x2, y2, cls) => Plot.fleche(svg, [x1, y1], [x2, y2], { cls });
+
+/* ---------- vitesses d'un solide en rotation (18.9) ---------- */
+(() => {
+  const svg = $("plaque"), W = 640, H = 340, K = 200, O = [320, 170];             // 200 px par mètre
+  const plaque = [[-0.55, -0.2], [-0.3, 0.5], [0.25, 0.6], [0.7, 0.25], [0.6, -0.35], [0.1, -0.55], [-0.35, -0.5]];
+  const marques = [[0.15, 0.1], [-0.3, 0.3], [0.45, -0.2], [0.6, 0.2], [-0.4, -0.35], [0.1, -0.45], [0.2, 0.5]];
+  function upd() {
+    const w = +$("w").value; $("wv").textContent = F.qty(F.num(w, 2), "rad·s⁻¹");
+    svg.innerHTML = "";
+    P("path", { d: plaque.map((p, i) => (i ? "L" : "M") + (O[0] + K * p[0]) + " " + (O[1] - K * p[1])).join("") + "Z", class: "stroke thin c-label-2" }, svg);
+    const corps = Solide.tourner(marques.map(r => ({ m: 1, r })), w, [0, 0]);
+    corps.forEach(c => {
+      const x = O[0] + K * c.r[0], y = O[1] - K * c.r[1];
+      P("line", { x1: O[0], y1: O[1], x2: x, y2: y, class: "stroke thin dash c-label-2" }, svg);
+      P("circle", { cx: x, cy: y, r: 3.5, class: "fill c-tint" }, svg);
+      arrow(svg, x, y, x + 0.25 * K * c.v[0], y - 0.25 * K * c.v[1], "c-tint");
+    });
+    P("circle", { cx: O[0], cy: O[1], r: 5, class: "fill c-warn" }, svg);
+    const v = corps.map(c => Math.hypot(c.v[0], c.v[1])), r = corps.map(c => Math.hypot(c.r[0], c.r[1]));
+    const iM = v.indexOf(Math.max(...v)), im = v.indexOf(Math.min(...v));
+    $("vmax").textContent = F.qty(F.num(v[iM], 3), "m·s⁻¹"); $("fmax").textContent = t("pl.f.r", { r: F.qty(F.num(r[iM], 2), "m") });
+    $("vmin").textContent = F.qty(F.num(v[im], 3), "m·s⁻¹"); $("fmin").textContent = t("pl.f.r", { r: F.qty(F.num(r[im], 2), "m") });
+    $("vrap").textContent = w === 0 ? t("pl.immobile") : F.qty(F.num(v[iM] / r[iM], 3), "s⁻¹");
+  }
+  $("w").oninput = upd; upd();
+})();
+
+/* ---------- le couple d'une force sur une roue (18.12) ---------- */
+(() => {
+  const svg = $("roue"), K = 300, O = [250, 175], Fn = 20, DT = 0.01;           // 300 px par mètre ; F = 20 N ; Δθ = 0,01 rad
+  function upd() {
+    const r = +$("rr").value, phiDeg = +$("phi").value, phi = phiDeg * Math.PI / 180, a = 0.35;   // OP fait 20° avec Ox
+    $("rrv").textContent = F.qty(F.num(r, 2), "m"); $("phiv").textContent = F.qty(F.num(phiDeg, 3), "°");
+    const rv = [r * Math.cos(a), r * Math.sin(a)], Fv = [Fn * Math.cos(a + phi), Fn * Math.sin(a + phi)];
+    const tau = RotPlane.couple(rv, Fv), d = Math.abs(tau) / Fn;
+    svg.innerHTML = "";
+    P("circle", { cx: O[0], cy: O[1], r: 0.5 * K, class: "stroke thin c-label-2" }, svg);
+    const Px = O[0] + K * rv[0], Py = O[1] - K * rv[1];
+    P("line", { x1: O[0], y1: O[1], x2: Px, y2: Py, class: "stroke thin c-label-2" }, svg);
+    /* line of action, and the lever arm: the foot of the perpendicular from O */
+    const u = [Math.cos(a + phi), Math.sin(a + phi)], s = -(rv[0] * u[0] + rv[1] * u[1]), foot = [rv[0] + s * u[0], rv[1] + s * u[1]];
+    P("line", { x1: O[0] + K * (rv[0] - 0.7 * u[0]), y1: O[1] - K * (rv[1] - 0.7 * u[1]), x2: O[0] + K * (rv[0] + 0.7 * u[0]), y2: O[1] - K * (rv[1] + 0.7 * u[1]), class: "stroke thin dash c-label-2" }, svg);
+    if (d > 1e-9) P("line", { x1: O[0], y1: O[1], x2: O[0] + K * foot[0], y2: O[1] - K * foot[1], class: "stroke bold c-warn" }, svg);
+    arrow(svg, Px, Py, Px + 6 * Fv[0], Py - 6 * Fv[1], "c-tint");
+    P("circle", { cx: O[0], cy: O[1], r: 5, class: "fill c-warn" }, svg);
+    P("circle", { cx: Px, cy: Py, r: 4, class: "fill c-tint" }, svg);
+    $("vtau").textContent = Math.abs(tau) < 1e-12 ? t("ro.nul") : F.qty(F.num(tau, 3), "N·m");
+    $("vd").textContent = F.qty(F.num(d < 1e-12 ? 0 : d, 3), "m");
+    const W = RotPlane.travailRotation(rv, Fv, DT);
+    $("vw").textContent = Math.abs(W) < 1e-12 ? t("ro.nul") : F.qty(F.num(W, 4), "J");
+    $("fw").textContent = t("ro.f.w", { x: Math.abs(tau) < 1e-12 ? "0" : F.qty(F.num(tau * DT, 4), "J") });
+  }
+  $("rr").oninput = $("phi").oninput = upd; upd();
+})();
+
+/* ---------- décrire le système ---------- */
+(() => {
+  const IDS = ["rigide", "axe", "plan"], items = textOf("sys.items", IDS);
+  const v = { eps: F.sci(235e6 / 210e9, 2) };
+  keyed($("sys"), t("sys.tag"), IDS, Object.fromEntries(IDS.map(id => [id, { name: items[id].name, text: fill(items[id].text, v) }])));
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["archimede", -250, "idea"], ["varignon", 1687, "idea"], ["euler", 1765, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["moteur", "pedalier"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["memeomega", "a"], ["vitesse", "a"], ["axe", "a"], ["porte", "a"], ["travail", "a"], ["equilibre", "a"], ["signe", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 1802 });
+})();
+</script>
+</body>
+</html>

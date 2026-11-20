@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Symétries dans le plan</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-solide" data-i18n="monde.solide"></a><span class="aux">›</span><a href="/racoon/etape?id=cristaux-1" data-i18n="etape.cristaux-1"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-solide" href="/racoon/atlas?piste=solide" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/geometrie-interne-des-cristaux" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="box def"><b data-i18n="def.title"></b>
+      <p data-i18n-html="def.translation"></p>
+      <p data-i18n-html="def.rotation"></p>
+      <p data-i18n-html="def.miroir"></p>
+      <p data-i18n-html="def.glissement"></p>
+    </div>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure>
+      <svg class="fig" id="papier" viewBox="0 0 640 380" role="img" data-i18n-attr="aria-label:pp.aria"></svg>
+      <div class="legend"><span class="c-label-2" data-i18n="pp.legend.noeud"></span><span class="ring c-tint" data-i18n="pp.legend.miroir"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" id="reseaux" role="group" data-i18n-attr="aria-label:pp.reseau">
+            <button type="button" data-r="oblique" data-i18n="bravais.oblique"></button><button type="button" data-r="rectangulaire" data-i18n="bravais.rectangulaire"></button><button type="button" data-r="rectangulaire-centre" data-i18n="bravais.rectangulaire-centre"></button><button type="button" data-r="carre" data-i18n="bravais.carre"></button><button type="button" data-r="hexagonal" data-i18n="bravais.hexagonal"></button>
+          </div>
+        </div>
+        <div class="controls">
+          <div class="seg" id="motifs" role="group" data-i18n-attr="aria-label:pp.motif">
+            <button type="button" data-m="point" data-i18n="pp.m.point"></button><button type="button" data-m="triangle" data-i18n="pp.m.triangle"></button><button type="button" data-m="carre" data-i18n="pp.m.carre"></button><button type="button" data-m="moulinet" data-i18n="pp.m.moulinet"></button><button type="button" data-m="graphene" data-i18n="pp.m.graphene"></button><button type="button" data-m="bn" data-i18n="pp.m.bn"></button>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="pp.k.reseau"></span><span class="v" id="vres"></span><span class="f" id="fres"></span></div>
+          <div class="stat"><span class="k" data-i18n="pp.k.motif"></span><span class="v" id="vmot"></span><span class="f" id="fmot"></span></div>
+          <div class="stat"><span class="k" data-i18n="pp.k.cristal"></span><span class="v" id="vcri"></span><span class="f" id="fcri"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="pp.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure>
+      <svg class="fig" id="preuve" viewBox="0 0 640 300" role="img" data-i18n-attr="aria-label:pr.aria"></svg>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="ordre" data-i18n="pr.n"></label><output id="ordrev" for="ordre"></output></div>
+          <input id="ordre" type="range" min="1" max="12" step="1" value="5"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="pr.k.theta"></span><span class="v" id="vtheta"></span></div>
+          <div class="stat"><span class="k" data-i18n="pr.k.ecart"></span><span class="v" id="vecart"></span><span class="f" data-i18n="pr.f.ecart"></span></div>
+          <div class="stat"><span class="k" data-i18n="pr.k.verdict"></span><span class="v" id="vverdict"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="pr.caption"></figcaption>
+    </figure>
+    <div class="eq"><math display="block"><msup><mi>A</mi><mo>′</mo></msup><msup><mi>B</mi><mo>′</mo></msup><mo>=</mo><mrow><mo>|</mo><mn>1</mn><mo>−</mo><mn>2</mn><mi data-i18n="eq.cos"></mi><mi>θ</mi><mo>|</mo></mrow><mspace width="0.2em"></mspace><mi>A</mi><mi>B</mi><mo>=</mo><mi>m</mi><mspace width="0.2em"></mspace><mi>A</mi><mi>B</mi><mo>,</mo><mspace width="1em"></mspace><mi>m</mi><mo>∈</mo><mi>ℕ</mi></math></div>
+    <p class="validite" data-i18n-html="val.preuve"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><mn>2</mn><mi data-i18n="eq.cos"></mi><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mi>n</mi></mfrac><mo>∈</mo><mi>ℤ</mi><mspace width="1em"></mspace><mo>⇔</mo><mspace width="1em"></mspace><mi>n</mi><mo>∈</mo><mo>{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>6</mn><mo>}</mo></math></div>
+    <p class="validite" data-i18n-html="val.trace"></p>
+    <div class="box rem"><b data-i18n="s3.rem.title"></b>
+      <p data-i18n-html="s3.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/symetries-dans-le-plan.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/lecons/cristaux.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = Plot.el, X = Cristaux;
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+const seg = (el, attr, cb) => { const bs = [...el.querySelectorAll("button")];
+  const pick = b => { bs.forEach(x => x.setAttribute("aria-pressed", String(x === b))); cb(b.dataset[attr]); };
+  bs.forEach(b => b.onclick = () => pick(b)); pick(bs[0]); };
+const ordre = r => Math.max(...r);
+
+/* ---------- réseau × motif ---------- */
+(() => {
+  const ring = (n, r, phase, e) => Array.from({ length: n }, (_, k) => ({ x: r * Math.cos(phase + 2 * Math.PI * k / n), y: r * Math.sin(phase + 2 * Math.PI * k / n), e }));
+  const tiers = (a, b, s) => [s * (a[0] + b[0]) / 3, s * (a[1] + b[1]) / 3];
+  const MOTIFS = {   // atom positions about the node, in units of |a|; graphene and boron nitride sit at ±(a + b)/3
+    point: () => [{ x: 0, y: 0, e: "A" }],
+    triangle: () => ring(3, 0.22, Math.PI / 2, "A"),
+    carre: () => ring(4, 0.22, Math.PI / 4, "A"),
+    moulinet: () => [0, 1, 2, 3].flatMap(k => { const c = Math.cos(k * Math.PI / 2), s = Math.sin(k * Math.PI / 2);
+      return [[0.2, 0, "A"], [0.27, 0.1, "B"]].map(([x, y, e]) => ({ x: c * x - s * y, y: s * x + c * y, e })); }),
+    graphene: (a, b) => [1, -1].map(s => { const [x, y] = tiers(a, b, s); return { x, y, e: "C" }; }),
+    bn: (a, b) => [[1, "B"], [-1, "N"]].map(([s, e]) => { const [x, y] = tiers(a, b, s); return { x, y, e }; }),
+  };
+  const CLS = { A: "c-tint", B: "el-o", C: "el-c", N: "el-n" };
+  const svg = $("papier"), U = 62, O = [320, 190];
+  let res = "oblique", mot = "point";
+  const px = (x, y) => [O[0] + U * x, O[1] - U * y];
+  const nb = (r, m) => t("pp.v.sym", { n: ordre(r), m: m.length });
+  function upd() {
+    const L = X.BRAVAIS2D.find(l => l.id === res), a = L.a, b = L.b, M = MOTIFS[mot](a, b);
+    svg.innerHTML = "";
+    const nodes = [];
+    for (let i = -9; i <= 9; i++) for (let j = -7; j <= 7; j++) {
+      const x = i * a[0] + j * b[0], y = i * a[1] + j * b[1], [u, v] = px(x, y);
+      if (u > -40 && u < 680 && v > -40 && v < 420) nodes.push([x, y]);
+    }
+    const cri = X.symetriesCristal(a, b, M), lat = X.symetriesCristal(a, b, [{ x: 0, y: 0, e: "A" }]), sm = mot === "point" ? null : X.symetriesMotif(M);   // a lone point has every rotation and every line
+    cri.miroirs.forEach(f => { const d = [Math.cos(f), Math.sin(f)], p1 = px(-8 * d[0], -8 * d[1]), p2 = px(8 * d[0], 8 * d[1]);
+      P("line", { x1: p1[0], y1: p1[1], x2: p2[0], y2: p2[1], class: "stroke dash c-tint" }, svg); });
+    nodes.forEach(([x, y]) => { M.forEach(m => { const [u, v] = px(x + m.x, y + m.y);
+      P("circle", { cx: u, cy: v, r: m.e === "B" && mot === "moulinet" ? 4 : 7, class: "fill " + CLS[m.e] }, svg); });
+      const [u, v] = px(x, y); P("circle", { cx: u, cy: v, r: 2.5, class: "fill c-label-2" }, svg); });
+    const c = [[0, 0], a, [a[0] + b[0], a[1] + b[1]], b].map(p => px(...p).join(" "));
+    P("path", { d: "M" + c.join("L") + "Z", class: "stroke thin c-label-2" }, svg);
+    P("circle", { cx: O[0], cy: O[1], r: 13, class: "stroke c-label" }, svg);
+    P("text", { x: O[0] + 16, y: O[1] - 14 }, svg).textContent = String(ordre(cri.rotations));
+    $("vres").textContent = t("bravais." + res);
+    $("fres").textContent = nb(lat.rotations, lat.miroirs);
+    $("vmot").textContent = sm ? nb(sm.rotations, sm.miroirs) : t("pp.v.tout");
+    $("fmot").textContent = t("pp.f.motif", { k: M.length });
+    $("vcri").textContent = nb(cri.rotations, cri.miroirs);
+    $("fcri").textContent = t(cri.miroirs.length ? "pp.f.cristal" : "pp.f.chiral");
+  }
+  seg($("reseaux"), "r", r => { res = r; upd(); });
+  seg($("motifs"), "m", m => { mot = m; upd(); });
+})();
+
+/* ---------- la preuve des deux nœuds ---------- */
+(() => {
+  const svg = $("preuve"), U = 110, O = [265, 230];
+  const px = p => [O[0] + U * p[0], O[1] - U * p[1]];
+  const dot = (p, cls, lbl, dx, dy) => { const [u, v] = px(p); P("circle", { cx: u, cy: v, r: 6, class: "fill " + cls }, svg);
+    P("text", { x: u + (dx || 8), y: v + (dy || -8) }, svg).textContent = lbl; };
+  const line = (p, q, cls) => { const [a, b] = px(p), [c, d] = px(q); P("line", { x1: a, y1: b, x2: c, y2: d, class: cls }, svg); };
+  function upd() {
+    const n = +$("ordre").value, r = X.preuveRotation(n), A = [0, 0], B = [1, 0];
+    svg.innerHTML = "";
+    for (let k = -2; k <= 3; k++) P("circle", { cx: px([k, 0])[0], cy: px([k, 0])[1], r: 3, class: "fill c-label-2" }, svg);
+    line(A, B, "stroke c-label");
+    line(A, r.A2, "stroke thin dash c-label-2"); line(B, r.B2, "stroke thin dash c-label-2");
+    line(r.A2, r.B2, "stroke bold " + (r.entier ? "c-ok" : "c-ko"));
+    dot(A, "c-label", "A", -14, 18); dot(B, "c-label", "B", 4, 18);
+    dot(r.A2, "c-tint", "A′"); dot(r.B2, "c-tint", "B′");
+    $("ordrev").textContent = String(n);
+    $("vtheta").textContent = F.qty(F.num(360 / n, 4), "°");
+    $("vecart").textContent = F.fix(r.ecart, 3);
+    $("vverdict").textContent = t(r.entier ? "pr.v.oui" : "pr.v.non");
+  }
+  $("ordre").oninput = upd; upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["fedorov", 1891, "idea"], ["polya", 1924, "idea"], ["shechtman", 1982, "experiment"], ["graphene", 2004, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["graphene", "tables"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["ordre5", "c"], ["graphene", "a"], ["moulinet", "d"], ["inversion", "b"], ["octogone", "a"], ["reseaux", "c"], ["bn", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

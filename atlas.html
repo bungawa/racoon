@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-i18n="page.title">Atlas des notions</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page carte">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><span data-i18n="crumb.physique"></span><span class="aux">·</span><span data-i18n="crumb.chimie"></span><span class="aux">·</span><span data-i18n="crumb.ingenierie"></span></div>
+    <h1 data-i18n="page.title"></h1>
+    <p class="lede" data-i18n="head.lede"></p>
+    <div class="tags"><a class="chip plain" href="/racoon/" data-i18n="head.parcours"></a><a class="chip plain" href="/racoon/questions" data-i18n="head.questions"></a><a class="chip plain" href="/racoon/programmes" data-i18n="head.programmes"></a></div>
+    <div class="stat" id="but"><span class="k" data-i18n="goal.k"></span><span class="v" id="goal"></span><span class="f" id="goalmeta"></span>
+      <div class="meter" role="progressbar" aria-valuemin="0" id="goalbar" data-i18n-attr="aria-label:goal.k"><i></i></div></div>
+  </header>
+
+  <div class="pair">
+    <section class="card">
+      <div class="stat"><span class="k" data-i18n="pick.k"></span><span class="v" id="now" data-i18n="pick.loading"></span><span class="f" id="nowmeta"></span></div>
+      <p class="caption" id="status" role="status"></p>
+    </section>
+    <section class="card">
+      <span class="sec" data-i18n="open.sec"></span>
+      <div class="tags" id="open"></div>
+    </section>
+  </div>
+
+  <section class="card" id="filtre" data-contexte="programmes">
+    <span class="sec" data-i18n="prog.sec"></span>
+    <div class="tags" id="progs"></div>
+    <p class="caption"><span id="progstatus" role="status"></span> <a href="/racoon/programmes" data-i18n="prog.liste"></a></p>
+  </section>
+
+  <div class="split">
+    <section class="card">
+      <div class="legend"><span class="s-fait" data-i18n="legend.fait"></span><span class="s-en_cours" data-i18n="legend.en_cours"></span><span class="ring c-label" data-i18n="legend.ouvert"></span><span class="ring s-verrouille" data-i18n="legend.verrouille"></span><span class="ring c-tint" data-i18n="legend.choix"></span><span class="sq c-label-2" data-i18n="legend.hist"></span></div>
+      <div class="stage wide" id="mapbox"><svg class="fig graph" id="map" role="img" data-i18n-attr="aria-label:map.aria"></svg>
+        <div class="tools"><button class="btn icon" type="button" id="zin" data-i18n-attr="aria-label:zoom.in">+</button><button class="btn icon" type="button" id="zout" data-i18n-attr="aria-label:zoom.out">−</button><button class="btn icon" type="button" id="zfit" data-i18n-attr="aria-label:zoom.fit">◎</button></div></div>
+      <p class="caption" data-i18n="map.help"></p>
+    </section>
+    <aside class="card sticky" id="detail" data-contexte="detail" aria-live="polite"></aside>
+  </div>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/locales/fr/atlas.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/sections.js"></script>
+<script src="/racoon/ingenieur-data.js"></script>
+<script src="/racoon/graph.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-delaunay@6.0.4/dist/d3-delaunay.min.js"></script>
+<script src="/racoon/sujets.js"></script>
+<script src="/racoon/papers.js"></script>
+<script src="/racoon/filieres.js"></script>
+<script src="/racoon/programmes.js"></script>
+<script src="/racoon/progression.js"></script>
+<script src="/racoon/gist.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t, D = I.pick;          // t: interface text ; D: data text (plain string or {fr, en…})
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+F.autoTypo(document.querySelector("main"));
+const G = Graphe, S = G.parseSections(self.FLP_SECTIONS), NODES = G.NOEUDS;
+const BY = new Map(NODES.map(n => [n.id, n]));
+const KIDS = new Map(NODES.map(n => [n.id, []])); NODES.forEach(n => n.prereq.forEach(p => KIDS.get(p).push(n.id)));
+const LABEL = st => t("legend." + st);
+
+let progress = { livrees: [], lecons: [] }, questions = [], choice = null, selected = null, selEdge = null;
+const BELOW = G.descendants(NODES);
+const PAPERS = Sujets.byNotion((self.SUJETS || []).map(p => ({ concours: p.c, annee: p.a, filiere: p.f, epreuve: p.e, titre: p.t, theme: p.th, url: p.u, corrige_url: p.k, notions: p.n })));
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const ED = x => esc(D(x));                                          // escaped data text
+const titre = id => D(BY.get(id).titre), piste = k => D(G.PISTES[k]);
+const titleOf = (n, k) => D(G.slicesOf(n, S).find(x => x.key === k).titre);
+/* a delivered lesson opens its page on this site; the sources are cited, never linked */
+const lessonOf = key => (progress.lecons || []).find(l => (l.sections || []).map(G.canon).includes(G.canon(key)));
+
+/* ---------- radial map (static geometry, restyled on state change) ---------- */
+const el = Plot.el;
+const svg = $("map"), R = G.sectors(NODES), P = id => R.pos.get(id);
+const gCells = el("g", { class: "cells" }, svg), gRings = el("g", {}, svg), gEdges = el("g", {}, svg), gNodes = el("g", {}, svg), EDGE = [], NODE = new Map();
+/* background territories: each notion owns the area closest to it, tinted with its track's colour */
+if (self.d3?.Delaunay) {
+  const B = R.radius + 70, pts = NODES.map(n => [P(n.id).x, P(n.id).y]);
+  const vor = d3.Delaunay.from(pts).voronoi([-B, -B, B, B]);
+  const defs = el("defs", {}, svg), REACH = 170, layer = new Map();
+  Object.keys(G.PISTES).forEach(k => layer.set(k, el("g", { class: "terr t-" + k }, gCells)));
+  NODES.forEach((n, i) => {                          // each patch stops REACH px from its notion
+    const d = vor.renderCell(i); if (!d) return;
+    const c = el("clipPath", { id: "reach-" + n.id }, defs); el("circle", { cx: P(n.id).x, cy: P(n.id).y, r: REACH }, c);
+    el("path", { d, class: "cell", "clip-path": `url(#reach-${n.id})` }, layer.get(n.piste));
+  });
+}
+[...new Set([...R.pos.values()].map(p => Math.round(p.r)))].filter(r => r > 0).forEach(r => el("circle", { cx: 0, cy: 0, r, class: "ring-guide" }, gRings));
+NODES.forEach(n => n.prereq.forEach(p => {
+  const a = P(p), b = P(n.id);
+  let da = b.a - a.a; da = Math.atan2(Math.sin(da), Math.cos(da));            // shortest way round
+  const tree = R.parent.get(n.id) === p, ma = a.a + da / 2, mr = tree ? (a.r + b.r) / 2 : Math.min(a.r, b.r) * 0.55;
+  const d = tree ? `M${a.x} ${a.y} L${b.x} ${b.y}` : `M${a.x} ${a.y} Q${mr * Math.cos(ma)} ${mr * Math.sin(ma)} ${b.x} ${b.y}`;
+  const g = el("g", { class: "eg" + (tree ? " tree" : " cross") }, gEdges);
+  const e = el("path", { d, class: "edge" }, g), hit = el("path", { d, class: "hit" }, g);
+  el("title", {}, hit).textContent = titre(p) + " → " + titre(n.id);
+  hit.addEventListener("click", () => { if (!dragged) selectEdge(p + ">" + n.id); });
+  EDGE.push({ from: p, to: n.id, e });
+}));
+NODES.forEach(n => {
+  const c = P(n.id), g = el("g", { class: "node", tabindex: "0", role: "button" }, gNodes);
+  const ring = el("circle", { cx: c.x, cy: c.y, r: 14, class: "ring" }, g);
+  if (n.historique) el("rect", { x: c.x - 7, y: c.y - 7, width: 14, height: 14, class: "dot" }, g);
+  else el("circle", { cx: c.x, cy: c.y, r: 8, class: "dot" }, g);
+  G.wrapTitle(titre(n.id), 18, 3).forEach((ln, j) => el("text", { x: c.x, y: c.y + 22 + j * 13, "text-anchor": "middle" }, g).textContent = ln);
+  const badge = el("g", { class: "badge" }, g);
+  el("rect", { x: c.x + 12, y: c.y - 22, width: 28, height: 14, rx: 7 }, badge);
+  el("text", { x: c.x + 26, y: c.y - 12, "text-anchor": "middle" }, badge).textContent = t("badge");
+  g.addEventListener("click", () => { if (!dragged) select(n.id); });
+  g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(n.id); } });
+  NODE.set(n.id, { g, ring, badge });
+});
+/* track names around the rim, at the middle of each track's slice */
+const gTracks = el("g", {}, svg), RIM = R.radius + 420;
+R.sector.forEach(([a0, a1], k) => {
+  const a = (a0 + a1) / 2, cx = RIM * Math.cos(a), cy = RIM * Math.sin(a), lines = G.wrapTitle(piste(k), 14, 3);
+  lines.forEach((ln, j) => el("text", { x: cx, y: cy + (j - (lines.length - 1) / 2) * 150, "text-anchor": "middle", class: "track-label" }, gTracks).textContent = ln);
+});
+
+/* pan & zoom: the viewBox is the camera */
+const B = RIM + 520;                                   // the rim names are the outermost things drawn
+const FULL = { x: -B, y: -B, w: 2 * B, h: 2 * B };
+let view = { ...FULL }, dragged = false;
+const box = $("mapbox"), reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function applyView() {
+  const ar = box.clientWidth / box.clientHeight || 1;
+  let { x, y, w, h } = view;                         // keep aspect ratio of the box
+  if (w / h < ar) { const nw = h * ar; x -= (nw - w) / 2; w = nw; } else { const nh = w / ar; y -= (nh - h) / 2; h = nh; }
+  svg.setAttribute("viewBox", `${x} ${y} ${w} ${h}`);
+  svg.classList.toggle("far", box.clientWidth / w < 0.45);   // labels below ~5 px are noise: show track names instead
+}
+function zoomAt(f, cx, cy) {
+  const w = Math.min(Math.max(view.w * f, 500), FULL.w * 1.2), k = w / view.w;
+  view = { x: cx - (cx - view.x) * k, y: cy - (cy - view.y) * k, w, h: view.h * k }; applyView();
+}
+function toSvg(ev) { const pt = svg.createSVGPoint(); pt.x = ev.clientX; pt.y = ev.clientY; return pt.matrixTransform(svg.getScreenCTM().inverse()); }
+function animateTo(target) {
+  if (reduceMotion) { view = target; applyView(); return; }
+  const from = { ...view }, t0 = performance.now();
+  const step = tm => { const k = Math.min(1, (tm - t0) / 350), e = k * (2 - k);
+    view = { x: from.x + (target.x - from.x) * e, y: from.y + (target.y - from.y) * e, w: from.w + (target.w - from.w) * e, h: from.h + (target.h - from.h) * e };
+    applyView(); if (k < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+function focusOn(id) { const c = P(id), w = Math.min(view.w, Math.max(500, Math.min(1100, box.clientWidth / 0.6))); animateTo({ x: c.x - w / 2, y: c.y - w / 2, w, h: w }); }
+svg.addEventListener("wheel", e => { e.preventDefault(); const p = toSvg(e); zoomAt(Math.exp(e.deltaY * 0.0015), p.x, p.y); }, { passive: false });
+const ptrs = new Map(); let last = null, pinch = null;
+svg.addEventListener("pointerdown", e => { ptrs.set(e.pointerId, e); dragged = false; last = toSvg(e); if (ptrs.size === 2) { const [a, b] = [...ptrs.values()]; pinch = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY); } });
+svg.addEventListener("pointermove", e => {
+  if (!ptrs.has(e.pointerId)) return;
+  const prev = ptrs.get(e.pointerId); ptrs.set(e.pointerId, e);
+  if (Math.hypot(e.clientX - prev.clientX, e.clientY - prev.clientY) > 0) dragged = dragged || Math.abs(e.clientX - prev.clientX) + Math.abs(e.clientY - prev.clientY) > 3;
+  if (ptrs.size === 2) {
+    const [a, b] = [...ptrs.values()], d = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+    const mid = toSvg({ clientX: (a.clientX + b.clientX) / 2, clientY: (a.clientY + b.clientY) / 2 });
+    if (pinch) zoomAt(pinch / d, mid.x, mid.y); pinch = d; dragged = true; return;
+  }
+  if (dragged) { svg.setPointerCapture?.(e.pointerId); const p = toSvg(e); view.x -= p.x - last.x; view.y -= p.y - last.y; applyView(); }
+});
+const up = e => { ptrs.delete(e.pointerId); if (ptrs.size < 2) pinch = null; if (!ptrs.size) setTimeout(() => dragged = false, 0); };
+svg.addEventListener("pointerup", up); svg.addEventListener("pointercancel", up);
+$("zin").onclick = () => zoomAt(0.7, view.x + view.w / 2, view.y + view.h / 2);
+$("zout").onclick = () => zoomAt(1.4, view.x + view.w / 2, view.y + view.h / 2);
+$("zfit").onclick = () => animateTo({ ...FULL });
+new ResizeObserver(applyView).observe(box); applyView();
+
+/* ---------- render from state ---------- */
+function render() {
+  const st = G.state(NODES, S, progress.livrees || []);
+  NODES.forEach(n => {
+    const s = st.get(n.id), v = NODE.get(n.id);
+    v.g.setAttribute("class", "node s-" + s.status + (selected === n.id ? " sel" : "") + (PROG.has(n.id) ? " prog" : ""));
+    v.ring.toggleAttribute("hidden", choice !== n.id); v.badge.toggleAttribute("hidden", choice !== n.id);
+    v.g.setAttribute("aria-label", t(choice === n.id ? "node.aria.choix" : "node.aria", { titre: titre(n.id), etat: LABEL(s.status) }));
+  });
+  EDGE.forEach(x => {
+    const cls = selEdge === x.from + ">" + x.to ? " pick" : selected === x.to ? " hot-in" : selected === x.from ? " hot-out" : "";
+    x.e.setAttribute("class", "edge" + cls); x.e.parentNode.classList.toggle("on", !!cls);
+    x.e.parentNode.classList.toggle("prog", PROG.has(x.from) && PROG.has(x.to));
+  });
+  renderFiltre();
+
+  // goal: every lesson covered
+  const g = G.progres(NODES, S, progress.livrees || []), bar = $("goalbar");
+  $("goal").textContent = t("goal.v", { vues: g.seen, total: g.total });
+  $("goalmeta").textContent = t("goal.f", { pct: F.fix(100 * g.seen / g.total, 1) });
+  bar.setAttribute("aria-valuemax", g.total); bar.setAttribute("aria-valuenow", g.seen);
+  bar.firstElementChild.style.width = 100 * g.seen / g.total + "%";
+
+  // tomorrow
+  if (choice && BY.has(choice)) {
+    const n = BY.get(choice), next = G.nextSlice(n, S, progress.livrees || []);
+    $("now").textContent = titre(n.id);
+    $("nowmeta").textContent = next ? t("now.next", { titre: titleOf(n, next) }) : t("now.done");
+  } else {
+    $("now").textContent = t("now.none");
+    $("nowmeta").textContent = t("now.noneMeta");
+  }
+
+  // available now
+  const open = NODES.filter(n => ["en_cours", "ouvert"].includes(st.get(n.id).status))
+    .sort((a, b) => (st.get(b.id).status === "en_cours") - (st.get(a.id).status === "en_cours"));
+  $("open").innerHTML = open.map(n => `<button type="button" class="chip plain s-${st.get(n.id).status}" data-id="${n.id}" title="${esc(piste(n.piste))}">${esc(titre(n.id))} <span class="aux">${st.get(n.id).seen}/${st.get(n.id).total}</span></button>`).join("") || `<p class="caption">${esc(t("open.empty"))}</p>`;
+
+  renderDetail(st);
+}
+
+function renderDetail(st) {
+  const d = $("detail");
+  if (selEdge) {
+    const [p, c] = selEdge.split(">");
+    d.innerHTML = `<span class="sec">${esc(t("edge.sec"))}</span>
+      <div class="tags">${chipOf(st, p)}<span aria-hidden="true">→</span>${chipOf(st, c)}</div>
+      <p>${ED(G.RAISONS[selEdge])}</p>
+      <p class="caption">${esc(t("edge.order", { a: titre(p), b: titre(c) }))}</p>`;
+    return;
+  }
+  if (!selected) { d.innerHTML = `<span class="sec">${esc(t("detail.sec"))}</span><p class="caption">${esc(t("detail.empty"))}</p>`; return; }
+  const n = BY.get(selected), s = st.get(n.id), done = new Set((progress.livrees || []).map(G.canon));
+  const slices = G.slicesOf(n, S), next = G.nextSlice(n, S, progress.livrees || []);
+  const missing = n.prereq.filter(p => !st.get(p).complete);
+  const chip = id => chipOf(st, id);
+  const why = (id, key) => `<div>${chip(id)}<p class="ctx">${ED(G.RAISONS[key])}</p></div>`;
+  d.innerHTML = `
+    <span class="sec">${esc(piste(n.piste))}</span>
+    <h2>${esc(titre(n.id))}</h2>
+    <p class="caption">${esc(t("detail.meta", { vues: s.seen, total: s.total, etat: LABEL(s.status) }))}</p>
+    ${choice === n.id ? `<div class="tags"><span class="chip plain c-tint">${esc(t("detail.chosen"))}</span></div>`
+      : next ? `<button type="button" class="btn" id="choose">${esc(t("detail.choose"))}</button>` : `<p class="caption">${esc(t("detail.allSeen"))}</p>`}
+    ${missing.length && next ? `<div class="box warn"><b>${esc(t("detail.missing.title"))}</b><p>${esc(t("detail.missing", { liste: missing.map(titre).join(", ") }))}</p></div>` : ""}
+    ${n.historique ? `<div class="box rem"><b>${esc(t("detail.hist.title"))}</b><p>${esc(t("detail.hist.body", { periodes: n.historique.periodes.join(", "), source: D(n.historique.source) }))}</p></div>` : ""}
+    ${BELOW.get(n.id) ? `<p class="caption">${esc(t("detail.below", { n: BELOW.get(n.id) }))}</p>` : ""}
+    ${n.prereq.length ? `<h3>${esc(t("detail.prereq"))}</h3><div class="list stack">${n.prereq.map(p => why(p, p + ">" + n.id)).join("")}</div>` : `<p class="caption">${esc(t("detail.root"))}</p>`}
+    ${KIDS.get(n.id).length ? `<h3>${esc(t("detail.kids"))}</h3><div class="list stack">${KIDS.get(n.id).map(c => why(c, n.id + ">" + c)).join("")}</div>` : ""}
+    ${questionsOf(n.id)}
+    ${ingenieurOf(n)}
+    ${papersOf(n.id)}
+    <h3>${esc(t("detail.lessons"))}</h3>
+    <ul class="list keyed scroll">${slices.map((x, i) => `<li class="${done.has(x.key) ? "done" : ""}"><span class="k">${i + 1}</span><span>${lessonOf(x.key) ? `<a href="${esc(lessonOf(x.key).chemin)}">${ED(x.titre)}</a>` : ED(x.titre)}</span>${x.key === next ? `<span class="chip plain c-tint">${esc(t("detail.next"))}</span>` : ""}</li>`).join("")}</ul>`;
+  const btn = $("choose");
+  if (btn) btn.onclick = () => choose(n.id);
+}
+
+/* ---------- official programmes as filters: /atlas?programme=pcsi,pc dims every notion outside them; the layout stays ---------- */
+const PR = Programmes, FIL = self.FILIERES || [], FBY = new Map(FIL.map(f => [f.id, f]));
+let progs = PR.choisir(PR.lire(new URLSearchParams(location.search).get("programme")), FIL).ids, PROG = PR.notions(progs, FIL);
+function renderFiltre() {
+  svg.classList.toggle("filtre", progs.length > 0);
+  const chip = f => `<button type="button" class="chip ${progs.includes(f.id) ? "c-tint" : "plain c-label-2"}" data-prog="${esc(f.id)}" aria-pressed="${progs.includes(f.id)}" title="${ED(f.nom)}">${ED(f.sigle)}</button>`;
+  const html = PR.parAnnee(FIL).map(g => `<span class="caption">${esc(t("prog.annee." + g.annee))}</span>${g.filieres.map(chip).join("")}`).join("")
+    + (progs.length ? `<button type="button" class="btn tinted" id="progclear">${esc(t("prog.effacer"))}</button>` : "");
+  const box = $("progs");
+  if (box.dataset.etat !== progs.join()) { box.innerHTML = html; box.dataset.etat = progs.join(); }   // unchanged choice: the buttons stay
+  $("progstatus").textContent = !FIL.length ? t("prog.vide") : progs.length
+    ? t("prog.actif", { liste: progs.map(id => D(FBY.get(id).sigle)).join(", "), n: PROG.size }) : t("prog.aide");
+}
+function filtrer(ids) {
+  progs = ids; PROG = PR.notions(progs, FIL);
+  history.replaceState(history.state, "", location.pathname + PR.ecrire(location.search, progs) + location.hash);
+  render();
+}
+$("progs").addEventListener("click", e => {
+  const b = e.target.closest("[data-prog]"); if (b) { filtrer(PR.basculer(progs, b.dataset.prog)); return; }
+  if (e.target.closest("#progclear")) filtrer([]);
+});
+
+const OUTILS = { rdm_flexion: "/racoon/outils/poutre-flechie", rdm_deplacements: "/racoon/outils/poutre-flechie" };
+function ingenieurOf(n) {
+  if (!n.source) return "";
+  const out = [];
+  const more = (title, rows) => `<details class="more"><summary>${title}</summary><ul class="list keyed scroll">${rows}</ul></details>`;
+  if (OUTILS[n.id]) out.push(`<a class="btn tinted" href="${OUTILS[n.id]}">${esc(t("ing.tool"))}</a>`);
+  if (n.calculs.length) out.push(more(esc(t("ing.calculs", { n: n.calculs.length })), n.calculs.map(c => `<li><span class="k">→</span><span>${ED(c)}</span></li>`).join("")));
+  if (n.ecoles.length) out.push(more(esc(t("ing.ecoles", { n: n.ecoles.length })), n.ecoles.map(e => `<li><span class="k">·</span><span>${e.url ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">${ED(e.ecole)}</a>` : ED(e.ecole)}${e.cours ? ` — ${ED(e.cours)}` : ""}</span></li>`).join("")));
+  out.push(n.normes.length ? more(esc(t("ing.normes", { n: n.normes.length })), n.normes.map(x => `<li><span class="k">${esc(t("norme." + x.famille))}</span><span>${ED(x.ref)}</span></li>`).join("")) : `<p class="caption">${esc(t("ing.noNorm"))}</p>`);
+  return out.join("");
+}
+function questionsOf(id) {
+  const list = questions.filter(q => q.notions.includes(id));
+  return list.length ? `<h3>${esc(t("detail.questions"))}</h3><div class="tags">${list.map(q => `<a class="chip plain" href="${esc(q.chemin)}">${ED(q.titre)}</a>`).join("")}</div>` : "";
+}
+function papersOf(id) {
+  const list = PAPERS.get(id) || [];
+  if (!list.length) return "";
+  const row = p => `<li><span class="k">${p.annee}</span><span><a href="${esc(p.url)}" target="_blank" rel="noopener">${ED(p.concours)} ${ED(p.filiere)} · ${ED(p.epreuve)}</a>${p.titre ? " — " + ED(p.titre) : ""}${p.theme ? `<br><span class="aux">${ED(p.theme)}</span>` : ""}${p.corrige_url ? ` <a href="${esc(p.corrige_url)}" target="_blank" rel="noopener" class="aux">${esc(t("papers.corrige"))}</a>` : ""}</span></li>`;
+  return `<details class="more"><summary>${esc(t("papers.title", { n: list.length }))}</summary><ul class="list keyed scroll">${list.map(row).join("")}</ul></details>`;
+}
+function chipOf(st, id) { return `<button type="button" class="chip plain s-${st.get(id).status}" data-id="${id}">${esc(titre(id))}</button>`; }
+function selectEdge(key) { selEdge = key; selected = null; render(); if (matchMedia("(max-width: 980px)").matches) $("detail").scrollIntoView({ block: "start" }); }
+function select(id) {
+  selected = id; selEdge = null; render(); focusOn(id);
+}
+document.addEventListener("click", e => { const b = e.target.closest(".chip[data-id]"); if (b) select(b.dataset.id); });
+
+/* ---------- storage: delivered lessons ship with the site, the choice lives in this browser ---------- */
+function choose(id) {
+  try { choice = Progression.page().choisir(id).noeud; $("status").textContent = t(Progression.page().garde() ? "save.done" : "save.memoire", { titre: titre(id) }); render(); }
+  catch { $("status").textContent = t("save.fail"); }
+}
+
+render();
+(async () => {
+  const status = $("status"), get = url => fetch(url, { cache: "no-store" }).then(r => r.ok ? r.json() : Promise.reject(r.status));
+  const [lecons, qs] = await Promise.allSettled([get("/racoon/lecons/index.json"), get("/racoon/questions/index.json")]);
+  if (qs.status === "fulfilled") questions = qs.value;
+  if (lecons.status === "fulfilled") progress = { lecons: lecons.value, livrees: lecons.value.flatMap(l => l.sections) };
+  else status.textContent = t("load.lessons");
+  choice = Progression.page().choix()?.noeud ?? null;
+  Gist.page().demarrer().then(r => { if (r.change) { choice = Progression.page().choix()?.noeud ?? null; render(); } });
+  render();
+  const q = new URLSearchParams(location.search), want = q.get("notion"), lane = q.get("piste");
+  if (want && BY.has(want)) select(want);                               // /atlas?notion=<id> opens that notion
+  else if (lane && R.sector.has(lane)) {                                 // /atlas?piste=<piste> shows that track's slice
+    const [a0, a1] = R.sector.get(lane), a = (a0 + a1) / 2, r = R.radius * 0.55, w = R.radius * 1.3;
+    animateTo({ x: r * Math.cos(a) - w / 2, y: r * Math.sin(a) - w / 2, w, h: w });
+  }
+})();
+</script>
+</body>
+</html>

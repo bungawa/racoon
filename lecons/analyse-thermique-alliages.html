@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Analyse thermique, théorème des moments et alliages</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-solutions" data-i18n="monde.chim-solutions"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-binaires" data-i18n="etape.chim-binaires"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n-html="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/binaires-solide-liquide" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi>n</mi><msub><mi>c</mi><mi>p</mi></msub><mfrac><mrow><mi mathvariant="normal">d</mi><mi>T</mi></mrow><mrow><mi mathvariant="normal">d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mo>−</mo><mi>𝒫</mi><mo>+</mo><msub><mi mathvariant="normal">Δ</mi><mi data-i18n="eq.fus"></mi></msub><mi>H</mi><mspace width="0.2em"></mspace><mfrac><mrow><mi mathvariant="normal">d</mi><msub><mi>n</mi><mi mathvariant="normal">s</mi></msub></mrow><mrow><mi mathvariant="normal">d</mi><mi>t</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.bilan"></p>
+    <div class="box rem"><b data-i18n="s1.sys.title"></b>
+      <p data-i18n-html="s1.sys.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="cr" role="img" data-i18n-attr="aria-label:cr.aria"></svg>
+      <svg class="fig" id="dg" role="img" data-i18n-attr="aria-label:dg.aria"></svg>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="arx" data-i18n="ar.x"></label><output id="arxv" for="arx"></output></div>
+            <input id="arx" type="range" min="0" max="1000" step="1" value="300"></div>
+          <div class="ctl"><div class="row"><label for="art" data-i18n="ar.t"></label><output id="artv" for="art"></output></div>
+            <input id="art" type="range" min="0" max="1000" step="1" value="350"></div>
+        </div>
+        <div class="controls"><button class="btn tinted" type="button" id="b-pur" data-i18n="ar.b.pur"></button><button class="btn tinted" type="button" id="b-eut" data-i18n="ar.b.eut"></button><button class="btn tinted" type="button" id="b-hypo" data-i18n="ar.b.hypo"></button></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="ar.k.T"></span><span class="v" id="arT"></span><span class="f" id="arTf"></span></div>
+          <div class="stat"><span class="k" data-i18n="ar.k.fl"></span><span class="v" id="arfl"></span><span class="f" id="arflf"></span></div>
+          <div class="stat"><span class="k" data-i18n="ar.k.v"></span><span class="v" id="arv"></span><span class="f" id="arvf"></span></div>
+          <div class="stat"><span class="k" data-i18n="ar.k.palier"></span><span class="v" id="arp"></span><span class="f" id="arpf"></span></div>
+        </div>
+      </div>
+      <div class="legend"><span class="c-tint" data-i18n="ar.leg.courbe"></span><span class="c-warn" data-i18n="ar.leg.reperes"></span></div>
+      <figcaption data-i18n-html="ar.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>n</mi><mi mathvariant="normal">ℓ</mi></msub><mo>(</mo><msub><mi>x</mi><mi mathvariant="normal">ℓ</mi></msub><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub><mo>)</mo><mo>=</mo><msub><mi>n</mi><mi mathvariant="normal">s</mi></msub><mo>(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>−</mo><msub><mi>x</mi><mi mathvariant="normal">s</mi></msub><mo>)</mo><mspace width="1em"></mspace><mo>⟺</mo><mspace width="1em"></mspace><mfrac><msub><mi>n</mi><mi mathvariant="normal">ℓ</mi></msub><mrow><msub><mi>n</mi><mi mathvariant="normal">ℓ</mi></msub><mo>+</mo><msub><mi>n</mi><mi mathvariant="normal">s</mi></msub></mrow></mfrac><mo>=</mo><mfrac><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>−</mo><msub><mi>x</mi><mi mathvariant="normal">s</mi></msub></mrow><mrow><msub><mi>x</mi><mi mathvariant="normal">ℓ</mi></msub><mo>−</mo><msub><mi>x</mi><mi mathvariant="normal">s</mi></msub></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.moments"></p>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/analyse-thermique-alliages.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/chim-solutions.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = Plot.el, B = ChimSolutions.Binaires;
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+
+/* ---------- courbe de refroidissement et diagramme bismuth-cadmium ---------- */
+(() => {
+  const A = "Bi", Bb = "Cd", PW = 2.5, CP = 30, TT = [330, 620], E = B.eutectique(A, Bb), sx = $("arx"), st = $("art");
+  const cr = Plot.axes($("cr"), { fmt: F, w: 640, h: 300, pad: { b: 44, l: 60 }, x: { domain: [0, 150], label: t("cr.x") }, y: { domain: TT, label: t("cr.y") } });
+  const dg = Plot.axes($("dg"), { fmt: F, w: 640, h: 300, pad: { b: 44, l: 60 }, x: { domain: [0, 1], label: t("dg.x"), fmt: v => F.num(v, 2) }, y: { domain: TT, label: t("cr.y") } });
+  const c = B.courbesSL(A, Bb, 120);
+  P("path", { d: Plot.path(c.a.concat(c.b).map(([xa, T]) => [dg.x(1 - xa), dg.y(T)])), class: "stroke c-tint" }, dg.g);
+  P("path", { d: Plot.path([[dg.x(0), dg.y(E.T)], [dg.x(1), dg.y(E.T)]]), class: "stroke thin c-tint" }, dg.g);
+  const verticale = P("path", { class: "stroke thin dash c-label-2" }, dg.g), conode = P("path", { class: "stroke thin dash c-warn" }, dg.g), dot = P("circle", { r: 6, class: "dot" }, dg.g);
+  const courbe = P("path", { class: "stroke c-tint" }, cr.g), repL = P("path", { class: "stroke thin dash c-warn" }, cr.g), repE = P("path", { class: "stroke thin dash c-warn" }, cr.g);
+  const cur = P("circle", { r: 6, class: "dot" }, cr.g);
+  const DOM = textOf("ar.dom", ["L", "L+a", "L+b", "a+b", "a", "b", "E"]);
+  const PHI = { L: 1, "L+a": 2, "L+b": 2, "a+b": 2, a: 1, b: 1, E: 3 };
+  let r;
+  const calc = () => { const xb = +sx.value / 1000; r = B.refroidissement(A, Bb, 1 - xb, { P: PW, cp: CP, T0: 600, T1: 340, n: 600 }); return xb; };
+  function upd(recalc) {
+    const xb = recalc ? calc() : +sx.value / 1000, min = s => s / 60;
+    if (recalc) {
+      courbe.setAttribute("d", Plot.path(r.t.map((ti, i) => [cr.x(Math.min(min(ti), 150)), cr.y(r.T[i])])));
+      repL.setAttribute("d", Plot.path([[cr.x(0), cr.y(r.TL)], [cr.x(150), cr.y(r.TL)]]));
+      repE.setAttribute("d", Plot.path([[cr.x(0), cr.y(r.TE)], [cr.x(150), cr.y(r.TE)]]));
+      verticale.setAttribute("d", Plot.path([[dg.x(xb), dg.y(TT[0])], [dg.x(xb), dg.y(TT[1])]]));
+    }
+    const k = Math.round(+st.value / 1000 * (r.t.length - 1)), ti = r.t[k], T = r.T[k], fL = r.fL[k];
+    cur.setAttribute("cx", cr.x(Math.min(min(ti), 150))); cur.setAttribute("cy", cr.y(T));
+    dot.setAttribute("cx", dg.x(xb)); dot.setAttribute("cy", dg.y(T));
+    const surPalier = ti > r.palier[0] + 1e-6 && ti < r.palier[1] - 1e-6;
+    const e = B.etatSL(A, Bb, 1 - xb, T + (surPalier ? 1e-9 : 0)), dom = surPalier ? (xb === 0 || xb === 1 ? (xb === 0 ? "L+a" : "L+b") : "E") : e.domaine;
+    if ((dom === "L+a" || dom === "L+b") && e.xL !== null && !surPalier) conode.setAttribute("d", Plot.path([[dg.x(dom === "L+a" ? 0 : 1), dg.y(T)], [dg.x(1 - e.xL), dg.y(T)]]));
+    else conode.setAttribute("d", "");
+    $("artv").textContent = t("ar.tread", { t: F.num(min(ti), 3) }); $("arxv").textContent = F.fix(xb, 3);
+    $("arT").innerHTML = F.kelvin(T); $("arTf").textContent = DOM[dom];
+    $("arfl").textContent = F.qty(F.num(100 * fL, 3), "%");
+    $("arflf").textContent = dom === "L+a" || dom === "L+b" ? t("ar.f.xl", { x: F.fix(1 - e.xL, 3) }) : dom === "E" ? t("ar.f.e", { x: F.fix(1 - E.x, 3) }) : "–";
+    const pur = xb === 0 || xb === 1, cc = pur ? 1 : 2, phi = surPalier && pur ? 2 : PHI[dom];
+    $("arv").textContent = String(cc + 1 - phi); $("arvf").textContent = t("ar.f.v", { c: cc, phi });
+    $("arp").innerHTML = F.kelvin(r.TE); $("arpf").textContent = t("ar.f.palier", { d: F.num(min(r.palier[1] - r.palier[0]), 3), L: pur ? "–" : F.num(r.TL, 4) });
+  }
+  sx.oninput = () => upd(true); st.oninput = () => upd(false);
+  const go = xb => { sx.value = Math.round(1000 * xb); upd(true); };
+  $("b-pur").onclick = () => go(0); $("b-eut").onclick = () => go(1 - E.x); $("b-hypo").onclick = () => go(0.3);
+  upd(true);
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["lechatelier", 1886, "experiment"], ["tammann", 1903, "experiment"], ["watson", 1964, "experiment"], ["moon", 2000, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["calorimetrie", "etain", "soudure"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["pente", "b"], ["palier", "d"], ["pur", "a"], ["moments", "c"], ["duree", "b"], ["construire", "a"], ["surfusion", "d"], ["alliage", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

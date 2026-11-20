@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Solvants et solubilité</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-architecture" data-i18n="monde.chim-architecture"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-molecules" data-i18n="etape.chim-molecules"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/van-der-waals-liaison-hydrogene" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="box def"><b data-i18n="s1.def.title"></b>
+      <p data-i18n-html="s1.def.body"></p>
+    </div>
+    <figure class="chart">
+      <div class="panel">
+        <div class="seg" role="group" id="sseg" data-i18n-attr="aria-label:sv.choix"></div>
+      </div>
+      <svg class="fig" id="gsolv" role="img" data-i18n-attr="aria-label:sv.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="sv.protique"></span><span class="c-label-2" data-i18n="sv.aprotique"></span></div>
+      <div class="stats">
+        <div class="stat"><span class="k" data-i18n="sv.k.solvant"></span><span class="v" id="vsolv"></span></div>
+        <div class="stat"><span class="k" data-i18n-html="sv.k.lb"></span><span class="v" id="vlb"></span></div>
+        <div class="stat"><span class="k" data-i18n-html="sv.k.paire"></span><span class="v" id="vpaire"></span></div>
+      </div>
+      <figcaption data-i18n-html="sv.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>E</mi><mo>=</mo><mfrac><mrow><msub><mi>z</mi><mn>1</mn></msub><msub><mi>z</mi><mn>2</mn></msub><msup><mi>e</mi><mn>2</mn></msup></mrow><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub><msub><mi>ε</mi><mi mathvariant="normal">r</mi></msub><mi>r</mi></mrow></mfrac><mo>,</mo><mspace width="1em"/><msub><mi>ℓ</mi><mi mathvariant="normal">B</mi></msub><mo>=</mo><mfrac><msup><mi>e</mi><mn>2</mn></msup><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub><msub><mi>ε</mi><mi mathvariant="normal">r</mi></msub><msub><mi>k</mi><mi mathvariant="normal">B</mi></msub><mi>T</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.coulomb"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="box prop"><b data-i18n="s2.prop.title"></b>
+      <p data-i18n-html="s2.prop.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="list keyed" id="miscibles"></div>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="box warn"><b data-i18n="s3.warn.title"></b>
+      <p data-i18n-html="s3.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><mi>K</mi><mo>=</mo><mfrac><msub><mrow><mo>[</mo><mi mathvariant="normal">A</mi><mo>]</mo></mrow><mi data-i18n="eq.org"></mi></msub><msub><mrow><mo>[</mo><mi mathvariant="normal">A</mi><mo>]</mo></mrow><mi data-i18n="eq.aq"></mi></msub></mfrac><mo>,</mo><mspace width="1em"/><mi data-i18n="eq.logp"></mi><mo>=</mo><msub><mi data-i18n="eq.log"></mi><mn>10</mn></msub><mfrac><msub><mrow><mo>[</mo><mi mathvariant="normal">A</mi><mo>]</mo></mrow><mi data-i18n="eq.oct"></mi></msub><msub><mrow><mo>[</mo><mi mathvariant="normal">A</mi><mo>]</mo></mrow><mi data-i18n="eq.eau"></mi></msub></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.partage"></p>
+    <div class="list keyed" id="logp"></div>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>f</mi><mi>n</mi></msub><mo>=</mo><msup><mrow><mo>(</mo><mn>1</mn><mo>+</mo><mfrac><mrow><mi>K</mi><msub><mi>V</mi><mi data-i18n="eq.org"></mi></msub></mrow><mrow><mi>n</mi><msub><mi>V</mi><mi data-i18n="eq.aq"></mi></msub></mrow></mfrac><mo>)</mo></mrow><mrow><mo>−</mo><mi>n</mi></mrow></msup></math></div>
+    <p class="validite" data-i18n-html="val.extraction"></p>
+    <figure class="chart">
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="lk" data-i18n="ex.K"></label><output id="lkv" for="lk"></output></div>
+            <input id="lk" type="range" min="-1" max="3" step="0.001" value="1.903"></div>
+          <div class="ctl"><div class="row"><label for="vo" data-i18n="ex.V"></label><output id="vov" for="vo"></output></div>
+            <input id="vo" type="range" min="5" max="100" step="5" value="30"></div>
+          <div class="ctl"><div class="row"><label for="nn" data-i18n="ex.n"></label><output id="nnv" for="nn"></output></div>
+            <input id="nn" type="range" min="1" max="6" step="1" value="3"></div>
+        </div>
+      </div>
+      <svg class="fig" id="gex" role="img" data-i18n-attr="aria-label:ex.aria"></svg>
+      <div class="stats">
+        <div class="stat"><span class="k" data-i18n="ex.k.n"></span><span class="v" id="vfn"></span></div>
+        <div class="stat"><span class="k" data-i18n="ex.k.1"></span><span class="v" id="vf1"></span></div>
+      </div>
+      <figcaption data-i18n-html="ex.caption"></figcaption>
+    </figure>
+    <div class="box rem"><b data-i18n="s4.rem.title"></b>
+      <p data-i18n-html="s4.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/solvants-et-solubilite.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/quantique-amplitudes.js"></script>
+<script src="/racoon/quantique-schrodinger.js"></script>
+<script src="/racoon/lecons/tableau-periodique-quantique.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), C = ChimArchi, K = Constantes;
+const pct = x => F.qty(x < 0.01 ? F.num(100 * x, 2) : F.fix(100 * x, 1), "%");
+
+/* ---------- carte des solvants : μ, εr, proticité ; une paire Na⁺ Cl⁻ dans chacun ---------- */
+(() => {
+  const S = C.SOLVANTS, nom = textOf("sv.e", S.map(s => s.id)), seg = $("sseg"), svg = $("gsolv"), R_NACL = 282e-12;   // Na–Cl dans le cristal : a/2, a = 564,0 pm
+  seg.innerHTML = S.map(s => `<button type="button" class="no-sigle" data-s="${s.id}">${nom[s.id]}</button>`).join("");
+  const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 300, x: { domain: [0, 4.2], label: t("sv.x") }, y: { domain: [0, 85], label: t("sv.y") } });
+  const dots = {};
+  S.forEach(s => { dots[s.id] = Plot.el("circle", { cx: x(s.mu), cy: y(s.epsr), r: 5, class: s.protique ? "fill c-tint" : "stroke c-label-2" }, g); });
+  const ring = Plot.el("circle", { r: 10, class: "stroke bold c-warn" }, g), lab = Plot.el("text", { class: "note" }, g);
+  let id = "eau";
+  function draw() {
+    const s = S.find(z => z.id === id), lb = C.longueurBjerrum(s.epsr, s.T), E = -C.energiePaire(1, -1, R_NACL, s.epsr);
+    seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.s === id)));
+    ring.setAttribute("cx", x(s.mu)); ring.setAttribute("cy", y(s.epsr));
+    lab.setAttribute("x", x(s.mu) + (s.mu > 3 ? -14 : 14)); lab.setAttribute("y", y(s.epsr) - 12); lab.setAttribute("text-anchor", s.mu > 3 ? "end" : "start");
+    lab.textContent = nom[s.id];
+    $("vsolv").innerHTML = t("sv.val", { mu: F.qty(F.fix(s.mu, 2), "D"), e: F.num(s.epsr, 3), T: F.kelvin(s.T), p: t(s.protique ? "sv.p" : "sv.a") });
+    $("vlb").textContent = F.si(lb, "m", { prefix: "n", sig: 2 });
+    $("vpaire").innerHTML = t("sv.paire", { e: F.qty(F.num(E * K.N_A / 1000, 3), "kJ·mol⁻¹"), r: F.num(E / (K.k_B * s.T), 2) });
+  }
+  seg.querySelectorAll("button").forEach(b => b.onclick = () => { id = b.dataset.s; draw(); });
+  draw();
+})();
+
+/* ---------- miscibilité : trois couples avec l'eau ---------- */
+(() => {
+  const ROWS = ["ethanol", "butanol", "cyclohexane", "diiode"], txt = textOf("mis.rows", ROWS), k = t("mis.k");
+  $("miscibles").innerHTML = ROWS.map(r => `<div><span class="k">${k[r]}</span><span>${txt[r]}</span></div>`).join("");
+})();
+
+/* ---------- log P mesurés ---------- */
+(() => {
+  const ROWS = [["ethanol", -0.31], ["cafeine", -0.07], ["paracetamol", 0.46], ["benzene", 2.13], ["ibuprofene", 3.97]], txt = textOf("logp.rows", ROWS.map(r => r[0]));
+  $("logp").innerHTML = ROWS.map(([id, v]) => `<div><span class="k">${F.fix(v, 2)}</span><span>${txt[id]}</span></div>`).join("");
+})();
+
+/* ---------- extraction fractionnée ---------- */
+(() => {
+  const VAQ = 0.1, lk = $("lk"), vo = $("vo"), nn = $("nn"), svg = $("gex");
+  function draw() {
+    const Kp = Math.pow(10, +lk.value), V = +vo.value * 1e-3, n = +nn.value;
+    $("lkv").textContent = F.num(Kp, 2); $("vov").textContent = F.si(V, "L", { prefix: "m" }); $("nnv").textContent = t("ex.nval", { n, v: F.si(V / n, "L", { prefix: "m", sig: 2 }) });
+    svg.innerHTML = "";
+    const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 240, x: { domain: [-0.5, 6.5], label: t("ex.x") }, y: { scale: "log", domain: [1e-3, 100], label: t("ex.y") } });
+    const Y = p => y(Math.max(p, 1e-3));                                   // échelle logarithmique : 0,001 % en bas
+    for (let k = 0; k <= n; k++) {
+      const fk = k ? C.fractionRestante(Kp, V * k / n, VAQ, k) : 1;     // après k portions de V/n
+      Plot.el("rect", { x: x(k) - 14, y: Y(100 * fk), width: 28, height: Y(0) - Y(100 * fk), class: "fill c-tint" }, g);
+    }
+    const f1 = C.fractionRestante(Kp, V, VAQ, 1), fn = C.fractionRestante(Kp, V, VAQ, n);
+    Plot.el("line", { x1: x(-0.5), x2: x(6.5), y1: Y(100 * f1), y2: Y(100 * f1), class: "ref" }, g);
+    $("vfn").textContent = t("ex.reste", { f: pct(fn), e: pct(1 - fn) });
+    $("vf1").textContent = t("ex.reste", { f: pct(f1), e: pct(1 - f1) });
+  }
+  lk.oninput = vo.oninput = nn.oninput = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["arrhenius", 1887, "idea"], ["nobel", 1903, "idea"], ["born", 1920, "idea"], ["debyehuckel", 1923, "idea"], ["bjerrum", 1926, "idea"],
+    ["zosel", 1970, "use"], ["guide", 2016, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["cafe", "pharma"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["nacl", "b"], ["dmso", "c"], ["protique", "a"], ["butanol", "d"], ["fraction", "b"], ["logp", "a"], ["lavage", "d"], ["iode", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

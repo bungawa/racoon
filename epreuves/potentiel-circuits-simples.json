@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["filcourant", "a"],
+  ["reference", "b"],
+  ["filfini", "c"],
+  ["circulation", "d"],
+  ["dehors", "a"],
+  ["cylindre", "b"],
+  ["bobine", "c"],
+  ["pres", "d"]
+ ]
+}

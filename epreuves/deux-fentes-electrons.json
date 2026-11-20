@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["longueur", "a"],
+  ["balles", "b"],
+  ["vagues", "c"],
+  ["moyenne", "d"],
+  ["grains", "a"],
+  ["fermer", "b"],
+  ["comptage", "c"],
+  ["regle", "d"]
+ ]
+}

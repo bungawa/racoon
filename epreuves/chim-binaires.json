@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["raoult", "c"],
+  ["azeo", "a"],
+  ["colonne", "d"],
+  ["hydro", "b"],
+  ["liquidus", "c"],
+  ["eutectique", "b"],
+  ["courbe", "a"],
+  ["moments", "d"]
+ ]
+}

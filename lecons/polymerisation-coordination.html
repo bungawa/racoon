@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Polymérisation des alcènes par coordination</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .chainefig { max-width: 560px; margin: 0 auto; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-solutions" data-i18n="monde.chim-solutions"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-complexes-catalyse" data-i18n="etape.chim-complexes-catalyse"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/cycles-catalytiques" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <figure>
+      <div class="panel">
+        <label class="field"><span data-i18n="mono.choix"></span>
+          <select id="mono"><option value="ethene" data-i18n="mono.ethene"></option><option value="propene" data-i18n="mono.propene"></option><option value="butene" data-i18n="mono.butene"></option><option value="hexene" data-i18n="mono.hexene"></option></select></label>
+      </div>
+      <div class="list keyed" id="motif"></div>
+      <figcaption data-i18n-html="mono.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="list keyed" id="cossee"></div>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="box rem"><b data-i18n="s2.rem.title"></b>
+      <p data-i18n-html="s2.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>p</mi><mo>=</mo><mfrac><msub><mi>v</mi><mi>p</mi></msub><mrow><msub><mi>v</mi><mi>p</mi></msub><mo>+</mo><msub><mi>v</mi><mi>t</mi></msub></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.p"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><mtable><mtr><mtd><msub><mover><mi>X</mi><mo>‾</mo></mover><mi>n</mi></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>p</mi></mrow></mfrac><mo>=</mo><mn>1</mn><mo>+</mo><mfrac><msub><mi>v</mi><mi>p</mi></msub><msub><mi>v</mi><mi>t</mi></msub></mfrac></mtd></mtr><mtr><mtd><mi>Đ</mi><mo>=</mo><mfrac><msub><mover><mi>X</mi><mo>‾</mo></mover><mi>w</mi></msub><msub><mover><mi>X</mi><mo>‾</mo></mover><mi>n</mi></msub></mfrac><mo>=</mo><mn>1</mn><mo>+</mo><mi>p</mi></mtd></mtr></mtable></math></div>
+    <p class="validite" data-i18n-html="val.sf"></p>
+    <div class="eq"><math display="block"><msub><mi>M</mi><mi>n</mi></msub><mo>=</mo><msub><mover><mi>X</mi><mo>‾</mo></mover><mi>n</mi></msub><msub><mi>M</mi><mn>0</mn></msub></math></div>
+    <p class="validite" data-i18n-html="val.mn"></p>
+    <figure class="chart">
+      <svg class="fig" id="distrib" role="img" data-i18n-attr="aria-label:sf.aria"></svg>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="lr" data-i18n-html="sf.r"></label><output id="lrv" for="lr"></output></div>
+          <input id="lr" type="range" min="1" max="5" step="0.05" value="3"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="sf.k.p"></span><span class="v" id="vp"></span><span class="f" data-i18n="sf.f.p"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="sf.k.xn"></span><span class="v" id="vxn"></span><span class="f" data-i18n="sf.f.xn"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="sf.k.mn"></span><span class="v" id="vmn"></span><span class="f" id="fmn"></span></div>
+          <div class="stat"><span class="k" data-i18n="sf.k.d"></span><span class="v" id="vd"></span><span class="f" data-i18n="sf.f.d"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="sf.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <figure>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" role="group" id="tseg">
+            <button type="button" data-m="iso" data-i18n="tac.iso"></button>
+            <button type="button" data-m="syndio" data-i18n="tac.syndio"></button>
+            <button type="button" data-m="ata" data-i18n="tac.ata"></button>
+          </div>
+          <button class="btn tinted" type="button" id="tirer" data-i18n="tac.tirer"></button>
+        </div>
+      </div>
+      <svg class="fig chainefig" id="chaine" viewBox="0 0 400 120" role="img" data-i18n-attr="aria-label:tac.aria"></svg>
+      <p id="tacread"></p>
+      <figcaption data-i18n-html="tac.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/polymerisation-coordination.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/chim-solutions.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script src="/racoon/chim-organique.js"></script>
+<script src="/racoon/lecons/polymerisation-coordination.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), CS = ChimSolutions, PC = PolyCoord;
+/* formulas are notation, the same in every language: the table only marks them */
+const fx = f => t("fx", { f });
+const signe = v => v > 0 ? "+" + v : v < 0 ? "−" + -v : "0";
+const brute = b => ChimOrga.ecrireFormule(b);
+let monomere = "propene";
+const listeners = [];
+
+/* ---------- monomer and repeat unit ---------- */
+(() => {
+  const sel = $("mono");
+  sel.value = monomere;
+  const upd = () => {
+    monomere = sel.value;
+    const m = PC.motif(monomere), R = PC.MONOMERES[monomere].texte;
+    $("motif").innerHTML = `<div><span class="k">${t("mono.k.alcene")}</span><span>${fx(R === "H" ? "CH₂=CH₂" : "CH₂=CH–" + R)}</span><span class="v">${fx(brute(m.brute))}</span></div>`
+      + `<div><span class="k">${t("mono.k.motif")}</span><span>${t("mono.motif", { m: fx(m.texte) })}</span><span class="v">${F.qty(F.num(m.M * 1000, 4), "g·mol⁻¹")}</span></div>`
+      + `<div><span class="k">${t("mono.k.stereo")}</span><span>${t(R === "H" ? "mono.sansStereo" : "mono.stereo", { r: fx(R) })}</span></div>`;
+    listeners.forEach(f => f());
+  };
+  sel.onchange = upd; upd();
+})();
+
+/* ---------- Cossee–Arlman steps on a zirconocene, typed by chim-solutions ---------- */
+(() => {
+  const K = CS.CYCLES.coordination, rows = [];
+  let cur = K.depart;
+  /* species shown as their ligand formula when there is one: CH₂=CHR rather than CH₂CHR */
+  const espece = v => fx(CS.LIGANDS[v] ? CS.LIGANDS[v].f : CS.texte(v));
+  [["croissance", K.croissance], ["transfert", K.transfert]].forEach(([nom, steps]) => steps.forEach((s, j) => {
+    const phase = nom === "transfert" && j >= 2 ? "amorcage" : nom;
+    const r = CS.etape(cur, s.vers, s.entre || [], s.sort || []), c = CS.complexe(s.vers);
+    rows.push(`<div><span class="k">${t("phase." + phase)}</span><span>${t("cossee.ligne", { de: fx(CS.ecrireComplexe(cur)), vers: fx(CS.ecrireComplexe(s.vers)),
+      p: t("proc." + r.type), plus: (s.entre || []).map(espece).join(" + ") || "—", moins: (s.sort || []).map(espece).join(" + ") || "—" })}</span>`
+      + `<span class="v">${t("cossee.compte", { ne: c.Ne, dne: signe(r.dNe) })}</span></div>`);
+    cur = s.vers;
+  }));
+  const d = CS.complexe(K.depart);
+  $("cossee").innerHTML = `<div><span class="k">${t("phase.depart")}</span><span>${t("cossee.depart", { c: fx(CS.ecrireComplexe(K.depart)), x: d.x, d: d.d, ne: d.Ne })}</span><span class="v">${t("cossee.compte", { ne: d.Ne, dne: "—" })}</span></div>` + rows.join("");
+})();
+
+/* ---------- chain lengths: Schulz–Flory ---------- */
+(() => {
+  const svg = $("distrib"), sl = $("lr");
+  function draw() {
+    const r = Math.pow(10, +sl.value), p = PC.probabilite(r), s = PC.schulzFlory(p), M0 = PC.motif(monomere).M;
+    svg.innerHTML = "";
+    const o = Plot.axes(svg, { fmt: F, w: 640, h: 280, pad: { b: 44, l: 56 },
+      x: { scale: "log", domain: [1, 1e7], label: t("sf.x") }, y: { domain: [0, 1.1], label: t("sf.y") } });
+    /* mass per interval of ln n: n · masse(n), relative to its maximum at n ≈ −2/ln p */
+    const g = n => n * s.masse(n), nmax = Math.max(1, -2 / Math.log(p)), top = g(Math.round(nmax)) || g(1);
+    const pts = [];
+    for (let i = 0; i <= 400; i++) { const n = Math.pow(10, 7 * i / 400); pts.push([o.x(n), o.y(Math.min(g(Math.max(1, n)) / top, 1.1))]); }
+    Plot.el("path", { d: Plot.path(pts), class: "stroke bold c-tint" }, o.g);
+    [[s.Xn, "sf.n"], [s.Xw, "sf.w"]].forEach(([v, k]) => {
+      Plot.el("line", { x1: o.x(v), x2: o.x(v), y1: o.y(0), y2: o.y(1.1), class: "stroke thin dash c-label-2" }, o.g);
+      const n = k === "sf.n";
+      Plot.el("text", { x: o.x(v) + (n ? -4 : 4), y: o.y(1.04), "text-anchor": n ? "end" : "start", class: "note" }, o.g).textContent = t(k);
+    });
+    $("lrv").textContent = F.sci(r, 2);
+    $("vp").textContent = p > 0.9999 ? "1 − " + F.sci(1 - p, 2) : F.num(p, 4);
+    $("vxn").textContent = F.num(s.Xn, 3);
+    const mn = s.Xn * M0;
+    $("vmn").textContent = F.qty(mn < 1000 ? F.num(mn, 3) : F.sci(mn, 3), "kg·mol⁻¹");
+    $("fmn").textContent = t("sf.f.mn", { m: t("mono." + monomere) });
+    $("vd").textContent = F.num(s.D, 4);
+  }
+  sl.oninput = draw; listeners.push(draw); draw();
+})();
+
+/* ---------- tacticity ---------- */
+(() => {
+  const seg = $("tseg"), svg = $("chaine"), rand = Quiz.rng(1954);
+  let mode = "iso", conf;
+  function draw() {
+    seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.m === mode)));
+    const R = PC.MONOMERES[monomere].R;
+    if (!R) { svg.innerHTML = ""; Plot.el("text", { x: 200, y: 60, "text-anchor": "middle" }, svg).textContent = t("tac.ethene"); $("tacread").textContent = ""; return; }
+    const d = ChimOrga.dessin(ChimOrga.mol(PC.dessinChaine(conf, R)), { texte: fx, echelle: 30 });
+    svg.setAttribute("viewBox", d.viewBox); svg.innerHTML = d.html;
+    $("tacread").innerHTML = t("tac.lu", { m: F.num(100 * PC.meso(conf), 3), n: conf.length - 1 });
+  }
+  const tirer = () => { conf = PC.chaine(8, mode, rand); draw(); };
+  seg.onclick = ev => { const b = ev.target.closest("button"); if (b) { mode = b.dataset.m; tirer(); } };
+  $("tirer").onclick = tirer;
+  listeners.push(draw); tirer();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["ziegler", 1953, "experiment"], ["natta", 1954, "experiment"], ["nobel", 1963, "idea"], ["cossee", 1964, "idea"], ["kaminsky", 1980, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  /* PlasticsEurope, « Plastics – the fast Facts 2024 »: world production in 2023 and the shares of each family */
+  const TOTAL = 413.8e9, PART = { pp: 0.190, pehd: 0.122, pebd: 0.140 };
+  const USES = ["volumes", "metallocenes", "lineaire"], uses = textOf("uses.items", USES);
+  const kg = m => F.qty(F.sci(m, 2), "kg");
+  const v = { tot: kg(TOTAL), pp: kg(TOTAL * PART.pp), pehd: kg(TOTAL * PART.pehd), pebd: kg(TOTAL * PART.pebd) };
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${id === "volumes" ? t("uses.volumes", v) : uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["motif", "a"], ["inverse", "c"], ["vacance", "b"], ["d0", "d"], ["xn", "a"], ["dispersite", "c"], ["tacticite", "b"], ["transfert", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 1953 });
+})();
+</script>
+</body>
+</html>

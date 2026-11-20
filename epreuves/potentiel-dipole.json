@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["poisson", "a"],
+  ["moyenne", "b"],
+  ["decroissance", "c"],
+  ["eau", "d"],
+  ["repere", "a"],
+  ["axe", "b"],
+  ["boules", "c"],
+  ["serie", "d"]
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["zones", "a"],
+  ["compensation", "b"],
+  ["loin", "c"],
+  ["modele", "d"],
+  ["facteur", "a"],
+  ["origine", "b"],
+  ["uniforme", "c"],
+  ["lorentz", "d"]
+ ]
+}

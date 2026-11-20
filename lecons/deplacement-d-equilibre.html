@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Déplacement d'équilibre et relation de van 't Hoff</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-solutions" data-i18n="monde.chim-solutions"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-enthalpie-libre" data-i18n="etape.chim-enthalpie-libre"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n-html="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/enthalpie-libre-de-reaction" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mi mathvariant="normal">d</mi><mspace width="0.1em"></mspace><mi data-i18n="eq.ln"></mi><msup><mi>K</mi><mo>°</mo></msup></mrow><mrow><mi mathvariant="normal">d</mi><mi>T</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><msub><mi mathvariant="normal">Δ</mi><mtext>r</mtext></msub><msup><mi>H</mi><mo>°</mo></msup><mo>(</mo><mi>T</mi><mo>)</mo></mrow><mrow><mi>R</mi><msup><mi>T</mi><mn>2</mn></msup></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.vh"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi data-i18n="eq.ln"></mi><mfrac><mrow><msup><mi>K</mi><mo>°</mo></msup><mo>(</mo><msub><mi>T</mi><mn>2</mn></msub><mo>)</mo></mrow><mrow><msup><mi>K</mi><mo>°</mo></msup><mo>(</mo><msub><mi>T</mi><mn>1</mn></msub><mo>)</mo></mrow></mfrac><mo>=</mo><mo>−</mo><mfrac><mrow><msub><mi mathvariant="normal">Δ</mi><mtext>r</mtext></msub><msup><mi>H</mi><mo>°</mo></msup></mrow><mi>R</mi></mfrac><mrow><mo>(</mo><mfrac><mn>1</mn><msub><mi>T</mi><mn>2</mn></msub></mfrac><mo>−</mo><mfrac><mn>1</mn><msub><mi>T</mi><mn>1</mn></msub></mfrac><mo>)</mo></mrow></math></div>
+    <p class="validite" data-i18n-html="val.vhi"></p>
+    <figure class="chart">
+      <svg class="fig" id="vh" role="img" data-i18n-attr="aria-label:vh.aria"></svg>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="vhT" data-i18n="vh.T"></label><output id="vhTv" for="vhT"></output></div>
+          <input id="vhT" type="range" min="300" max="1000" step="5" value="700"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="vh.k.cp"></span><span class="v" id="vhc"></span><span class="f" id="vhcf"></span></div>
+          <div class="stat"><span class="k" data-i18n="vh.k.ell"></span><span class="v" id="vhe"></span><span class="f" id="vhef"></span></div>
+        </div>
+      </div>
+      <div class="legend"><span class="c-tint" data-i18n="vh.leg.cp"></span><span class="c-warn" data-i18n="vh.leg.ell"></span></div>
+      <figcaption data-i18n-html="vh.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>Q</mi><mtext>r</mtext></msub><mo>=</mo><munder><mo>∏</mo><mi>i</mi></munder><msubsup><mi>n</mi><mi>i</mi><msub><mi>ν</mi><mi>i</mi></msub></msubsup><mspace width="0.2em"></mspace><msup><mrow><mo>(</mo><mfrac><mi>p</mi><mrow><msub><mi>n</mi><mtext data-i18n="eq.tot"></mtext></msub><msup><mi>p</mi><mo>°</mo></msup></mrow></mfrac><mo>)</mo></mrow><mrow><mi mathvariant="normal">Δ</mi><msub><mi>ν</mi><mtext data-i18n="eq.gaz"></mtext></msub></mrow></msup></math></div>
+    <p class="validite" data-i18n-html="val.Qp"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <figure class="chart">
+      <svg class="fig" id="hb" role="img" data-i18n-attr="aria-label:hb.aria"></svg>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="hbT" data-i18n="hb.T"></label><output id="hbTv" for="hbT"></output></div>
+            <input id="hbT" type="range" min="500" max="900" step="5" value="723"></div>
+          <div class="ctl"><div class="row"><label for="hbp" data-i18n="hb.p"></label><output id="hbpv" for="hbp"></output></div>
+            <input id="hbp" type="range" min="6" max="7.5" step="0.01" value="7.3"></div>
+          <div class="ctl"><div class="row"><label for="hbi" data-i18n="hb.i"></label><output id="hbiv" for="hbi"></output></div>
+            <input id="hbi" type="range" min="0" max="1" step="0.05" value="0"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="hb.k.x"></span><span class="v" id="hbx"></span><span class="f" id="hbxf"></span></div>
+          <div class="stat"><span class="k" data-i18n="hb.k.K"></span><span class="v" id="hbk"></span><span class="f" id="hbkf"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="hb.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="list keyed" id="ajouts"></div>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/deplacement-d-equilibre.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/chim-solutions.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = Plot.el, C = ChimSolutions;
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+const HABER = { N2: -1, H2: -3, NH3: 2 }, K0 = k => k > 1e4 || k < 1e-3 ? F.sci(k, 3) : F.num(k, 3), pct = r => F.qty(F.num(100 * r, 3), "%");
+const kJ = v => F.qty(F.num(v / 1e3, 4), "kJ·mol⁻¹");
+
+/* ---------- ln K° en fonction de 1/T ---------- */
+(() => {
+  const { x, y, g } = Plot.axes($("vh"), { fmt: F, w: 640, h: 320, pad: { b: 44, l: 56 },
+    x: { domain: [1, 3.4], label: t("vh.x") }, y: { domain: [-16, 14], label: t("vh.y") } });
+  P("line", { x1: x(1), x2: x(3.4), y1: y(0), y2: y(0), class: "zero" }, g);
+  const a = [], b = [];
+  for (let i = 0; i <= 140; i++) { const T = 300 + 5 * i; a.push([x(1000 / T), y(C.lnK(HABER, T, "cpT"))]); b.push([x(1000 / T), y(C.lnK(HABER, T))]); }
+  P("path", { d: Plot.path(b), class: "ref" }, g); P("path", { d: Plot.path(a), class: "curve" }, g);
+  const Ti = C.drH(HABER) / C.drS(HABER);
+  P("text", { x: x(1000 / Ti) + 10, y: y(0) + 20, class: "note" }, g).textContent = t("vh.n.inv", { T: F.qty(F.num(Ti, 3), "K") });
+  const dot = P("circle", { r: 6, class: "dot" }, g), s = $("vhT");
+  function upd() {
+    const T = +s.value, lc = C.lnK(HABER, T, "cpT"), le = C.lnK(HABER, T);
+    dot.setAttribute("cx", x(1000 / T)); dot.setAttribute("cy", y(lc));
+    $("vhTv").innerHTML = F.kelvin(T);
+    $("vhc").textContent = K0(Math.exp(lc)); $("vhcf").textContent = t("vh.f.cp", { h: kJ(C.drH(HABER, T)) });
+    $("vhe").textContent = K0(Math.exp(le)); $("vhef").textContent = t("vh.f.ell", { r: F.num(Math.exp(le - lc), 3) });
+  }
+  s.oninput = upd; upd();
+})();
+
+/* ---------- synthèse de l'ammoniac à l'équilibre ---------- */
+(() => {
+  const { x, y, g } = Plot.axes($("hb"), { fmt: F, w: 640, h: 320, pad: { b: 44, l: 56 },
+    x: { domain: [500, 900], label: t("hb.x") }, y: { domain: [0, 100], label: t("hb.y") } });
+  const ref = P("path", { class: "ref" }, g), courbe = P("path", { class: "curve" }, g), dot = P("circle", { r: 6, class: "dot" }, g);
+  const sT = $("hbT"), sp = $("hbp"), si = $("hbi");
+  const xNH3 = (T, p, i) => C.melangeGaz(HABER, Object.assign({ N2: 1, H2: 3 }, i ? { CH4: i } : {}), T, p, { modele: "cpT" }).equilibre.x.NH3;
+  function upd() {
+    const T = +sT.value, p = Math.pow(10, +sp.value), i = +si.value;
+    const c = [], r = [];
+    for (let k = 0; k <= 80; k++) { const Tk = 500 + 5 * k; c.push([x(Tk), y(100 * xNH3(Tk, p, i))]); r.push([x(Tk), y(100 * xNH3(Tk, 1e6, 0))]); }
+    courbe.setAttribute("d", Plot.path(c)); ref.setAttribute("d", Plot.path(r));
+    const m = C.melangeGaz(HABER, Object.assign({ N2: 1, H2: 3 }, i ? { CH4: i } : {}), T, p, { modele: "cpT" }), e = m.equilibre;
+    dot.setAttribute("cx", x(T)); dot.setAttribute("cy", y(100 * e.x.NH3));
+    $("hbTv").innerHTML = F.kelvin(T); $("hbpv").textContent = F.si(p, "Pa"); $("hbiv").textContent = F.qty(F.fix(i, 2), "mol");
+    $("hbx").textContent = pct(e.x.NH3); $("hbxf").textContent = t("hb.f.x", { r: pct(e.rendement) });
+    $("hbk").textContent = K0(Math.exp(m.lnK)); $("hbkf").textContent = t("hb.f.K", { k: K0(Math.exp(m.lnK) * Math.pow(p / C.P0, 2)) });
+  }
+  sT.oninput = sp.oninput = si.oninput = upd; upd();
+})();
+
+/* ---------- ajouts de constituants ---------- */
+(() => {
+  const IDS = ["inerteP", "inerteV", "reactif", "produit"], txt = textOf("aj.items", IDS);
+  const n = nN2 => C.melangeGaz(HABER, { N2: nN2, H2: 3 }, 723, 2e7, { modele: "cpT" }).equilibre.n.NH3;
+  txt.reactif = { name: txt.reactif.name, text: txt.reactif.text.replace("{a}", F.qty(F.fix(n(1), 3), "mol")).replace("{b}", F.qty(F.fix(n(3), 3), "mol")).replace("{c}", F.qty(F.fix(n(5), 3), "mol")) };
+  keyed($("ajouts"), t("aj.tag"), IDS, txt);
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["lechatelier", 1884, "idea"], ["vanthoff", 1884, "idea"], ["haber", 1909, "experiment"], ["oppau", 1913, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["boucle", "purge"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["endo", "a"], ["pente", "c"], ["pression", "b"], ["volume", "d"], ["dilution", "a"], ["n2", "c"], ["compromis", "b"], ["vh", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

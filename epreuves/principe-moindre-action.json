@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["mode", "a"],
+  ["col", "b"],
+  ["phase", "c"],
+  ["capa", "d"],
+  ["parallele", "a"],
+  ["non", "b"],
+  ["bord", "c"],
+  ["entropie", "d"]
+ ]
+}

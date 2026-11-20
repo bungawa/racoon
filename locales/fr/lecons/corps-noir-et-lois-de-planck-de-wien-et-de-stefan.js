@@ -1,0 +1,108 @@
+/* Leçon « Corps noir et lois de Planck, de Wien et de Stefan » (programme de CPGE, X.corps_noir.1) : textes en français. Une autre langue = locales/<langue>/lecons/corps-noir-et-lois-de-planck-de-wien-et-de-stefan.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+
+    "title": "Corps noir et lois de Planck, de Wien et de Stefan",
+    "crumb.jour": "Corps noir",
+    "h1": "Corps noir et lois de Planck, de Wien et de Stefan",
+    "lede": "Un morceau de fer chauffé rougit, puis jaunit, puis blanchit, quel que soit le fer. La couleur ne dit que la température. Trois lois décrivent ce rayonnement : la forme du spectre, la place de son maximum, et la puissance totale, qui croît comme la puissance quatrième de la température.",
+    "tag.piste": "Thermodynamique et physique statistique",
+    "tag.prereq": "Prérequis : équipartition et oscillateur quantique",
+    "eq.max": "max",
+
+    "s1.sec": "1 · Décrire le système",
+    "s1.h2": "Un corps qui absorbe tout",
+    "s1.p1": "Tout corps à la température <var>T</var> émet un rayonnement électromagnétique, parce que ses charges s'agitent : c'est le rayonnement thermique. Il en reçoit aussi, qu'il absorbe, réfléchit ou laisse passer. Un corps noir est un corps idéal qui absorbe tout ce qu'il reçoit, à toutes les longueurs d'onde. La meilleure réalisation est un petit trou dans la paroi d'une cavité : un rayon qui y entre a très peu de chances de ressortir avant d'être absorbé.",
+    "s1.p2": "À l'équilibre thermique, le rayonnement dans la cavité ne dépend ni du matériau ni de la forme des parois, seulement de la température : c'est le résultat de Kirchhoff (leçon « Équilibre thermique du rayonnement »). Ce qui sort du trou est donc universel. Un corps réel émet moins : à chaque longueur d'onde, il émet la fraction du rayonnement du corps noir qu'il serait capable d'absorber. Un bon absorbant est un bon émetteur ; un miroir n'émet presque rien.",
+
+    "s2.sec": "2 · La loi de Planck",
+    "s2.h2": "La forme du spectre",
+    "s2.p1": "L'exitance <var>M</var> d'une surface est la puissance qu'elle émet par unité d'aire, dans tout le demi-espace, en W·m⁻². On la détaille par longueur d'onde : <var>M</var><sub><var>λ</var></sub>\u00a0d<var>λ</var> est la part émise entre <var>λ</var> et <var>λ</var> + d<var>λ</var>. Pour un corps noir :",
+    "val.planck": "Exacte pour le rayonnement d'équilibre, dans une cavité grande devant la longueur d'onde. Le rayonnement de fond cosmologique la suit à mieux que 0,03\u00a0%. Une surface réelle émet <var>ε</var>(<var>λ</var>) fois cette valeur, avec une émissivité <var>ε</var> entre 0 et 1 : proche de 1 pour la peau ou une peinture mate dans l'infrarouge, quelques centièmes pour un métal poli.",
+    "s2.p2": "La leçon « Équipartition et oscillateur quantique » tire cette loi de la quantification de l'énergie des modes du rayonnement, par paquets <var>hc</var>/<var>λ</var>. Aux grandes longueurs d'onde, <var>hc</var>/<var>λ</var> ≪ <var>k</var><sub>B</sub><var>T</var> : chaque mode a l'énergie <var>k</var><sub>B</sub><var>T</var> de l'équipartition, et <var>M</var><sub><var>λ</var></sub> ≈ 2π<var>ck</var><sub>B</sub><var>T</var>/<var>λ</var>⁴, la loi classique de Rayleigh et Jeans. Aux courtes longueurs d'onde, un paquet coûte bien plus que <var>k</var><sub>B</sub><var>T</var> : les modes sont gelés, et le spectre s'effondre comme e<sup>\u2212<var>hc</var>/(<var>λk</var><sub>B</sub><var>T</var>)</sup>. Entre les deux, un maximum.",
+
+    "s3.sec": "3 · La loi de Wien",
+    "s3.h2": "Où est le maximum",
+    "s3.p1": "La loi de Planck ne dépend de <var>λ</var> et de <var>T</var> que par le produit <var>λT</var>, à un facteur <var>T</var>⁵ près. Son maximum se déplace donc en raison inverse de la température :",
+    "val.wien": "Exacte : conséquence de la loi de Planck, <var>b</var> = <var>hc</var>/(4,965\u00a0<var>k</var><sub>B</sub>). Le maximum dépend de la variable choisie. Par unité de fréquence, le spectre culmine à <var>ν</var> = 2,821\u00a0<var>k</var><sub>B</sub><var>T</var>/<var>h</var>, ce qui ne correspond pas à la même longueur d'onde : 883\u00a0nm au lieu de 502\u00a0nm pour le Soleil. Dire « le Soleil émet surtout dans le vert » n'a de sens que pour un découpage en longueurs d'onde.",
+    "tab.fond": "Fond cosmologique", "tab.peau": "Peau humaine", "tab.filament": "Filament de tungstène", "tab.soleil": "Surface du Soleil",
+    "tab.ligne": "{T} : maximum à {l} ; {m} émis",
+    "s3.p2": "Le fer qui chauffe suit cette loi : vers 1\u00a0000\u00a0K, le maximum est à 2,9\u00a0µm, dans l'infrarouge, et seule la queue du spectre déborde dans le rouge. Plus chaud, le spectre couvre tout le visible, et le fer paraît blanc. À 300\u00a0K, tout est dans l'infrarouge lointain, autour de 10\u00a0µm : les objets ordinaires ne brillent pas dans le noir, mais une caméra thermique les voit.",
+
+    "s4.sec": "4 · La loi de Stefan",
+    "s4.h2": "La puissance totale",
+    "s4.p1": "En sommant la loi de Planck sur toutes les longueurs d'onde, le changement de variable <var>x</var> = <var>hc</var>/(<var>λk</var><sub>B</sub><var>T</var>) fait sortir <var>T</var>⁴ et laisse une intégrale pure, qui vaut π⁴/15 :",
+    "val.stefan": "Exacte pour un corps noir ; <var>σ</var> = 5,670\u00a0×\u00a010⁻⁸\u00a0W·m⁻²·K⁻⁴. Pour un corps réel, <var>M</var> = <var>εσT</var>⁴ avec une émissivité moyenne <var>ε</var> < 1 qui dépend elle-même de <var>T</var>. Vérification sur le Soleil : <var>σT</var>⁴ à 5\u00a0772\u00a0K vaut 62,9\u00a0MW·m⁻² ; dilué par le carré du rapport du rayon solaire à la distance de la Terre, cela donne 1\u00a0361\u00a0W·m⁻², la valeur mesurée hors de l'atmosphère.",
+    "s4.p2": "La puissance quatrième est brutale : doubler la température multiplie le rayonnement par 16. La leçon « Compressibilité du rayonnement » retrouve <var>T</var>⁴ par la thermodynamique seule, sans connaître <var>σ</var>. À température ordinaire, le rayonnement n'est pas négligeable : un corps noir à 300\u00a0K émet 459\u00a0W·m⁻². S'il n'y paraît pas, c'est qu'il reçoit presque autant de son entourage ; seul le bilan compte (leçon « Bilans radiatifs et effet de serre »).",
+
+    "s5.sec": "5 · Le spectre à toute température",
+    "s5.h2": "Du fond du ciel à la surface des étoiles",
+    "s5.p1": "La courbe pleine est la loi de Planck par unité de longueur d'onde, rapportée à son maximum. La courbe en tirets est le même rayonnement découpé par unité de fréquence, tracé à la longueur d'onde <var>c</var>/<var>ν</var>. La bande colorée est le domaine visible, de 380 à 780\u00a0nm.",
+    "sp.aria": "Spectre du corps noir à la température choisie, par unité de longueur d'onde et par unité de fréquence, avec la bande visible",
+    "sp.leg.l": "Par unité de longueur d'onde", "sp.leg.nu": "Par unité de fréquence", "sp.leg.vis": "Domaine visible",
+    "sp.tt": "Température",
+    "sp.x": "longueur d'onde λ (m)", "sp.y": "exitance spectrale / maximum",
+    "sp.k.lmax": "Maximum en longueur d'onde", "sp.f.lmax": "loi de Wien",
+    "sp.k.numax": "Maximum en fréquence", "sp.f.numax": "soit c/ν = {l}",
+    "sp.k.m": "<var>σT</var>⁴", "sp.f.m": "puissance émise par unité d'aire",
+    "sp.k.vis": "Part dans le visible", "sp.f.vis": "de 380 à 780 nm", "sp.zero": "moins de 0,01 %",
+    "sp.k.ir": "Part dans l'infrarouge", "sp.f.ir": "au-delà de 780 nm",
+    "sp.caption": "Sur l'axe logarithmique, changer la température translate la courbe sans la déformer : c'est la loi de Wien. Les deux découpages ne culminent pas au même endroit, mais ils décrivent le même rayonnement : l'aire sous chaque courbe, dans sa propre variable, est <var>σT</var>⁴. À 5\u00a0772\u00a0K, 46\u00a0% de la puissance tombe dans le visible ; à 2\u00a0800\u00a0K, 10\u00a0% ; à 300\u00a0K, rien.",
+    "sys.title": "Le système, avant d'appliquer la loi",
+    "sys.inner": "Corps noir à {T}, à l'équilibre, de taille grande devant {l}. Énergie d'un photon au maximum : {e}. {avis}",
+    "sys.froid": "Tout le rayonnement est dans l'infrarouge ou au-delà : invisible à l'œil, mesurable par un détecteur thermique.",
+    "sys.rouge": "Le maximum est dans l'infrarouge, mais la queue courte du spectre atteint le rouge : le corps rougeoie.",
+    "sys.blanc": "Le spectre couvre le visible : le corps paraît jaune, puis blanc. La plupart des matériaux sont alors fondus ou vaporisés : c'est le domaine des filaments et des étoiles.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Quarante ans pour une courbe",
+    "hist.intro": "De l'énoncé du problème par Kirchhoff à la formule de Planck, la thermodynamique a donné tout ce qu'elle pouvait ; il a fallu les quanta pour finir.",
+    "hist.events": {
+      kirchhoff: { who: "Gustav Kirchhoff", what: "démontre que le rayonnement en équilibre dans une enceinte ne dépend que de la température et de la longueur d'onde, et introduit le nom de corps noir.", context: "Trouver cette fonction universelle devient un problème central de la physique." },
+      stefan: { who: "Josef Stefan", what: "déduit de mesures que le rayonnement d'un corps chaud croît comme la puissance quatrième de sa température.", context: "Une loi empirique, sans explication." },
+      boltzmann: { who: "Ludwig Boltzmann", what: "démontre la loi en T⁴ par la thermodynamique.", context: "Il traite le rayonnement comme un fluide dont la pression vaut le tiers de la densité d'énergie." },
+      wien: { who: "Wilhelm Wien", what: "établit par un argument thermodynamique que le spectre se déplace en raison inverse de la température.", context: "La loi de déplacement fixe la place du maximum sans donner la forme de la courbe." },
+      planck: { who: "Max Planck", what: "présente le 19 octobre une formule qui s'accorde avec toutes les mesures, puis la justifie le 14 décembre en supposant que l'énergie ne s'échange que par quantités finies.", context: "La constante h apparaît. Lummer et Pringsheim, Rubens et Kurlbaum avaient montré que les lois précédentes échouaient dans l'infrarouge." },
+      firas: { who: "John Mather et son équipe", what: "publient le spectre du rayonnement de fond cosmologique mesuré par le satellite Cosmic Background Explorer : un corps noir à 2,726 ± 0,010 K.", context: "L'écart à la loi de Planck est inférieur à 0,03 % : le corps noir le plus parfait jamais mesuré est l'Univers lui-même." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      camera: { name: "Mesurer une température à distance", text: "Un thermomètre infrarouge ou une caméra thermique mesure le rayonnement entre 7 et 14\u00a0µm, là où émettent les corps proches de 300\u00a0K, et en déduit la température par la loi de Planck. Il faut lui indiquer l'émissivité de la surface : un métal poli, qui émet peu et réfléchit le rayonnement de la pièce, paraît à tort à la température ambiante." },
+      lampe: { name: "Pourquoi les lampes à filament ont disparu", text: "À 2\u00a0800\u00a0K, un filament de tungstène n'émet que 10\u00a0% de sa puissance dans le visible ; le reste part en infrarouge, donc en chaleur. On ne peut guère chauffer davantage : le tungstène fond. Une source qui n'émet que dans le visible, comme une diode électroluminescente, n'est pas un corps noir, et c'est son avantage." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      noir: { prompt: "Pourquoi un petit trou dans une cavité est-il un bon corps noir, même si les parois intérieures sont claires ?",
+        options: { a: "Parce que l'intérieur est froid.", b: "Parce qu'un rayon entré par le trou subit de nombreuses réflexions, perd une fraction de son énergie à chacune, et n'a presque aucune chance de ressortir.", c: "Parce que le trou n'émet aucun rayonnement.", d: "Parce que les parois sont à une température différente de celle du rayonnement." },
+        why: "Absorber tout ce qui arrive, c'est la définition du corps noir. Le trou y parvient par la géométrie, et le rayonnement qui en sort est celui de l'équilibre dans la cavité, indépendant du matériau." },
+      wien: { prompt: "La peau, à 305 K, émet un rayonnement dont le maximum est à 9,5 µm. Où est le maximum pour un four à 1 220 K ?",
+        options: { a: "À 38 µm.", b: "À 9,5 µm : il ne dépend pas de la température.", c: "À 2,4 µm : quatre fois plus chaud, longueur d'onde quatre fois plus courte.", d: "À 0,6 µm, dans le visible." },
+        hint: "λ_max T est constant.",
+        why: "λ_max = 2,898 × 10⁻³/1 220 = 2,4 × 10⁻⁶ m. Toujours l'infrarouge : le four ne paraît rouge que par la queue courte de son spectre." },
+      stefan: { prompt: "Un corps noir passe de 300 K à 600 K. Par combien la puissance qu'il rayonne est-elle multipliée ?",
+        options: { a: "Par 16.", b: "Par 2.", c: "Par 4.", d: "Par 8." },
+        why: "M = σT⁴ : 2⁴ = 16. De 459 W·m⁻² à 7,3 kW·m⁻²." },
+      maxima: { prompt: "Le spectre solaire culmine à 502 nm par unité de longueur d'onde, mais à 883 nm par unité de fréquence. Laquelle des deux valeurs est la bonne ?",
+        options: { a: "502 nm : la longueur d'onde est la vraie variable.", b: "883 nm : la fréquence est la vraie variable.", c: "Aucune : la loi de Planck est fausse pour le Soleil.", d: "Les deux : ce sont deux découpages du même rayonnement, et un intervalle dλ fixe ne correspond pas à un intervalle dν fixe." },
+        why: "dν = c dλ/λ² : à courte longueur d'onde, un même dλ couvre beaucoup plus de fréquences. Le maximum d'une densité dépend de la variable. La puissance dans une bande donnée, elle, n'en dépend pas." },
+      filament: { prompt: "Pourquoi une lampe à filament à 2 800 K éclaire-t-elle si mal pour la puissance qu'elle consomme ?",
+        options: { a: "Parce que le tungstène est un mauvais émetteur.", b: "Parce que son maximum d'émission est vers 1 µm, dans l'infrarouge : 10 % seulement de la puissance rayonnée tombe dans le visible.", c: "Parce que l'ampoule absorbe la lumière.", d: "Parce que la loi de Stefan ne s'applique pas aux métaux." },
+        why: "λ_max = 2,898 × 10⁻³/2 800 = 1,03 µm. Il faudrait la température du Soleil pour placer le maximum dans le visible, et aucun solide n'y résiste." },
+      soleil: { prompt: "À 5 772 K, la surface du Soleil émet 62,9 MW·m⁻². La Terre est à 215 rayons solaires du centre du Soleil. Quel éclairement reçoit-elle ?",
+        options: { a: "62,9 × 10⁶/215² ≈ 1 360 W·m⁻².", b: "62,9 × 10⁶/215 ≈ 293 kW·m⁻².", c: "62,9 MW·m⁻² : le vide n'absorbe rien.", d: "Environ 240 W·m⁻²." },
+        hint: "La même puissance traverse des sphères de plus en plus grandes.",
+        why: "La puissance totale se conserve : le flux par unité d'aire décroît comme l'inverse du carré de la distance. On retrouve l'éclairement solaire mesuré hors de l'atmosphère, 1 361 W·m⁻²." },
+      gris: { prompt: "Une plaque d'aluminium poli et une plaque peinte en noir mat sont à la même température de 350 K. Une caméra thermique réglée sur une émissivité de 1 les regarde. Que montre-t-elle ?",
+        options: { a: "La même température pour les deux.", b: "L'aluminium plus chaud, parce qu'il conduit mieux.", c: "L'aluminium bien plus froid qu'il ne l'est : il émet peu, et renvoie surtout le rayonnement de la pièce.", d: "Rien : à 350 K, il n'y a pas de rayonnement." },
+        why: "L'émissivité d'un métal poli est de quelques centièmes. La caméra reçoit peu de rayonnement propre et beaucoup de rayonnement réfléchi ; elle affiche une température proche de celle de l'environnement." },
+    },
+
+    "foot": "Source : programme officiel de CPGE, seconde année (MP), transferts thermiques : rayonnement d'équilibre, corps noir, lois de Planck, de Wien et de Stefan. Constantes : valeurs exactes du Système international depuis 2019. Température effective du Soleil : valeur nominale de l'Union astronomique internationale (2015). Fond cosmologique : mesures du satellite Cosmic Background Explorer.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

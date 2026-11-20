@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Géométrie VSEPR et polarité</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .cram { width: 100%; max-width: 420px; height: auto; display: block; margin: 0 auto; touch-action: none; cursor: grab; }
+  .cram text { font-size: 22px; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-architecture" data-i18n="monde.chim-architecture"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-molecules" data-i18n="etape.chim-molecules"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/schemas-de-lewis" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="box def"><b data-i18n="s1.def.title"></b>
+      <p data-i18n-html="s1.def.body"></p>
+    </div>
+    <div class="list keyed" id="figures"></div>
+    <p class="validite" data-i18n-html="val.vsepr"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure>
+      <div class="panel">
+        <div class="seg" role="group" id="mseg" data-i18n-attr="aria-label:v.choix"></div>
+      </div>
+      <svg class="fig cram" id="cram" role="img" data-i18n-attr="aria-label:v.aria"></svg>
+      <div class="stats">
+        <div class="stat"><span class="k" data-i18n="v.k.code"></span><span class="v" id="vcode"></span></div>
+        <div class="stat"><span class="k" data-i18n="v.k.forme"></span><span class="v" id="vforme"></span></div>
+        <div class="stat"><span class="k" data-i18n="v.k.angle"></span><span class="v" id="vangle"></span></div>
+        <div class="stat"><span class="k" data-i18n="v.k.polaire"></span><span class="v" id="vpol"></span></div>
+      </div>
+      <p id="vnote"></p>
+      <figcaption data-i18n-html="v.caption"></figcaption>
+    </figure>
+    <div class="box rem"><b data-i18n="s2.rem.title"></b>
+      <p data-i18n-html="s2.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mover><mi>p</mi><mo>→</mo></mover><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>q</mi><mi>i</mi></msub><mspace width="0.15em"/><mover><mrow><mi>O</mi><msub><mi>M</mi><mi>i</mi></msub></mrow><mo>→</mo></mover><mo>,</mo><mspace width="1em"/><mi>p</mi><mo>=</mo><mi>δ</mi><mspace width="0.1em"/><mi>e</mi><mspace width="0.1em"/><mi>d</mi></math></div>
+    <p class="validite" data-i18n-html="val.dipole"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><msub><mover><mi>p</mi><mo>→</mo></mover><mi data-i18n="eq.mol"></mi></msub><mo>≈</mo><munder><mo>∑</mo><mi data-i18n="eq.liaisons"></mi></munder><msub><mover><mi>p</mi><mo>→</mo></mover><mi>k</mi></msub><mo>,</mo><mspace width="1em"/><msub><mi>p</mi><mrow><msub><mi mathvariant="normal">H</mi><mn>2</mn></msub><mi mathvariant="normal">O</mi></mrow></msub><mo>=</mo><mn>2</mn><mspace width="0.1em"/><msub><mi>p</mi><mrow><mi mathvariant="normal">O</mi><mi mathvariant="normal">H</mi></mrow></msub><mspace width="0.1em"/><mi data-i18n="eq.cos"></mi><mfrac><mi>θ</mi><mn>2</mn></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.somme"></p>
+    <figure class="chart">
+      <svg id="gmu" role="img" data-i18n-attr="aria-label:g.aria"></svg>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="th" data-i18n="g.theta"></label><output id="thv" for="th"></output></div>
+          <input id="th" type="range" min="60" max="180" step="0.5" value="104.5"></div>
+      </div>
+      <figcaption data-i18n-html="g.caption"></figcaption>
+    </figure>
+    <div class="box warn"><b data-i18n="s3.warn.title"></b>
+      <p data-i18n-html="s3.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/geometrie-vsepr.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/quantique-amplitudes.js"></script>
+<script src="/racoon/quantique-schrodinger.js"></script>
+<script src="/racoon/lecons/tableau-periodique-quantique.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), C = ChimArchi;
+const deg = a => F.qty(F.fix(a, 1), "°");
+const SUB = "₀₁₂₃₄₅₆₇₈₉", code = (p, q) => t("code", { c: "AX" + SUB[p] + (q > 1 ? "E" + SUB[q] : q ? "E" : "") });   // AX₂E₂ : indices Unicode
+
+/* ---------- table des figures AXpEq (n + m ≤ 4) ---------- */
+(() => {
+  const CAS = [[2, 0], [3, 0], [2, 1], [4, 0], [3, 1], [2, 2]], forme = t("forme"), ex = textOf("fig.ex", CAS.map(([p, q]) => C.vsepr(p, q).code));
+  $("figures").innerHTML = CAS.map(([p, q]) => { const g = C.vsepr(p, q);
+    return `<div><span class="k">${code(p, q)}</span><span><strong>${forme[g.forme]}</strong> · ${ex[g.code]}</span><span class="v">${deg(g.angle)}</span></div>`; }).join("");
+})();
+
+/* ---------- vue de Cram orientable, moment dipolaire ---------- */
+(() => {
+  /* centre, ligands, doublets libres, moment mesuré (D, gaz, NIST CCCBDB ; null : non donné ici), angle mesuré (°), ion ? */
+  const M = {
+    co2: ["C", ["O", "O"], 0, 0, 180], hcn: ["C", ["H", "N"], 0, null, 180], bf3: ["B", ["F", "F", "F"], 0, 0, 120],
+    h2co: ["C", ["O", "H", "H"], 0, null, null], so2: ["S", ["O", "O"], 1, 1.633, 119.5], ch4: ["C", ["H", "H", "H", "H"], 0, 0, 109.47],
+    ch2cl2: ["C", ["H", "H", "Cl", "Cl"], 0, 1.62, null], chcl3: ["C", ["Cl", "Cl", "H", "Cl"], 0, 1.04, null], ccl4: ["C", ["Cl", "Cl", "Cl", "Cl"], 0, 0, 109.47],
+    nh3: ["N", ["H", "H", "H"], 1, 1.47, 106.7], nh4: ["N", ["H", "H", "H", "H"], 0, null, 109.47, true], h2o: ["O", ["H", "H"], 2, 1.855, 104.5],
+    h3o: ["O", ["H", "H", "H"], 1, null, null, true], hf: ["F", ["H"], 3, 1.827, null],
+  };
+  const IDS = Object.keys(M), nom = textOf("v.e", IDS), note = textOf("v.note", IDS), forme = t("forme"), sym = t("sym");
+  const seg = $("mseg"), svg = $("cram"), S = 110;
+  seg.innerHTML = IDS.map(id => `<button type="button" class="no-sigle" data-m="${id}">${nom[id]}</button>`).join("");   // HF : une formule, pas « haute fréquence »
+  svg.setAttribute("viewBox", "-200 -170 400 340");
+  const YAW0 = 0.35;                                // un léger quart de tour : les liaisons hors du plan se séparent, comme sur un dessin de Cram
+  let id = "h2o", yaw = YAW0, pitch = 0;
+  const norm = v => { const n = Math.hypot(...v); return v.map(x => x / n); }, dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+  const cross = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
+  /* repère de Cram : les deux premiers ligands dans le plan de l'écran, pointés vers le bas */
+  function repere(g) {
+    const a = g.directions[0], b = g.directions[1] || g.doublets[0], s = [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
+    let down, hor;
+    if (Math.hypot(...s) > 1e-6) { down = norm(s); const d = dot(a, down); hor = norm([a[0] - d * down[0], a[1] - d * down[1], a[2] - d * down[2]]); }
+    else { hor = a; down = Math.abs(a[2]) < 0.9 ? norm(cross(a, [0, 0, 1])) : norm(cross(a, [0, 1, 0])); }
+    return { hor, down, out: cross(hor, down) };
+  }
+  function proj(v, R) {
+    let x = dot(v, R.hor), y = dot(v, R.down), z = dot(v, R.out);
+    const cy = Math.cos(yaw), sy = Math.sin(yaw); [x, z] = [cy * x + sy * z, -sy * x + cy * z];
+    const cp = Math.cos(pitch), sp = Math.sin(pitch); [y, z] = [cp * y - sp * z, sp * y + cp * z];
+    return [x, y, z];
+  }
+  function draw() {
+    const [A, X, q, mu, ang, ion] = M[id], g = C.vsepr(X.length, q), R = repere(g), m = C.momentMolecule(A, X, q);
+    seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.m === id)));
+    svg.innerHTML = "";
+    const items = g.directions.map((d, i) => ({ kind: "X", p: proj(d, R), el: X[i] })).concat(g.doublets.map(d => ({ kind: "E", p: proj(d, R) })));
+    items.sort((u, v) => u.p[2] - v.p[2]);
+    const centre = () => Plot.el("text", { x: 0, y: 8, "text-anchor": "middle", class: "c-label" }, svg).textContent = sym[A];
+    let drawn = false;
+    for (const it of items) {
+      if (!drawn && it.p[2] > 0) { centre(); drawn = true; }
+      const [x, y, z] = it.p, X1 = x * S, Y1 = y * S, ux = x / Math.hypot(x, y || 1e-9), uy = y / Math.hypot(x, y || 1e-9);
+      if (it.kind === "E") {
+        const L = Math.hypot(x, y), cx = 0.5 * X1, cy = 0.5 * Y1, rx = Math.max(10, 32 * L), a = Math.atan2(y, x) * 180 / Math.PI;
+        Plot.el("ellipse", { cx, cy, rx, ry: 14, transform: `rotate(${a} ${cx} ${cy})`, class: "stroke thin dash c-tint" }, svg);
+        continue;
+      }
+      const x0 = 16 * ux, y0 = 16 * uy, x1 = X1 - 16 * ux, y1 = Y1 - 16 * uy, px = -uy, py = ux;
+      if (z > 0.5) Plot.el("polygon", { points: `${x0},${y0} ${x1 + 6 * px},${y1 + 6 * py} ${x1 - 6 * px},${y1 - 6 * py}`, class: "fill c-label" }, svg);
+      else if (z < -0.5) for (let k = 1; k <= 6; k++) { const f = k / 7, w = 6 * f, cx = x0 + (x1 - x0) * f, cy = y0 + (y1 - y0) * f;
+        Plot.el("line", { x1: cx - w * px, y1: cy - w * py, x2: cx + w * px, y2: cy + w * py, class: "stroke c-label" }, svg); }
+      else Plot.el("line", { x1: x0, y1: y0, x2: x1, y2: y1, class: "stroke c-label" }, svg);
+      Plot.el("text", { x: X1, y: Y1 + 8, "text-anchor": "middle", class: "c-label" }, svg).textContent = sym[it.el];
+    }
+    if (!drawn) centre();
+    if (m.polaire && !ion) {                        // flèche du pôle − vers le pôle +, longueur fixe : le modèle ne donne que le sens
+      const [dx, dy] = proj(norm(m.vecteur), R), L = Math.hypot(dx, dy);
+      if (L > 0.05) Plot.fleche(svg, [150 - 45 * dx / L, -45 * dy / L], [150 + 45 * dx / L, 45 * dy / L], { cls: "c-warn", trait: "stroke bold" });
+    }
+    $("vcode").textContent = code(X.length, q);
+    $("vforme").textContent = forme[g.forme];
+    $("vangle").textContent = g.angle === null ? t("v.sansangle") : ang ? t("v.angles", { i: deg(g.angle), m: deg(ang) }) : t("v.ideal", { i: deg(g.angle) });
+    $("vpol").textContent = ion ? t("v.ion") : !m.polaire ? t("v.apolaire") : mu ? t("v.mesure", { mu: F.qty(F.fix(mu, 2), "D") }) : t("v.polaire");
+    $("vnote").innerHTML = note[id];
+  }
+  seg.querySelectorAll("button").forEach(b => b.onclick = () => { id = b.dataset.m; yaw = YAW0; pitch = 0; draw(); });
+  let drag = null;
+  svg.addEventListener("pointerdown", e => { drag = [e.clientX, e.clientY, yaw, pitch]; svg.setPointerCapture(e.pointerId); });
+  svg.addEventListener("pointermove", e => { if (!drag) return; yaw = drag[2] + (e.clientX - drag[0]) / 80; pitch = Math.max(-1.5, Math.min(1.5, drag[3] - (e.clientY - drag[1]) / 80)); draw(); });
+  svg.addEventListener("pointerup", () => drag = null);
+  draw();
+})();
+
+/* ---------- moment de l'eau en fonction de l'angle ---------- */
+(() => {
+  const muOH = C.momentLiaison(1.855, 104.48), svg = $("gmu"), sl = $("th"), out = $("thv");
+  const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 280, x: { domain: [60, 180], label: t("g.x") }, y: { domain: [0, 3.2], label: t("g.y") } });
+  const pts = []; for (let a = 60; a <= 180; a += 1) pts.push([x(a), y(C.momentCoude(muOH, a))]);
+  Plot.el("path", { d: Plot.path(pts), class: "curve" }, g);
+  Plot.el("line", { x1: x(104.48), x2: x(104.48), y1: y(0), y2: y(3.2), class: "ref" }, g);
+  Plot.el("circle", { cx: x(104.48), cy: y(1.855), r: 5, class: "fill c-warn" }, g);
+  const dot = Plot.el("circle", { r: 6, class: "dot" }, g);
+  const upd = () => { const a = +sl.value, mu = C.momentCoude(muOH, a);
+    dot.setAttribute("cx", x(a)); dot.setAttribute("cy", y(mu));
+    out.textContent = t("g.readout", { a: deg(a), mu: F.qty(F.fix(mu, 2), "D"), c: F.sci(mu * C.DEBYE, 3) }); };
+  sl.oninput = upd; upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["debye", 1912, "idea"], ["pauling", 1932, "idea"], ["nobel", 1936, "idea"], ["sidgwick", 1940, "idea"], ["gillespie", 1957, "idea"], ["spencer", 1945, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["microondes", "rotation"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["nh3", "c"], ["co2", "a"], ["ch2cl2", "d"], ["sens", "b"], ["angle", "a"], ["bf3", "c"], ["ion", "d"], ["h2s", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

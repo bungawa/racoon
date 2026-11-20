@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Équilibre liquide-vapeur et formule de Clapeyron</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-thermo" data-i18n="monde.thermo"></a><span class="aux">›</span><a href="/racoon/etape?id=changements-etat-corps-pur" data-i18n="etape.changements-etat-corps-pur"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n-html="lede"></p>
+    <div class="tags">
+      <a class="chip t-thermo" href="/racoon/atlas?piste=thermo" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/equation-de-clausius-clapeyron" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>p</mi><mi data-i18n="eq.sat"></mi></msub><mo>(</mo><msub><mi>T</mi><mi data-i18n="eq.eb"></mi></msub><mo>)</mo><mo>=</mo><msub><mi>p</mi><mi data-i18n="eq.ext"></mi></msub></math></div>
+    <p class="validite" data-i18n-html="val.eb"></p>
+    <figure>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="z" data-i18n="eb.z"></label><output id="zv" for="z"></output></div>
+            <input id="z" type="range" min="0" max="8849" step="1" value="0"></div>
+          <div class="ctl"><div class="row"><label for="dp" data-i18n="eb.dp"></label><output id="dpv" for="dp"></output></div>
+            <input id="dp" type="range" min="0" max="150" step="1" value="0"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="eb.k.p"></span><span class="v" id="ebp"></span><span class="f" id="ebpf"></span></div>
+          <div class="stat"><span class="k" data-i18n="eb.k.T"></span><span class="v" id="ebT"></span><span class="f" id="ebTf"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="eb.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mi mathvariant="normal">d</mi><mi>p</mi></mrow><mrow><mi mathvariant="normal">d</mi><mi>T</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><msub><mi>s</mi><mn>2</mn></msub><mo>−</mo><msub><mi>s</mi><mn>1</mn></msub></mrow><mrow><msub><mi>v</mi><mn>2</mn></msub><mo>−</mo><msub><mi>v</mi><mn>1</mn></msub></mrow></mfrac><mo>=</mo><mfrac><msub><mi>L</mi><mrow><mn>1</mn><mo>→</mo><mn>2</mn></mrow></msub><mrow><mi>T</mi><mo>(</mo><msub><mi>v</mi><mn>2</mn></msub><mo>−</mo><msub><mi>v</mi><mn>1</mn></msub><mo>)</mo></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.clap"></p>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="chart">
+      <div class="seg" role="group" data-i18n-attr="aria-label:tp.choix">
+        <button type="button" id="tr-fusion" aria-pressed="true"></button>
+        <button type="button" id="tr-vaporisation" aria-pressed="false"></button>
+        <button type="button" id="tr-sublimation" aria-pressed="false"></button>
+      </div>
+      <svg class="fig" id="tp" role="img" data-i18n-attr="aria-label:tp.aria"></svg>
+      <div class="panel">
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="tp.k.dv"></span><span class="v" id="tpdv"></span><span class="f" id="tpdvf"></span></div>
+          <div class="stat"><span class="k" data-i18n="tp.k.pente"></span><span class="v" id="tppe"></span><span class="f" id="tppef"></span></div>
+          <div class="stat"><span class="k" data-i18n="tp.k.L"></span><span class="v" id="tpL"></span><span class="f" id="tpLf"></span></div>
+        </div>
+      </div>
+      <div class="legend"><span class="c-tint" data-i18n="tp.leg.courbes"></span><span class="c-warn" data-i18n="tp.leg.tangente"></span></div>
+      <figcaption data-i18n-html="tp.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>T</mi><mi data-i18n="eq.fus"></mi></msub><mo>(</mo><mi>p</mi><mo>)</mo><mo>≈</mo><msub><mi>T</mi><mi mathvariant="normal">t</mi></msub><mo>+</mo><mfrac><mrow><msub><mi>T</mi><mi mathvariant="normal">t</mi></msub><mspace width="0.1em"></mspace><mi mathvariant="normal">Δ</mi><mi>v</mi></mrow><msub><mi>L</mi><mi mathvariant="normal">f</mi></msub></mfrac><mo>(</mo><mi>p</mi><mo>−</mo><msub><mi>p</mi><mi mathvariant="normal">t</mi></msub><mo>)</mo></math></div>
+    <p class="validite" data-i18n-html="val.lin"></p>
+    <figure>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="pf" data-i18n="pf.p"></label><output id="pfv" for="pf"></output></div>
+          <input id="pf" type="range" min="-1" max="2.3" step="0.005" value="0.53"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="pf.k.iapws"></span><span class="v" id="pfi"></span><span class="f" id="pfif"></span></div>
+          <div class="stat"><span class="k" data-i18n="pf.k.lin"></span><span class="v" id="pfl"></span><span class="f" id="pflf"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="pf.caption"></figcaption>
+    </figure>
+    <div class="box rem"><b data-i18n="s4.sys.title"></b>
+      <p data-i18n-html="s4.sys.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/equilibre-liquide-vapeur-et-formule-de-clapeyron.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/fluides.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = Plot.el, Th = Thermo, E = Th.EAU;
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+const kJkg = j => F.qty(F.num(j / 1e3, 4), "kJ·kg⁻¹"), dK = d => F.qty((d > 0 ? "+" : "") + F.num(d, 3), "K");
+
+/* ---------- ébullition : altitude et surpression ---------- */
+(() => {
+  const sz = $("z"), sd = $("dp");
+  function upd() {
+    const z = +sz.value, dp = +sd.value * 1e3, pa = Fluides.atmStandard(Fluides.geopotentielle(z)).p, p = pa + dp, T = Th.TsatEau(p);
+    $("zv").textContent = F.qty(F.num(z, 4), "m"); $("dpv").textContent = F.si(dp, "Pa");
+    $("ebp").textContent = F.si(p, "Pa"); $("ebpf").textContent = t("eb.f.p", { pa: F.si(pa, "Pa") });
+    $("ebT").innerHTML = F.kelvin(T); $("ebTf").textContent = t("eb.f.T", { d: dK(T - E.Teb) });
+  }
+  sz.oninput = sd.oninput = upd; upd();
+})();
+
+/* ---------- les trois transitions au point triple ---------- */
+(() => {
+  const svg = $("tp"), T0 = 270, T1 = 276, P0 = 400, P1 = 900;
+  const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 320, pad: { b: 44, l: 60 },
+    x: { domain: [T0, T1], label: t("tp.x") }, y: { domain: [P0, P1], label: t("tp.y") } });
+  const courbe = (f, a, b) => Plot.path(Array.from({ length: 121 }, (_, i) => { const T = a + (b - a) * i / 120; return [x(T), y(f(T))]; }).filter(([, py]) => isFinite(py)));
+  P("path", { d: courbe(Th.pSublimation, T0, E.Tt), class: "stroke c-tint" }, g);
+  P("path", { d: courbe(Th.psat, E.Tt, T1), class: "stroke c-tint" }, g);
+  P("path", { d: Plot.path([[x(Th.Tfusion(E.pt)), y(E.pt)], [x(Th.Tfusion(P1)), y(P1)]]), class: "stroke c-tint" }, g);
+  const NOMS = textOf("tp.noms", ["solide", "liquide", "gaz"]);
+  [["solide", 271, 800], ["liquide", 274.6, 860], ["gaz", 273.5, 500]].forEach(([k, T, p]) => { P("text", { x: x(T), y: y(p), "text-anchor": "middle" }, g).textContent = NOMS[k]; });
+  P("circle", { cx: x(E.Tt), cy: y(E.pt), r: 5, class: "fill c-warn" }, g);
+  const tan = P("path", { class: "ref" }, g);
+  const vl = 1 / Th.rhoLiq(E.Tt), vg = 1 / Th.rhoVap(E.Tt), vs = 1 / E.rhoGlace;
+  const TR = {
+    fusion: { dv: vl - vs, pente: Th.dpFusion(E.Tt), ref: E.Lf, cle: "tp.ref.fusion" },
+    vaporisation: { dv: vg - vl, pente: Th.dpsat(E.Tt), ref: Th.Lvap(E.Tt), cle: "tp.ref.vaporisation" },
+    sublimation: { dv: vg - vs, pente: Th.dpSublimation(E.Tt), ref: E.Lf + Th.Lvap(E.Tt), cle: "tp.ref.sublimation" },
+  };
+  const NAMES = textOf("tp.transitions", Object.keys(TR));
+  function show(id) {
+    Object.keys(TR).forEach(k => $("tr-" + k).setAttribute("aria-pressed", String(k === id)));
+    const r = TR[id], L = Th.latenteClapeyron(E.Tt, r.dv, r.pente), d = 0.5 * (T1 - T0);
+    const Ta = Math.max(T0, E.Tt + (P0 - E.pt) / r.pente, E.Tt - d), Tb = Math.min(T1, E.Tt + (P1 - E.pt) / r.pente, E.Tt + d);
+    const A = [E.Tt + Math.min(Ta - E.Tt, Tb - E.Tt), 0], B = [E.Tt + Math.max(Ta - E.Tt, Tb - E.Tt), 0];
+    A[1] = E.pt + r.pente * (A[0] - E.Tt); B[1] = E.pt + r.pente * (B[0] - E.Tt);
+    tan.setAttribute("d", Plot.path([[x(A[0]), y(A[1])], [x(B[0]), y(B[1])]]));
+    $("tpdv").textContent = F.qty(F.sci(r.dv, 4), "m³·kg⁻¹"); $("tpdvf").textContent = t(r.dv < 0 ? "tp.f.moins" : "tp.f.plus");
+    $("tppe").textContent = Math.abs(r.pente) > 1e5 ? F.si(r.pente, "Pa·K⁻¹") : F.qty(F.num(r.pente, 4), "Pa·K⁻¹"); $("tppef").textContent = t("tp.f.pente");
+    $("tpL").textContent = kJkg(L); $("tpLf").textContent = t(r.cle, { L: kJkg(r.ref), e: F.qty(F.num(100 * (L / r.ref - 1), 2), "%") });
+  }
+  Object.keys(TR).forEach(k => { $("tr-" + k).textContent = NAMES[k]; $("tr-" + k).onclick = () => show(k); });
+  show("fusion");
+})();
+
+/* ---------- fusion de la glace sous pression ---------- */
+(() => {
+  const s = $("pf"), dv = 1 / Th.rhoLiq(E.Tt) - 1 / E.rhoGlace, k = E.Tt * dv / E.Lf;
+  function upd() {
+    const p = Math.min(Math.pow(10, +s.value) * 1e6, E.pFusionMax), Ti = Th.Tfusion(p), Tl = E.Tt + k * (p - E.pt);
+    $("pfv").textContent = F.si(p, "Pa");
+    $("pfi").innerHTML = F.kelvin(Ti); $("pfif").textContent = t("pf.f.d", { d: dK(Ti - E.Tt) });
+    $("pfl").innerHTML = F.kelvin(Tl); $("pflf").textContent = t("pf.f.e", { e: F.qty(F.num(Tl - Ti, 2), "K") });
+  }
+  s.oninput = upd; upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["papin", 1679, "experiment"], ["james", 1849, "idea"], ["william", 1850, "experiment"], ["chamberland", 1879, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["autoclave", "altitude", "glacier"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["flaque", "a"], ["everest", "c"], ["cocotte", "b"], ["egalite", "d"], ["fusion", "a"], ["patin", "c"], ["sublimation", "b"], ["calorimetre", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+/* Leçon « Les états à n bosons » (Feynman III.4.3) : textes en français.
+   Une autre langue = locales/<langue>/lecons/etats-n-bosons.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Les états à n bosons",
+    "crumb.jour": "Les états à n bosons",
+    "h1": "Les états à n bosons",
+    "lede": "Deux bosons identiques arrivent ensemble dans un petit compteur deux fois plus souvent que deux particules indépendantes. Avec trois, c'est six fois ; avec n, n! fois. Lu autrement : un boson entre dans un état d'autant plus volontiers que d'autres l'y attendent.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : les états à deux bosons",
+
+    "s1.sec": "n particules, un compteur",
+    "s1.h2": "n! histoires indiscernables",
+    "s1.p1": "<var>n</var> particules <var>a</var>, <var>b</var>, <var>c</var>… sont diffusées vers des directions 1, 2, 3… qui visent toutes un même petit compteur lointain, de surface Δ<var>S</var>. Les amplitudes sont normées comme dans « Les états à deux bosons » : seule, chaque particule entre dans un élément d<var>S</var> avec la probabilité |⟨ ⟩|<sup>2</sup> d<var>S</var>. Si les particules sont discernables, la probabilité qu'elles entrent toutes est le produit des probabilités de chacune :",
+    "eq.diff": "différentes",
+    "eq.bose": "Bose",
+    "val.4.17": "Approximation : amplitudes constantes sur le compteur, comme pour (4.9). Les particules agissent indépendamment : la probabilité d'entrer de l'une ne dépend pas du nombre des autres.",
+    "s1.p2": "Si ce sont des bosons identiques, chaque façon d'attribuer les <var>n</var> éléments de surface aux <var>n</var> particules mène au même événement. Avec trois particules, il y a six attributions : <var>a</var> en 1, <var>b</var> en 2, <var>c</var> en 3 ; <var>a</var> en 1, <var>b</var> en 3, <var>c</var> en 2 ; et ainsi de suite. Avec <var>n</var>, il y en a <var>n</var>!, dont on ajoute les amplitudes. Si les directions sont assez proches, toutes valent <var>a</var><var>b</var><var>c</var>⋯ : l'amplitude totale est <var>n</var>! <var>a</var><var>b</var><var>c</var>⋯, et sa probabilité (<var>n</var>!)<sup>2</sup> fois plus grande. Mais l'intégration sur le compteur rencontre chaque ensemble d'éléments <var>n</var>! fois, comme le 1/2 de (4.14) : on divise par <var>n</var>!. Il reste",
+    "val.4.20": "Approximation : amplitudes constantes sur le compteur (taille petite devant λ/α pour chaque paire de sources) et probabilités petites. (4.20) ne peut pas valoir quand <var>n</var>! |<var>a</var><var>b</var><var>c</var>⋯|<sup>2</sup>(Δ<var>S</var>)<sup><var>n</var></sup> approche 1 : une probabilité ne dépasse pas 1.",
+    "val.4.21": "Approximation : celle de (4.20). Le facteur <var>n</var>! lui-même est un comptage exact.",
+
+    "s2.sec": "Un boson de plus",
+    "s2.h2": "Le facteur n + 1",
+    "s2.p1": "Que devient la probabilité qu'un boson <var>w</var> de plus entre dans le compteur, s'il y en a déjà <var>n</var> ? (4.20) écrite pour <var>n</var> + 1 particules contient (<var>n</var> + 1)! = (<var>n</var> + 1) × <var>n</var>!, et |<var>w</var>|<sup>2</sup>Δ<var>S</var> en plus :",
+    "val.4.23": "Approximation : celle de (4.20). |<var>w</var>|<sup>2</sup>Δ<var>S</var> est la probabilité que <var>w</var> entre seul ; elle doit rester petite, et (<var>n</var> + 1)|<var>w</var>|<sup>2</sup>Δ<var>S</var> aussi.",
+    "s2.p2": "La présence de <var>n</var> bosons dans un état multiplie par <var>n</var> + 1 la probabilité qu'un boson de plus y entre. Des particules discernables, elles, s'ignorent. C'est la clé de l'émission de la lumière par les atomes, « Émission et absorption de photons », du laser, et de l'accumulation de bosons dans un seul état à basse température, « L'hélium liquide ».",
+
+    "s3.sec": "Remplir des états un à un",
+    "s3.h2": "Les bosons s'attroupent",
+    "s3.p1": "Le système : <var>M</var> états, que chaque particule seule atteindrait avec la même probabilité, et <var>N</var> particules envoyées une à une. Une particule discernable choisit un état au hasard. Un boson, d'après (4.23), choisit l'état <var>i</var> qui en contient déjà <var>n</var><sub><var>i</var></sub> avec un poids <var>n</var><sub><var>i</var></sub> + 1 ; après <var>N</var> bosons, la somme des poids vaut <var>N</var> + <var>M</var>, d'où la probabilité que le suivant aille dans l'état <var>i</var> :",
+    "val.4.23a": "Approximation : celle de (4.23), et des états de même probabilité pour une particule seule, entre lesquels rien d'autre ne choisit. Le même tirage décrit des atomes qui émettent un à un des photons dans <var>M</var> modes auxquels ils sont également couplés.",
+    "fig.aria": "Histogramme du nombre de particules trouvées dans un état donné, pour des bosons et pour des particules discernables, avec les lois exactes",
+    "fig.legend.bosons": "bosons, poids n + 1",
+    "fig.legend.disc": "particules discernables",
+    "fig.legend.exact": "lois exactes",
+    "fig.M": "Nombre d'états M",
+    "fig.N": "Nombre de particules N",
+    "fig.tirer": "Recommencer les 2 000 remplissages",
+    "fig.x": "nombre de particules dans l'état 1",
+    "fig.y": "fréquence sur 2 000 remplissages",
+    "fig.k.vide": "Probabilité que l'état 1 reste vide, bosons",
+    "fig.f.vide": "discernables : {d}",
+    "fig.k.tous": "Probabilité que les N soient dans l'état 1, bosons",
+    "fig.f.tous": "discernables : {d} ; rapport {r}, contre N! = {f}",
+    "fig.caption": "La moyenne est la même, <var>N</var>/<var>M</var>, mais les bosons s'écartent bien plus de leur moyenne : un état reste vide plus souvent, un autre en reçoit beaucoup. Pour des bosons, toutes les répartitions des <var>N</var> particules entre les <var>M</var> états sont également probables ; pour des particules discernables, la loi est binomiale.",
+    "s3.p2": "Le rapport des probabilités « tous dans l'état 1 » tend vers <var>N</var>! quand les états sont nombreux : c'est (4.21). Il en reste loin quand <var>M</var> n'est pas grand devant <var>N</var><sup>2</sup> : la normalisation, que (4.20) ignore, compte alors.",
+
+    "s4.sec": "Décrire le système",
+    "s4.h2": "Ce que n! suppose",
+    "s4.p1": "(4.21) suppose deux choses : des amplitudes constantes sur le compteur, comme pour deux bosons, et des probabilités petites. Le nombre qui mesure la seconde est <var>n</var> |<var>w</var>|<sup>2</sup>Δ<var>S</var> : la probabilité qu'un boson de plus entre, renforcée par ceux qui sont déjà là. Dans le remplissage d'états, le même rôle est tenu par <var>N</var><sup>2</sup>/<var>M</var>.",
+    "sys.title": "Le système décrit : cinq bosons, puis cinq bosons dans M états",
+    "sys1.body": "Cinq diffuseurs envoient chacun un boson vers le compteur avec la probabilité 10<sup>\u22123</sup>. Discernables, les cinq y entrent ensemble avec la probabilité {d} ; bosons identiques, {b}, {f} fois plus. La formule tient tant que le renfort reste petit : il faudrait environ {lim} bosons déjà présents pour que (<var>n</var> + 1)|<var>w</var>|<sup>2</sup>Δ<var>S</var> approche 1.",
+    "sys2.body": "Cinq bosons dans 1\u00a0000 états : le rapport des probabilités « tous dans l'état 1 » vaut {ra}, à 1\u00a0% de 5! = {f}. Dans 30 états seulement, <var>N</var><sup>2</sup>/<var>M</var> ≈ 0,8, et le rapport tombe à {rb}.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "De la loi de Planck au condensat",
+    "hist.intro": "Le facteur n + 1 est d'abord apparu comme une façon de compter, avant d'annoncer qu'un gaz de bosons peut s'accumuler dans un seul état.",
+    "hist.events": {
+      bose: { who: "Satyendra Nath Bose", what: "retrouve la loi de Planck en comptant des photons indiscernables répartis entre des cellules de l'espace des phases.", context: "Le manuscrit, refusé par le Philosophical Magazine, est envoyé à Einstein, qui le traduit et le fait publier dans la Zeitschrift für Physik." },
+      einstein: { who: "Albert Einstein", what: "applique le comptage de Bose à un gaz parfait d'atomes et prévoit qu'à basse température une partie d'entre eux s'accumule dans l'état de plus basse énergie.", context: "Son deuxième mémoire sur la théorie quantique du gaz parfait monoatomique est présenté à l'Académie prussienne des sciences en janvier 1925." },
+      jila: { who: "Eric Cornell, Carl Wieman et leur équipe, à Boulder", what: "obtiennent le premier condensat de Bose et Einstein dans une vapeur d'atomes, le 5 juin 1995.", context: "Environ 2\u00a0000 atomes de rubidium 87, des bosons, refroidis sous 170\u00a0nK : un pic étroit de vitesses autour de zéro apparaît au-dessus de la distribution thermique (Science, 14 juillet 1995)." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      cal: { name: "Condensats en orbite", text: "Le Cold Atom Lab de la NASA, installé en 2018 dans la Station spatiale internationale (ISS), est le premier instrument à avoir produit un condensat de Bose et Einstein en orbite, en juillet 2018. En impesanteur, le nuage d'atomes de rubidium 87 lâché par son piège ne tombe pas : on l'observe en expansion libre pendant plus d'une seconde, contre quelques dizaines de millisecondes au sol." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      trois: { prompt: "Trois bosons identiques arrivent dans un petit compteur depuis trois diffuseurs. Comparée au calcul qui les croit discernables, la probabilité qu'ils y entrent tous les trois est :",
+        options: { a: "trois fois plus grande.", b: "six fois plus grande.", c: "neuf fois plus grande.", d: "la même." },
+        why: "Trois particules s'attribuent de 3! = 6 façons aux trois éléments de surface. L'amplitude vaut 6abc, sa probabilité 36|abc|², et l'intégration la compte six fois : 6|abc|²(ΔS)³, (4.20), soit six fois (4.17)." },
+      ajout: { prompt: "Un état contient déjà quatre bosons. Par combien est multipliée la probabilité qu'un cinquième y entre, par rapport à un état vide ?",
+        options: { a: "Par 4.", b: "Par 1 : chaque boson entre indépendamment.", c: "Par 4! = 24.", d: "Par 5." },
+        why: "(4.23) : le facteur est n + 1 = 5. Le « + 1 » est la probabilité qu'il aurait seul ; les quatre autres la quintuplent." },
+      indep: { prompt: "Que dit (4.17) des particules discernables ?",
+        options: { a: "Qu'elles s'ignorent : la probabilité qu'une entre ne dépend pas du nombre des autres.", b: "Qu'elles se repoussent.", c: "Qu'elles s'attirent, moins que des bosons.", d: "Qu'elles ne peuvent pas entrer à plusieurs." },
+        why: "(4.17) est le produit des probabilités de chaque particule seule : aucune n'est influencée par les autres. C'est la différence avec (4.20)." },
+      division: { prompt: "Pourquoi (4.20) contient-elle n! et non (n!)², alors que l'amplitude totale vaut n! abc⋯ ?",
+        options: { a: "Parce que les amplitudes sont réelles.", b: "Parce que les bosons ont un spin entier.", c: "Parce que l'intégration sur le compteur rencontre chaque ensemble d'éléments de surface n! fois : on divise par n!.", d: "Parce qu'on prend la racine carrée de la probabilité." },
+        why: "C'est le même comptage que le 1/2 de (4.14) : (n!)²/n! = n!." },
+      moyenne: { prompt: "On envoie N particules une à une dans M états également probables. Que change le fait qu'elles soient des bosons plutôt que discernables ?",
+        options: { a: "Le nombre moyen de particules par état, qui augmente.", b: "Pas la moyenne, N/M, mais les écarts : des états restent vides plus souvent, d'autres reçoivent beaucoup de particules.", c: "Rien : la statistique n'agit que dans un compteur.", d: "Les bosons se répartissent exactement un par état." },
+        why: "Chaque particule va quelque part : la moyenne reste N/M. Mais le poids n + 1 favorise les états déjà occupés : toutes les répartitions deviennent également probables, et les répartitions inégales l'emportent. Voyez l'histogramme." },
+      limite: { prompt: "Pourquoi (4.20) ne peut-elle pas valoir pour un très grand nombre de bosons dans un compteur fixé ?",
+        options: { a: "Parce que n! croît si vite que n! |abc⋯|²(ΔS)ⁿ finirait par dépasser 1 : la formule suppose des probabilités petites.", b: "Parce que les bosons deviennent des fermions.", c: "Parce qu'il n'y a pas assez de directions.", d: "Elle vaut toujours : c'est un comptage exact." },
+        why: "Le facteur n! est un comptage exact, mais (4.20) néglige la normalisation de l'état à n particules. Quand (n + 1)|w|²ΔS n'est plus petit, l'approximation cesse, comme dans le remplissage de 30 états par 5 bosons." },
+      foule: { prompt: "Quelle conséquence de (4.23) fait qu'un gaz d'atomes bosons très froid peut avoir beaucoup d'atomes dans un seul état ?",
+        options: { a: "Les bosons s'attirent par une force nouvelle.", b: "Les bosons ont moins d'énergie que les fermions.", c: "Chaque atome déjà dans l'état augmente la probabilité qu'un autre y entre : l'occupation se renforce elle-même.", d: "Les atomes deviennent discernables à basse température." },
+        why: "Aucune force n'est en jeu : c'est le facteur n + 1 des amplitudes. Einstein en a déduit en 1925 l'accumulation dans l'état de plus basse énergie, observée en 1995." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 4, §4-3 (texte original en anglais). Notations SI. Bose : Zeitschrift für Physik 26 (1924), et les Einstein Papers (Princeton). Einstein : Sitzungsberichte der Preußischen Akademie der Wissenschaften (1925) ; APS News, « This Month in Physics History », octobre 2005. Cornell et Wieman : Anderson et al., Science 269, 198 (1995), et les communiqués du NIST et de l'université du Colorado. Cold Atom Lab : Aveline et al., Nature 582, 193 (2020), et le Jet Propulsion Laboratory. Remplissages et calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["frequence", "b"],
+  ["precession", "d"],
+  ["anomal", "a"],
+  ["gaz", "c"],
+  ["etoile", "b"],
+  ["spin52", "d"],
+  ["rotation", "a"],
+  ["niveaux", "c"]
+ ]
+}

@@ -1,0 +1,91 @@
+/* Leçon « Ionisation thermique » (Feynman I.42.3) : textes en français. Une autre langue = locales/<langue>/lecons/ionisation-thermique.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Ionisation thermique",
+    "crumb.jour": "Ionisation thermique",
+    "h1": "Ionisation thermique",
+    "lede": "Assez chaud, un gaz d'atomes perd ses électrons : il s'ionise. Mais à quelle température ? Bien plus bas qu'on ne le croirait, et d'autant plus bas que le gaz est dilué. L'hydrogène, qui demande 13,6 eV par atome, est à moitié ionisé vers 9 000 K dans un gaz de 10²⁰ atomes par mètre cube.",
+    "tag.piste": "Thermodynamique et physique statistique",
+    "tag.prereq": "Prérequis : émission thermoïonique",
+
+    "s1.sec": "Atomes, ions, électrons",
+    "s1.h2": "Un équilibre entre trois gaz",
+    "s1.p1": "Le système : de l'hydrogène très chaud, en équilibre à la température <var>T</var>. Par mètre cube, <var>n</var><sub>a</sub> atomes neutres, <var>n</var><sub>i</sub> ions (des protons) et <var>n</var><sub>e</sub> électrons libres. Arracher l'électron d'un atome coûte <var>W</var> = 13,6 eV. Deux processus se compensent : une collision ionise un atome, à un rythme proportionnel à <var>n</var><sub>a</sub> ; un électron et un ion se rencontrent et se recombinent, à un rythme proportionnel à <var>n</var><sub>e</sub><var>n</var><sub>i</sub>. L'électron libéré est comme une molécule évaporée : il dispose de tout le volume, et la loi de Boltzmann fixe sa densité. D'où une relation qui ne contient que le rapport des deux rythmes :",
+    "val.42.7": "Approximation : comme en (42.1), le préfacteur 1/<var>V</var><sub>a</sub> n'est qu'un ordre de grandeur, et il ne peut pas venir d'un raisonnement classique. Ce qui est sûr, c'est la forme : le produit <var>n</var><sub>e</sub><var>n</var><sub>i</sub> sur <var>n</var><sub>a</sub>, et l'exponentielle de l'énergie d'ionisation.",
+    "s1.p2": "Le calcul juste, fait par Saha en 1920, remplace le volume <var>V</var><sub>a</sub> par le cube de la longueur d'onde thermique de l'électron, <var>λ</var><sub>e</sub> = <var>h</var>/√(2π<var>m</var><sub>e</sub><var>k</var><sub>B</sub><var>T</var>) : 0,75 nm à 10 000 K. Les poids <var>g</var> comptent les états internes : 2 pour l'atome dans son niveau fondamental (deux états de spin), 1 pour le proton, et le facteur 2 pour le spin de l'électron. Pour l'hydrogène, 2<var>g</var><sub>i</sub>/<var>g</var><sub>a</sub> = 1 :",
+    "val.saha": "Approximation : trois gaz parfaits en équilibre thermique, l'atome dans son seul niveau fondamental (les niveaux excités, à 10,2 eV et plus, sont négligés : leur population relative est sous 10⁻⁴ à 10 000 K) ; les électrons non dégénérés, <var>n</var><sub>e</sub><var>λ</var><sub>e</sub>³ ≪ 1 ; l'énergie d'ionisation non abaissée par les charges voisines, ce qui demande un plasma dilué. Ni molécules H₂, ni ions H⁻ : cela tient au-dessus de quelques milliers de kelvins.",
+
+    "s2.sec": "Le rôle de la dilution",
+    "s2.h2": "Diluer, c'est ioniser",
+    "s2.p1": "Si une fraction <var>f</var> des <var>n</var> noyaux par mètre cube est ionisée, <var>n</var><sub>e</sub> = <var>n</var><sub>i</sub> = <var>f</var><var>n</var> et <var>n</var><sub>a</sub> = (1 \u2212 <var>f</var>)<var>n</var>. La relation (42.7) devient",
+    "val.42.8": "Approximation : celle de (42.7), avec une seule ionisation par noyau et la neutralité du gaz. Pour <var>f</var> = 1/2, avec le préfacteur de Saha, elle donne exactement <var>W</var>/<var>k</var><sub>B</sub><var>T</var> = ln(2/(<var>n</var><var>λ</var><sub>e</sub>³)).",
+    "sim.aria": "Fraction ionisée de l'hydrogène en fonction de la température, pour une densité choisie",
+    "sim.legend.n": "densité choisie",
+    "sim.legend.ref": "10⁸, 10¹⁴ et 10²⁶ noyaux par m³",
+    "sim.t": "Température",
+    "sim.n": "Noyaux par mètre cube, n",
+    "sim.x": "T (K)",
+    "sim.y": "fraction ionisée f",
+    "sim.k.f": "<var>f</var>",
+    "sim.f.f": "fraction des atomes ionisés",
+    "sim.k.l": "<var>λ</var><sub>e</sub>",
+    "sim.f.l": "nλ³ = {r} : électrons non dégénérés",
+    "sim.k.d": "<var>T</var> pour <var>f</var> = 1/2",
+    "sim.f.d": "W/k_BT = {r} à cette température",
+    "sim.caption": "La moitié des atomes sont ionisés quand <var>k</var><sub>B</sub><var>T</var> ne vaut qu'un sixième à un cinquantième de <var>W</var>, selon la densité : l'électron gagne à quitter l'atome, non par l'énergie, mais par la place. Divisez la densité par 10⁶ : la température de demi-ionisation passe de 9 000 K à 5 200 K entre 10²⁰ et 10¹⁴ noyaux par mètre cube. Le seuil est raide : pour 10²⁰ noyaux par mètre cube, <var>f</var> passe de 1 % à 99 % entre 6 200 K et 12 400 K.",
+    "sys.title": "Le système, avant la loi",
+    "sys.inner": "<strong>Système :</strong> de l'hydrogène pur, en équilibre thermique, à densité fixée. <strong>Ce qu'on néglige :</strong> les niveaux excités de l'atome ; les molécules ; l'interaction coulombienne entre charges, petite tant que la distance moyenne entre elles, <var>n</var><sub>e</sub><sup>\u22121/3</sup>, est grande devant la distance où leur énergie électrostatique égale <var>k</var><sub>B</sub><var>T</var> (1,7 nm à 10 000 K). <strong>Ce qu'on garde :</strong> deux nombres sans dimension, <var>W</var>/<var>k</var><sub>B</sub><var>T</var> et <var>n</var><var>λ</var><sub>e</sub>³. Le second dit combien de place l'électron trouve hors de l'atome.",
+
+    "s3.sec": "Pourquoi la place compte",
+    "s3.h2": "L'énergie contre le nombre d'états",
+    "s3.p1": "Un électron lié est dans un état ; un électron libre a le choix entre environ 1/(<var>n</var><var>λ</var><sub>e</sub>³) cases de volume <var>λ</var><sub>e</sub>³. Dans un gaz dilué, ce nombre est énorme : 10⁷ pour 10²⁰ atomes par mètre cube à 10 000 K, 5 × 10¹⁸ dans un gaz de 10⁸ atomes par mètre cube vers 3 600 K. Le facteur e<sup>\u2212<var>W</var>/<var>k</var><sub>B</sub><var>T</var></sup> est alors compensé bien avant que <var>k</var><sub>B</sub><var>T</var> n'atteigne <var>W</var>. C'est le même jeu que le préfacteur de l'évaporation dans la leçon « Évaporation d'un liquide » : l'énergie favorise l'état lié, le nombre d'états favorise l'état libre.",
+    "s3.p2": "Feynman remarque que des ions subsistent dans l'espace interstellaire, très froid, parce qu'ils y rencontrent rarement un électron. Ce n'est plus un équilibre : la recombinaison y est si lente que les ions formés par le rayonnement des étoiles survivent longtemps. La loi de Saha suppose l'équilibre ; elle dit vers quoi le gaz tendrait, pas en combien de temps.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Lire la température des étoiles",
+    "hist.intro": "L'équation de Saha a transformé la classification des spectres stellaires en une échelle de température, puis révélé de quoi les étoiles sont faites.",
+    "hist.events": {
+      saha: { who: "Meghnad Saha", what: "publie l'équilibre d'ionisation d'un gaz chaud, dans un article sur l'ionisation dans la chromosphère solaire.", context: "Philosophical Magazine, vol. 40. Il applique au gaz d'électrons la thermodynamique des réactions chimiques : l'ionisation est traitée comme une dissociation." },
+      payne: { who: "Cecilia Payne", what: "soutient sa thèse sur les atmosphères stellaires et en déduit que l'hydrogène et l'hélium y dominent de loin.", context: "Les différences entre spectres viennent du degré d'ionisation, donc de la température, et non de la composition. Henry Norris Russell la pousse à présenter ce résultat comme douteux." },
+      russell: { who: "Henry Norris Russell", what: "arrive par une autre méthode à la même abondance d'hydrogène dans le Soleil.", context: "Il cite brièvement Payne ; la conclusion lui sera longtemps attribuée." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      etoiles: { name: "La classification des étoiles", text: "Les classes spectrales O, B, A, F, G, K, M rangent les étoiles par température de surface. Les raies de l'hydrogène, fortes vers 10 000 K, s'affaiblissent au-dessus parce que l'hydrogène s'ionise, au-dessous parce que trop peu d'atomes sont excités : l'équation de Saha, avec la loi de Boltzmann pour les niveaux, explique ce maximum." },
+      fond: { name: "Le fond diffus cosmologique", text: "L'Univers primitif était un plasma d'hydrogène ionisé, opaque. En se dilatant, il s'est refroidi ; les électrons et les protons se sont recombinés vers 3 000 K, bien en dessous de <var>W</var>/<var>k</var><sub>B</sub> ≈ 158 000 K, et la lumière libérée alors nous parvient aujourd'hui sous forme de rayonnement micro-onde." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      bilan: { prompt: "Pourquoi la loi d'équilibre fait-elle intervenir le produit n_e n_i, et seulement n_a au dénominateur ?",
+        options: { a: "Parce que les ions sont plus lourds que les électrons.", b: "Parce que la recombinaison demande la rencontre d'un électron et d'un ion, et l'ionisation un seul atome.", c: "Parce que la charge totale est nulle.", d: "Parce que l'atome a deux états de spin." },
+        why: "Rythme de recombinaison ∝ n_e n_i, rythme d'ionisation ∝ n_a (multiplié par la densité des partenaires de collision, qui se simplifie). L'équilibre égale les deux : n_e n_i/n_a ne dépend que de T." },
+      dilution: { prompt: "On détend un gaz d'hydrogène partiellement ionisé à température constante, son volume étant multiplié par 100. Que devient la fraction ionisée ?",
+        options: { a: "Elle ne change pas : seule T compte.", b: "Elle diminue, car les électrons sont plus loin des ions.", c: "Elle augmente : f²/(1 \u2212 f) est multiplié par 100.", d: "Elle tombe à zéro." },
+        hint: "Regardez (42.8) : n est au dénominateur.",
+        why: "f²/(1 \u2212 f) = S(T)/n. Diviser n par 100 multiplie le membre de droite par 100 : les recombinaisons, qui exigent une rencontre, deviennent plus rares que les ionisations." },
+      loin: { prompt: "L'hydrogène est à moitié ionisé vers 9 000 K pour 10²⁰ atomes par mètre cube. Combien vaut alors k_BT devant W = 13,6 eV ?",
+        options: { a: "Environ W/17,5.", b: "Environ W.", c: "Environ W/2.", d: "Environ 2W." },
+        why: "k_B × 9 000 K ≈ 0,78 eV, soit W/17,5. Le nombre d'états offerts à l'électron libre, de l'ordre de 1/(nλ³) ≈ 2 × 10⁷, compense un facteur e^(\u221217,5) ≈ 2,5 × 10⁻⁸." },
+      volume: { prompt: "Dans l'équation de Saha, quel volume remplace le V_a de Feynman ?",
+        options: { a: "Le volume d'un atome d'hydrogène.", b: "Le volume par atome du gaz, 1/n.", c: "Le volume du récipient.", d: "Le cube de la longueur d'onde thermique de l'électron, h/√(2πm_e k_BT)." },
+        why: "En mécanique quantique, un électron libre occupe des états de volume λ_e³ chacun : (2πm_e k_BT/h²)^(3/2) = λ_e⁻³ compte ces états par mètre cube. D'où la constante de Planck dans la loi." },
+      neutre: { prompt: "À 5 800 K et 10²⁰ atomes par mètre cube, l'équation de Saha donne f ≈ 0,4 %. Le gaz est-il pour autant neutre au sens électrique ?",
+        options: { a: "Non : il porte une charge négative.", b: "Oui : il y a autant d'électrons que d'ions, n_e = n_i ; seule la proportion d'atomes ionisés est faible.", c: "Non : il porte une charge positive.", d: "Oui, parce qu'il n'y a aucun ion." },
+        why: "Chaque ionisation crée un ion et un électron : la neutralité n_e = n_i est l'une des deux contraintes qui mènent à (42.8). f mesure la part des noyaux sans électron, pas une charge." },
+      payne: { prompt: "Qu'a montré Cecilia Payne en appliquant l'équation de Saha aux spectres stellaires ?",
+        options: { a: "Que les différences de spectres viennent surtout de la température, et que l'hydrogène domine la composition des étoiles.", b: "Que les étoiles chaudes contiennent plus de fer.", c: "Que le Soleil a la composition de la Terre.", d: "Que l'hydrogène est absent des étoiles." },
+        why: "Une raie faible peut signifier un élément rare ou un élément très ionisé. En corrigeant de l'ionisation par la loi de Saha, Payne trouva l'hydrogène et l'hélium bien plus abondants que tout le reste." },
+      vide: { prompt: "Dans le gaz interstellaire, très froid, on observe des ions. La loi de Saha en équilibre en prévoirait très peu. Où est l'erreur ?",
+        options: { a: "La loi de Saha est fausse à basse température.", b: "Les ions interstellaires sont neutres.", c: "Le gaz n'est pas en équilibre : les recombinaisons y sont si rares que les ions formés par le rayonnement des étoiles subsistent.", d: "Il n'y a pas d'électrons dans l'espace." },
+        why: "La loi de Saha suppose l'équilibre entre ionisation et recombinaison à une même température. Dans un gaz très dilué, irradié par des étoiles chaudes, l'ionisation n'est pas thermique, et la recombinaison prend un temps immense." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. I, chap. 42 (texte original en anglais), §42-3. Équation de Saha et calculs pour l'hydrogène (énergie d'ionisation de 13,598 eV, NIST) ajoutés ici.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

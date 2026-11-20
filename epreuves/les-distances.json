@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["lune", "b"],
+  ["corrections", "d"],
+  ["parallaxe", "a"],
+  ["abbe", "c"],
+  ["concordance", "b"],
+  ["epaisse", "d"],
+  ["poussiere", "a"],
+  ["echelle", "c"]
+ ]
+}

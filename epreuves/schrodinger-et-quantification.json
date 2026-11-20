@@ -1,0 +1,36 @@
+{
+ "cles": [
+  [
+   "delta",
+   "c"
+  ],
+  [
+   "unite",
+   "a"
+  ],
+  [
+   "laplacien",
+   "b"
+  ],
+  [
+   "norme",
+   "d"
+  ],
+  [
+   "tunnel",
+   "a"
+  ],
+  [
+   "tir",
+   "b"
+  ],
+  [
+   "boite",
+   "c"
+  ],
+  [
+   "validite",
+   "d"
+  ]
+ ]
+}

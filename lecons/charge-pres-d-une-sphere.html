@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Charge près d'une sphère conductrice</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-electrostatique" data-i18n="monde.electrostatique"></a><span class="aux">›</span><a href="/racoon/etape?id=methode-des-images" data-i18n="etape.methode-des-images"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/charge-pres-d-un-plan" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mfrac><msup><mi>q</mi><mo>′</mo></msup><mi>q</mi></mfrac><mo>=</mo><mo>−</mo><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>,</mo><mspace width="1em"/><mi>O</mi><msup><mi>Q</mi><mo>′</mo></msup><mo>=</mo><mfrac><msup><mi>a</mi><mn>2</mn></msup><mi>b</mi></mfrac></math><span class="n">(6.31)</span></div>
+    <p class="validite" data-i18n-html="val.6.31"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><msup><mi>q</mi><mo>″</mo></msup><mo>=</mo><mo>−</mo><msup><mi>q</mi><mo>′</mo></msup><mo>=</mo><mfrac><mi>a</mi><mi>b</mi></mfrac><mi>q</mi></math><span class="n">(6.32)</span></div>
+    <p class="validite" data-i18n-html="val.6.32"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure>
+      <svg class="fig" id="carte" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <svg class="fig" id="force" viewBox="0 0 640 260" role="img" data-i18n-attr="aria-label:force.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="force.legend.terre"></span><span class="c-ok" data-i18n="force.legend.neutre"></span><span class="c-warn" data-i18n="force.legend.chargee"></span></div>
+      <div class="panel">
+        <div class="seg" role="group" id="modes" data-i18n-attr="aria-label:fig.choix">
+          <button type="button" data-m="terre" aria-pressed="true" data-i18n="mode.terre"></button>
+          <button type="button" data-m="neutre" data-i18n="mode.neutre"></button>
+          <button type="button" data-m="chargee" data-i18n="mode.chargee"></button>
+        </div>
+        <div class="ctl"><div class="row"><label for="bsl" data-i18n="fig.b"></label><output id="bread" for="bsl"></output></div>
+          <input id="bsl" type="range" min="1.05" max="5" step="0.01" value="2"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="fig.k.images"></span><span class="v" id="vi"></span><span class="f" id="fi"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig.k.force"></span><span class="v" id="vF"></span><span class="f" id="fF"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig.k.sigma"></span><span class="v" id="vs"></span><span class="f" id="fs"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>F</mi><mo>≈</mo><mo>−</mo><mfrac><mn>1</mn><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub></mrow></mfrac><mfrac><mrow><mn>2</mn><msup><mi>q</mi><mn>2</mn></msup><msup><mi>a</mi><mn>3</mn></msup></mrow><msup><mi>b</mi><mn>5</mn></msup></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.loin"></p>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/charge-pres-d-une-sphere.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/physique-fondamentale.js"></script>
+<script src="/racoon/lecons/champs-em.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/electrostatique.js"></script>
+<script src="/racoon/carte-champ.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const ES = Electrostatique, NC = 1e-9, A = 0.05;
+const OPTIONS = { terre: { mode: "terre" }, neutre: { mode: "isolee" }, chargee: { mode: "isolee", Q: NC } };
+
+/* ---------- le système décrit : une perle chargée devant une boule de 10 cm ---------- */
+(() => {
+  const r = 1e-3, b = 0.1, D = 1;
+  $("sys1").innerHTML = t("sys1.body", { r1: F.num(r / (b - A), 2), r2: F.num(A / D, 2), b0: F.si(ES.equilibreSphere(NC, A, NC) - A, "m", { prefix: "m" }) });
+})();
+
+/* ---------- la charge, la sphère, ses images (q = 1 nC, a = 5 cm) ---------- */
+(() => {
+  const svg = $("carte"), fsvg = $("force"), bsl = $("bsl"), O = { W: 640, H: 320, x0: -0.08, x1: 0.22, y0: -0.075, y1: 0.075 };
+  const OPT = { r0: 1.2e-3, ds: 8e-4, n: 900, loin: 0.6 };
+  let mode = "terre";
+  const plan = ch => ch.map(s => ({ q: s.q, x: s.x, y: 0 }));
+  function carte(b) {
+    const s = ES.imagesSphere(NC, b, A, OPTIONS[mode]), ch = plan(s.charges).filter(c => c.q !== 0);
+    const c = CarteChamp.carte(svg, O), m = c.layer("c-label-2"), R = c.sx(A) - c.sx(0);
+    Plot.el("circle", { cx: c.sx(0).toFixed(1), cy: c.sy(0).toFixed(1), r: R.toFixed(1), class: "fill", opacity: "0.3" }, m);
+    const lg = c.layer("c-tint"), dans = p => Math.hypot(p[0], p[1]) <= A;
+    const tracer = (i, n, u) => ES.anglesEgalFlux(n).forEach(al => [1, -1].forEach(sg => {
+      const out = [];
+      for (const p of ES.suivreLigne(ch, i, sg * al, Object.assign({ u }, OPT)).points) { out.push(p); if (dans(p) || p[0] < O.x0 - 0.02 || p[0] > O.x1 + 0.02 || Math.abs(p[1]) > O.y1 + 0.02) break; }
+      if (out.length > 1) Plot.el("polyline", { points: out.map(p => c.sx(p[0]).toFixed(1) + "," + c.sy(p[1]).toFixed(1)).join(" "), class: "stroke thin" }, lg);
+    }));
+    tracer(0, 10, [-1, 0]);
+    CarteChamp.point(c, [b, 0], 4, "c-warn", t("fig.nom.q"));
+    ch.slice(1).forEach((k, j) => CarteChamp.point(c, [k.x, 0], 3, k.q < 0 ? "c-tint" : "c-warn", t(k.x === 0 ? "fig.nom.qs" : "fig.nom.qp"), j ? 16 : -10));
+    return s;
+  }
+  function courbes(b) {
+    fsvg.innerHTML = "";
+    const { x, y, g } = Plot.axes(fsvg, { fmt: F, w: 640, h: 260, x: { domain: [1, 5], label: t("force.x") }, y: { scale: "log", domain: [1e-4, 1e3], label: t("force.y") } });
+    const U = ES.K * NC * NC / (A * A), bs = Array.from({ length: 300 }, (_, i) => A * (1.02 + 3.98 * i / 299));
+    [["terre", "c-tint"], ["neutre", "c-ok"], ["chargee", "c-warn"]].forEach(([m, cls]) => {
+      const pts = bs.map(B => [B, ES.forceSphere(NC, B, A, OPTIONS[m]) / U]);
+      const seg = sgn => Plot.el("path", { d: Plot.path(pts.filter(p => Math.sign(p[1]) === sgn && Math.abs(p[1]) > 1e-4).map(p => [x(p[0] / A), y(Math.min(1e3, Math.abs(p[1])))])), class: "stroke " + cls + (sgn > 0 ? " dash" : "") + (m === mode ? "" : " thin") }, g);
+      seg(-1); seg(1);
+    });
+    Plot.el("line", { x1: x(b / A), x2: x(b / A), y1: y(1e-4), y2: y(1e3), class: "stroke thin dash c-label" }, g);
+  }
+  function draw() {
+    const b = +bsl.value * A, s = carte(b), Fq = ES.forceSphere(NC, b, A, OPTIONS[mode]);
+    courbes(b);
+    const sg = th => ES.sigmaSphere(NC, b, A, OPTIONS[mode], th);
+    $("bread").textContent = t("fig.bv", { r: F.num(+bsl.value, 3), b: F.si(b, "m", { prefix: "m" }) });
+    $("vi").textContent = t("fig.v.images", { q: F.si(s.qImage, "C", { prefix: "n" }), x: F.si(s.xImage, "m", { prefix: "m" }) });
+    $("fi").textContent = t("fig.f.images", { q: F.si(s.qCentre, "C", { prefix: "n" }), V: F.si(s.V, "V") });
+    $("vF").textContent = F.si(Math.abs(Fq), "N", { prefix: "µ" });
+    $("fF").textContent = t(Fq < 0 ? "fig.f.attire" : "fig.f.repousse");
+    $("vs").textContent = F.si(sg(0), "C·m⁻²", { prefix: "n" });
+    $("fs").textContent = t("fig.f.sigma", { s: F.si(sg(Math.PI), "C·m⁻²", { prefix: "n" }) });
+  }
+  document.querySelectorAll("#modes button").forEach(bt => bt.onclick = () => {
+    mode = bt.dataset.m; document.querySelectorAll("#modes button").forEach(z => z.setAttribute("aria-pressed", z === bt)); draw(); });
+  bsl.oninput = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["points", 1845, "idea"], ["deux", 1853, "idea"], ["lekner", 2012, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["eclateur", "poussieres"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["image", "a"], ["rapport", "c"], ["neutre", "b"], ["potentiel", "d"], ["loin", "a"], ["pres", "c"], ["memes", "d"], ["terre", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 69 });
+})();
+</script>
+</body>
+</html>

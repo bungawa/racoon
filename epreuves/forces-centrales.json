@@ -1,0 +1,12 @@
+{
+  "cles": [
+    ["geostationnaire", "b"],
+    ["molniya", "d"],
+    ["aplatissement", "a"],
+    ["massereduite", "c"],
+    ["liberation", "b"],
+    ["trou", "a"],
+    ["capture", "d"],
+    ["periode", "c"]
+  ]
+}

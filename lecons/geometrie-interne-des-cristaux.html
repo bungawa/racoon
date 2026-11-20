@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La géométrie interne des cristaux</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-solide" data-i18n="monde.solide"></a><span class="aux">›</span><a href="/racoon/etape?id=cristaux-1" data-i18n="etape.cristaux-1"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-solide" href="/racoon/atlas?piste=solide" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/atomes-en-mouvement" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="box def"><b data-i18n="def.title"></b>
+      <p data-i18n-html="def.reseau"></p>
+      <p data-i18n-html="def.motif"></p>
+      <p data-i18n-html="def.maille"></p>
+    </div>
+    <div class="eq"><math display="block"><mover><mi>r</mi><mo>→</mo></mover><mo>=</mo><msub><mi>n</mi><mn>1</mn></msub><mover><mi>a</mi><mo>→</mo></mover><mo>+</mo><msub><mi>n</mi><mn>2</mn></msub><mover><mi>b</mi><mo>→</mo></mover><mo>+</mo><msub><mi>n</mi><mn>3</mn></msub><mover><mi>c</mi><mo>→</mo></mover><mo>,</mo><mspace width="1em"></mspace><msub><mi>n</mi><mn>1</mn></msub><mo>,</mo><msub><mi>n</mi><mn>2</mn></msub><mo>,</mo><msub><mi>n</mi><mn>3</mn></msub><mo>∈</mo><mi>ℤ</mi></math></div>
+    <p class="validite" data-i18n-html="val.reseau"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <figure>
+      <svg class="fig" id="papier" viewBox="0 0 640 360" role="img" data-i18n-attr="aria-label:pp.aria"></svg>
+      <div class="legend"><span class="c-label-2" data-i18n="pp.legend.noeud"></span><span class="c-tint" data-i18n="pp.legend.a"></span><span class="el-o" data-i18n="pp.legend.b"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" id="motifs" role="group" data-i18n-attr="aria-label:pp.motif">
+            <button type="button" data-m="point" data-i18n="pp.m.point"></button><button type="button" data-m="dimere" data-i18n="pp.m.dimere"></button><button type="button" data-m="triangle" data-i18n="pp.m.triangle"></button><button type="button" data-m="molecule" data-i18n="pp.m.molecule"></button>
+          </div>
+          <button class="btn tinted" type="button" id="origine" data-i18n="pp.origine"></button>
+        </div>
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="gamma" data-i18n="pp.gamma"></label><output id="gammav" for="gamma"></output></div>
+            <input id="gamma" type="range" min="45" max="135" step="1" value="72"></div>
+          <div class="ctl"><div class="row"><label for="ratio" data-i18n="pp.ratio"></label><output id="ratiov" for="ratio"></output></div>
+            <input id="ratio" type="range" min="0.6" max="1.6" step="0.01" value="1.25"></div>
+        </div>
+        <div class="controls">
+          <label><input type="checkbox" id="voirReseau" checked> <span data-i18n="pp.voirReseau"></span></label>
+          <label><input type="checkbox" id="voirMotif" checked> <span data-i18n="pp.voirMotif"></span></label>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="pp.k.type"></span><span class="v" id="vtype"></span></div>
+          <div class="stat"><span class="k" data-i18n="pp.k.aire"></span><span class="v" id="vaire"></span></div>
+          <div class="stat"><span class="k" data-i18n="pp.k.atomes"></span><span class="v" id="vatomes"></span><span class="f" id="fatomes"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="pp.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure>
+      <svg class="fig" id="rangees" viewBox="0 0 640 320" role="img" data-i18n-attr="aria-label:rg.aria"></svg>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" id="familles" role="group" data-i18n-attr="aria-label:rg.famille">
+            <button type="button" data-pq="1,0">[10]</button><button type="button" data-pq="1,1">[11]</button><button type="button" data-pq="2,1">[21]</button><button type="button" data-pq="3,1">[31]</button>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="rg.k.densite"></span><span class="v" id="vdens"></span></div>
+          <div class="stat"><span class="k" data-i18n="rg.k.espacement"></span><span class="v" id="vesp"></span><span class="f" id="fesp"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="rg.caption"></figcaption>
+    </figure>
+    <div class="eq"><math display="block"><mi>d</mi><mo>=</mo><mfrac><mi>S</mi><mrow><mo>|</mo><mi>p</mi><mover><mi>a</mi><mo>→</mo></mover><mo>+</mo><mi>q</mi><mover><mi>b</mi><mo>→</mo></mover><mo>|</mo></mrow></mfrac><mo>=</mo><mi>S</mi><mi>λ</mi></math></div>
+    <p class="validite" data-i18n-html="val.rangee"></p>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="box rem"><b data-i18n="s3.rem.title"></b>
+      <p data-i18n-html="s3.rem.body"></p>
+    </div>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/geometrie-interne-des-cristaux.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/lecons/cristaux.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = Plot.el, X = Cristaux;
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+const seg = (el, attr, cb) => { const bs = [...el.querySelectorAll("button")];
+  const pick = b => { bs.forEach(x => x.setAttribute("aria-pressed", String(x === b))); cb(b.dataset[attr]); };
+  bs.forEach(b => b.onclick = () => pick(b)); pick(bs[0]); };
+const nm = x => F.qty(F.num(x * 1e9, 3), "nm"), A0 = 0.40e-9;           // a = 0,40 nm: the scale of the drawing
+
+/* ---------- papier peint : réseau + motif ---------- */
+(() => {
+  const MOTIFS = {   // atom positions in units of |a|, species A or B
+    point: [{ x: 0, y: 0, e: "A" }],
+    dimere: [{ x: -0.17, y: 0, e: "A" }, { x: 0.17, y: 0, e: "B" }],
+    triangle: [0, 1, 2].map(k => ({ x: 0.2 * Math.cos(Math.PI / 2 + 2 * Math.PI * k / 3), y: 0.2 * Math.sin(Math.PI / 2 + 2 * Math.PI * k / 3), e: "A" })),
+    molecule: [{ x: 0, y: 0, e: "A" }, { x: 0.24, y: 0.07, e: "B" }, { x: -0.07, y: 0.23, e: "B" }],
+  };
+  const svg = $("papier"), U = 64, O = [300, 190];
+  let motif = "point", k = 0;
+  function upd() {
+    const g = +$("gamma").value * Math.PI / 180, r = +$("ratio").value, M = MOTIFS[motif];
+    const a = [1, 0], b = [r * Math.cos(g), r * Math.sin(g)];
+    $("gammav").textContent = F.qty(F.num(+$("gamma").value, 3), "°");
+    $("ratiov").textContent = F.fix(r, 2);
+    k %= M.length;
+    const off = M[k];                                    // the node sits on atom k of the motif
+    svg.innerHTML = "";
+    const px = (x, y) => [O[0] + U * x, O[1] - U * y];
+    const nodes = [];
+    for (let i = -9; i <= 9; i++) for (let j = -7; j <= 7; j++) {
+      const x = i * a[0] + j * b[0], y = i * a[1] + j * b[1], [u, v] = px(x, y);
+      if (u > -30 && u < 670 && v > -30 && v < 390) nodes.push([x, y]);
+    }
+    if ($("voirMotif").checked) nodes.forEach(([x, y]) => M.forEach(m => {
+      const [u, v] = px(x + m.x - off.x, y + m.y - off.y);
+      P("circle", { cx: u, cy: v, r: m.e === "A" ? 9 : 6, class: "fill " + (m.e === "A" ? "c-tint" : "el-o") }, svg);
+    }));
+    if ($("voirReseau").checked) {
+      const c = [[0, 0], a, [a[0] + b[0], a[1] + b[1]], b].map(p => px(...p).join(" "));
+      P("path", { d: "M" + c.join("L") + "Z", class: "stroke dash c-label-2" }, svg);
+      nodes.forEach(([x, y]) => { const [u, v] = px(x, y); P("circle", { cx: u, cy: v, r: 3, class: "fill c-label-2" }, svg); });
+      Plot.fleche(svg, px(0, 0), px(...a), { cls: "c-label" });
+      Plot.fleche(svg, px(0, 0), px(...b), { cls: "c-label" });
+      const la = px(a[0] / 2, -0.18), lb = px(b[0] / 2 - 0.2, b[1] / 2);
+      P("text", { x: la[0], y: la[1], "text-anchor": "middle" }, svg).textContent = t("pp.lbl.a");
+      P("text", { x: lb[0], y: lb[1], "text-anchor": "end" }, svg).textContent = t("pp.lbl.b");
+    }
+    const S = X.reseau2D(a, b).aire * A0 * A0;
+    $("vtype").textContent = t("bravais." + X.bravais2D(a, b, 0.02).type);
+    $("vaire").textContent = F.qty(F.num(S * 1e18, 3), "nm²");
+    $("vatomes").textContent = String(M.length);
+    $("fatomes").textContent = t("pp.f.atomes");
+  }
+  seg($("motifs"), "m", m => { motif = m; k = 0; upd(); });
+  $("origine").onclick = () => { k++; upd(); };
+  ["gamma", "ratio"].forEach(id => $(id).oninput = upd);
+  ["voirReseau", "voirMotif"].forEach(id => $(id).onchange = upd);
+  upd();
+})();
+
+/* ---------- rangées de nœuds ---------- */
+(() => {
+  const svg = $("rangees"), U = 40, O = [320, 160], a = [1, 0], b = [0, 1];
+  seg($("familles"), "pq", s => {
+    const [p, q] = s.split(",").map(Number), r = X.rangee2D(a, b, p, q);
+    svg.innerHTML = "";
+    const dir = [p * a[0] + q * b[0], p * a[1] + q * b[1]], L = Math.hypot(...dir), u = [dir[0] / L, dir[1] / L], n = [-u[1], u[0]];
+    for (let m = -40; m <= 40; m++) {
+      const c = [n[0] * m * r.espacement, n[1] * m * r.espacement];
+      if (Math.hypot(...c) > 10) continue;
+      P("line", { x1: O[0] + U * (c[0] - 12 * u[0]), y1: O[1] - U * (c[1] - 12 * u[1]), x2: O[0] + U * (c[0] + 12 * u[0]), y2: O[1] - U * (c[1] + 12 * u[1]), class: "stroke thin " + (m ? "c-label-2" : "c-tint") }, svg);
+    }
+    for (let i = -9; i <= 9; i++) for (let j = -5; j <= 5; j++) P("circle", { cx: O[0] + U * i, cy: O[1] - U * j, r: 4, class: "fill c-label" }, svg);
+    $("vdens").textContent = t("rg.v.densite", { n: F.num(r.densite / A0 * 1e-9, 3) });
+    $("vesp").textContent = nm(r.espacement * A0);
+    $("fesp").textContent = t("rg.f.espacement", { r: F.fix(r.espacement, 2) });
+  });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["kepler", 1611, "idea"], ["steno", 1669, "experiment"], ["carangeot", 1780, "experiment"], ["hauy", 1784, "idea"], ["bravais", 1848, "idea"], ["laue", 1912, "experiment"], ["bragg", 1913, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["pdb", "silicium"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["reseau", "b"], ["origine", "c"], ["motif", "a"], ["angles", "d"], ["clivage", "b"], ["maille", "c"], ["anis", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

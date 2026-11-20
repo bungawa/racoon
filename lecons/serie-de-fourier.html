@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Série de Fourier</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-ondes" data-i18n="monde.ondes"></a><span class="aux">›</span><a href="/racoon/etape?id=fourier-sons" data-i18n="etape.fourier-sons"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-ondes" href="/racoon/atlas?piste=ondes" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/sons-musicaux" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="eq"><math display="block"><mi data-i18n="eq.cos"></mi><mo stretchy="false">(</mo><mi>ω</mi><mi>t</mi><mo>+</mo><mi>φ</mi><mo stretchy="false">)</mo><mo>=</mo><mi data-i18n="eq.cos"></mi><mi>φ</mi><mspace width="0.2em"></mspace><mi data-i18n="eq.cos"></mi><mi>ω</mi><mi>t</mi><mo>−</mo><mi data-i18n="eq.sin"></mi><mi>φ</mi><mspace width="0.2em"></mspace><mi data-i18n="eq.sin"></mi><mi>ω</mi><mi>t</mi></math><span class="n">(50.1)</span></div>
+    <p class="validite" data-i18n-html="val.50.1"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>f</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>a</mi><mn>0</mn></msub><mo>+</mo><msub><mi>a</mi><mn>1</mn></msub><mi data-i18n="eq.cos"></mi><mi>ω</mi><mi>t</mi><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><mi data-i18n="eq.sin"></mi><mi>ω</mi><mi>t</mi><mo>+</mo><msub><mi>a</mi><mn>2</mn></msub><mi data-i18n="eq.cos"></mi><mn>2</mn><mi>ω</mi><mi>t</mi><mo>+</mo><msub><mi>b</mi><mn>2</mn></msub><mi data-i18n="eq.sin"></mi><mn>2</mn><mi>ω</mi><mi>t</mi><mo>+</mo><mo>⋯</mo><mo>,</mo><mspace width="0.8em"></mspace><mi>ω</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mi>T</mi></mfrac></math><span class="n">(50.2)</span></div>
+    <p class="validite" data-i18n-html="val.50.2"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mi>f</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>a</mi><mn>0</mn></msub><mo>+</mo><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>∞</mi></munderover><msub><mi>A</mi><mi>n</mi></msub><mi data-i18n="eq.cos"></mi><mo stretchy="false">(</mo><mi>n</mi><mi>ω</mi><mi>t</mi><mo>+</mo><msub><mi>φ</mi><mi>n</mi></msub><mo stretchy="false">)</mo><mo>,</mo><mspace width="0.8em"></mspace><msub><mi>A</mi><mi>n</mi></msub><mo>=</mo><msqrt><mrow><msubsup><mi>a</mi><mi>n</mi><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>b</mi><mi>n</mi><mn>2</mn></msubsup></mrow></msqrt></math><span class="n">(50.2a)</span></div>
+    <p class="validite" data-i18n-html="val.50.2a"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="sy" role="img" data-i18n-attr="aria-label:sy.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="sy.legend.somme"></span><span class="c-warn" data-i18n="sy.legend.forme"></span></div>
+      <svg class="fig" id="sp" role="img" data-i18n-attr="aria-label:sp.aria"></svg>
+      <div class="panel">
+        <div class="seg" role="group" id="fo">
+          <button type="button" data-f="creneau" data-i18n="sy.creneau"></button>
+          <button type="button" data-f="scie" data-i18n="sy.scie"></button>
+          <button type="button" data-f="triangle" data-i18n="sy.triangle"></button>
+          <button type="button" data-f="impulsions" data-i18n="sy.impulsions"></button>
+        </div>
+        <div class="ctl"><div class="row"><label for="nn" data-i18n="sy.n"></label><output id="nnv" for="nn"></output></div>
+          <input id="nn" type="range" min="1" max="60" step="1" value="5"></div>
+        <div class="ctl"><div class="row"><label for="qq" data-i18n="sy.q"></label><output id="qqv" for="qq"></output></div>
+          <input id="qq" type="range" min="0.05" max="0.5" step="0.01" value="0.25"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="sy.k.dernier"></span><span class="v" id="vd"></span><span class="f" id="fd"></span></div>
+          <div class="stat"><span class="k" data-i18n="sy.k.pic"></span><span class="v" id="vp"></span><span class="f" id="fp"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="sy.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/serie-de-fourier.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/ondes.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+
+/* ---------- §50-2 : la somme des N premiers harmoniques d'une forme, sur deux périodes, et ses amplitudes Aₙ ---------- */
+(() => {
+  const O = self.Ondes, NB = 20, M = 1200, US = Array.from({ length: M + 1 }, (_, i) => 2 * i / M);
+  let nom = "creneau";
+  function upd() {
+    const N = +$("nn").value, q = +$("qq").value, Fo = O.signal(nom, q), S = O.partielle(Fo, N);
+    const A = n => Math.hypot(Fo.a(n), Fo.b(n));
+    const svg = $("sy"); svg.innerHTML = "";
+    const P = Plot.axes(svg, { fmt: F, w: 640, h: 220, pad: { l: 52, b: 44 }, x: { domain: [0, 2], label: t("sy.xaxis") }, y: { domain: [-1.4, 1.4], label: t("sy.yaxis") } });
+    Plot.el("path", { d: Plot.path(US.map(u => [P.x(u), P.y(Fo.f(u))])), class: "stroke thin c-warn" }, P.g);
+    Plot.el("path", { d: Plot.path(US.map(u => [P.x(u), P.y(Math.max(-1.4, Math.min(1.4, S(u))))])), class: "stroke c-tint" }, P.g);
+    const bs = $("sp"); bs.innerHTML = "";
+    const amax = Math.max(...Array.from({ length: NB }, (_, i) => A(i + 1)));
+    const B = Plot.axes(bs, { fmt: F, w: 640, h: 170, pad: { l: 52, b: 44 }, x: { domain: [0.4, NB + 0.6], label: t("sp.xaxis"), ticks: 10 }, y: { domain: [0, 1.1 * amax], label: t("sp.yaxis") } });
+    for (let n = 1; n <= NB; n++) { const v = A(n), w = (B.x(1) - B.x(0)) * 0.6;
+      Plot.el("rect", { x: B.x(n) - w / 2, y: B.y(v), width: w, height: Math.max(0, B.y(0) - B.y(v)), class: "fill " + (n <= N ? "c-tint" : "c-label-2") }, B.g); }
+    /* le dernier harmonique non nul ajouté, rapporté au fondamental */
+    let nd = N; while (nd > 1 && A(nd) < 1e-12) nd--;
+    const e = O.ecartForme(Fo, N, 6000);
+    $("nnv").textContent = String(N); $("qqv").textContent = F.num(q, 2);
+    $("fo").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.f === nom)));
+    $("vd").textContent = F.num(A(nd) / A(1), 3); $("fd").textContent = t("sy.f.dernier", { n: nd });
+    $("vp").textContent = F.num(e.haut, 4); $("fp").textContent = t("sy.f.pic", { c: F.num(e.haut - e.depassement, 3) });
+  }
+  $("fo").querySelectorAll("button").forEach(x => x.onclick = () => { nom = x.dataset.f; upd(); });
+  ["nn", "qq"].forEach(id => $(id).oninput = upd); upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["fourier", 1807, "idea"], ["theorie", 1822, "idea"], ["michelson", 1898, "experiment"], ["gibbs", 1899, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["analyseur", "distorsion"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["periode", "b"], ["phase", "d"], ["moyenne", "a"], ["air", "c"], ["decroissance", "b"], ["gibbs", "a"], ["absent", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 502 });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["uneTemperature", "b"],
+  ["arret", "a"],
+  ["rendement", "c"],
+  ["redresseur", "d"],
+  ["precision", "d"],
+  ["melange", "a"],
+  ["kac", "b"],
+  ["landauer", "c"]
+ ]
+}

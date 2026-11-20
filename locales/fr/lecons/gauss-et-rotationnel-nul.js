@@ -1,0 +1,98 @@
+/* Leçon « Théorème de Gauss et rotationnel nul » (Feynman II.5.1) : textes en français.
+   Une autre langue = locales/<langue>/lecons/gauss-et-rotationnel-nul.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Théorème de Gauss et rotationnel nul",
+    "crumb.jour": "Deux lois",
+    "h1": "Théorème de Gauss et rotationnel nul",
+    "lede": "Toute l'électrostatique tient en deux lois : le flux du champ à travers une surface fermée compte les charges intérieures, et la circulation du champ sur une boucle est nulle. Aucune des deux ne suffit seule. Ensemble, avec ce que fait le champ loin des charges, elles déterminent le champ.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : les lois de l'électrostatique",
+    "eq.int": "int",
+
+    "s1.sec": "Deux lois",
+    "s1.h2": "L'électrostatique, c'est Gauss, plus…",
+    "s1.p1": "La leçon « Les lois de l'électrostatique » a écrit les deux équations locales du champ électrique statique : ∇·<var>E</var> = ρ/ε<sub>0</sub> et ∇∧<var>E</var> = 0. Sous forme intégrale, elles disent deux choses. Le flux de <var>E</var> qui sort d'une surface fermée <var>S</var> est la charge qu'elle contient divisée par ε<sub>0</sub>. La circulation de <var>E</var> le long d'une courbe fermée Γ est nulle.",
+    "val.gauss": "Approximation : vraie même quand les charges bougent, c'est l'une des équations de Maxwell. Elle repose sur la loi en 1/<var>r</var>² exacte, dont l'exposant est vérifié à mieux que 1/21\u00a0600 près depuis 1879 et bien mieux depuis. <var>Q</var><sub>int</sub> compte toutes les charges, y compris celles que le champ déplace dans la matière.",
+    "val.circ": "Approximation : champ magnétique constant. Sinon la circulation vaut \u2212dΦ/d<var>t</var>, la variation du flux magnétique à travers Γ : c'est l'induction, qui fait marcher un transformateur. Pour un aimant de 0,1\u00a0T qu'on retire en 1\u00a0s d'une boucle de 1\u00a0cm², 10\u00a0µV.",
+    "s1.p2": "Une circulation nulle sur toute boucle fait de <var>E</var> le gradient d'un potentiel, au signe près. En portant ce gradient dans la loi de Gauss écrite localement, ∇·<var>E</var> = ρ/ε<sub>0</sub>, on obtient une seule équation pour une seule fonction : l'équation de Poisson.",
+    "val.poisson": "Approximation : mêmes domaines que les deux lois. Exacte comme conséquence : la première égalité est la circulation nulle (on choisit φ à une constante près), la seconde est la loi de Gauss locale réécrite. Dans le vide, ρ = 0 et Δφ = 0 : l'équation de Laplace.",
+    "sys.title": "Décrire le système avant d'appliquer les lois",
+    "sys.body": "Le système de la figure : trois petites billes de 1\u00a0mm, chargées de \u22121 à +2\u00a0nC, sur une région de 16\u00a0cm, regardées pendant une seconde. Le nombre <var>L</var>/(<var>c</var>Δ<var>t</var>) vaut {ret} : la lumière traverse le système bien plus vite que tout changement, le champ y est statique. Les charges sont immobiles, donc (<var>v</var>/<var>c</var>)² = 0 et il n'y a pas de force magnétique. Enfin, taille des billes contre distance qui les sépare : {ba} ; vues d'un peu plus loin, ce sont des charges ponctuelles.",
+
+    "s2.sec": "Ni l'une sans l'autre",
+    "s2.h2": "Une loi ne donne pas le champ",
+    "s2.p1": "La loi de Gauss ne donne qu'un nombre par surface fermée : le flux. Le champ, lui, a trois composantes en chaque point. Elle ne peut donc pas le déterminer seule. Pour le voir, ajoutons au champ des charges un champ qui tourne autour de l'origine, de norme proportionnelle à la distance : sa divergence est nulle partout, il ne change aucun flux. Son rotationnel ne l'est pas : il change chaque circulation. Ajoutons aussi un champ uniforme : divergence et rotationnel nuls, il ne change ni flux ni circulation, mais il ne s'annule pas loin des charges.",
+    "ca.aria": "Trois charges ponctuelles dans un plan, la direction du champ sur une grille, et un cercle de 3,5 cm de rayon qui sert de surface de Gauss et de contour de circulation",
+    "ca.legend.dir": "direction du champ",
+    "ca.legend.plus": "charge positive",
+    "ca.legend.moins": "charge négative",
+    "ca.legend.cercle": "sphère de Gauss et contour",
+    "ca.nom": "q{i}",
+    "ca.om": "Tourbillon ajouté ω",
+    "ca.e0": "Champ uniforme ajouté, selon x",
+    "ca.k.flux": "ε<sub>0</sub> × flux sortant de la sphère",
+    "ca.f.flux": "charge intérieure : {q}",
+    "ca.k.circ": "Circulation sur le cercle",
+    "ca.f.circ": "nulle pour un champ électrostatique",
+    "ca.k.loin": "Champ à 1\u00a0m de l'origine",
+    "ca.f.loin": "celui des seules charges : {e}",
+    "ca.caption": "La sphère a 3,5\u00a0cm de rayon et contient q1 = +2\u00a0nC et q2 = \u22121\u00a0nC ; q3 = +1\u00a0nC est dehors. Le flux reste égal à la charge intérieure quel que soit le tourbillon ou le champ uniforme ajouté : Gauss ne voit ni l'un ni l'autre. La circulation dénonce le tourbillon : 2ωπ<var>R</var>². Le champ loin des charges dénonce le champ uniforme. Un carré de la grille fait 8\u00a0mm.",
+    "s2.p2": "Inversement, la circulation nulle ne fixe que la forme du champ, un gradient, pas les charges qui le créent : le gradient de n'importe quelle fonction convient. C'est le flux qui dit où sont les charges. La leçon « Le champ, gradient du potentiel » l'a montré avec une loi radiale en 1/<var>r</var><sup><var>n</var></sup> : son rotationnel est nul quel que soit <var>n</var>, son flux ne compte les charges que pour <var>n</var> = 2.",
+
+    "s3.sec": "Ce qui reste",
+    "s3.h2": "Les deux lois, et une condition aux limites",
+    "s3.p1": "Les deux lois ensemble laissent encore une liberté : ajouter un champ de divergence et de rotationnel nuls partout. Un champ uniforme en est un. Ce qui l'élimine, c'est une condition aux limites : le champ des charges tend vers zéro loin d'elles, ou bien il prend des valeurs connues sur des conducteurs. La leçon « Champs irrotationnels et champs à flux conservatif » donne le vocabulaire mathématique de ces deux propriétés.",
+    "s3.prop.title": "Unicité",
+    "s3.prop.body": "Un champ de vecteurs qui tend vers zéro à l'infini est entièrement déterminé par sa divergence et son rotationnel en tout point. En électrostatique : ∇·<var>E</var> = ρ/ε<sub>0</sub>, ∇∧<var>E</var> = 0 et <var>E</var> → 0 loin des charges ne laissent qu'un seul champ, celui que donne la somme de Coulomb.",
+    "s3.p2": "En pratique, on ne résout presque jamais ces équations de front. Quand la répartition des charges a une symétrie (une sphère, un fil, un plan), la symétrie fixe la direction du champ et la loi de Gauss suffit pour sa norme : c'est le programme de l'étape « Calculer un champ par le théorème de Gauss ». Sans symétrie, on résout l'équation de Poisson, à la main ou par ordinateur. Mais d'abord, ces deux lois répondent à une question qui ne demande aucun calcul : une charge peut-elle rester en équilibre stable sous l'effet des seules forces électriques ? C'est la leçon « Équilibre dans un champ électrostatique ».",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Du flux au champ entier",
+    "hist.intro": "Le passage d'une intégrale de volume à une intégrale de surface, puis la preuve qu'un champ est fixé par sa divergence et son rotationnel, se sont construits sur un demi-siècle, souvent à propos de gravitation ou d'hydrodynamique.",
+    "hist.events": {
+      gauss: { who: "Carl Friedrich Gauss", what: "étudie l'attraction d'un ellipsoïde homogène et démontre des cas particuliers du théorème de la divergence.", context: "Le problème est gravitationnel ; la loi en 1/r² est la même qu'en électrostatique, et le flux à travers une surface fermée y compte déjà la masse intérieure." },
+      ostrogradski: { who: "Mikhaïl Ostrogradski", what: "présente le 13 février à l'Académie des sciences de Paris la première démonstration du théorème général de la divergence.", context: "L'Académie ne la publie pas. Il en présente une version abrégée à Saint-Pétersbourg en 1828, publiée en 1831." },
+      stokes: { who: "George Gabriel Stokes", what: "décrit, dans un mémoire sur la théorie dynamique de la diffraction, la décomposition d'un champ de vecteurs en une partie sans rotationnel et une partie sans divergence.", context: "Elle dit exactement ce que montre la figure : un tourbillon sans divergence peut s'ajouter à un gradient sans changer aucun flux." },
+      helmholtz: { who: "Hermann von Helmholtz", what: "publie un mémoire sur les mouvements tourbillonnaires des fluides, où il reconstruit un champ à partir de sa divergence et de son rotationnel.", context: "La décomposition porte aujourd'hui son nom. Pour un champ qui s'annule à l'infini, elle est unique : c'est le théorème d'unicité de cette leçon." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      optique: { name: "Optique des faisceaux d'ions", text: "Pour dessiner les électrodes d'un spectromètre de masse ou d'une source d'ions, on calcule le champ par l'équation de Laplace, Δφ = 0 entre les électrodes, avec leurs tensions comme conditions aux limites. Des logiciels spécialisés, nés à la fin des années 1970 et portés sur ordinateur personnel en 1985, la résolvent par différences finies sur une grille de points, puis suivent les trajectoires des ions dans le champ obtenu." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      deux: { prompt: "Pourquoi la loi de Gauss ne suffit-elle pas, seule, à calculer le champ d'une répartition de charges quelconque ?",
+        options: { a: "Parce qu'elle ne vaut que pour les charges positives.", b: "Parce qu'elle donne un seul nombre par surface fermée, le flux, alors que le champ a trois composantes en chaque point.", c: "Parce qu'elle n'est qu'une approximation de la loi de Coulomb.", d: "Parce qu'elle ne s'applique qu'aux sphères." },
+        why: "Le flux est une intégrale : beaucoup de champs différents ont les mêmes flux à travers toutes les surfaces fermées. Il faut une information de plus, la circulation nulle, ou une symétrie qui fixe d'avance la direction du champ." },
+      tourbillon: { prompt: "Au champ de trois charges, on ajoute un champ qui tourne autour de l'origine, ω ez ∧ r. Que deviennent le flux à travers une sphère et la circulation sur un cercle centré à l'origine ?",
+        options: { a: "Les deux changent.", b: "Le flux change, la circulation reste nulle.", c: "Ni l'un ni l'autre ne change.", d: "Le flux ne change pas, la circulation devient 2ωπR²." },
+        hint: "Essayez dans l'interaction : faites varier ω et regardez les trois valeurs.",
+        why: "Ce champ a une divergence nulle partout : il n'ajoute rien à aucun flux, la loi de Gauss ne le voit pas. Son rotationnel vaut 2ω ez : la circulation sur un cercle de rayon R est 2ω × πR². Un champ électrostatique ne peut pas contenir un tel terme." },
+      uniforme: { prompt: "Un champ uniforme a une divergence et un rotationnel nuls. Qu'est-ce qui interdit de l'ajouter au champ de charges isolées dans le vide ?",
+        options: { a: "La condition aux limites : le champ de charges isolées tend vers zéro loin d'elles.", b: "La loi de Gauss, car il ajoute un flux.", c: "La circulation nulle, car il en ajoute une.", d: "Rien : le champ de charges isolées n'est défini qu'à un champ uniforme près." },
+        why: "Les deux lois locales sont satisfaites par le champ uniforme. Seule la condition à l'infini l'exclut. Entre les armatures d'un condensateur, au contraire, un champ presque uniforme est la bonne solution : les conditions aux limites sont les tensions des armatures." },
+      symetrie: { prompt: "Pour une boule chargée uniformément, la loi de Gauss donne le champ en une ligne. Qu'est-ce qui remplace alors la circulation nulle ?",
+        options: { a: "Rien : la loi de Gauss suffit toujours.", b: "La loi de Coulomb, intégrée sur la boule.", c: "La symétrie sphérique : elle impose un champ radial, de norme ne dépendant que de r, et il ne reste qu'une inconnue par sphère.", d: "Le fait que la boule soit conductrice." },
+        why: "La symétrie fixe la direction du champ et dit que sa norme est la même sur toute la sphère de rayon r. Le flux vaut alors 4πr²E(r) et la loi de Gauss donne E(r). Un champ radial de norme ne dépendant que de r a d'ailleurs un rotationnel nul : la symétrie contient la seconde loi." },
+      poisson: { prompt: "Pourquoi l'équation de Poisson, Δφ = \u2212ρ/ε0, contient-elle les deux lois ?",
+        options: { a: "Elle ne contient que la loi de Gauss.", b: "Écrire E = \u2212∇φ assure une circulation nulle ; porter ce gradient dans ∇·E = ρ/ε0 donne Δφ = \u2212ρ/ε0.", c: "Elle ne contient que la circulation nulle.", d: "Parce qu'elle s'écrit avec un potentiel, qui contient toute la physique." },
+        why: "La circulation d'un gradient sur une boucle fermée est toujours nulle : choisir E = \u2212∇φ, c'est déjà imposer ∇∧E = 0. La divergence d'un gradient est le laplacien : ∇·E = ρ/ε0 devient l'équation de Poisson. Trois composantes inconnues sont remplacées par une seule fonction." },
+      induction: { prompt: "Dans quelle situation la circulation de E sur une boucle cesse-t-elle d'être nulle ?",
+        options: { a: "Quand le flux magnétique à travers la boucle varie dans le temps : la circulation vaut alors \u2212dΦ/dt.", b: "Quand la boucle entoure une charge.", c: "Quand la boucle est très grande.", d: "Jamais : c'est une loi exacte." },
+        hint: "C'est le principe du transformateur.",
+        why: "Entourer une charge ne change rien : la circulation du champ de Coulomb est nulle sur toute boucle, c'est le travail d'une force conservative. C'est un champ magnétique variable qui crée un champ électrique à circulation non nulle, l'induction de Faraday." },
+      unicite: { prompt: "Deux étudiants calculent le champ de la même répartition de charges, l'un par la somme de Coulomb, l'autre par une méthode astucieuse. Leurs deux champs ont la même divergence et un rotationnel nul partout, et tendent vers zéro à l'infini. Que peut-on dire ?",
+        options: { a: "Ils peuvent différer d'un champ uniforme.", b: "Ils peuvent différer d'un tourbillon.", c: "Ils sont égaux : leur différence a une divergence et un rotationnel nuls partout et tend vers zéro à l'infini, elle est nulle.", d: "On ne peut rien dire sans calculer." },
+        why: "C'est le théorème d'unicité. La différence serait un champ sans source ni tourbillon, nul à l'infini : un tel champ est nul. C'est ce qui justifie toutes les méthodes astucieuses, symétries ou images : si une solution satisfait les lois et les conditions aux limites, c'est la solution." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 5 (texte original en anglais), §5-1. Configurations et calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

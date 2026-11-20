@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["commute", "a"],
+  ["piege", "b"],
+  ["phase", "c"],
+  ["parite", "d"],
+  ["degen", "a"],
+  ["impulsion", "b"],
+  ["rotation", "c"],
+  ["cristal", "d"]
+ ]
+}

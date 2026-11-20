@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Les lois de composition des amplitudes</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-quantique-amplitudes" data-i18n="monde.quantique-amplitudes"></a><span class="aux">›</span><a href="/racoon/etape?id=regles-des-amplitudes" data-i18n="etape.regles-des-amplitudes"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-quant" href="/racoon/atlas?piste=quant" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/ondes-amplitude-probabilite" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mo>⟨</mo><mi>x</mi><mo>|</mo><mi>s</mi><mo>⟩</mo><mo>,</mo><mspace width="1em"/><msub><mi>P</mi><mrow><mi>x</mi></mrow></msub><mo>=</mo><msup><mrow><mo>|</mo><mo>⟨</mo><mi>x</mi><mo>|</mo><mi>s</mi><mo>⟩</mo><mo>|</mo></mrow><mn>2</mn></msup></math><span class="n">(3.2)</span></div>
+    <p class="validite" data-i18n-html="val.3.2"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mo>⟨</mo><mi>x</mi><mo>|</mo><mi>s</mi><mo>⟩</mo><mo>=</mo><msub><mrow><mo>⟨</mo><mi>x</mi><mo>|</mo><mi>s</mi><mo>⟩</mo></mrow><mrow><mi data-i18n="eq.par"></mi><mspace width="0.2em"/><mn>1</mn></mrow></msub><mo>+</mo><msub><mrow><mo>⟨</mo><mi>x</mi><mo>|</mo><mi>s</mi><mo>⟩</mo></mrow><mrow><mi data-i18n="eq.par"></mi><mspace width="0.2em"/><mn>2</mn></mrow></msub></math><span class="n">(3.4)</span></div>
+    <p class="validite" data-i18n-html="val.3.4"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><msub><mrow><mo>⟨</mo><mi>x</mi><mo>|</mo><mi>s</mi><mo>⟩</mo></mrow><mrow><mi data-i18n="eq.par"></mi><mspace width="0.2em"/><mn>1</mn></mrow></msub><mo>=</mo><mo>⟨</mo><mi>x</mi><mo>|</mo><mn>1</mn><mo>⟩</mo><mo>⟨</mo><mn>1</mn><mo>|</mo><mi>s</mi><mo>⟩</mo></math><span class="n">(3.5)</span></div>
+    <p class="validite" data-i18n-html="val.3.5"></p>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="eq"><math display="block"><mo>⟨</mo><mi>x</mi><mo>|</mo><mi>s</mi><mo>⟩</mo><mo>=</mo><munder><mo>∑</mo><mrow><mi>i</mi><mo>,</mo><mi>α</mi></mrow></munder><mo>⟨</mo><mi>x</mi><mo>|</mo><mi>α</mi><mo>⟩</mo><mo>⟨</mo><mi>α</mi><mo>|</mo><mi>i</mi><mo>⟩</mo><mo>⟨</mo><mi>i</mi><mo>|</mo><mi>s</mi><mo>⟩</mo></math><span class="n">(3.6)</span></div>
+    <p class="validite" data-i18n-html="val.3.6"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="montage" viewBox="0 0 640 260" role="img" data-i18n-attr="aria-label:fig.aria.montage"></svg>
+      <svg class="fig" id="courbe" viewBox="0 0 640 240" role="img" data-i18n-attr="aria-label:fig.aria.courbe"></svg>
+      <svg class="fig" id="fleches" viewBox="0 0 640 240" role="img" data-i18n-attr="aria-label:fig.aria.fleches"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.par1"></span><span class="c-warn" data-i18n="fig.legend.par2"></span><span class="c-label" data-i18n="fig.legend.total"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" role="group" id="trous" data-i18n-attr="aria-label:fig.trous">
+            <button type="button" data-t="0" data-i18n="fig.t.1"></button>
+            <button type="button" data-t="1" data-i18n="fig.t.2"></button>
+            <button type="button" data-t="2" data-i18n="fig.t.a"></button>
+            <button type="button" data-t="3" data-i18n="fig.t.b"></button>
+            <button type="button" data-t="4" data-i18n="fig.t.c"></button>
+          </div>
+          <div class="ctl"><div class="row"><label for="sx" data-i18n="fig.x"></label><output id="sxr" for="sx"></output></div>
+            <input id="sx" type="range" min="-40" max="40" step="0.5" value="0"></div>
+          <div class="ctl"><div class="row"><label for="ss" data-i18n="fig.source"></label><output id="ssr" for="ss"></output></div>
+            <input id="ss" type="range" min="-6" max="6" step="0.5" value="0"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.chemins"></span><span class="v" id="vchemins"></span><span class="f" id="fchemins"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.proba"></span><span class="v" id="vproba"></span><span class="f" id="fproba"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.deux"></span><span class="v" id="vdeux"></span><span class="f" id="fdeux"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><mo>⟨</mo><msub><mover><mi>r</mi><mo>→</mo></mover><mn>2</mn></msub><mo>|</mo><msub><mover><mi>r</mi><mo>→</mo></mover><mn>1</mn></msub><mo>⟩</mo><mo>=</mo><mfrac><msup><mi>e</mi><mrow><mi>i</mi><mi>p</mi><msub><mi>r</mi><mn>12</mn></msub><mo>/</mo><mi>ħ</mi></mrow></msup><msub><mi>r</mi><mn>12</mn></msub></mfrac></math><span class="n">(3.7)</span></div>
+    <p class="validite" data-i18n-html="val.3.7"></p>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+    <p data-i18n-html="s4.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/composition-des-amplitudes.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/quantique-amplitudes.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const Q = QuantAmp;
+
+/* ---------- two walls, six routes (Fig. 3-2); lengths in wavelengths ---------- */
+(() => {
+  const LAM = 1, P = Q.h / LAM;                                        // p = h/λ: the phase of (3.7) turns once per λ
+  const W1 = 40, W2 = 80, XS = 140;                                    // walls and screen, along the beam
+  const T1 = [3, -3], T2 = [-5, 0, 5];                                 // holes 1, 2 then a, b, c
+  const ouvert = [true, true, true, true, true];
+  const seg = $("trous"), sx = $("sx"), ss = $("ss");
+  const amp = (u, v) => Q.amplitudeLibre(P, Math.hypot(u[0] - v[0], u[1] - v[1]));
+  const etapes = (ys, x, ouv) => [
+    T1.map((y, j) => [ouv[j] ? amp([W1, y], [0, ys]) : 0]),
+    T2.map((y, j) => T1.map(u => (ouv[2 + j] ? amp([W2, y], [W1, u]) : 0))),
+    [T2.map(y => amp([XS, x], [W2, y]))]];
+  /* unit: the probability of the single route s → 1 → b → x, source and detector on the axis */
+  const UNITE = Cx.abs2(Q.amplitudeChemins(etapes(0, 0, [true, false, false, true, false])).total);
+  const XS_PLOT = Array.from({ length: 321 }, (_, i) => -40 + i * 0.25);
+  const proba = (ys, ouv) => XS_PLOT.map(x => Cx.abs2(Q.amplitudeChemins(etapes(ys, x, ouv)).total) / UNITE);
+  const YMAX = Math.max(...proba(0, ouvert)) * 1.08;
+
+  function montage(ys, x) {
+    const svg = $("montage"); svg.innerHTML = "";
+    const px = u => 30 + u * 4, py = y => 130 - y * 2.8;            // one vertical unit is shorter: the screen spans ±40 λ
+    const mur = (w, trous) => {
+      const ys2 = [-44, ...trous.slice().sort((p, q) => p - q), 44];
+      for (let k = 0; k + 1 < ys2.length; k++) {
+        const y0 = k === 0 ? ys2[k] : ys2[k] + 1.2, y1 = k + 2 === ys2.length ? ys2[k + 1] : ys2[k + 1] - 1.2;
+        Plot.el("line", { x1: px(w), x2: px(w), y1: py(y0), y2: py(y1), class: "stroke bold c-label-2" }, svg);
+      }
+    };
+    mur(W1, T1); mur(W2, T2);
+    Plot.el("line", { x1: px(XS), x2: px(XS), y1: py(-44), y2: py(44), class: "stroke thin dash c-label-2" }, svg);
+    /* the routes: hole 1 in tint, hole 2 in warn; closed routes are not drawn */
+    T1.forEach((u, i) => T2.forEach((y, j) => {
+      if (!ouvert[i] || !ouvert[2 + j]) return;
+      const cls = "stroke thin " + (i === 0 ? "c-tint" : "c-warn");
+      Plot.el("path", { d: Plot.path([[px(0), py(ys)], [px(W1), py(u)], [px(W2), py(y)], [px(XS), py(x)]]), class: cls, fill: "none" }, svg);
+    }));
+    Plot.el("circle", { cx: px(0), cy: py(ys), r: 4, class: "fill c-label" }, svg);
+    Plot.el("circle", { cx: px(XS), cy: py(x), r: 4, class: "fill c-label" }, svg);
+    const tag = (x0, y0, k, anchor) => { const e = Plot.el("text", { x: x0, y: y0, "text-anchor": anchor || "middle" }, svg); e.textContent = t(k); };
+    tag(px(0) - 10, py(ys) + 4, "fig.s", "end"); tag(px(XS) + 10, py(x) + 4, "fig.xlab", "start");
+    T1.forEach((u, i) => tag(px(W1) + 10, py(u) + 4, "fig.t." + (i + 1), "start"));
+    T2.forEach((y, j) => tag(px(W2) + 10, py(y) + 4, "fig.t." + "abc"[j], "start"));
+  }
+
+  function courbe(ys, x) {
+    const svg = $("courbe"); svg.innerHTML = "";
+    const ax = Plot.axes(svg, { fmt: F, w: 640, h: 240, x: { domain: [-40, 40], label: t("fig.ax.x") }, y: { domain: [0, YMAX], label: t("fig.ax.p") } });
+    const pts = proba(ys, ouvert);
+    Plot.el("path", { d: Plot.path(XS_PLOT.map((u, i) => [ax.x(u), ax.y(Math.min(pts[i], YMAX))])), class: "stroke c-label", fill: "none" }, svg);
+    Plot.el("line", { x1: ax.x(x), x2: ax.x(x), y1: ax.y(0), y2: ax.y(YMAX), class: "stroke thin dash c-warn" }, svg);
+  }
+
+  function fleches(r) {
+    const svg = $("fleches"); svg.innerHTML = "";
+    const k = 1 / Math.sqrt(UNITE), cx = 320, cy = 120, s = 22;          // one unit (one route on the axis) = 22 px
+    Plot.el("line", { x1: cx - 300, x2: cx + 300, y1: cy, y2: cy, class: "stroke thin c-label-2" }, svg);
+    Plot.el("line", { x1: cx, x2: cx, y1: cy - 110, y2: cy + 110, class: "stroke thin c-label-2" }, svg);
+    let z = Cx.c(0, 0);
+    r.chemins.forEach(ch => {
+      if (Cx.abs(ch.amplitude) === 0) return;
+      const n = Cx.add(z, ch.amplitude);
+      Plot.fleche(svg, [cx + s * k * z.re, cy - s * k * z.im], [cx + s * k * n.re, cy - s * k * n.im], { cls: ch.noeuds[1] === 0 ? "c-tint" : "c-warn", tete: 7, min: 2 });
+      z = n;
+    });
+    Plot.fleche(svg, [cx, cy], [cx + s * k * z.re, cy - s * k * z.im], { cls: "c-label", tete: 10, min: 2, trait: "stroke bold" });
+  }
+
+  function draw() {
+    const x = +sx.value, ys = +ss.value, r = Q.amplitudeChemins(etapes(ys, x, ouvert));
+    montage(ys, x); courbe(ys, x); fleches(r);
+    seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(ouvert[+b.dataset.t])));
+    const n = r.chemins.filter(c => Cx.abs(c.amplitude) > 0).length;
+    $("sxr").textContent = t("fig.lambdas", { v: F.num(x, 3) }); $("ssr").textContent = t("fig.lambdas", { v: F.num(ys, 2) });
+    $("vchemins").textContent = String(n);
+    $("fchemins").textContent = t("fig.f.chemins", { n: String(n) });
+    const P1 = Cx.abs2(r.total) / UNITE, Ps = r.chemins.reduce((s, c) => s + Cx.abs2(c.amplitude), 0) / UNITE;
+    $("vproba").textContent = F.num(P1, 3);
+    $("fproba").textContent = t("fig.f.proba", { v: F.num(Ps, 3) });
+    const E = etapes(ys, x, ouvert), a1 = E[0][0][0], a2 = E[0][1][0], k = 1 / Cx.abs(amp([W1, 3], [0, 0]));
+    const txt = z => (typeof z === "number" ? "0" : F.num(Cx.abs(z) * k, 3) + " ∠ " + F.num(Cx.arg(z) * 180 / Math.PI, 3) + "°");
+    $("vdeux").textContent = txt(a1) + " ; " + txt(a2);
+    $("fdeux").textContent = t("fig.f.deux");
+  }
+  seg.querySelectorAll("button").forEach(b => b.onclick = () => { ouvert[+b.dataset.t] = !ouvert[+b.dataset.t]; draw(); });
+  sx.oninput = ss.oninput = draw; draw();
+})();
+
+/* ---------- the system described: electrons of 50 eV ---------- */
+(() => {
+  const Ec = 50 * Q.e, p = Q.impulsion(Q.m_e, Ec), lam = Q.broglie(p), dE = 0.01;
+  const lc = lam / (dE / 2);                                           // coherence length λ²/δλ, δλ/λ = δE/(2E)
+  $("sys1").innerHTML = t("sys1.body", { E: F.si(Ec, "J"), lam: F.si(lam, "m"), r: F.si(140 * lam, "m"), rl: F.num(140, 3),
+    lc: F.num(lc / lam, 2), d: F.si(Ec * dE, "J") });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["born", 1926, "idea"], ["dirac", 1939, "idea"], ["feynman", 1948, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["calcul"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["ordre", "b"], ["somme", "d"], ["fermer", "a"], ["six", "c"], ["deux", "b"], ["phase", "a"], ["module", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 331 });
+})();
+</script>
+</body>
+</html>

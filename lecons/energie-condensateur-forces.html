@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Énergie d'un condensateur et forces sur les conducteurs</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-electrostatique" data-i18n="monde.electrostatique"></a><span class="aux">›</span><a href="/racoon/etape?id=energie-condensateur" data-i18n="etape.energie-condensateur"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/condensateur-plan-armatures" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi>U</mi><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi>Q</mi></msubsup><mfrac><mi>q</mi><mi>C</mi></mfrac><mspace width="0.15em"/><mi>d</mi><mi>q</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mfrac><msup><mi>Q</mi><mn>2</mn></msup><mi>C</mi></mfrac></math><span class="n">(8.9)</span></div>
+    <p class="validite" data-i18n-html="val.8.9"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi>U</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>C</mi><msup><mi>V</mi><mn>2</mn></msup></math><span class="n">(8.10)</span></div>
+    <p class="validite" data-i18n-html="val.8.10"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>F</mi><mspace width="0.15em"/><mi>Δ</mi><mi>z</mi><mo>=</mo><mfrac><msup><mi>Q</mi><mn>2</mn></msup><mn>2</mn></mfrac><mspace width="0.15em"/><mi>Δ</mi><mrow><mo>(</mo><mfrac><mn>1</mn><mi>C</mi></mfrac><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mfrac><msup><mi>Q</mi><mn>2</mn></msup><mrow><mn>2</mn><msup><mi>C</mi><mn>2</mn></msup></mrow></mfrac><mspace width="0.15em"/><mi>Δ</mi><mi>C</mi></math><span class="n">(8.15)</span></div>
+    <p class="validite" data-i18n-html="val.8.15"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mi>F</mi><mo>=</mo><mfrac><msup><mi>Q</mi><mn>2</mn></msup><mrow><mn>2</mn><msub><mi>ε</mi><mn>0</mn></msub><mi>A</mi></mrow></mfrac></math><span class="n">(8.17)</span></div>
+    <p class="validite" data-i18n-html="val.8.17"></p>
+    <div class="eq"><math display="block"><mi>F</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>Q</mi><msub><mi>E</mi><mn>0</mn></msub></math><span class="n">(8.18)</span></div>
+    <p class="validite" data-i18n-html="val.8.18"></p>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="eq"><math display="block"><mi>F</mi><mspace width="0.15em"/><mi>Δ</mi><mi>z</mi><mo>+</mo><msup><mi>V</mi><mn>2</mn></msup><mi>Δ</mi><mi>C</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi>V</mi><mn>2</mn></msup><mi>Δ</mi><mi>C</mi><mspace width="1em"/><mo>⇒</mo><mspace width="1em"/><mi>F</mi><mspace width="0.15em"/><mi>Δ</mi><mi>z</mi><mo>=</mo><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi>V</mi><mn>2</mn></msup><mi>Δ</mi><mi>C</mi></math><span class="n">(8.15a)</span></div>
+    <p class="validite" data-i18n-html="val.8.15a"></p>
+    <div class="panel">
+      <div class="seg" role="group" id="mode" data-i18n-attr="aria-label:bi.choix">
+        <button type="button" data-m="Q" aria-pressed="true" data-i18n="bi.Q"></button>
+        <button type="button" data-m="V" data-i18n="bi.V"></button>
+      </div>
+      <div class="ctl"><div class="row"><label for="dsl" data-i18n="bi.d"></label><output id="dread" for="dsl"></output></div>
+        <input id="dsl" type="range" min="0" max="100" step="1" value="40"></div>
+      <div class="stats">
+        <div class="stat"><span class="k" data-i18n-html="bi.k.dU"></span><span class="v" id="vdU"></span><span class="f" data-i18n="bi.f.dU"></span></div>
+        <div class="stat"><span class="k" data-i18n-html="bi.k.src"></span><span class="v" id="vsrc"></span><span class="f" data-i18n="bi.f.src"></span></div>
+        <div class="stat"><span class="k" data-i18n-html="bi.k.op"></span><span class="v" id="vop"></span><span class="f" data-i18n="bi.f.op"></span></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="k" data-i18n-html="bi.k.F"></span><span class="v" id="vF"></span><span class="f" data-i18n="bi.f.F"></span></div>
+        <div class="stat"><span class="k" data-i18n-html="bi.k.eQ"></span><span class="v" id="veQ"></span><span class="f" data-i18n="bi.f.eQ"></span></div>
+        <div class="stat"><span class="k" data-i18n-html="bi.k.eV"></span><span class="v" id="veV"></span><span class="f" data-i18n="bi.f.eV"></span></div>
+      </div>
+      <p class="note" id="bilan"></p>
+    </div>
+    <p data-i18n-html="s2.p4"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>k</mi><mi>x</mi><mo>=</mo><mfrac><mrow><msub><mi>ε</mi><mn>0</mn></msub><mi>A</mi><msup><mi>V</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><msup><mrow><mo stretchy="false">(</mo><msub><mi>d</mi><mn>0</mn></msub><mo>−</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mfrac></math><span class="n">(8.15b)</span></div>
+    <p class="validite" data-i18n-html="val.8.15b"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>x</mi><mtext data-i18n="eq.b"></mtext></msub><mo>=</mo><mfrac><msub><mi>d</mi><mn>0</mn></msub><mn>3</mn></mfrac><mo>,</mo><mspace width="1em"/><msub><mi>V</mi><mtext data-i18n="eq.b"></mtext></msub><mo>=</mo><msqrt><mfrac><mrow><mn>8</mn><mi>k</mi><msubsup><mi>d</mi><mn>0</mn><mn>3</mn></msubsup></mrow><mrow><mn>27</mn><msub><mi>ε</mi><mn>0</mn></msub><mi>A</mi></mrow></mfrac></msqrt></math><span class="n">(8.15c)</span></div>
+    <p class="validite" data-i18n-html="val.8.15c"></p>
+    <figure>
+      <svg class="fig" id="puits" viewBox="0 0 640 320" role="img" data-i18n-attr="aria-label:pu.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="pu.legend.E"></span><span class="c-warn" data-i18n="pu.legend.eq"></span></div>
+      <div class="panel">
+        <div class="seg" role="group" id="tenu" data-i18n-attr="aria-label:pu.choix">
+          <button type="button" data-m="V" aria-pressed="true" data-i18n="pu.V"></button>
+          <button type="button" data-m="Q" data-i18n="pu.Q"></button>
+        </div>
+        <div class="ctl"><div class="row"><label for="usl" id="ulab"></label><output id="uread" for="usl"></output></div>
+          <input id="usl" type="range" min="0" max="120" step="1" value="60"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="pu.k.x"></span><span class="v" id="vx"></span><span class="f" data-i18n="pu.f.x"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="pu.k.bar"></span><span class="v" id="vbar"></span><span class="f" data-i18n="pu.f.bar"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="pu.k.vb"></span><span class="v" id="vvb"></span><span class="f" data-i18n="pu.f.vb"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="pu.caption"></figcaption>
+    </figure>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys2"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/energie-condensateur-forces.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/physique-fondamentale.js"></script>
+<script src="/racoon/lecons/champs-em.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/electrostatique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const ES = Electrostatique;
+const pct = e => F.qty(F.num(100 * e, 2), "%");
+
+/* ---------- le système décrit : deux disques de 5 cm de rayon à 1 mm, sous 1 kV, chargés à travers 1 kΩ ---------- */
+(() => {
+  const a = 0.05, d = 1e-3, V = 1e3, R = 1e3, A = Math.PI * a * a, Cr = ES.condensateurDisques(a, d).capacite, Ci = ES.capacitePlan(A, d);
+  $("sys1").innerHTML = t("sys1.body", { c: F.si(Cr, "F"), u: F.si(Cr * V * V / 2, "J"), e: F.si(V / d, "V/m"), bord: pct(Cr / Ci - 1),
+    tau: F.si(R * Cr, "s"), lc: F.si(2 * a / ES.C, "s"), rap: F.num(2 * a / ES.C / (R * Cr), 2) });
+})();
+
+/* ---------- le bilan d'un petit déplacement, et la force des disques réels ---------- */
+(() => {
+  const a = 0.05, V0 = 1e3, A = Math.PI * a * a, dsl = $("dsl");
+  const Cd = x => ES.condensateurDisques(a, x).capacite;
+  let mode = "Q";
+  function draw() {
+    const r = 0.01 * Math.pow(50, +dsl.value / 100), d = r * a, f = ES.forceArmatures(Cd, d, 1e-3 * d), Q = f.C * V0;
+    const C2 = Cd(1.01 * d), b = ES.bilanDeplacement(f.C, C2, mode === "Q" ? { Q } : { V: V0 }), Fr = f.parV(V0);
+    $("dread").textContent = t("bi.v.d", { r: F.num(r, 2), d: F.si(d, "m") });
+    $("vdU").textContent = F.si(b.dU, "J");
+    $("vsrc").textContent = F.si(b.source, "J");
+    $("vop").textContent = F.si(b.operateur, "J");
+    $("vF").textContent = F.si(Fr, "N");
+    $("veQ").textContent = pct(Q * Q / (2 * ES.EPS0 * A) / Fr - 1);
+    $("veV").textContent = pct(ES.EPS0 * A * V0 * V0 / (2 * d * d) / Fr - 1);
+    $("bilan").innerHTML = t(mode === "Q" ? "bi.note.Q" : "bi.note.V", { w: F.si(Fr * 0.01 * d, "J") });
+  }
+  document.querySelectorAll("#mode button").forEach(b => b.onclick = () => {
+    mode = b.dataset.m; document.querySelectorAll("#mode button").forEach(z => z.setAttribute("aria-pressed", z === b)); draw(); });
+  dsl.oninput = draw; draw();
+})();
+
+/* ---------- l'armature sur ressort : l'énergie à tension fixée, ou à charge fixée ---------- */
+(() => {
+  const k = 1, side = 100e-6, A = side * side, d0 = 2e-6, B = ES.basculement(k, A, d0), Qc = Math.sqrt(2 * ES.EPS0 * A * k * d0);
+  const svg = $("puits"), usl = $("usl"), E0 = k * d0 * d0;                     // energies in units of k d0²
+  let mode = "V";
+  function draw() {
+    const s = +usl.value / 100, N = 300, xs = Array.from({ length: N }, (_, i) => 0.98 * i / (N - 1));
+    $("ulab").textContent = t(mode === "V" ? "pu.uV" : "pu.uQ");
+    $("uread").textContent = F.num(s, 2);
+    let E, x0, bar = NaN;
+    if (mode === "V") {
+      const V = s * B.Vb, e = B.equilibres(V);
+      E = xs.map(u => B.energie(u * d0, V) / E0);
+      x0 = e.stable / d0;
+      if (Number.isFinite(e.stable)) bar = (B.energie(e.instable, V) - B.energie(e.stable, V)) / E0;
+    } else {
+      const Q = s * Qc;
+      E = xs.map(u => B.energieQ(u * d0, Q) / E0 - Q * Q * d0 / (2 * ES.EPS0 * A) / E0);
+      x0 = B.equilibreQ(Q) / d0;
+    }
+    svg.innerHTML = "";
+    const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 320, pad: { b: 44 }, x: { domain: [0, 1], label: t("pu.x"), fmt: v => F.num(v, 2) },
+      y: { domain: [-0.3, 0.3], label: t("pu.y"), fmt: v => F.num(v, 2) } });
+    const clip = v => Math.max(-0.3, Math.min(0.3, v));
+    Plot.el("path", { d: Plot.path(xs.map((u, i) => [x(u), y(clip(E[i]))])), class: "stroke" }, Plot.el("g", { class: "c-tint" }, g));
+    Plot.el("line", { x1: x(1 / 3), x2: x(1 / 3), y1: y(-0.3), y2: y(0.3), class: "stroke thin dash" }, Plot.el("g", { class: "c-label-2" }, g));
+    if (Number.isFinite(x0)) {
+      const i = Math.min(N - 1, Math.round(x0 / 0.98 * (N - 1)));
+      Plot.el("circle", { cx: x(x0), cy: y(clip(E[i])), r: 6, class: "fill" }, Plot.el("g", { class: "c-warn" }, g));
+    }
+    $("vx").textContent = Number.isFinite(x0) ? F.num(x0, 3) : t("pu.colle");
+    $("vbar").textContent = mode === "V" ? (Number.isFinite(bar) ? F.si(bar * E0, "J") : t("pu.aucune")) : t("pu.pasde");
+    $("vvb").textContent = F.si(B.Vb, "V");
+  }
+  document.querySelectorAll("#tenu button").forEach(b => b.onclick = () => {
+    mode = b.dataset.m; document.querySelectorAll("#tenu button").forEach(z => z.setAttribute("aria-pressed", z === b)); draw(); });
+  usl.oninput = draw; draw();
+  /* le système décrit : une plaque de silicium de 100 µm de côté et 2 µm d'épaisseur */
+  const m = 2330 * A * d0, poids = m * 9.81, kb = k * B.xb;
+  $("sys2").innerHTML = t("sys2.body", { vb: F.si(B.Vb, "V"), bord: F.num(d0 / side, 2), poids: F.sci(poids / kb, 2),
+    f0: F.si(Math.sqrt(k / m) / (2 * Math.PI), "Hz") });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["thomson", 1867, "idea"], ["maxwell", 1873, "idea"], ["nathanson", 1967, "experiment"], ["hornbeck", 1987, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["mandrin", "miroirs"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["moitie", "b"], ["ecarter", "d"], ["generateur", "a"], ["demi", "c"], ["bords", "b"], ["tiers", "a"], ["charge", "d"], ["pression", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 82 });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["hyper", "a"],
+  ["rigidite", "b"],
+  ["newton", "c"],
+  ["diametre", "d"],
+  ["bande", "a"],
+  ["comptage", "b"],
+  ["derive", "c"],
+  ["hull", "d"]
+ ]
+}

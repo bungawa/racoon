@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Réponses non linéaires</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-ondes" data-i18n="monde.ondes"></a><span class="aux">›</span><a href="/racoon/etape?id=fourier-coefficients" data-i18n="etape.fourier-coefficients"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-ondes" href="/racoon/atlas?piste=ondes" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/coefficients-de-fourier" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>x</mi><mi data-i18n="eq.sortie"></mi></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mi>K</mi><msub><mi>x</mi><mi data-i18n="eq.entree"></mi></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></math><span class="n">(50.24)</span></div>
+    <p class="validite" data-i18n-html="val.50.24"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>x</mi><mi data-i18n="eq.sortie"></mi></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mi>K</mi><mrow><mo>[</mo><msub><mi>x</mi><mi data-i18n="eq.entree"></mi></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>+</mo><mi>ε</mi><msubsup><mi>x</mi><mi data-i18n="eq.entree"></mi><mn>2</mn></msubsup><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>]</mo></mrow></math><span class="n">(50.25)</span></div>
+    <p class="validite" data-i18n-html="val.50.25"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>x</mi><mi data-i18n="eq.sortie"></mi></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mi>K</mi><mrow><mo>(</mo><mi>A</mi><mi data-i18n="eq.cos"></mi><mi>ω</mi><mi>t</mi><mo>+</mo><mfrac><mrow><mi>ε</mi><msup><mi>A</mi><mn>2</mn></msup></mrow><mn>2</mn></mfrac><mo>+</mo><mfrac><mrow><mi>ε</mi><msup><mi>A</mi><mn>2</mn></msup></mrow><mn>2</mn></mfrac><mi data-i18n="eq.cos"></mi><mn>2</mn><mi>ω</mi><mi>t</mi><mo>)</mo></mrow></math><span class="n">(50.27a)</span></div>
+    <p class="validite" data-i18n-html="val.50.27a"></p>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>A</mi><mi>B</mi><mi data-i18n="eq.cos"></mi><msub><mi>ω</mi><mn>1</mn></msub><mi>t</mi><mspace width="0.2em"></mspace><mi data-i18n="eq.cos"></mi><msub><mi>ω</mi><mn>2</mn></msub><mi>t</mi><mo>=</mo><mfrac><mrow><mi>A</mi><mi>B</mi></mrow><mn>2</mn></mfrac><mrow><mo>[</mo><mi data-i18n="eq.cos"></mi><mo stretchy="false">(</mo><msub><mi>ω</mi><mn>1</mn></msub><mo>+</mo><msub><mi>ω</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mi>t</mi><mo>+</mo><mi data-i18n="eq.cos"></mi><mo stretchy="false">(</mo><msub><mi>ω</mi><mn>1</mn></msub><mo>−</mo><msub><mi>ω</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mi>t</mi><mo>]</mo></mrow></math><span class="n">(50.32)</span></div>
+    <p class="validite" data-i18n-html="val.50.32"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <figure class="chart">
+      <svg class="fig" id="sp" role="img" data-i18n-attr="aria-label:sp.aria"></svg>
+      <div class="legend"><span class="c-label-2" data-i18n="sp.legend.entree"></span><span class="c-tint" data-i18n="sp.legend.ordre2"></span><span class="c-warn" data-i18n="sp.legend.ordre3"></span></div>
+      <svg class="fig" id="fo" role="img" data-i18n-attr="aria-label:fo.aria"></svg>
+      <div class="legend"><span class="c-label-2" data-i18n="fo.legend.entree"></span><span class="c-tint" data-i18n="fo.legend.sortie"></span></div>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="f1" data-i18n="nl.f1"></label><output id="f1v" for="f1"></output></div>
+          <input id="f1" type="range" min="200" max="1500" step="10" value="1000"></div>
+        <div class="ctl"><div class="row"><label for="f2" data-i18n="nl.f2"></label><output id="f2v" for="f2"></output></div>
+          <input id="f2" type="range" min="200" max="1500" step="10" value="1220"></div>
+        <div class="ctl"><div class="row"><label for="aa" data-i18n="nl.a"></label><output id="aav" for="aa"></output></div>
+          <input id="aa" type="range" min="0.05" max="1" step="0.05" value="0.5"></div>
+        <div class="ctl"><div class="row"><label for="e2" data-i18n="nl.e2"></label><output id="e2v" for="e2"></output></div>
+          <input id="e2" type="range" min="0" max="0.5" step="0.01" value="0.1"></div>
+        <div class="ctl"><div class="row"><label for="e3" data-i18n="nl.e3"></label><output id="e3v" for="e3"></output></div>
+          <input id="e3" type="range" min="0" max="0.5" step="0.01" value="0"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="nl.k.thd"></span><span class="v" id="vt"></span><span class="f" id="ft"></span></div>
+          <div class="stat"><span class="k" data-i18n="nl.k.diff"></span><span class="v" id="vd"></span><span class="f" id="fd"></span></div>
+          <div class="stat"><span class="k" data-i18n="nl.k.cub"></span><span class="v" id="vc"></span><span class="f" id="fc"></span></div>
+        </div>
+        <button type="button" class="btn tinted" id="play" data-i18n="au.play"></button>
+        <p class="aux" id="aumsg" aria-live="polite"></p>
+      </div>
+      <figcaption data-i18n-html="sp.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <p data-i18n-html="s4.p2"></p>
+    <p data-i18n-html="s4.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/reponses-non-lineaires.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/ondes.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+
+/* ---------- deux sons purs de même amplitude A dans x ↦ x + ε₂x² + ε₃x³ (K = 1) : les raies de la sortie et sa forme ---------- */
+(() => {
+  const O = self.Ondes, FMAX = 4600, YMIN = 1e-4, TMAX = 0.01, M = 1200, TS = Array.from({ length: M + 1 }, (_, i) => TMAX * i / M);
+  const IDX = ["₁", "₂"], MOINS = "−";
+  /* (p₁, p₂) → « 2f₁ − f₂ » : des symboles, pas des mots ; le vecteur nul est la composante continue */
+  const nomRaie = v => { if (v.every(p => p === 0)) return "0";
+    return v.map((p, i) => [p, i]).filter(([p]) => p).sort((x, y) => (y[0] > 0) - (x[0] > 0)).map(([p, i], j) => (p < 0 ? (j ? " " + MOINS + " " : MOINS) : j ? " + " : "") + (Math.abs(p) > 1 ? Math.abs(p) : "") + "f" + IDX[i]).join(""); };
+  function upd() {
+    const f1 = +$("f1").value, f2 = +$("f2").value, A = +$("aa").value, e2 = +$("e2").value, e3 = +$("e3").value;
+    const S = sons();
+    const svg = $("sp"); svg.innerHTML = "";
+    const P = Plot.axes(svg, { fmt: F, w: 640, h: 240, pad: { l: 56, b: 44, t: 28 }, x: { domain: [0, FMAX], label: t("sp.xaxis") }, y: { domain: [YMIN, 3], scale: "log", label: t("sp.yaxis") } });
+    S.raies.forEach((r, i) => {
+      /* l'ordre du terme qui crée la raie ; la composante continue ne vient que de x² (un terme impair ne redresse pas) */
+      const ordre = Math.max(2 * (r.f === 0), ...r.origines.map(v => v.reduce((s, p) => s + Math.abs(p), 0))), v = Math.max(YMIN, Math.abs(r.A) / A);
+      const c = ordre === 1 ? "c-label-2" : ordre === 2 ? "c-tint" : "c-warn", x = P.x(r.f);
+      Plot.el("line", { x1: x, x2: x, y1: P.y(YMIN), y2: P.y(v), class: "stroke " + c }, P.g);
+      Plot.el("circle", { cx: x, cy: P.y(v), r: 3, class: "fill " + c }, P.g);
+      Plot.el("text", { x, y: P.y(v) - 6 - (i % 2) * 12, "text-anchor": "middle", class: "tick" }, P.g).textContent = r.origines.map(nomRaie).join(", ");
+    });
+    const fo = $("fo"); fo.innerHTML = "";
+    const ym = Math.max(...TS.map(x => Math.abs(S.sortie(x))), 2 * A) * 1.1;
+    const Q = Plot.axes(fo, { fmt: F, w: 640, h: 200, pad: { l: 56, b: 44 }, x: { domain: [0, 1000 * TMAX], label: t("fo.xaxis") }, y: { domain: [-ym, ym], label: t("fo.yaxis") } });
+    Plot.el("path", { d: Plot.path(TS.map(x => [Q.x(1000 * x), Q.y(S.entree(x))])), class: "stroke thin c-label-2" }, Q.g);
+    Plot.el("path", { d: Plot.path(TS.map(x => [Q.x(1000 * x), Q.y(S.sortie(x))])), class: "stroke c-tint" }, Q.g);
+    const d = O.distorsion(1, e2, e3, A), fd = Math.abs(f2 - f1), fc = Math.abs(2 * f1 - f2);
+    $("f1v").textContent = F.si(f1, "Hz"); $("f2v").textContent = F.si(f2, "Hz"); $("aav").textContent = F.num(A, 2);
+    $("e2v").textContent = F.num(e2, 2); $("e3v").textContent = F.num(e3, 2);
+    $("vt").textContent = F.qty(F.num(100 * d.thd, 2), "%"); $("ft").textContent = t("nl.f.thd", { f: F.si(f1, "Hz") });
+    $("vd").textContent = F.num(fd ? Math.abs(S.raie(fd)) / A : 0, 2); $("fd").textContent = t("nl.f.diff", { f: F.si(fd, "Hz") });
+    $("vc").textContent = F.num(fc && f1 !== f2 ? Math.abs(S.raie(fc)) / A : 0, 2); $("fc").textContent = t("nl.f.cub", { f: F.si(fc, "Hz") });
+  }
+  /* les mêmes tons que le graphe (deux sons de même fréquence n'en font qu'un, d'amplitude double) */
+  const sons = () => { const f1 = +$("f1").value, f2 = +$("f2").value, A = +$("aa").value;
+    return O.sortieNonLineaire(1, +$("e2").value, +$("e3").value, f1 === f2 ? [{ A: 2 * A, f: f1 }] : [{ A, f: f1 }, { A, f: f2 }]); };
+  ["f1", "f2", "aa", "e2", "e3"].forEach(id => $(id).oninput = upd); upd();
+  /* écouter : 1,5 s de l'entrée, puis 1,5 s de la sortie déformée x + ε₂x² + ε₃x³, chacune normée (Ondes.jouer) */
+  $("play").onclick = () => { const S = sons();
+    $("aumsg").textContent = O.jouer([S.entree, S.sortie], 1.5) ? t("au.playing") : t("au.none"); };
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["tartini", 1754, "experiment"], ["helmholtz", 1856, "idea"], ["armstrong", 1918, "experiment"], ["franken", 1961, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["otoacoustique", "laser", "recepteur"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["lineaire", "c"], ["thd", "a"], ["redressement", "b"], ["difference", "d"], ["impaire", "a"], ["cubique", "c"], ["laser", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 506 });
+})();
+</script>
+</body>
+</html>

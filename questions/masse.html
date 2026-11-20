@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-i18n="h1">C'est quoi la masse d'un objet ?</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .relier a { font-weight: 600; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/questions" data-i18n="crumb.questions"></a><span class="aux">›</span><span data-i18n="crumb.titre"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-meca" href="/racoon/atlas?piste=meca" data-i18n="tag.piste"></a>
+      <span class="chip plain" data-i18n="tag.prereq"></span>
+      <span class="chip plain" data-i18n="tag.duree"></span>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="obs.sec"></span>
+    <h2 data-i18n="obs.h2"></h2>
+    <p data-i18n="obs.p1"></p>
+    <p data-i18n="obs.p2"></p>
+    <p data-i18n="obs.p3"></p>
+    <figure>
+      <svg class="fig" id="lab" viewBox="0 140 600 160" role="img" data-i18n-attr="aria-label:lab.aria"></svg>
+      <div class="panel">
+        <div class="controls">
+          <label class="field"><span data-i18n="lab.lieu"></span>
+            <select id="lieu"><option value="terre" data-i18n="lab.terre"></option><option value="lune" data-i18n="lab.lune"></option><option value="mars" data-i18n="lab.mars"></option></select></label>
+          <div class="ctl"><div class="row"><label for="msl" data-i18n="lab.m"></label><output id="mread" for="msl"></output></div>
+            <input id="msl" type="range" min="0.5" max="20" step="0.5" value="2"></div>
+        </div>
+        <div class="controls"><button class="btn tinted" type="button" id="push" data-i18n="lab.push"></button></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="lab.k.lecture"></span><span class="v" id="slec"></span><span class="f" data-i18n="lab.f.lecture"></span></div>
+          <div class="stat"><span class="k" data-i18n="lab.k.poids"></span><span class="v" id="spoids"></span></div>
+          <div class="stat"><span class="k" data-i18n="lab.k.a"></span><span class="v" id="sa"></span><span class="f" data-i18n="lab.f.a"></span></div>
+          <div class="stat"><span class="k" data-i18n="lab.k.d"></span><span class="v" id="sd"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n="lab.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="deux.sec"></span>
+    <h2 data-i18n="deux.h2"></h2>
+    <p data-i18n-html="deux.p1"></p>
+    <p data-i18n="deux.p2"></p>
+    <div class="eq">
+      <math display="block"><mi>a</mi><mo>=</mo><mfrac><msub><mi>m</mi><mi>g</mi></msub><msub><mi>m</mi><mi>i</mi></msub></mfrac><mspace width="0.2em"></mspace><mi>g</mi></math>
+      <span class="n">(1)</span>
+    </div>
+    <p class="validite" data-i18n="val.1"></p>
+    <p data-i18n="deux.p3"></p>
+    <div class="box prop"><b data-i18n="deux.prop.title"></b>
+      <p data-i18n="deux.prop.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="energie.sec"></span>
+    <h2 data-i18n="energie.h2"></h2>
+    <p data-i18n="energie.p1"></p>
+    <div class="eq">
+      <math display="block"><mi>E</mi><mo>=</mo><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup></math>
+      <span class="n">(2)</span>
+    </div>
+    <p class="validite" data-i18n="val.2"></p>
+    <p id="battery"></p>
+    <div class="box rem"><b data-i18n="energie.rem.title"></b>
+      <p data-i18n-html="energie.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="proton.sec"></span>
+    <h2 data-i18n="proton.h2"></h2>
+    <p data-i18n="proton.p1"></p>
+    <p data-i18n="proton.p2"></p>
+    <figure>
+      <svg class="fig" id="proton" viewBox="0 0 600 40" role="img" data-i18n-attr="aria-label:proton.aria"></svg>
+      <div class="legend" id="plegend"></div>
+    </figure>
+    <p data-i18n="proton.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="kg.sec"></span>
+    <h2 data-i18n="kg.h2"></h2>
+    <p data-i18n="kg.p1"></p>
+    <p data-i18n-html="kg.p2"></p>
+    <div class="eq">
+      <math display="block"><mi>m</mi><mi>g</mi><mi>v</mi><mo>=</mo><mi>U</mi><mi>I</mi></math>
+      <span class="n">(3)</span>
+    </div>
+    <p class="validite" data-i18n="val.3"></p>
+    <p data-i18n-html="kg.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="limites.sec"></span>
+    <h2 data-i18n="limites.h2"></h2>
+    <div class="box prop"><b data-i18n="limites.bien.title"></b><p data-i18n="limites.bien.body"></p></div>
+    <div class="box warn"><b data-i18n="limites.mal.title"></b><p data-i18n="limites.mal.body"></p></div>
+    <div class="box rem"><b data-i18n="limites.ouvert.title"></b><p data-i18n="limites.ouvert.body"></p></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="relier.sec"></span>
+    <h2 data-i18n="relier.h2"></h2>
+    <p data-i18n="relier.intro"></p>
+    <div class="list stack relier" id="relier"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/locales/fr/questions/masse.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/questions/masse.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- balance et poussée ---------- */
+(() => {
+  const svg = document.getElementById("lab"), lieu = document.getElementById("lieu"), msl = document.getElementById("msl");
+  const PUSH = 10, X0 = 290, PX = 28;                                 // 10 N ; piste : 28 px par mètre, 10 m
+  const g = Plot.el("g", {}, svg);
+  Plot.el("rect", { x: 30, y: 226, width: 190, height: 40, rx: 8, class: "fill c-label-2" }, g);
+  Plot.el("rect", { x: 70, y: 234, width: 110, height: 24, rx: 4, class: "fill c-label", "fill-opacity": "0.85" }, g);
+  const screen = Plot.el("text", { x: 125, y: 251, "text-anchor": "middle", class: "fill c-ok" }, g);
+  const plate = Plot.el("rect", { x: 40, y: 214, width: 170, height: 8, rx: 3, class: "fill c-label-2" }, g);
+  const obj = Plot.el("rect", { class: "fill c-tint", rx: 4 }, g);
+  Plot.el("text", { x: 125, y: 290, "text-anchor": "middle" }, g).textContent = t("lab.balance");
+  Plot.el("line", { x1: X0 - 10, x2: X0 + 10 * PX + 10, y1: 236, y2: 236, class: "stroke thin c-label-2" }, g);
+  for (let k = 0; k <= 10; k += 2) {
+    Plot.el("line", { x1: X0 + k * PX, x2: X0 + k * PX, y1: 236, y2: 242, class: "stroke thin c-label-2" }, g);
+    Plot.el("text", { x: X0 + k * PX, y: 256, "text-anchor": "middle" }, g).textContent = F.si(k, "m");
+  }
+  Plot.el("text", { x: X0 + 5 * PX, y: 290, "text-anchor": "middle" }, g).textContent = t("lab.glace");
+  const puck = Plot.el("rect", { class: "fill c-tint", rx: 4 }, g);
+  const arrow = Plot.el("path", { class: "stroke bold c-warn" }, g);
+
+  let d = 0, anim = 0;
+  const side = m => 26 + 30 * Math.cbrt(m / 20);
+  function draw(m, pushing) {
+    const s = side(m), x = X0 + Math.min(d, 10) * PX;
+    puck.setAttribute("x", x - s / 2); puck.setAttribute("y", 236 - s); puck.setAttribute("width", s); puck.setAttribute("height", s);
+    arrow.setAttribute("d", pushing ? `M${(x - s / 2 - 34).toFixed(1)} ${236 - s / 2} h26 m-8 -6 l8 6 l-8 6` : "");
+  }
+  function upd() {
+    cancelAnimationFrame(anim); d = 0;
+    const m = +msl.value, gl = Masse.LIEUX[lieu.value], lec = Masse.lecture(m, gl), a = Masse.acceleration(PUSH, m);
+    const s = side(m), sink = 3 * Math.min(lec / 20, 1);
+    plate.setAttribute("y", 214 + sink);
+    obj.setAttribute("x", 125 - s / 2); obj.setAttribute("y", 214 + sink - s); obj.setAttribute("width", s); obj.setAttribute("height", s);
+    screen.textContent = F.qty(F.fix(lec, 2), t("lab.unit.kg"));
+    document.getElementById("mread").textContent = F.qty(F.num(m, 3), t("lab.unit.kg"));
+    document.getElementById("slec").textContent = F.qty(F.fix(lec, 2), t("lab.unit.kg"));
+    document.getElementById("spoids").textContent = F.si(Masse.poids(m, gl), "N");
+    document.getElementById("sa").textContent = F.qty(F.num(a, 3), "m·s⁻²");
+    document.getElementById("sd").textContent = F.si(Masse.chemin(a, 1), "m");
+    draw(m, false);
+  }
+  document.getElementById("push").onclick = () => {
+    upd();
+    const m = +msl.value, a = Masse.acceleration(PUSH, m);
+    if (reduce) { d = Masse.chemin(a, 1); draw(m, false); return; }
+    const t0 = performance.now();
+    const step = now => { const s = Math.min((now - t0) / 1000, 1); d = Masse.chemin(a, s); draw(m, s < 1); if (s < 1) anim = requestAnimationFrame(step); };
+    anim = requestAnimationFrame(step);
+  };
+  lieu.onchange = msl.oninput = upd; upd();
+})();
+
+/* ---------- batterie ---------- */
+document.getElementById("battery").textContent = t("energie.p2", { dm: F.qty(F.sci(Masse.masse(12.98 * 3600), 2), t("lab.unit.kg")) });
+
+/* ---------- masse du proton (Yang et al., 2018) ---------- */
+(() => {
+  const PARTS = [["quarks", 32, "c-tint"], ["gluons", 36, "t-em"], ["anomalie", 23, "t-relat"], ["condensat", 9, "t-quant"]];
+  const txt = textOf("proton.legend", PARTS.map(p => p[0])), svg = document.getElementById("proton");
+  let x = 0;
+  PARTS.forEach(([id, pc, cls]) => { Plot.el("rect", { x: x * 6, y: 4, width: pc * 6 - 2, height: 32, rx: 4, class: "fill " + cls }, svg); x += pc; });
+  document.getElementById("plegend").innerHTML = PARTS.map(([id, , cls]) => `<span class="sq ${cls}">${txt[id]}</span>`).join("");
+})();
+
+/* ---------- relier ---------- */
+(() => {
+  const NOTIONS = ["dynamique", "gravitation", "relat_energie", "mesure"], txt = textOf("relier.items", NOTIONS);
+  document.getElementById("relier").innerHTML = NOTIONS.map(id => `<div><a href="/racoon/atlas?notion=${id}">${txt[id].name}</a><span>${txt[id].text}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["newton", 1687, "experiment"], ["ipk", 1889, "use"], ["einstein", 1905, "idea"], ["eotvos", 1906, "experiment"], ["kibble", 1975, "experiment"],
+    ["microscope", 2016, "experiment"], ["yang", 2018, "idea"], ["kg2019", 2019, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount(document.getElementById("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["lne", "iss", "nucleaire"], uses = textOf("uses.items", USES);
+  document.getElementById("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["lune", "a"], ["pousse", "a"], ["chute", "a"], ["microscope", "a"], ["batterie", "a"], ["proton", "a"], ["kibble", "a"], ["prototype", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount(document.getElementById("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

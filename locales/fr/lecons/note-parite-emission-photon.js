@@ -1,0 +1,102 @@
+/* Leçon « Note 2 sur la parité de l'émission de photon » (Feynman III.18.8) : textes en français.
+   Une autre langue = locales/<langue>/lecons/note-parite-emission-photon.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Note 2 sur la parité de l'émission de photon",
+    "crumb.jour": "Note 2 : parité et photon",
+    "h1": "Note 2 sur la parité de l'émission de photon",
+    "lede": "Dans « Le rayonnement dipolaire électrique quantique », le signe de l'amplitude d'émission vers le bas venait d'une inversion suivie d'une rotation. Cette note obtient le même signe autrement : en écrivant l'état final avec une parité définie. Elle montre aussi ce qui change quand l'état excité a la même parité que l'état final.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : le rayonnement dipolaire quantique",
+    "eq.haut": "haut",
+    "eq.bas": "bas",
+
+    "s1.sec": "L'état final",
+    "s1.h2": "Un photon vers le haut ou vers le bas",
+    "s1.p1": "Le système : le même atome de spin 1, <var>m</var> = +1, qui retombe dans un état de spin 0 en émettant un photon ; on ne regarde que les deux directions de l'axe. Après l'émission, le photon est droit vers le haut ou gauche vers le bas, en superposition :",
+    "val.18.72": "Exacte : ce sont les deux seuls états à un photon le long de l'axe qui emportent +ħ selon <var>z</var>. α et β sont à trouver ; leurs carrés sont les probabilités des deux directions.",
+    "val.18.73": "Exacte : l'inversion d'espace <var>P</var> renverse la direction du photon sans changer le sens de rotation de son champ par rapport à un repère fixe ; elle change donc un photon droit vers le haut en photon gauche vers le bas, et réciproquement.",
+
+    "s2.sec": "Imposer la parité",
+    "s2.h2": "Une somme ou une différence",
+    "s2.p1": "Les états |<var>R</var><sub>haut</sub>⟩ et |<var>L</var><sub>bas</sub>⟩ ne sont pas, chacun, de parité définie : <var>P</var> les échange. Seules leur somme et leur différence le sont, de parité +1 et \u22121 :",
+    "val.18.75": "Exacte : l'électromagnétisme conserve la parité, et l'atome passe d'un état impair à un état pair ; le photon doit donc emporter une parité impaire, |ψ<sub><var>F</var></sub><sup>\u2212</sup>⟩. D'où β = \u2212α : l'amplitude vers le bas est l'opposée de l'amplitude vers le haut.",
+    "s2.p2": "Vérifions que c'est bien le résultat de la première méthode. Tournons cet état de 180° autour de <var>y</var> : le haut devient le bas, et le photon droit vers le haut devient un photon droit vers le bas.",
+    "val.18.76": "Exacte : une rotation ne change pas le sens de rotation d'un photon par rapport à sa direction, elle change seulement cette direction.",
+    "s2.p3": "L'état tourné est celui d'un atome de <var>m</var> = \u22121, qui émet un photon droit vers le bas avec l'amplitude α et un gauche vers le haut avec \u2212α. Les deux méthodes donnent le même signe, \u2212.",
+
+    "s3.sec": "Comparer les deux parités",
+    "s3.h2": "Ce que le signe change",
+    "s3.p1": "Si l'état excité était pair, comme l'état final, l'émission d'un seul photon le long de l'axe garderait la même forme, mais avec |ψ<sub><var>F</var></sub><sup>+</sup>⟩ : β = +α. C'est une transition dipolaire magnétique. Les intensités dans chaque direction sont les mêmes ; la polarisation, non. Choisissez la parité et l'angle d'observation.",
+    "fig.aria": "Ellipse de polarisation du photon émis dans la direction choisie, pour une transition de parité impaire vers paire ou paire vers paire",
+    "fig.parite": "Parité de l'état excité",
+    "fig.b.impair": "impair → pair, dipolaire électrique",
+    "fig.b.pair": "pair → pair, dipolaire magnétique",
+    "fig.theta": "Direction d'observation θ",
+    "fig.perp": "⊥ plan",
+    "fig.plan": "dans le plan",
+    "fig.k.amp": "Amplitudes droite et gauche",
+    "fig.v.amp": "{r} ; {l}",
+    "fig.f.e1": "β = \u2212α : état final impair",
+    "fig.f.m1": "β = +α : état final pair",
+    "fig.k.axe": "Grand axe de l'ellipse",
+    "fig.v.perp": "perpendiculaire au plan",
+    "fig.v.plan": "dans le plan",
+    "fig.f.axe": "rapport des axes |cos θ| = {v}",
+    "fig.caption": "Le plan est celui qui contient l'axe <var>z</var> et la direction d'observation. À 90°, la lumière est polarisée linéairement : perpendiculairement au plan pour la transition impaire vers paire, dans le plan pour la transition paire vers paire. Mesurer cette direction de polarisation, c'est mesurer la parité relative des deux états.",
+
+    "s4.sec": "Décrire le système",
+    "s4.h2": "Ce que la parité suppose",
+    "s4.p1": "Le raisonnement suppose que l'interaction qui produit le photon conserve la parité. C'est vrai de l'électromagnétisme, et de la gravitation ; c'est faux de l'interaction faible, dont l'effet sur un atome est minuscule mais mesurable.",
+    "sys.title": "Deux ordres de grandeur",
+    "sys1.body": "Une transition paire vers paire ne peut pas être dipolaire électrique : elle passe par le dipôle magnétique ou le quadripôle électrique. Leur taux est plus petit d'un facteur de l'ordre de (<var>ka</var>)<sup>2</sup>, avec <var>k</var> = 2π/λ et <var>a</var> la taille de l'atome : environ {r} fois plus lent pour un atome de 0,1\u00a0nm et une lumière de 500\u00a0nm, en ordre de grandeur.",
+    "sys2.body": "Dans les complexes de métaux de transition, les transitions entre orbitales d sont paires vers paires, donc faibles. Le complexe tétraédrique [CoCl<sub>4</sub>]<sup>2\u2212</sup>, sans centre d'inversion, absorbe environ {r} fois plus fort que l'octaédrique [Co(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>, qui en a un : bleu profond contre rose pâle.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "La parité, conservée puis brisée",
+    "hist.intro": "La règle « une transition dipolaire électrique change la parité » a été lue dans les spectres avant d'être comprise. Trente ans plus tard, on a découvert qu'une des interactions de la nature ne la respecte pas.",
+    "hist.events": {
+      laporte: { who: "Otto Laporte et William F. Meggers", what: "publient la règle : les transitions électroniques qui conservent la parité sont interdites.", context: "Elle vaut rigoureusement pour les atomes et les molécules qui ont un centre de symétrie, dans l'approximation dipolaire électrique de cette leçon." },
+      pion: { who: "Chinowsky et Steinberger", what: "montrent que le pion a une parité négative.", context: "La parité intrinsèque d'une particule se mesure, comme celle de l'atome excité ici, par la conservation de la parité dans une réaction." },
+      leeyang: { who: "Tsung-Dao Lee et Chen Ning Yang", what: "montrent que la conservation de la parité n'a jamais été vérifiée pour l'interaction faible, et proposent des tests directs.", context: "Pour l'électromagnétisme et l'interaction forte, de nombreuses expériences la confirmaient ; pour les désintégrations β, aucune." },
+      wu: { who: "Wu, Ambler, Hayward, Hoppes et Hudson", what: "observent une violation nette de la parité dans la désintégration β du cobalt 60.", context: "Garwin, Lederman et Weinrich la confirment aussitôt avec des muons ; les deux articles paraissent côte à côte." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      couleurs: { name: "La couleur des complexes métalliques", text: "La règle de Laporte explique pourquoi beaucoup de complexes octaédriques de métaux de transition sont pâles : leurs transitions entre orbitales d, de même parité, sont interdites, et ne se produisent que faiblement, aidées par les vibrations de la molécule. Les chimistes s'en servent pour lire la géométrie d'un complexe dans l'intensité de sa couleur." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      propre: { prompt: "Pourquoi |R_haut⟩ seul n'est-il pas un état de parité définie ?",
+        options: { a: "Parce qu'un photon n'a pas de parité.", b: "Parce que l'inversion le change en |L_bas⟩, un autre état : il n'est pas multiplié par un nombre.", c: "Parce qu'il est polarisé.", d: "Parce que sa parité dépend de θ." },
+        why: "Un état de parité définie vérifie P|ψ⟩ = ±|ψ⟩. Or P|R_haut⟩ = |L_bas⟩. Seules les combinaisons |R_haut⟩ ± |L_bas⟩ sont propres, de parité ±1." },
+      signe: { prompt: "Un atome passe d'un état impair à un état pair en émettant un photon. Quel est l'état du photon émis le long de l'axe ?",
+        options: { a: "|R_haut⟩ + |L_bas⟩.", b: "|R_haut⟩ seul.", c: "Un mélange incohérent des deux.", d: "|R_haut⟩ \u2212 |L_bas⟩, de parité impaire : β = \u2212α." },
+        why: "La parité se conserve : impair = pair × parité du photon, qui doit donc être impaire. C'est (18.75), et le signe \u2212 retrouve (18.2)." },
+      rotation: { prompt: "À quoi sert la rotation de 180° autour de y, (18.76) ?",
+        options: { a: "À vérifier que le signe trouvé par la parité est le même que par la méthode de l'inversion suivie d'une rotation.", b: "À changer la parité de l'état.", c: "À montrer que le photon change de polarisation.", d: "À calculer α." },
+        why: "La rotation ne touche pas la parité : elle relie l'état obtenu à celui d'un atome de m = \u22121, ce que la première méthode utilisait. Les deux raisonnements donnent β = \u2212α." },
+      pair: { prompt: "Si l'état excité est pair, comme l'état final, que change la polarisation observée à 90° ?",
+        options: { a: "Rien.", b: "Elle devient circulaire.", c: "La polarisation linéaire tourne de 90° : elle est dans le plan qui contient z et la direction d'observation, au lieu de lui être perpendiculaire.", d: "Il n'y a plus de lumière à 90°." },
+        hint: "Comparez α|R⟩ \u2212 α|L⟩ et α|R⟩ + α|L⟩ en polarisations linéaires.",
+        why: "(|R⟩ + |L⟩)/√2 et (|R⟩ \u2212 |L⟩)/√2 sont deux polarisations linéaires perpendiculaires, x et y à une phase près. Le signe de β choisit l'une ou l'autre. Les intensités, elles, ne changent pas." },
+      impose: { prompt: "Qu'est-ce qui permet d'affirmer que l'état final a une parité bien définie ?",
+        options: { a: "La conservation de la parité par l'interaction électromagnétique, qui produit le photon.", b: "Le fait que le photon soit sans masse.", c: "La conservation de l'énergie.", d: "La conservation du moment cinétique seule." },
+        why: "Si l'hamiltonien commute avec l'inversion, la parité initiale se retrouve dans l'état final. C'est vrai pour l'électromagnétisme. Pour l'interaction faible, non." },
+      faible: { prompt: "La violation de la parité par l'interaction faible ruine-t-elle le raisonnement de cette note ?",
+        options: { a: "Oui : la parité n'est jamais conservée.", b: "Non : l'émission du photon est électromagnétique, et l'effet de l'interaction faible sur les niveaux d'un atome est minuscule.", c: "Oui, pour tous les atomes lourds.", d: "Non, car le photon n'est pas soumis à l'interaction faible ni à l'électromagnétisme." },
+        why: "L'électromagnétisme conserve la parité. L'interaction faible mélange un peu les états de parités opposées d'un atome, mais l'effet est si faible qu'il ne se mesure qu'avec des expériences dédiées." },
+      laporte: { prompt: "Pourquoi un complexe octaédrique de cobalt est-il pâle, et un complexe tétraédrique bleu profond ?",
+        options: { a: "Parce que le cobalt change de charge.", b: "Parce que l'octaèdre absorbe plus fort.", c: "Parce que le tétraèdre est plus gros.", d: "Parce que l'octaèdre a un centre d'inversion : ses transitions d-d, paires vers paires, sont interdites par la règle de Laporte ; le tétraèdre n'en a pas." },
+        why: "La règle de Laporte est la règle de parité de cette note, appliquée aux molécules à centre de symétrie. Sans centre d'inversion, les états ne sont plus de parité définie et la transition est permise : environ 60 fois plus intense ici." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 18, §18-8 (texte original en anglais). Laporte et Meggers, coefficients d'absorption des complexes de cobalt : Wikipédia, « Laporte rule ». Chinowsky et Steinberger, Lee et Yang, Wu et al., Garwin, Lederman et Weinrich : Wikipédia, « Parity (physics) ». Calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La molécule d'hydrogène</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-quantique-deux-etats" data-i18n="monde.quantique-deux-etats"></a><span class="aux">›</span><a href="/racoon/etape?id=molecules-deux-etats" data-i18n="etape.molecules-deux-etats"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-quant" href="/racoon/atlas?piste=quant" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/ion-moleculaire-hydrogene" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mo>|</mo><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">I</mi></mrow><mo>⟩</mo><mo>=</mo><mfrac><mrow><mo>|</mo><mn>1</mn><mo>⟩</mo><mo>+</mo><mo>|</mo><mn>2</mn><mo>⟩</mo></mrow><msqrt><mn>2</mn></msqrt></mfrac><mo>,</mo><mspace width="1em"/><mo>|</mo><mi mathvariant="normal">I</mi><mo>⟩</mo><mo>=</mo><mfrac><mrow><mo>|</mo><mn>1</mn><mo>⟩</mo><mo>−</mo><mo>|</mo><mn>2</mn><mo>⟩</mo></mrow><msqrt><mn>2</mn></msqrt></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.etats"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mo>|</mo><mo>+</mo><mo>−</mo><mo>⟩</mo><mo>−</mo><mo>|</mo><mo>−</mo><mo>+</mo><mo>⟩</mo></mrow><msqrt><mn>2</mn></msqrt></mfrac><mo>,</mo><mspace width="1em"/><mi>P</mi><mo>=</mo><mfrac><mrow><mn>1</mn><mo>−</mo><mi data-i18n="eq.cos"></mi><mi>θ</mi></mrow><mn>4</mn></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.singulet"></p>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>E</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">I</mi></mrow></msub><mo>(</mo><mi>D</mi><mo>)</mo><mo>=</mo><msub><mi>E</mi><mi>d</mi></msub><mrow><mo>[</mo><msup><mrow><mo>(</mo><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>a</mi><mo>(</mo><mi>D</mi><mo>−</mo><msub><mi>D</mi><mi>e</mi></msub><mo>)</mo></mrow></msup><mo>)</mo></mrow><mn>2</mn></msup><mo>−</mo><mn>1</mn><mo>]</mo></mrow></math></div>
+    <p class="validite" data-i18n-html="val.morse"></p>
+    <figure class="chart">
+      <svg class="fig" id="fig" viewBox="0 0 520 320" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.II"></span><span class="c-warn" data-i18n="fig.legend.I"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="sd" data-i18n="fig.d"></label><output id="sdr" for="sd"></output></div>
+            <input id="sd" type="range" min="40" max="300" step="1" value="74"></div>
+          <div class="ctl"><div class="row"><label for="sa" data-i18n="fig.angle"></label><output id="sar" for="sa"></output></div>
+            <input id="sa" type="range" min="0" max="180" step="1" value="180"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.II"></span><span class="v" id="vII"></span><span class="f" id="fII"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.I"></span><span class="v" id="vI"></span><span class="f" id="fI"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.P"></span><span class="v" id="vP"></span><span class="f" id="fP"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/molecule-d-hydrogene.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/quantique-deux-etats.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const Q = QuantDeux, K = Constantes, Cx = self.Cx, PM = 1e-12, eV = K.e, H2 = Q.h2Morse;
+
+/* ---------- the two curves, and the chance that two atoms meeting form the molecule ---------- */
+(() => {
+  const svg = $("fig"), sd = $("sd"), sa = $("sa"), N = 240, X0 = 40, X1 = 300, Y0 = -5, Y1 = 4;
+  function draw() {
+    const D = +sd.value * PM, th = +sa.value * Math.PI / 180, eII = Q.morse(D), eI = Q.antiMorse(D);
+    /* electron 1 up along z, electron 2 along a direction at θ from it, in the xz plane */
+    const p = Q.probaSingulet([Math.cos(th / 2), Math.sin(th / 2), 0, 0]);
+    svg.innerHTML = "";
+    const { x, y, g } = Plot.axes(svg, { fmt: F, w: 520, h: 320, x: { domain: [X0, X1], label: t("fig.x"), fmt: v => F.num(v, 0) },
+      y: { domain: [Y0, Y1], label: t("fig.y"), fmt: v => F.num(v, 0) } });
+    const clamp = v => Math.min(Y1, Math.max(Y0, v));
+    for (const [f, cls, sty] of [[Q.morse, "c-tint", "stroke bold"], [Q.antiMorse, "c-warn", "stroke dash"]]) {
+      const pts = Array.from({ length: N + 1 }, (_, i) => { const xr = X0 + (X1 - X0) * i / N; return [x(xr), y(clamp(f(xr * PM) / eV))]; });
+      Plot.el("path", { d: Plot.path(pts), class: sty }, Plot.el("g", { class: cls }, g));
+    }
+    const gl = Plot.el("g", { class: "c-label-2" }, g);
+    Plot.el("line", { x1: x(X0), x2: x(X1), y1: y(0), y2: y(0), class: "stroke thin dash" }, gl);
+    Plot.el("line", { x1: x(+sd.value), x2: x(+sd.value), y1: y(Y0), y2: y(Y1), class: "stroke thin" }, gl);
+    $("sdr").textContent = F.si(D, "m", { prefix: "p" });
+    $("sar").textContent = F.num(+sa.value, 0) + " °";
+    $("vII").textContent = F.si(eII / eV, "eV");
+    $("fII").textContent = t("fig.f.II");
+    $("vI").textContent = F.si(eI / eV, "eV");
+    $("fI").textContent = t("fig.f.I");
+    $("vP").textContent = F.num(p, 3);
+    $("fP").textContent = t("fig.f.P", { q: F.num(1 - p, 3) });
+  }
+  sd.oninput = draw; sa.oninput = draw; draw();
+})();
+
+/* ---------- the system described ---------- */
+(() => {
+  const zp = H2.De - H2.D0;
+  $("sys").innerHTML = t("sys.body", { De: F.si(H2.De / eV, "eV"), D0: F.si(H2.D0 / eV, "eV"), zp: F.si(zp / eV, "eV"), re: F.si(H2.re, "m", { prefix: "p" }),
+    kT: F.si(K.k_B * 300 / eV, "eV", { prefix: "m" }), r: F.num(H2.D0 / (K.k_B * 300), 0) });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["lewis", 1916, "idea"], ["heitler", 1927, "idea"], ["para", 1929, "experiment"], ["nobel", 1932, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["liquide", "rmn"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["base", "a"], ["spins", "c"], ["parallele", "d"], ["hasard", "b"], ["fermi", "a"], ["compare", "c"], ["ionique", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 1003 });
+})();
+</script>
+</body>
+</html>

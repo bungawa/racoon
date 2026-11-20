@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Poutre fléchie</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page outil">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/atlas" data-i18n="crumb.carte"></a><span class="aux">›</span><span data-i18n="crumb.piste"></span><span class="aux">›</span><span data-i18n="crumb.notion"></span><span class="aux">›</span><span data-i18n="crumb.outil"></span></div>
+    <h1 data-i18n="page.title"></h1>
+    <p class="lede" data-i18n="head.lede"></p>
+    <div class="tags"><span class="chip t-genie_civil" data-i18n="tag.piste"></span><span class="chip plain" data-i18n="tag.feynman"></span></div>
+  </header>
+
+  <div class="split">
+    <section class="card">
+      <div class="group"><h3 data-i18n="in.appuis"></h3>
+        <div class="seg" role="group" data-i18n-attr="aria-label:in.appuis.aria"><button type="button" id="b-appuis" aria-pressed="true" data-i18n="in.appuis.deux"></button><button type="button" id="b-console" aria-pressed="false" data-i18n="in.appuis.console"></button></div>
+      </div>
+      <div class="group"><h3 data-i18n="in.geo"></h3>
+        <div class="ctl"><div class="row"><label for="L" data-i18n-html="in.L"></label><output id="Lv" for="L"></output></div><input id="L" type="range" min="1" max="20" step="0.1" value="5"></div>
+        <div class="ctl"><div class="row"><label for="q" data-i18n-html="in.q"></label><output id="qv" for="q"></output></div><input id="q" type="range" min="0" max="50" step="0.5" value="5"></div>
+        <div class="ctl"><div class="row"><label for="F" data-i18n-html="in.F"></label><output id="Fv" for="F"></output></div><input id="F" type="range" min="0" max="200" step="1" value="8"></div>
+        <div class="ctl"><div class="row"><label for="a" data-i18n-html="in.a"></label><output id="av" for="a"></output></div><input id="a" type="range" min="0" max="1" step="0.005" value="0.5"></div>
+      </div>
+      <div class="group"><h3 data-i18n="in.mat"></h3>
+        <label class="field" for="mat"><span data-i18n="in.mat.label"></span><select id="mat"></select></label>
+        <div class="row2"><label class="field" for="E"><span data-i18n="in.E"></span><input id="E" type="number" min="1" step="1"></label><label class="field" for="fy"><span data-i18n="in.fy"></span><input id="fy" type="number" min="1" step="1"></label></div>
+      </div>
+      <div class="group"><h3 data-i18n="in.sec"></h3>
+        <label class="field" for="sec"><span data-i18n="in.sec.forme"></span><select id="sec">
+          <option value="I" data-i18n="sec.I"></option>
+          <option value="rect" data-i18n="sec.rect"></option>
+          <option value="tube" data-i18n="sec.tube"></option>
+        </select></label>
+        <div class="row2" id="dims"></div>
+      </div>
+      <div class="group"><h3 data-i18n="in.lim.titre"></h3>
+        <label class="field" for="lim"><span data-i18n="in.lim"></span><input id="lim" type="number" min="50" step="10" value="300"></label>
+      </div>
+    </section>
+
+    <section class="card">
+      <figure>
+        <svg class="fig" id="beam" viewBox="0 0 700 210" role="img" data-i18n-attr="aria-label:fig.beam.aria"></svg>
+        <figcaption data-i18n="fig.beam.caption"></figcaption>
+      </figure>
+      <figure class="chart"><svg id="cV" role="img" data-i18n-attr="aria-label:fig.V.aria"></svg></figure>
+      <figure class="chart"><svg id="cM" role="img" data-i18n-attr="aria-label:fig.M.aria"></svg></figure>
+      <figure class="chart"><svg id="cW" role="img" data-i18n-attr="aria-label:fig.W.aria"></svg></figure>
+    </section>
+  </div>
+
+  <section class="card">
+    <span class="sec" data-i18n="res.sec"></span>
+    <div class="stats" id="results"></div>
+    <p id="verdict" role="status"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="th.sec"></span>
+    <h2 data-i18n="th.h2"></h2>
+    <p data-i18n-html="th.p1"></p>
+    <p data-i18n-html="th.p2"></p>
+    <p data-i18n-html="th.p3"></p>
+    <div class="box rem"><b data-i18n="th.scope"></b>
+      <p data-i18n="th.scope.p"></p>
+    </div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/locales/fr/outils/poutre-flechie.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/outils/poutre-flechie.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;                       // every displayed text comes from the tables
+const Num = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);   // numbers and units in the display language
+document.title = t("page.title");
+Num.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), el = Plot.el;
+
+/* state */
+let appuis = "appuis";
+const SEC = {
+  I: { label: ["h", "b", "tw", "tf"], val: [200, 100, 5.6, 8.5], make: d => Poutre.profilI(...d) },
+  rect: { label: ["b", "h"], val: [100, 300], make: d => Poutre.rect(...d) },
+  tube: { label: ["D", "t"], val: [114.3, 5], make: d => Poutre.tube(...d) },
+};
+const DEF_MAT = { I: "acier", rect: "bois", tube: "acier" };
+Object.keys(Poutre.MATERIAUX).forEach(k => { const o = document.createElement("option"); o.value = k; o.textContent = t("mat." + k); $("mat").appendChild(o); });
+function setMat(k) { const m = Poutre.MATERIAUX[k]; $("mat").value = k; $("E").value = m.E / 1e9; $("fy").value = m.fy / 1e6; }
+function setSec(k) {
+  const s = SEC[k];
+  $("dims").innerHTML = s.label.map((l, i) => `<label class="field" for="d-${l}"><span></span><input id="d-${l}" type="number" min="0.1" step="0.1" value="${s.val[i]}"></label>`).join("");
+  $("dims").querySelectorAll("span").forEach((sp, i) => sp.textContent = t("dim", { s: s.label[i] }));
+  $("dims").querySelectorAll("input").forEach(i => i.oninput = update);
+  setMat(DEF_MAT[k]);
+}
+$("sec").onchange = () => { setSec($("sec").value); update(); };
+$("mat").onchange = () => { setMat($("mat").value); update(); };
+["L", "q", "F", "a", "E", "fy", "lim"].forEach(id => $(id).oninput = update);
+["appuis", "console"].forEach(k => $("b-" + k).onclick = () => { appuis = k; ["appuis", "console"].forEach(j => $("b-" + j).setAttribute("aria-pressed", j === k)); update(); });
+
+/* beam drawing */
+const X0 = 60, X1 = 640, Y = 110, svg = $("beam");
+function drawBeam(L, q, F, a, r) {
+  svg.innerHTML = "";
+  const sx = x => X0 + (X1 - X0) * x / L;
+  if (q > 0) {                                                         // distributed load
+    const top = Y - 30 - Math.min(40, 4 + q / 1e3 * 0.8);
+    el("line", { x1: X0, x2: X1, y1: top, y2: top, class: "stroke thin c-warn" }, svg);
+    for (let i = 0; i <= 12; i++) { const x = X0 + (X1 - X0) * i / 12; el("line", { x1: x, x2: x, y1: top, y2: Y - 16, class: "stroke thin c-warn" }, svg); el("path", { d: `M${x - 4} ${Y - 18}L${x + 4} ${Y - 18}L${x} ${Y - 10}Z`, class: "fill c-warn" }, svg); }
+    el("text", { x: X1, y: top - 6, "text-anchor": "end" }, svg).textContent = "q = " + Num.si(q, "N/m");
+  }
+  el("rect", { x: X0, y: Y - 8, width: X1 - X0, height: 16, class: "fill c-label-2" }, svg);
+  // deformed shape, scaled so the largest deflection is 28 px
+  const s = r.wmax.y ? 28 / Math.abs(r.wmax.y) : 0;
+  el("path", { d: r.x.map((x, i) => (i ? "L" : "M") + sx(x).toFixed(1) + " " + (Y + r.w[i] * s).toFixed(1)).filter((_, i) => i % 20 === 0 || i === r.x.length - 1).join(""), class: "stroke dash c-tint" }, svg);
+  if (appuis === "appuis") {
+    [X0, X1].forEach((x, i) => { el("path", { d: `M${x} ${Y + 8}L${x - 14} ${Y + 32}L${x + 14} ${Y + 32}Z`, class: "stroke" }, svg); if (i) [0, 1, 2].forEach(k => el("circle", { cx: x - 9 + 9 * k, cy: Y + 37, r: 3.5, class: "stroke" }, svg)); });
+  } else {
+    el("line", { x1: X0, x2: X0, y1: Y - 40, y2: Y + 40, class: "stroke" }, svg);
+    for (let k = -40; k < 40; k += 8) el("line", { x1: X0, y1: Y + k, x2: X0 - 10, y2: Y + k + 8, class: "stroke thin c-label-2" }, svg);
+  }
+  if (F > 0) {
+    const x = sx(a);
+    el("line", { x1: x, x2: x, y1: 18, y2: Y - 14, class: "stroke bold c-tint" }, svg);
+    el("path", { d: `M${x - 7} ${Y - 22}L${x + 7} ${Y - 22}L${x} ${Y - 9}Z`, class: "fill c-tint" }, svg);
+    const h = el("circle", { cx: x, cy: 18, r: 9, class: "handle", tabindex: "0", role: "slider", "aria-label": t("fig.handle.aria"), "aria-valuemin": 0, "aria-valuemax": L, "aria-valuenow": a }, svg);
+    el("text", { x: x + 14, y: 22 }, svg).textContent = "F = " + Num.si(F, "N");
+    h.addEventListener("keydown", e => { const d = e.key === "ArrowRight" ? 0.01 : e.key === "ArrowLeft" ? -0.01 : 0; if (d) { e.preventDefault(); $("a").value = Math.min(1, Math.max(0, +$("a").value + d)); update(); svg.querySelector(".handle")?.focus(); } });
+  }
+  el("text", { x: (X0 + X1) / 2, y: 200, "text-anchor": "middle" }, svg).textContent = "L = " + Num.si(L, "m", { prefix: "" });
+}
+let drag = false;
+svg.addEventListener("pointerdown", e => { if (e.target.classList.contains("handle")) { drag = true; svg.setPointerCapture(e.pointerId); } });
+svg.addEventListener("pointermove", e => {
+  if (!drag) return;
+  const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; const p = pt.matrixTransform(svg.getScreenCTM().inverse());
+  $("a").value = Math.min(1, Math.max(0, (p.x - X0) / (X1 - X0))); update();
+});
+svg.addEventListener("pointerup", () => drag = false);
+
+/* charts: one prefix per chart, chosen from its largest value */
+function chart(id, xs, ys, L, name, unit, mark) {   // name: a symbol (V, M) or a word from the table
+  const s = $(id); s.innerHTML = "";
+  const big = Math.max(...ys.map(Math.abs)) || 1, p = Object.keys(Num.PREFIX).find(k => big >= Num.PREFIX[k]) ?? "", f = Num.PREFIX[p];
+  const fmt = v => Num.num(v / f, 3);
+  const lo = Math.min(0, ...ys), hi = Math.max(0, ...ys), pad = (hi - lo || 1) * 0.12;
+  const { x, y, g } = Plot.axes(s, { fmt: Num, w: 640, h: 150, pad: { l: 64, b: 32, t: 10 }, x: { domain: [0, L], label: t("ax.x") }, y: { domain: [lo - pad, hi + pad], label: `${name} (${p}${unit})`, fmt, ticks: 7 } });
+  const step = Math.max(1, Math.floor(xs.length / 300)), pts = xs.map((v, i) => [v, ys[i]]).filter((_, i) => i % step === 0 || i === xs.length - 1);
+  el("path", { d: `M${x(0)} ${y(0)}` + pts.map(q => `L${x(q[0]).toFixed(1)} ${y(q[1]).toFixed(1)}`).join("") + `L${x(L)} ${y(0)}Z`, class: "area" }, g);
+  el("path", { d: pts.map((q, i) => (i ? "L" : "M") + x(q[0]).toFixed(1) + " " + y(q[1]).toFixed(1)).join(""), class: "curve" }, g);
+  el("line", { x1: x(0), x2: x(L), y1: y(0), y2: y(0), class: "zero" }, g);
+  if (mark && mark.y) { el("circle", { cx: x(mark.x), cy: y(mark.y), r: 4.5, class: "dot" }, g); el("text", { x: x(mark.x) + 8, y: y(mark.y) - 6, class: "note" }, g).textContent = Num.si(mark.y, unit); }
+}
+
+/* results with their formulas */
+function formulas(L, q, F, a) {
+  const onlyQ = F === 0 && q > 0, onlyF = q === 0 && F > 0;
+  if (appuis === "appuis") {
+    if (onlyQ) return { M: "f.M.qL2_8", w: "f.w.5qL4" };
+    if (onlyF && Math.abs(a - L / 2) < 1e-9) return { M: "f.M.FL_4", w: "f.w.FL3_48" };
+    if (onlyF) return { M: "f.M.Fa", w: "f.w.int" };
+  } else {
+    if (onlyQ) return { M: "f.M.qL2_2", w: "f.w.qL4_8" };
+    if (onlyF && Math.abs(a - L) < 1e-9) return { M: "f.M.FL", w: "f.w.FL3_3" };
+  }
+  return { M: "f.M.sup", w: "f.w.int" };                        // keys of the table
+}
+const stat = (k, v, f, ratio) => `<div class="stat"><span class="k">${k}</span><span class="v">${v}</span>${f ? `<span class="f">${f}</span>` : ""}${ratio != null ? `<div class="meter${ratio > 1 ? " over" : ""}"><i style="width:${Math.min(100, ratio * 100)}%"></i></div>` : ""}</div>`;
+
+function update() {
+  const L = +$("L").value, q = +$("q").value * 1e3, F = +$("F").value * 1e3, a = +$("a").value * L;
+  $("Lv").textContent = Num.si(L, "m", { prefix: "" }); $("qv").textContent = Num.si(q, "N/m"); $("Fv").textContent = Num.si(F, "N"); $("av").textContent = Num.si(a, "m", { prefix: "" });
+  let s;
+  try { s = SEC[$("sec").value].make([...$("dims").querySelectorAll("input")].map(i => +i.value / 1e3)); }
+  catch (e) { if (!e.code) throw e; $("results").innerHTML = ""; $("verdict").textContent = t("v.section", { e: t("err." + e.code) }); return; }
+  const E = +$("E").value * 1e9, fy = +$("fy").value * 1e6, lim = +$("lim").value;
+  if (!(E > 0) || !(fy > 0) || !(lim > 0)) { $("results").innerHTML = ""; $("verdict").textContent = t("v.positifs"); return; }
+  const r = Poutre.solve({ appuis, L, E, I: s.I, q, forces: F > 0 ? [{ F, a }] : [] }, 1200), c = Poutre.contraintes(r, s, fy), f = formulas(L, q, F, a), wlim = L / lim;
+  drawBeam(L, q, F, a, r);
+  chart("cV", r.x, r.V, L, "V", "N", r.Vmax);
+  chart("cM", r.x, r.M, L, "M", "N·m", r.Mmax);
+  chart("cW", r.x, r.w, L, t("ax.fleche"), "m", r.wmax);
+  $("results").innerHTML = [
+    stat(t("res.R." + appuis), Num.si(r.R.RA, "N") + " ; " + (appuis === "appuis" ? Num.si(r.R.RB, "N") : Num.si(r.R.MA, "N·m")), t("res.R.f", { v: Num.si(q * L + F, "N") })),
+    stat(t("res.M"), Num.si(Math.abs(r.Mmax.y), "N·m"), t("res.M.f", { f: t(f.M), x: Num.si(r.Mmax.x, "m", { prefix: "" }) })),
+    stat(t("res.V"), Num.si(Math.abs(r.Vmax.y), "N"), t("res.V.f")),
+    stat(t("res.I"), Num.qty(Num.sci(s.I, 3), "m⁴"), t("res.I.f", { v: Num.qty(Num.sci(s.Wel, 3), "m³") })),
+    stat(t("res.sigma"), Num.si(c.sigma, "Pa"), t("res.sigma.f", { v: Num.si(fy, "Pa") }), c.taux),
+    stat(t("res.tau"), Num.si(c.tau, "Pa"), t(s.type === "rect" ? "res.tau.rect" : "res.tau.ame")),
+    stat(t("res.w"), Num.si(r.wmax.y, "m", { prefix: "m" }), t("res.w.f", { f: t(f.w), lim, v: Num.si(wlim, "m", { prefix: "m" }) }), Math.abs(r.wmax.y) / wlim),
+    stat(t("res.Mpl"), Num.si(c.Mel, "N·m") + " ; " + Num.si(c.Mpl, "N·m"), t("res.Mpl.f")),
+  ].join("");
+  const ok = c.taux <= 1 && Math.abs(r.wmax.y) <= wlim;
+  const taux = Num.fix(c.taux, 2);
+  $("verdict").textContent = ok ? t("v.ok", { taux, lim })
+    : (c.taux > 1 ? t("v.sigma", { taux }) : "") + (Math.abs(r.wmax.y) > wlim ? t("v.w", { lim }) : "") + t("v.fix");
+}
+setSec("I"); update();
+</script>
+</body>
+</html>

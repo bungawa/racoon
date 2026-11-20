@@ -1,0 +1,97 @@
+/* Leçon « L'électromagnétisme dans la science et la technique » (Feynman II.1.6) : textes en français.
+   Une autre langue = locales/<langue>/lecons/electromagnetisme-science-technique.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "L'électromagnétisme dans la science et la technique",
+    "crumb.jour": "Science et technique",
+    "h1": "L'électromagnétisme dans la science et la technique",
+    "lede": "Les Grecs n'en connaissaient que deux curiosités : l'ambre frotté et la pierre d'aimant. Les mêmes lois expliquent pourtant la chimie, la lumière, et presque toute la technique depuis le XIXᵉ siècle.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : que sont les champs ?",
+
+    "s1.sec": "Deux curiosités",
+    "s1.h2": "Ce que les Grecs voyaient, et pourquoi si peu",
+    "s1.p1": "Dans l'Antiquité, on savait que l'ambre frotté attire des brins de papyrus, et qu'une pierre venue de Magnésie, la magnétite, attire le fer. C'était tout. Deux phénomènes marginaux, pour une force qui gouverne la matière : la raison est la neutralité presque parfaite de la matière, décrite dans la leçon « Les forces électriques ». Les effets électriques ne se montrent à notre échelle que lorsqu'on dérange un peu cet équilibre, en frottant, ou que des mouvements d'électrons s'alignent, comme dans un aimant.",
+    "s1.p2": "On sait maintenant que l'électromagnétisme est partout. Les liaisons chimiques sont des forces électriques résiduelles entre atomes ; la chimie, donc la biologie, en découlent. La lumière est une onde électromagnétique. Toutes les forces de contact de la mécanique, frottement, réaction d'un support, tension d'un fil, sont électriques au niveau des atomes.",
+
+    "s2.sec": "Des équations à la technique",
+    "s2.h2": "Une vitesse sortie de deux constantes",
+    "s2.p1": "ε<sub>0</sub> se mesure avec des charges immobiles ; μ<sub>0</sub>, avec des courants constants. Aucune de ces expériences ne fait intervenir de lumière. Pourtant, les équations de Maxwell prévoient des ondes dont la vitesse se calcule à partir de ces deux seules constantes. Wilhelm Weber et Rudolf Kohlrausch avaient mesuré, par des expériences purement électriques, une grandeur qui en donne la valeur ; Maxwell remarque qu'elle est très proche de la vitesse de la lumière mesurée directement, et en conclut que la lumière est une onde électromagnétique.",
+    "val.c": "Exacte dans le cadre des équations de Maxwell dans le vide. Depuis 1983, <var>c</var> est fixée exactement par la définition du mètre ; depuis 2019, μ<sub>0</sub> et ε<sub>0</sub> sont mesurées, mais liées par cette relation, de sorte que l'accord ci-dessous est exact aux arrondis près. Le test physique est ailleurs : la lumière, les ondes radio et les rayons X vont tous à cette même vitesse.",
+    "c.k.calc": "1/√(ε<sub>0</sub>μ<sub>0</sub>)",
+    "c.f.calc": "valeurs mesurées de ε0 et μ0",
+    "c.k.def": "Vitesse de la lumière",
+    "c.f.def": "valeur exacte, qui définit le mètre",
+    "s2.p2": "Toutes les ondes électromagnétiques ont la même vitesse dans le vide ; elles diffèrent par leur fréquence <var>f</var>, donc par leur longueur d'onde. Une antenne simple, un fil d'une demi-longueur d'onde, rayonne et capte efficacement à sa fréquence.",
+    "val.lambda": "Exacte dans le vide, par définition de la longueur d'onde d'une onde progressive sinusoïdale. Dans un milieu d'indice <var>n</var>, λ est divisée par <var>n</var> : 1,0003 dans l'air au sol, ce qu'on néglige presque toujours, 1,33 dans l'eau.",
+    "on.f": "Fréquence f",
+    "on.k.lambda": "Longueur d'onde λ",
+    "on.f.lambda": "comparable à {e}",
+    "on.k.bande": "Domaine",
+    "on.k.antenne": "Antenne demi-onde, λ/2",
+    "on.f.antenne": "longueur d'un dipôle simple",
+    "on.bandes": {
+      elf: { nom: "Très basses fréquences", usage: "le courant alternatif des réseaux, 50 Hz en Europe", echelle: "la taille d'un pays, ou plus" },
+      radio: { nom: "Ondes radio", usage: "radiodiffusion : grandes ondes, ondes moyennes, bande FM", echelle: "un bâtiment, une ville" },
+      micro: { nom: "Micro-ondes", usage: "téléphone mobile, Wi-Fi, radar, fours", echelle: "une main, un grain de riz" },
+      ir: { nom: "Infrarouge", usage: "chaleur rayonnée, télécommandes, fibres optiques", echelle: "un cheveu, ou moins" },
+      visible: { nom: "Lumière visible", usage: "ce que voient nos yeux, du rouge au violet", echelle: "une bactérie, ou moins" },
+      uv: { nom: "Ultraviolet", usage: "coups de soleil, désinfection de l'eau", echelle: "un virus" },
+      x: { nom: "Rayons X", usage: "radiographie, étude des cristaux", echelle: "un atome" },
+      gamma: { nom: "Rayons gamma", usage: "désintégrations nucléaires, radiothérapie", echelle: "bien moins qu'un atome" },
+    },
+    "on.caption": "Les frontières entre domaines sont des conventions : une onde de 3\u00a0GHz n'est pas de nature différente d'une onde de 2,9\u00a0GHz. Seule la fréquence change, de plus de vingt ordres de grandeur, et avec elle la façon de produire et de détecter l'onde.",
+    "s2.p3": "Le télégraphe, le réseau électrique, la radio : en un siècle, ces lois ont changé la vie quotidienne. Une simple tige métallique, une antenne, capte des ondes émises par des charges qui oscillent à des centaines de kilomètres de là. Vu de loin dans l'histoire, la découverte des lois de l'électrodynamique par Maxwell pourrait bien apparaître comme l'événement le plus important du XIXᵉ siècle.",
+    "s2.rem.title": "Remarque : la suite du parcours",
+    "s2.rem.body": "La mécanique d'une charge dans des champs donnés, sans avoir à les calculer, est l'objet de l'étape « Particule chargée ». Les lois des champs elles-mêmes demandent les outils des étapes « Flux et théorème de Gauss » et « Circulation et théorème de Stokes ».",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Le télégraphe, la lumière électrique, la radio",
+    "hist.intro": "Trois dates, trois techniques nées des lois de cette étape, chacune avant que les lois ne soient entièrement comprises.",
+    "hist.events": {
+      morse: { who: "Samuel Morse", what: "inaugure le 24 mai la ligne télégraphique entre Washington et Baltimore par le message « What hath God wrought ».", context: "Un courant établi et coupé dans un fil actionne, à l'autre bout, un électroaimant : l'information voyage presque à la vitesse de la lumière." },
+      edison: { who: "Compagnie d'éclairage de Thomas Edison", what: "met en service le 4 septembre la centrale de Pearl Street, à New York.", context: "Elle alimente en courant continu, sous 110 V, 82 clients et environ 400 lampes au départ. C'est l'un des premiers réseaux de distribution d'électricité." },
+      marconi: { who: "Guglielmo Marconi", what: "annonce avoir reçu le 12 décembre, à Terre-Neuve, un signal radio émis depuis Poldhu, en Cornouailles, à environ 3 500 km.", context: "Le signal est la lettre S du code Morse, trois brèves. La réception, sans témoin indépendant, a été discutée, mais la liaison transatlantique est établie dans les années qui suivent." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      reseau: { name: "Réseau électrique", text: "En Europe et dans la plus grande partie de l'Asie, le courant alternatif des réseaux est à 50 Hz ; en Amérique du Nord, à 60 Hz. Sa longueur d'onde, 6 000 km à 50 Hz, dépasse la taille des réseaux régionaux." },
+      fm: { name: "Radio FM", text: "En Europe, la bande de radiodiffusion FM s'étend de 87,5 à 108 MHz : des longueurs d'onde d'environ 3 m, d'où des antennes de l'ordre du mètre." },
+      wifi: { name: "Wi-Fi", text: "Les réseaux sans fil utilisent notamment la bande de 2 400 à 2 483,5 MHz : une longueur d'onde de 12 cm." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      grecs: { prompt: "Pourquoi les Grecs, entourés de matière tenue par des forces électriques, n'en connaissaient-ils que deux effets curieux ?",
+        options: { a: "Parce que la force électrique était plus faible à leur époque.", b: "Parce qu'ils n'avaient pas d'instruments de mesure.", c: "Parce que la matière est neutre avec une précision extrême : les effets électriques ne se montrent que si l'on dérange l'équilibre des charges.", d: "Parce que l'électricité n'agit qu'à l'intérieur des métaux." },
+        why: "Les attractions et répulsions se compensent presque exactement. Frotter de l'ambre déplace un tout petit nombre de charges, assez pour soulever des brins de papyrus : c'est ce déséquilibre qui se voit." },
+      vitesse: { prompt: "Pourquoi le calcul de 1/√(ε0 μ0) a-t-il convaincu Maxwell que la lumière est électromagnétique ?",
+        options: { a: "Parce qu'il donne la vitesse de la lumière à partir de constantes mesurées sans lumière, par des expériences d'électricité et de magnétisme.", b: "Parce que ε0 et μ0 ont été définis pour cela.", c: "Parce que la lumière est faite de charges.", d: "Parce que la vitesse des ondes ne dépend pas de la fréquence." },
+        hint: "Comment mesure-t-on ε0 et μ0 ?",
+        why: "ε0 vient des forces entre charges immobiles, μ0 des forces entre courants. Que leur combinaison donne la vitesse de la lumière ne pouvait pas être une coïncidence." },
+      lambda: { prompt: "Une station FM émet à 100 MHz. Quelle est la longueur d'onde dans l'air ?",
+        options: { a: "3 cm.", b: "300 m.", c: "30 cm.", d: "3 m." },
+        why: "λ = c/f = 3 × 10⁸ / 10⁸ = 3 m. L'indice de l'air, 1,0003, ne change ce résultat que de 0,03 %." },
+      antenne: { prompt: "Quelle longueur faut-il donner à une antenne dipôle simple, demi-onde, pour le Wi-Fi à 2,45 GHz ?",
+        options: { a: "Environ 12 cm.", b: "Environ 6 cm.", c: "Environ 1,2 m.", d: "Environ 6 mm." },
+        hint: "Calculez λ, puis prenez-en la moitié.",
+        why: "λ = 3 × 10⁸ / 2,45 × 10⁹ ≈ 12 cm, donc λ/2 ≈ 6 cm. C'est pourquoi ces antennes tiennent dans un boîtier." },
+      chimie: { prompt: "Quelle force est à l'origine des liaisons chimiques ?",
+        options: { a: "La force électrique, par des forces résiduelles entre atomes dont les charges ne se compensent pas exactement à courte distance.", b: "La force nucléaire forte.", c: "La gravitation entre atomes.", d: "Une force propre à la chimie, distincte de l'électromagnétisme." },
+        why: "À l'échelle des atomes, les charges ne sont pas exactement superposées : des forces électriques résiduelles, régies par la mécanique quantique, lient les atomes. La force forte ne sort pas des noyaux, la gravitation y est négligeable." },
+      reseau: { prompt: "La longueur d'onde du courant alternatif à 50 Hz vaut 6 000 km. Qu'en déduit-on pour le câblage d'une maison ?",
+        options: { a: "Qu'il rayonne beaucoup d'énergie.", b: "Que le courant met plusieurs secondes à arriver.", c: "Qu'à cette échelle, minuscule devant λ, on peut traiter le courant comme le même en tout point d'un fil à chaque instant.", d: "Que les antennes de maison doivent mesurer 3 000 km." },
+        why: "Une maison de 20 m est 300 000 fois plus petite que λ : le délai de propagation est négligeable devant la période. C'est le nombre L/(cΔt) de la leçon « Que sont les champs ? »." },
+      meme: { prompt: "Une onde radio de 100 MHz et un rayon X de 10¹⁸ Hz sont-ils de nature différente ?",
+        options: { a: "Oui : l'une est électrique, l'autre est faite de particules.", b: "Non : ce sont deux ondes électromagnétiques, de même vitesse dans le vide ; seule la fréquence change.", c: "Oui : le rayon X n'obéit pas aux équations de Maxwell.", d: "Non, et ils ont même longueur d'onde." },
+        why: "Le spectre électromagnétique est continu : des réseaux électriques aux rayons gamma, ce sont les mêmes champs E et B, les mêmes équations, la même vitesse c. Les frontières entre domaines sont des conventions." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 1 (texte original en anglais), §1-6. Les exemples chiffrés sont propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

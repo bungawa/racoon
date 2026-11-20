@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["echo", "a"],
+  ["houle", "b"],
+  ["deplacement", "c"],
+  ["continu", "d"],
+  ["premier-ordre", "a"],
+  ["choc", "b"],
+  ["croisement", "c"],
+  ["helium", "d"]
+ ]
+}

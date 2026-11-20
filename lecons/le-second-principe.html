@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le second principe</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .flux { width: 100%; max-width: 420px; height: auto; display: block; margin: 0 auto; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-thermo" data-i18n="monde.thermo"></a><span class="aux">›</span><a href="/racoon/etape?id=premier-second-principe" data-i18n="etape.premier-second-principe"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-thermo" href="/racoon/atlas?piste=thermo" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/machines-thermiques-et-premier-principe" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="box prop"><b data-i18n="s1.kelvin.title"></b>
+      <p data-i18n-html="s1.kelvin.body"></p>
+    </div>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="box prop"><b data-i18n="s1.clausius.title"></b>
+      <p data-i18n-html="s1.clausius.body"></p>
+    </div>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>Q</mi><mn>2</mn></msub><mo>=</mo><msub><mi>Q</mi><mn>1</mn></msub><mo>−</mo><mi>W</mi></math><span class="n">(44.3)</span></div>
+    <p class="validite" data-i18n-html="val.44.3"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="box rem"><b data-i18n="s2.equiv.title"></b>
+      <p data-i18n-html="s2.equiv.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure>
+      <svg class="fig flux" id="flux" viewBox="0 0 420 250" role="img" data-i18n-attr="aria-label:arb.aria"></svg>
+      <div class="controls" id="presets">
+        <button class="btn tinted" type="button" id="p-moteur" data-i18n="arb.p.moteur"></button>
+        <button class="btn tinted" type="button" id="p-mono" data-i18n="arb.p.mono"></button>
+        <button class="btn tinted" type="button" id="p-pompe" data-i18n="arb.p.pompe"></button>
+        <button class="btn tinted" type="button" id="p-seule" data-i18n="arb.p.seule"></button>
+      </div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="t1" data-i18n="arb.t1"></label><output id="t1v" for="t1"></output></div>
+            <input id="t1" type="range" min="350" max="900" step="5" value="600"></div>
+          <div class="ctl"><div class="row"><label for="t2" data-i18n="arb.t2"></label><output id="t2v" for="t2"></output></div>
+            <input id="t2" type="range" min="250" max="340" step="1" value="300"></div>
+          <div class="ctl"><div class="row"><label for="q1" data-i18n="arb.q1"></label><output id="q1v" for="q1"></output></div>
+            <input id="q1" type="range" min="-1000" max="1000" step="10" value="1000"></div>
+          <div class="ctl"><div class="row"><label for="w" data-i18n="arb.w"></label><output id="wv" for="w"></output></div>
+            <input id="w" type="range" min="-1000" max="1000" step="10" value="300"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="arb.k.q2"></span><span class="v" id="q2"></span><span class="f" id="q2f"></span></div>
+          <div class="stat"><span class="k" data-i18n="arb.k.wrev"></span><span class="v" id="wrev"></span><span class="f" id="wrevf"></span></div>
+          <div class="stat"><span class="k" data-i18n="arb.k.verdict"></span><span class="v" id="verdict"></span><span class="f" id="verdictf"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="arb.caption"></figcaption>
+    </figure>
+    <div class="box rem"><b data-i18n="s3.sys.title"></b>
+      <p data-i18n-html="s3.sys.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/le-second-principe.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = Plot.el, Th = Thermo;
+const J = v => F.si(v, "J"), signe = v => (v > 0 ? "+" : "") + J(v);
+
+/* ---------- l'arbitre : une machine cyclique entre deux sources ---------- */
+(() => {
+  const svg = $("flux"), ids = ["t1", "t2", "q1", "w"];
+  const PRESETS = { "p-moteur": [600, 300, 1000, 300], "p-mono": [600, 300, 1000, 1000], "p-pompe": [600, 300, -1000, -600], "p-seule": [600, 300, -300, 0] };
+  Object.entries(PRESETS).forEach(([id, v]) => $(id).onclick = () => { ids.forEach((k, i) => $(k).value = v[i]); upd(); });
+  const box = (x, y, w, h, label, T) => {
+    P("rect", { x, y, width: w, height: h, rx: 8, class: "stroke thin c-label-2" }, svg);
+    P("text", { x: x + w / 2, y: y + h / 2 + 4, "text-anchor": "middle" }, svg).textContent = t("arb.box", { n: label, T: F.qty(F.fix(T, 0), "K") });
+  };
+  const arrow = (A, B, v, label, at) => {                     // v > 0: from A to B
+    if (Math.abs(v) < 1e-9) return;
+    const w = 1 + 7 * Math.min(1, Math.abs(v) / 1000), [a, b] = v > 0 ? [A, B] : [B, A];
+    const g = Plot.fleche(svg, a, b, { cls: "c-tint", tete: 12 }); g.firstChild.setAttribute("style", "stroke-width:" + w.toFixed(1));
+    P("text", { x: at[0], y: at[1] }, svg).textContent = t("arb.lab", { s: t("arb.s." + label), v: J(Math.abs(v)) });
+  };
+  function upd() {
+    const [T1, T2, Q1, W] = ids.map(k => +$(k).value), r = Th.arbitre(T1, T2, Q1, W);
+    $("t1v").innerHTML = F.kelvin(T1); $("t2v").innerHTML = F.kelvin(T2); $("q1v").textContent = signe(Q1); $("wv").textContent = signe(W);
+    $("q2").textContent = signe(r.Q2); $("q2f").textContent = t("arb.f.q2." + (r.Q2 >= 0 ? "pos" : "neg"));
+    $("wrev").textContent = signe(r.Wrev); $("wrevf").textContent = t("arb.f.wrev", { e: F.fix(100 * (1 - T2 / T1), 1) });
+    $("verdict").textContent = t("arb.v." + r.verdict);
+    $("verdictf").textContent = t("arb.why." + (r.enonce || r.role), { d: J(Math.abs(r.ecart)) });
+    svg.innerHTML = "";
+    box(110, 8, 200, 40, t("arb.chaud"), T1); box(110, 202, 200, 40, t("arb.froid"), T2);
+    P("circle", { cx: 210, cy: 125, r: 26, class: "stroke c-label-2" }, svg);
+    P("text", { x: 210, y: 129, "text-anchor": "middle" }, svg).textContent = t("arb.machine");
+    arrow([210, 50], [210, 97], Q1, "q1", [222, 80]);
+    arrow([210, 153], [210, 200], r.Q2, "q2", [222, 182]);
+    arrow([238, 125], [330, 125], W, "w", [262, 115]);
+  }
+  ids.forEach(k => $(k).oninput = upd); upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["carnot", 1824, "idea"], ["clausius1850", 1850, "idea"], ["kelvin", 1851, "idea"], ["clausius1854", 1854, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["pompe", "condenseur"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["mer", "a"], ["frottement", "a"], ["frigo", "a"], ["equivalence", "a"], ["calorique", "a"], ["seul", "a"], ["machine", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

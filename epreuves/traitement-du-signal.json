@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["raies", "a"],
+  ["largeur", "b"],
+  ["harmonique", "c"],
+  ["triangle", "d"],
+  ["machine", "a"],
+  ["disque", "b"],
+  ["diode", "c"],
+  ["phase", "d"]
+ ]
+}

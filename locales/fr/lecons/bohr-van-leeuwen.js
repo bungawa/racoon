@@ -1,0 +1,103 @@
+/* Leçon « La physique classique ne donne ni diamagnétisme ni paramagnétisme » (Feynman II.34.6) : textes en français.
+   Une autre langue = locales/<langue>/lecons/bohr-van-leeuwen.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "La physique classique ne donne ni diamagnétisme ni paramagnétisme",
+    "crumb.jour": "Bohr et van Leeuwen",
+    "h1": "La physique classique ne donne ni diamagnétisme ni paramagnétisme",
+    "lede": "Le théorème de Larmor fait tourner les électrons dans un champ, et la précession des moments permanents semble promettre un alignement. Pourtant, un raisonnement de quelques lignes montre qu'à l'équilibre thermique, la physique classique ne prévoit aucune aimantation, ni dans un sens ni dans l'autre. Le magnétisme de la matière est un effet quantique.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : théorème de Larmor",
+
+    "s1.sec": "1 · Un paradoxe",
+    "s1.h2": "Deux mécanismes, et aucun effet",
+    "s1.p1": "Deux leçons ont donné deux mécanismes classiques. Dans « Diamagnétisme », le champ électrique induit à l'établissement du champ change la rotation des électrons et crée un moment opposé au champ ; le « Théorème de Larmor » le retrouve en faisant tourner tout le nuage électronique à ω<sub>L</sub>. Dans « Précession des aimants atomiques », un moment permanent tourne autour du champ, et l'on attend que les chocs entre atomes le laissent peu à peu s'aligner : c'est le paramagnétisme.",
+    "s1.p2": "Le système : un morceau de matière tenu dans une boîte, à l'équilibre thermique à la température <var>T</var>, fait de noyaux et d'électrons qui obéissent à la mécanique de Newton et à la physique statistique classique. La boîte est fixe : l'ensemble ne peut pas se mettre à tourner. Le champ <var>B</var> est statique, et l'on attend que l'équilibre soit rétabli après son établissement.",
+
+    "s2.sec": "2 · L'argument",
+    "s2.h2": "La force magnétique ne travaille pas",
+    "s2.p1": "La force magnétique sur une charge est perpendiculaire à sa vitesse. Sa puissance est nulle :",
+    "val.travail": "Exacte pour un champ magnétique statique. Un champ qui varie crée un champ électrique, qui, lui, travaille : c'est l'effet transitoire calculé dans « Diamagnétisme ». Une fois le champ établi et l'équilibre revenu, ce transitoire est oublié.",
+    "s2.p2": "L'énergie d'une configuration est donc la somme des énergies cinétiques et de l'énergie potentielle des forces électriques, la même avec ou sans champ. Or, à l'équilibre thermique, la probabilité d'une configuration ne dépend que de son énergie :",
+    "val.boltzmann": "Approximation : équilibre thermique et statistique classique. Elle suppose une énergie qui varie continûment ; elle échoue quand l'écart entre niveaux quantiques n'est pas petit devant <var>k</var><sub>B</sub><var>T</var>, environ 0,026\u00a0eV à 300\u00a0K, ce qui est le cas des électrons d'un atome, liés par quelques électronvolts.",
+    "s2.p3": "En chaque point, la distribution des vitesses est donc celle sans champ : celle de Maxwell, la même dans toutes les directions. Une vitesse et son opposée sont aussi probables, la vitesse moyenne de chaque charge en chaque point est nulle, et le moment magnétique moyen aussi :",
+    "val.moment": "Exacte en statistique classique à l'équilibre, pour tout champ statique, toute forme de boîte et toutes forces électriques entre les charges. Le moment instantané fluctue autour de zéro, d'autant moins en relatif que le nombre de charges est grand.",
+    "s2.p4": "Le raisonnement ne suppose rien sur les forces entre charges, ni sur la forme des orbites : il ne laisse aucune place à un modèle classique du magnétisme. Le diamagnétisme comme le paramagnétisme disparaissent.",
+
+    "s3.sec": "3 · Vérifier pas à pas",
+    "s3.h2": "Où passe le diamagnétisme de Larmor ?",
+    "s3.p1": "Le cas le plus simple : un gaz de charges sans interaction, dans une boîte ronde à parois réfléchissantes, dans un champ perpendiculaire. Chaque charge décrit des arcs de cercle de rayon cyclotron ; le rayon typique, à la température <var>T</var>, est <var>r</var><sub>c</sub>\u00a0=\u00a0√(<var>m</var><var>k</var><sub>B</sub><var>T</var>)/(<var>q</var><var>B</var>). La page tire 4\u00a0000 charges selon la distribution d'équilibre, suit chacune exactement, rebonds compris, et moyenne son moment sur vingt tours.",
+    "fig.aria": "Trajectoires de charges dans une boîte ronde dans un champ magnétique, et moments magnétiques des charges de l'intérieur, du bord, et total",
+    "fig.legend.int": "orbites intérieures",
+    "fig.legend.bord": "orbites qui rebondissent sur la paroi",
+    "fig.rc": "<var>r</var><sub>c</sub>/<var>R</var> (champ plus fort à gauche)",
+    "fig.tirage": "Tirage",
+    "fig.n": "n° {n}",
+    "fig.unite": "moment magnétique moyen",
+    "fig.b.int": "intérieur",
+    "fig.b.bord": "bord",
+    "fig.b.total": "total",
+    "fig.k.int": "Orbites intérieures",
+    "fig.f.int": "en <var>N</var><var>k</var><sub>B</sub><var>T</var>/<var>B</var> ; {n} charges sur {N}, chacune \u2212<var>m</var><var>v</var>²/(2<var>B</var>)",
+    "fig.k.bord": "Orbites du bord",
+    "fig.f.bord": "en <var>N</var><var>k</var><sub>B</sub><var>T</var>/<var>B</var> ; {n} charges, qui tournent autour du disque dans l'autre sens",
+    "fig.k.total": "Total",
+    "fig.f.total": "en <var>N</var><var>k</var><sub>B</sub><var>T</var>/<var>B</var>, à comparer à l'écart statistique ±\u00a0{s}",
+    "fig.caption": "Chaque orbite intérieure est une petite boucle de courant opposée au champ : en moyenne \u2212<var>k</var><sub>B</sub><var>T</var>/<var>B</var> par charge, le diamagnétisme de Larmor. Mais les charges qui touchent la paroi rebondissent et progressent le long du bord en sens inverse : une grande boucle, de moment positif. Les deux se compensent au bruit statistique près, le cadre pointillé, quel que soit le champ et quel que soit le tirage.",
+    "s3.p2": "Le bord n'est pas un détail. Une orbite intérieure porte un moment proportionnel à <var>r</var><sub>c</sub>²<var>B</var>, tandis qu'une charge qui progresse le long de la paroi entoure tout le disque : elle porte un moment proportionnel à <var>R</var><var>r</var><sub>c</sub><var>B</var>. Les charges du bord sont moins nombreuses, dans la proportion <var>r</var><sub>c</sub>/<var>R</var>, mais chacune pèse <var>R</var>/<var>r</var><sub>c</sub> fois plus : le produit est du même ordre que le terme intérieur, et l'égalité est exacte.",
+
+    "s4.sec": "4 · Ce que cela veut dire",
+    "s4.h2": "Le magnétisme de la matière est quantique",
+    "sys.title": "Décrire le système avant d'appliquer la loi",
+    "sys1.body": "Les électrons libres du cuivre, {n} par mètre cube, traités en particules classiques à {T} dans un champ de 1\u00a0T : leur rayon cyclotron typique est {rc}, bien plus petit que l'échantillon. Si l'on oubliait le bord, chaque électron apporterait \u2212<var>k</var><sub>B</sub><var>T</var>/<var>B</var>, et la susceptibilité vaudrait \u2212<var>μ</var><sub>0</sub><var>n</var><var>k</var><sub>B</sub><var>T</var>/<var>B</var>², soit {chi} : absurde. La mesure donne {mes}. La compensation par le bord est exacte, et ce qui reste de magnétisme vient d'ailleurs.",
+    "s4.p1": "La matière réelle est magnétique : le bismuth s'écarte du champ, l'aluminium et le dioxygène s'en approchent. Puisque la physique classique, appliquée honnêtement à l'équilibre, donne zéro, ces effets sont quantiques. En mécanique quantique, les énergies d'un atome forment des niveaux discrets, le moment cinétique ne prend que certaines valeurs et l'électron porte un spin : le raisonnement sur la distribution continue des vitesses ne s'applique plus.",
+    "s4.p2": "Le théorème a une exception, que la boîte écarte : un système isolé, libre de tourner en bloc, comme une étoile tenue par sa propre gravitation. Établir le champ peut alors le mettre en rotation, et un corps qui tourne peut porter un moment. L'aimantation et la rotation sont liées de la même façon dans l'expérience décrite dans « Moments magnétiques et moment cinétique » : un cylindre de fer suspendu qui s'aimante se met à tourner.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Un théorème trouvé deux fois",
+    "hist.intro": "Le résultat a été établi deux fois, avant que la mécanique quantique ne donne le moyen de calculer le magnétisme des électrons.",
+    "hist.events": {
+      bohr: { who: "Niels Bohr", what: "soutient à l'université de Copenhague une thèse sur la théorie électronique des métaux, où il montre qu'un gaz d'électrons classiques à l'équilibre n'a pas d'aimantation.", context: "Deux ans plus tard, Bohr quantifiera le moment cinétique de l'électron de l'atome d'hydrogène." },
+      leeuwen: { who: "Hendrika Johanna van Leeuwen", what: "retrouve le résultat dans sa thèse, soutenue à Leiden sous la direction de Hendrik Lorentz, et le publie en 1921 dans le Journal de physique et le Radium.", context: "John Van Vleck, dans son traité de 1932 sur les susceptibilités électriques et magnétiques, l'appelle « théorème de Mlle van Leeuwen », en notant que Bohr l'avait obtenu avant elle." },
+      landau: { who: "Lev Landau", what: "publie dans la Zeitschrift für Physik le calcul quantique du diamagnétisme des électrons libres d'un métal.", context: "Là où le théorème classique donne zéro, la quantification des orbites dans le champ laisse un diamagnétisme : pour des électrons libres, le tiers du paramagnétisme dû à leur spin, de signe opposé." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      tokamak: { name: "Peser l'énergie d'un plasma de fusion", text: "Un plasma confiné dans un tokamak n'est pas un gaz à l'équilibre dans une boîte : sa pression tombe du centre vers le bord. Le courant de bord ne compense plus celui de l'intérieur, et le plasma est diamagnétique. Une boucle qui l'entoure mesure ce flux diamagnétique, d'où l'on tire l'énergie du plasma et son temps de confinement ; la liste des diagnostics magnétiques d'ITER compte cette mesure." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      travail: { prompt: "Pourquoi l'énergie d'un ensemble de charges ne dépend-elle pas d'un champ magnétique statique ?",
+        options: { a: "Parce que le champ est trop faible.", b: "Parce que la force magnétique est perpendiculaire à la vitesse : elle ne travaille pas.", c: "Parce que les charges positives et négatives se compensent.", d: "Parce que le champ ne pénètre pas dans la matière." },
+        why: "q(v ∧ B)·v = 0 : la force magnétique courbe les trajectoires sans changer les énergies cinétiques. L'énergie est la même avec ou sans champ." },
+      vitesses: { prompt: "À l'équilibre thermique classique, comment la distribution des vitesses en un point dépend-elle du champ ?",
+        options: { a: "Elle tourne dans le sens de Larmor.", b: "Elle s'élargit dans le plan perpendiculaire au champ.", c: "Elle favorise les vitesses parallèles au champ.", d: "Elle n'en dépend pas : c'est la distribution de Maxwell, la même dans toutes les directions." },
+        why: "La probabilité ne dépend que de l'énergie, qui ne dépend pas de B. En chaque point, v et \u2212v sont aussi probables : aucun courant moyen." },
+      bord: { prompt: "Dans la simulation, qu'est-ce qui compense le moment des orbites intérieures ?",
+        options: { a: "Les charges qui rebondissent sur la paroi et progressent le long du bord en sens inverse, sur une grande boucle.", b: "Les charges les plus rapides, qui tournent dans l'autre sens.", c: "Les chocs entre charges.", d: "Rien : le total est opposé au champ." },
+        why: "Une charge qui rebondit le long de la paroi entoure tout le disque : peu nombreuses, ces charges portent chacune un grand moment, positif, qui compense exactement le terme intérieur." },
+      champ: { prompt: "On double le champ. Que deviennent les deux contributions de la simulation ?",
+        options: { a: "Le terme intérieur double, le terme du bord ne change pas.", b: "Les deux s'annulent séparément.", c: "Elles changent, mais restent opposées : le total reste nul au bruit près.", d: "Le total devient opposé au champ." },
+        hint: "Chaque orbite intérieure vaut \u2212k_B T/B en moyenne.",
+        why: "Le terme intérieur, \u2212k_B T/B par charge, diminue quand B augmente ; le terme du bord suit. Leur somme est nulle pour tout champ, c'est le théorème." },
+      cuivre: { prompt: "Si l'on oubliait le bord, quelle susceptibilité trouverait-on pour les électrons du cuivre à 300 K dans 1 T ?",
+        options: { a: "Environ \u221210⁻⁵, la valeur mesurée.", b: "Plusieurs centaines en valeur absolue : un résultat absurde.", c: "Exactement zéro.", d: "Environ +1." },
+        hint: "Calculez \u2212μ₀ n k_B T/B² avec n ≈ 8,5 × 10²⁸ m⁻³.",
+        why: "\u2212μ₀ n k_B T/B² ≈ \u2212440 : un corps qui expulserait le champ plus fort qu'un supraconducteur. Le bord compense exactement ce terme ; le \u221210⁻⁵ mesuré est un effet quantique." },
+      etoile: { prompt: "Pour quel système le raisonnement ne s'applique-t-il pas ?",
+        options: { a: "Un système isolé libre de tourner en bloc, comme une étoile.", b: "Un gaz très chaud.", c: "Un métal.", d: "Un échantillon placé dans un champ très intense." },
+        why: "Le raisonnement suppose une boîte fixe. Un corps libre peut se mettre à tourner quand on établit le champ, et un corps chargé qui tourne porte un moment." },
+      larmor: { prompt: "Le théorème de Larmor reste vrai en mécanique classique. Pourquoi ne donne-t-il pas de diamagnétisme à l'équilibre ?",
+        options: { a: "Parce qu'il ne vaut que pour les champs forts.", b: "Parce que la rotation de Larmor est trop lente pour créer un courant.", c: "Parce qu'il ne concerne que les électrons de spin nul.", d: "Parce qu'il décrit les mouvements, pas leur distribution d'équilibre : celle-ci ne dépend que de l'énergie, qui ne dépend pas du champ." },
+        why: "Le champ change chaque trajectoire, mais pas la probabilité de chaque configuration. Dans le gaz de la simulation, la compensation se voit : les charges qui touchent la paroi portent le courant opposé à celui des orbites intérieures." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol.\u00a0II, chap.\u00a034, §34-6 (texte original en anglais). Notations SI. Bohr, van Leeuwen, Van Vleck : Wikipédia, « Bohr–Van Leeuwen theorem » et « Hendrika Johanna van Leeuwen » ; van Leeuwen, <i>Journal de physique et le Radium</i>, vol.\u00a02, 1921, p.\u00a0361. Landau : <i>Zeitschrift für Physik</i>, vol.\u00a064, 1930, p.\u00a0629 ; Wikipédia, « Landau diamagnetism » ; rapport au paramagnétisme de spin : Kittel, <i>Introduction to Solid State Physics</i>, extrait de cours. Diagnostics magnétiques d'ITER : présentation de l'organisation ITER, 2024. Susceptibilité du cuivre et densité d'électrons libres : tables du module de ce monde. Gaz dans un disque : calcul exact propre à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

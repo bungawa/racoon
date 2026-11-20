@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Équation de Clausius-Clapeyron</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-thermo" data-i18n="monde.thermo"></a><span class="aux">›</span><a href="/racoon/etape?id=changements-etat-corps-pur" data-i18n="etape.changements-etat-corps-pur"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n-html="lede"></p>
+    <div class="tags">
+      <a class="chip t-thermo" href="/racoon/atlas?piste=thermo" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/temperature-thermodynamique" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <svg class="fig" id="cyc" viewBox="0 0 640 300" role="img" data-i18n-attr="aria-label:cyc.aria"></svg>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mo>(</mo><msub><mi>v</mi><mi mathvariant="normal">g</mi></msub><mo>−</mo><msub><mi>v</mi><mi mathvariant="normal">ℓ</mi></msub><mo>)</mo><mfrac><mrow><mi mathvariant="normal">d</mi><msub><mi>p</mi><mi data-i18n="eq.sat"></mi></msub></mrow><mrow><mi mathvariant="normal">d</mi><mi>T</mi></mrow></mfrac><mo>=</mo><mfrac><mi>L</mi><mi>T</mi></mfrac></math><span class="n">(45.14)</span></div>
+    <p class="validite" data-i18n-html="val.cc"></p>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>p</mi><mi data-i18n="eq.sat"></mi></msub><mo>(</mo><mi>T</mi><mo>)</mo><mo>=</mo><msub><mi>p</mi><mn>0</mn></msub><mspace width="0.15em"></mspace><mi data-i18n="eq.exp"></mi><mrow><mo>[</mo><mo>−</mo><mfrac><mrow><mi>L</mi><mi>M</mi></mrow><mi>R</mi></mfrac><mrow><mo>(</mo><mfrac><mn>1</mn><mi>T</mi></mfrac><mo>−</mo><mfrac><mn>1</mn><msub><mi>T</mi><mn>0</mn></msub></mfrac><mo>)</mo></mrow><mo>]</mo></mrow></math><span class="n">(45.15)</span></div>
+    <p class="validite" data-i18n-html="val.int"></p>
+    <figure class="chart">
+      <svg class="fig" id="ps" role="img" data-i18n-attr="aria-label:ps.aria"></svg>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="psT0" data-i18n="ps.T0"></label><output id="psT0v" for="psT0"></output></div>
+            <input id="psT0" type="range" min="275" max="640" step="0.5" value="373"></div>
+          <div class="ctl"><div class="row"><label for="psT" data-i18n="ps.T"></label><output id="psTv" for="psT"></output></div>
+            <input id="psT" type="range" min="275" max="645" step="0.5" value="300"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="ps.k.vrai"></span><span class="v" id="psv"></span><span class="f" id="psvf"></span></div>
+          <div class="stat"><span class="k" data-i18n="ps.k.cc"></span><span class="v" id="psc"></span><span class="f" id="pscf"></span></div>
+          <div class="stat"><span class="k" data-i18n="ps.k.neg"></span><span class="v" id="psn"></span><span class="f" id="psnf"></span></div>
+        </div>
+      </div>
+      <div class="legend"><span class="c-tint" data-i18n="ps.leg.vrai"></span><span class="c-warn" data-i18n="ps.leg.cc"></span></div>
+      <figcaption data-i18n-html="ps.caption"></figcaption>
+    </figure>
+    <div class="box rem"><b data-i18n="s3.sys.title"></b>
+      <p data-i18n-html="s3.sys.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/equation-de-clausius-clapeyron.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = Plot.el, Th = Thermo, E = Th.EAU;
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+const pct = r => F.qty(Math.abs(r) < 0.01 ? F.num(100 * r, 2) : F.fix(100 * r, 1), "%");
+
+/* ---------- le cycle de Carnot sur le palier (schéma) ---------- */
+(() => {
+  const svg = $("cyc"), X0 = 70, X1 = 600, Y0 = 260, Y1 = 20;
+  P("line", { x1: X0, y1: Y0, x2: X1, y2: Y0, class: "stroke thin c-label-2" }, svg);
+  P("line", { x1: X0, y1: Y0, x2: X0, y2: Y1, class: "stroke thin c-label-2" }, svg);
+  const xa = 120, xb = 470, yT = 110, yT2 = 160;
+  const iso = (y, dx) => `M ${xa - 25 + dx} ${Y1 + 10} C ${xa - 12 + dx} ${y - 40}, ${xa - 6 + dx} ${y - 5}, ${xa + dx} ${y} L ${xb + dx} ${y} C ${xb + 60 + dx} ${y + 30}, ${X1 - 60} ${y + 70}, ${X1 - 10} ${y + 85}`;
+  P("path", { d: iso(yT, 0), class: "stroke c-tint" }, svg);
+  P("path", { d: iso(yT2, -6), class: "stroke c-tint" }, svg);
+  P("path", { d: `M ${xa} ${yT} L ${xb} ${yT} L ${xb - 6} ${yT2} L ${xa - 6} ${yT2} Z`, class: "stroke c-warn" }, svg);
+  Plot.fleche(svg, [xa + 120, yT], [xa + 200, yT], { cls: "c-warn" });
+  Plot.fleche(svg, [xb - 200, yT2], [xb - 280, yT2], { cls: "c-warn" });
+  const L = textOf("cyc.labels", ["p", "v", "T", "T2", "vap", "cond", "dp", "vl", "vg"]);
+  const txt = (x, y, s, a) => { P("text", { x, y, "text-anchor": a || "middle" }, svg).textContent = s; };
+  txt(X0 - 8, Y1 + 10, L.p, "end"); txt(X1, Y0 + 20, L.v, "end");
+  txt(xb + 80, yT + 20, L.T, "start"); txt(xb + 70, yT2 + 30, L.T2, "start");
+  txt((xa + xb) / 2, yT - 10, L.vap); txt((xa + xb) / 2, yT2 + 22, L.cond);
+  txt(xa - 30, (yT + yT2) / 2 + 4, L.dp, "end"); txt(xa, Y0 + 20, L.vl); txt(xb, Y0 + 20, L.vg);
+  P("line", { x1: xa, y1: yT, x2: xa, y2: Y0, class: "stroke thin dash c-label-2" }, svg);
+  P("line", { x1: xb, y1: yT, x2: xb, y2: Y0, class: "stroke thin dash c-label-2" }, svg);
+})();
+
+/* ---------- pression de vapeur : IAPWS contre l'intégrale à L constant ---------- */
+(() => {
+  const svg = $("ps");
+  const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 360, pad: { b: 44, l: 60 },
+    x: { domain: [270, 650], label: t("ps.x") }, y: { scale: "log", domain: [100, 1e8], label: t("ps.y") } });
+  const Ts = Array.from({ length: 301 }, (_, i) => E.Tt + (E.Tc - E.Tt) * i / 300);
+  P("path", { d: Plot.path(Ts.map(T => [x(T), y(Th.psat(T))])), class: "curve" }, g);
+  P("circle", { cx: x(E.Tc), cy: y(E.pc), r: 4, class: "fill c-label-2" }, g);
+  const cc = P("path", { class: "ref" }, g), d0 = P("circle", { r: 5, class: "fill c-warn" }, g), dot = P("circle", { r: 6, class: "dot" }, g);
+  const s0 = $("psT0"), s1 = $("psT");
+  function upd() {
+    const T0 = +s0.value, T = +s1.value, p0 = Th.psat(T0), L = Th.Lvap(T0);
+    const f = T2 => Th.clausiusClapeyron(T2, T0, p0, L);
+    cc.setAttribute("d", Plot.path(Ts.map(T2 => [x(T2), y(Math.min(Math.max(f(T2), 100), 1e8))])));
+    d0.setAttribute("cx", x(T0)); d0.setAttribute("cy", y(p0));
+    const pv = Th.psat(T), pc = f(T), n = Th.negligesCC(T);
+    dot.setAttribute("cx", x(T)); dot.setAttribute("cy", y(pv));
+    $("psT0v").innerHTML = t("ps.T0read", { T: F.kelvin(T0), L: F.qty(F.num(L / 1e3, 4), "kJ·kg⁻¹") });
+    $("psTv").innerHTML = F.kelvin(T);
+    $("psv").textContent = F.si(pv, "Pa"); $("psvf").textContent = t("ps.f.vrai");
+    $("psc").textContent = F.si(pc, "Pa"); $("pscf").textContent = t("ps.f.cc", { r: (pc >= pv ? "+" : "") + pct(pc / pv - 1) });
+    $("psn").textContent = F.sci(n.vSurV, 2); $("psnf").textContent = t("ps.f.neg", { z: pct(1 - n.Z) });
+  }
+  s0.oninput = s1.oninput = upd; upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["carnot", 1824, "idea"], ["clapeyron", 1834, "idea"], ["clausius", 1850, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["rosee", "climat", "vide"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["aire", "b"], ["signe", "c"], ["hypotheses", "a"], ["extrapoler", "d"], ["pente", "b"], ["droite", "a"], ["molecule", "c"], ["climat", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

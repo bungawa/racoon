@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["chariots", "d"],
+  ["pseudo", "a"],
+  ["balistique", "b"],
+  ["wagons", "c"],
+  ["neutron", "d"],
+  ["relativite", "a"],
+  ["fusee", "b"],
+  ["cheval", "c"]
+ ]
+}

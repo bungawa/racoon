@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Protection et déprotection des groupes carbonyle et hydroxyle</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .defile { overflow-x: auto; }
+  .banque { width: 100%; border-collapse: collapse; }
+  .banque td, .banque th { padding: 4px 6px; text-align: center; vertical-align: top; }
+  .banque td:first-child, .banque th:first-child { text-align: left; }
+  .deux { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .deux svg { width: 100%; height: 140px; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-organique" data-i18n="monde.chim-organique"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-activation-protection" data-i18n="etape.chim-activation-protection"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/acetalisation" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <figure>
+      <div class="deux">
+        <div><svg class="fig no-sigle" id="depart" role="img" data-i18n-attr="aria-label:ex.ariaDepart"></svg><p class="readout" data-i18n="ex.depart"></p></div>
+        <div><svg class="fig no-sigle" id="cible" role="img" data-i18n-attr="aria-label:ex.ariaCible"></svg><p class="readout" data-i18n="ex.cible"></p></div>
+      </div>
+      <figcaption data-i18n-html="ex.caption"></figcaption>
+    </figure>
+    <div class="box def"><b data-i18n="s1.def.titre"></b>
+      <p data-i18n-html="s1.def.corps"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure>
+      <div class="defile"><table class="banque" id="banque"></table></div>
+      <figcaption data-i18n-html="banque.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <figure>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="exo" data-i18n="plan.exo"></label></div><select id="exo"></select></div>
+        <p id="planbut"></p>
+        <div class="controls" id="reactifs"></div>
+        <div class="controls"><button class="btn" type="button" id="effacer" data-i18n="plan.effacer"></button></div>
+        <ol id="journal"></ol>
+        <p class="readout" id="planv" aria-live="polite"></p>
+        <div class="ctl"><div class="row"><label for="eta" data-i18n="plan.eta"></label><output id="etav" for="eta"></output></div>
+          <input id="eta" type="range" min="0.5" max="1" step="0.01" value="0.9"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="plan.k.n"></span><span class="v" id="vn"></span></div>
+          <div class="stat"><span class="k" data-i18n="plan.k.eta"></span><span class="v" id="veta"></span><span class="f" id="feta"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="plan.caption"></figcaption>
+    </figure>
+    <div class="eq"><math display="block"><msub><mi>η</mi><mtext data-i18n="eq.global"></mtext></msub><mo>=</mo><munderover><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>η</mi><mi>i</mi></msub></math></div>
+    <p class="validite" data-i18n-html="s4.validite"></p>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/protection-deprotection.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script src="/racoon/chim-organique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), O = ChimOrga, sym = s => t("chim.sym", { s });
+const peindre = (svg, d) => { svg.setAttribute("viewBox", d.viewBox); svg.innerHTML = d.html; };
+const REACTIFS = Object.keys(O.REACTIFS_PROTECTION), GROUPES = O.GROUPES_PROTECTION;
+const nomR = textOf("reactifs", REACTIFS), nomG = textOf("groupes", GROUPES);
+
+/* ---------- l'exemple : 5-bromopentan-2-one → 6-hydroxyheptan-2-one ---------- */
+(() => {
+  peindre($("depart"), O.dessin(O.mol("C 0 0; C 0.866 0.5; O 0.866 1.5; C 1.732 0; C 2.598 0.5; C 3.464 0; Br 4.33 0.5 | 0-1 1=2 1-3 3-4 4-5 5-6"), { texte: sym, echelle: 34 }));
+  peindre($("cible"), O.dessin(O.mol(O.CIBLES_RETRO.hydroxyheptanone.spec), { texte: sym, echelle: 34 }));
+})();
+
+/* ---------- la banque de réactions ---------- */
+(() => {
+  const cell = (r, g) => { const e = O.sequence([g], [r]), j = e.journal[0];
+    if (j.echec) return `<td class="c-ko">${t("banque.detruit")}</td>`;
+    return j.changes.length ? `<td><b>${t("banque.devient", { g: nomG[j.changes[0][1]] })}</b></td>` : `<td>${t("banque.stable")}</td>`; };
+  $("banque").innerHTML = `<thead><tr><th>${t("banque.coin")}</th>${REACTIFS.map(r => `<th>${nomR[r]}</th>`).join("")}</tr></thead><tbody>` +
+    GROUPES.map(g => `<tr><th>${nomG[g]}</th>${REACTIFS.map(r => cell(r, g)).join("")}</tr>`).join("") + "</tbody>";
+})();
+
+/* ---------- planifier une séquence ---------- */
+(() => {
+  const EXOS = { bromocetone: { depart: ["carbonyle", "halogenoalcane"], cible: ["alcool", "carbonyle"] }, bromoalcool: { depart: ["alcool", "halogenoalcane"], cible: ["alcool", "alcool"] } };
+  const exos = textOf("plan.exos", Object.keys(EXOS));
+  $("exo").innerHTML = Object.keys(EXOS).map(id => `<option value="${id}">${exos[id].nom}</option>`).join("");
+  $("reactifs").innerHTML = REACTIFS.map(r => `<button class="btn tinted" type="button" data-r="${r}">${nomR[r]}</button>`).join("");
+  let etapes = [];
+  const liste = gs => gs.map(g => nomG[g]).join(", ");
+  function maj() {
+    const ex = EXOS[$("exo").value], s = O.sequence(ex.depart, etapes), eta = +$("eta").value;
+    $("planbut").textContent = exos[$("exo").value].but;
+    $("journal").innerHTML = s.journal.map(j => `<li>${nomR[j.reactif]} : ${j.echec ? t("plan.echec." + j.echec.raison, { g: nomG[j.echec.groupe], a: j.echec.avec ? nomG[j.echec.avec] : "" }) : liste(j.groupes)}</li>`).join("");
+    const atteint = s.reussi && s.final.slice().sort().join() === ex.cible.slice().sort().join();
+    $("planv").textContent = !etapes.length ? t("plan.v.vide", { g: liste(ex.depart) }) : !s.reussi ? t("plan.v.echec") : atteint ? t("plan.v.ok", { n: etapes.length }) : t("plan.v.encore", { g: liste(s.final) });
+    $("etav").textContent = F.qty(F.fix(100 * eta, 0), "%");
+    $("vn").textContent = String(etapes.length);
+    $("veta").textContent = F.qty(F.fix(100 * O.rendementGlobal(etapes.map(() => eta)), 1), "%");
+    $("feta").textContent = t("plan.f.eta");
+  }
+  $("reactifs").onclick = e => { const b = e.target.closest("button"); if (!b) return; etapes.push(b.dataset.r); maj(); };
+  $("effacer").onclick = () => { etapes = []; maj(); };
+  $("exo").oninput = () => { etapes = []; maj(); };
+  $("eta").oninput = maj;
+  maj();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["deanstark", 1920, "experiment"], ["reichstein", 1934, "experiment"], ["corey", 1972, "experiment"], ["nobel", 1990, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["vitamineC", "choix"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["pourquoi", "c"], ["acetal", "a"], ["retirer", "d"], ["oh", "b"], ["benzyle", "c"], ["ordre", "a"], ["cout", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 1934 });
+})();
+</script>
+</body>
+</html>

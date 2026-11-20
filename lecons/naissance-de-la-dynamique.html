@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Naissance de la dynamique</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-mecanique" data-i18n="monde.mecanique"></a><span class="aux">›</span><a href="/racoon/etape?id=kepler-newton" data-i18n="etape.kepler-newton"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-meca" href="/racoon/atlas?piste=meca" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/lois-de-kepler" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="box prop"><b data-i18n="s1.prop.title"></b>
+      <p data-i18n-html="s1.prop.body"></p>
+    </div>
+    <div class="eq"><math display="block"><munder><mo>∑</mo><mi>i</mi></munder><msub><mover accent="true"><mi>F</mi><mo>→</mo></mover><mi>i</mi></msub><mo>=</mo><mover accent="true"><mn>0</mn><mo>→</mo></mover><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><mover accent="true"><mi>v</mi><mo>→</mo></mover><mo>=</mo><msub><mover accent="true"><mi>v</mi><mo>→</mo></mover><mn>0</mn></msub></math></div>
+    <p class="validite" data-i18n-html="val.inertie"></p>
+    <p data-i18n-html="s1.p4"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mi mathvariant="normal">d</mi><mover accent="true"><mi>p</mi><mo>→</mo></mover></mrow><mrow><mi mathvariant="normal">d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mover accent="true"><mi>F</mi><mo>→</mo></mover><mi>i</mi></msub><mo>,</mo><mspace width="1em"/><mover accent="true"><mi>p</mi><mo>→</mo></mover><mo>=</mo><mi>m</mi><mover accent="true"><mi>v</mi><mo>→</mo></mover></math></div>
+    <p class="validite" data-i18n-html="val.newton"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>a</mi><mi mathvariant="normal">n</mi></msub><mo>=</mo><mfrac><msup><mi>v</mi><mn>2</mn></msup><mi>R</mi></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.centripete"></p>
+    <p data-i18n-html="s2.p3"></p>
+    <p data-i18n-html="s2.p4"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>A</mi><mtext data-i18n="eq.tri"></mtext></msub><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>|</mo><mover accent="true"><mi>r</mi><mo>→</mo></mover><mo>∧</mo><mover accent="true"><mi>v</mi><mo>→</mo></mover><mo>|</mo><mi>Δ</mi><mi>t</mi></math></div>
+    <p class="validite" data-i18n-html="val.triangle"></p>
+    <figure>
+      <svg class="fig" id="pol" viewBox="0 0 640 400" role="img" data-i18n-attr="aria-label:pol.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="pol.legend.chemin"></span><span class="c-tint sq" data-i18n="pol.legend.triangles"></span><span class="c-label-2 ring" data-i18n="pol.legend.ellipse"></span><span class="c-warn" data-i18n="pol.legend.soleil"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="nk" data-i18n="pol.n"></label><output id="nkv" for="nk"></output></div>
+            <input id="nk" type="range" min="3" max="120" step="1" value="16"></div>
+          <div class="ctl"><div class="row"><span data-i18n="pol.force"></span></div>
+            <div class="seg" role="group" data-i18n-attr="aria-label:pol.force">
+              <button type="button" id="f-centrale" aria-pressed="true" data-i18n="pol.f.centrale"></button>
+              <button type="button" id="f-aucune" aria-pressed="false" data-i18n="pol.f.aucune"></button>
+            </div></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="pol.k.aire"></span><span class="v" id="vaire"></span><span class="f" id="faire"></span></div>
+          <div class="stat"><span class="k" data-i18n="pol.k.ecart"></span><span class="v" id="vecart"></span><span class="f" data-i18n="pol.f.ecart"></span></div>
+          <div class="stat"><span class="k" data-i18n="pol.k.fin"></span><span class="v" id="vfin"></span><span class="f" id="ffin"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="pol.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="list keyed" id="neglect"></div>
+    <div class="box warn"><b data-i18n="s4.warn.title"></b>
+      <p data-i18n-html="s4.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/naissance-de-la-dynamique.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/lecons/kepler.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+const small = (x, n) => x === 0 ? "0" : Math.abs(x) >= 1e-2 && Math.abs(x) < 1e4 ? F.num(x, n) : F.sci(x, n);
+
+/* ---------- la construction de Newton ---------- */
+(() => {
+  const E = 0.3, svg = $("pol"), P = Plot.el, WD = 640, HT = 400;
+  let sansForce = false;
+  const k = Math.min((WD - 40) / 2, (HT - 40) / (2 * Math.sqrt(1 - E * E))) / 1.3, cx = WD / 2 + k * E, cy = HT / 2;
+  const X = x => cx + k * x, Y = y => cy - k * y, xy = p => X(p[0]).toFixed(1) + " " + Y(p[1]).toFixed(1);
+  function upd() {
+    const n = +$("nk").value, p = Kepler.polygone(n, E, 1, sansForce), S = p.sommets;
+    $("nkv").textContent = String(n);
+    ["centrale", "aucune"].forEach(f => $("f-" + f).setAttribute("aria-pressed", String((f === "aucune") === sansForce)));
+    svg.innerHTML = "";
+    const clip = P("clipPath", { id: "polarea" }, svg); P("rect", { x: 0, y: 0, width: WD, height: HT }, clip);
+    const g = P("g", { "clip-path": "url(#polarea)" }, svg);
+    S.slice(1).forEach((q, i) => P("path", { d: "M" + xy([0, 0]) + "L" + xy(S[i]) + "L" + xy(q) + "Z", class: "fill c-tint", opacity: i % 2 ? "0.12" : "0.3" }, g));
+    P("path", { d: Kepler.ellipse(1, E, 240).map((q, i) => (i ? "L" : "M") + xy(q)).join(""), class: "stroke thin dash c-label-2" }, g);
+    P("path", { d: S.map((q, i) => (i ? "L" : "M") + xy(q)).join(""), class: "stroke c-tint" }, g);
+    if (!sansForce) S.slice(0, -1).forEach(q => { const r = Math.hypot(q[0], q[1]), l = 0.18 / r; P("line", { x1: X(q[0]), y1: Y(q[1]), x2: X(q[0] * (1 - l)), y2: Y(q[1] * (1 - l)), class: "stroke c-warn" }, g); });
+    S.forEach(q => P("circle", { cx: X(q[0]), cy: Y(q[1]), r: 3, class: "fill c-tint" }, g));
+    P("circle", { cx: X(0), cy: Y(0), r: 7, class: "fill c-warn" }, g);
+    const dev = Math.max(...p.aires.map(A => Math.abs(A / p.attendue - 1)));
+    $("vaire").textContent = F.num(p.attendue, 4);
+    $("faire").textContent = t("pol.f.aire", { a: F.num(p.attendue, 4) });
+    $("vecart").textContent = small(dev, 1);
+    const end = S[S.length - 1];
+    $("vfin").textContent = sansForce ? "–" : small(Math.hypot(end[0] - S[0][0], end[1] - S[0][1]), 2);
+    $("ffin").textContent = t(sansForce ? "pol.f.droite" : "pol.f.fin");
+  }
+  $("f-centrale").onclick = () => { sansForce = false; upd(); };
+  $("f-aucune").onclick = () => { sansForce = true; upd(); };
+  $("nk").oninput = upd; upd();
+})();
+
+/* ---------- ce que l'on néglige ---------- */
+(() => { const IDS = ["sol", "soleil", "frottement", "vitesse"]; keyed($("neglect"), t("neglect.tag"), IDS, textOf("neglect.items", IDS)); })();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["dialogo", 1632, "idea"], ["discorsi", 1638, "experiment"], ["principia", 1687, "idea"], ["apollo", 1971, "experiment"], ["microscope", 2022, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["chute", "orbite"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["pousse", "a"], ["ficelle", "a"], ["uniforme", "a"], ["aires", "a"], ["masse", "a"], ["galileen", "a"], ["ellipse", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 73 });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["stationnaire", "c"],
+  ["origine", "a"],
+  ["lambda", "d"],
+  ["groupe", "b"],
+  ["marche", "a"],
+  ["tunnel", "c"],
+  ["force", "d"],
+  ["precession", "b"]
+ ]
+}

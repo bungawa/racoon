@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>L'invariance des équations de l'électrodynamique</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-ondes-milieux" data-i18n="monde.ondes-milieux"></a><span class="aux">›</span><a href="/racoon/etape?id=rel-electro-equations" data-i18n="etape.rel-electro-equations"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-relat" href="/racoon/atlas?piste=relat" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/relat-quadripotentiel" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msup><mo>□</mo><mn>2</mn></msup><msub><mi>A</mi><mi>μ</mi></msub><mo>=</mo><mfrac><msub><mi>j</mi><mi>μ</mi></msub><mrow><msub><mi>ε</mi><mn>0</mn></msub><msup><mi>c</mi><mn>2</mn></msup></mrow></mfrac><mo>,</mo><mspace width="1.4em"/><msub><mo>∇</mo><mi>μ</mi></msub><msub><mi>j</mi><mi>μ</mi></msub><mo>=</mo><mn>0</mn></math><span class="n">(25.29)</span></div>
+    <p class="validite" data-i18n-html="val.25.29"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi mathvariant="sans-serif">U</mi><mn>1</mn></msub><mo>=</mo><msup><mrow><mo>(</mo><mover><mi>F</mi><mo>→</mo></mover><mo>−</mo><mi>m</mi><mover><mi>a</mi><mo>→</mo></mover><mo>)</mo></mrow><mn>2</mn></msup><mo>,</mo><mspace width="1.4em"/><msub><mi mathvariant="sans-serif">U</mi><mn>2</mn></msub><mo>=</mo><msup><mrow><mo>(</mo><mo>∇</mo><mo>·</mo><mover><mi>E</mi><mo>→</mo></mover><mo>−</mo><mfrac><mi>ρ</mi><msub><mi>ε</mi><mn>0</mn></msub></mfrac><mo>)</mo></mrow><mn>2</mn></msup><mo>,</mo><mspace width="1.4em"/><mo>…</mo></math><span class="n">(25.31)</span></div>
+    <p class="validite" data-i18n-html="val.25.31"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><menclose notation="box"><mi mathvariant="sans-serif">U</mi><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi mathvariant="sans-serif">U</mi><mi>i</mi></msub><mo>=</mo><mn>0</mn></menclose></math><span class="n">(25.32)</span></div>
+    <p class="validite" data-i18n-html="val.25.32"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mfrac><msup><mi>ω</mi><mo>′</mo></msup><mi>c</mi></mfrac><mo>=</mo><mi>γ</mi><mrow><mo>(</mo><mfrac><mi>ω</mi><mi>c</mi></mfrac><mo>−</mo><mi>β</mi><mi>k</mi><mo>)</mo></mrow><mo>,</mo><mspace width="1.2em"/><msup><mi>k</mi><mo>′</mo></msup><mo>=</mo><mi>γ</mi><mrow><mo>(</mo><mi>k</mi><mo>−</mo><mi>β</mi><mfrac><mi>ω</mi><mi>c</mi></mfrac><mo>)</mo></mrow></math></div>
+    <p class="validite" data-i18n-html="val.lorentz"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><msup><mi>ω</mi><mo>′</mo></msup><mo>=</mo><mi>ω</mi><mo>−</mo><mi>u</mi><mi>k</mi><mo>,</mo><mspace width="1.2em"/><msup><mi>k</mi><mo>′</mo></msup><mo>=</mo><mi>k</mi></math></div>
+    <p class="validite" data-i18n-html="val.galilee"></p>
+    <p data-i18n-html="s3.p3"></p>
+    <figure class="chart">
+      <svg class="fig" id="trace" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.dal"></span><span class="c-warn" data-i18n="fig.legend.amp"></span><span class="c-ok" data-i18n="fig.legend.lor"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" role="group" id="mode">
+            <button type="button" data-m="lorentz" data-i18n="fig.lorentz"></button>
+            <button type="button" data-m="galilee" data-i18n="fig.galilee"></button>
+          </div>
+          <div class="ctl"><div class="row"><label for="su" data-i18n="fig.u"></label><output id="sur" for="su"></output></div>
+            <input id="su" type="range" min="-90" max="90" step="1" value="50"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.onde"></span><span class="v" id="vonde"></span><span class="f" id="fonde"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.phase"></span><span class="v" id="vphase"></span><span class="f" id="fphase"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.dal"></span><span class="v" id="vdal"></span><span class="f" id="fdal"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.u"></span><span class="v" id="vu"></span><span class="f" id="fu"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p4"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/relat-invariance-maxwell.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/relativite.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/ondes-milieux.js"></script>
+<script src="/racoon/lecons/relat-electro-4d.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const E4 = Electro4D, c = Constantes.c;
+
+/* ---------- une onde plane relue depuis un référentiel qui avance à u ---------- */
+(() => {
+  const svg = $("trace"), su = $("su"), seg = $("mode"), lambda = 1;
+  let mode = "lorentz";
+  const US = Array.from({ length: 37 }, (_, i) => -0.9 + 1.8 * i / 36);
+  const curves = {};
+  for (const tr of ["lorentz", "galilee"]) curves[tr] = US.map(b => E4.ondeVue({ lambda, u: b * c, transfo: tr }).residus);
+  /* a mismatch is shown as 0 below 1e-9: what is left there is the rounding of the differences */
+  const show = x => (x < 1e-9 ? "0" : F.num(x, 2));
+  function draw() {
+    const b = +su.value / 100, o = E4.ondeVue({ lambda, u: b * c, transfo: mode }), r = o.residus, k0 = 2 * Math.PI / lambda;
+    svg.innerHTML = "";
+    const A = Plot.axes(svg, { fmt: F, w: 640, h: 280, pad: { l: 60, b: 44 }, x: { domain: [-0.9, 0.9], label: t("fig.xaxis") }, y: { domain: [0, 1], label: t("fig.yaxis") } });
+    const cur = curves[mode];
+    Plot.el("path", { d: Plot.path(US.map((u, i) => [A.x(u), A.y(cur[i].dalembert[2])])), class: "curve" }, A.g);
+    Plot.el("path", { d: Plot.path(US.map((u, i) => [A.x(u), A.y(Math.min(1, cur[i].ampere))])), class: "stroke" }, Plot.el("g", { class: "c-warn" }, A.g));
+    Plot.el("path", { d: Plot.path(US.map((u, i) => [A.x(u), A.y(cur[i].lorenz)])), class: "stroke" }, Plot.el("g", { class: "c-ok" }, A.g));
+    Plot.el("circle", { cx: A.x(b), cy: A.y(r.dalembert[2]), r: 5, class: "dot" }, A.g);
+    $("sur").textContent = F.num(b, 2) + "\u00a0c";
+    $("vonde").textContent = t("fig.onde", { k: F.num(o.k / k0, 4), w: F.num(o.omega / (c * k0), 4) });
+    $("fonde").textContent = t(mode === "lorentz" ? "fig.f.onde.l" : "fig.f.onde.g");
+    $("vphase").textContent = t("fig.phase", { v: F.num(o.vPhase / c, 4) });
+    $("fphase").textContent = t("fig.f.phase", { r: F.num(o.rapport, 4) });
+    $("vdal").textContent = t("fig.dal", { d: show(r.dalembert[2]), a: show(r.ampere) });
+    $("fdal").textContent = t("fig.f.dal", { f: show(r.faraday), l: show(r.lorenz) });
+    $("vu").textContent = show(r.U);
+    $("fu").textContent = t(r.U < 1e-9 ? "fig.f.u0" : "fig.f.u");
+    seg.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.m === mode)));
+  }
+  seg.querySelectorAll("button").forEach(x => x.onclick = () => { mode = x.dataset.m; draw(); });
+  su.oninput = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["voigt", 1887, "idea"], ["lorentz", 1904, "idea"], ["poincare", 1905, "idea"], ["nagel", 2015, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["tests"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["contenu", "c"], ["u", "a"], ["vecteur", "d"], ["galilee", "b"], ["faraday", "c"], ["doppler", "a"], ["lorentz", "b"], ["nouvelle", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 256 });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-i18n="h1">C'est quoi l'énergie ?</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .relier a { font-weight: 600; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/questions" data-i18n="crumb.questions"></a><span class="aux">›</span><span data-i18n="crumb.titre"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fond" href="/racoon/atlas?piste=fond" data-i18n="tag.piste"></a>
+      <span class="chip plain" data-i18n="tag.prereq"></span>
+      <span class="chip plain" data-i18n="tag.duree"></span>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="obs.sec"></span>
+    <h2 data-i18n="obs.h2"></h2>
+    <p data-i18n="obs.p1"></p>
+    <p data-i18n="obs.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="compta.sec"></span>
+    <h2 data-i18n="compta.h2"></h2>
+    <p data-i18n="compta.p1"></p>
+    <p data-i18n="compta.p2"></p>
+    <div class="eq">
+      <math display="block"><msub><mi>E</mi><mi mathvariant="normal">c</mi></msub><mo>+</mo><msub><mi>E</mi><mi mathvariant="normal">p</mi></msub><mo>+</mo><mi>Q</mi><mo>+</mo><mo>…</mo><mo>=</mo><msub><mi>E</mi><mn>0</mn></msub></math>
+      <span class="n">(1)</span>
+    </div>
+    <p class="validite" data-i18n="val.1"></p>
+    <p data-i18n="compta.p3"></p>
+    <figure>
+      <svg class="fig" id="pend" viewBox="0 0 600 260" role="img" data-i18n-attr="aria-label:pend.aria"></svg>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="asl" data-i18n="pend.amp"></label><output id="aread" for="asl"></output></div>
+            <input id="asl" type="range" min="5" max="120" step="1" value="60"></div>
+          <label class="ctl"><span><input id="frott" type="checkbox"> <span data-i18n="pend.frott"></span></span></label>
+          <button class="btn tinted" type="button" id="lacher" data-i18n="pend.lacher"></button>
+        </div>
+      </div>
+      <figcaption data-i18n="pend.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="noether.sec"></span>
+    <h2 data-i18n="noether.h2"></h2>
+    <p data-i18n="noether.p1"></p>
+    <div class="box prop"><b data-i18n="noether.prop.title"></b>
+      <p data-i18n="noether.prop.body"></p>
+    </div>
+    <p data-i18n="noether.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="oom.sec"></span>
+    <h2 data-i18n="oom.h2"></h2>
+    <p data-i18n="oom.intro"></p>
+    <div class="panel">
+      <div class="ctl"><div class="row"><label for="esl" data-i18n="conv.e"></label><output id="eread" for="esl"></output></div>
+        <input id="esl" type="range" min="-21" max="27" step="0.1" value="6.6"></div>
+      <div class="stats">
+        <div class="stat"><span class="k" data-i18n="conv.k.j"></span><span class="v" id="cj"></span></div>
+        <div class="stat"><span class="k" data-i18n="conv.k.kwh"></span><span class="v" id="ckwh"></span></div>
+        <div class="stat"><span class="k" data-i18n="conv.k.kcal"></span><span class="v" id="ckcal"></span></div>
+        <div class="stat"><span class="k" data-i18n="conv.k.ev"></span><span class="v" id="cev"></span></div>
+      </div>
+      <p class="caption" id="near" role="status"></p>
+    </div>
+    <div class="list scale" id="ladder" role="table" data-i18n-attr="aria-label:oom.aria"></div>
+    <p class="caption" data-i18n="oom.caption"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="conv2.sec"></span>
+    <h2 data-i18n="conv2.h2"></h2>
+    <p data-i18n="conv2.p1"></p>
+    <p data-i18n="conv2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="limites.sec"></span>
+    <h2 data-i18n="limites.h2"></h2>
+    <div class="box prop"><b data-i18n="limites.bien.title"></b><p data-i18n="limites.bien.body"></p></div>
+    <div class="box warn"><b data-i18n="limites.mal.title"></b><p data-i18n="limites.mal.body"></p></div>
+    <div class="box rem"><b data-i18n="limites.ouvert.title"></b><p data-i18n="limites.ouvert.body"></p></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="relier.sec"></span>
+    <h2 data-i18n="relier.h2"></h2>
+    <p data-i18n="relier.intro"></p>
+    <div class="list stack relier" id="relier"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/locales/fr/questions/energie.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/questions/energie.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const big = (x, u) => x >= 1e4 || x < 1e-2 ? F.qty(F.sci(x, 3), u) : F.qty(F.num(x, 3), u);   // une valeur dans une unité fixe
+
+/* ---------- pendule : échange cinétique / pesanteur, chaleur avec frottement ---------- */
+(() => {
+  const svg = document.getElementById("pend"), asl = document.getElementById("asl"), frott = document.getElementById("frott");
+  const L = 1, M = 1, g = Energie.G0, GAMMA = 0.25, PX = 180, OX = 170, OY = 30;
+  Plot.el("line", { x1: OX - 40, x2: OX + 40, y1: OY, y2: OY, class: "stroke bold c-label-2" }, svg);
+  const rod = Plot.el("line", { x1: OX, y1: OY, class: "stroke c-label" }, svg);
+  const bob = Plot.el("circle", { r: 14, class: "fill c-tint" }, svg);
+  const BARS = [["ec", "c-tint"], ["ep", "t-meca"], ["q", "c-warn"]], X0 = 380, BW = 44, BH = 180, BY = 230;
+  const bars = BARS.map(([id, cls], i) => {
+    Plot.el("rect", { x: X0 + i * 70, y: BY - BH, width: BW, height: BH, class: "stroke thin c-label-2" }, svg);
+    Plot.el("text", { x: X0 + i * 70 + BW / 2, y: BY + 18, "text-anchor": "middle" }, svg).textContent = t("pend." + id);
+    return Plot.el("rect", { x: X0 + i * 70, width: BW, class: "fill " + cls }, svg);
+  });
+  Plot.el("line", { x1: X0 - 10, x2: X0 + 2 * 70 + BW + 10, y1: BY - BH, y2: BY - BH, class: "stroke thin dash c-label-2" }, svg);
+  Plot.el("text", { x: X0 + 2 * 70 + BW + 14, y: BY - BH + 4 }, svg).textContent = t("pend.total");
+
+  let s, E0, heat;
+  const lacher = () => { s = { th: +asl.value * Math.PI / 180, om: 0 }; const e = Energie.energies(s, M, L, g); E0 = e.ec + e.ep; heat = 0;
+    document.getElementById("aread").textContent = F.num(+asl.value, 3) + "°"; draw(); };
+  function draw() {
+    const e = Energie.energies(s, M, L, g), x = OX + PX * Math.sin(s.th), y = OY + PX * Math.cos(s.th);
+    rod.setAttribute("x2", x); rod.setAttribute("y2", y); bob.setAttribute("cx", x); bob.setAttribute("cy", y);
+    [e.ec, e.ep, heat].forEach((v, i) => { const h = BH * Math.max(0, Math.min(v / E0, 1)); bars[i].setAttribute("y", BY - h); bars[i].setAttribute("height", h); });
+  }
+  asl.oninput = document.getElementById("lacher").onclick = lacher;
+  lacher();
+  let last = performance.now(), visible = true;
+  new IntersectionObserver(e => visible = e[0].isIntersecting).observe(svg);
+  function frame(now) {
+    requestAnimationFrame(frame);
+    const dt = Math.min((now - last) / 1000, 0.05); last = now;
+    if (!visible || reduce) return;
+    const gamma = frott.checked ? GAMMA : 0, n = 10, h = dt / n;
+    for (let i = 0; i < n; i++) { const before = s.om; s = Energie.pas(s, h, L, g, gamma); const w = (before + s.om) / 2; heat += gamma * M * L * L * w * w * h; }
+    draw();
+  }
+  requestAnimationFrame(frame);
+})();
+
+/* ---------- échelle des énergies et convertisseur ---------- */
+(() => {
+  const rows = textOf("oom.rows", Energie.ECHELLE.map(r => r[0])), lo = -21, hi = 27;
+  const ladder = document.getElementById("ladder");
+  ladder.innerHTML = Energie.ECHELLE.map(([id, v]) => `<div role="row"><span role="cell">${rows[id]}</span><span class="track" aria-hidden="true"><i style="left:${((Math.log10(v) - lo) / (hi - lo) * 100).toFixed(1)}%"></i></span><span class="v" role="cell">${big(v, "J")}</span></div>`).join("");
+  const esl = document.getElementById("esl");
+  const upd = () => {
+    const E = Math.pow(10, +esl.value), c = u => Energie.convertir(E, "J", u), k = Energie.voisin(E), [id, v] = Energie.ECHELLE[k];
+    document.getElementById("eread").textContent = big(E, "J");
+    document.getElementById("cj").textContent = big(E, "J");
+    document.getElementById("ckwh").textContent = big(c("kWh"), t("conv.kwh"));
+    document.getElementById("ckcal").textContent = big(c("kcal"), t("conv.kcal"));
+    document.getElementById("cev").textContent = big(c("eV"), "eV");
+    const r = E / v;
+    document.getElementById("near").textContent = t("conv.near", { name: rows[id], k: r >= 1e3 || r < 1e-2 ? F.sci(r, 2) : F.num(r, 2) });
+  };
+  esl.oninput = upd; upd();
+})();
+
+/* ---------- relier ---------- */
+(() => {
+  const NOTIONS = ["energie", "thermo", "relat_energie", "energie_champ"], txt = textOf("relier.items", NOTIONS);
+  document.getElementById("relier").innerHTML = NOTIONS.map(id => `<div><a href="/racoon/atlas?notion=${id}">${txt[id].name}</a><span>${txt[id].text}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["mayer", 1842, "idea"], ["joule", 1845, "experiment"], ["helmholtz", 1847, "idea"], ["einstein", 1905, "idea"], ["noether", 1918, "idea"], ["pauli", 1930, "idea"], ["reines", 1956, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount(document.getElementById("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["facture", "etiquette", "particules"], uses = textOf("uses.items", USES);
+  document.getElementById("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["batterie", "a"], ["arret", "a"], ["noether", "a"], ["puissance", "a"], ["ev", "a"], ["pauli", "a"], ["consommer", "a"], ["quoi", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount(document.getElementById("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

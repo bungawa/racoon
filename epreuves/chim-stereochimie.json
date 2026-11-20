@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["formule", "a"],
+  ["position", "b"],
+  ["populations", "c"],
+  ["barriere", "d"],
+  ["priorites", "a"],
+  ["relation", "b"],
+  ["biot", "c"],
+  ["dedoubler", "d"]
+ ]
+}

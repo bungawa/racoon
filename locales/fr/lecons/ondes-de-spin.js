@@ -1,0 +1,98 @@
+/* Leçon « Les ondes de spin » (Feynman III.15.1) : textes en français.
+   Une autre langue = locales/<langue>/lecons/ondes-de-spin.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Les ondes de spin",
+    "crumb.jour": "Ondes de spin",
+    "h1": "Les ondes de spin",
+    "lede": "Dans un aimant au repos, tous les spins sont alignés. Retournez-en un seul : il ne reste pas en place. Le spin retourné passe à son voisin, puis au suivant, exactement comme un électron saute d'atome en atome. Les équations sont les mêmes, la bande aussi : c'est une onde de spin.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : l'étape « Imperfections d'un réseau »",
+    "eq.cos": "cos",
+    "eq.eff": "eff",
+
+    "s1.sec": "1 · Décrire le système",
+    "s1.h2": "Une chaîne de spins couplés",
+    "s1.p1": "On prend une chaîne d'atomes de pas <var>b</var>, chacun portant un électron de spin 1/2, et on ne garde que les spins. Deux voisins ont une énergie qui dépend de leur orientation relative ; dans un ferromagnétique, elle est plus basse s'ils sont parallèles. Avec les matrices de Pauli σ de chaque spin, et une constante <var>A</var> > 0 :",
+    "val.15.2": "Approximation : couplage entre plus proches voisins seulement, isotrope, sans champ extérieur ni anisotropie du cristal ; ce couplage vient de l'interaction électrostatique combinée au principe d'exclusion, pas de l'interaction magnétique entre spins, bien plus faible. Les électrons sont supposés fixés sur leurs atomes.",
+    "s1.p2": "L'état fondamental a tous les spins en haut. Prenons comme états de base |<var>x</var><sub><var>n</var></sub>⟩ : tous en haut sauf celui de l'atome <var>n</var>. σ<sub><var>i</var></sub> · σ<sub><var>j</var></sub> = 2<var>P</var><sub><var>i</var><var>j</var></sub> \u2212 1, où <var>P</var> échange les deux spins : appliquer <var>H</var> à |<var>x</var><sub><var>n</var></sub>⟩ revient à échanger le spin retourné avec un voisin. En comptant l'énergie depuis le fondamental :",
+    "val.15.7": "Exacte pour (15.2) : c'est l'action de l'hamiltonien sur un état à un seul spin retourné. Aucune approximation de plus : un seul spin retourné reste un seul spin retourné, car <var>H</var> conserve la composante totale du spin selon l'axe.",
+    "s1.p3": "C'est l'équation de l'électron de la leçon « Les états d'un électron dans un réseau à une dimension », avec <var>E</var><sub>0</sub> = 2<var>A</var> : le spin retourné saute vers ses voisins avec l'amplitude i<var>A</var>/ℏ. Les états d'énergie définie sont donc des ondes e<sup>i<var>k</var><var>x</var><sub><var>n</var></sub></sup>, d'énergie :",
+    "val.15.12": "Exacte pour (15.2), un seul spin retourné. L'énergie est nulle en <var>k</var> = 0 : retourner « un peu » tous les spins à la fois, c'est tourner l'aimant entier, ce qui ne coûte rien sans anisotropie. Avec une anisotropie ou un champ, la bande ne part plus de 0.",
+    "s1.p4": "Aux grandes longueurs d'onde, <var>E</var> ≈ <var>A</var><var>b</var><sup>2</sup><var>k</var><sup>2</sup> : une particule libre, l'onde de spin, ou magnon, de masse effective :",
+    "val.15.14": "Approximation : <var>k</var><var>b</var> ≪ 1, comme (13.20) ; erreur relative (<var>k</var><var>b</var>)<sup>2</sup>/12 sur l'énergie, moins de 1\u00a0% sous <var>k</var><var>b</var> = 0,35.",
+
+    "s2.sec": "2 · Le spin retourné voyage",
+    "s2.h2": "Un paquet d'ondes de spin",
+    "s2.p1": "Comme l'électron, un spin retourné localisé est un paquet de ces ondes, qui avance à la vitesse de groupe 2<var>A</var><var>b</var> sin(<var>k</var><var>b</var>)/ℏ. Rien ne bouge dans la chaîne qu'une orientation de spin.",
+    "fig.aria": "Probabilité de trouver le spin retourné sur chaque atome de la chaîne",
+    "fig.legend.p": "probabilité que le spin de l'atome n soit retourné",
+    "fig.legend.centre": "centre prévu, vitesse de groupe",
+    "fig.xaxis": "numéro de l'atome",
+    "fig.yaxis": "probabilité",
+    "fig2.aria": "Relation de dispersion des ondes de spin",
+    "fig2.legend.e": "E(k) = 2A(1 \u2212 cos kb), (15.12)",
+    "fig2.legend.k": "k₀ choisi",
+    "fig2.xaxis": "kb (rad)",
+    "fig2.yaxis": "E/A",
+    "fig.k": "Nombre d'onde central, k₀b (rad)",
+    "fig.t": "Temps, en ℏ/A",
+    "fig.v.t": "{t} ℏ/A",
+    "fig.k.e": "Énergie de l'onde",
+    "fig.v.e": "{e} A",
+    "fig.f.e": "au-dessus de l'aimant parfaitement aligné",
+    "fig.k.v": "Vitesse de groupe",
+    "fig.v.v": "{v} Ab/ℏ",
+    "fig.f.v": "déplacement {d} atomes, prévu {p}",
+    "fig.caption": "Le simulateur résout (15.7) pour 160 spins en anneau : c'est le même calcul que pour l'électron. Le spin retourné part de l'atome 40 en paquet de 6 atomes de large. Au milieu de la bande, il va le plus vite, 2<var>A</var><var>b</var>/ℏ ; au bord, il ne bouge plus.",
+
+    "s3.sec": "Décrire le système",
+    "s3.h2": "Des ondes très bon marché",
+    "s3.p1": "Ce qui rend les ondes de spin importantes, c'est leur énergie aux grandes longueurs d'onde, minuscule devant <var>A</var>. Et chacune diminue l'aimantation totale d'un spin.",
+    "sys.title": "Le système décrit : chaîne ferromagnétique, couplage <var>A</var>",
+    "sys1.body": "Une onde de longueur d'onde 100 pas coûte (15.12) {r} <var>A</var> : à basse température, l'agitation thermique en crée beaucoup, alors qu'elle ne retournerait presque jamais un spin isolé qui coûterait 2<var>A</var>, sans pouvoir se déplacer.",
+    "sys2.body": "Chaque onde de spin porte un spin retourné : elle baisse l'aimantation de deux magnétons de Bohr environ. C'est ainsi que Bloch a expliqué la baisse de l'aimantation spontanée d'un ferromagnétique quand la température monte.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Du modèle aux magnons",
+    "hist.intro": "L'onde de spin a été prévue pour expliquer une mesure, puis observée directement presque trente ans plus tard.",
+    "hist.events": {
+      bloch: { who: "Felix Bloch", what: "introduit les ondes de spin pour expliquer la baisse de l'aimantation spontanée d'un ferromagnétique avec la température.", context: "Zeitschrift für Physik, vol. 61." },
+      holstein: { who: "Theodore Holstein et Henry Primakoff", what: "développent la théorie quantitative des ondes de spin.", context: "Physical Review, vol. 58." },
+      brockhouse: { who: "Bertram Brockhouse", what: "détecte directement les ondes de spin dans la magnétite par diffusion inélastique de neutrons.", context: "Physical Review, vol. 106 : le neutron, qui porte un spin, crée ou absorbe un magnon et perd ou gagne son énergie." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      neutrons: { name: "La spectroscopie des neutrons", text: "La diffusion inélastique de neutrons mesure encore la relation E(k) des ondes de spin des matériaux magnétiques : en comparant la courbe mesurée à (15.12) et à ses généralisations, on obtient les couplages entre spins voisins." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      base: { prompt: "Que représente l'état de base |xₙ⟩ ?",
+        options: { a: "Tous les spins en haut, sauf celui de l'atome n.", b: "Un électron sur l'atome n.", c: "Tous les spins en bas.", d: "Le spin de l'atome n dans un état excité de l'atome." },
+        why: "On ne retourne qu'un spin. Cette famille d'états, une par atome, joue le rôle des états « électron sur l'atome n »." },
+      echange: { prompt: "Pourquoi le spin retourné se déplace-t-il ?",
+        options: { a: "Parce que l'atome qui le porte se déplace.", b: "Parce qu'un champ magnétique le pousse.", c: "Parce que l'hamiltonien contient l'opérateur d'échange de deux spins voisins : il fait passer le spin retourné chez un voisin.", d: "Il ne se déplace pas." },
+        why: "σᵢ · σⱼ = 2Pᵢⱼ \u2212 1. P échange les spins : sur |xₙ⟩, il donne |xₙ₊₁⟩ ou |xₙ₋₁⟩. C'est une amplitude de saut." },
+      fond: { prompt: "Pourquoi l'onde de spin de k = 0 a-t-elle une énergie nulle ?",
+        options: { a: "Parce qu'elle n'existe pas.", b: "Parce que c'est l'aimant entier légèrement tourné, ce qui ne coûte rien sans direction privilégiée.", c: "Parce que A = 0.", d: "Parce que tous les spins sont en bas." },
+        why: "La somme de tous les |xₙ⟩ en phase est un état du spin total, simplement orienté autrement. Sans anisotropie, toutes les orientations ont la même énergie." },
+      masse: { prompt: "On double le couplage A. Que devient la masse effective du magnon ?",
+        options: { a: "Elle double.", b: "Elle ne change pas.", c: "Elle est multipliée par quatre.", d: "Elle est divisée par deux : ℏ²/(2Ab²)." },
+        why: "(15.14) : comme pour l'électron, un couplage plus fort donne une particule plus légère." },
+      electron: { prompt: "Qu'ont en commun l'onde de spin et l'électron d'une chaîne d'atomes ?",
+        options: { a: "Les mêmes équations, (15.7) et (13.3) avec E₀ = 2A : la même bande et la même masse effective.", b: "La même charge.", c: "Rien.", d: "La même vitesse." },
+        why: "Une chaîne d'états de base, un saut vers chaque voisin : les mathématiques sont identiques, seul l'objet qui saute change." },
+      haut: { prompt: "Pourquoi les ondes de grande longueur d'onde dominent-elles à basse température ?",
+        options: { a: "Parce qu'elles vont plus vite.", b: "Parce qu'elles ont une charge.", c: "Parce qu'elles coûtent très peu d'énergie, environ Ab²k², bien moins que k_BT.", d: "Parce que les autres sont interdites." },
+        why: "E ≈ Ab²k² tend vers 0 aux petits k : l'agitation thermique les crée facilement, et chacune baisse l'aimantation d'un spin." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 15, §15-1 (texte original en anglais). Notations SI. Bloch, Zeitschrift für Physik 61, 206 (1930) ; Holstein et Primakoff, Physical Review 58, 1098 (1940) ; Brockhouse, Physical Review 106, 859 (1957). Calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

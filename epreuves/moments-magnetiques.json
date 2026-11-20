@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["force", "a"],
+  ["temperature", "b"],
+  ["orbite", "c"],
+  ["g", "d"],
+  ["proton", "a"],
+  ["angle", "b"],
+  ["sens", "c"],
+  ["taille", "d"]
+ ]
+}

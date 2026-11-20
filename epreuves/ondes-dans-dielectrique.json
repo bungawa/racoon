@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["quadrature", "a"],
+  ["polarisabilite", "b"],
+  ["impulsion", "c"],
+  ["transverse", "d"],
+  ["azote", "a"],
+  ["resonance", "b"],
+  ["fibre", "c"],
+  ["verre", "d"]
+ ]
+}

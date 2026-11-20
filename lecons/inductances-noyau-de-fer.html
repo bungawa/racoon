@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Inductances à noyau de fer</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-magnetisme-induction" data-i18n="monde.magnetisme-induction"></a><span class="aux">›</span><a href="/racoon/etape?id=noyau-de-fer" data-i18n="etape.noyau-de-fer"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/courbe-d-aimantation" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <ul>
+      <li data-i18n-html="s1.li1"></li>
+      <li data-i18n-html="s1.li2"></li>
+      <li data-i18n-html="s1.li3"></li>
+    </ul>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mi>d</mi><mi>U</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>V</mi><mi>I</mi><mo>=</mo><mrow><mo>(</mo><mi>N</mi><mi>A</mi><mfrac><mrow><mi>d</mi><mi>B</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>)</mo></mrow><mrow><mo>(</mo><mfrac><mrow><mi>H</mi><mi>l</mi></mrow><mi>N</mi></mfrac><mo>)</mo></mrow><mo>=</mo><mi>l</mi><mi>A</mi><mspace width="0.1em"/><mi>H</mi><mfrac><mrow><mi>d</mi><mi>B</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.puissance"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mi>U</mi><mo>=</mo><mi>l</mi><mi>A</mi><mo>∫</mo><mi>H</mi><mspace width="0.1em"/><mi>d</mi><mi>B</mi></math><span class="n">(36.21)</span></div>
+    <p class="validite" data-i18n-html="val.36.21"></p>
+    <div class="eq"><math display="block"><mi>u</mi><mo>=</mo><mo>∫</mo><mi>H</mi><mspace width="0.1em"/><mi>d</mi><mi>B</mi></math><span class="n">(36.22)</span></div>
+    <p class="validite" data-i18n-html="val.36.22"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>w</mi><mi data-i18n="eq.cycle"></mi></msub><mo>=</mo><mo>∮</mo><mi>H</mi><mspace width="0.1em"/><mi>d</mi><mi>B</mi><mo>,</mo><mspace width="1em"/><mi>P</mi><mo>=</mo><mi>f</mi><mspace width="0.1em"/><msub><mi>w</mi><mi data-i18n="eq.cycle"></mi></msub><mspace width="0.1em"/><mi>l</mi><mi>A</mi></math><span class="n">(36.22a)</span></div>
+    <p class="validite" data-i18n-html="val.36.22a"></p>
+    <figure class="chart">
+      <svg class="fig" id="cycle" role="img" data-i18n-attr="aria-label:fig1.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n-html="fig1.legend.cycle"></span><span class="c-warn" data-i18n-html="fig1.legend.premiere"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="sh" data-i18n-html="fig1.hmax"></label><output id="shr" for="sh"></output></div>
+            <input id="sh" type="range" min="2.3" max="4.3" step="0.01" value="3.5"></div>
+          <div class="ctl"><div class="row"><label for="sk" data-i18n-html="fig1.k"></label><output id="skr" for="sk"></output></div>
+            <input id="sk" type="range" min="1.3" max="3.3" step="0.01" value="2.3"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="fig1.k.aire"></span><span class="v" id="vaire"></span><span class="f" id="faire"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig1.k.p"></span><span class="v" id="vp"></span><span class="f" id="fp"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig1.k.prem"></span><span class="v" id="vprem"></span><span class="f" id="fprem"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig1.k.vide"></span><span class="v" id="vvide"></span><span class="f" id="fvide"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig1.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><mi>B</mi><mo>=</mo><msub><mi>μ</mi><mi>r</mi></msub><msub><mi>μ</mi><mn>0</mn></msub><mi>H</mi></math><span class="n">(36.23)</span></div>
+    <p class="validite" data-i18n-html="val.36.23"></p>
+    <div class="eq"><math display="block"><mi>U</mi><mo>=</mo><mi>l</mi><mi>A</mi><mo>∫</mo><msub><mi>μ</mi><mi>r</mi></msub><msub><mi>μ</mi><mn>0</mn></msub><mi>H</mi><mspace width="0.1em"/><mi>d</mi><mi>H</mi><mo>=</mo><mi>l</mi><mi>A</mi><mfrac><mrow><msub><mi>μ</mi><mi>r</mi></msub><msub><mi>μ</mi><mn>0</mn></msub><msup><mi>H</mi><mn>2</mn></msup></mrow><mn>2</mn></mfrac></math><span class="n">(36.24)</span></div>
+    <p class="validite" data-i18n-html="val.36.24"></p>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="eq"><math display="block"><mi>L</mi><mo>=</mo><mfrac><mrow><msub><mi>μ</mi><mi>r</mi></msub><msub><mi>μ</mi><mn>0</mn></msub><msup><mi>N</mi><mn>2</mn></msup><mi>A</mi></mrow><mi>l</mi></mfrac></math><span class="n">(36.25)</span></div>
+    <p class="validite" data-i18n-html="val.36.25"></p>
+    <p data-i18n-html="s4.p3"></p>
+    <figure class="chart">
+      <svg class="fig" id="induc" role="img" data-i18n-attr="aria-label:fig2.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n-html="fig2.legend.app"></span><span class="c-warn" data-i18n-html="fig2.legend.diff"></span></div>
+      <figcaption data-i18n-html="fig2.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s4.p4"></p>
+    <figure class="chart">
+      <svg class="fig" id="onde" role="img" data-i18n-attr="aria-label:fig3.aria"></svg>
+      <div class="legend"><span class="c-warn" data-i18n-html="fig3.legend.b"></span><span class="c-tint" data-i18n-html="fig3.legend.i"></span></div>
+      <div class="panel">
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="fig3.k.crete"></span><span class="v" id="vcr"></span><span class="f" id="fcr"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig3.k.h3"></span><span class="v" id="vh3"></span><span class="f" id="fh3"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig3.k.d"></span><span class="v" id="vd"></span><span class="f" id="fd"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig3.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s4.p5"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/inductances-noyau-de-fer.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/physique-fondamentale.js"></script>
+<script src="/racoon/lecons/champs-em.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/magnetisme-induction.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const M = MagInd, MU0 = Constantes.mu0;
+/* the ring of the page: 500 turns, section 1 cm², mean length 20 cm, copper winding of 1 Ω; iron of density 7 874 kg·m⁻³ */
+const NT = 500, AS = 1e-4, LM = 0.2, RW = 1, RHO = 7874, F50 = 50;
+
+/* ---------- le système décrit : résistance contre réactance ---------- */
+(() => {
+  const L = M.inductanceFer(1000, NT, AS, LM), X = 2 * Math.PI * F50 * L;
+  $("sys1").innerHTML = t("sys1.body", { L: F.si(L, "H", { sig: 2 }), X: F.si(X, "Ω", { sig: 2 }), r: F.qty(F.num(100 * RW / X, 2), "%"),
+    L0: F.si(M.inductanceFer(1, NT, AS, LM), "H", { sig: 2 }) });
+})();
+
+/* ---------- cycle, inductance et courant : une même figure de fer ---------- */
+(() => {
+  const sh = $("sh"), sk = $("sk");
+  function cycle(svg, c, Hm) {
+    svg.innerHTML = "";
+    const X = Hm / 1e3, Y = 1.15 * Math.max(0.2, c.Bmax);
+    const P = Plot.axes(svg, { fmt: F, w: 640, h: 340, x: { domain: [-X, X], label: t("fig1.ax.x") }, y: { domain: [-Y, Y], label: t("fig1.ax.y") } });
+    const xy = q => [P.x(q[0] / 1e3), P.y(q[1])];
+    Plot.el("path", { d: Plot.path(c.descendante.concat(c.montante).map(xy)) + "Z", class: "area" }, P.g);
+    Plot.el("path", { d: Plot.path(c.premiere.map(xy)), class: "ref" }, P.g);
+    Plot.el("path", { d: Plot.path(c.descendante.map(xy)), class: "curve" }, P.g);
+    Plot.el("path", { d: Plot.path(c.montante.map(xy)), class: "curve" }, P.g);
+  }
+  function inductance(svg, c) {
+    const L = M.inductanceCourbe(c.premiere, NT, AS, LM).filter(r => r.I > 0), Imax = L[L.length - 1].I;
+    const Ym = 1.1 * Math.max(...L.map(r => Math.max(r.Lapp, r.Ldiff)));
+    svg.innerHTML = "";
+    const P = Plot.axes(svg, { fmt: F, w: 640, h: 260, x: { domain: [0, Imax], label: t("fig2.ax.x") }, y: { domain: [0, Ym], label: t("fig2.ax.y") } });
+    Plot.el("path", { d: Plot.path(L.map(r => [P.x(r.I), P.y(r.Lapp)])), class: "curve" }, P.g);
+    Plot.el("path", { d: Plot.path(L.map(r => [P.x(r.I), P.y(Math.max(0, r.Ldiff))])), class: "ref" }, P.g);
+  }
+  function onde(svg, c) {
+    const w = M.courantMagnetisant(c, { n: 360 }), Ipk = Math.max(...w.H.map(Math.abs)) * LM / NT;
+    svg.innerHTML = "";
+    const P = Plot.axes(svg, { fmt: F, w: 640, h: 240, x: { domain: [0, 360], label: t("fig3.ax.x") }, y: { domain: [-1.1, 1.1], label: t("fig3.ax.y") } });
+    Plot.el("line", { x1: P.x(0), x2: P.x(360), y1: P.y(0), y2: P.y(0), class: "zero" }, P.g);
+    const deg = th => th * 180 / Math.PI;
+    Plot.el("path", { d: Plot.path(w.theta.map((th, i) => [P.x(deg(th)), P.y(w.B[i] / c.Bmax)])), class: "ref" }, P.g);
+    Plot.el("path", { d: Plot.path(w.theta.map((th, i) => [P.x(deg(th)), P.y(w.H[i] * LM / NT / Ipk)])), class: "curve" }, P.g);
+    const h1 = w.harmoniques[0] * LM / NT;
+    $("vcr").innerHTML = F.si(Ipk, "A", { sig: 2 });
+    $("fcr").innerHTML = t("fig3.f.crete", { r: F.num(Ipk / h1, 3) });
+    $("vh3").innerHTML = F.qty(F.num(100 * w.harmoniques[1], 2), "%");
+    $("fh3").innerHTML = t("fig3.f.h3", { h5: F.qty(F.num(100 * w.harmoniques[2], 2), "%") });
+    $("vd").innerHTML = F.qty(F.num(w.dephasage * 180 / Math.PI, 2), "°");
+    $("fd").innerHTML = t("fig3.f.d");
+  }
+  function draw() {
+    const Hm = Math.pow(10, +sh.value), k = Math.pow(10, +sk.value), p = Object.assign({}, M.ACIER_JA, { k });
+    const c = M.cycleHysteresis(p, Hm, { n: 300 }), e = M.energieCycle(c);
+    cycle($("cycle"), c, Hm); inductance($("induc"), c); onde($("onde"), c);
+    $("shr").innerHTML = t("fig1.f.hmax", { H: F.si(Hm, "A·m⁻¹", { sig: 2 }), I: F.si(Hm * LM / NT, "A", { sig: 2 }) });
+    $("skr").innerHTML = F.si(k, "A·m⁻¹", { sig: 2 });
+    $("vaire").innerHTML = F.si(e.aire, "J·m⁻³", { sig: 3 });
+    $("faire").innerHTML = t("fig1.f.aire", { B: F.si(c.Bmax, "T", { sig: 3 }) });
+    $("vp").innerHTML = F.si(e.aire * F50 / RHO, "W·kg⁻¹", { sig: 2 });
+    $("fp").innerHTML = t("fig1.f.p", { P: F.si(e.aire * F50 * LM * AS, "W", { sig: 2 }) });
+    $("vprem").innerHTML = F.si(e.premiere, "J·m⁻³", { sig: 3 });
+    $("fprem").innerHTML = t("fig1.f.prem", { r: F.si(e.rendue, "J·m⁻³", { sig: 2 }) });
+    $("vvide").innerHTML = F.si(e.vide, "J·m⁻³", { sig: 3 });
+    $("fvide").innerHTML = t("fig1.f.vide", { r: F.num(e.vide / e.premiere, 2) });
+  }
+  sh.oninput = sk.oninput = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["steinmetz", 1892, "idea"], ["hadfield", 1900, "experiment"], ["goss", 1934, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["tole"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["energie", "b"], ["pertes", "d"], ["spires", "a"], ["calcul", "c"], ["sature", "b"], ["pointe", "a"], ["vide", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 364 });
+})();
+</script>
+</body>
+</html>

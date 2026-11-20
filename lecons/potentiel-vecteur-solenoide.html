@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Potentiel vecteur d'un long solénoïde</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-magnetisme-induction" data-i18n="monde.magnetisme-induction"></a><span class="aux">›</span><a href="/racoon/etape?id=potentiel-circuits-simples" data-i18n="etape.potentiel-circuits-simples"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/potentiel-vecteur-fil" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>A</mi><mi>x</mi></msub><mo>=</mo><mo>−</mo><mi>K</mi><mfrac><mi>y</mi><msup><mi>r</mi><mn>2</mn></msup></mfrac></math><span class="n">(14.25)</span></div>
+    <p class="validite" data-i18n-html="val.14.25"></p>
+    <div class="eq"><math display="block"><msub><mi>A</mi><mi>y</mi></msub><mo>=</mo><mi>K</mi><mfrac><mi>x</mi><msup><mi>r</mi><mn>2</mn></msup></mfrac></math><span class="n">(14.26)</span></div>
+    <p class="validite" data-i18n-html="val.14.26"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mn>2</mn><mi>π</mi><mi>K</mi><mo>=</mo><mi>π</mi><msup><mi>a</mi><mn>2</mn></msup><msub><mi>μ</mi><mn>0</mn></msub><mi>n</mi><mi>I</mi><mo>,</mo><mspace width="1em"/><mi>K</mi><mo>=</mo><mfrac><mrow><msub><mi>μ</mi><mn>0</mn></msub><mi>n</mi><mi>I</mi><msup><mi>a</mi><mn>2</mn></msup></mrow><mn>2</mn></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.k"></p>
+    <div class="eq"><math display="block"><mi>A</mi><mo>=</mo><mfrac><mrow><msub><mi>μ</mi><mn>0</mn></msub><mi>n</mi><mi>I</mi><msup><mi>a</mi><mn>2</mn></msup></mrow><mn>2</mn></mfrac><mfrac><mn>1</mn><mi>r</mi></mfrac></math><span class="n">(14.27)</span></div>
+    <p class="validite" data-i18n-html="val.14.27"></p>
+    <div class="eq"><math display="block"><mi>A</mi><mo>=</mo><mfrac><mrow><msub><mi>μ</mi><mn>0</mn></msub><mi>n</mi><mi>I</mi><mi>r</mi></mrow><mn>2</mn></mfrac></math><span class="n">(14.27a)</span></div>
+    <p class="validite" data-i18n-html="val.14.27a"></p>
+    <figure>
+      <svg class="fig" id="coupe" viewBox="0 0 640 400" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.sol"></span><span class="c-warn" data-i18n="fig.legend.a"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="sn" data-i18n="fig.n"></label><output id="snr" for="sn"></output></div>
+            <input id="sn" type="range" min="100" max="5000" step="100" value="1000"></div>
+          <div class="ctl"><div class="row"><label for="si" data-i18n="fig.i"></label><output id="sir" for="si"></output></div>
+            <input id="si" type="range" min="0.1" max="10" step="0.1" value="2"></div>
+          <div class="ctl"><div class="row"><label for="sa" data-i18n="fig.a"></label><output id="sar" for="sa"></output></div>
+            <input id="sa" type="range" min="5" max="40" step="1" value="20"></div>
+          <div class="ctl"><div class="row"><label for="sr" data-i18n="fig.r"></label><output id="srr" for="sr"></output></div>
+            <input id="sr" type="range" min="2" max="90" step="1" value="40"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.a"></span><span class="v" id="va"></span><span class="f" id="fa"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.circ"></span><span class="v" id="vc"></span><span class="f" id="fc"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.b"></span><span class="v" id="vb"></span><span class="f" id="fb"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>J</mi><mo>=</mo><mi>σ</mi><mi>a</mi><mi>ω</mi><mo>,</mo><mspace width="1em"/><mi>B</mi><mo>=</mo><msub><mi>μ</mi><mn>0</mn></msub><mi>σ</mi><mi>a</mi><mi>ω</mi></math></div>
+    <p class="validite" data-i18n-html="val.cyl"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><mi>U</mi><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi>a</mi></msubsup><mi>ω</mi><mi>r</mi><mi>B</mi><mspace width="0.2em"/><mi>d</mi><mi>r</mi><mo>=</mo><mfrac><mrow><mi>ω</mi><mi>B</mi><msup><mi>a</mi><mn>2</mn></msup></mrow><mn>2</mn></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.u"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/potentiel-vecteur-solenoide.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/physique-fondamentale.js"></script>
+<script src="/racoon/lecons/champs-em.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/magnetisme-induction.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const M = MagInd, MU0 = Constantes.mu0;
+
+/* ---------- coupe du solénoïde : A le long d'un cercle, sa circulation, B ---------- */
+(() => {
+  const svg = $("coupe"), sn = $("sn"), si = $("si"), sa = $("sa"), sr = $("sr");
+  const O = [320, 200], S = 2000;                                       // px, px per m (view ±16 cm × ±10 cm)
+  const px = p => [O[0] + S * p[0], O[1] - S * p[1]];
+  function draw() {
+    const n = +sn.value, Ic = +si.value, a = +sa.value / 1000, r = +sr.value / 1000, A = M.solenoideChampA(n, Ic, a);
+    svg.innerHTML = "";
+    const gs = Plot.el("g", { class: "c-tint" }, svg);
+    Plot.el("circle", { cx: O[0], cy: O[1], r: S * a, class: "stroke bold" }, gs);
+    for (let k = 0; k < 8; k++) {                                       // the winding, counterclockwise: small arrows on the sheet
+      const th = 2 * Math.PI * k / 8, p = [a * Math.cos(th), a * Math.sin(th)], u = [-Math.sin(th), Math.cos(th)], A0 = px(p);
+      Plot.fleche(gs, A0, [A0[0] + 14 * u[0], A0[1] - 14 * u[1]], { cls: "c-tint" });
+    }
+    const gw = Plot.el("g", { class: "c-warn" }, svg);
+    Plot.el("circle", { cx: O[0], cy: O[1], r: S * r, class: "stroke thin dash" }, gw);
+    const Aa = M.solenoideA(n, Ic, a, a), L = 50;                       // arrow length 50 px for A(a), the largest value
+    for (let k = 0; k < 12; k++) {
+      const th = 2 * Math.PI * k / 12, p = [r * Math.cos(th), r * Math.sin(th)], v = A(p), A0 = px(p), l = L / Aa;
+      Plot.fleche(gw, A0, [A0[0] + l * v[0], A0[1] - l * v[1]], { cls: "c-warn" });
+    }
+    const circ = AnaVec.circulation(A, AnaVec.cercle([0, 0], r), 2000), rr = Math.min(r, a);
+    const B = AnaVec.rotationnel(A, [r * 0.6, r * 0.8], 1e-6 * r)[2];
+    $("snr").textContent = t("fig.nval", { n: F.num(n, 4) }); $("sir").textContent = F.si(Ic, "A");
+    $("sar").textContent = F.si(a, "m", { prefix: "m" }); $("srr").textContent = F.si(r, "m", { prefix: "m" });
+    $("va").textContent = F.si(M.solenoideA(n, Ic, a, r), "T·m");
+    $("fa").textContent = t(r > a ? "fig.f.dehors" : "fig.f.dedans");
+    $("vc").textContent = F.si(circ, "Wb");
+    $("fc").textContent = t("fig.f.flux", { v: F.si(MU0 * n * Ic * Math.PI * rr * rr, "Wb") });
+    $("vb").textContent = Math.abs(B) < 1e-6 * MU0 * n * Ic ? t("fig.v.zero") : F.si(B, "T");
+    $("fb").textContent = t("fig.f.b0", { v: F.si(MU0 * n * Ic, "T") });
+  }
+  sn.oninput = si.oninput = sa.oninput = sr.oninput = draw; draw();
+})();
+
+/* ---------- le système décrit : un cylindre chargé qui tourne ---------- */
+(() => {
+  const Emax = 3e6, sigma = Constantes.eps0 * Emax, a = 0.1, w = 2 * Math.PI * 50, c = M.cylindreTournant(sigma, a, w);
+  const BT = 3e-5, UT = w * BT * a * a / 2;                            // order of the Earth's field along the axis, T
+  $("sys1").innerHTML = t("sys1.body", { E: F.si(Emax, "V·m⁻¹"), sigma: F.si(sigma, "C·m⁻²", { prefix: "µ" }), a: F.si(a, "m"),
+    w: F.si(w, "rad·s⁻¹"), v: F.si(c.v, "m·s⁻¹"), vc: F.sci(c.v / Constantes.c, 1), J: F.si(c.J, "A·m⁻¹", { prefix: "m" }), B: F.si(c.B, "T"), U: F.si(c.U, "V"),
+    BT: F.si(BT, "T"), UT: F.si(UT, "V"), rap: F.sci(UT / c.U, 1) });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["ab", 1959, "idea"], ["chambers", 1960, "experiment"], ["tonomura", 1986, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["irm"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["dehors", "b"], ["circulation", "d"], ["dedans", "a"], ["rotationnel", "c"], ["sens", "b"], ["omega", "d"], ["analogie", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 144 });
+})();
+</script>
+</body>
+</html>

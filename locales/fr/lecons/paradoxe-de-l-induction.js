@@ -1,0 +1,100 @@
+/* Leçon « Un paradoxe de l'induction » (Feynman II.17.4) : textes en français.
+   Une autre langue = locales/<langue>/lecons/paradoxe-de-l-induction.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Un paradoxe de l'induction",
+    "crumb.jour": "Un paradoxe de l'induction",
+    "h1": "Un paradoxe de l'induction",
+    "lede": "Un disque immobile porte des charges sur son bord et, au centre, une bobine parcourue par un courant. On coupe le courant : le champ induit pousse les charges, le disque devrait se mettre à tourner. Mais rien ne tournait au départ et rien d'extérieur n'exerce de couple : il ne devrait pas tourner. L'un des deux raisonnements est faux, et trouver lequel oblige à donner au champ lui-même un moment cinétique.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : la physique de l'induction",
+    "eq.champ": "champ",
+
+    "s1.sec": "Le dispositif",
+    "s1.h2": "Deux raisonnements, deux réponses",
+    "s1.p1": "Un disque de plastique tourne sans frottement autour d'un axe. Il porte une bobine coaxiale, un solénoïde de rayon <var>a</var>, parcourue par un courant constant <var>I</var> ; pour que rien ne vienne de l'extérieur, la bobine est supraconductrice, ou alimentée par une pile fixée au disque. Sur le bord, de petites sphères métalliques isolées, régulièrement espacées, portent chacune la même charge ; leur charge totale est <var>Q</var>, sur un cercle de rayon <var>R</var>. Au départ, tout est immobile.",
+    "s1.p2": "On coupe le courant ; pour une bobine supraconductrice, il suffit de la chauffer au-dessus de sa température critique. Premier raisonnement : le flux de la bobine disparaît, et par (17.3) un champ électrique induit tourne autour de l'axe ; il pousse toutes les sphères dans le même sens, le disque reçoit un couple et se met à tourner. Second raisonnement : le moment cinétique du disque, de la bobine et des sphères est nul au départ, et aucun couple extérieur n'agit ; il doit rester nul, le disque ne doit pas tourner.",
+    "s1.p3": "Les deux ne peuvent pas être justes à la fois : la nature ne donne qu'une réponse. Ce n'est pas un piège sur un détail. La pile, la résistance de la bobine, la façon d'interrompre le courant n'y changent rien : c'est une question de principe.",
+
+    "s2.sec": "Le couple",
+    "s2.h2": "Une impulsion qui ne dépend que du flux enlacé",
+    "s2.p1": "Le premier raisonnement se chiffre. Sur le cercle des charges, le champ induit est tangent et, par symétrie, de même valeur partout ; (17.3) donne sa circulation, 2π<var>R</var><var>E</var><sub>φ</sub> = \u2212dΦ(<var>R</var>)/d<var>t</var>, où Φ(<var>R</var>) est le flux à travers ce cercle. Le couple sur l'ensemble des charges, autour de l'axe du disque :",
+    "val.17.3a": "Approximation : symétrie de révolution, les charges sur un cercle coaxial à la bobine ; disque assez lent pour que la force magnétique sur les charges en mouvement reste négligeable devant la force électrique induite. Le champ électrique des charges elles-mêmes n'exerce aucun couple sur l'ensemble. Le résultat ne dépend que de la charge totale, pas de sa répartition sur le cercle.",
+    "s2.p2": "Intégré sur toute la durée de la coupure, du flux initial Φ(<var>R</var>) au flux nul, le couple donne au disque le moment cinétique :",
+    "val.17.3b": "Approximation : celles de (17.3a). Le résultat ne dépend pas de la durée de la coupure : couper vite donne un grand couple pendant peu de temps. Un disque qui tourne déjà reçoit le même moment cinétique.",
+    "s2.p3": "Φ(<var>R</var>) n'est pas le flux de la bobine : c'est le flux à travers le cercle des charges, celui qui traverse la bobine moins celui qui revient entre la bobine et les charges. Pour une bobine longue et des charges près de son milieu, le retour est faible, et Φ(<var>R</var>) ≈ μ<sub>0</sub><var>n</var><var>I</var>π<var>a</var><sup>2</sup>. Pour des charges très éloignées, presque tout le flux est revenu à l'intérieur du cercle, et le disque ne reçoit presque rien. Le premier raisonnement tient : le disque tourne. C'est donc le second qui oublie quelque chose.",
+
+    "s3.sec": "Le moment cinétique du champ",
+    "s3.h2": "Où il se trouvait avant la coupure",
+    "s3.p1": "Avant la coupure, le champ électrique des charges et le champ magnétique de la bobine se croisent sans que rien ne bouge. Un tel champ porte une quantité de mouvement, de densité ε<sub>0</sub><var>E</var> ∧ <var>B</var>, et donc un moment cinétique (voir « Quantité de mouvement du champ ») :",
+    "val.champ": "Exacte : c'est la définition du moment cinétique du champ électromagnétique dans le vide ; la densité ε<sub>0</sub><var>E</var> ∧ <var>B</var> vient de la conservation de la quantité de mouvement entre les charges et le champ. Ce qui est approché ici : l'intégrale, calculée sur une grille qui laisse une erreur d'environ 1\u00a0%, et les fils de la bobine, pris infiniment fins.",
+    "s3.p2": "Le compte se ferme. Ce moment cinétique vaut <var>Q</var>Φ(<var>R</var>)/(2π) avant la coupure, et zéro après, quand <var>B</var> a disparu. Le disque n'a pas créé de moment cinétique : il a pris celui du champ. Le second raisonnement oubliait que le champ en portait. La figure le vérifie pour une bobine de 2\u00a0cm de rayon et 0,1\u00a0µC sur le cercle : elle calcule Φ(<var>R</var>) par le potentiel vecteur de chaque spire, et, indépendamment, l'intégrale du champ point par point dans tout l'espace.",
+    "fig.aria": "Flux à travers le cercle des charges selon son rayon, pour une bobine de longueur réglable",
+    "fig.legend.flux": "flux à travers le cercle des charges, rapporté à μ₀nIπa²",
+    "fig.r": "Rayon R du cercle des charges",
+    "fig.l": "Longueur de la bobine",
+    "fig.xaxis": "rayon du cercle des charges (cm)",
+    "fig.yaxis": "Φ(R)/(μ₀nIπa²)",
+    "fig.k.flux": "Flux à travers le cercle des charges",
+    "fig.f.flux": "{x}\u00a0% de celui d'une bobine infinie",
+    "fig.k.dl": "Reçu par le disque, (17.3b), en kg·m²·s⁻¹",
+    "fig.f.dl": "vitesse angulaire du disque : {w}",
+    "fig.k.champ": "Porté par le champ avant la coupure, en kg·m²·s⁻¹",
+    "fig.f.champ": "écart à (17.3b) : {e}\u00a0%",
+    "fig.caption": "Bobine de 2\u00a0cm de rayon en 40 spires, dont le courant par mètre ferait 1\u00a0T dans une bobine infinie ; la droite verticale marque son rayon. Une bobine courte renvoie son flux tout près d'elle : Φ(<var>R</var>) chute dès que le cercle s'en écarte, puis décroît comme 1/<var>R</var>, celui d'un dipôle. Une bobine longue garde presque tout son flux à l'intérieur d'un cercle placé à son milieu, jusqu'à des rayons de l'ordre de sa longueur. Les deux dernières valeurs viennent de deux calculs indépendants : l'un par le flux, l'autre par l'intégrale de ε<sub>0</sub><var>r</var> ∧ (<var>E</var> ∧ <var>B</var>) sur tout l'espace.",
+
+    "s4.sec": "Ordres de grandeur",
+    "s4.h2": "Un effet réel, mais minuscule",
+    "sys.title": "Le système décrit : un disque de laboratoire",
+    "sys1.body": "Une bobine supraconductrice de {a} de rayon et 30\u00a0cm de long, dont le courant par mètre ferait {B} dans une bobine infinie ; {Q} répartis sur un cercle de 6\u00a0cm de rayon ; un disque de plastique de 0,5\u00a0kg et 15\u00a0cm de rayon, de moment d'inertie {J}. La coupure lui donne {dl}, soit {w} : un tour en {ans} ans. La charge est limitée par le claquage de l'air autour des sphères, le champ par la bobine. L'effet est réel, mais il faut une suspension très sensible pour le voir.",
+    "s4.p1": "La même loi vaut pour une particule chargée seule dans un champ magnétique de révolution : son moment cinétique autour de l'axe plus <var>q</var>Φ/(2π), Φ le flux à travers le cercle qu'elle décrit, reste constant. Une particule qui sort d'une région où règne un champ magnétique en emporte une rotation autour de l'axe ; on la retrouve dans « Lentille magnétique », où les électrons tournent en traversant la lentille.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Un moment cinétique sans rien qui tourne",
+    "hist.intro": "Le bilan était connu pour une charge seule avant que le paradoxe ne soit posé ; la mesure directe du moment cinétique d'un champ statique a demandé des décennies.",
+    "hist.events": {
+      busch: { who: "Hans Busch", what: "calcule les trajectoires des électrons dans un champ électromagnétique de révolution.", context: "Il en tire une quantité conservée : le moment cinétique de l'électron autour de l'axe plus qΦ/(2π), Φ le flux enlacé par son orbite. C'est le bilan du disque, pour une charge seule." },
+      cours: { who: "Richard Feynman", what: "pose le paradoxe du disque dans le deuxième volume de ses Lectures on Physics, sans en donner la solution.", context: "Il laisse le lecteur y réfléchir, en prévenant que la réponse n'est ni facile ni une astuce. Dix chapitres plus loin, il y revient : le moment cinétique était dans le champ." },
+      graham: { who: "G. M. Graham et D. G. Lahoz", what: "observent à l'université de Toronto le moment cinétique de champs électrique et magnétique statiques dans le vide.", context: "Les deux champs, établis séparément dans l'intervalle d'un condensateur cylindrique, mettent en mouvement une suspension résonante. L'accord avec la théorie classique est d'environ 20\u00a0%." },
+      lombardi: { who: "Gabriel G. Lombardi", what: "publie dans l'American Journal of Physics une note sur le paradoxe du disque de Feynman.", context: "D'autres analyses suivent. Elles précisent que, pour une bobine de longueur finie, il faut compter le flux qui revient hors de la bobine, sans quoi le bilan ne se ferme pas." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      canon: { name: "Faisceaux d'électrons magnétisés", text: "Dans certains canons à électrons d'accélérateurs, la cathode est plongée dans le champ d'un solénoïde. En sortant du champ, chaque électron garde le moment cinétique <var>q</var>Φ/(2π) qui correspond au flux qu'il enlaçait au départ, et tourne autour de l'axe. On s'en sert pour fabriquer des faisceaux plats, comme au Fermilab, ou des faisceaux d'électrons en vortex." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      tourne: { prompt: "Qu'arrive-t-il au disque quand le courant de la bobine s'arrête ?",
+        options: { a: "Rien : le moment cinétique total doit rester nul.", b: "Il oscille puis s'arrête.", c: "Il se met à tourner : le champ électrique induit exerce un couple sur les charges.", d: "Il ne tourne que si la coupure est lente." },
+        why: "Le champ induit par la disparition du flux est tangent au cercle des charges et les pousse toutes dans le même sens. Le couple est réel ; c'est le bilan qui doit inclure le champ." },
+      conserve: { prompt: "Le moment cinétique total est-il conservé dans cette expérience ?",
+        options: { a: "Oui, à condition de compter celui du champ : il passe du champ au disque.", b: "Non : l'induction viole la conservation du moment cinétique.", c: "Oui, car le disque ne tourne pas.", d: "Non, sauf si la bobine est supraconductrice." },
+        why: "Avant la coupure, le champ porte QΦ(R)/(2π) ; après, le disque porte la même quantité et le champ plus rien." },
+      vitesse: { prompt: "On coupe le courant deux fois plus vite. Le moment cinétique final du disque…",
+        options: { a: "double.", b: "est divisé par deux.", c: "quadruple.", d: "ne change pas : il ne dépend que du flux initial enlacé par les charges." },
+        why: "Le couple est proportionnel à dΦ/dt ; son intégrale ne dépend que de la variation totale du flux, (17.3b)." },
+      retour: { prompt: "Les charges sont sur un cercle très éloigné d'une bobine courte. Que reçoit le disque ?",
+        options: { a: "Le même moment cinétique que près de la bobine.", b: "Presque rien : le flux qui revient à l'intérieur du cercle compense presque celui de la bobine.", c: "Un moment cinétique plus grand, car le bras de levier R est plus long.", d: "Un moment cinétique infini." },
+        hint: "Que vaut le flux total d'un champ magnétique à travers un très grand cercle autour d'un aimant ?",
+        why: "Les lignes de champ se referment : loin d'une bobine courte, le flux à travers le cercle tend vers zéro. Le bras de levier R est compensé par E en 1/R." },
+      signe: { prompt: "On remplace les charges positives par des charges négatives de même valeur absolue. Que fait le disque ?",
+        options: { a: "Il ne tourne plus.", b: "Il tourne dans le même sens, deux fois plus vite.", c: "Il tourne en sens inverse, à la même vitesse.", d: "Il tourne dans le même sens, à la même vitesse." },
+        why: "ΔL = QΦ(R)/(2π) change de signe avec Q. Le moment cinétique du champ, proportionnel à E, change de signe aussi." },
+      ordre: { prompt: "1\u00a0µC est réparti sur un cercle qui enlace un flux de 10⁻³\u00a0Wb. Quel moment cinétique le disque reçoit-il à la coupure ?",
+        options: { a: "1,6 × 10⁻¹⁰\u00a0kg·m²·s⁻¹.", b: "10⁻⁹\u00a0kg·m²·s⁻¹.", c: "6,3 × 10⁻⁹\u00a0kg·m²·s⁻¹.", d: "1,6 × 10⁻⁷\u00a0kg·m²·s⁻¹." },
+        hint: "ΔL = QΦ/(2π).",
+        why: "10⁻⁶ × 10⁻³/(2π) = 1,6 × 10⁻¹⁰\u00a0kg·m²·s⁻¹ ; oublier le 2π donne 10⁻⁹. Pour un disque de laboratoire, une vitesse angulaire de l'ordre de 10⁻⁷\u00a0rad·s⁻¹ ou moins." },
+      ou: { prompt: "Avant la coupure, où se trouve le moment cinétique qui ira au disque ?",
+        options: { a: "Dans les électrons de la bobine, qui tournent.", b: "Dans le champ électromagnétique, là où le champ électrique des charges croise le champ magnétique de la bobine.", c: "Nulle part : il est créé par la coupure.", d: "Dans la pile qui alimente la bobine." },
+        why: "La densité de quantité de mouvement ε₀E ∧ B est non nulle partout où les deux champs se croisent ; son moment autour de l'axe, intégré sur l'espace, vaut QΦ(R)/(2π)." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 17, §17-4, et chap. 27, §27-6 (texte original en anglais). Notations SI. Busch : d'après arXiv:1709.09538 et arXiv:2006.12948. Graham et Lahoz : <i>Nature</i>, vol. 285, 1980, p. 154-155. Lombardi : <i>American Journal of Physics</i>, vol. 51, 1983, p. 213-214, d'après G. Pantazis et L. Perivolaropoulos, <i>European Journal of Physics</i>, vol. 38, 2017 (arXiv:1605.05209). Disque, bobine et calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

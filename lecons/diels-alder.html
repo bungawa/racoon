@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Réaction de Diels-Alder</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .deux { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; align-items: center; }
+  .deux svg { width: 100%; height: 190px; }
+  .schema svg { width: 100%; max-width: 520px; height: 170px; margin: 0 auto; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-organique" data-i18n="monde.chim-organique"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-liaisons-cc" data-i18n="etape.chim-liaisons-cc"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/orbitales-frontalieres" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <figure class="schema">
+      <div class="deux">
+        <svg class="fig no-sigle" id="meca" role="img" data-i18n-attr="aria-label:meca.aria"></svg>
+        <svg class="fig no-sigle" id="cyclo" role="img" data-i18n-attr="aria-label:cyclo.aria"></svg>
+      </div>
+      <figcaption data-i18n-html="meca.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>Δ</mi><mi mathvariant="normal">r</mi></msub><msup><mi>H</mi><mo>°</mo></msup><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>ν</mi><mi>i</mi></msub><msub><mi>Δ</mi><mi mathvariant="normal">f</mi></msub><msubsup><mi>H</mi><mi>i</mi><mo>°</mo></msubsup><mo>≈</mo><mo>−</mo><mn>166</mn><mspace width="0.2em"/><mi mathvariant="normal">kJ</mi><mo>·</mo><msup><mi>mol</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math></div>
+    <p class="validite" data-i18n-html="val.hess"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sysbody"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure>
+      <div class="deux">
+        <svg class="fig no-sigle" id="niveaux" viewBox="0 0 360 260" role="img" data-i18n-attr="aria-label:niv.aria"></svg>
+        <svg class="fig no-sigle" id="lobes" role="img" data-i18n-attr="aria-label:lob.aria"></svg>
+      </div>
+      <div class="legend"><span class="c-tint" data-i18n="lob.plus"></span><span class="el-o" data-i18n="lob.moins"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="diene" data-i18n="fmo.diene"></label></div><select id="diene"></select></div>
+          <div class="ctl"><div class="row"><label for="dieno" data-i18n="fmo.dieno"></label></div><select id="dieno"></select></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="fmo.k.normale"></span><span class="v" id="vn"></span></div>
+          <div class="stat"><span class="k" data-i18n="fmo.k.inverse"></span><span class="v" id="vi"></span></div>
+          <div class="stat"><span class="k" data-i18n="fmo.k.poids"></span><span class="v" id="vg"></span><span class="f" id="fg"></span></div>
+        </div>
+        <p class="readout" id="regio" aria-live="polite"></p>
+      </div>
+      <figcaption data-i18n-html="fmo.caption"></figcaption>
+    </figure>
+    <div class="eq"><math display="block"><mi>Δ</mi><mi>E</mi><mo>≈</mo><mfrac><mrow><mn>2</mn><msup><mi>η</mi><mn>2</mn></msup><msup><mrow><mo>(</mo><msub><mi>c</mi><mn>1</mn></msub><msub><mi>c</mi><mi>a</mi></msub><mo>+</mo><msub><mi>c</mi><mn>4</mn></msub><msub><mi>c</mi><mi>b</mi></msub><mo>)</mo></mrow><mn>2</mn></msup></mrow><mrow><msub><mi>E</mi><mi data-i18n="eq.bv"></mi></msub><mo>−</mo><msub><mi>E</mi><mi data-i18n="eq.ho"></mi></msub></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.fmo"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <figure class="schema">
+      <svg class="fig no-sigle" id="produit" role="img" data-i18n-attr="aria-label:prod.aria"></svg>
+      <p class="readout" id="prodnom"></p>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><mfrac><msub><mi>n</mi><mtext data-i18n="eq.endo"></mtext></msub><msub><mi>n</mi><mtext data-i18n="eq.exo"></mtext></msub></mfrac><mo>=</mo><mi data-i18n="eq.exp"></mi><mfrac><mrow><mi>Δ</mi><mi>Δ</mi><msup><mi>G</mi><mo>‡</mo></msup></mrow><mrow><mi>R</mi><mi>T</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.endo"></p>
+    <p id="dcpd"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/diels-alder.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/quantique-deux-etats.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script src="/racoon/statistique.js"></script>
+<script src="/racoon/chim-organique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const O = ChimOrga, CA = ChimArchi, C = Constantes, sym = s => t("chim.sym", { s }), $ = id => document.getElementById(id);
+const peindre = (svg, d) => { svg.setAttribute("viewBox", d.viewBox); svg.innerHTML = d.html; };
+
+/* ---------- le bilan : trois flèches, un cycle ---------- */
+(() => {
+  const m = O.mol("C -0.2 1.2; C -1 0.6; C -1 -0.6; C -0.2 -1.2; C 1.3 0.7; C 1.3 -0.7 | 0=1 1-2 2=3 4=5");
+  peindre($("meca"), O.schema(m, { texte: sym, doublets: false, echelle: 44,
+    fleches: [{ de: [0, 1], vers: [1, 2], cote: 1 }, { de: [2, 3], vers: [3, 5], cote: -1 }, { de: [4, 5], vers: [4, 0], cote: 1 }] }));
+  peindre($("cyclo"), O.dessin(O.mol("C 0 1; C -0.866 0.5; C -0.866 -0.5; C 0 -1; C 0.866 -0.5; C 0.866 0.5 | 0-1 1=2 2-3 3-4 4-5 5-0"), { texte: sym, echelle: 44 }));
+  /* s-cis : Boltzmann sur l'écart s-cis – s-trans, et vitesse d'échange par Eyring (données de la page) */
+  const T = 298.15, dE = 16.5e3, barriere = 24.8e3, p = Math.exp(-dE / (C.R * T)), k = O.eyring(barriere, T);
+  $("sysbody").innerHTML = t("sys.body", { p: F.num(100 * p, 2), k: F.sci(k, 2), tau: F.si(1e9 / k, "ns", { sig: 1 }), T: F.kelvin(T) });
+})();
+
+/* ---------- orbitales frontalières : niveaux, lobes, orientation ---------- */
+(() => {
+  const DIENES = ["butadiene", "methoxy1butadiene", "methoxy2butadiene"], DIENOS = ["ethylene", "acroleine"];
+  const nomsD = textOf("fmo.dienes", DIENES), nomsN = textOf("fmo.dienos", DIENOS), prods = textOf("prod.noms", ["cyclohexene", "methoxy3", "methoxy1", "carbaldehyde", "ortho", "para", "meta"]);
+  $("diene").innerHTML = DIENES.map(id => `<option value="${id}">${nomsD[id]}</option>`).join("");
+  $("dieno").innerHTML = DIENOS.map(id => `<option value="${id}">${nomsN[id]}</option>`).join("");
+  $("dieno").value = "acroleine";
+  const ETA = 0.3;                                    // couplage entre extrémités qui se font face, en |β| : valeur choisie pour comparer au calcul exact
+  /* positions des atomes π (longueurs de liaison, y vers le haut) : diène s-cis à gauche, diénophile à droite */
+  const POS_D = { butadiene: [[-0.2, 1.2], [-1, 0.6], [-1, -0.6], [-0.2, -1.2]], methoxy1butadiene: [[-0.2, 1.2], [-1, 0.6], [-1, -0.6], [-0.2, -1.2], [-0.5, 2.15]],
+    methoxy2butadiene: [[-0.2, 1.2], [-1, 0.6], [-1, -0.6], [-0.2, -1.2], [-1.95, 0.95]] };
+  const posN = (id, haut) => { const s = haut ? 1 : -1, P = [[1.3, 0.7 * s], [1.3, -0.7 * s]]; if (id === "acroleine") P.push([2.2, -1.2 * s], [3.1, -0.75 * s]); return P; };
+  const LIENS = { butadiene: [[0, 1], [1, 2], [2, 3]], methoxy1butadiene: [[0, 1], [1, 2], [2, 3], [0, 4]], methoxy2butadiene: [[0, 1], [1, 2], [2, 3], [1, 4]],
+    ethylene: [[0, 1]], acroleine: [[0, 1], [1, 2], [2, 3]] };
+  const f1 = x => Math.round(x * 10) / 10, S = 40;
+  function lobes(ids, P, c, liens, svgOut) {
+    liens.forEach(([i, j]) => svgOut.push(`<line x1="${f1(P[i][0] * S)}" y1="${f1(-P[i][1] * S)}" x2="${f1(P[j][0] * S)}" y2="${f1(-P[j][1] * S)}" class="stroke thin c-label-2"/>`));
+    P.forEach((p, i) => {
+      const r = Math.max(2, 26 * Math.abs(c[i])), cls = c[i] >= 0 ? "fill c-tint" : "stroke bold el-o";
+      svgOut.push(`<circle cx="${f1(p[0] * S)}" cy="${f1(-p[1] * S)}" r="${f1(r)}" class="${cls}"/>`);
+      svgOut.push(`<text x="${f1(p[0] * S)}" y="${f1(-p[1] * S - r - 4)}" text-anchor="middle">${sym(ids[i])}</text>`);
+    });
+  }
+  const ATOMES = { butadiene: ["C1", "C2", "C3", "C4"], methoxy1butadiene: ["C1", "C2", "C3", "C4", "O"], methoxy2butadiene: ["C1", "C2", "C3", "C4", "O"],
+    ethylene: ["Ca", "Cb"], acroleine: ["Cβ", "Cα", "C", "O"] };
+  function niveaux(c, d, n) {
+    const y = E => 20 + (2.2 - E) * 48, out = [], col = (H, x0, nom) => {
+      H.orbitales.forEach((o, i) => {
+        const E = -o.x, occ = o.n > 0, k = i === H.HO ? "HO" : i === H.BV ? "BV" : null;
+        out.push(`<line x1="${x0}" y1="${f1(y(E))}" x2="${x0 + 80}" y2="${f1(y(E))}" class="stroke ${occ ? "bold" : "thin dash"}${k ? " c-tint" : ""}"/>`);
+        if (k) out.push(`<text x="${x0 + (x0 < 150 ? -6 : 86)}" y="${f1(y(E) + 4)}" text-anchor="${x0 < 150 ? "end" : "start"}">${t("niv." + k)}</text>`);
+      });
+      out.push(`<text x="${x0 + 40}" y="252" text-anchor="middle">${nom}</text>`);
+    };
+    col(c.diene, 50, t("niv.diene")); col(c.dienophile, 230, t("niv.dieno"));
+    const H = c.diene.orbitales[c.diene.HO], B = c.dienophile.orbitales[c.dienophile.BV], H2 = c.dienophile.orbitales[c.dienophile.HO], B2 = c.diene.orbitales[c.diene.BV];
+    out.push(`<line x1="130" y1="${f1(y(-H.x))}" x2="230" y2="${f1(y(-B.x))}" class="stroke ${c.demande === "normale" ? "c-ok" : "thin dash c-label-2"}"/>`);
+    out.push(`<line x1="130" y1="${f1(y(-B2.x))}" x2="230" y2="${f1(y(-H2.x))}" class="stroke ${c.demande === "inverse" ? "c-ok" : "thin dash c-label-2"}"/>`);
+    out.push(`<text x="180" y="14" text-anchor="middle">${t("niv.E")}</text>`);
+    $("niveaux").innerHTML = out.join("");
+  }
+  /* produit : cycle P0…P5, C1 du diène en P0, C4 en P3 ; orientation a : diénophile[0] en P5, b : en P4 */
+  const HEX = [[0, 1], [-0.866, 0.5], [-0.866, -0.5], [0, -1], [0.866, -0.5], [0.866, 0.5]];
+  function produit(d, n, orientation) {
+    const at = HEX.map(p => `C ${p[0]} ${p[1]}`), li = ["0-1", "1=2", "2-3", "3-4", "4-5", "5-0"];
+    const ajoute = (base, e, x, y) => { at.push(`${e} ${f1(x * 1000) / 1000} ${f1(y * 1000) / 1000}`); li.push(`${base}-${at.length - 1}`); return at.length - 1; };
+    const exo = (i, e1, e2, double, tourne) => {
+      const p = HEX[i], a = ajoute(i, e1, 2 * p[0], 2 * p[1]), r = tourne * Math.PI / 3;
+      const q = [2 * p[0] + Math.cos(r) * p[0] - Math.sin(r) * p[1], 2 * p[1] + Math.sin(r) * p[0] + Math.cos(r) * p[1]];
+      const b = ajoute(a, e2, q[0], q[1]); if (double) li[li.length - 1] = `${a}=${b}`;
+    };
+    let pos = null;
+    if (d === "methoxy1butadiene") exo(0, "O", "C", false, -1);
+    if (d === "methoxy2butadiene") exo(1, "O", "C", false, 1);
+    if (n === "acroleine") { const alpha = (orientation || "a") === "a" ? 4 : 5; exo(alpha, "C", "O", true, alpha === 4 ? 1 : -1);
+      const subD = d === "methoxy1butadiene" ? 0 : d === "methoxy2butadiene" ? 1 : null;
+      if (subD !== null) { const dist = Math.min(Math.abs(subD - alpha), 6 - Math.abs(subD - alpha)); pos = dist === 1 ? "ortho" : dist === 2 ? "meta" : "para"; } }
+    return { m: O.mol(at.join("; ") + " | " + li.join(" ")), pos };
+  }
+  function maj() {
+    const d = $("diene").value, n = $("dieno").value, c = O.cycloaddition(d, n);
+    niveaux(c, d, n);
+    const haut = (c.orientation || "a") === "a", out = [];
+    const [oD, oN] = c.demande === "normale" ? [c.diene.orbitales[c.diene.HO].c, c.dienophile.orbitales[c.dienophile.BV].c] : [c.diene.orbitales[c.diene.BV].c, c.dienophile.orbitales[c.dienophile.HO].c];
+    const PN = posN(n, haut);
+    lobes(ATOMES[d], POS_D[d], oD, LIENS[d], out); lobes(ATOMES[n], PN, oN, LIENS[n], out);
+    (haut ? [[0, 0], [3, 1]] : [[0, 1], [3, 0]]).forEach(([i, j]) => out.push(`<line x1="${f1(POS_D[d][i][0] * S + 14)}" y1="${f1(-POS_D[d][i][1] * S)}" x2="${f1(PN[j][0] * S - 14)}" y2="${f1(-PN[j][1] * S)}" class="stroke thin dash c-ok"/>`));
+    $("lobes").setAttribute("viewBox", "-110 -120 270 240"); $("lobes").innerHTML = out.join("");
+    $("vn").textContent = t("fmo.v.ecart", { x: F.fix(c.normale, 2) });
+    $("vi").textContent = t("fmo.v.ecart", { x: F.fix(c.inverse, 2) });
+    const w = Math.max(c.poids.a, c.poids.b), D = Math.min(c.normale, c.inverse), b = ETA * Math.sqrt(w);
+    $("vg").textContent = F.fix(w, 3);
+    $("fg").textContent = t("fmo.f.exact", { r: F.num(100 * (CA.stabilisationFrontiere(0, D, b) / CA.frontiereExacte(0, D, b) - 1), 2), eta: F.fix(ETA, 1) });
+    const p = produit(d, n, c.orientation);
+    peindre($("produit"), O.dessin(p.m, { texte: sym, echelle: 34 }));
+    $("regio").textContent = t(c.orientation === null ? "fmo.regio.aucune" : "fmo.regio." + c.orientation, { a: F.fix(c.poids.a, 3), b: F.fix(c.poids.b, 3), d: t("fmo.demande." + c.demande) });
+    const cle = p.pos || (n === "acroleine" ? "carbaldehyde" : { butadiene: "cyclohexene", methoxy1butadiene: "methoxy3", methoxy2butadiene: "methoxy1" }[d]);
+    $("prodnom").textContent = t("prod.lecture", { n: prods[cle] });
+  }
+  $("diene").onchange = $("dieno").onchange = maj; maj();
+})();
+
+/* ---------- endo ou exo : le dimère du cyclopentadiène ---------- */
+(() => {
+  const T = 298.15, T2 = 353.15, R = C.R, dd = R * T * Math.log(99), dd2 = R * T2 * Math.log(150), dG = 2.9e3, rt = Math.exp(dG / (R * T));
+  $("dcpd").innerHTML = t("s3.dcpd", { dd: F.si(dd / 1e3, "kJ·mol⁻¹", { sig: 3 }), T: F.kelvin(T), T2: F.kelvin(T2), dd2: F.si(dd2 / 1e3, "kJ·mol⁻¹", { sig: 3 }), rt: F.num(rt, 2) });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["diels", 1928, "experiment"], ["nobel", 1950, "idea"], ["fukui", 1952, "idea"], ["wh", 1965, "idea"], ["nobel81", 1981, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["epdm", "eau"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["bilan", "c"], ["scis", "a"], ["demande", "b"], ["regio", "d"], ["supra", "a"], ["endo", "c"], ["retro", "b"], ["inverse", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

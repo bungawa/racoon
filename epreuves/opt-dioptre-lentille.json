@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["exces", "a"],
+  ["gauss", "b"],
+  ["dioptre", "c"],
+  ["focales", "d"],
+  ["planconvexe", "a"],
+  ["accolees", "b"],
+  ["grandissement", "c"],
+  ["reduction", "d"]
+ ]
+}

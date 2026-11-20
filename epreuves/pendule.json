@@ -1,0 +1,12 @@
+{
+  "cles": [
+    ["mesureg", "b"],
+    ["lune", "c"],
+    ["borda", "a"],
+    ["boule", "d"],
+    ["tour", "c"],
+    ["col", "b"],
+    ["cycloide", "d"],
+    ["separatrice", "a"]
+  ]
+}

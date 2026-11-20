@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Physique et biologie</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-panorama" data-i18n="monde.panorama"></a><span class="aux">›</span><a href="/racoon/etape?id=physique-et-sciences" data-i18n="etape.physique-et-sciences"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fond" href="/racoon/atlas?piste=fond" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/physique-et-chimie" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n="s1.p1"></p>
+    <p data-i18n="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n="s2.p1"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="box def"><b data-i18n="s2.def.title"></b>
+      <p data-i18n-html="s2.def.body"></p>
+    </div>
+    <figure class="chart">
+      <svg id="nerf" role="img" data-i18n-attr="aria-label:nerf.aria"></svg>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="dsl" data-i18n="nerf.d"></label><output id="dread" for="dsl"></output></div>
+          <input id="dsl" type="range" min="-0.7" max="3" step="0.02" value="1"></div>
+        <div class="controls">
+          <div class="seg" role="group" data-i18n-attr="aria-label:nerf.presets"><button type="button" id="fc" aria-pressed="false" data-i18n="nerf.c"></button><button type="button" id="fa" aria-pressed="false" data-i18n="nerf.a"></button><button type="button" id="calmar" aria-pressed="false" data-i18n="nerf.calmar"></button></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="nerf.k.nu"></span><span class="v" id="vnu"></span><span class="f" id="fnu"></span></div>
+          <div class="stat"><span class="k" data-i18n="nerf.k.my"></span><span class="v" id="vmy"></span><span class="f" id="fmy"></span></div>
+          <div class="stat"><span class="k" data-i18n="nerf.k.eq"></span><span class="v" id="veq"></span><span class="f" data-i18n="nerf.k.eq.f"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="nerf.caption"></figcaption>
+    </figure>
+    <p data-i18n="s2.p3"></p>
+    <div class="box rem"><b data-i18n="s2.rem.title"></b>
+      <p data-i18n-html="s2.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n="s3.p1"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="box prop"><b data-i18n="s3.prop.title"></b>
+      <p data-i18n-html="s3.prop.body"></p>
+    </div>
+    <p data-i18n="s3.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n="s4.p1"></p>
+    <p data-i18n-html="s4.p2"></p>
+    <figure>
+      <div class="panel">
+        <div class="row"><span data-i18n="tr.dna"></span></div>
+        <div class="controls" id="bases" role="group" data-i18n-attr="aria-label:tr.dna"></div>
+        <div class="controls"><button class="btn tinted" type="button" id="reset" data-i18n="tr.reset"></button></div>
+        <div class="list keyed" id="reading"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="tr.k.len"></span><span class="v" id="vlen"></span></div>
+          <div class="stat"><span class="k" data-i18n="tr.k.effect"></span><span class="v" id="veff"></span></div>
+        </div>
+        <p id="effwhy"></p>
+      </div>
+      <figcaption data-i18n-html="tr.caption"></figcaption>
+    </figure>
+    <div class="box warn"><b data-i18n="s4.warn.title"></b>
+      <p data-i18n-html="s4.warn.body"></p>
+    </div>
+    <p data-i18n="s4.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/physique-et-biologie.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/physique-sciences.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const $ = id => document.getElementById(id);
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+
+/* ---------- §3-3 : vitesse de l'influx, avec et sans myéline ---------- */
+(() => {
+  const UM = 1e-6, DMY = [1, 25];                              // µm : domaine où la loi linéaire des fibres myélinisées est calée
+  const { x, y, g } = Plot.axes($("nerf"), { fmt: F, w: 640, h: 300,
+    x: { scale: "log", domain: [0.1, 1000], label: t("nerf.x") }, y: { scale: "log", domain: [0.1, 1000], label: t("nerf.y") } });
+  const path = (f, a, b) => { let d = ""; for (let e = Math.log10(a); e <= Math.log10(b) + 1e-9; e += 0.02) d += (d ? "L" : "M") + x(10 ** e).toFixed(1) + " " + y(f(10 ** e * UM)).toFixed(1); return d; };
+  Plot.el("path", { d: path(Sciences.vBare, 0.1, 1000), class: "ref" }, g);
+  Plot.el("path", { d: path(Sciences.vMyelin, DMY[0], DMY[1]), class: "curve" }, g);
+  const dNu = Plot.el("circle", { r: 6, class: "dot" }, g), dMy = Plot.el("circle", { r: 6, class: "dot" }, g);
+  const dsl = $("dsl"), PRESET = { fc: -0.15, fa: 1.2, calmar: 2.7 };
+  const ms = s => F.si(s, "s", { sig: 2 });
+  function upd() {
+    const dum = Math.pow(10, +dsl.value), d = dum * UM, vn = Sciences.vBare(d), inMy = dum >= DMY[0] && dum <= DMY[1];
+    $("dread").textContent = F.si(d, "m", { sig: 2 });
+    dNu.setAttribute("cx", x(dum)); dNu.setAttribute("cy", y(vn));
+    $("vnu").textContent = F.qty(F.num(vn, 2), t("unit.ms"));
+    $("fnu").textContent = t("nerf.delay", { t: ms(Sciences.delay(1, vn)) });
+    if (inMy) {
+      const vm = Sciences.vMyelin(d);
+      dMy.setAttribute("cx", x(dum)); dMy.setAttribute("cy", y(vm)); dMy.setAttribute("r", 6);
+      $("vmy").textContent = F.qty(F.num(vm, 2), t("unit.ms"));
+      $("fmy").textContent = t("nerf.delay", { t: ms(Sciences.delay(1, vm)) });
+      $("veq").textContent = F.si(Sciences.bareFor(vm), "m", { sig: 2 });
+    } else {
+      dMy.setAttribute("r", 0);
+      $("vmy").textContent = t("nerf.na"); $("fmy").textContent = t("nerf.na.f"); $("veq").textContent = t("nerf.na");
+    }
+    Object.keys(PRESET).forEach(id => $(id).setAttribute("aria-pressed", String(Math.abs(PRESET[id] - dsl.value) < 1e-9)));
+  }
+  Object.keys(PRESET).forEach(id => $(id).onclick = () => { dsl.value = PRESET[id]; upd(); });
+  dsl.oninput = upd; upd();
+})();
+
+/* ---------- §3-3 : de l'ADN à la protéine ---------- */
+(() => {
+  const REF = "CCATGGCTTGGAAACTGTTTGGCTAAGC", NEXT = { A: "C", C: "G", G: "T", T: "A" };
+  const AA = t("aa.short"), FULL = t("aa.full"), EFFECT = textOf("tr.effects", ["aucune", "silencieuse", "faux-sens", "non-sens", "depart"]);
+  let dna = REF;
+  const box = $("bases");
+  box.innerHTML = [...REF].map(() => '<button type="button" class="btn icon"></button>').join("");
+  const btns = [...box.children];
+  btns.forEach((b, i) => b.onclick = () => { dna = Sciences.mutate(dna, i, NEXT[dna[i]]); upd(); });
+  $("reset").onclick = () => { dna = REF; upd(); };
+  const seq = s => `<code>${t("tr.seq", { s })}</code>`;
+  const prot = r => r.codons.map(c => AA[c.aa]).join("–");
+  function upd() {
+    btns.forEach((b, i) => { b.textContent = dna[i]; b.className = dna[i] === REF[i] ? "btn icon" : "btn"; b.setAttribute("aria-label", t("tr.base", { i: i + 1, b: dna[i] })); });
+    const rna = Sciences.transcribe(dna), r = Sciences.translate(rna);
+    const framed = r.start < 0 ? rna : (r.start ? rna.slice(0, r.start) + " · " : "") + (rna.slice(r.start).match(/.{1,3}/g) || []).join(" ");
+    $("reading").innerHTML = [["tr.k.dna", seq(dna)], ["tr.k.rna", seq(framed)], ["tr.k.prot", r.codons.length ? t("tr.prot", { p: prot(r) }) : t("tr.noprot")]]
+      .map(([k, v]) => `<div><span class="k">${t(k)}</span><span>${v}</span></div>`).join("");
+    $("vlen").textContent = String(r.codons.length);
+    const changed = dna !== REF, eff = changed ? Sciences.effect(REF, dna) : "aucune";
+    $("veff").textContent = EFFECT[eff].name;
+    const ref = Sciences.translate(Sciences.transcribe(REF)).codons, diff = r.codons.findIndex((c, i) => ref[i] && c.aa !== ref[i].aa);
+    $("effwhy").textContent = eff === "faux-sens" && diff >= 0 ? t("tr.swap", { a: FULL[ref[diff].aa], b: FULL[r.codons[diff].aa], n: diff + 1 }) : EFFECT[eff].why;
+  }
+  upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["hodgkin", 1952, "experiment"], ["watson", 1953, "idea"], ["muscle", 1954, "experiment"], ["kendrew", 1958, "experiment"],
+    ["nirenberg", 1961, "experiment"], ["code", 1966, "idea"], ["katz", 1970, "experiment"], ["ribosome", 2009, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["vaccin", "enmg"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["condensateur", "c"], ["myeline", "a"], ["calmar", "d"], ["enzyme", "b"], ["isotope", "c"], ["codon", "a"], ["triplet", "b"], ["silence", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 7 });
+})();
+</script>
+</body>
+</html>

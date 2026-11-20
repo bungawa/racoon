@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["mobilites", "a"],
+  ["saturation", "b"],
+  ["etalement", "c"],
+  ["einstein", "d"],
+  ["pression", "a"],
+  ["exacte", "b"],
+  ["knudsen", "c"],
+  ["independant", "d"]
+ ]
+}

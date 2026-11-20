@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Les électrons et les deux fentes</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-quantique-amplitudes" data-i18n="monde.quantique-amplitudes"></a><span class="aux">›</span><a href="/racoon/etape?id=deux-fentes-electrons" data-i18n="etape.deux-fentes-electrons"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-quant" href="/racoon/atlas?piste=quant" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/balles-deux-fentes" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mover><mi>n</mi><mo>‾</mo></mover><mo>=</mo><mi>N</mi><mi>p</mi><mo>,</mo><mspace width="1em"/><mi>σ</mi><mo>=</mo><msqrt><mi>N</mi><mi>p</mi><mo>(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo>)</mo></msqrt><mo>≈</mo><msqrt><mover><mi>n</mi><mo>‾</mo></mover></msqrt></math></div>
+    <p class="validite" data-i18n-html="val.comptage"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="ecran" viewBox="0 0 640 150" role="img" data-i18n-attr="aria-label:fig.aria.ecran"></svg>
+      <svg class="fig" id="clics" viewBox="0 0 640 46" role="img" data-i18n-attr="aria-label:fig.aria.clics"></svg>
+      <svg class="fig" id="histo" role="img" data-i18n-attr="aria-label:fig.aria.histo"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.compte"></span><span class="c-label" data-i18n="fig.legend.attendu"></span><span class="c-label-2" data-i18n="fig.legend.bande"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <p>
+            <button type="button" class="btn" id="lecture" data-i18n="fig.lecture"></button>
+            <button type="button" class="btn tinted" id="plus1" data-i18n="fig.plus1"></button>
+            <button type="button" class="btn tinted" id="plus100" data-i18n="fig.plus100"></button>
+            <button type="button" class="btn tinted" id="plus10k" data-i18n="fig.plus10k"></button>
+            <button type="button" class="btn tinted" id="effacer" data-i18n="fig.effacer"></button>
+          </p>
+          <div class="ctl"><div class="row"><label for="sdebit" data-i18n="fig.debit"></label><output id="sdebitr" for="sdebit"></output></div>
+            <input id="sdebit" type="range" min="0" max="3" step="0.01" value="1"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.n"></span><span class="v" id="vn"></span><span class="f" id="fn"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.fluct"></span><span class="v" id="vfl"></span><span class="f" id="ffl"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.franges"></span><span class="v" id="vfr"></span><span class="f" id="ffr"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+      <p id="sys2"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/electrons-deux-fentes.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/quantique-amplitudes.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const Q = QuantAmp, UM = 1e-6;
+/* the bench: 50 keV electrons, slits 0,3 µm wide and 1 µm apart, screen 1 m behind */
+const EC = 50e3 * Q.e, P = Q.impulsion(Q.m_e, EC), LAM = Q.broglie(P);
+const BANC = { lambda: LAM, d: 1 * UM, a: 0.3 * UM, L: 1 }, X = 16 * UM, NB = 48;
+const dens = x => Q.amplitudesDeuxFentes(x, BANC).P12;
+/* the share of each cell, for the expected counts */
+const PART = (() => { const m = NB * 200, h = 2 * X / m, c = []; let tot = 0, cur = 0;
+  for (let j = 0; j < m; j++) { const v = dens(-X + (j + 0.5) * h) * h; tot += v; cur += v; if ((j + 1) % 200 === 0) { c.push(cur); cur = 0; } }
+  return c.map(v => v / tot); })();
+
+/* ---------- electrons one at a time: the screen, the clicks, the counts ---------- */
+(() => {
+  const ecran = $("ecran"), clics = $("clics"), histo = $("histo"), sdebit = $("sdebit"), lect = $("lecture");
+  const alea = Q.aleaGraine(Date.now());
+  let pts = [], h = new Array(NB).fill(0), N = 0, temps = 0, instants = [], enCours = false, avant = 0;
+  const MAXPTS = 20000;
+  const debit = () => Math.pow(10, +sdebit.value);
+  function ajouter(n) {
+    const xs = Q.tirerArrivees(dens, -X, X, n, alea, 2000);
+    Q.histogrammeArrivees(xs, -X, X, NB).forEach((v, c) => h[c] += v);
+    for (const x of xs) { if (pts.length < MAXPTS) pts.push([x, alea()]); }
+    N += n;
+  }
+  function dessiner() {
+    /* the screen: one small square per arrival */
+    ecran.innerHTML = "";
+    Plot.el("rect", { x: 20, y: 5, width: 600, height: 140, class: "stroke thin c-label-2" }, ecran);
+    const d = pts.map(([x, y]) => "M" + (20 + 600 * (x + X) / (2 * X)).toFixed(1) + " " + (6 + 137 * y).toFixed(1) + "h1.6v1.6h-1.6z").join("");
+    Plot.el("path", { d, class: "fill c-tint" }, ecran);
+    /* the clicks of the last 5 s, all the same */
+    clics.innerHTML = "";
+    Plot.el("line", { x1: 20, x2: 620, y1: 40, y2: 40, class: "stroke thin c-label-2" }, clics);
+    instants.filter(s => s > temps - 5).forEach(s => { const x = 620 - 120 * (temps - s); Plot.el("line", { x1: x, x2: x, y1: 10, y2: 40, class: "stroke c-label" }, clics); });
+    /* the counts per cell, the expected N p and the band ± σ */
+    histo.innerHTML = "";
+    const att = PART.map(p => Q.fluctuationComptage(N, p)), haut = Math.max(4, ...h, ...att.map(a => a.moyenne + 2 * a.ecart)) * 1.05;
+    const G = Plot.axes(histo, { fmt: F, w: 640, h: 220, pad: { l: 56, b: 44 }, x: { domain: [-16, 16], label: t("fig.xaxis") }, y: { domain: [0, haut], label: t("fig.yaxis") } });
+    const cw = 2 * X / NB, gx = x => G.x(x / UM);
+    h.forEach((v, c) => { if (v) Plot.el("rect", { x: gx(-X + c * cw) + 1, width: gx(cw) - gx(0) - 2, y: G.y(v), height: G.y(0) - G.y(v), class: "fill c-tint" }, G.g); });
+    if (N) {
+      const bord = s => att.flatMap((a, c) => [[gx(-X + c * cw), G.y(Math.max(0, a.moyenne + s * a.ecart))], [gx(-X + (c + 1) * cw), G.y(Math.max(0, a.moyenne + s * a.ecart))]]);
+      Plot.el("path", { d: Plot.path(bord(1)), class: "stroke thin dash c-label-2" }, G.g);
+      Plot.el("path", { d: Plot.path(bord(-1)), class: "stroke thin dash c-label-2" }, G.g);
+      Plot.el("path", { d: Plot.path(bord(0)), class: "stroke c-label" }, G.g);
+    }
+    /* stats: the central cell, and how many σ separate a bright cell from the dark one next to it */
+    const c0 = NB / 2, fl = Q.fluctuationComptage(N, PART[c0]);
+    const iMin = PART.indexOf(Math.min(...PART.slice(c0, c0 + 12)), c0), fm = Q.fluctuationComptage(N, PART[iMin]);
+    const z = N ? (fl.moyenne - fm.moyenne) / Math.sqrt(fl.ecart ** 2 + fm.ecart ** 2) : 0;
+    $("vn").textContent = F.num(N, 6);
+    $("fn").textContent = t("fig.f.n", { c: F.num(h[c0], 6) });
+    $("vfl").textContent = N ? F.num(100 * fl.relatif, 2) + " %" : "—";
+    $("ffl").textContent = t("fig.f.fluct", { m: F.num(fl.moyenne, 3) });
+    $("vfr").textContent = N ? F.num(z, 2) + " σ" : "—";
+    $("ffr").textContent = t(z > 5 ? "fig.f.nettes" : z > 2 ? "fig.f.devinees" : "fig.f.noyees");
+    $("sdebitr").textContent = F.num(debit(), 2) + " " + t("fig.parS");
+  }
+  function boucle(ts) {
+    if (!enCours) return;
+    const dt = Math.max(0, Math.min(0.1, (ts - avant) / 1000)); avant = ts;
+    const nouv = Q.instantsPoisson(debit(), dt, alea).map(s => temps + s);
+    temps += dt; instants = instants.filter(s => s > temps - 5).concat(nouv);
+    if (nouv.length) ajouter(nouv.length);
+    dessiner(); requestAnimationFrame(boucle);
+  }
+  lect.onclick = () => { enCours = !enCours; lect.textContent = t(enCours ? "fig.pause" : "fig.lecture"); if (enCours) { avant = performance.now(); requestAnimationFrame(boucle); } };
+  $("plus1").onclick = () => { ajouter(1); instants.push(temps); dessiner(); };
+  $("plus100").onclick = () => { ajouter(100); dessiner(); };
+  $("plus10k").onclick = () => { ajouter(10000); dessiner(); };
+  $("effacer").onclick = () => { pts = []; h = new Array(NB).fill(0); N = 0; instants = []; dessiner(); };
+  sdebit.oninput = dessiner; dessiner();
+})();
+
+/* ---------- the system described: one electron at a time, how many to see the fringes ---------- */
+(() => {
+  const gamma = 1 + EC / (Q.m_e * Q.c ** 2), v = Q.c * Math.sqrt(1 - 1 / gamma ** 2), debit = 1000, Lapp = 1;
+  $("sys1").innerHTML = t("sys1.body", { l: F.si(LAM, "m"), v: F.num(v / Q.c, 2), i: F.si(Q.interfrangeFentes(LAM, BANC.L, BANC.d), "m"),
+    e: F.si(v / debit, "m"), n: F.sci(debit * Lapp / v, 1) });
+  const c0 = NB / 2, iMin = PART.indexOf(Math.min(...PART.slice(c0, c0 + 12)), c0);
+  const z = N => { const a = Q.fluctuationComptage(N, PART[c0]), b = Q.fluctuationComptage(N, PART[iMin]); return (a.moyenne - b.moyenne) / Math.sqrt(a.ecart ** 2 + b.ecart ** 2); };
+  $("sys2").innerHTML = t("sys2.body", { z8: F.num(z(8), 2), z270: F.num(z(270), 2), z2000: F.num(z(2000), 2), z160k: F.num(z(160000), 3) });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["jonsson", 1961, "experiment"], ["bologne", 1974, "experiment"], ["tonomura", 1989, "experiment"], ["masque", 2013, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["holographie"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["clics", "a"], ["filament", "c"], ["deux", "b"], ["proba", "d"], ["huit", "a"], ["pensee", "c"], ["seul", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 374 });
+})();
+</script>
+</body>
+</html>

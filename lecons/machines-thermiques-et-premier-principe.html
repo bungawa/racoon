@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Machines thermiques et premier principe</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-thermo" data-i18n="monde.thermo"></a><span class="aux">›</span><a href="/racoon/etape?id=premier-second-principe" data-i18n="etape.premier-second-principe"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-thermo" href="/racoon/atlas?piste=thermo" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/autres-formes-energie" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi mathvariant="normal">Δ</mi><mi>U</mi><mo>=</mo><mi>W</mi><mo>+</mo><mi>Q</mi></math><span class="n">(44.1)</span></div>
+    <p class="validite" data-i18n-html="val.44.1"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="box rem"><b data-i18n="s2.sys.title"></b>
+      <p data-i18n-html="s2.sys.body"></p>
+    </div>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="eq"><math display="block"><mi mathvariant="normal">Δ</mi><mi>U</mi><mo>=</mo><msub><mi>C</mi><mi>V</mi></msub><mspace width="0.1em"></mspace><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>,</mo><mspace width="1em"></mspace><msub><mi>C</mi><mi>V</mi></msub><mo>=</mo><mfrac><mrow><mi>n</mi><mi>R</mi></mrow><mrow><mi>γ</mi><mo>−</mo><mn>1</mn></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.cv"></p>
+    <figure>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="q" data-i18n="gaz.q"></label><output id="qv" for="q"></output></div>
+            <input id="q" type="range" min="-3000" max="3000" step="50" value="1000"></div>
+          <div class="ctl"><div class="row"><label for="w" data-i18n="gaz.w"></label><output id="wv" for="w"></output></div>
+            <input id="w" type="range" min="-3000" max="3000" step="50" value="0"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="gaz.k.du"></span><span class="v" id="du"></span><span class="f" id="duf"></span></div>
+          <div class="stat"><span class="k" data-i18n="gaz.k.t"></span><span class="v" id="tf"></span><span class="f" id="tff"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="gaz.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>=</mo><mfrac><mrow><mi>N</mi><mi>m</mi><mi>g</mi><mi>h</mi></mrow><mrow><mi>M</mi><mi>c</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.joule"></p>
+    <figure>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="jm" data-i18n="j.m"></label><output id="jmv" for="jm"></output></div>
+            <input id="jm" type="range" min="1" max="30" step="0.1" value="3.6"></div>
+          <div class="ctl"><div class="row"><label for="jh" data-i18n="j.h"></label><output id="jhv" for="jh"></output></div>
+            <input id="jh" type="range" min="0.5" max="12" step="0.5" value="11"></div>
+          <div class="ctl"><div class="row"><label for="jn" data-i18n="j.n"></label><output id="jnv" for="jn"></output></div>
+            <input id="jn" type="range" min="1" max="40" step="1" value="16"></div>
+          <div class="ctl"><div class="row"><label for="jM" data-i18n="j.M"></label><output id="jMv" for="jM"></output></div>
+            <input id="jM" type="range" min="0.5" max="10" step="0.5" value="6"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="j.k.w"></span><span class="v" id="jw"></span><span class="f" id="jwf"></span></div>
+          <div class="stat"><span class="k" data-i18n="j.k.dt"></span><span class="v" id="jdt"></span><span class="f" id="jdtf"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="j.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><mi>W</mi><mo>+</mo><msub><mi>Q</mi><mi mathvariant="normal">c</mi></msub><mo>+</mo><msub><mi>Q</mi><mi mathvariant="normal">f</mi></msub><mo>=</mo><mn>0</mn></math></div>
+    <p class="validite" data-i18n-html="val.cycle"></p>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/machines-thermiques-et-premier-principe.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), Th = Thermo;
+const J = v => F.si(v, "J"), signe = v => (v > 0 ? "+" : "") + J(v);
+
+/* ---------- un même ΔU, des chemins différents : 1 mol d'air, gaz parfait ---------- */
+(() => {
+  const n = 1, T0 = 300, Cv = Th.cv(n, 1.4);
+  const upd = () => {
+    const Q = +$("q").value, W = +$("w").value, dU = Q + W, Tf = T0 + dU / Cv;
+    $("qv").textContent = signe(Q); $("wv").textContent = signe(W);
+    $("du").textContent = signe(dU);
+    $("duf").textContent = t("gaz.f.du", { q: signe(dU), w: signe(dU) });
+    $("tf").innerHTML = Tf > 0 ? F.kelvin(Tf) : "–";
+    $("tff").textContent = t("gaz.f.t", { cv: F.qty(F.fix(Cv, 1), "J·K⁻¹") });
+  };
+  $("q").oninput = $("w").oninput = upd; upd();
+})();
+
+/* ---------- la roue à palettes de Joule ---------- */
+(() => {
+  const ids = ["jm", "jh", "jn", "jM"];
+  const upd = () => {
+    const [m, h, N, M] = ids.map(i => +$(i).value), r = Th.palettes(m, h, M, { n: N });
+    $("jmv").textContent = F.si(m, "kg"); $("jhv").textContent = F.si(h, "m"); $("jnv").textContent = String(N); $("jMv").textContent = F.si(M, "kg");
+    $("jw").textContent = J(r.W);
+    $("jwf").textContent = t("j.f.w", { h: F.si(r.W / (M * 9.81), "m") });
+    $("jdt").textContent = F.qty(F.fix(r.dT, 3), "K");
+    $("jdtf").textContent = t("j.f.dt", { r: F.qty(F.fix(1e3 * 9.81 / Th.C_EAU, 2), "mK") });
+  };
+  ids.forEach(i => $(i).oninput = upd); upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["mayer", 1842, "idea"], ["joule1845", 1845, "experiment"], ["helmholtz", 1847, "idea"], ["joule1850", 1850, "experiment"], ["clausius", 1850, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["etiquette", "elasto"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["etat", "a"], ["signe", "a"], ["joule", "a"], ["cycle", "a"], ["elastique", "a"], ["mecanique", "a"], ["chemin", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

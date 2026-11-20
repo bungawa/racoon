@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>L'interférence des ondes d'électrons</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-quantique-amplitudes" data-i18n="monde.quantique-amplitudes"></a><span class="aux">›</span><a href="/racoon/etape?id=deux-fentes-electrons" data-i18n="etape.deux-fentes-electrons"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-quant" href="/racoon/atlas?piste=quant" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/electrons-deux-fentes" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mtext data-i18n="eq.electrons"></mtext><mspace width="1em"/><msub><mi>P</mi><mn>12</mn></msub><mo>≠</mo><msub><mi>P</mi><mn>1</mn></msub><mo>+</mo><msub><mi>P</mi><mn>2</mn></msub></math><span class="n">(37.5)</span></div>
+    <p class="validite" data-i18n-html="val.37.5"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>P</mi><mn>1</mn></msub><mo>=</mo><msup><mrow><mo>|</mo><msub><mi>φ</mi><mn>1</mn></msub><mo>|</mo></mrow><mn>2</mn></msup><mo>,</mo><mspace width="0.8em"/><msub><mi>P</mi><mn>2</mn></msub><mo>=</mo><msup><mrow><mo>|</mo><msub><mi>φ</mi><mn>2</mn></msub><mo>|</mo></mrow><mn>2</mn></msup><mo>,</mo><mspace width="0.8em"/><msub><mi>P</mi><mn>12</mn></msub><mo>=</mo><msup><mrow><mo>|</mo><msub><mi>φ</mi><mn>1</mn></msub><mo>+</mo><msub><mi>φ</mi><mn>2</mn></msub><mo>|</mo></mrow><mn>2</mn></msup><mo>=</mo><msub><mi>P</mi><mn>1</mn></msub><mo>+</mo><msub><mi>P</mi><mn>2</mn></msub><mo>+</mo><mn>2</mn><msqrt><msub><mi>P</mi><mn>1</mn></msub><msub><mi>P</mi><mn>2</mn></msub></msqrt><mspace width="0.1em"/><mi data-i18n="eq.cos"></mi><mi>δ</mi></math><span class="n">(37.5b)</span></div>
+    <p class="validite" data-i18n-html="val.37.5b"></p>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="graphe" role="img" data-i18n-attr="aria-label:fig.aria.graphe"></svg>
+      <svg class="fig" id="fleches" viewBox="0 0 640 220" role="img" data-i18n-attr="aria-label:fig.aria.fleches"></svg>
+      <div class="legend"><span class="c-label" data-i18n="fig.legend.p12"></span><span class="c-label-2" data-i18n="fig.legend.somme"></span><span class="c-tint" data-i18n="fig.legend.phi1"></span><span class="c-warn" data-i18n="fig.legend.phi2"></span><span class="c-ok" data-i18n="fig.legend.fermer"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="sx" data-i18n="fig.x"></label><output id="sxr" for="sx"></output></div>
+            <input id="sx" type="range" min="-0.6" max="0.6" step="0.001" value="0.09"></div>
+          <div class="ctl"><div class="row"><label for="seta" data-i18n="fig.eta"></label><output id="setar" for="seta"></output></div>
+            <input id="seta" type="range" min="0" max="1" step="0.01" value="1"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.p12"></span><span class="v" id="vp12"></span><span class="f" id="fp12"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.fermer"></span><span class="v" id="vfer"></span><span class="f" id="ffer"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.visi"></span><span class="v" id="vvis"></span><span class="f" id="fvis"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s5.sec"></span>
+    <h2 data-i18n="s5.h2"></h2>
+    <p data-i18n-html="s5.p1"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+      <p id="sys2"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/interference-ondes-electrons.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/quantique-amplitudes.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const Q = QuantAmp, MM = 1e-3, NM = 1e-9;
+/* the bench: 600 eV electrons, slits 62 nm wide and 272 nm apart, screen 1 m behind */
+const EC = 600 * Q.e, LAM = Q.broglie(Q.impulsion(Q.m_e, EC));
+const BANC = { lambda: LAM, d: 272 * NM, a: 62 * NM, L: 1 };
+
+/* ---------- two complex numbers per point: the curves, the arrows, closing a slit ---------- */
+(() => {
+  const g = $("graphe"), fl = $("fleches"), sx = $("sx"), seta = $("seta");
+  /* slit 2 partly masked: its amplitude times √η */
+  const at = (x, eta) => { const r = Q.amplitudesDeuxFentes(x, BANC), k = Math.sqrt(eta);
+    const p1 = r.phi1, p2 = { re: k * r.phi2.re, im: k * r.phi2.im };
+    const P1 = p1.re ** 2 + p1.im ** 2, P2 = p2.re ** 2 + p2.im ** 2, P12 = (p1.re + p2.re) ** 2 + (p1.im + p2.im) ** 2;
+    return { p1, p2, P1, P2, P12 }; };
+  function draw() {
+    const x = +sx.value * MM, eta = +seta.value, X = 0.6 * MM;
+    g.innerHTML = "";
+    const G = Plot.axes(g, { fmt: F, w: 640, h: 260, pad: { l: 56, b: 44 }, x: { domain: [-0.6, 0.6], label: t("fig.xaxis") }, y: { domain: [0, 4.2], label: t("fig.yaxis") } });
+    const xs = Array.from({ length: 801 }, (_, j) => -X + j * 2 * X / 800), pts = xs.map(u => at(u, eta));
+    const courbe = (f, cls) => Plot.el("path", { d: Plot.path(xs.map((u, j) => [G.x(u / MM), G.y(f(pts[j]))])), class: cls }, G.g);
+    courbe(p => p.P1, "stroke thin c-tint");
+    if (eta > 0) courbe(p => p.P2, "stroke thin c-warn");
+    courbe(p => p.P1 + p.P2, "stroke thin dash c-label-2");
+    courbe(p => p.P12, "stroke bold c-label");
+    /* where closing either slit raises the count: P12 < min(P1, P2) */
+    let debut = null;
+    pts.forEach((p, j) => { const ici = eta > 0 && p.P12 < Math.min(p.P1, p.P2);
+      if (ici && debut === null) debut = j;
+      if ((!ici || j === pts.length - 1) && debut !== null) { Plot.el("line", { x1: G.x(xs[debut] / MM), x2: G.x(xs[j] / MM), y1: G.y(0.08), y2: G.y(0.08), class: "stroke bold c-ok" }, G.g); debut = null; } });
+    const p = at(x, eta);
+    Plot.el("line", { x1: G.x(x / MM), x2: G.x(x / MM), y1: G.y(0), y2: G.y(4.2), class: "stroke thin dash c-label" }, G.g);
+    Plot.el("circle", { cx: G.x(x / MM), cy: G.y(p.P12), r: 5, class: "dot" }, G.g);
+    /* the arrows, φ1 turned to point to the right */
+    fl.innerHTML = "";
+    const n1 = Math.hypot(p.p1.re, p.p1.im) || 1, c = p.p1.re / n1, s = -p.p1.im / n1, rot = z => [z.re * c - z.im * s, z.re * s + z.im * c];
+    const U = 52, O = [250, 110], a1 = rot(p.p1), a2 = rot(p.p2), A = [O[0] + U * a1[0], O[1] - U * a1[1]], B = [A[0] + U * a2[0], A[1] - U * a2[1]];
+    Plot.el("circle", { cx: O[0], cy: O[1], r: U * 2, class: "stroke thin dash c-label-2" }, fl);
+    Plot.fleche(fl, O, A, { cls: "c-tint", min: 2 });
+    Plot.fleche(fl, A, B, { cls: "c-warn", min: 2 });
+    Plot.fleche(fl, O, B, { cls: "c-label", min: 2, trait: "stroke bold" });
+    const lab = (xx, yy, k) => { const e = Plot.el("text", { x: xx, y: yy }, fl); e.textContent = t(k); };
+    lab(470, 70, "fig.fl.phi1"); lab(470, 100, "fig.fl.phi2"); lab(470, 130, "fig.fl.somme");
+    $("sxr").textContent = F.si(x, "m");
+    $("setar").textContent = F.num(100 * eta, 3) + " %";
+    $("vp12").textContent = F.num(p.P12, 3);
+    $("fp12").textContent = t("fig.f.p12", { s: F.num(p.P1 + p.P2, 3), r: p.P1 + p.P2 > 1e-9 ? F.num(p.P12 / (p.P1 + p.P2), 2) : "—" });
+    $("vfer").textContent = p.P12 > 1e-6 ? "× " + F.num(p.P1 / p.P12, 2) : "—";
+    $("ffer").textContent = t(p.P12 > 1e-6 && p.P1 > p.P12 ? "fig.f.plus" : "fig.f.moins");
+    $("vvis").textContent = p.P1 + p.P2 > 0 ? F.num(Q.visibiliteFranges(p.P1, p.P2), 2) : "—";
+    $("fvis").textContent = t("fig.f.visi");
+  }
+  sx.oninput = seta.oninput = draw; draw();
+})();
+
+/* ---------- the system described: 600 eV electrons through two slits 272 nm apart ---------- */
+(() => {
+  const i = Q.interfrangeFentes(LAM, BANC.L, BANC.d);
+  $("sys1").innerHTML = t("sys1.body", { l: F.si(LAM, "m"), dl: F.num(BANC.d / LAM, 2), al: F.num(BANC.a / LAM, 2), f: F.si(BANC.d ** 2 / LAM, "m"), i: F.si(i, "m"), e: F.si(BANC.L * LAM / BANC.a, "m") });
+  const w1 = 20e-6, w2 = 100e-6;
+  $("sys2").innerHTML = t("sys2.body", { c1: F.num(Q.contrasteDetecteur(w1, i), 2), c2: F.num(Q.contrasteDetecteur(w2, i), 2), b: F.num(Q.broglie(Q.impulsion(Q.m_e, 2 * EC)) / LAM, 3) });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["thomson", 1927, "experiment"], ["biprisme", 1955, "experiment"], ["fullerene", 1999, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["cristallo"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["propA", "b"], ["fermer", "a"], ["centre", "c"], ["delta", "d"], ["masque", "a"], ["sens", "b"], ["energie", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 375 });
+})();
+</script>
+</body>
+</html>

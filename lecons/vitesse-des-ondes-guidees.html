@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vitesse des ondes guidées</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-ondes-milieux" data-i18n="monde.ondes-milieux"></a><span class="aux">›</span><a href="/racoon/etape?id=lignes-guides" data-i18n="etape.lignes-guides"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/battements-et-modulation" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>v</mi><mi>φ</mi></msub><mo>=</mo><mfrac><mi>c</mi><msqrt><mn>1</mn><mo>−</mo><msup><mrow><mo stretchy="false">(</mo><msub><mi>ω</mi><mi>c</mi></msub><mo>/</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></msqrt></mfrac></math><span class="n">(24.25)</span></div>
+    <p class="validite" data-i18n-html="val.24.25"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>v</mi><mi>g</mi></msub><mo>=</mo><mfrac><mrow><mi>d</mi><mi>ω</mi></mrow><mrow><mi>d</mi><mi>k</mi></mrow></mfrac></math><span class="n">(24.26)</span></div>
+    <p class="validite" data-i18n-html="val.24.26"></p>
+    <div class="eq"><math display="block"><msub><mi>v</mi><mi>g</mi></msub><mo>=</mo><mi>c</mi><msqrt><mn>1</mn><mo>−</mo><msup><mrow><mo stretchy="false">(</mo><msub><mi>ω</mi><mi>c</mi></msub><mo>/</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></msqrt></math><span class="n">(24.27)</span></div>
+    <p class="validite" data-i18n-html="val.24.27"></p>
+    <div class="eq"><math display="block"><msub><mi>v</mi><mi>φ</mi></msub><msub><mi>v</mi><mi>g</mi></msub><mo>=</mo><msup><mi>c</mi><mn>2</mn></msup></math><span class="n">(24.28)</span></div>
+    <p class="validite" data-i18n-html="val.24.28"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="paquet" role="img" data-i18n-attr="aria-label:fig.aria.paquet"></svg>
+      <svg class="fig" id="disp" role="img" data-i18n-attr="aria-label:fig.aria.disp"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.e"></span><span class="c-warn" data-i18n="fig.legend.env"></span><span class="c-ok" data-i18n="fig.legend.crete"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="sr" data-i18n="fig.r"></label><output id="srr" for="sr"></output></div>
+            <input id="sr" type="range" min="1.05" max="3" step="0.01" value="1.5"></div>
+          <div class="ctl"><div class="row"><label for="st" data-i18n="fig.t"></label><output id="str" for="st"></output></div>
+            <input id="st" type="range" min="0" max="1" step="0.005" value="0"></div>
+          <button type="button" class="btn tinted" id="play" data-i18n="fig.play"></button>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.vp"></span><span class="v" id="vvp"></span><span class="f" id="fvp"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.vg"></span><span class="v" id="vvg"></span><span class="f" id="fvg"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.prod"></span><span class="v" id="vpr"></span><span class="f" id="fpr"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msup><mi>U</mi><mn>2</mn></msup><mo>=</mo><msup><mi>p</mi><mn>2</mn></msup><msup><mi>c</mi><mn>2</mn></msup><mo>+</mo><msup><mi>m</mi><mn>2</mn></msup><msup><mi>c</mi><mn>4</mn></msup></math><span class="n">(24.29)</span></div>
+    <p class="validite" data-i18n-html="val.24.29"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><mfrac><msup><mi>ω</mi><mn>2</mn></msup><msup><mi>c</mi><mn>2</mn></msup></mfrac><mo>=</mo><msup><mi>k</mi><mn>2</mn></msup><mo>+</mo><mfrac><mrow><msup><mi>m</mi><mn>2</mn></msup><msup><mi>c</mi><mn>2</mn></msup></mrow><msup><mi>ℏ</mi><mn>2</mn></msup></mfrac></math><span class="n">(24.30)</span></div>
+    <p class="validite" data-i18n-html="val.24.30"></p>
+    <div class="eq"><math display="block"><mi>k</mi><mo>=</mo><msqrt><mfrac><msup><mi>ω</mi><mn>2</mn></msup><msup><mi>c</mi><mn>2</mn></msup></mfrac><mo>−</mo><mfrac><mrow><msup><mi>m</mi><mn>2</mn></msup><msup><mi>c</mi><mn>2</mn></msup></mrow><msup><mi>ℏ</mi><mn>2</mn></msup></mfrac></msqrt></math><span class="n">(24.31)</span></div>
+    <p class="validite" data-i18n-html="val.24.31"></p>
+    <p data-i18n-html="s3.p3"></p>
+    <p id="masse"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mi>d</mi><mi>U</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><msub><mi>ε</mi><mn>0</mn></msub><msubsup><mi>E</mi><mn>0</mn><mn>2</mn></msubsup><mi>a</mi><mi>b</mi><msub><mi>v</mi><mi>g</mi></msub></math><span class="n">(24.32)</span></div>
+    <p class="validite" data-i18n-html="val.24.32"></p>
+    <p id="puiss"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/vitesse-des-ondes-guidees.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/ondes-milieux.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const M = OndesMilieux, c = Constantes.c, A = 22.86e-3, B = 10.16e-3, FC = M.guideRect(A, B, 1e9).fc;   // the guide of « Le guide d'onde rectangulaire »
+
+/* ---------- le système décrit : une impulsion de 1 ns dans 10 m de guide ---------- */
+(() => {
+  const f = 10e9, L = 10, df = 1e9, g = M.guideRect(A, B, f), tau = x => L / M.guideRect(A, B, x).vGroupe;
+  $("sys1").innerHTML = t("sys1.body", { L: F.si(L, "m"), f: F.si(f, "Hz"), r: F.num(f / FC, 3), vg: F.num(g.vGroupe / c, 3), vp: F.num(g.vPhase / c, 3),
+    tg: F.si(tau(f), "s", { prefix: "n" }), tc: F.si(L / c, "s", { prefix: "n" }), dt: F.si(tau(f - df / 2) - tau(f + df / 2), "s", { prefix: "n" }) });
+})();
+
+/* ---------- deux ondes voisines : les crêtes et l'enveloppe ---------- */
+(() => {
+  const paquet = $("paquet"), disp = $("disp"), sr = $("sr"), st = $("st"), play = $("play"), Lz = 0.8, d = 0.03;
+  let timer = null;
+  function draw() {
+    const r = +sr.value, f = r * FC, p = M.paquetGuide(A, B, f * (1 - d), f * (1 + d)), g = M.guideRect(A, B, f);
+    const pas = 2 * Math.PI / Math.abs(p.g2.kz - p.g1.kz), tmax = pas / p.vEnveloppe, tt = +st.value * tmax;
+    paquet.innerHTML = "";
+    const P = Plot.axes(paquet, { fmt: F, w: 640, h: 220, pad: { l: 48, b: 44 }, x: { domain: [0, 100 * Lz], label: t("fig.xaxis") }, y: { domain: [-2.2, 2.2], label: t("fig.yaxis") } });
+    const zs = Array.from({ length: 1201 }, (_, i) => i * Lz / 1200);
+    Plot.el("path", { d: Plot.path(zs.map(z => [P.x(100 * z), P.y(p.E(z, tt))])), class: "curve" }, P.g);
+    [1, -1].forEach(s => Plot.el("path", { d: Plot.path(zs.map(z => [P.x(100 * z), P.y(s * p.enveloppe(z, tt))])), class: "stroke dash c-warn" }, P.g));
+    const ze = (p.vEnveloppe * tt) % pas, zc = (p.vPhase * tt) % pas;
+    Plot.el("circle", { cx: P.x(100 * ze), cy: P.y(2), r: 5, class: "fill c-warn" }, P.g);
+    Plot.el("circle", { cx: P.x(100 * zc), cy: P.y(p.E(zc, tt)), r: 5, class: "fill c-ok" }, P.g);
+    /* dispersion: ω/ωc against kz a/π, the light line, the chord (phase) and the tangent (group) */
+    disp.innerHTML = "";
+    const D = Plot.axes(disp, { fmt: F, w: 640, h: 240, pad: { l: 48, b: 44 }, x: { domain: [0, 3], label: t("fig.kaxis") }, y: { domain: [0, 3.2], label: t("fig.waxis") } });
+    const X = Array.from({ length: 151 }, (_, i) => i * 3 / 150);
+    Plot.el("path", { d: Plot.path(X.map(x => [D.x(x), D.y(M.pulsationGuide(x * Math.PI / A, A) / g.omegaC)])), class: "curve" }, D.g);
+    Plot.el("line", { x1: D.x(0), y1: D.y(0), x2: D.x(3), y2: D.y(3), class: "stroke thin dash c-label-2" }, D.g);
+    const x0 = g.kz * A / Math.PI, s = g.vGroupe / c;
+    Plot.el("line", { x1: D.x(0), y1: D.y(0), x2: D.x(x0), y2: D.y(r), class: "stroke c-ok" }, D.g);
+    Plot.el("line", { x1: D.x(Math.max(0, x0 - 0.8)), y1: D.y(r - s * (x0 - Math.max(0, x0 - 0.8))), x2: D.x(Math.min(3, x0 + 0.8)), y2: D.y(r + s * (Math.min(3, x0 + 0.8) - x0)), class: "stroke c-warn" }, D.g);
+    Plot.el("circle", { cx: D.x(x0), cy: D.y(r), r: 5, class: "dot" }, D.g);
+    $("srr").textContent = F.num(r, 3) + " · " + F.si(f, "Hz");
+    $("str").textContent = F.si(tt, "s", { prefix: "n" });
+    $("vvp").textContent = t("fig.v.c", { v: F.num(g.vPhase / c, 3) });
+    $("fvp").textContent = t("fig.f.vp", { v: F.num(p.vPhase / c, 3) });
+    $("vvg").textContent = t("fig.v.c", { v: F.num(g.vGroupe / c, 3) });
+    $("fvg").textContent = t("fig.f.vg", { v: F.num(p.vEnveloppe / c, 3) });
+    $("vpr").textContent = F.num(g.vPhase * g.vGroupe / (c * c), 4);
+    $("fpr").textContent = t("fig.f.prod");
+  }
+  const stop = () => { clearInterval(timer); timer = null; play.textContent = t("fig.play"); };
+  play.onclick = () => {
+    if (timer) return stop();
+    play.textContent = t("fig.pause");
+    timer = setInterval(() => { st.value = ((+st.value + 0.005) % 1).toFixed(3); draw(); }, 40);
+  };
+  sr.oninput = st.oninput = draw; draw();
+})();
+
+/* ---------- la masse du guide ; la puissance transportée ---------- */
+(() => {
+  const g = M.guideRect(A, B, 10e9), Eeff = 1e5, P = g.puissance(2 * Eeff);     // (24.32) with E0 the rms over time and section = amplitude/2
+  $("masse").innerHTML = t("masse.body", { m: F.sci(g.masse, 2), me: F.sci(g.masse / Constantes.m_e, 2) });
+  $("puiss").innerHTML = t("puiss.body", { e: F.si(Eeff, "V·m⁻¹"), vg: F.num(g.vGroupe / c, 3), P: F.si(P, "W"), crete: F.si(2 * Eeff, "V·m⁻¹") });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["sommerfeld", 1914, "idea"], ["debroglie", 1924, "idea"], ["precurseurs", 1969, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["linac"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["plusvite", "b"], ["signal", "d"], ["produit", "a"], ["coupure", "c"], ["masse", "a"], ["energie", "c"], ["etale", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 244 });
+})();
+</script>
+</body>
+</html>

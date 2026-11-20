@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["accord", "a"],
+  ["periode", "b"],
+  ["intensite", "c"],
+  ["fenetre", "d"],
+  ["raies", "a"],
+  ["blu", "b"],
+  ["vitesses", "c"],
+  ["impulsion", "d"]
+ ]
+}

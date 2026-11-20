@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dislocations et croissance des cristaux</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-solide" data-i18n="monde.solide"></a><span class="aux">›</span><a href="/racoon/etape?id=cristaux-2" data-i18n="etape.cristaux-2"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-solide" href="/racoon/atlas?piste=solide" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/resistance-des-metaux" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><msub><mo>∮</mo><mi>C</mi></msub><mi mathvariant="normal">d</mi><mi mathvariant="bold">u</mi><mo>=</mo><mi mathvariant="bold">b</mi></math></div>
+    <p class="validite" data-i18n-html="val.burgers"></p>
+    <figure>
+      <svg class="fig" id="circuit" viewBox="0 0 640 440" role="img" data-i18n-attr="aria-label:bg.aria"></svg>
+      <div class="legend"><span class="c-label-2" data-i18n="bg.leg.atome"></span><span class="c-tint" data-i18n="bg.leg.circuit"></span><span class="el-o" data-i18n="bg.leg.depart"></span><span class="c-warn" data-i18n="bg.leg.b"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" id="bmode" role="group" data-i18n-attr="aria-label:bg.mode">
+            <button type="button" data-d="1" data-i18n="bg.avec"></button><button type="button" data-d="0" data-i18n="bg.sans"></button>
+          </div>
+          <div class="ctl"><div class="row"><label for="bn" data-i18n="bg.n"></label><output id="bnv" for="bn"></output></div>
+            <input id="bn" type="range" min="1" max="6" step="1" value="3"></div>
+          <div class="ctl"><div class="row"><label for="bs" data-i18n="bg.s"></label><output id="bsv" for="bs"></output></div>
+            <input id="bs" type="range" min="-6" max="6" step="1" value="0"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="bg.k.pas"></span><span class="v" id="vpas"></span><span class="f" data-i18n="bg.f.pas"></span></div>
+          <div class="stat"><span class="k" data-i18n="bg.k.b"></span><span class="v" id="vb"></span><span class="f" id="fb"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="bg.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mfrac><mi>E</mi><mi>L</mi></mfrac><mo>=</mo><mfrac><mrow><mi>G</mi><msup><mi>b</mi><mn>2</mn></msup></mrow><mrow><mn>4</mn><mi>π</mi></mrow></mfrac><mspace width="0.2em"></mspace><mi data-i18n="eq.ln"></mi><mfrac><mi>R</mi><msub><mi>r</mi><mn>0</mn></msub></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.energie"></p>
+    <div class="panel">
+      <div class="controls">
+        <div class="ctl"><div class="row"><label for="lr" data-i18n="en.r"></label><output id="lrv" for="lr"></output></div>
+          <input id="lr" type="range" min="-8" max="-2" step="0.1" value="-6"></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="k" data-i18n="en.k.l"></span><span class="v" id="vel"></span><span class="f" data-i18n="en.f.l"></span></div>
+        <div class="stat"><span class="k" data-i18n="en.k.at"></span><span class="v" id="veat"></span><span class="f" data-i18n="en.f.at"></span></div>
+        <div class="stat"><span class="k" data-i18n="en.k.kt"></span><span class="v" id="vkt"></span><span class="f" data-i18n="en.f.kt"></span></div>
+      </div>
+    </div>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="list keyed" id="sites"></div>
+    <p data-i18n-html="s3.p2"></p>
+    <p data-i18n-html="s3.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/dislocations.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/lecons/cristaux.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = Plot.el, X = Cristaux, Cst = Constantes;
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+const seg = (el, attr, cb) => { const bs = [...el.querySelectorAll("button")];
+  const pick = b => { bs.forEach(x => x.setAttribute("aria-pressed", String(x === b))); cb(b.dataset[attr]); };
+  bs.forEach(b => b.onclick = () => pick(b)); pick(bs[0]); return pick; };
+
+/* ---------- circuit de Burgers ---------- */
+(() => {
+  const NX = 16, NY = 14, CX = 7.5, CY = 6.5, U = 28, ox = 320 - U * (NX - 1) / 2, oy = 220 + U * (NY - 1) / 2, svg = $("circuit");
+  const parfait = X.reseauCarre(NX, NY, 1), disloque = X.radeauDislocation(parfait, CX, CY, 1);
+  const px = p => [ox + U * p[0], oy - U * p[1]];
+  let avec = true;
+  function upd() {
+    const n = +$("bn").value, s = +$("bs").value, pts = avec ? disloque : parfait;
+    $("bnv").textContent = String(n); $("bsv").textContent = String(s);
+    const i0 = Math.round(CX + 0.5) - Math.ceil(n / 2) + s, j0 = Math.round(CY + 0.5) - Math.ceil(n / 2);
+    svg.innerHTML = "";
+    pts.forEach(p => { const [x, y] = px(p); P("circle", { cx: x, cy: y, r: 5, class: "fill c-label-2" }, svg); });
+    if (avec) { const [x, y] = px([CX, CY]); P("text", { x, y: y + 5, "text-anchor": "middle", class: "c-warn" }, svg).textContent = "⊥"; }
+    let r = null;
+    try { r = X.circuitBurgers(pts, j0 * NX + i0, n, 1); } catch (e) { r = null; }
+    if (!r || i0 < 0 || i0 + n > NX - 1) { $("vpas").textContent = "–"; $("vb").textContent = "–"; $("fb").textContent = t("bg.f.dehors"); return; }
+    P("path", { d: Plot.path(r.chemin.map(k => px(pts[k]))), class: "stroke bold c-tint" }, svg);
+    const A = px(pts[r.chemin[0]]), B = px(pts[r.chemin[r.chemin.length - 1]]);
+    P("circle", { cx: A[0], cy: A[1], r: 7, class: "fill el-o" }, svg);
+    if (!r.ferme) Plot.fleche(svg, B, A, { cls: "c-warn", trait: "stroke bold" });
+    $("vpas").textContent = t("bg.v.pas", { n });
+    $("vb").textContent = r.ferme ? "0" : t("bg.v.b", { bx: F.num(r.burgers[0], 2), by: F.num(r.burgers[1], 2) });
+    $("fb").textContent = t(r.ferme ? "bg.f.ferme" : "bg.f.ouvert");
+  }
+  $("bn").oninput = upd; $("bs").oninput = upd;
+  seg($("bmode"), "d", v => { avec = v === "1"; upd(); });
+})();
+
+/* ---------- énergie d'une dislocation vis ---------- */
+(() => {
+  const M = X.METAUX.Cu, { b } = X.glissement(M.reseau, M.a), kT = Cst.k_B * 300;
+  function upd() {
+    const R = Math.pow(10, +$("lr").value), E = X.energieLigneVis(M.G, b, R, b), Eat = E * b;
+    $("lrv").textContent = F.si(R, "m");
+    $("vel").textContent = F.si(E, "J/m");
+    $("veat").textContent = F.qty(F.num(Eat / Cst.e, 2), "eV");
+    $("vkt").textContent = F.num(Eat / kT, 2);
+  }
+  $("lr").oninput = upd; upd();
+})();
+
+/* ---------- sites de croissance ---------- */
+(() => { const ids = ["terrasse", "marche", "cran"]; keyed($("sites"), t("sites.tag"), ids, textOf("sites.items", ids)); })();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["volterra", 1907, "idea"], ["burgers", 1939, "idea"], ["frank", 1949, "idea"], ["dash", 1959, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["silicium"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["circuit", "b"], ["taille", "d"], ["vis", "a"], ["cran", "c"], ["spirale", "b"], ["thermique", "d"], ["dash", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

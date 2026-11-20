@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>L'hélium liquide</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-quantique-amplitudes" data-i18n="monde.quantique-amplitudes"></a><span class="aux">›</span><a href="/racoon/etape?id=bosons-fermions-matiere" data-i18n="etape.bosons-fermions-matiere"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-quant" href="/racoon/atlas?piste=quant" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/etats-n-bosons" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>λ</mi><mtext data-i18n="eq.th"></mtext></msub><mo>=</mo><mfrac><mi>h</mi><msqrt><mn>2</mn><mi>π</mi><mi>m</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></msqrt></mfrac><mo>,</mo><mspace width="1em"/><mi>d</mi><mo>=</mo><msup><mi>n</mi><mrow><mo>−</mo><mn>1</mn><mo>/</mo><mn>3</mn></mrow></msup></math></div>
+    <p class="validite" data-i18n-html="val.lth"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="degen" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.he4"></span><span class="c-warn" data-i18n="fig.legend.he3"></span><span class="c-label-2" data-i18n="fig.legend.seuil"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" role="group" id="iso">
+            <button type="button" data-i="he4" data-i18n="fig.he4"></button>
+            <button type="button" data-i="he3" data-i18n="fig.he3"></button>
+          </div>
+          <div class="ctl"><div class="row"><label for="sT" data-i18n="fig.T"></label><output id="sTv" for="sT"></output></div>
+            <input id="sT" type="range" min="0" max="1" step="0.005" value="0.4"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.l"></span><span class="v" id="vl"></span><span class="f" id="fl"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.ld"></span><span class="v" id="vld"></span><span class="f" data-i18n="fig.f.ld"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.n"></span><span class="v" id="vn"></span><span class="f" id="fn"></span></div>
+          <div class="stat"><span class="k" id="kt"></span><span class="v" id="vt"></span><span class="f" id="ft"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><mi>n</mi><msubsup><mi>λ</mi><mtext data-i18n="eq.th"></mtext><mn>3</mn></msubsup><mo>=</mo><mi>ζ</mi><mo>(</mo><mn>3</mn><mo>/</mo><mn>2</mn><mo>)</mo><mo>≈</mo><mn>2,612</mn><mspace width="1em"/><mo>⟺</mo><mspace width="1em"/><msub><mi>T</mi><mi>c</mi></msub><mo>=</mo><mfrac><mrow><mn>2</mn><mi>π</mi><msup><mi>ℏ</mi><mn>2</mn></msup></mrow><mrow><mi>m</mi><msub><mi>k</mi><mi>B</mi></msub></mrow></mfrac><msup><mrow><mo>(</mo><mfrac><mi>n</mi><mrow><mn>2,612</mn></mrow></mfrac><mo>)</mo></mrow><mrow><mn>2</mn><mo>/</mo><mn>3</mn></mrow></msup></math></div>
+    <p class="validite" data-i18n-html="val.tc"></p>
+    <p data-i18n-html="s3.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>E</mi><mi>F</mi></msub><mo>=</mo><mfrac><msup><mi>ℏ</mi><mn>2</mn></msup><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><msup><mrow><mo>(</mo><mn>3</mn><msup><mi>π</mi><mn>2</mn></msup><mi>n</mi><mo>)</mo></mrow><mrow><mn>2</mn><mo>/</mo><mn>3</mn></mrow></msup><mo>,</mo><mspace width="1em"/><msub><mi>T</mi><mi>F</mi></msub><mo>=</mo><mfrac><msub><mi>E</mi><mi>F</mi></msub><msub><mi>k</mi><mi>B</mi></msub></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.tf"></p>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/helium-liquide.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/statistique.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/quantique-amplitudes.js"></script>
+<script src="/racoon/lecons/helium-liquide.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const He = HeliumLiquide, Q = QuantAmp;
+/* a low temperature: kelvin with two or three figures, Celsius in grey */
+const kelvin = T => F.qty(F.num(T, 3), "K") + ' <span class="aux">(' + F.qty(F.fix(T - 273.15, 2), "°C") + ")</span>";
+
+/* ---------- n λ_th³ of the two liquids against temperature ---------- */
+(() => {
+  const svg = $("degen"), sT = $("sT"), seg = $("iso"), T0 = 0.5, T1 = 10, Y0 = 0.3, Y1 = 100;
+  let iso = "he4";
+  const Tde = () => T0 * Math.pow(T1 / T0, +sT.value);
+  function draw() {
+    const T = Tde(), s = He.systeme(iso, T);
+    svg.innerHTML = "";
+    const o = Plot.axes(svg, { fmt: F, w: 640, h: 280, pad: { b: 44, l: 56 },
+      x: { domain: [T0, T1], scale: "log", label: t("fig.ax.T"), fmt: v => F.num(v, 2) }, y: { domain: [Y0, Y1], scale: "log", label: t("fig.ax.n"), fmt: v => F.num(v, 2) } });
+    const courbe = (i, cls) => { const pts = [];
+      for (let k = 0; k <= 200; k++) { const Tk = T0 * Math.pow(T1 / T0, k / 200), y = He.systeme(i, Tk).degenerescence; if (y >= Y0 && y <= Y1) pts.push([o.x(Tk), o.y(y)]); }
+      Plot.el("path", { d: Plot.path(pts), class: "stroke " + (i === iso ? "bold " : "") + cls }, o.g); };
+    Plot.el("line", { x1: o.x(T0), x2: o.x(T1), y1: o.y(Q.ZETA32), y2: o.y(Q.ZETA32), class: "stroke thin dash c-label-2" }, o.g);
+    Plot.el("line", { x1: o.x(He.T_LAMBDA), x2: o.x(He.T_LAMBDA), y1: o.y(Y0), y2: o.y(Y1), class: "stroke thin c-label-2" }, o.g);
+    const lab = Plot.el("text", { x: o.x(He.T_LAMBDA) + 4, y: o.y(Y1) + 14 }, o.g); lab.textContent = t("fig.lambda");
+    courbe("he3", "c-warn"); courbe("he4", "c-tint");
+    if (s.degenerescence >= Y0 && s.degenerescence <= Y1)
+      Plot.el("circle", { cx: o.x(T), cy: o.y(s.degenerescence), r: 5, class: "fill " + (iso === "he4" ? "c-tint" : "c-warn") }, o.g);
+    $("sTv").innerHTML = kelvin(T);
+    $("vl").textContent = F.si(s.lambda, "m", { sig: 3 });
+    $("fl").textContent = t("fig.f.l", { d: F.si(s.d, "m", { sig: 3 }) });
+    $("vld").textContent = F.num(s.rapport, 3);
+    $("vn").textContent = F.num(s.degenerescence, 3);
+    $("fn").textContent = t(s.degenerescence > Q.ZETA32 ? "fig.f.n.deg" : "fig.f.n.cl");
+    if (iso === "he4") {
+      $("kt").innerHTML = t("fig.k.tc"); $("vt").innerHTML = kelvin(s.Tc);
+      $("ft").textContent = t("fig.f.tc", { f: F.num(100 * s.fraction, 2) });
+    } else {
+      $("kt").innerHTML = t("fig.k.tf"); $("vt").innerHTML = kelvin(s.TF);
+      $("ft").textContent = t("fig.f.tf", { r: F.num(T / s.TF, 2) });
+    }
+    seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.i === iso)));
+  }
+  seg.querySelectorAll("button").forEach(b => b.onclick = () => { iso = b.dataset.i; draw(); });
+  sT.oninput = draw; draw();
+})();
+
+/* ---------- the system described: the liquid at its λ point, a gas at room temperature ---------- */
+(() => {
+  const s = He.systeme("he4", He.T_LAMBDA), h3 = He.systeme("he3", 1);
+  const n = 101325 / (Constantes.k_B * 300), m = Statistique.M.N2 / Constantes.N_A, air = n * Statistique.lambdaTh(m, 300) ** 3;
+  $("sys").innerHTML = t("sys.body", { Tl: kelvin(He.T_LAMBDA), d: F.si(s.d, "m", { sig: 2 }), l: F.si(s.lambda, "m", { sig: 2 }),
+    nl: F.num(s.degenerescence, 2), tc: kelvin(s.Tc), ecart: F.num(100 * (s.Tc / He.T_LAMBDA - 1), 2),
+    tf: kelvin(h3.TF), air: F.sci(air, 1) });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["onnes", 1908, "experiment"], ["einstein", 1925, "idea"], ["keesom", 1927, "experiment"], ["kapitsa", 1938, "experiment"],
+    ["london", 1938, "idea"], ["osheroff", 1972, "experiment"], ["cornell", 1995, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["lhc"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["recouvre", "c"], ["viscosite", "a"], ["isotope", "d"], ["ideal", "b"], ["chaud", "a"], ["he3", "c"], ["lhc", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 446 });
+})();
+</script>
+</body>
+</html>

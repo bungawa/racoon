@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Noyaux et particules</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  #sm { display: flex; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-panorama" data-i18n="monde.panorama"></a><span class="aux">›</span><a href="/racoon/etape?id=panorama-physique" data-i18n="etape.panorama-physique"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fond" href="/racoon/atlas?piste=fond" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/physique-quantique" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n="s1.p1"></p>
+    <div class="stats">
+      <div class="stat"><span class="k" data-i18n="s1.k.fission"></span><span class="v" id="vfission"></span><span class="f" data-i18n="s1.k.fission.f"></span></div>
+      <div class="stat"><span class="k" data-i18n="s1.k.tnt"></span><span class="v" id="vtnt"></span><span class="f" data-i18n="s1.k.tnt.f"></span></div>
+      <div class="stat"><span class="k" data-i18n="s1.k.ratio"></span><span class="v" id="vratio"></span></div>
+    </div>
+    <p data-i18n="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq">
+      <math display="block"><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup><mo>≈</mo><mfrac><mrow><mi>ħ</mi><mi>c</mi></mrow><mi>R</mi></mfrac><mo>,</mo><mspace width="1.5em"></mspace><mi>ħ</mi><mi>c</mi><mo>≈</mo><mn>197,3</mn><mtext>&#x00A0;</mtext><mi mathvariant="normal">M</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi><mo>·</mo><mi mathvariant="normal">f</mi><mi mathvariant="normal">m</mi></math>
+    </div>
+    <p class="validite" data-i18n="val.2.6"></p>
+    <figure>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="rsl" data-i18n="yuk.r"></label><output id="rread" for="rsl"></output></div>
+          <input id="rsl" type="range" min="-18.5" max="-13.5" step="0.01" value="-14.85"></div>
+        <div class="controls">
+          <div class="seg" id="yref" role="group" data-i18n-attr="aria-label:yuk.refs"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="yuk.k.m"></span><span class="v" id="vm"></span><span class="f" id="vmkg"></span></div>
+          <div class="stat"><span class="k" data-i18n="yuk.k.me"></span><span class="v" id="vme"></span></div>
+          <div class="stat"><span class="k" data-i18n="yuk.k.near"></span><span class="v" id="vnear"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="yuk.caption"></figcaption>
+    </figure>
+    <div class="box rem"><b data-i18n="s2.rem.title"></b>
+      <p data-i18n-html="s2.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n="s3.p1"></p>
+    <p data-i18n="s3.p2"></p>
+    <div class="list keyed" id="forces"></div>
+    <div class="box warn"><b data-i18n="s3.warn.title"></b>
+      <p data-i18n-html="s3.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n="s4.p1"></p>
+    <p data-i18n="s4.p2"></p>
+    <figure class="chart">
+      <svg id="mchart" role="img" data-i18n-attr="aria-label:sm.aria"></svg>
+      <div class="panel">
+        <div class="seg" id="sm" role="group" data-i18n-attr="aria-label:sm.choose"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="sm.k.name"></span><span class="v" id="vname"></span><span class="f" id="vkind"></span></div>
+          <div class="stat"><span class="k" data-i18n="sm.k.m"></span><span class="v" id="vmc2"></span><span class="f" id="vkg"></span></div>
+          <div class="stat"><span class="k" data-i18n="sm.k.q"></span><span class="v" id="vq"></span></div>
+          <div class="stat"><span class="k" data-i18n="sm.k.f"></span><span class="v" id="vfeel"></span></div>
+          <div class="stat"><span class="k" data-i18n="sm.k.year"></span><span class="v" id="vyear"></span></div>
+        </div>
+        <p id="vtext"></p>
+      </div>
+      <figcaption data-i18n-html="sm.caption"></figcaption>
+    </figure>
+    <p data-i18n="s4.p3"></p>
+    <div class="box rem"><b data-i18n="s4.rem.title"></b>
+      <p data-i18n-html="s4.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/noyaux-et-particules.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/physique-fondamentale.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const $ = id => document.getElementById(id);
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const P = Fondamentale;
+const mev = x => F.si(x * 1e6, "eV");
+
+/* ---------- §2-4 : nucléaire contre chimique ---------- */
+(() => {
+  const fis = P.nuclearPerKg(200, 235);
+  $("vfission").textContent = F.qty(F.sci(fis, 2), "J·kg⁻¹");
+  $("vtnt").textContent = F.qty(F.sci(P.TNT, 4), "J·kg⁻¹");
+  $("vratio").textContent = F.sci(fis / P.TNT, 2);
+})();
+
+/* ---------- §2-4 : portée et masse du médiateur (Yukawa) ---------- */
+(() => {
+  const REFS = [["pion", 139.57], ["w", 80369.2]], names = textOf("yuk.ref", REFS.map(r => r[0])), rsl = $("rsl");
+  $("yref").innerHTML = REFS.map(([id]) => `<button type="button" id="y-${id}" aria-pressed="false">${names[id]}</button>`).join("");
+  const upd = from => {
+    const R = 10 ** +rsl.value, m = P.yukawaMassMeV(R);
+    REFS.forEach(([id]) => $("y-" + id).setAttribute("aria-pressed", String(id === from)));
+    $("rread").textContent = F.si(R, "m");
+    $("vm").textContent = mev(m);
+    $("vmkg").textContent = t("yuk.kg", { m: F.qty(F.sci(P.mevToKg(m), 3), "kg") });
+    $("vme").textContent = F.num(m / (P.ME * P.C * P.C / P.MEV), 3);
+    const near = REFS.map(([id, mc2]) => [id, Math.abs(Math.log10(m / mc2))]).sort((a, b) => a[1] - b[1])[0];
+    $("vnear").textContent = near[1] < 0.15 ? t("yuk.near", { p: names[near[0]] }) : t("yuk.none");
+  };
+  REFS.forEach(([id, mc2]) => $("y-" + id).onclick = () => { rsl.value = Math.log10(P.rangeForMassMeV(mc2)).toFixed(2); upd(id); });
+  rsl.oninput = () => upd(null); upd(null);
+})();
+
+/* ---------- §2-4 : les quatre interactions, 1961 et aujourd'hui ---------- */
+(() => {
+  const IDS = ["forte", "em", "faible", "grav"], txt = textOf("forces", IDS);
+  $("forces").innerHTML = IDS.map(id => `<div><span class="k">${txt[id].k}</span><span><strong>${txt[id].strength}.</strong> ${txt[id].then} ${txt[id].now}</span></div>`).join("");
+})();
+
+/* ---------- aujourd'hui : les 17 particules du Modèle standard ---------- */
+(() => {
+  const N = textOf("sm.p", P.PARTICLES.map(p => p.id)), KIND = textOf("sm.kinds", ["quark", "lepton", "boson"]), FORCE = textOf("sm.forces", ["forte", "em", "faible"]);
+  const ROW = { quark: 2.5, lepton: 1.5, boson: 0.5 }, XMIN = 0.1, XMAX = 1e12;
+  const { x, y, g } = Plot.axes($("mchart"), { fmt: F, w: 640, h: 230, pad: { l: 16, r: 16, t: 12, b: 40 },
+    x: { scale: "log", domain: [XMIN, XMAX], label: t("sm.x"), fmt: v => { const e = Math.round(Math.log10(v)); return e % 3 ? "" : F.si(v, "eV", { sig: 1 }); } },
+    y: { domain: [0, 3], ticks: 3, fmt: () => "" } });
+  Object.entries(ROW).forEach(([k, r]) => Plot.el("text", { x: x(XMIN) + 4, y: y(r + 0.32), class: "note" }, g).textContent = KIND[k]);
+  const dots = {};
+  P.PARTICLES.forEach(p => {
+    if (!(p.mc2 > 0)) return;
+    const side = p.upper || p.kind === "boson", dy = p.upper ? (p.gen - 2) * 0.22 : { w: -0.28, z: 0, higgs: 0.28 }[p.id] || 0;
+    const X = x(p.mc2 * 1e6), Y = y(ROW[p.kind] - dy);
+    dots[p.id] = Plot.el("circle", { cx: X, cy: Y, r: 5, class: "dot" }, g);
+    Plot.el("text", { x: X, y: Y + (side ? 4 : -9), dx: side ? 10 : 0, "text-anchor": side ? "start" : "middle", class: "note" }, g).textContent = N[p.id].sym;
+  });
+  $("sm").innerHTML = P.PARTICLES.map(p => `<button type="button" id="sm-${p.id}" aria-pressed="false">${N[p.id].sym}</button>`).join("");
+  const charge = ([n, d]) => n === 0 ? "0" : (n < 0 ? F.MINUS : "+") + Math.abs(n) + (d === 1 ? "" : "/" + d) + F.NB + "e";
+  const pick = id => {
+    const p = P.PARTICLES.find(q => q.id === id);
+    P.PARTICLES.forEach(q => { $("sm-" + q.id).setAttribute("aria-pressed", String(q.id === id)); if (dots[q.id]) dots[q.id].setAttribute("r", q.id === id ? 9 : 5); });
+    $("vname").textContent = N[id].name;
+    $("vkind").textContent = p.gen ? t("sm.gen", { k: KIND[p.kind], g: p.gen }) : KIND[p.kind];
+    $("vmc2").textContent = p.mc2 === 0 ? "0" : (p.upper ? "< " : "") + mev(p.mc2);
+    $("vkg").textContent = p.mc2 === 0 ? t("sm.massless") : t("sm.kg", { m: F.qty(F.sci(P.mevToKg(p.mc2), 3), "kg") });
+    $("vq").textContent = charge(p.q);
+    const f = P.feels(p);
+    $("vfeel").textContent = f.length ? f.map(k => FORCE[k]).join(", ") : t("sm.none");
+    $("vyear").textContent = p.year ? String(p.year) : t("sm.noyear");
+    $("vtext").textContent = N[id].text;
+  };
+  P.PARTICLES.forEach(p => $("sm-" + p.id).onclick = () => pick(p.id));
+  pick("higgs");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["rutherford", 1911, "experiment"], ["chadwick", 1932, "experiment"], ["yukawa", 1935, "idea"], ["pion", 1947, "experiment"],
+    ["quarks", 1964, "idea"], ["wz", 1983, "experiment"], ["top", 1995, "experiment"], ["higgs", 2012, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["muographie", "reacteur"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["energie", "c"], ["portee", "a"], ["muon", "d"], ["photon", "b"], ["proton", "c"], ["forte", "a"], ["higgs", "b"], ["ouvert", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 24 });
+})();
+</script>
+</body>
+</html>

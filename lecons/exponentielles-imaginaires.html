@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Exponentielles imaginaires</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-outils" data-i18n="monde.outils"></a><span class="aux">›</span><a href="/racoon/etape?id=nombres-complexes" data-i18n="etape.nombres-complexes"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fond" href="/racoon/atlas?piste=fond" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/nombres-complexes" data-i18n="tag.prereq"></a>
+      <span class="chip plain" data-i18n="tag.duree"></span>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n="s1.p1"></p>
+    <div class="eq">
+      <math display="block"><msup><mn>10</mn><mrow><mi>i</mi><mi>s</mi></mrow></msup><mo>=</mo><mi>x</mi><mo>+</mo><mi>i</mi><mi>y</mi><mo>,</mo><mspace width="1em"></mspace><msup><mn>10</mn><mrow><mo>−</mo><mi>i</mi><mi>s</mi></mrow></msup><mo>=</mo><mi>x</mi><mo>−</mo><mi>i</mi><mi>y</mi><mspace width="1em"></mspace><mo>⟹</mo><mspace width="1em"></mspace><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><msup><mn>10</mn><mrow><mi>i</mi><mi>s</mi><mo>−</mo><mi>i</mi><mi>s</mi></mrow></msup><mo>=</mo><mn>1</mn></math>
+      <span class="n">(22.6)</span>
+    </div>
+    <p class="validite" data-i18n="eq1.validite"></p>
+    <p data-i18n="s1.p2"></p>
+    <figure>
+      <div class="panel">
+        <div class="seg" role="group" id="fseg">
+          <button type="button" data-m="feynman" data-i18n="fy.feynman"></button>
+          <button type="button" data-m="exact" data-i18n="fy.exact"></button>
+        </div>
+        <div class="ctl"><div class="row"><label for="fp" data-i18n="fy.p"></label><output id="fpv" for="fp"></output></div><input id="fp" type="range" min="0" max="48" step="1" value="12"></div>
+        <svg class="fig" id="fcircle" viewBox="0 0 640 330" role="img" data-i18n-attr="aria-label:fy.aria"></svg>
+        <div class="chart"><svg id="fwave" role="img" data-i18n-attr="aria-label:fy.wave.aria"></svg></div>
+        <div class="legend"><span class="c-tint" data-i18n="fy.leg.cos"></span><span class="c-warn" data-i18n="fy.leg.sin"></span></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="fy.z"></span><span class="v" id="fz"></span><span class="f" id="fzf"></span></div>
+          <div class="stat"><span class="k" data-i18n="fy.mod"></span><span class="v" id="fmod"></span><span class="f" id="fmodf"></span></div>
+          <div class="stat"><span class="k" data-i18n="fy.gap"></span><span class="v" id="fgap"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n="fy.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n="s2.p1"></p>
+    <div class="eq">
+      <math display="block"><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup><mo>=</mo><mi data-i18n="eq.cos"></mi><mi>θ</mi><mo>+</mo><mi>i</mi><mspace width="0.15em"></mspace><mi data-i18n="eq.sin"></mi><mi>θ</mi></math>
+      <span class="n">(22.9)</span>
+    </div>
+    <p class="validite" data-i18n="eq2.validite"></p>
+    <p data-i18n="s2.p2"></p>
+    <div class="box prop"><b data-i18n="s2.prop.title"></b>
+      <p data-i18n-html="s2.prop.body"></p>
+    </div>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n="s3.p1"></p>
+    <div class="eq">
+      <math display="block"><msup><mi>e</mi><mi>z</mi></msup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></munderover><mfrac><msup><mi>z</mi><mi>k</mi></msup><mrow><mi>k</mi><mo>!</mo></mrow></mfrac><mo>+</mo><msub><mi>R</mi><mi>N</mi></msub><mo>,</mo><mspace width="1.5em"></mspace><mrow><mo>|</mo><msub><mi>R</mi><mi>N</mi></msub><mo>|</mo></mrow><mo>≤</mo><mfrac><msup><mrow><mo>|</mo><mi>z</mi><mo>|</mo></mrow><mi>N</mi></msup><mrow><mi>N</mi><mo>!</mo></mrow></mfrac><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mo>|</mo><mi>z</mi><mo>|</mo><mo>/</mo><mo>(</mo><mi>N</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow></mfrac></math>
+      
+    </div>
+    <p class="validite" data-i18n="eq3.validite"></p>
+    <figure>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="st" data-i18n="sr.theta"></label><output id="stv" for="st"></output></div><input id="st" type="range" min="0" max="40" step="0.1" value="3.1"></div>
+          <div class="ctl"><div class="row"><label for="sn" data-i18n="sr.n"></label><output id="snv" for="sn"></output></div><input id="sn" type="range" min="1" max="160" step="1" value="8"></div>
+        </div>
+        <p><label><input type="checkbox" id="sred"> <span data-i18n="sr.reduce"></span></label></p>
+        <svg class="fig" id="spath" viewBox="0 0 640 330" role="img" data-i18n-attr="aria-label:sr.aria"></svg>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="sr.err"></span><span class="v" id="serr"></span><span class="f" id="sbound"></span></div>
+          <div class="stat"><span class="k" data-i18n="sr.big"></span><span class="v" id="sbig"></span><span class="f" id="sbigf"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n="sr.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/exponentielles-imaginaires.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+/* typographie française partout, sauf le <h1> : il reste identique au titre de lecons/index.json */
+const main = document.querySelector("main");
+F.autoTypo(main);
+document.title = t("title");
+const $ = id => document.getElementById(id);
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+const LN10 = Math.LN10, num = x => F.num(x, 5);
+/* un plan complexe dessiné dans un svg.fig : axes, cercle unité ; renvoie la projection */
+function plane(svg, O, K) {
+  const P = Plot.el; svg.innerHTML = "";
+  P("line", { x1: 10, x2: 630, y1: O[1], y2: O[1], class: "stroke thin c-label-2" }, svg);
+  P("line", { x1: O[0], x2: O[0], y1: 8, y2: 322, class: "stroke thin c-label-2" }, svg);
+  P("circle", { cx: O[0], cy: O[1], r: K, class: "stroke thin dash c-label-2" }, svg);
+  P("text", { x: 600, y: O[1] - 8 }, svg).textContent = t("pl.re"); P("text", { x: O[0] + 8, y: 20 }, svg).textContent = t("pl.im");
+  return z => [O[0] + K * z.re, O[1] - K * z.im];
+}
+
+/* ---------- puissances de 10^(i/8) : la méthode de Feynman (tables 22-3 et 22-4) contre la valeur exacte ---------- */
+(() => {
+  const P = Plot.el, seg = $("fseg"), fp = $("fp"), PMAX = 48;
+  /* Feynman : 1 + 0,002 248 6 i, sept carrés → 10^(i/8), puis ses puissances successives */
+  const z8 = Cx.iSquares(0.0022486 * 1024, 10)[7].z;
+  const SERIES = { feynman: [Cx.c(1, 0)], exact: [] };
+  for (let p = 1; p <= PMAX; p++) SERIES.feynman.push(Cx.mul(SERIES.feynman[p - 1], z8));
+  for (let p = 0; p <= PMAX; p++) SERIES.exact.push(Cx.exp(Cx.c(0, LN10 * p / 8)));
+  let mode = "feynman";
+  function upd() {
+    const n = +fp.value, S = SERIES[mode], z = S[n], s = n / 8;
+    const px = plane($("fcircle"), [320, 165], 140);
+    P("polyline", { points: S.slice(0, n + 1).map(v => px(v).map(c => c.toFixed(1)).join(",")).join(" "), class: "stroke thin c-tint" }, $("fcircle"));
+    S.slice(0, n + 1).forEach((v, p) => { const [x, y] = px(v); P("circle", { cx: x, cy: y, r: p === n ? 6 : 3, class: "fill " + (p === n ? "c-warn" : "c-tint") }, $("fcircle")); });
+    const w = $("fwave"); w.innerHTML = "";
+    const ax = Plot.axes(w, { fmt: F, w: 640, h: 220, x: { domain: [0, PMAX / 8], label: t("fy.xlabel") }, y: { domain: [-1.2, 1.2], label: t("fy.ylabel") } });
+    const curve = (f, cls) => { const pts = []; for (let u = 0; u <= PMAX / 8 + 1e-9; u += 0.02) pts.push(ax.x(u).toFixed(1) + "," + ax.y(f(u)).toFixed(1)); P("polyline", { points: pts.join(" "), class: cls }, w); };
+    curve(u => Math.cos(LN10 * u), "curve"); curve(u => Math.sin(LN10 * u), "ref");
+    S.slice(0, n + 1).forEach((v, p) => { P("circle", { cx: ax.x(p / 8), cy: ax.y(v.re), r: 3.5, class: "dot" }, w); P("circle", { cx: ax.x(p / 8), cy: ax.y(v.im), r: 3.5, class: "ref" }, w); });
+    $("fpv").textContent = t("fy.pv", { p: F.num(n, 2), s: F.num(s, 4) });
+    $("fz").textContent = Cx.text(z, num); $("fzf").textContent = t("fy.zf", { a: F.num(Cx.arg(z), 5) });
+    $("fmod").textContent = F.num(Cx.abs(z), 7); $("fmodf").textContent = t("fy.modf", { d: F.sci(Math.abs(Cx.abs(z) - 1) || 1e-17, 2) });
+    $("fgap").textContent = F.sci(Cx.abs(Cx.sub(z, SERIES.exact[n])) || 1e-17, 2);
+    seg.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.m === mode)));
+  }
+  seg.querySelectorAll("button").forEach(x => x.onclick = () => { mode = x.dataset.m; upd(); });
+  fp.oninput = upd; upd();
+})();
+
+/* ---------- la série de e^(iθ), tronquée : sommes partielles dans le plan ---------- */
+(() => {
+  const P = Plot.el, st = $("st"), sn = $("sn"), red = $("sred"), svg = $("spath"), K = 60, LIM = 2.6;
+  function upd() {
+    const th0 = +st.value, th = red.checked ? Cx.wrap(th0) : th0, N = +sn.value, z = Cx.c(0, th), exact = Cx.exp(Cx.c(0, th0));
+    const pts = [], clip = v => Math.max(-LIM * 1.4, Math.min(LIM * 1.4, v));
+    let term = Cx.c(1, 0), sum = Cx.c(0, 0), big = 0;
+    for (let k = 0; k < N; k++) { sum = Cx.add(sum, term); pts.push(sum); big = Math.max(big, Cx.abs(term)); term = Cx.scale(Cx.mul(term, z), 1 / (k + 1)); }
+    const px = plane(svg, [320, 165], K), S = Cx.expSeries(z, N);
+    P("polyline", { points: [Cx.c(0, 0)].concat(pts).map(v => px(Cx.c(clip(v.re * 1), clip(v.im))).map(c => c.toFixed(1)).join(",")).join(" "), class: "stroke thin c-tint" }, svg);
+    const [ex, ey] = px(exact); P("circle", { cx: ex, cy: ey, r: 7, class: "stroke c-warn" }, svg);
+    const last = pts[pts.length - 1], [lx, ly] = px(Cx.c(clip(last.re), clip(last.im))); P("circle", { cx: lx, cy: ly, r: 4, class: "fill c-tint" }, svg);
+    $("stv").textContent = F.qty(F.num(th0, 3), "rad") + (red.checked ? " " + t("sr.reduced", { r: F.num(th, 4) }) : "");
+    $("snv").textContent = F.num(N, 2);
+    const err = Cx.abs(Cx.sub(S.sum, exact));
+    $("serr").textContent = err ? F.sci(err, 2) : "0";
+    $("sbound").textContent = isFinite(S.bound) ? t("sr.bound", { b: F.sci(S.bound, 2) }) : t("sr.nobound");
+    $("sbig").textContent = F.sci(big, 2); $("sbigf").textContent = t("sr.bigf", { d: F.sci(big * Math.pow(2, -53), 2) });
+  }
+  st.oninput = sn.oninput = red.onchange = upd; red.oninput = upd; upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["cotes", 1714, "idea"], ["moivre", 1722, "idea"], ["euler", 1748, "idea"], ["steinmetz", 1893, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["phaseur", "fourier", "onde"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["cercle", "a"], ["periode", "a"], ["joyau", "a"], ["euler1", "a"], ["derivee", "a"], ["serie", "a"], ["reduire", "a"], ["module", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => { const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) }; }), { t, seed: 27 });
+})();
+</script>
+</body>
+</html>

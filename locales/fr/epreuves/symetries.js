@@ -1,0 +1,41 @@
+/* Épreuve de l'étape « Symétries et changements de repère » : textes en français. */
+(function (root) {
+  const T = {
+    "epreuve.items": {
+      monter: { prompt: "Une chute dure 1\u00a0s. On monte toute l'expérience de 1\u00a0km, la Terre restant en place. De combien son point d'arrivée se décale-t-il ?",
+        options: { a: "De rien : les lois de Newton sont invariantes par translation.", b: "D'environ 1,5\u00a0cm : g diminue de 0,3\u00a0%.", c: "D'environ 1,5\u00a0mm : g diminue de 3 × 10⁻⁴ en valeur relative.", d: "D'environ 0,8\u00a0mm, comme pour un décalage de 1\u00a0km à l'horizontale." },
+        hint: "Le gradient vaut 3,1 × 10⁻⁷ par mètre ; l'écart grandit comme Δg T²/2.",
+        why: "Déplacer l'expérience sans la Terre brise la symétrie par le gradient du champ : 2h/RT ≈ 3,1 × 10⁻⁴ pour 1\u00a0km, soit Δg ≈ 3 × 10⁻³\u00a0m·s⁻² et Δg T²/2 ≈ 1,5\u00a0mm. À l'horizontale, l'écart est deux fois plus petit. Leçons « Translations » et « La symétrie en physique »." },
+      horizontal: { prompt: "Décaler l'expérience de 1\u00a0km à l'horizontale, la Terre restant en place : à quoi cela revient-il pour l'appareil ?",
+        options: { a: "À l'incliner d'environ 1,6 × 10⁻⁴\u00a0rad : les billes s'écartent d'environ 0,8\u00a0mm en 1\u00a0s, contre 8,6\u00a0cm pour une inclinaison de 1°.", b: "À rien : à l'horizontale, le champ de pesanteur est le même partout.", c: "À l'incliner de 1° : les billes s'écartent de plusieurs centimètres en 1\u00a0s.", d: "À le monter de 1\u00a0km : même diminution de g, même écart de 1,5\u00a0mm." },
+        hint: "La verticale tourne de d/RT ; une inclinaison φ fait apparaître la composante g sin φ.",
+        why: "La verticale locale tourne de d/RT = 1\u00a0000/(6,37 × 10⁶) ≈ 1,6 × 10⁻⁴\u00a0rad. Dans le repère de l'appareil apparaît g sin φ, et l'écart vaut g sin φ T²/2 ≈ 0,8\u00a0mm ; pour 1°, g sin φ ≈ 0,17\u00a0m·s⁻², d'où 8,6\u00a0cm. Leçons « Translations », pour le décalage, et « Rotations », pour l'inclinaison." },
+      forme: { prompt: "Pour quels changements de repère la loi m a = F garde-t-elle sa forme sans qu'on ajoute de force ?",
+        options: { a: "Pour tous : une loi écrite en vecteurs vaut dans n'importe quel repère.", b: "Origine décalée d'une constante ou en mouvement à vitesse constante, axes tournés d'un angle fixe ; pas pour une origine qui accélère ni pour des axes qui tournent.", c: "Origine décalée d'une constante seulement : une origine en mouvement change les vitesses, donc la loi.", d: "Origine décalée d'une constante et axes tournant à vitesse angulaire constante ; pas pour une origine en mouvement uniforme." },
+        hint: "Dérivez deux fois la relation entre les coordonnées : qu'est-ce qui s'ajoute à l'accélération ?",
+        why: "Une origine fixe ou en translation uniforme ne change pas l'accélération (relativité de Galilée, à (v/c)² près). Un angle fixe ne change que les composantes. Si l'origine accélère, d²a/dt² s'ajoute ; si les axes tournent à Ω, des termes en Ω et en Ω² apparaissent : ce sont les forces d'inertie. Leçons « Translations » et « Rotations »." },
+      systeme: { prompt: "Deux billes d'acier lancées à environ 5\u00a0m·s⁻¹ se heurtent ; on suit leur mouvement pendant 1\u00a0s. Parmi ces effets négligés, lequel est le plus grand ?",
+        options: { a: "Le terme relativiste (v/c)², vers 6 × 10⁻¹⁶.", b: "L'effet de Coriolis, 2Ωv/g, vers 10⁻⁴.", c: "La variation de g avec l'altitude, 3 × 10⁻⁷ par mètre.", d: "La traînée de l'air, jusqu'à 4,5 × 10⁻³ du poids." },
+        hint: "Comparez des rapports sans dimension.",
+        why: "Le système décrit dans les leçons donne (v/c)² ≈ 6 × 10⁻¹⁶, Coriolis ≈ 1,1 × 10⁻⁴ du poids, un gradient de g de 3,1 × 10⁻⁷ par mètre et une traînée d'au plus 4,5 × 10⁻³ du poids. Seul le gradient brise la symétrie quand la Terre reste en place. Leçons « La symétrie en physique », « Translations » et « Rotations »." },
+      noether: { prompt: "Des billes se heurtent près du sol, la Terre restant en place. Quelle grandeur se conserve pour le système des billes ?",
+        options: { a: "Seulement la composante horizontale de la quantité de mouvement, à 10⁻⁷ près par mètre de déplacement.", b: "Toute la quantité de mouvement : le choc est intérieur au système.", c: "Aucune composante : la Terre brise toutes les translations.", d: "Seulement la composante verticale, celle du poids." },
+        hint: "À chaque symétrie qui tient correspond une grandeur conservée.",
+        why: "Le poids est vertical : il change la composante verticale de la quantité de mouvement, pas l'horizontale. La translation horizontale ne reste une symétrie qu'au gradient près, la verticale tournant de 1,6 × 10⁻⁷\u00a0rad par mètre : la conservation horizontale tient d'autant. Leçons « La symétrie en physique » et « Translations »." },
+      uniforme: { prompt: "Dans un champ de pesanteur parfaitement uniforme, deux billes se heurtent en vol. Le choc est identique à celui qu'on observerait loin de tout astre, et pourtant la quantité de mouvement des billes augmente. Comment le comprendre ?",
+        options: { a: "C'est une violation du théorème de Noether, tolérée parce que le champ est faible.", b: "Le champ uniforme brise l'invariance par translation, donc le choc devrait changer.", c: "Le champ accélère toutes les billes de la même façon, sans changer leurs mouvements relatifs ; la quantité de mouvement ne se conserve que pour un système isolé, Terre comprise.", d: "La quantité de mouvement ne change pas : seule l'énergie cinétique augmente." },
+        hint: "À quel système s'applique le lien entre symétrie et conservation ?",
+        why: "Un champ uniforme donne à tous les corps la même accélération g : les mouvements relatifs, donc le choc, n'en dépendent pas (sixième corollaire de Newton). Le lien de Noether porte sur un système isolé : avec la Terre, la quantité de mouvement totale se conserve, la Terre reculant imperceptiblement. Leçons « Translations » et « La symétrie en physique »." },
+      composantes: { prompt: "Une force de 10\u00a0N fait 30° avec l'axe x, dans le plan xy. On tourne les axes de 30°, puis encore de 60°, autour de z, les angles étant comptés de x vers y. Que valent ses composantes dans les axes finaux ?",
+        options: { a: "(8,66 ; 5)\u00a0N : tourner les axes ne change pas une force.", b: "(5 ; \u22128,66)\u00a0N, de norme toujours 10\u00a0N.", c: "(0 ; 10)\u00a0N : la force est maintenant portée par y′.", d: "(5 ; 8,66)\u00a0N, de norme toujours 10\u00a0N." },
+        hint: "Deux rotations autour du même axe s'ajoutent. Puis x′ = x cos θ + y sin θ et y′ = \u2212x sin θ + y cos θ.",
+        why: "Les angles s'ajoutent : θ = 90°. Avec Fx = 8,66\u00a0N et Fy = 5\u00a0N, F′x = Fx cos θ + Fy sin θ = 5\u00a0N et F′y = \u2212Fx sin θ + Fy cos θ = \u22128,66\u00a0N. Les composantes changent, la norme reste 10\u00a0N. Leçon « Rotations », avec la règle de transformation de la leçon « Vecteurs »." },
+      horloge: { prompt: "Une horloge à balancier couchée sur le côté s'arrête ; un pendule de Foucault révèle la rotation de la Terre sans qu'on regarde dehors. Lequel de ces faits met en défaut une symétrie des lois de la mécanique ?",
+        options: { a: "Les deux : les lois distinguent le haut du côté, et l'immobile du tournant.", b: "L'horloge seulement : la loi de Newton privilégie la verticale.", c: "Le pendule seulement : il prouve que l'espace a une direction privilégiée.", d: "Aucun : pour l'horloge, on n'a pas tourné la Terre ; la symétrie porte sur un angle fixe, pas sur une rotation continue." },
+        hint: "Qu'a-t-on oublié de tourner ? Et la symétrie concerne-t-elle un angle fixe ou une vitesse angulaire ?",
+        why: "La direction privilégiée de l'horloge vient de la situation, la Terre, qu'il aurait fallu tourner aussi. L'invariance par rotation porte sur un angle fixe ; un repère qui tourne à la vitesse angulaire Ω se détecte de l'intérieur, par les forces d'inertie. Leçons « La symétrie en physique » et « Rotations »." },
+    },
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else (root.LOCALES = root.LOCALES || {}).fr = Object.assign((root.LOCALES || {}).fr || {}, T);
+})(typeof self !== "undefined" ? self : this);

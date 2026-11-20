@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Équilibre thermique du rayonnement</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-statistique" data-i18n="monde.statistique"></a><span class="aux">›</span><a href="/racoon/etape?id=equipartition" data-i18n="etape.equipartition"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-thermo" href="/racoon/atlas?piste=thermo" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/equipartition-de-l-energie" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mo>⟨</mo><mfrac><mrow><mi>d</mi><mi>W</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>⟩</mo><mo>=</mo><mi>γ</mi><mo>⟨</mo><mi>W</mi><mo>⟩</mo><mo>=</mo><mi>γ</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></math><span class="n">(41.5)</span></div>
+    <p class="validite" data-i18n-html="val.41.5"></p>
+    <div class="eq"><math display="block"><mi>γ</mi><mo>=</mo><mfrac><msub><mi>ω</mi><mn>0</mn></msub><mi>Q</mi></mfrac><mo>=</mo><mfrac><mn>2</mn><mn>3</mn></mfrac><mfrac><mrow><msub><mi>r</mi><mn>0</mn></msub><msubsup><mi>ω</mi><mn>0</mn><mn>2</mn></msubsup></mrow><mi>c</mi></mfrac><mo>,</mo><mspace width="1em"/><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mfrac><msup><mi>e</mi><mn>2</mn></msup><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub><msub><mi>m</mi><mi>e</mi></msub><msup><mi>c</mi><mn>2</mn></msup></mrow></mfrac></math><span class="n">(41.6)</span></div>
+    <p class="validite" data-i18n-html="val.41.6"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mi>d</mi><msub><mi>W</mi><mi>s</mi></msub></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi>∞</mi></msubsup><mi>I</mi><mo>(</mo><mi>ω</mi><mo>)</mo><msub><mi>σ</mi><mi>s</mi></msub><mo>(</mo><mi>ω</mi><mo>)</mo><mspace width="0.2em"/><mi>d</mi><mi>ω</mi><mo>≈</mo><mfrac><mrow><mn>2</mn><mi>π</mi><msubsup><mi>r</mi><mn>0</mn><mn>2</mn></msubsup><msubsup><mi>ω</mi><mn>0</mn><mn>2</mn></msubsup><mi>I</mi><mo>(</mo><msub><mi>ω</mi><mn>0</mn></msub><mo>)</mo></mrow><mn>3</mn></mfrac><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>∞</mi></mrow><mi>∞</mi></msubsup><mfrac><mrow><mi>d</mi><mi>ω</mi></mrow><mrow><mo>(</mo><mi>ω</mi><mo>−</mo><msub><mi>ω</mi><mn>0</mn></msub><msup><mo>)</mo><mn>2</mn></msup><mo>+</mo><msup><mi>γ</mi><mn>2</mn></msup><mo>/</mo><mn>4</mn></mrow></mfrac><mo>=</mo><mn>3</mn><mi>γ</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></math><span class="n">(41.11)</span></div>
+    <p class="validite" data-i18n-html="val.41.11"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mi>I</mi><mo>(</mo><mi>ω</mi><mo>)</mo><mo>=</mo><mfrac><mrow><msup><mi>ω</mi><mn>2</mn></msup><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><mrow><msup><mi>π</mi><mn>2</mn></msup><msup><mi>c</mi><mn>2</mn></msup></mrow></mfrac></math><span class="n">(41.13)</span></div>
+    <p class="validite" data-i18n-html="val.41.13"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="sim.sec"></span>
+    <h2 data-i18n="sim.h2"></h2>
+    <p data-i18n-html="sim.p"></p>
+    <figure class="chart">
+      <svg class="fig" id="spec" role="img" data-i18n-attr="aria-label:sim.aria"></svg>
+      <div class="legend"><span class="c-warn" data-i18n="sim.legend.ray"></span><span class="c-tint" data-i18n="sim.legend.mes"></span><span data-i18n="sim.legend.cut"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="rT" data-i18n="sim.t"></label><output id="rTv" for="rT"></output></div>
+            <input id="rT" type="range" min="0" max="1" step="0.005" value="0.6"></div>
+          <div class="ctl"><div class="row"><label for="rW" data-i18n="sim.w"></label><output id="rWv" for="rW"></output></div>
+            <input id="rW" type="range" min="0" max="1" step="0.005" value="0.4"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="sim.k.ray"></span><span class="v" id="vray"></span><span class="f" data-i18n="sim.f.ray"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="sim.k.mes"></span><span class="v" id="vmes"></span><span class="f" id="fmes"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="sim.k.rap"></span><span class="v" id="vrap"></span><span class="f" data-i18n="sim.f.rap"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="sim.k.q"></span><span class="v" id="vq"></span><span class="f" id="fq"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="sim.k.bil"></span><span class="v" id="vbil"></span><span class="f" data-i18n="sim.f.bil"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="sim.caption"></figcaption>
+    </figure>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/equilibre-thermique-du-rayonnement.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/statistique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const S = Statistique, { k_B, hbar, c } = Constantes;
+
+/* ---------- la loi de Rayleigh contre la mesure ---------- */
+(() => {
+  const svg = $("spec"), sT = $("rT"), sW = $("rW"), XMAX = 12;
+  const lg = (s, a, b) => a * Math.pow(b / a, +s.value);
+  function draw() {
+    const T = lg(sT, 300, 6000), xc = lg(sW, 0.5, 20), wT = k_B * T / hbar, wc = xc * wT;
+    const u0 = hbar * wT ** 3 / (Math.PI ** 2 * c ** 3);           // u(ω) unit: ħ(k_BT/ħ)³/(π²c³)
+    svg.innerHTML = "";
+    const o = Plot.axes(svg, { fmt: F, w: 640, h: 280, pad: { b: 44, l: 56 },
+      x: { domain: [0, XMAX], label: t("sim.x"), fmt: v => F.num(v, 3) }, y: { domain: [0, 2], label: t("sim.y"), fmt: v => F.fix(v, 1) } });
+    const ray = [], mes = [];
+    for (let i = 1; i <= 240; i++) { const x = XMAX * i / 240, w = x * wT;
+      const yr = S.rayleigh(w, T) / c / u0; if (yr <= 2) ray.push([o.x(x), o.y(yr)]); mes.push([o.x(x), o.y(S.planck(w, T) / c / u0)]); }
+    Plot.el("path", { d: Plot.path(ray), class: "stroke bold c-warn" }, o.g);
+    Plot.el("path", { d: Plot.path(mes), class: "stroke bold c-tint" }, o.g);
+    const xl = Math.min(xc, XMAX);
+    Plot.el("line", { x1: o.x(xl), x2: o.x(xl), y1: o.y(0), y2: o.y(2), class: "stroke thin dash c-label" }, o.g);
+    const eR = S.energieJusqua(wc, T), eP = S.energieJusqua(wc, T, "planck"), tot = S.A_RAD * T ** 4;
+    const b = S.bilan(wc, T, w => S.rayleigh(w, T));
+    $("rTv").innerHTML = F.kelvin(T);
+    $("rWv").textContent = t("sim.wv", { x: F.num(xc, 3), l: F.si(2 * Math.PI * c / wc, "m", { sig: 3 }) });
+    $("vray").textContent = F.qty(F.sci(eR, 3), "J·m⁻³");
+    $("vmes").textContent = F.qty(F.sci(eP, 3), "J·m⁻³");
+    $("fmes").textContent = t("sim.f.mes", { tot: F.qty(F.sci(tot, 3), "J·m⁻³") });
+    $("vrap").textContent = F.num(eR / eP, 3);
+    $("vq").textContent = F.sci(b.Q, 2);
+    $("fq").textContent = t("sim.f.q", { g: F.qty(F.sci(b.gamma, 2), "s⁻¹") });
+    $("vbil").textContent = F.fix(b.absorbe / b.emis, 4);
+    $("sys").innerHTML = t("sys.inner", { T: F.kelvin(T), l: F.si(2 * Math.PI * c / wc, "m", { sig: 2 }), tau: F.si(1 / b.gamma, "s", { sig: 2 }),
+      larg: F.sci(b.gamma / wc, 1) });
+  }
+  sT.oninput = sW.oninput = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["kirchhoff", 1860, "idea"], ["rayleigh", 1900, "idea"], ["jeans", 1905, "idea"], ["ehrenfest", 1911, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["radio"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["boite", "b"], ["charge", "d"], ["pic", "a"], ["diverge", "c"], ["deux", "b"], ["radio", "a"], ["q", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 412 });
+})();
+</script>
+</body>
+</html>

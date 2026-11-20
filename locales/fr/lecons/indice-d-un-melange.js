@@ -1,0 +1,97 @@
+/* Leçon « Indice d'un mélange » (Feynman II.32.5) : textes en français.
+   Une autre langue = locales/<langue>/lecons/indice-d-un-melange.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Indice d'un mélange",
+    "crumb.jour": "Indice d'un mélange",
+    "h1": "Indice d'un mélange",
+    "lede": "L'indice d'une eau sucrée n'est pas la moyenne de l'indice de l'eau et de celui du sucre. Ce qui s'additionne, ce sont les dipôles que la lumière induit dans chaque molécule. Une table d'indices mesurés suffit à le vérifier : la polarisabilité du sucre qu'on en tire est la même, à moins de 1\u00a0% près, de 10 à 75\u00a0% de sucre.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : ondes dans un diélectrique",
+
+    "s1.sec": "Le système",
+    "s1.h2": "Deux espèces de dipôles dans la même onde",
+    "s1.p1": "Le système : une solution de saccharose dans l'eau, à 293,15\u00a0K <span class=\"aux\">(20\u00a0°C)</span>, éclairée par la raie jaune du sodium, de longueur d'onde 589\u00a0nm dans le vide. La lumière y fait osciller les électrons de chaque molécule, d'eau ou de sucre ; chaque molécule devient un petit dipôle qui rayonne, et la somme de ces ondes avec l'onde incidente avance moins vite que dans le vide. Avant d'appliquer une loi à ce milieu, il faut le décrire par ses longueurs.",
+    "sys.title": "Le système décrit : des molécules contre une longueur d'onde",
+    "sys1.body": "L'eau pure contient {c1} de molécules : leur distance moyenne est de {d}, soit {r} fois moins que la longueur d'onde. Une molécule de saccharose occupe dans son cristal un cube d'environ {a} de côté, {ra} fois moins que λ. L'onde voit donc un milieu continu, où l'on peut parler de polarisation moyenne <var>P</var> et de champ moyen <var>E</var>. Les résonances des électrons de l'eau et du sucre sont dans l'ultraviolet : à 589\u00a0nm la solution est transparente, son indice est réel.",
+    "s1.p2": "Dans « Ondes dans un diélectrique », l'indice d'un corps dense a été relié à la polarisabilité α de ses molécules, définie par <var>p</var> = ε<sub>0</sub>α<var>E</var><sub>local</sub>, en tenant compte du champ que les voisins ajoutent au champ moyen. Quand plusieurs espèces de molécules sont présentes, chacune ajoute sa part de polarisation, et c'est la somme qui fixe l'indice :",
+    "val.32.34": "Approximation : champ local de Lorentz, <var>E</var> + <var>P</var>/3ε<sub>0</sub>, qui suppose un entourage isotrope de chaque molécule (liquide, gaz, cristal cubique) ; polarisabilités indépendantes du voisinage, donc sans réaction chimique ; longueur d'onde grande devant la distance entre molécules (1900 fois ici). Loin des résonances, α et <var>n</var> sont réels. Pour l'eau sucrée, l'α du sucre qu'on en déduit varie de moins de 1\u00a0% entre 10 et 75\u00a0% de sucre.",
+    "s1.p3": "<var>N</var><sub><var>j</var></sub> est le nombre de molécules de l'espèce <var>j</var> par unité de volume. Pour l'eau sucrée, deux termes : l'eau (1) et le saccharose (2).",
+    "val.32.37": "Approximation : c'est (32.34) pour deux espèces ; mêmes limites. Ce n'est pas la moyenne des indices : ce qui s'additionne, c'est 3(<var>n</var><sup>2</sup> \u2212 1)/(<var>n</var><sup>2</sup> + 2), proportionnel aux nombres de dipôles.",
+
+    "s2.sec": "Le test",
+    "s2.h2": "Une polarisabilité qui ne dépend pas de la concentration",
+    "s2.p1": "Pour comparer à l'expérience, il faut les nombres de molécules par unité de volume. Une solution de masse volumique ρ contient la fraction massique <var>w</var> de sucre, de masse molaire <var>M</var><sub>2</sub> = 342,30\u00a0g·mol<sup>\u22121</sup>, et 1 \u2212 <var>w</var> d'eau, <var>M</var><sub>1</sub> = 18,015\u00a0g·mol<sup>\u22121</sup>. Avec <var>c</var><sub>1</sub> et <var>c</var><sub>2</sub> les quantités de matière par unité de volume :",
+    "val.32.37a": "Exacte : la masse se conserve, et <var>N</var><sub>A</sub> est la constante d'Avogadro. Ce qui reste approché : ρ est mesurée pour chaque solution, sans supposer que les volumes de l'eau et du sucre s'ajoutent ; ici à 5 chiffres, d'après une table du National Bureau of Standards (NBS) de 1946.",
+    "s2.p2": "Le test de Feynman : la polarisabilité de l'eau se tire de l'eau pure, où <var>N</var><sub>1</sub>α<sub>1</sub> = 3(<var>n</var><sup>2</sup> \u2212 1)/(<var>n</var><sup>2</sup> + 2) ; on la suppose inchangée dans la solution. Pour chaque concentration, l'indice mesuré donne alors celle du sucre :",
+    "val.32.37b": "Approximation : (32.37) résolue pour α<sub>2</sub>, avec α<sub>1</sub> de l'eau pure. Si la théorie est juste, le résultat ne dépend pas de <var>w</var> ; tout écart mesure ce que (32.37) néglige, les interactions entre molécules qui changent avec la concentration, plus l'incertitude de la table (10<sup>\u22125</sup> sur <var>n</var>).",
+    "fig.aria": "Écart relatif de la polarisabilité du sucre déduite à chaque concentration, selon trois règles de mélange",
+    "fig.legend.ll": "3(n² \u2212 1)/(n² + 2) additif, (32.37)",
+    "fig.legend.gd": "n \u2212 1 additif (Gladstone et Dale)",
+    "fig.legend.sans": "n² \u2212 1 additif, sans champ local",
+    "fig.w": "Fraction massique de sucre",
+    "fig.xaxis": "fraction massique de saccharose (%)",
+    "fig.yaxis": "écart à la valeur de 50 % (%)",
+    "fig.k.c": "Saccharose, <var>c</var><sub>2</sub>",
+    "fig.f.c": "eau : {c1} ; ρ = {rho}",
+    "fig.k.a2": "<var>N</var><sub>A</sub>α<sub>2</sub> déduite, (32.37b)",
+    "fig.f.a2": "écart à la valeur de 50 % : {e} %",
+    "fig.k.n": "Indice prédit par (32.37)",
+    "fig.f.n": "mesuré : {n} ; n \u2212 1 additif : {gd} ; n² \u2212 1 additif : {sans}",
+    "fig.caption": "Chaque point est une ligne de la table des solutions de saccharose à 293,15 K et 589 nm : l'indice vient de la Commission internationale pour l'unification des méthodes d'analyse du sucre (ICUMSA), la masse volumique du NBS. Pour chaque règle, la contribution du sucre est déduite de l'indice mesuré, puis rapportée à sa valeur à 50 %. Une règle juste donne une droite horizontale. L'indice prédit utilise α<sub>2</sub> tirée de la solution à 50 %.",
+    "s2.p3": "La courbe de (32.37) reste à moins de 0,5\u00a0% de sa valeur moyenne sur toute la table : la molécule de sucre se polarise de la même façon entourée de quelques molécules d'eau ou de beaucoup. Feynman trouvait le même résultat sur trois solutions et le cristal, avec les données d'un manuel de son époque : 0,211 dans ses unités, le litre par mole, soit 2,11 × 10<sup>\u22124</sup>\u00a0m³·mol<sup>\u22121</sup>.",
+
+    "s3.sec": "Le champ local",
+    "s3.h2": "Ce que les trois règles distinguent",
+    "s3.p1": "Les trois règles de la figure additionnent chacune une fonction différente de <var>n</var>, calée sur l'eau pure et sur une solution. La règle « <var>n</var><sup>2</sup> \u2212 1 additif » est celle d'un milieu où chaque molécule ne sentirait que le champ moyen, sans la part de ses voisines : c'est ce qui vaut pour les électrons libres d'un métal, qui se déplacent partout, dans « Ondes dans les métaux ». La règle « <var>n</var> \u2212 1 additif », de Gladstone et Dale, est empirique.",
+    "s3.p2": "Sur la table, l'α du sucre déduite varie de {ll}\u00a0% avec (32.37), de {gd}\u00a0% avec <var>n</var> \u2212 1 additif, et de {sans}\u00a0% sans champ local. Calées à 50\u00a0%, elles prédisent l'indice à {nll}, {ngd} et {nsans} près. Le sucre du test a une réfraction molaire <var>N</var><sub>A</sub>α<sub>2</sub>/3 = {r} ; une seule de ses molécules a α<sub>2</sub> = {alpha}.",
+    "s3.p3": "Les trois fonctions coïncident quand <var>n</var> est proche de 1 : toutes sont proportionnelles à <var>n</var> \u2212 1 au premier ordre, et un gaz ne les départage pas. Elles diffèrent au second ordre, et des indices de 1,33 à 1,48 suffisent à écarter la règle sans champ local. Ils ne suffisent pas à départager (32.37) et la règle de Gladstone et Dale, qui dévient de moins de 1\u00a0% en sens contraires : il faudrait des indices plus élevés. La force de (32.37) est ailleurs : elle se démontre, à partir du champ local, alors que l'autre se constate.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Une règle constatée, puis des tables",
+    "hist.intro": "L'histoire de (32.34), de Mossotti à Lorentz et Lorenz, est dans « Ondes dans un diélectrique ». Voici celle de sa concurrente empirique, et des instruments qui ont fait de l'indice une mesure de concentration.",
+    "hist.events": {
+      gladstone: { who: "John Hall Gladstone et Thomas Pelham Dale", what: "publient dans les Philosophical Transactions leurs mesures de l'indice de liquides à diverses températures.", context: "Quand un liquide chauffe, il se dilate et son indice baisse : le rapport (n \u2212 1)/ρ, qu'ils appelleront en 1863 « énergie réfractive spécifique », reste presque constant. C'est la règle « n \u2212 1 additif » de la figure, constatée et non démontrée." },
+      abbe: { who: "Ernst Abbe", what: "décrit, dans la Jenaische Zeitschrift für Naturwissenschaft, de nouveaux appareils pour mesurer l'indice et la dispersion des solides et des liquides.", context: "Son réfractomètre lit l'indice d'une mince couche de liquide entre deux prismes, par l'angle limite de la réflexion totale. Il est encore l'instrument des laboratoires et des caves." },
+      icumsa: { who: "Commission internationale pour l'unification des méthodes d'analyse du sucre (ICUMSA)", what: "tient sa première session, à Hambourg.", context: "Sa première tâche est l'étalonnage des lames de quartz des saccharimètres. Elle publie aujourd'hui les tables d'indices des solutions de saccharose, celles de la figure." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      mout: { name: "Le sucre des moûts de raisin", text: "La méthode de référence de l'Organisation internationale de la vigne et du vin (OIV) mesure l'indice du moût à 293,15 K avec un réfractomètre d'Abbe, puis lit dans une table la teneur en sucre, en pourcentage massique de saccharose et en grammes par litre. Elle en déduit le titre alcoométrique que donnera la fermentation. Les indices de sa table sont ceux de l'eau sucrée de la figure : le moût est repéré sur l'échelle du saccharose, puis converti en sucres du moût par une seconde colonne." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      moyenne: { prompt: "Qu'est-ce qui s'additionne, d'une espèce de molécules à l'autre, dans l'indice d'un mélange ?",
+        options: { a: "Les indices, pondérés par les fractions massiques.", b: "Les indices, pondérés par les fractions volumiques.", c: "Les produits Nα, dans 3(n² \u2212 1)/(n² + 2).", d: "Les vitesses de la lumière dans chaque corps pur." },
+        why: "Chaque molécule ajoute son dipôle induit, proportionnel à sa polarisabilité α ; la polarisation totale est la somme des N α. C'est (32.34) : la somme fixe 3(n² \u2212 1)/(n² + 2), pas n lui-même." },
+      champ: { prompt: "Pourquoi (32.34) contient-elle n² + 2 au dénominateur, au lieu de dire simplement n² \u2212 1 = ΣNα ?",
+        options: { a: "Parce que chaque molécule sent, en plus du champ moyen, le champ de ses voisines polarisées : le champ local E + P/3ε0.", b: "Parce que la lumière est une onde transversale.", c: "Parce que les molécules d'eau ont un dipôle permanent.", d: "Parce que l'onde est partiellement réfléchie à la surface." },
+        why: "Sans champ local, n² \u2212 1 = ΣNα. Le champ de Lorentz augmente la polarisation d'un facteur 1/(1 \u2212 Nα/3), et l'on obtient 3(n² \u2212 1)/(n² + 2) = ΣNα." },
+      test: { prompt: "Comment Feynman teste-t-il (32.37) sur une table d'indices d'eau sucrée ?",
+        options: { a: "Il mesure la polarisabilité du sucre dans le vide et la compare.", b: "Il vérifie que l'indice croît linéairement avec la concentration.", c: "Il compare l'indice de la solution à la moyenne des indices de l'eau et du cristal.", d: "Il tire α de l'eau de l'eau pure, déduit α du sucre à chaque concentration, et vérifie qu'elle ne change pas." },
+        why: "Avec α1 fixé par l'eau pure, chaque ligne de la table donne α2 par (32.37b). La théorie prédit le même α2 partout ; on trouve 2,11 × 10⁻⁴ m³·mol⁻¹ à moins de 1 % près de 10 à 75 %." },
+      constant: { prompt: "La polarisabilité du sucre déduite de la table change de moins de 1 % entre 10 et 75 % de sucre. Que peut-on en conclure ?",
+        options: { a: "Que l'eau et le sucre réagissent chimiquement.", b: "Que la molécule de sucre se polarise presque de la même façon quel que soit son entourage.", c: "Que l'indice ne dépend pas de la concentration.", d: "Que les volumes de l'eau et du sucre s'ajoutent exactement." },
+        why: "Si l'entourage changeait la molécule, α2 dériverait avec la concentration. L'indice, lui, passe de 1,333 à 1,478. La masse volumique utilisée est mesurée : l'additivité des volumes n'est pas supposée." },
+      dilue: { prompt: "Pour un gaz, n \u2212 1 vaut quelques 10⁻⁴. Les règles « 3(n² \u2212 1)/(n² + 2) additif », « n² \u2212 1 additif » et « n \u2212 1 additif » y donnent-elles des prédictions différentes ?",
+        options: { a: "Non : toutes sont proportionnelles à n \u2212 1 au premier ordre, et l'écart est du second ordre, de l'ordre de (n \u2212 1)², 10⁻⁷.", b: "Oui : la règle sans champ local se trompe de moitié.", c: "Oui : la règle n \u2212 1 additif est fausse pour les gaz.", d: "Non, parce qu'un gaz n'a pas de champ local du tout." },
+        hint: "Développez chaque fonction autour de n = 1.",
+        why: "Pour n = 1 + ε : n² \u2212 1 ≈ 2ε, 3(n² \u2212 1)/(n² + 2) ≈ 2ε, n \u2212 1 = ε. Proportionnelles au premier ordre, elles ne diffèrent qu'en ε². Il faut un milieu dense pour les départager." },
+      concentration: { prompt: "Une solution à 50 % de sucre a une masse volumique de 1230 kg·m⁻³. Quelle est sa concentration en saccharose (342,3 g·mol⁻¹) ?",
+        options: { a: "Environ 0,9 kmol·m⁻³.", b: "Environ 3,6 kmol·m⁻³.", c: "Environ 1,8 kmol·m⁻³.", d: "Environ 34 kmol·m⁻³." },
+        hint: "c2 = ρw/M2.",
+        why: "1230 × 0,5/0,3423 ≈ 1797 mol·m⁻³, soit 1,8 kmol·m⁻³. L'eau de la même solution : 1230 × 0,5/0,018 ≈ 34 kmol·m⁻³ ; d est la réponse de l'eau." },
+      metal: { prompt: "Pourquoi, pour les électrons libres d'un métal, n'applique-t-on pas la correction du champ local ?",
+        options: { a: "Parce que les électrons d'un métal n'ont pas de charge effective.", b: "Parce qu'ils se déplacent partout dans le métal : en moyenne, ils sentent le champ moyen E.", c: "Parce que l'indice d'un métal est toujours inférieur à 1.", d: "Parce que le métal est un cristal cubique." },
+        why: "Le champ local suppose une molécule fixe entourée de voisines à des positions définies. Un électron de conduction parcourt tout le cristal ; c'est la règle « n² \u2212 1 additif » qui vaut pour lui, dans « Ondes dans les métaux »." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 32, §32-5 (texte original en anglais). Notations SI. Indices des solutions de saccharose à 293,15 K : tables de l'ICUMSA reproduites par l'OIV dans sa méthode d'évaluation du sucre des moûts par réfractométrie (révision de 2012), qui décrit aussi l'usage. Masses volumiques : C. F. Snyder et L. D. Hammond, <i>Weights per United States gallon and weights per cubic foot of sugar solutions</i>, circulaire C457 du NBS (1946). Masse volumique du cristal de saccharose, 1587\u00a0kg·m<sup>\u22123</sup> : fiches de fournisseurs. Histoire : J. H. Gladstone et T. P. Dale, <i>Philosophical Transactions</i> 148 (1858) et 153 (1863) ; E. Abbe, <i>Jenaische Zeitschrift für Naturwissenschaft</i> (1874) ; ICUMSA, historique de la commission (première session, Hambourg, 12 juin 1897). Règles de mélange, figure et calculs propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

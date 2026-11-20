@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nucléophiles et électrophiles</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .duo { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+  .duo svg { width: auto; max-width: 100%; height: auto; flex: none; }
+  .duo .side { flex: 1 1 280px; min-width: 0; }
+  #mol { flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-organique" data-i18n="monde.chim-organique"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-mecanismes" data-i18n="etape.chim-mecanismes"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n-html="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/schemas-de-lewis" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mrow><mo>|</mo><mi mathvariant="normal">Δ</mi><mi>χ</mi><mo>|</mo></mrow><mo>=</mo><mrow><mo>|</mo><msub><mi>χ</mi><mi mathvariant="normal">B</mi></msub><mo>−</mo><msub><mi>χ</mi><mi mathvariant="normal">A</mi></msub><mo>|</mo></mrow><mo>≥</mo><mn>0,4</mn></math></div>
+    <p class="validite" data-i18n-html="s1.validite"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure>
+      <div class="panel">
+        <div class="seg" role="group" id="mol">
+          <button type="button" data-m="chloromethane" aria-pressed="true" data-i18n="mol.chloromethane"></button>
+          <button type="button" data-m="methanol" aria-pressed="false" data-i18n="mol.methanol"></button>
+          <button type="button" data-m="ethanal" aria-pressed="false" data-i18n="mol.ethanal"></button>
+          <button type="button" data-m="methylamine" aria-pressed="false" data-i18n="mol.methylamine"></button>
+          <button type="button" data-m="hydroxyde" aria-pressed="false" data-i18n="mol.hydroxyde"></button>
+          <button type="button" data-m="propene" aria-pressed="false" data-i18n="mol.propene"></button>
+          <button type="button" data-m="tbutyle" aria-pressed="false" data-i18n="mol.tbutyle"></button>
+          <button type="button" data-m="iodomethane" aria-pressed="false" data-i18n="mol.iodomethane"></button>
+        </div>
+        <div class="duo">
+          <svg class="fig no-sigle" id="dessin" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+          <div class="side stats">
+            <div class="stat"><span class="k" data-i18n="fig.nu"></span><span class="f no-sigle" id="nu"></span></div>
+            <div class="stat"><span class="k" data-i18n="fig.el"></span><span class="f no-sigle" id="el"></span></div>
+            <div class="stat"><span class="k" data-i18n="fig.pol"></span><span class="v no-sigle" id="pol"></span><span class="f" id="polf"></span></div>
+          </div>
+        </div>
+        <p class="no-sigle" id="note"></p>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <div class="box def"><b data-i18n="s3.def.titre"></b>
+      <p class="no-sigle" data-i18n-html="s3.def.corps"></p>
+    </div>
+    <p class="no-sigle" data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msub><mi data-i18n="eq.log"></mi><mn>10</mn></msub><mo>⁡</mo><mfrac><mi>k</mi><msub><mi>k</mi><mn>0</mn></msub></mfrac><mo>=</mo><mi>s</mi><mspace width="0.1em"/><mi>n</mi></math></div>
+    <p class="validite" data-i18n-html="s3.validite"></p>
+    <div class="list keyed no-sigle" id="swain"></div>
+    <p class="no-sigle" data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="list keyed no-sigle" id="familles"></div>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/nucleophiles-electrophiles.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script src="/racoon/statistique.js"></script>
+<script src="/racoon/chim-organique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I.fallback : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const O = ChimOrga, sym = s => t("chim.sym", { s });
+
+/* ---------- repérer les sites ---------- */
+(() => {
+  const MOL = {
+    chloromethane: "C 0 0; Cl 1.1 0 | 0-1",
+    methanol: "C 0 0; O 1 0 | 0-1",
+    ethanal: "C -0.866 -0.5; C 0 0; O 0 1 | 0-1 1=2",
+    methylamine: "C 0 0; N 1 0 | 0-1",
+    hydroxyde: "O 0 0 h1 q-1",
+    propene: "C -0.866 -0.5; C 0 0; C 0 1 | 0-1 1=2",
+    tbutyle: "C 0 0 q+1; C -0.866 -0.5; C 0.866 -0.5; C 0 1 | 0-1 0-2 0-3",
+    iodomethane: "C 0 0; I 1.1 0 | 0-1",
+  };
+  const notes = textOf("note", Object.keys(MOL)), svg = document.getElementById("dessin"), out = id => document.getElementById(id);
+  let cle = "chloromethane";
+  function maj() {
+    const m = O.mol(MOL[cle]), p = O.polarites(m), marques = {};
+    p.atomes.forEach((a, i) => { if (!m.atomes[i].q && a.delta) marques[i] = t(a.delta > 0 ? "fig.dplus" : "fig.dmoins"); });
+    const s = O.schema(m, { texte: sym, carbones: true, marques, echelle: 40 });
+    const vb = s.viewBox.split(" ").map(Number);
+    svg.setAttribute("viewBox", s.viewBox); svg.setAttribute("width", Math.round(vb[2] * 1.4)); svg.setAttribute("height", Math.round(vb[3] * 1.4)); svg.innerHTML = s.html;
+    const el = i => m.atomes[i].e;
+    const nu = p.atomes.map((a, i) => a.nucleophile ? t(m.atomes[i].q < 0 ? "site.anion" : "site.doublet", { a: el(i) }) : null).filter(Boolean)
+      .concat(p.pi.map(([a, b]) => t("site.pi", { a: el(a), b: el(b) })));
+    const ele = p.atomes.map((a, i) => a.electrophile ? t(m.atomes[i].q > 0 ? "site.lacune" : "site.dplus", { a: el(i) }) : null).filter(Boolean)
+      .concat(p.atomes.map((a, i) => a.hAcide ? t("site.hacide", { a: el(i) }) : null).filter(Boolean));
+    out("nu").textContent = nu.length ? nu.join(" ; ") : t("site.aucun");
+    out("el").textContent = ele.length ? ele.join(" ; ") : t("site.aucun");
+    const dH = e => O.polarites(O.mol(e + " 0 0 h0; H 1 0 | 0-1")).liaisons[0].dchi;           // Δχ de la liaison e–H
+    const liste = p.liaisons.map((l, k) => ({ n: el(l.a) + (m.liaisons[k].ordre === 2 ? "=" : "–") + el(l.b), d: l.dchi }))
+      .concat(m.atomes.flatMap((a, i) => O.hydrogenes(m, i) ? [{ n: a.e + "–H", d: dH(a.e) }] : []));
+    const best = liste.filter(x => x.d > 0).sort((u, v) => v.d - u.d)[0];
+    out("pol").textContent = best ? best.n : "—";
+    out("polf").textContent = best ? t(best.d >= 0.4 ? "fig.dchi" : "fig.faible", { d: F.fix(best.d, 2) }) : t("fig.ion");
+    out("note").innerHTML = notes[cle];
+    document.querySelectorAll("#mol button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.m === cle)));
+  }
+  document.getElementById("mol").onclick = e => { const b = e.target.closest("button"); if (!b) return; cle = b.dataset.m; maj(); };
+  maj();
+})();
+
+/* ---------- échelle de Swain et Scott ---------- */
+(() => {
+  const ROWS = [["eau", 0], ["chlorure", 3.0], ["hydroxyde", 4.2], ["iodure", 5.0]], txt = textOf("swain.rows", ROWS.map(r => r[0]));
+  document.getElementById("swain").innerHTML = ROWS.map(([id, n]) => `<div><span class="k">${t("swain.n", { n: F.fix(n, 1) })}</span><span>${txt[id]}</span><span class="v">${F.sci(Math.pow(10, n), 1)}</span></div>`).join("");
+  const FAM = ["anions", "doublets", "pi", "carbonyle", "halogeno", "cations"], fam = textOf("familles", FAM);
+  document.getElementById("familles").innerHTML = FAM.map(id => `<div><span class="k">${fam[id].k}</span><span>${fam[id].text}</span><span class="v">${fam[id].v}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["lewis1916", 1916, "idea"], ["lewis1923", 1923, "idea"], ["lapworth", 1925, "idea"], ["pauling", 1932, "idea"], ["ingold", 1933, "idea"], ["swain", 1953, "experiment"], ["mayr", 1994, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount(document.getElementById("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["mayr", "covalents"], uses = textOf("uses.items", USES);
+  document.getElementById("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["site", "c"], ["hydroxyde", "a"], ["cinetique", "d"], ["swain", "b"], ["pi", "c"], ["iode", "a"], ["lacune", "d"], ["solvant", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount(document.getElementById("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

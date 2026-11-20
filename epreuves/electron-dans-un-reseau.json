@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["front", "b"],
+  ["largeur", "d"],
+  ["alias", "a"],
+  ["masse", "c"],
+  ["vitesse", "a"],
+  ["haut", "d"],
+  ["anisotrope", "b"],
+  ["oscille", "c"]
+ ]
+}

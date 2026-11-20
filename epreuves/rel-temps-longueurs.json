@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["parcours", "c"],
+  ["horloge", "a"],
+  ["volume", "b"],
+  ["sonde", "d"],
+  ["eclairs", "a"],
+  ["synchro", "b"],
+  ["ordre", "c"],
+  ["visible", "d"]
+ ]
+}

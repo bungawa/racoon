@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ordres de grandeur</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-mesurer" data-i18n="monde.mesurer"></a><span class="aux">›</span><a href="/racoon/etape?id=grandeurs-incertitudes" data-i18n="etape.grandeurs-incertitudes"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fond" href="/racoon/atlas?piste=fond" data-i18n="tag.piste"></a>
+      <span class="chip plain" data-i18n="tag.prereq"></span>
+      <span class="chip plain" data-i18n="tag.duree"></span>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n="s1.p1"></p>
+    <div class="box def"><b data-i18n="s1.def.title"></b>
+      <p data-i18n-html="s1.def.body"></p>
+    </div>
+    <div class="eq">
+      <math display="block"><mi>x</mi><mo>=</mo><mi>m</mi><mo>×</mo><msup><mn>10</mn><mi>n</mi></msup><mo>,</mo><mspace width="1em"></mspace><mn>1</mn><mo>≤</mo><mi>m</mi><mo>&lt;</mo><mn>10</mn></math>
+      
+    </div>
+    <p class="validite" data-i18n="eq1.validite"></p>
+    <p data-i18n="s1.p2"></p>
+    <div class="box warn"><b data-i18n="s1.warn.title"></b>
+      <p data-i18n="s1.warn.body"></p>
+    </div>
+    <div class="box rem"><b data-i18n="s1.rem.title"></b>
+      <p data-i18n="s1.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n="s2.p1"></p>
+    <figure>
+      <div class="seg" role="group" id="qseg">
+        <button type="button" data-q="L" data-i18n="ladder.L"></button>
+        <button type="button" data-q="T" data-i18n="ladder.T"></button>
+        <button type="button" data-q="M" data-i18n="ladder.M"></button>
+        <button type="button" data-q="E" data-i18n="ladder.E"></button>
+      </div>
+      <div class="list scale" id="ladder"></div>
+      <figcaption id="ladcap"></figcaption>
+    </figure>
+    <p data-i18n="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n="s3.p1"></p>
+    <figure>
+      <div class="panel">
+        <label class="field"><span data-i18n="fermi.pick"></span>
+          <select id="preset">
+            <option value="atm" data-i18n="fermi.atm.name"></option>
+            <option value="terre" data-i18n="fermi.terre.name"></option>
+            <option value="coeur" data-i18n="fermi.coeur.name"></option>
+          </select></label>
+        <p id="fformula"></p>
+        <div class="controls">
+          <div class="ctl" id="c0"><div class="row"><label for="f0" id="l0"></label><output id="o0" for="f0"></output></div><input id="f0" type="range" min="0" max="100" step="any" value="50"></div>
+          <div class="ctl" id="c1"><div class="row"><label for="f1" id="l1"></label><output id="o1" for="f1"></output></div><input id="f1" type="range" min="0" max="100" step="any" value="50"></div>
+          <div class="ctl" id="c2"><div class="row"><label for="f2" id="l2"></label><output id="o2" for="f2"></output></div><input id="f2" type="range" min="0" max="100" step="any" value="50"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="fermi.est"></span><span class="v" id="fest"></span><span class="f" id="foom"></span></div>
+          <div class="stat"><span class="k" data-i18n="fermi.ref"></span><span class="v" id="fref"></span><span class="f" id="fgap"></span></div>
+        </div>
+      </div>
+      <figcaption id="fcap"></figcaption>
+    </figure>
+    <p data-i18n="s3.p2"></p>
+    <figure>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="nf" data-i18n="comp.n"></label><output id="nfv" for="nf"></output></div><input id="nf" type="range" min="1" max="12" step="1" value="6"></div>
+          <div class="ctl"><div class="row"><label for="kf" data-i18n="comp.k"></label><output id="kfv" for="kf"></output></div><input id="kf" type="range" min="1.5" max="10" step="0.5" value="2"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="comp.worst"></span><span class="v" id="cw"></span></div>
+          <div class="stat"><span class="k" data-i18n="comp.typical"></span><span class="v" id="ct"></span></div>
+          <div class="stat"><span class="k" data-i18n="comp.within"></span><span class="v" id="cin"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n="comp.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/ordres-de-grandeur.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/lecons/ordres-de-grandeur.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+/* typographie française partout, sauf le <h1> : il reste identique au titre de lecons/index.json */
+const main = document.querySelector("main");
+F.autoTypo(main);
+document.title = t("title");
+const $ = id => document.getElementById(id);
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+const pow10 = (n, unit) => F.qty("10" + F.sup(n), unit);
+
+/* ---------- échelles : structure (valeurs SI) ici, noms dans la table ---------- */
+(() => {
+  const SCALES = {
+    L: { unit: "m", lo: -16, hi: 27, rows: [["proton", 8.4e-16], ["atome", 1e-10], ["virus", 1e-7], ["cellule", 1e-5], ["humain", 1.7], ["terre", 6.371e6], ["ua", 1.496e11], ["galaxie", 1e21], ["univers", 4.4e26]] },
+    T: { unit: "s", lo: -16, hi: 18, rows: [["lumiere", 2e-15], ["cesium", 1 / 9192631770], ["coeur", 0.9], ["jour", 86400], ["an", 3.156e7], ["vie", 2.5e9], ["ecriture", 1.6e11], ["terre", 1.43e17], ["univers", 4.35e17]] },
+    M: { unit: "kg", lo: -31, hi: 31, rows: [["electron", 9.109e-31], ["proton", 1.673e-27], ["eau", 2.99e-26], ["goutte", 1.1e-4], ["humain", 70], ["atmosphere", 5.1e18], ["terre", 5.9722e24], ["soleil", 1.989e30]] },
+    E: { unit: "J", lo: -22, hi: 27, rows: [["agitation", 4.14e-21], ["photon", 3.6e-19], ["pomme", 1], ["kcal", 4184], ["ration", 8.4e6], ["trinity", 1.04e14], ["soleil", 3.828e26]] },
+  };
+  const names = t("ladder.rows"), seg = $("qseg");
+  function show(q) {
+    const s = SCALES[q], words = names[q], ids = s.rows.map(r => r[0]);
+    const extra = Object.keys(words).filter(id => !ids.includes(id)), lost = ids.filter(id => !words[id]);
+    if (extra.length || lost.length) throw new Error("ladder.rows." + q + ": no text for [" + lost + "], unused [" + extra + "]");
+    $("ladder").innerHTML = s.rows.map(([id, x]) => `<div><span>${words[id]}</span><span class="track" aria-hidden="true"><i style="left:${(100 * Ordres.logPos(x, s.lo, s.hi)).toFixed(1)}%"></i></span><span class="v">${pow10(Ordres.oom(x), s.unit)}</span></div>`).join("");
+    $("ladcap").textContent = t("ladder.caption", { lo: pow10(s.lo, s.unit), hi: pow10(s.hi, s.unit), d: F.num(s.hi - s.lo, 3) });
+    seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.q === q)));
+  }
+  seg.querySelectorAll("button").forEach(b => b.onclick = () => show(b.dataset.q));
+  show("L");
+})();
+
+/* ---------- estimation de Fermi : facteurs réglables (curseurs logarithmiques) ---------- */
+(() => {
+  /* f : [clé, min, max, défaut, exposant, unité, chiffres] ; const : facteur fixe ; ref : valeur de référence (SI) */
+  const PRESETS = {
+    atm: { unit: "kg", konst: 4 * Math.PI, ref: 5.1e18, f: [["p", 3e4, 3e5, 1e5, 1, "Pa"], ["r", 3e6, 1.2e7, 6.4e6, 2, "m"], ["g", 3, 30, 10, -1, "m·s⁻²"]] },
+    terre: { unit: "kg", konst: 4 * Math.PI / 3, ref: 5.9722e24, f: [["r", 3e6, 1.2e7, 6.4e6, 3, "m"], ["rho", 1e3, 2e4, 5e3, 1, "kg·m⁻³"]] },
+    coeur: { unit: "", konst: 365.25 * 24 * 60, ref: null, f: [["f", 40, 120, 70, 1, null], ["vie", 40, 100, 80, 1, null]] },
+  };
+  const sel = $("preset"), sl = [0, 1, 2].map(i => $("f" + i));
+  const toVal = (f, s) => f[1] * Math.pow(f[2] / f[1], s / 100), toPos = (f, v) => 100 * Math.log(v / f[1]) / Math.log(f[2] / f[1]);
+  const show = (v, unit) => { const n = v >= 1e4 ? F.sci(v, 2) : F.num(v, 2); return unit ? F.qty(n, unit) : n; };
+  function load() {
+    const P = PRESETS[sel.value], k = "fermi." + sel.value + ".";
+    $("fformula").textContent = t(k + "formula"); $("fcap").textContent = t(k + "caption");
+    sl.forEach((s, i) => { const f = P.f[i]; $("c" + i).hidden = !f; if (f) { s.value = toPos(f, f[3]); $("l" + i).textContent = t(k + f[0]); } });
+    upd();
+  }
+  function upd() {
+    const P = PRESETS[sel.value];
+    const vals = P.f.map((f, i) => toVal(f, +sl[i].value));
+    P.f.forEach((f, i) => $("o" + i).textContent = show(vals[i], f[5]));
+    const est = P.konst * Ordres.product(vals.map((v, i) => [v, P.f[i][4]]));
+    $("fest").textContent = P.unit ? F.qty(F.sci(est, 2), P.unit) : F.sci(est, 2);
+    $("foom").textContent = t("fermi.oom", { n: P.unit ? pow10(Ordres.oom(est), P.unit) : "10" + F.sup(Ordres.oom(est)) });
+    if (P.ref) { const r = est / P.ref;
+      $("fref").textContent = F.qty(F.sci(P.ref, 2), P.unit);
+      $("fgap").textContent = t(r >= 1 ? "fermi.over" : "fermi.under", { k: F.num(r >= 1 ? r : 1 / r, 3) });
+    } else { $("fref").textContent = "–"; $("fgap").textContent = t("fermi.noref"); }
+  }
+  sel.onchange = load; sl.forEach(s => s.oninput = upd); load();
+})();
+
+/* ---------- compensation des erreurs ---------- */
+(() => {
+  const nf = $("nf"), kf = $("kf");
+  function upd() {
+    const n = +nf.value, k = +kf.value, s = Ordres.spread(n, k), within = Ordres.simulate(n, k, 10, 20000, Quiz.rng(7));
+    $("nfv").textContent = F.num(n, 2); $("kfv").textContent = t("comp.factor", { k: F.num(k, 2) });
+    $("cw").textContent = t("comp.factor", { k: s.worst < 1e4 ? F.num(s.worst, 2) : F.sci(s.worst, 2) });
+    $("ct").textContent = t("comp.factor", { k: F.num(s.typical, 2) });
+    $("cin").textContent = F.qty(F.num(within * 100, 2), "%");
+  }
+  nf.oninput = kf.oninput = upd; upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["archimede", -250, "idea"], ["fermi", 1945, "experiment"], ["si", 1960, "idea"], ["eames", 1977, "use"], ["yotta", 1991, "idea"], ["ronna", 2022, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["volcan", "terre", "concours"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["seuil", "a"], ["coeur", "a"], ["log", "a"], ["annee", "a"], ["piece", "a"], ["compense", "a"], ["rayon", "a"], ["prefixe", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => { const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) }; }), { t, seed: 5 });
+})();
+</script>
+</body>
+</html>

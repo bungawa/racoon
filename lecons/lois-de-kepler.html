@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Les lois de Kepler</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .k3 > * { grid-template-columns: minmax(7ch, 1.2fr) repeat(4, minmax(0, 1fr)); }
+  .k3 > * > :not(:first-child) { text-align: right; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-mecanique" data-i18n="monde.mecanique"></a><span class="aux">›</span><a href="/racoon/etape?id=kepler-newton" data-i18n="etape.kepler-newton"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-meca" href="/racoon/atlas?piste=meca" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/les-planetes-dans-le-ciel" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="box def"><b data-i18n="s1.def.title"></b>
+      <p data-i18n-html="s1.def.body"></p>
+    </div>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi>r</mi><mo>=</mo><mfrac><mrow><mi>a</mi><mo>(</mo><mn>1</mn><mo>−</mo><msup><mi>e</mi><mn>2</mn></msup><mo>)</mo></mrow><mrow><mn>1</mn><mo>+</mo><mi>e</mi><mi data-i18n="eq.cos"></mi><mi>θ</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.ellipse"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mi mathvariant="normal">d</mi><mi>A</mi></mrow><mrow><mi mathvariant="normal">d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>|</mo><mover accent="true"><mi>r</mi><mo>→</mo></mover><mo>∧</mo><mover accent="true"><mi>v</mi><mo>→</mo></mover><mo>|</mo><mo>=</mo><mtext data-i18n="eq.cste"></mtext></math></div>
+    <p class="validite" data-i18n-html="val.aires"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mfrac><msub><mi>v</mi><mi mathvariant="normal">P</mi></msub><msub><mi>v</mi><mi mathvariant="normal">A</mi></msub></mfrac><mo>=</mo><mfrac><msub><mi>r</mi><mi mathvariant="normal">A</mi></msub><msub><mi>r</mi><mi mathvariant="normal">P</mi></msub></mfrac><mo>=</mo><mfrac><mrow><mn>1</mn><mo>+</mo><mi>e</mi></mrow><mrow><mn>1</mn><mo>−</mo><mi>e</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.vitesses"></p>
+    <p data-i18n-html="s2.p3"></p>
+    <figure>
+      <svg class="fig" id="are" viewBox="0 0 640 380" role="img" data-i18n-attr="aria-label:are.aria"></svg>
+      <div class="legend"><span class="c-tint sq" data-i18n="are.legend.secteur"></span><span class="c-warn" data-i18n="are.legend.soleil"></span><span class="c-label-2 ring" data-i18n="are.legend.centre"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="ex" data-i18n="are.e"></label><output id="exv" for="ex"></output></div>
+            <input id="ex" type="range" min="0" max="0.9" step="0.01" value="0.5"></div>
+          <div class="ctl"><div class="row"><label for="ns" data-i18n="are.n"></label><output id="nsv" for="ns"></output></div>
+            <input id="ns" type="range" min="4" max="24" step="1" value="12"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="are.k.aire"></span><span class="v" id="vaire"></span><span class="f" id="faire"></span></div>
+          <div class="stat"><span class="k" data-i18n="are.k.v"></span><span class="v" id="vv"></span><span class="f" id="fv"></span></div>
+          <div class="stat"><span class="k" data-i18n="are.k.moitie"></span><span class="v" id="vmoitie"></span><span class="f" data-i18n="are.f.moitie"></span></div>
+          <div class="stat"><span class="k" data-i18n="are.k.ba"></span><span class="v" id="vba"></span><span class="f" id="fba"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="are.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mfrac><msup><mi>T</mi><mn>2</mn></msup><msup><mi>a</mi><mn>3</mn></msup></mfrac><mo>=</mo><mfrac><mrow><mn>4</mn><msup><mi>π</mi><mn>2</mn></msup></mrow><mrow><mi>G</mi><msub><mi>M</mi><mo>☉</mo></msub></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.k3"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="list k3" id="k3" role="table" data-i18n-attr="aria-label:s3.h2"></div>
+    <p class="caption" id="k3ref"></p>
+    <figure class="chart">
+      <svg class="fig" id="k3plot" role="img" data-i18n-attr="aria-label:k3.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="k3.legend.pts"></span><span class="c-warn ring" data-i18n="k3.legend.loi"></span></div>
+      <figcaption id="k3cap"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="seg" role="group" data-i18n-attr="aria-label:sys.planete">
+      <button type="button" id="s-terre" aria-pressed="true"></button>
+      <button type="button" id="s-mars" aria-pressed="false"></button>
+      <button type="button" id="s-jupiter" aria-pressed="false"></button>
+    </div>
+    <div class="list keyed" id="sys"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/lois-de-kepler.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/lecons/kepler.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+const fill = (s, v) => s.replace(/\{(\w+)\}/g, (m, k) => k in v ? v[k] : m);
+const sci = (x, n) => Math.abs(x) >= 1e-2 && Math.abs(x) < 1e4 ? F.num(x, n) : F.sci(x, n);
+const NAMES = textOf("pl", Kepler.IDS), DAY = 86400, YEAR = 365.25 * DAY;
+
+/* ---------- loi des aires : secteurs de même durée, calculés pas à pas ---------- */
+(() => {
+  const svg = $("are"), P = Plot.el, WD = 640, HT = 380;
+  function upd() {
+    const e = +$("ex").value, n = +$("ns").value, s = Kepler.secteurs(e, n, 240), b = Math.sqrt(1 - e * e);
+    $("exv").textContent = F.num(e, 2); $("nsv").textContent = String(n);
+    const k = Math.min((WD - 40) / 2, (HT - 30) / (2 * b)), cx = WD / 2 + k * e, cy = HT / 2;   // the centre of the ellipse at the middle
+    const X = x => cx + k * x, Y = y => cy - k * y;
+    svg.innerHTML = "";
+    s.arcs.forEach((a, i) => {
+      const pts = a.points.filter((_, j) => j % 4 === 0 || j === a.points.length - 1);
+      P("path", { d: "M" + X(0) + " " + Y(0) + pts.map(p => "L" + X(p[0]).toFixed(1) + " " + Y(p[1]).toFixed(1)).join("") + "Z", class: "fill c-tint", opacity: i % 2 ? "0.12" : "0.32" }, svg);
+    });
+    P("path", { d: Kepler.ellipse(1, e, 240).map((p, i) => (i ? "L" : "M") + X(p[0]).toFixed(1) + " " + Y(p[1]).toFixed(1)).join(""), class: "stroke c-tint" }, svg);
+    P("circle", { cx: X(-e), cy: Y(0), r: 3, class: "fill c-label-2" }, svg);
+    P("circle", { cx: X(-2 * e), cy: Y(0), r: 4, class: "stroke thin c-label-2" }, svg);
+    P("circle", { cx: X(0), cy: Y(0), r: 7, class: "fill c-warn" }, svg);
+    const dev = Math.max(...s.arcs.map(a => Math.abs(a.aire / s.exacte - 1)));
+    $("vaire").textContent = F.num(s.exacte, 3);
+    $("faire").textContent = t("are.f.aire", { m: sci(dev, 1) });
+    $("vv").textContent = F.num(s.vitesses.perihelie / s.vitesses.aphelie, 4);
+    $("fv").textContent = t("are.f.v", { x: F.num((1 + e) / (1 - e), 4) });
+    $("vmoitie").textContent = F.qty(F.num((Math.PI - 2 * e) / (2 * Math.PI) * 100, 3), "%");
+    $("vba").textContent = F.num(b, 4);
+    $("fba").textContent = t("are.f.ba", { c: F.num(e, 2) });
+  }
+  $("ex").oninput = $("ns").oninput = upd; upd();
+})();
+
+/* ---------- troisième loi sur les données ---------- */
+(() => {
+  const rows = Kepler.troisiemeLoi(), ref = 4 * Math.PI * Math.PI / Constantes.GM_sun, AU = Constantes.au, P = Plot.el;
+  const head = ["k3.planete", "k3.a", "k3.T", "k3.q", "k3.ecart"].map(k => `<span role="columnheader">${t(k)}</span>`).join("");
+  $("k3").innerHTML = `<div role="row">${head}</div>` + rows.map(r => `<div role="row"><span role="cell">${NAMES[r.id]}</span>`
+    + [F.num(r.a / AU, 4), F.num(r.T / YEAR, 4), F.num(r.q * 1e19, 5), sci(r.ecart, 2)].map(v => `<span class="v" role="cell">${v}</span>`).join("") + "</div>").join("");
+  $("k3ref").textContent = t("k3.ref", { q: F.qty(F.sci(ref, 5), "s²·m⁻³") });
+  const svg = $("k3plot");
+  const { x: X, y: Y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 300, pad: { b: 44 }, x: { scale: "log", domain: [0.1, 100], label: t("k3.x") }, y: { scale: "log", domain: [0.01, 1000], label: t("k3.y") } });
+  const law = a => 2 * Math.PI * Math.sqrt((a * AU) ** 3 / Constantes.GM_sun) / YEAR;
+  P("path", { d: [0.1, 100].map((a, i) => (i ? "L" : "M") + X(a).toFixed(1) + " " + Y(law(a)).toFixed(1)).join(""), class: "ref" }, g);
+  rows.forEach(r => { const x = X(r.a / AU), y = Y(r.T / YEAR);
+    P("circle", { cx: x, cy: y, r: 5, class: "dot" }, g);
+    P("text", { x: x + 8, y: y + 14, class: "note" }, g).textContent = NAMES[r.id]; });
+  $("k3cap").textContent = t("k3.caption", { p: F.num(Kepler.pente().kepler, 5) });
+})();
+
+/* ---------- décrire le système ---------- */
+(() => {
+  const PL = ["terre", "mars", "jupiter"], IDS = ["taille", "soleil", "voisins", "relativite"];
+  let pl = "terre";
+  function upd() {
+    PL.forEach(id => $("s-" + id).setAttribute("aria-pressed", String(id === pl)));
+    const s = Kepler.systeme(pl), items = textOf("sys.items", IDS), m = s.maree;
+    const v = { soleil: F.sci(s.soleil, 3), masse: F.sci(s.masse, 2), bary: t("sys.km", { n: F.num(s.barycentre / 1e3, 3) }), baryR: s.barycentreSoleil < 0.01 ? F.sci(s.barycentreSoleil, 2) : F.num(s.barycentreSoleil, 3),
+      rel: F.sci(Constantes.GM_sun / (Constantes.c ** 2 * s.a), 1),
+      voisin: fill(t("sys.maree"), { nom: NAMES[m.voisin], directe: F.sci(m.directe, 2), diff: F.sci(m.differentielle, 2), de: textOf("sys.de", PL)[pl], peri: F.num(s.perihelie, 2) }) };
+    const filled = Object.fromEntries(IDS.map(id => [id, { name: items[id].name, text: fill(items[id].text, v) }]));
+    keyed($("sys"), t("sys.tag"), IDS, filled);
+  }
+  PL.forEach(id => { $("s-" + id).textContent = NAMES[id]; $("s-" + id).onclick = () => { pl = id; upd(); }; });
+  upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["tycho", 1576, "experiment"], ["nova", 1609, "idea"], ["harmonices", 1619, "idea"], ["epitome", 1621, "idea"], ["principia", 1687, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["sgr", "masses"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["foyer", "a"], ["vite", "a"], ["hiver", "a"], ["k3", "a"], ["ecart", "a"], ["sansforce", "a"], ["cercle", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 72 });
+})();
+</script>
+</body>
+</html>

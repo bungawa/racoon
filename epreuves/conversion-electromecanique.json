@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["primaire", "a"],
+  ["magnetisant", "b"],
+  ["transport", "c"],
+  ["synchrone", "d"],
+  ["mcc", "a"],
+  ["hacheur", "b"],
+  ["ondulation", "c"],
+  ["onduleur", "d"]
+ ]
+}

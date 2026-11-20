@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>L’œil humain</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-optique-geometrique" data-i18n="monde.optique-geometrique"></a><span class="aux">›</span><a href="/racoon/etape?id=opt-oeil" data-i18n="etape.opt-oeil"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-optique" href="/racoon/atlas?piste=optique" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/opt-pouvoir-separateur" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mfrac><mi>n</mi><msup><mi>p</mi><mo>′</mo></msup></mfrac><mo>−</mo><mfrac><mn>1</mn><mi>p</mi></mfrac><mo>=</mo><mi>V</mi><mo separator="true">,</mo><mspace width="1em"/><mi>V</mi><mo>=</mo><mfrac><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mi>R</mi></mfrac><mo>≈</mo><mn>60</mn><mspace width="0.2em"/><msup><mtext>m</mtext><mrow><mo>−</mo><mn>1</mn></mrow></msup></math><span class="n">(27.3)</span></div>
+    <p class="validite" data-i18n-html="val.1.1"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="eq"><math display="block"><msub><mi>a</mi><mtext data-i18n="eq.req"></mtext></msub><mo>=</mo><mfrac><mn>1</mn><mi>d</mi></mfrac><mo>+</mo><mi>K</mi><mo>−</mo><msub><mi>V</mi><mi>c</mi></msub></math></div>
+    <p class="validite" data-i18n-html="val.1.2"></p>
+    <p data-i18n-html="s1.p4"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mi>θ</mi><mo>=</mo><mfrac><mi>s</mi><mrow><mi>L</mi><mo>−</mo><mi>R</mi></mrow></mfrac><mo separator="true">,</mo><mspace width="1em"/><mi>s</mi><mo>=</mo><msqrt><mfrac><mn>2</mn><mrow><msqrt><mn>3</mn></msqrt><mspace width="0.1em"/><mi>ρ</mi></mrow></mfrac></msqrt></math></div>
+    <p class="validite" data-i18n-html="val.1.3"></p>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="box rem"><b data-i18n="s2.rem.title"></b>
+      <p data-i18n-html="s2.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>β</mi><mo>≈</mo><mi>D</mi><mspace width="0.1em"/><mrow><mo>|</mo><mi>Δ</mi><mi>V</mi><mo>|</mo></mrow></math></div>
+    <p class="validite" data-i18n-html="val.1.4"></p>
+    <figure class="chart">
+      <svg class="fig" id="oeil" role="img" data-i18n-attr="aria-label:mp.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="mp.legend.rayons"></span><span class="c-warn" data-i18n="mp.legend.tache"></span><span class="c-label-2" data-i18n="mp.legend.oeil"></span><span class="c-ok" data-i18n="mp.legend.airy"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="dsl" data-i18n="mp.d"></label><output id="dread" for="dsl"></output></div>
+            <input id="dsl" type="range" min="0" max="100" step="1" value="40"></div>
+          <div class="ctl"><div class="row"><label for="asl" data-i18n="mp.age"></label><output id="aread" for="asl"></output></div>
+            <input id="asl" type="range" min="10" max="70" step="1" value="25"></div>
+          <div class="ctl"><div class="row"><label for="ksl" data-i18n="mp.K"></label><output id="kread" for="ksl"></output></div>
+            <input id="ksl" type="range" min="-6" max="4" step="0.25" value="0"></div>
+          <div class="ctl"><div class="row"><label for="vsl" data-i18n="mp.Vc"></label><output id="vread" for="vsl"></output></div>
+            <input id="vsl" type="range" min="-6" max="4" step="0.25" value="0"></div>
+          <div class="ctl"><div class="row"><label for="psl" data-i18n="mp.D"></label><output id="pread" for="psl"></output></div>
+            <input id="psl" type="range" min="2" max="8" step="0.5" value="3"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="mp.k.acc"></span><span class="v" id="va"></span><span class="f" id="fa"></span></div>
+          <div class="stat"><span class="k" data-i18n="mp.k.flou"></span><span class="v" id="vf"></span><span class="f" id="ff"></span></div>
+          <div class="stat"><span class="k" data-i18n="mp.k.plage"></span><span class="v" id="vp"></span><span class="f" id="fp"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="mp.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/opt-oeil-humain.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/optique-geometrique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), O = OptiqueGeometrique;
+const ARCMIN = Math.PI / 10800;
+const inv = v => F.qty(F.num(v, 3), "m⁻¹");
+const dist = d => isFinite(d) ? F.si(d, "m", { sig: 2 }) : t("mp.infini");
+
+/* ---------- mise au point de l'œil réduit, (27.3), accommodation requise, flou D |ΔV| ---------- */
+(() => {
+  const svg = $("oeil"), W = 640, H = 280, Y0 = 140, XC = 110, S = 10000, XM = 400; // S : pixels par mètre dans l'œil ; coupe jusqu'à XM
+  const ds = $("dsl"), as = $("asl"), ks = $("ksl"), vs = $("vsl"), ps = $("psl"), P = Plot.el;
+  const dOf = v => +v >= 100 ? Infinity : Math.pow(10, -1.15 + 3.15 * (+v) / 99);
+  svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+  function draw() {
+    svg.innerHTML = "";
+    const d = dOf(ds.value), age = +as.value, K = +ks.value, Vc = +vs.value, D = +ps.value * 1e-3;
+    const A = O.accommodation(age).moy, r = O.oeil({ d, A, K, Vc, D });
+    const L = O.OEIL.L, xR = XC + L * S, h = D / 2;
+    /* le globe, la cornée, la rétine */
+    P("circle", { cx: XC + L * S / 2, cy: Y0, r: L * S / 2 + 6, class: "stroke thin c-label-2" }, svg);
+    const Rc = O.OEIL.R * S, a = Math.asin(Math.min(1, 52 / Rc));
+    P("path", { d: "M" + (XC + Rc - Rc * Math.cos(a)).toFixed(1) + " " + (Y0 - Rc * Math.sin(a)).toFixed(1) + " A" + Rc.toFixed(1) + " " + Rc.toFixed(1) + " 0 0 0 " + (XC + Rc - Rc * Math.cos(a)).toFixed(1) + " " + (Y0 + Rc * Math.sin(a)).toFixed(1), class: "stroke c-label-2" }, svg);
+    P("line", { x1: xR, x2: xR, y1: Y0 - 80, y2: Y0 + 80, class: "stroke c-label-2" }, svg);
+    P("line", { x1: 0, x2: XM, y1: Y0, y2: Y0, class: "stroke thin dash c-label-2" }, svg);
+    if (Vc) P("line", { x1: XC - 14, x2: XC - 14, y1: Y0 - 50, y2: Y0 + 50, class: "stroke c-tint" }, svg);
+    P("text", { x: xR + 6, y: Y0 - 84, class: "tick" }, svg).textContent = t("mp.retine");
+    P("text", { x: XC - 10, y: Y0 - 84, "text-anchor": "middle", class: "tick" }, svg).textContent = t("mp.cornee");
+    /* rayons : du point objet (sur l'axe, à d) à la cornée, puis vers l'image p′ ; échelle verticale × 1,25 pour la pupille */
+    const kY = 1.25 * S, yOf = (hh, s) => Y0 - kY * hh * (1 - s / r.image);              // s : distance après la cornée
+    let yR = 0;
+    [-h, h].forEach(hh => {
+      const yIn = x => Y0 - kY * hh * (isFinite(d) ? 1 + (x - XC) / S / d : 1);
+      P("path", { d: Plot.path([[0, yIn(0)], [XC, yIn(XC)]]), class: "stroke c-tint" }, svg);
+      const sEnd = isFinite(r.image) ? Math.min(Math.max(L, r.image), (XM - XC) / S) : (XM - XC) / S;
+      P("path", { d: Plot.path([[XC, Y0 - kY * hh], [XC + L * S, yOf(hh, L)]]), class: "stroke c-tint" }, svg);
+      if (sEnd > L) P("path", { d: Plot.path([[XC + L * S, yOf(hh, L)], [XC + sEnd * S, yOf(hh, sEnd)]]), class: "stroke thin dash c-tint" }, svg);
+      yR = Math.abs(yOf(hh, L) - Y0);
+    });
+    if (yR > 0.5) P("line", { x1: xR, x2: xR, y1: Y0 - yR, y2: Y0 + yR, class: "stroke c-warn", "stroke-width": 4 }, svg);
+    /* la fovéa vue de face, 100 µm de côté : cônes au pas s, tache de défocalisation D |ΔV| et tache de diffraction, vues sur la rétine */
+    const X0 = 430, YT = 40, C = 200, k = C / 100e-6, s = O.echantillonnage(O.RETINE.rhoFovea).s * k, g = P("g", {}, svg);
+    for (let j = 0, yy = YT + s / 2; yy < YT + C; j++, yy += s * Math.sqrt(3) / 2)
+      for (let xx = X0 + (j % 2 ? s : s / 2); xx < X0 + C; xx += s) P("circle", { cx: xx.toFixed(1), cy: yy.toFixed(1), r: 0.9, class: "fill c-label-2" }, g);
+    P("rect", { x: X0, y: YT, width: C, height: C, class: "stroke thin c-label-2", fill: "none" }, svg);
+    const cx = X0 + C / 2, cy = YT + C / 2, rb = Math.min(r.tache / 2 * k, C * 0.7), ra = 1.22 * 550e-9 / D * (L / O.OEIL.n) * k;
+    if (rb > 0.5) P("circle", { cx, cy, r: rb.toFixed(1), class: "fill stroke c-warn", "fill-opacity": 0.25 }, svg);
+    P("circle", { cx, cy, r: ra.toFixed(1), class: "fill c-ok", "fill-opacity": 0.7 }, svg);
+    P("text", { x: cx, y: YT + C + 18, "text-anchor": "middle", class: "tick" }, svg).textContent = t("mp.fovea");
+    $("dread").textContent = dist(d);
+    $("aread").textContent = t("mp.age.v", { a: age, A: inv(A) });
+    $("kread").textContent = inv(K); $("vread").textContent = inv(Vc);
+    $("pread").textContent = F.si(D, "m", { prefix: "m", sig: 2 });
+    $("va").textContent = inv(r.requise);
+    $("fa").textContent = t(r.requise < 0 ? "mp.f.acc.neg" : r.requise > A ? "mp.f.acc.trop" : "mp.f.acc.ok", { A: inv(A) });
+    $("vf").textContent = t("mp.flou.v", { m: F.num(r.flou / ARCMIN, 2) });
+    $("ff").textContent = t(r.flou <= ARCMIN ? "mp.f.net" : r.dV > 0 ? "mp.f.derriere" : "mp.f.devant", { rad: F.si(r.flou, "rad", { sig: 2 }) });
+    $("vp").textContent = t("mp.plage.v", { pp: dist(r.pp), pr: r.prVirtuel ? t("mp.virtuel") : dist(r.pr) });
+    $("fp").textContent = t(K < 0 && Vc > K ? "mp.f.myope" : K > 0 && Vc < K ? "mp.f.hyper" : A < 2 ? "mp.f.presbyte" : "mp.f.plage");
+  }
+  [ds, as, ks, vs, ps].forEach(c => c.oninput = draw); draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["kepler", 1604, "idea"], ["mariotte", 1668, "experiment"], ["helmholtz", 1851, "experiment"], ["monoyer", 1872, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["ordonnance", "fond"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["cornee", "b"], ["eau", "d"], ["presbytie", "a"], ["myope", "c"], ["fovea", "b"], ["plisser", "a"], ["fibres", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 351 });
+})();
+</script>
+</body>
+</html>

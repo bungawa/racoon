@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["bilan", "a"],
+  ["condo", "b"],
+  ["flux", "c"],
+  ["double", "d"],
+  ["mesure", "a"],
+  ["franges", "b"],
+  ["signature", "c"],
+  ["retard", "d"]
+ ]
+}

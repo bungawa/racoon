@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La symétrie en physique</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-outils" data-i18n="monde.outils"></a><span class="aux">›</span><a href="/racoon/etape?id=symetries" data-i18n="etape.symetries"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fond" href="/racoon/atlas?piste=fond" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/conservation-quantite-de-mouvement" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="box def"><b data-i18n="s1.def.title"></b>
+      <p data-i18n-html="s1.def.body"></p>
+    </div>
+    <p data-i18n-html="s1.p2"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="eq"><math display="block"><msub><mi>m</mi><mi>i</mi></msub><mfrac><mrow><msup><mi mathvariant="normal">d</mi><mn>2</mn></msup><msub><mover accent="true"><mi>r</mi><mo>→</mo></mover><mi>i</mi></msub></mrow><mrow><mi mathvariant="normal">d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><munder><mo>∑</mo><mrow><mi>j</mi><mo>≠</mo><mi>i</mi></mrow></munder><msub><mover accent="true"><mi>F</mi><mo>→</mo></mover><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="false">(</mo><msub><mover accent="true"><mi>r</mi><mo>→</mo></mover><mi>i</mi></msub><mo>−</mo><msub><mover accent="true"><mi>r</mi><mo>→</mo></mover><mi>j</mi></msub><mo stretchy="false">)</mo></math></div>
+    <p class="validite" data-i18n-html="val.newton"></p>
+    <div class="box warn"><b data-i18n="s1.warn.title"></b>
+      <p data-i18n-html="s1.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys"></p>
+    </div>
+    <figure>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><span data-i18n="sym.sys"></span></div>
+            <div class="seg" role="group" data-i18n-attr="aria-label:sym.sys">
+              <button type="button" id="s-vide" aria-pressed="false" data-i18n="sym.s.vide"></button>
+              <button type="button" id="s-terre" aria-pressed="true" data-i18n="sym.s.terre"></button>
+              <button type="button" id="s-ressort" aria-pressed="false" data-i18n="sym.s.ressort"></button>
+            </div></div>
+          <div class="ctl"><div class="row"><label for="dsl" data-i18n="sym.d"></label><output id="dread" for="dsl"></output></div>
+            <input id="dsl" type="range" min="0" max="1000" step="10" value="100"></div>
+          <div class="ctl"><div class="row"><label for="phsl" data-i18n="sym.phi"></label><output id="phread" for="phsl"></output></div>
+            <input id="phsl" type="range" min="0" max="90" step="1" value="10"></div>
+        </div>
+        <h3 data-i18n="sym.ops.h3"></h3>
+        <div class="list" id="ops"></div>
+        <h3 data-i18n="sym.cons.h3"></h3>
+        <div class="list" id="cons"></div>
+      </div>
+      <figcaption data-i18n-html="sym.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="list keyed" id="noether"></div>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>L</mi><mi>z</mi></msub><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>m</mi><mi>i</mi></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><msub><mi>v</mi><mrow><mi>y</mi><mo>,</mo><mi>i</mi></mrow></msub><mo>−</mo><msub><mi>y</mi><mi>i</mi></msub><msub><mi>v</mi><mrow><mi>x</mi><mo>,</mo><mi>i</mi></mrow></msub><mo stretchy="false">)</mo></math></div>
+    <p class="validite" data-i18n-html="val.L"></p>
+    <div class="box warn"><b data-i18n="s3.warn.title"></b>
+      <p data-i18n-html="s3.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/symetrie-en-physique.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/cinematique.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/dynamique.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/lecons/symetries.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const deg = Math.PI / 180;
+
+/* ---------- le système décrit, chiffré ---------- */
+(() => {
+  const n = Sym.negligeables(), E = Sym.billes();
+  $("sys").innerHTML = t("sys.body", { m1: F.num(E.m[0], 3), m2: F.num(E.m[1], 3), rel: F.sci(n.rel, 1), trainee: F.qty(F.num(n.trainee * 100, 1), "%"),
+    cor: F.sci(n.coriolis, 1), dgv: F.sci(Sym.decalageVertical(1, 1).relatif, 2), dgh: F.sci(Sym.decalageHorizontal(1, 1).angle, 2) });
+})();
+
+/* ---------- trois systèmes, quatre opérations, trois bilans ---------- */
+(() => {
+  const C = [1.5, 2], DAY = 86400;                    // centre of the rotations and of L: the spring's anchor
+  const SYS = {
+    vide: () => Sym.billes({ champ: "vide" }),
+    terre: () => Sym.billes(),
+    ressort: () => Sym.billes({ champ: "vide", ancre: { point: C, k: 5 } }),
+  };
+  const OPS = ["tx", "ty", "rot", "temps"], CONS = ["p", "L", "E"];
+  const opTxt = textOf("sym.ops", OPS), consTxt = textOf("sym.cons", CONS);
+  let sys = "terre";
+  const row = (k, v) => `<div><span>${k}</span><span class="v">${v}</span></div>`;
+  function draw() {
+    const d = +$("dsl").value, phi = +$("phsl").value * deg, e = SYS[sys](), ref = Sym.simule(e, { centre: C });
+    const keep = { champ: false, ancre: false };       // the balls move, their surroundings stay
+    const ecart = {
+      tx: Sym.compare(e, Sym.deplacement([d, 0]), keep, ref).ecart.x,
+      ty: Sym.compare(e, Sym.deplacement([0, d]), keep, ref).ecart.x,
+      rot: Sym.compare(e, Sym.deplacement([0, 0], phi, C), keep, ref).ecart.x,
+      temps: Sym.ecartFins(ref.fin, Sym.simule(e, { t0: DAY }).fin).x,
+    };
+    $("dread").textContent = F.si(d, "m", { prefix: "" });
+    $("phread").textContent = $("phsl").value + "°";
+    $("ops").innerHTML = OPS.map(id => row(opTxt[id], ecart[id] === 0 ? t("sym.zero") : F.si(ecart[id], "m"))).join("");
+    const a = ref.debut, b = ref.arrivee;
+    const rel = {
+      p: Math.hypot(b.p[0] - a.p[0], b.p[1] - a.p[1]) / Math.hypot(a.p[0], a.p[1]),
+      L: Math.abs(b.L - a.L) / Math.abs(a.L),
+      E: Math.abs(b.E - a.E) / a.Ec,
+    };
+    const say = r => r < 1e-9 ? t("sym.garde", { r: F.sci(r, 1) }) : r < 1e-3 ? t("sym.garde.calc", { r: F.sci(r, 1) }) : t("sym.varie", { r: F.qty(F.num(r * 100, 2), "%") });
+    $("cons").innerHTML = CONS.map(id => row(consTxt[id], say(rel[id]))).join("");
+  }
+  for (const id of Object.keys(SYS)) $("s-" + id).onclick = () => {
+    sys = id; Object.keys(SYS).forEach(k => $("s-" + k).setAttribute("aria-pressed", String(k === sys))); draw();
+  };
+  $("dsl").oninput = $("phsl").oninput = draw; draw();
+})();
+
+/* ---------- Noether, en trois lignes ---------- */
+(() => {
+  const ROWS = ["temps", "espace", "rotation"], txt = textOf("noe.items", ROWS);
+  $("noether").innerHTML = ROWS.map(id => `<div><span class="k">${txt[id].k}</span><span>${txt[id].text}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["curie", 1894, "idea"], ["noether", 1918, "idea"], ["weyl", 1952, "idea"], ["wu", 1957, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["atlas"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["carre", "a"], ["machine", "a"], ["situation", "a"], ["gradient", "a"], ["clou", "a"], ["uniforme", "a"], ["balancoire", "a"], ["arrondi", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 111 });
+})();
+</script>
+</body>
+</html>

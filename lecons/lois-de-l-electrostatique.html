@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Les lois de l'électrostatique</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-electrostatique" data-i18n="monde.electrostatique"></a><span class="aux">›</span><a href="/racoon/etape?id=coulomb-potentiel" data-i18n="etape.coulomb-potentiel"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/lois-de-l-electromagnetisme" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mover accent="true"><mo>∇</mo><mo>→</mo></mover><mo>·</mo><mover accent="true"><mi>E</mi><mo>→</mo></mover><mo>=</mo><mfrac><mi>ρ</mi><msub><mi>ε</mi><mn>0</mn></msub></mfrac></math><span class="n">(4.5)</span></div>
+    <p class="validite" data-i18n-html="val.4.5"></p>
+    <div class="eq"><math display="block"><mover accent="true"><mo>∇</mo><mo>→</mo></mover><mo>∧</mo><mover accent="true"><mi>E</mi><mo>→</mo></mover><mo>=</mo><mover accent="true"><mn>0</mn><mo>→</mo></mover></math><span class="n">(4.6)</span></div>
+    <p class="validite" data-i18n-html="val.4.6"></p>
+    <div class="eq"><math display="block"><mover accent="true"><mo>∇</mo><mo>→</mo></mover><mo>∧</mo><mover accent="true"><mi>B</mi><mo>→</mo></mover><mo>=</mo><mfrac><mover accent="true"><mi>j</mi><mo>→</mo></mover><mrow><msub><mi>ε</mi><mn>0</mn></msub><msup><mi>c</mi><mn>2</mn></msup></mrow></mfrac></math><span class="n">(4.7)</span></div>
+    <p class="validite" data-i18n-html="val.4.7"></p>
+    <div class="eq"><math display="block"><mover accent="true"><mo>∇</mo><mo>→</mo></mover><mo>·</mo><mover accent="true"><mi>B</mi><mo>→</mo></mover><mo>=</mo><mn>0</mn></math><span class="n">(4.8)</span></div>
+    <p class="validite" data-i18n-html="val.4.8"></p>
+    <div class="box prop"><b data-i18n="s1.prop.title"></b>
+      <p data-i18n-html="s1.prop.body"></p>
+    </div>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure>
+      <div class="panel">
+        <div class="seg" role="group" data-i18n-attr="aria-label:re.choice">
+          <button type="button" data-s="ballon" aria-pressed="true" data-i18n="re.ballon"></button>
+          <button type="button" data-s="tube" aria-pressed="false" data-i18n="re.tube"></button>
+          <button type="button" data-s="ligne" aria-pressed="false" data-i18n="re.ligne"></button>
+          <button type="button" data-s="wifi" aria-pressed="false" data-i18n="re.wifi"></button>
+        </div>
+        <p class="caption" id="reread"></p>
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="Lsl" data-i18n="re.L"></label><output id="Lread" for="Lsl"></output></div>
+            <input id="Lsl" type="range" min="-3" max="7" step="0.05" value="-0.5"></div>
+          <div class="ctl"><div class="row"><label for="Tsl" data-i18n="re.T"></label><output id="Tread" for="Tsl"></output></div>
+            <input id="Tsl" type="range" min="-10" max="2" step="0.05" value="0"></div>
+          <div class="ctl"><div class="row"><label for="vsl" data-i18n="re.v"></label><output id="vread" for="vsl"></output></div>
+            <input id="vsl" type="range" min="-6" max="0" step="0.05" value="-6"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="re.k.retard"></span><span class="v" id="vretard"></span><span class="f" data-i18n="re.f.retard"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="re.k.magn"></span><span class="v" id="vmagn"></span><span class="f" data-i18n="re.f.magn"></span></div>
+          <div class="stat"><span class="k" data-i18n="re.k.verdict"></span><span class="v" id="vverdict"></span><span class="f" id="fverdict"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="re.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="box rem"><b data-i18n="s3.rem.title"></b>
+      <p data-i18n-html="s3.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/lois-de-l-electrostatique.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/physique-fondamentale.js"></script>
+<script src="/racoon/lecons/champs-em.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/electrostatique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+
+/* ---------- est-ce de l'électrostatique ? deux nombres sans dimension ---------- */
+(() => {
+  const ES = Electrostatique, S = ES.SYSTEMES, SEUIL = 0.01;                  // what is neglected must stay under 1 %
+  const Lsl = $("Lsl"), Tsl = $("Tsl"), vsl = $("vsl"), btn = document.querySelectorAll("[data-s]");
+  const VMIN = -6;                                                            // slider at its minimum: charges at rest
+  let choisi = "ballon";
+  const fmtR = x => x === 0 ? "0" : x < 1e-3 || x >= 1e3 ? F.sci(x, 2) : F.num(x, 2);
+  function draw() {
+    const L = Math.pow(10, +Lsl.value), T = Math.pow(10, +Tsl.value), beta = +vsl.value <= VMIN ? 0 : Math.pow(10, +vsl.value);
+    const v = beta * ES.C, r = ES.regime(L, T, Math.min(v, 0.999 * ES.C));
+    $("Lread").textContent = F.si(L, "m", L >= 1e3 ? { prefix: "k" } : {});
+    $("Tread").textContent = F.si(T, "s");
+    $("vread").textContent = beta === 0 ? t("re.repos") : t("re.vread", { b: fmtR(beta) });
+    $("vretard").textContent = fmtR(r.retard);
+    $("vmagn").textContent = fmtR(r.magnetique);
+    const bad = [r.retard >= SEUIL ? "retard" : null, r.magnetique >= SEUIL ? "magn" : null].filter(Boolean);
+    $("vverdict").textContent = t(bad.length ? "re.non" : "re.oui");
+    $("fverdict").textContent = t("re.v." + (bad.length === 2 ? "deux" : bad[0] || "ok"));
+    $("reread").innerHTML = choisi ? t("re.read." + choisi) : t("re.read.libre");
+  }
+  function choisir(id) {
+    choisi = id; const s = S[id];
+    Lsl.value = Math.log10(s.L); Tsl.value = Math.log10(s.T); vsl.value = s.v > 0 ? Math.log10(s.v / ES.C) : VMIN;
+    btn.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.s === id)));
+    draw();
+  }
+  btn.forEach(b => b.onclick = () => choisir(b.dataset.s));
+  [Lsl, Tsl, vsl].forEach(s => s.oninput = () => { choisi = null; btn.forEach(b => b.setAttribute("aria-pressed", "false")); draw(); });
+  choisir("ballon");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["priestley", 1767, "idea"], ["coulomb", 1785, "experiment"], ["volta", 1800, "experiment"], ["oersted", 1820, "experiment"],
+    ["cottrell", 1908, "use"], ["carlson", 1938, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["filtres", "photocopie", "decharges"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["decouple", "b"], ["courant", "a"], ["induction", "d"], ["tube", "c"], ["ligne", "a"], ["divergence", "b"], ["connues", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 41 });
+})();
+</script>
+</body>
+</html>

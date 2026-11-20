@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Réseau, motif et maille</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-architecture" data-i18n="monde.chim-architecture"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-cristal-parfait" data-i18n="etape.chim-cristal-parfait"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <span class="chip plain" data-i18n="tag.prereq"></span>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="list keyed" id="echelles"></div>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mover><mi>r</mi><mo>→</mo></mover><mo>=</mo><msub><mi>n</mi><mn>1</mn></msub><mover><mi>a</mi><mo>→</mo></mover><mo>+</mo><msub><mi>n</mi><mn>2</mn></msub><mover><mi>b</mi><mo>→</mo></mover><mo>+</mo><msub><mi>n</mi><mn>3</mn></msub><mover><mi>c</mi><mo>→</mo></mover><mo>,</mo><mspace width="1em"></mspace><msub><mi>n</mi><mn>1</mn></msub><mo>,</mo><msub><mi>n</mi><mn>2</mn></msub><mo>,</mo><msub><mi>n</mi><mn>3</mn></msub><mo>∈</mo><mi>ℤ</mi></math></div>
+    <p class="validite" data-i18n-html="val.reseau"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="box def"><b data-i18n="s2.def.title"></b>
+      <p data-i18n-html="s2.def.body"></p>
+    </div>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>N</mi><mo>=</mo><mfrac><msub><mi>N</mi><mtext data-i18n="eq.coins"></mtext></msub><mn>8</mn></mfrac><mo>+</mo><mfrac><msub><mi>N</mi><mtext data-i18n="eq.aretes"></mtext></msub><mn>4</mn></mfrac><mo>+</mo><mfrac><msub><mi>N</mi><mtext data-i18n="eq.faces"></mtext></msub><mn>2</mn></mfrac><mo>+</mo><msub><mi>N</mi><mtext data-i18n="eq.int"></mtext></msub></math></div>
+    <p class="validite" data-i18n-html="val.population"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <figure>
+      <div class="stage"><canvas id="vue"></canvas><div class="overlay" id="vueinfo"></div></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" id="structures" role="group" data-i18n-attr="aria-label:v3.structure">
+            <button type="button" data-s="Cu" data-i18n="v3.s.Cu"></button><button type="button" data-s="Fe" data-i18n="v3.s.Fe"></button><button type="button" data-s="CsCl" data-i18n="v3.s.CsCl"></button><button type="button" data-s="NaCl" data-i18n="v3.s.NaCl"></button><button type="button" data-s="diamant" data-i18n="v3.s.diamant"></button>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="v3.k.reseau"></span><span class="v" id="vreseau"></span><span class="f" id="freseau"></span></div>
+          <div class="stat"><span class="k" data-i18n="v3.k.motif"></span><span class="v" id="vmotif"></span><span class="f" data-i18n="v3.f.motif"></span></div>
+          <div class="stat"><span class="k" data-i18n="v3.k.formule"></span><span class="v" id="vformule"></span><span class="f" data-i18n="v3.f.formule"></span></div>
+        </div>
+        <div class="list keyed" id="compte"></div>
+      </div>
+      <div class="legend" id="legende"></div>
+      <figcaption data-i18n-html="v3.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/reseau-motif-maille.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/lecons/cristaux.js"></script>
+<script src="/racoon/lecons/reseau-motif-maille.js"></script>
+<script src="/racoon/vue-cristal.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), X = Cristaux, P = CristalParfait;
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+const seg = (el, attr, cb) => { const bs = [...el.querySelectorAll("button")];
+  const pick = b => { bs.forEach(x => x.setAttribute("aria-pressed", String(x === b))); cb(b.dataset[attr]); };
+  bs.forEach(b => b.onclick = () => pick(b)); pick(bs[0]); };
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- échelles : un grain de cuivre d'un millimètre ---------- */
+(() => {
+  const m = P.METAUX_CFC.Cu, L = 1e-3;
+  const cellules = L / m.a, atomes = m.rho * L * L * L / m.M * Constantes.N_A;
+  const surface = 6 * m.a / L;                          // share of the cells that touch a face of the cube, 6 a/L for a ≪ L
+  const items = { cellules: F.sci(cellules, 2), atomes: F.sci(atomes, 2), surface: F.sci(surface, 1) };
+  const IDS = ["cellules", "atomes", "surface"], txt = textOf("echelles.items", IDS);
+  $("echelles").innerHTML = IDS.map(id => `<div><span class="k">${txt[id].k}</span><span>${txt[id].text}</span><span class="v">${items[id]}</span></div>`).join("");
+})();
+
+/* ---------- compter dans la maille, en 3D ---------- */
+(() => {
+  const COUL = { Cu: "--t-thermo", Fe: "--el-c", Cs: "--t-relat", Cl: "--t-fluides", Na: "--el-n", C: "--el-c" };
+  const CLS = { Cu: "t-thermo", Fe: "el-c", Cs: "t-relat", Cl: "t-fluides", Na: "el-n", C: "el-c" };
+  const RAY = { Cu: 0.22, Fe: 0.22, Cs: 0.24, Cl: 0.24, Na: 0.16, C: 0.2 };   // fractions of the nearest-neighbour distance
+  const NOEUDS = { cp: 1, cc: 2, cfc: 4 };
+  const vue = VueCristal.monter($("vue"), $("vueinfo"), { hors: t("v3.hors"), reduit: reduce });
+  const termes = c => ["coins", "aretes", "faces", "interieur"].filter(k => c[k]).map(k => t("compte." + k, { n: c[k] })).join(" + ");
+  function upd(nom) {
+    const s = P.STRUCTURES[nom], es = [...new Set(s.motif.map(m => m.e))];
+    const at = X.atomes(s, 1);
+    const d0 = Math.min(...es.map(e => X.voisins(s, e).d));
+    if (vue) { vue.montrer(at, { dLiaison: d0, maille: s.a, rayons: RAY, couleurs: COUL }); vue.regarder([1.2, 0.8, 1.6]); }
+    const pops = es.map(e => P.decompte(s, e).population), tot = pops.reduce((a, b) => a + b, 0);
+    const g = pops.reduce((a, b) => { while (b) [a, b] = [b, a % b]; return a; });
+    $("vreseau").textContent = t("res." + s.reseau);
+    $("freseau").textContent = t("v3.f.reseau", { n: NOEUDS[s.reseau], a: F.si(s.a, "m", { prefix: "p", sig: 4 }) });
+    $("vmotif").textContent = F.num(tot / NOEUDS[s.reseau]);
+    $("vformule").textContent = es.map((e, i) => e + (pops[i] / g > 1 ? String(pops[i] / g).replace(/\d/g, c => "₀₁₂₃₄₅₆₇₈₉"[c]) : "")).join("");
+    $("compte").innerHTML = es.map((e, i) => { const c = P.decompte(s, e), v = X.voisins(s, e);
+      return `<div><span class="k">${t("esp." + e)}</span><span>${t("compte.ligne", { termes: termes(c), n: c.population, z: v.z, d: F.si(v.d, "m", { prefix: "p" }) })}</span></div>`; }).join("");
+    $("legende").innerHTML = es.map(e => `<span class="${CLS[e]}">${t("esp." + e)}</span>`).join("");
+  }
+  seg($("structures"), "s", upd);
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["stenon", 1669, "idea"], ["hauy", 1784, "idea"], ["bravais", 1850, "idea"], ["laue", 1912, "experiment"], ["bragg", 1913, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["poudre", "bases"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["coin", "c"], ["nacl", "a"], ["cscl", "d"], ["motif", "b"], ["diamant", "c"], ["oblique", "a"], ["grain", "b"], ["coord", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

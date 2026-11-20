@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-i18n="page.title">Ma progression</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page outil">
+  <header class="head">
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags"><a class="chip plain" href="/racoon/" data-i18n="head.parcours"></a></div>
+  </header>
+
+  <section class="card">
+    <h2 data-i18n="ici.h2"></h2>
+    <div class="stats">
+      <div class="stat"><span class="k" data-i18n="ici.acquis"></span><span class="v" id="nacquis"></span></div>
+      <div class="stat"><span class="k" data-i18n="ici.choix"></span><span class="v" id="choix"></span></div>
+    </div>
+    <div class="tags">
+      <button class="btn" type="button" id="exporter" data-i18n="exporter"></button>
+      <label class="btn tinted"><span data-i18n="importer"></span><input type="file" id="fichier" accept="application/json,.json" hidden></label>
+    </div>
+    <p class="caption" id="fichier-statut" role="status"></p>
+  </section>
+
+  <section class="card">
+    <h2 data-i18n="gist.h2"></h2>
+    <p data-i18n-html="gist.p1"></p>
+    <p class="validite" data-i18n="gist.risque"></p>
+    <div id="delie">
+      <label class="field"><span data-i18n="gist.jeton"></span><input type="password" id="jeton" autocomplete="off" spellcheck="false"></label>
+      <div class="tags"><button class="btn" type="button" id="lier" data-i18n="gist.lier"></button></div>
+    </div>
+    <div id="lie" hidden>
+      <p data-i18n="gist.lie"></p>
+      <div class="tags"><button class="btn" type="button" id="synchro" data-i18n="gist.synchro"></button><button class="btn tinted" type="button" id="delier" data-i18n="gist.delier"></button></div>
+    </div>
+    <p class="caption" id="gist-statut" role="status"></p>
+  </section>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/locales/fr/progression.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/progression.js"></script>
+<script src="/racoon/gist.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang).autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), S = Progression.page(), G = Gist.page();
+
+function render() {
+  $("nacquis").textContent = S.acquis().length;
+  $("choix").textContent = S.choix() ? S.choix().noeud.replace(/_/g, " ") : t("ici.aucun");
+  $("lie").hidden = !G.lie(); $("delie").hidden = G.lie();
+}
+
+/* ---------- a file: download it, load it back (merged, never lowering a result) ---------- */
+$("exporter").onclick = () => {
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([S.exporter()], { type: "application/json" }));
+  a.download = "progression-cours-" + new Date().toISOString().slice(0, 10) + ".json";
+  document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+};
+$("fichier").onchange = async e => {
+  const f = e.target.files[0]; e.target.value = "";
+  if (!f) return;
+  try { S.importer(JSON.parse(await f.text())); $("fichier-statut").textContent = t("importer.ok"); render(); }
+  catch { $("fichier-statut").textContent = t("importer.ko"); }
+};
+
+/* ---------- the Gist: link, sync now, unlink ---------- */
+const dire = (cle, v) => { $("gist-statut").textContent = t(cle, v); };
+$("lier").onclick = async () => {
+  dire("gist.attente");
+  try { await G.lier($("jeton").value); $("jeton").value = ""; dire("gist.ok"); render(); }
+  catch (e) { dire("gist.erreur." + (["format", "jeton", "droits", "stockage"].includes(e.message) ? e.message : "reseau")); }
+};
+$("synchro").onclick = async () => {
+  dire("gist.attente");
+  try { await G.synchroniser(); dire("gist.ok"); render(); }
+  catch (e) { dire("gist.erreur." + (["jeton", "droits"].includes(e.message) ? e.message : "reseau")); }
+};
+$("delier").onclick = () => { G.delier(); dire("gist.delie"); render(); };
+
+render();
+G.demarrer().then(r => { if (r.change) render(); });
+</script>
+</body>
+</html>

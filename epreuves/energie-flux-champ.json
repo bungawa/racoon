@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["global", "b"],
+  ["transit", "d"],
+  ["bilan", "a"],
+  ["pile", "c"],
+  ["identite", "a"],
+  ["laser", "b"],
+  ["fil", "c"],
+  ["reflexion", "d"]
+ ]
+}

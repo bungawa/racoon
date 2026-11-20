@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Décrire le mouvement</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  #xt { touch-action: none; cursor: ew-resize; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-mecanique" data-i18n="monde.mecanique"></a><span class="aux">›</span><a href="/racoon/etape?id=decrire-mouvement" data-i18n="etape.decrire-mouvement"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-meca" href="/racoon/atlas?piste=meca" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/temps-distance-mouvement" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="box def"><b data-i18n="s1.def.title"></b>
+      <p data-i18n-html="s1.def.body"></p>
+    </div>
+    <div class="eq"><math display="block" data-i18n-html="s1.eq"></math><span class="n">(8.2)</span></div>
+    <p class="validite" data-i18n="eq1.validite"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="box rem"><b data-i18n="s1.rem.title"></b>
+      <p data-i18n-html="s1.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <figure class="chart">
+      <div class="seg" role="group" data-i18n-attr="aria-label:xt.choice">
+        <button type="button" id="m-car" aria-pressed="true" data-i18n="xt.car"></button>
+        <button type="button" id="m-ball" aria-pressed="false" data-i18n="xt.ball"></button>
+      </div>
+      <svg id="xt" role="img" data-i18n-attr="aria-label:xt.aria"></svg>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="tsl" data-i18n="xt.cursor"></label><output id="tread" for="tsl"></output></div>
+          <input id="tsl" type="range" min="0" max="1000" value="380"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="xt.k.x"></span><span class="v" id="xread"></span><span class="f" id="xsrc"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="xt.k.row"></span><span class="v" id="rowread"></span><span class="f" data-i18n="xt.f.row"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="xt.k.dx"></span><span class="v" id="dxread"></span><span class="f" data-i18n="xt.f.dx"></span></div>
+        </div>
+      </div>
+      <figcaption id="xtcap"></figcaption>
+    </figure>
+    <div class="list scroll" id="tab" role="table" data-i18n-attr="aria-label:tab.aria"></div>
+    <div class="box rem"><b data-i18n="s2.rem.title"></b>
+      <p data-i18n-html="s2.rem.body"></p>
+    </div>
+    <div class="eq"><math display="block" data-i18n-html="s2.eq"></math><span class="n">(8.1)</span></div>
+    <p class="validite" data-i18n="eq2.validite"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n="s3.p1"></p>
+    <figure>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="nsl" data-i18n="zeno.n"></label><output id="nread" for="nsl"></output></div>
+          <input id="nsl" type="range" min="1" max="16" step="1" value="3"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="zeno.k.time"></span><span class="v" id="ztime"></span></div>
+          <div class="stat"><span class="k" data-i18n="zeno.k.gap"></span><span class="v" id="zgap"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="zeno.caption"></figcaption>
+    </figure>
+    <p data-i18n="s3.p2"></p>
+    <div class="box warn"><b data-i18n="s3.warn.title"></b>
+      <p data-i18n="s3.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/decrire-le-mouvement.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/cinematique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const sec = v => F.qty(F.num(v, 3), "s"), met = v => F.qty(F.num(v, 4), "m");
+
+/* ---------- §8-1 : tables et graphe x(t), curseur de temps ---------- */
+(() => {
+  const svg = $("xt"), sl = $("tsl");
+  const MODES = {
+    car: { tab: Cine.CAR, law: null, ymax: 1200, cap: "xt.cap.car" },
+    ball: { tab: Cine.BALL, law: Cine.fall, ymax: 50, cap: "xt.cap.ball" },
+  };
+  let mode = "car", ax, cur, dot, hline;
+  function draw() {
+    const m = MODES[mode], T = m.tab.t[m.tab.t.length - 1];
+    svg.textContent = "";
+    ax = Plot.axes(svg, { fmt: F, w: 640, h: 300, pad: { b: 44 }, x: { domain: [0, T], label: t("xt.x") }, y: { domain: [0, m.ymax], label: t("xt.y") } });
+    const { x, y, g } = ax;
+    if (m.law) {                       // the law, known everywhere
+      let d = ""; for (let i = 0; i <= 200; i++) { const s = T * i / 200; d += (i ? "L" : "M") + x(s).toFixed(1) + " " + y(m.law(s)).toFixed(1); }
+      Plot.el("path", { d, class: "curve" }, g);
+    } else {                           // the table only: straight segments are a guess
+      Plot.el("path", { d: m.tab.t.map((s, i) => (i ? "L" : "M") + x(s).toFixed(1) + " " + y(m.tab.x[i]).toFixed(1)).join(""), class: "ref" }, g);
+    }
+    m.tab.t.forEach((s, i) => Plot.el("circle", { cx: x(s), cy: y(m.tab.x[i]), r: 4, class: "dot" }, g));
+    cur = Plot.el("line", { y1: y(0), y2: y(m.ymax), class: "zero" }, g);
+    hline = Plot.el("line", { x1: x(0), class: "zero" }, g);
+    dot = Plot.el("circle", { r: 7, class: "dot" }, g);
+    $("xtcap").textContent = t(m.cap);
+    $("tab").innerHTML = `<div role="row"><span role="columnheader">${t("tab.t")}</span><span class="v" role="columnheader">${t("tab.x")}</span></div>` +
+      m.tab.t.map((s, i) => `<div role="row" data-i="${i}"><span role="cell">${sec(s)}</span><span class="v" role="cell">${met(m.tab.x[i])}</span></div>`).join("");
+    upd();
+  }
+  function upd() {
+    const m = MODES[mode], ts = m.tab.t, xs = m.tab.x, T = ts[ts.length - 1], s = sl.value / 1000 * T;
+    const pos = m.law ? m.law(s) : Cine.interp(ts, xs, s);
+    let i = 0; while (i < ts.length - 2 && ts[i + 1] <= s) i++;
+    const { x, y } = ax;
+    cur.setAttribute("x1", x(s)); cur.setAttribute("x2", x(s));
+    hline.setAttribute("x2", x(s)); hline.setAttribute("y1", y(pos)); hline.setAttribute("y2", y(pos));
+    dot.setAttribute("cx", x(s)); dot.setAttribute("cy", y(pos));
+    $("tread").textContent = sec(s);
+    $("xread").textContent = met(pos);
+    $("xsrc").textContent = t(m.law ? "xt.f.law" : "xt.f.interp");
+    $("rowread").textContent = t("xt.v.row", { a: sec(ts[i]), b: sec(ts[i + 1]) });
+    $("dxread").textContent = met(xs[i + 1] - xs[i]);
+    document.querySelectorAll("#tab [data-i]").forEach(r => r.classList.toggle("done", +r.dataset.i > i + 1));
+  }
+  const pick = k => { mode = k; $("m-car").setAttribute("aria-pressed", k === "car"); $("m-ball").setAttribute("aria-pressed", k === "ball"); draw(); };
+  $("m-car").onclick = () => pick("car"); $("m-ball").onclick = () => pick("ball");
+  sl.oninput = upd;
+  /* drag the cursor on the graph itself */
+  const fromPointer = e => { const p = svg.createSVGPoint(); p.x = e.clientX; p.y = e.clientY;
+    const q = p.matrixTransform(svg.getScreenCTM().inverse()), T = MODES[mode].tab.t.at(-1);
+    sl.value = Math.round(Math.min(1, Math.max(0, ax.x.inv(q.x) / T)) * 1000); upd(); };
+  svg.addEventListener("pointerdown", e => { svg.setPointerCapture(e.pointerId); fromPointer(e); });
+  svg.addEventListener("pointermove", e => { if (svg.hasPointerCapture(e.pointerId)) fromPointer(e); });
+  draw();
+})();
+
+/* ---------- Zénon : somme d'une infinité de durées ---------- */
+(() => {
+  const sl = $("nsl");
+  const upd = () => { const z = Cine.zeno(90, 10, 1, +sl.value);
+    $("nread").textContent = sl.value;
+    $("ztime").textContent = F.qty(F.fix(z.time, Math.min(+sl.value + 1, 12)), "s");
+    $("zgap").textContent = F.qty(z.gap < 1e-3 ? F.sci(z.gap, 2) : F.num(z.gap, 3), "m"); };
+  sl.oninput = upd; upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["zenon", -450, "idea"], ["oresme", 1350, "idea"], ["descartes", 1637, "idea"], ["galilee", 1638, "experiment"],
+    ["muybridge", 1878, "experiment"], ["marey", 1882, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["gnss", "video", "odo"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["feu", "a"], ["courbe", "a"], ["entre", "a"], ["valise", "a"], ["impairs", "b"], ["achille", "a"], ["origine", "a"], ["point", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 81 });
+})();
+</script>
+</body>
+</html>

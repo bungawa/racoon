@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["noeud", "b"],
+  ["dissymetrie", "d"],
+  ["portee", "a"],
+  ["coulomb", "c"],
+  ["spins", "b"],
+  ["rencontre", "a"],
+  ["benzene", "d"],
+  ["absorption", "c"]
+ ]
+}

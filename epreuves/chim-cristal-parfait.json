@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["blende", "a"],
+  ["reseau", "b"],
+  ["argent", "c"],
+  ["empilements", "d"],
+  ["aluminium", "a"],
+  ["nickel", "b"],
+  ["insertion", "c"],
+  ["fer", "d"]
+ ]
+}

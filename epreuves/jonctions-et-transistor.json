@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["barriere", "c"],
+  ["boltzmann", "a"],
+  ["voltmetre", "d"],
+  ["direct", "b"],
+  ["inverse", "a"],
+  ["temperature", "d"],
+  ["gain", "c"],
+  ["base", "b"]
+ ]
+}

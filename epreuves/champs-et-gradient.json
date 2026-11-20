@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["neutre", "a"],
+  ["referentiel", "c"],
+  ["isothermes", "b"],
+  ["fenetre", "d"],
+  ["vecteur", "a"],
+  ["forage", "c"],
+  ["ordre", "b"],
+  ["cuve", "d"]
+ ]
+}

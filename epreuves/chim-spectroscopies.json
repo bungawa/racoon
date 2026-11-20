@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["photon", "a"],
+  ["etalonnage", "b"],
+  ["isotope", "c"],
+  ["aldehyde", "d"],
+  ["basChamp", "a"],
+  ["melange", "b"],
+  ["ethyles", "c"],
+  ["secondOrdre", "d"]
+ ]
+}

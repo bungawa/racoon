@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["bilan", "a"],
+  ["palettes", "b"],
+  ["rejet", "c"],
+  ["monotherme", "d"],
+  ["congelateur", "a"],
+  ["saut", "b"],
+  ["inventeur", "c"],
+  ["chaudiere", "d"]
+ ]
+}

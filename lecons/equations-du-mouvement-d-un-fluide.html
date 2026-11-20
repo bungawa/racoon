@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Les équations du mouvement d'un fluide</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-fluides" data-i18n="monde.fluides"></a><span class="aux">›</span><a href="/racoon/etape?id=fluide-parfait" data-i18n="etape.fluide-parfait"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fluides" href="/racoon/atlas?piste=fluides" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/hydrostatique" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mo>∇</mo><mo>·</mo><mo>(</mo><mi>ρ</mi><mover accent="true"><mi>v</mi><mo>→</mo></mover><mo>)</mo><mo>=</mo><mo>−</mo><mfrac><mrow><mo>∂</mo><mi>ρ</mi></mrow><mrow><mo>∂</mo><mi>t</mi></mrow></mfrac></math><span class="n">(40.2)</span></div>
+    <p class="validite" data-i18n-html="val.40.2"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mo>∇</mo><mo>·</mo><mover accent="true"><mi>v</mi><mo>→</mo></mover><mo>=</mo><mn>0</mn></math><span class="n">(40.3)</span></div>
+    <p class="validite" data-i18n-html="val.40.3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure>
+      <div class="panel">
+        <div class="seg" role="group" id="fluide" data-i18n-attr="aria-label:reg.choix">
+          <button type="button" data-f="eau" aria-pressed="true" data-i18n="reg.eau"></button>
+          <button type="button" data-f="air" data-i18n="reg.air"></button>
+        </div>
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="rv" data-i18n="reg.v"></label><output id="rvr" for="rv"></output></div>
+            <input id="rv" type="range" min="-3" max="3" step="0.05" value="0"></div>
+          <div class="ctl"><div class="row"><label for="rl" data-i18n="reg.L"></label><output id="rlr" for="rl"></output></div>
+            <input id="rl" type="range" min="-4" max="2" step="0.05" value="0"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="reg.k.re"></span><span class="v" id="vre"></span><span class="f" id="fre"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="reg.k.ma"></span><span class="v" id="vma"></span><span class="f" id="fma"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="reg.k.delta"></span><span class="v" id="vde"></span><span class="f" id="fde"></span></div>
+        </div>
+      </div>
+      <p id="verdict"></p>
+      <figcaption data-i18n-html="reg.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>ρ</mi><mspace width="0.15em"/><mover accent="true"><mi>a</mi><mo>→</mo></mover><mo>=</mo><mo>−</mo><mo>∇</mo><mi>p</mi><mo>−</mo><mi>ρ</mi><mo>∇</mo><mi>φ</mi><mo>+</mo><msub><mover accent="true"><mi>f</mi><mo>→</mo></mover><mtext data-i18n="eq.visc"></mtext></msub></math><span class="n">(40.4)</span></div>
+    <p class="validite" data-i18n-html="val.40.4"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><mover accent="true"><mi>a</mi><mo>→</mo></mover><mo>=</mo><mfrac><mrow><mo>∂</mo><mover accent="true"><mi>v</mi><mo>→</mo></mover></mrow><mrow><mo>∂</mo><mi>t</mi></mrow></mfrac><mo>+</mo><mo>(</mo><mover accent="true"><mi>v</mi><mo>→</mo></mover><mo>·</mo><mo>∇</mo><mo>)</mo><mover accent="true"><mi>v</mi><mo>→</mo></mover></math><span class="n">(40.5)</span></div>
+    <p class="validite" data-i18n-html="val.40.5"></p>
+    <p data-i18n-html="s3.p3"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mo>∂</mo><mover accent="true"><mi>v</mi><mo>→</mo></mover></mrow><mrow><mo>∂</mo><mi>t</mi></mrow></mfrac><mo>+</mo><mo>(</mo><mover accent="true"><mi>v</mi><mo>→</mo></mover><mo>·</mo><mo>∇</mo><mo>)</mo><mover accent="true"><mi>v</mi><mo>→</mo></mover><mo>=</mo><mo>−</mo><mfrac><mrow><mo>∇</mo><mi>p</mi></mrow><mi>ρ</mi></mfrac><mo>−</mo><mo>∇</mo><mi>φ</mi></math><span class="n">(40.6)</span></div>
+    <p class="validite" data-i18n-html="val.40.6"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <figure>
+      <svg class="fig" id="acc" viewBox="0 0 640 400" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-label-2" data-i18n="fig.legend.v"></span><span class="c-tint" data-i18n="fig.legend.traj"></span><span class="c-ko" data-i18n="fig.legend.a"></span><span class="c-label" data-i18n="fig.legend.moulinet"></span></div>
+      <div class="panel">
+        <div class="seg" role="group" id="champs" data-i18n-attr="aria-label:fig.choix">
+          <button type="button" data-c="bloc" aria-pressed="true" data-i18n="champ.bloc"></button>
+          <button type="button" data-c="tourbillon" data-i18n="champ.tourbillon"></button>
+          <button type="button" data-c="selle" data-i18n="champ.selle"></button>
+          <button type="button" data-c="riviere" data-i18n="champ.riviere"></button>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.v"></span><span class="v" id="vv"></span><span class="f" data-i18n-html="fig.f.v"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.a"></span><span class="v" id="va"></span><span class="f" id="fa"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.om"></span><span class="v" id="vo"></span><span class="f" data-i18n-html="fig.f.om"></span></div>
+        </div>
+      </div>
+      <p id="note"></p>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s5.sec"></span>
+    <h2 data-i18n="s5.h2"></h2>
+    <p data-i18n-html="s5.p1"></p>
+    <div class="eq"><math display="block"><mover accent="true"><mi mathvariant="normal">Ω</mi><mo>→</mo></mover><mo>=</mo><mo>∇</mo><mo>×</mo><mover accent="true"><mi>v</mi><mo>→</mo></mover></math><span class="n">(40.7)</span></div>
+    <p class="validite" data-i18n-html="val.40.7"></p>
+    <p data-i18n-html="s5.p2"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mo>∂</mo><mover accent="true"><mi>v</mi><mo>→</mo></mover></mrow><mrow><mo>∂</mo><mi>t</mi></mrow></mfrac><mo>+</mo><mover accent="true"><mi mathvariant="normal">Ω</mi><mo>→</mo></mover><mo>×</mo><mover accent="true"><mi>v</mi><mo>→</mo></mover><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>∇</mo><msup><mi>v</mi><mn>2</mn></msup><mo>=</mo><mo>−</mo><mfrac><mrow><mo>∇</mo><mi>p</mi></mrow><mi>ρ</mi></mfrac><mo>−</mo><mo>∇</mo><mi>φ</mi></math><span class="n">(40.8)</span></div>
+    <p class="validite" data-i18n-html="val.40.8"></p>
+    <p data-i18n-html="s5.p3"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mo>∂</mo><mover accent="true"><mi mathvariant="normal">Ω</mi><mo>→</mo></mover></mrow><mrow><mo>∂</mo><mi>t</mi></mrow></mfrac><mo>+</mo><mo>∇</mo><mo>×</mo><mo>(</mo><mover accent="true"><mi mathvariant="normal">Ω</mi><mo>→</mo></mover><mo>×</mo><mover accent="true"><mi>v</mi><mo>→</mo></mover><mo>)</mo><mo>=</mo><mover accent="true"><mn>0</mn><mo>→</mo></mover></math><span class="n">(40.9)</span></div>
+    <p class="validite" data-i18n-html="val.40.9"></p>
+    <p data-i18n-html="s5.p4"></p>
+    <div class="box rem"><b data-i18n="s5.rem.title"></b>
+      <p data-i18n-html="s5.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/equations-du-mouvement-d-un-fluide.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/carte-champ.js"></script>
+<script src="/racoon/lecons/circulation.js"></script>
+<script src="/racoon/fluides.js"></script>
+<script src="/racoon/fluides-parfait.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- when is water dry? Re, Ma, boundary layer ---------- */
+(() => {
+  const FL = { eau: { nu: Fluides.DYN.eau.nu, c: Fluides.CSON_EAU }, air: { nu: Fluides.DYN.air.nu, c: Fluides.DYN.air.c } };
+  const verdicts = textOf("reg.verdicts", ["parfait", "visqueux", "compressible", "intermediaire"]);
+  let fl = "eau";
+  function upd() {
+    const v = Math.pow(10, +$("rv").value), L = Math.pow(10, +$("rl").value), f = FL[fl];
+    const Re = Fluides.reynolds(v, L, f.nu), m2 = Fluides.compressibilite(v, f.c), d = Fluides.coucheLimite(L, v, f.nu);
+    $("rvr").textContent = F.si(v, "m·s⁻¹"); $("rlr").textContent = F.si(L, "m");
+    $("vre").textContent = F.sci(Re, 2); $("fre").innerHTML = t("reg.f.re", { nu: F.sci(f.nu, 3) });
+    $("vma").textContent = F.sci(v / f.c, 2); $("fma").innerHTML = t("reg.f.ma", { c: F.num(f.c, 4), d: F.sci(m2, 1) });
+    $("vde").textContent = F.sci(d.delta / L, 1); $("fde").innerHTML = t("reg.f.delta", { r: t("reg.couche." + d.regime) });
+    const k = v / f.c > 0.3 ? "compressible" : Re < 1 ? "visqueux" : Re < 1000 ? "intermediaire" : "parfait";
+    $("verdict").innerHTML = verdicts[k];
+  }
+  document.querySelectorAll("#fluide button").forEach(b => b.onclick = () => {
+    fl = b.dataset.f; document.querySelectorAll("#fluide button").forEach(x => x.setAttribute("aria-pressed", x === b)); upd(); });
+  $("rv").oninput = $("rl").oninput = upd;
+  upd();
+})();
+
+/* ---------- acceleration in a steady flow ---------- */
+(() => {
+  const svg = $("acc"), P = Plot.el, RHO = Fluides.DYN.eau.rho;
+  const FIELDS = { bloc: [0.5], tourbillon: [0.5], selle: [0.5], riviere: [0.3, 0.6] };
+  const START = { bloc: [0.5, 0], tourbillon: [0.4, 0], selle: [-0.08, 0.55], riviere: [-0.9, 0.3] };
+  const notes = textOf("fig.notes", Object.keys(FIELDS));
+  const O = { W: 640, H: 400, x0: -1, x1: 1, y0: -0.625, y1: 0.625 };
+  let nom = "bloc", f, c, path = [], k = 0, t0 = null, dyn = null;
+  const inFrame = p => p[0] > O.x0 && p[0] < O.x1 && p[1] > O.y0 && p[1] < O.y1;
+  function lance(p0) {
+    path = FluidesParfait.trajectoire(f.F, p0, 0.02, 1500); const out = path.findIndex(p => !inFrame(p)); if (out > 0) path.length = out;
+    k = 0; t0 = null;
+    P("polyline", { points: path.map(p => c.sx(p[0]).toFixed(1) + "," + c.sy(p[1]).toFixed(1)).join(" "), class: "stroke" }, c.layer("c-tint"));
+    dyn = c.layer(); frame();
+  }
+  function draw() {
+    f = Circ.CHAMPS[nom](...FIELDS[nom]);
+    c = CarteChamp.carte(svg, O);
+    CarteChamp.fleches(c, f.F, 16, 10, { cls: "c-label-2", unitaire: nom === "tourbillon" });
+    if (nom === "riviere") [-0.6, 0.6].forEach(y => P("line", { x1: 0, x2: 640, y1: c.sy(y), y2: c.sy(y), class: "stroke bold c-label-2" }, svg));
+    if (f.singulier) CarteChamp.point(c, f.singulier, 4, "c-warn");
+    $("note").innerHTML = notes[nom];
+    lance(START[nom]);
+  }
+  function show(p, time) {
+    dyn.innerHTML = "";
+    const v = f.F(p), a = FluidesParfait.convective(f.F, p), om = f.rot(p), na = Math.hypot(a[0], a[1]);
+    CarteChamp.fleche(c, p, v, 120 * Math.hypot(v[0], v[1]), "c-label-2", dyn);
+    if (na > 1e-9) CarteChamp.fleche(c, p, a, Math.min(90, 300 * na), "c-ko", dyn);
+    const ang = om * time / 2, L = 14, x = c.sx(p[0]), y = c.sy(p[1]), g = P("g", { class: "c-label" }, dyn);
+    [0, Math.PI / 2].forEach(b => P("line", { x1: x - L * Math.cos(ang + b), y1: y + L * Math.sin(ang + b), x2: x + L * Math.cos(ang + b), y2: y - L * Math.sin(ang + b), class: "stroke bold" }, g));
+    P("circle", { cx: x + L * Math.cos(ang), cy: y - L * Math.sin(ang), r: 3, class: "fill" }, g);
+    $("vv").textContent = F.qty(F.fix(Math.hypot(v[0], v[1]), 3), "m·s⁻¹");
+    $("va").textContent = F.qty(F.fix(na, 3), "m·s⁻²");
+    $("fa").innerHTML = t("fig.f.a", { g: F.fix(RHO * na, 0) });
+    $("vo").textContent = F.qty(F.fix(om, 2), "s⁻¹");
+  }
+  let gen = 0;                                                   // one animation loop at a time
+  function frame() {
+    const my = ++gen;
+    const loop = now => {
+      if (my !== gen || !path.length) return;
+      if (reduce || now === undefined) { show(path[0], 0); if (!reduce) requestAnimationFrame(loop); return; }
+      if (t0 === null) t0 = now;
+      const time = (now - t0) / 1000, i = Math.min(path.length - 1, Math.floor(time / 0.02));
+      show(path[i], time);
+      if (i < path.length - 1) requestAnimationFrame(loop); else setTimeout(() => { t0 = null; requestAnimationFrame(loop); }, 800);
+    };
+    loop();
+  }
+  document.querySelectorAll("#champs button").forEach(b => b.onclick = () => {
+    nom = b.dataset.c; document.querySelectorAll("#champs button").forEach(x => x.setAttribute("aria-pressed", x === b)); path = []; draw(); });
+  svg.addEventListener("pointerdown", e => {
+    const r = svg.getBoundingClientRect(), p = [c.sx.inv((e.clientX - r.left) * O.W / r.width), c.sy.inv((e.clientY - r.top) * O.H / r.height)];
+    if (Math.hypot(p[0], p[1]) < 0.05 && f.singulier) return;
+    svg.querySelectorAll("g.c-tint").forEach(g => g.remove()); path = []; if (dyn) dyn.remove();
+    lance(p);
+  });
+  draw();
+})();
+
+/* ---------- history ---------- */
+(() => {
+  const EVENTS = [["euler", 1755, "idea"], ["navier", 1822, "idea"], ["reynolds", 1883, "experiment"], ["arome", 2008, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["meteo"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["stationnaire", "c"], ["incompressible", "a"], ["tourbillon", "d"], ["riviere", "b"], ["bloc", "c"], ["reynolds", "a"], ["kelvin", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 402 });
+})();
+</script>
+</body>
+</html>

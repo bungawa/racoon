@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ozonolyse et coupures oxydantes</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .meca { width: 100%; max-width: 440px; height: 230px; display: block; margin: 0 auto; }
+  .trois { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; align-items: start; }
+  .trois svg { width: 100%; height: 130px; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-organique" data-i18n="monde.chim-organique"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-alcenes-alcynes" data-i18n="etape.chim-alcenes-alcynes"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/dihydroxylation" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <figure>
+      <div class="panel"><div class="seg" role="group" id="m-ozonolyse-actes"></div></div>
+      <svg class="fig meca no-sigle" id="m-ozonolyse" role="img" data-i18n-attr="aria-label:meca.ozonolyse.aria"></svg>
+      <p id="m-ozonolyse-texte"></p>
+      <figcaption data-i18n-html="meca.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>R</mi><mn>2</mn></msub><mi mathvariant="normal">C</mi><mo>=</mo><mi mathvariant="normal">C</mi><msubsup><mi>R</mi><mn>2</mn><mo>′</mo></msubsup><mo>+</mo><msub><mi mathvariant="normal">O</mi><mn>3</mn></msub><mo>+</mo><msub><mrow><mo>(</mo><mi mathvariant="normal">C</mi><msub><mi mathvariant="normal">H</mi><mn>3</mn></msub><mo>)</mo></mrow><mn>2</mn></msub><mi mathvariant="normal">S</mi><mo>→</mo><msub><mi>R</mi><mn>2</mn></msub><mi mathvariant="normal">C</mi><mo>=</mo><mi mathvariant="normal">O</mi><mo>+</mo><msubsup><mi>R</mi><mn>2</mn><mo>′</mo></msubsup><mi mathvariant="normal">C</mi><mo>=</mo><mi mathvariant="normal">O</mi><mo>+</mo><msub><mrow><mo>(</mo><mi mathvariant="normal">C</mi><msub><mi mathvariant="normal">H</mi><mn>3</mn></msub><mo>)</mo></mrow><mn>2</mn></msub><mi mathvariant="normal">S</mi><mi mathvariant="normal">O</mi></math></div>
+    <p class="validite" data-i18n-html="s1.validite"></p>
+    <div class="box warn"><b data-i18n="s1.warn.titre"></b>
+      <p data-i18n-html="s1.warn.corps"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="alcene" data-i18n="oz.alcene"></label></div><select id="alcene"></select></div>
+        <div class="seg" role="group" id="traitement"><button type="button" data-t="reducteur" aria-pressed="true" data-i18n="oz.reducteur"></button><button type="button" data-t="oxydant" aria-pressed="false" data-i18n="oz.oxydant"></button></div>
+      </div>
+      <div class="trois" id="produits"></div>
+      <figcaption data-i18n-html="oz.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>n</mi><mi mathvariant="normal">O</mi></msub><mo>=</mo><mn>2</mn><msub><mi>n</mi><mrow><mi mathvariant="normal">C</mi><mo>=</mo><mi mathvariant="normal">C</mi></mrow></msub><mspace width="2em"/><msub><mi>n</mi><mi mathvariant="normal">C</mi></msub><mo>,</mo><msub><mi>n</mi><mi mathvariant="normal">H</mi></msub><mspace width="0.3em"/><mtext data-i18n="eq.conserves"></mtext></math></div>
+    <p class="validite" data-i18n-html="s3.validite"></p>
+    <figure>
+      <div class="trois" id="enigme"></div>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="pari" data-i18n="en.pari"></label></div><select id="pari"></select></div>
+        <div class="controls"><button class="btn tinted" type="button" id="verifier" data-i18n="en.verifier"></button><button class="btn tinted" type="button" id="autre" data-i18n="en.autre"></button></div>
+        <p class="readout" id="verdict" aria-live="polite"></p>
+      </div>
+      <figcaption data-i18n-html="en.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/ozonolyse.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script src="/racoon/chim-organique.js"></script>
+<script src="/racoon/actes-mecanisme.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I.fallback : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const O = ChimOrga, A = O.Alcenes, sym = s => t("chim.sym", { s }), $ = id => document.getElementById(id);
+
+/* ---------- mécanismes limites, acte par acte : flèches courbes et comptes d'électrons du module ---------- */
+function mecanisme(id, o) {
+  const vues = O.actesMecanisme(id, Object.assign({ texte: sym, echelle: 40 }, o));
+  ActesMecanisme.monter({ vues, textes: textOf("meca.actes." + id, vues.map((_, k) => "a" + k)), svg: $("m-" + id), boutons: $("m-" + id + "-actes"), texte: $("m-" + id + "-texte") });
+}
+mecanisme("ozonolyse", { doublets: [4, 5, 6] });
+const peindre = (svg, m, o) => { const d = O.dessin(m, Object.assign({ texte: sym }, o)); svg.setAttribute("viewBox", d.viewBox); svg.innerHTML = d.html; };
+const IDS = ["methylbut2ene", "hex3eneE", "hex3eneZ", "but1ene", "methylcyclohexene", "limonene"], noms = textOf("oz.alcenes", IDS);
+const fam = textOf("oz.familles", ["aldehyde", "cetone", "acide"]);
+const formule = m => O.ecrireFormule(O.formuleBrute(m)), familles = m => O.groupes(m).filter(g => g in fam).map(g => fam[g]).join(", ");
+const doubles = m => m.liaisons.filter(l => l.ordre === 2).flatMap(l => [l.a, l.b]);
+/* une rangée de dessins : la molécule de départ (si m), puis les fragments */
+function rangee(el, m, frag) {
+  const cases = (m ? [m] : []).concat(frag);
+  el.innerHTML = cases.map((_, k) => `<div><svg class="fig no-sigle" role="img" aria-label="${m && !k ? t("oz.ariaA") : t("oz.ariaP")}"></svg><p class="readout"></p></div>`).join("");
+  [...el.children].forEach((div, k) => {
+    const x = cases[k], depart = m && !k;
+    peindre(div.querySelector("svg"), x, { echelle: 32, surligne: depart ? doubles(x) : [] });
+    div.querySelector("p").textContent = depart ? t("oz.depart", { f: formule(x) }) : t("oz.produit", { f: formule(x), g: familles(x) });
+  });
+}
+
+/* ---------- produits d'ozonolyse ---------- */
+(() => {
+  const sel = $("alcene");
+  sel.innerHTML = IDS.map(id => `<option value="${id}">${noms[id]}</option>`).join("");
+  let tr = "reducteur";
+  function maj() {
+    const m = A.molecule(sel.value);
+    rangee($("produits"), m, A.ozonolyse(m, { oxydant: tr === "oxydant" }));
+    document.querySelectorAll("#traitement button").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.t === tr)));
+  }
+  sel.onchange = maj;
+  $("traitement").onclick = e => { const x = e.target.closest("button"); if (!x) return; tr = x.dataset.t; maj(); };
+  maj();
+})();
+
+/* ---------- énigme : remonter à l'alcène ---------- */
+(() => {
+  const pari = $("pari"), ORDRE = ["methylcyclohexene", "hex3eneZ", "but1ene", "limonene", "methylbut2ene", "hex3eneE"];
+  pari.innerHTML = IDS.map(id => `<option value="${id}">${noms[id]}</option>`).join("");
+  let k = 0;
+  const montrer = () => { rangee($("enigme"), null, A.ozonolyse(A.molecule(ORDRE[k]))); $("verdict").textContent = t("en.attente"); };
+  $("verifier").onclick = () => {
+    const cache = A.ozonolyse(A.molecule(ORDRE[k])), essai = A.ozonolyse(A.molecule(pari.value));
+    const juste = A.memesProduits(cache, essai);
+    $("verdict").textContent = juste ? t(pari.value === ORDRE[k] ? "en.juste" : "en.justeAutre", { n: noms[pari.value] })
+      : t("en.faux", { n: noms[pari.value], l: essai.map(formule).join(" + ") });
+  };
+  $("autre").onclick = () => { k = (k + 1) % ORDRE.length; montrer(); };
+  montrer();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["schonbein", 1840, "experiment"], ["harries", 1905, "experiment"], ["criegee", 1953, "idea"], ["revue", 1975, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["azelaique", "brassylique"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["dipole", "c"], ["traitement", "a"], ["oxydant", "d"], ["cycle", "b"], ["ze", "c"], ["compter", "a"], ["limonene", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

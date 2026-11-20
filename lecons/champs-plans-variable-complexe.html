@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Champs plans et variable complexe</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-electrostatique" data-i18n="monde.electrostatique"></a><span class="aux">›</span><a href="/racoon/etape?id=methodes-champ" data-i18n="etape.methodes-champ"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/methodes-champ-electrostatique" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msup><mi>𝔷</mi><mn>2</mn></msup><mo>=</mo><msup><mrow><mo>(</mo><mi>x</mi><mo>+</mo><mi>i</mi><mi>y</mi><mo>)</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>i</mi><mi>x</mi><mi>y</mi></math><span class="n">(7.3)</span></div>
+    <p class="validite" data-i18n-html="val.7.3"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi>F</mi><mo>(</mo><mi>𝔷</mi><mo>)</mo><mo>=</mo><mi>U</mi><mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>)</mo><mo>+</mo><mi>i</mi><mi>V</mi><mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>)</mo></math><span class="n">(7.4)</span></div>
+    <p class="validite" data-i18n-html="val.7.4"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mo>∂</mo><mi>U</mi></mrow><mrow><mo>∂</mo><mi>x</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mo>∂</mo><mi>V</mi></mrow><mrow><mo>∂</mo><mi>y</mi></mrow></mfrac></math><span class="n">(7.7)</span></div>
+    <p class="validite" data-i18n-html="val.7.7"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mo>∂</mo><mi>V</mi></mrow><mrow><mo>∂</mo><mi>x</mi></mrow></mfrac><mo>=</mo><mo>−</mo><mfrac><mrow><mo>∂</mo><mi>U</mi></mrow><mrow><mo>∂</mo><mi>y</mi></mrow></mfrac></math><span class="n">(7.8)</span></div>
+    <p class="validite" data-i18n-html="val.7.8"></p>
+    <p data-i18n-html="s1.p4"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><msup><mo>∂</mo><mn>2</mn></msup><mi>U</mi></mrow><mrow><mo>∂</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mo>∂</mo><mn>2</mn></msup><mi>U</mi></mrow><mrow><mo>∂</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mn>0</mn></math><span class="n">(7.9)</span></div>
+    <p class="validite" data-i18n-html="val.7.9"></p>
+    <p data-i18n-html="s1.p5"></p>
+    <div class="eq"><math display="block"><msub><mi>E</mi><mi>x</mi></msub><mo>−</mo><mi>i</mi><msub><mi>E</mi><mi>y</mi></msub><mo>=</mo><mo>−</mo><mi>A</mi><mspace width="0.2em"/><msup><mi>F</mi><mo>′</mo></msup><mo>(</mo><mi>𝔷</mi><mo>)</mo></math><span class="n">(7.8a)</span></div>
+    <p class="validite" data-i18n-html="val.7.8a"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>F</mi><mo>(</mo><mi>𝔷</mi><mo>)</mo><mo>=</mo><msup><mi>𝔷</mi><mrow><mi>π</mi><mo>/</mo><mi>β</mi></mrow></msup><mo>,</mo><mspace width="1em"/><mrow><mo>|</mo><mi>E</mi><mo>|</mo></mrow><mo>∝</mo><msup><mi>r</mi><mrow><mi>π</mi><mo>/</mo><mi>β</mi><mo>−</mo><mn>1</mn></mrow></msup></math><span class="n">(7.13a)</span></div>
+    <p class="validite" data-i18n-html="val.7.13a"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mi>U</mi><mo>=</mo><msup><mrow><mo>[</mo><mfrac><mrow><msup><mrow><mo>(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>)</mo></mrow><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></msup><mo>+</mo><mi>x</mi></mrow><mn>2</mn></mfrac><mo>]</mo></mrow><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></msup><mo>,</mo><mspace width="1em"/><mi>V</mi><mo>=</mo><msup><mrow><mo>[</mo><mfrac><mrow><msup><mrow><mo>(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>)</mo></mrow><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></msup><mo>−</mo><mi>x</mi></mrow><mn>2</mn></mfrac><mo>]</mo></mrow><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></msup></math><span class="n">(7.12)</span></div>
+    <p class="validite" data-i18n-html="val.7.12"></p>
+    <figure>
+      <svg class="fig" id="carte" viewBox="0 0 640 400" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-warn" data-i18n="fig.legend.u"></span><span class="c-tint" data-i18n="fig.legend.v"></span><span class="c-label-2" data-i18n="fig.legend.metal"></span></div>
+      <svg class="fig" id="loi" viewBox="0 0 640 240" role="img" data-i18n-attr="aria-label:loi.aria"></svg>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="beta" data-i18n="fig.beta"></label><output id="betar" for="beta"></output></div>
+            <input id="beta" type="range" min="60" max="360" step="15" value="270"></div>
+          <div class="ctl"><div class="row"><label for="rr" data-i18n="fig.r"></label><output id="rrr" for="rr"></output></div>
+            <input id="rr" type="range" min="-2" max="0" step="0.05" value="-0.5"></div>
+        </div>
+        <div class="controls">
+          <button type="button" class="btn tinted" id="b90" data-i18n="fig.b90"></button>
+          <button type="button" class="btn tinted" id="b270" data-i18n="fig.b270"></button>
+          <button type="button" class="btn tinted" id="b360" data-i18n="fig.b360"></button>
+          <button type="button" class="btn tinted" id="bfil" data-i18n="fig.bfil"></button>
+          <button type="button" class="btn tinted" id="bdip" data-i18n="fig.bdip"></button>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.f"></span><span class="v" id="vf"></span><span class="f" id="ff"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.e"></span><span class="v" id="ve"></span><span class="f" id="fe"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.dix"></span><span class="v" id="vd"></span><span class="f" id="fd"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>E</mi><mi>x</mi></msub><mo>=</mo><mo>−</mo><mfrac><mrow><mn>2</mn><msub><mi>V</mi><mn>0</mn></msub></mrow><msup><mi>ℓ</mi><mn>2</mn></msup></mfrac><mi>x</mi><mo>,</mo><mspace width="1em"/><msub><mi>E</mi><mi>y</mi></msub><mo>=</mo><mo>+</mo><mfrac><mrow><mn>2</mn><msub><mi>V</mi><mn>0</mn></msub></mrow><msup><mi>ℓ</mi><mn>2</mn></msup></mfrac><mi>y</mi></math><span class="n">(7.5a)</span></div>
+    <p class="validite" data-i18n-html="val.7.5a"></p>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/champs-plans-variable-complexe.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/physique-fondamentale.js"></script>
+<script src="/racoon/lecons/champs-em.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/electrostatique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const ES = Electrostatique;
+
+/* Lengths in units of ℓ = 1 cm; potential A U with A = 100 V (−100 V for the line, so that its charge is positive). */
+const ELL = 0.01, V0 = 100;
+
+/* ---------- la carte : équipotentielles U = cte, lignes de champ V = cte ---------- */
+(() => {
+  const sb = $("beta"), sr = $("rr"), sc = $("carte"), sl = $("loi");
+  let mode = "coin";
+  const fonction = () => (mode === "coin" ? ES.coin(+sb.value * Math.PI / 180) : ES.PLANS[mode === "fil" ? "ligne" : "dipole"]);
+  const amp = () => (mode === "fil" ? -V0 : V0);
+  const niveaux = (f, k) => {
+    if (mode === "fil") return k === 0 ? [-2.5, -2, -1.5, -1, -0.5, 0, 0.25] : Array.from({ length: 16 }, (_, i) => -Math.PI + (i + 0.5) * Math.PI / 8);
+    if (mode === "dip") return [-8, -4, -2, -1, -0.5, 0.5, 1, 2, 4, 8];
+    const top = Math.pow(Math.SQRT2, f.p);                                       // the largest |U|, |V| in the square of side 2
+    return Array.from({ length: 2 * 10 - 1 }, (_, i) => (i - 9) * top / 10).filter(v => (k === 0 ? v > 0 : v !== 0));
+  };
+  function draw() {
+    const f = fonction(), A = amp(), r = Math.pow(10, +sr.value);
+    sc.innerHTML = "";
+    const S = 180, cx = 210, cy = 200, P = ([x, y]) => [cx + x * S, cy - y * S];
+    /* the metal: the wedge |θ| ≥ β/2 */
+    if (mode === "coin") {
+      const b = +sb.value * Math.PI / 360, g = Plot.el("g", { class: "c-label-2" }, sc);
+      if (+sb.value < 360) {
+        const pts = [[0, 0]]; for (let i = 0; i <= 60; i++) { const th = b + (2 * Math.PI - 2 * b) * i / 60; pts.push([1.6 * Math.cos(th), 1.6 * Math.sin(th)]); }
+        Plot.el("path", { d: Plot.path(pts.map(p => [Math.max(cx - S, Math.min(cx + S, P(p)[0])), Math.max(cy - S, Math.min(cy + S, P(p)[1]))])) + "Z", class: "fill", "fill-opacity": "0.35" }, g);
+      } else Plot.el("line", { x1: cx - S, y1: cy, x2: cx, y2: cy, class: "stroke bold" }, g);
+    } else Plot.el("circle", { cx, cy, r: 4, class: "fill c-label" }, sc);
+    /* contours on a 121 × 121 grid; a segment is kept only if F really takes the level at both ends:
+       this drops those drawn in the metal and across the cut θ = ±π, where the grid interpolates across a jump */
+    [[0, "c-warn"], [1, "c-tint"]].forEach(([k, cls]) => {
+      const g = Plot.el("g", { class: cls }, sc), fn = ([x, y]) => { const v = f.F(x, y)[k]; return Number.isFinite(v) ? v : 0; };
+      const L = niveaux(f, k), pas = Math.min(...L.slice(1).map((v, i) => Math.abs(v - L[i])));
+      const vaut = (p, l) => { const v = f.F(p[0], p[1])[k]; return Number.isFinite(v) && Math.abs(v - l) < 0.1 * pas; };
+      L.forEach(l => AnaVec.isolignes(fn, -1, 1, 121, -1, 1, 121, l).filter(s => vaut(s[0], l) && vaut(s[1], l)).forEach(s =>
+        Plot.el("path", { d: Plot.path(s.map(P)), class: "stroke thin" }, g)));
+    });
+    Plot.el("rect", { x: cx - S, y: cy - S, width: 2 * S, height: 2 * S, class: "stroke thin c-label" }, sc);
+    /* the probe on the axis θ = 0, and its field */
+    const c = ES.champPlan(f, A, r, 0), E = c.E.map(v => v / ELL), n = Math.hypot(E[0], E[1]);
+    const p0 = P([r, 0]); Plot.el("circle", { cx: p0[0], cy: p0[1], r: 4, class: "fill c-label" }, sc);
+    if (n > 0) Plot.fleche(sc, p0, [p0[0] + 40 * E[0] / n, p0[1] - 40 * E[1] / n], { cls: "c-label" });
+    const lab = (x, y, s) => { Plot.el("text", { x, y }, sc).textContent = s; };
+    lab(410, 40, t("fig.cote", { l: F.si(2 * ELL, "m", { prefix: "m" }) }));
+    lab(410, 62, t("fig.sonde", { r: F.si(r * ELL, "m", { prefix: "m" }) }));
+    /* |E| against r on log axes, along θ = 0 */
+    sl.innerHTML = "";
+    const rs = Array.from({ length: 81 }, (_, i) => Math.pow(10, -2 + 2 * i / 80)), Es = rs.map(x => ES.champPlan(f, A, x, 0).norme / ELL);
+    const lo = Math.pow(10, Math.floor(Math.log10(Math.min(...Es)))), hi = Math.pow(10, Math.ceil(Math.log10(Math.max(...Es))));
+    const Ax = Plot.axes(sl, { fmt: F, w: 640, h: 240, x: { scale: "log", domain: [1e-4, 1e-2], label: t("loi.x") }, y: { scale: "log", domain: [Math.min(lo, hi / 10), hi], label: t("loi.y") } });
+    Plot.el("path", { d: Plot.path(rs.map((x, i) => [Ax.x(x * ELL), Ax.y(Es[i])])), class: "stroke c-warn" }, Ax.g);
+    Plot.el("circle", { cx: Ax.x(r * ELL), cy: Ax.y(n), r: 5, class: "fill c-warn" }, Ax.g);
+    const nom = mode === "coin" ? t("fig.f.coin", { b: F.num(+sb.value, 3), p: F.num(f.p, 3) }) : t(mode === "fil" ? "fig.f.fil" : "fig.f.dip");
+    $("betar").textContent = mode === "coin" ? F.num(+sb.value, 3) + " °" : "—";
+    $("rrr").textContent = F.si(r * ELL, "m", { prefix: "m" });
+    $("vf").textContent = nom;
+    $("ff").textContent = t("fig.f.exp", { e: F.num(f.exposant, 3) });
+    $("ve").textContent = F.si(n, "V·m⁻¹");
+    $("fe").textContent = t("fig.f.e", { phi: F.si(c.phi, "V") });
+    $("vd").textContent = t("fig.v.dix", { x: F.num(Math.pow(10, -f.exposant), 3) });
+    $("fd").textContent = t(f.exposant > 0 ? "fig.f.creux" : f.exposant < 0 ? "fig.f.pointe" : "fig.f.uniforme");
+  }
+  sb.oninput = () => { mode = "coin"; draw(); };
+  sr.oninput = draw;
+  const pose = b => () => { mode = "coin"; sb.value = b; draw(); };
+  $("b90").onclick = pose(90); $("b270").onclick = pose(270); $("b360").onclick = pose(360);
+  $("bfil").onclick = () => { mode = "fil"; draw(); };
+  $("bdip").onclick = () => { mode = "dip"; draw(); };
+  draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["dalembert", 1752, "idea"], ["cauchy", 1814, "idea"], ["riemann", 1851, "idea"], ["focalisation", 1952, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["masse", "accelerateurs"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["laplace", "b"], ["orthogonales", "d"], ["creux", "a"], ["arete", "c"], ["lentille", "b"], ["echange", "d"], ["trois", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 72 });
+})();
+</script>
+</body>
+</html>

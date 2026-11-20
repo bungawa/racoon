@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["alternateur", "a"],
+  ["barre", "b"],
+  ["mutuelle", "c"],
+  ["symetrie", "d"],
+  ["serie", "a"],
+  ["nagaoka", "b"],
+  ["energie", "c"],
+  ["poynting", "d"]
+ ]
+}

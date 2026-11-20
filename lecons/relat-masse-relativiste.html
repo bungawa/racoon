@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La masse relativiste</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-relativite" data-i18n="monde.relativite"></a><span class="aux">›</span><a href="/racoon/etape?id=rel-dynamique" data-i18n="etape.rel-dynamique"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-relat" href="/racoon/atlas?piste=relat" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/relat-masse-energie" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mover><mi>p</mi><mo>→</mo></mover><mo>=</mo><msub><mi>m</mi><mi>v</mi></msub><mover><mi>v</mi><mo>→</mo></mover></math><span class="n">(16.8)</span></div>
+    <p class="validite" data-i18n-html="val.16.8"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <figure class="chart">
+      <svg class="fig" id="choc" viewBox="0 0 640 220" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.1"></span><span class="c-warn" data-i18n="fig.legend.2"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="su" data-i18n-html="fig.u"></label><output id="sur" for="su"></output></div>
+            <input id="su" type="range" min="0" max="0.99" step="0.01" value="0.6"></div>
+          <div class="ctl"><div class="row"><label for="sw" data-i18n-html="fig.w"></label><output id="swr" for="sw"></output></div>
+            <input id="sw" type="range" min="0.01" max="0.9" step="0.01" value="0.3"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.wy"></span><span class="v" id="vwy"></span><span class="f" data-i18n-html="fig.f.wy"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.n"></span><span class="v" id="vn"></span><span class="f" id="fn"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.r"></span><span class="v" id="vr"></span><span class="f" id="fr"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.q"></span><span class="v" id="vq"></span><span class="f" id="fq"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="eq"><math display="block"><mfrac><msub><mi>m</mi><mi>w</mi></msub><msub><mi>m</mi><mi>v</mi></msub></mfrac><mo>=</mo><msqrt><mn>1</mn><mo>−</mo><msup><mi>u</mi><mn>2</mn></msup><mo>/</mo><msup><mi>c</mi><mn>2</mn></msup></msqrt></math><span class="n">(16.9)</span></div>
+    <p class="validite" data-i18n-html="val.16.9"></p>
+    <p data-i18n-html="s2.p4"></p>
+    <div class="eq"><math display="block"><msub><mi>m</mi><mi>u</mi></msub><mo>=</mo><mfrac><mi>m</mi><msqrt><mn>1</mn><mo>−</mo><msup><mi>u</mi><mn>2</mn></msup><mo>/</mo><msup><mi>c</mi><mn>2</mn></msup></msqrt></mfrac></math><span class="n">(16.10)</span></div>
+    <p class="validite" data-i18n-html="val.16.10"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p data-i18n-html="sys.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>M</mi><mo>=</mo><mn>2</mn><msub><mi>m</mi><mi>w</mi></msub></math><span class="n">(16.11)</span></div>
+    <p class="validite" data-i18n-html="val.16.11"></p>
+    <p id="colle"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>F</mi><mo>⊥</mo></msub><mo>=</mo><mi>γ</mi><mi>m</mi><msub><mi>a</mi><mo>⊥</mo></msub><mo>,</mo><mspace width="1em"/><msub><mi>F</mi><mo>∥</mo></msub><mo>=</mo><msup><mi>γ</mi><mn>3</mn></msup><mi>m</mi><msub><mi>a</mi><mo>∥</mo></msub></math><span class="n">(16.10a)</span></div>
+    <p class="validite" data-i18n-html="val.16.10a"></p>
+    <p id="inerties"></p>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/relat-masse-relativiste.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/relativite.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const R = Relativite, K = Constantes, c = K.c;
+
+/* ---------- le choc vu de la voiture : bilan vertical avec m constante et avec γm ---------- */
+(() => {
+  const svg = $("choc"), su = $("su"), sw = $("sw"), m = 1;
+  const newton = () => m, relat = v => m * R.gamma(v);
+  const C0 = [320, 110], L = 110;                                              // collision point; arrow length for a speed c
+  function draw() {
+    const u = +su.value * c, w = +sw.value * c;
+    const n = R.collisionTransverse(u, w, newton), r = R.collisionTransverse(u, w, relat);
+    svg.innerHTML = "";
+    /* body 1: up at w, then down; body 2: from the left, down at wy, then up, moving right at u */
+    const d1 = L * w / c, ux = L * u / c, uy = L * r.wy / c;
+    Plot.el("line", { x1: 40, x2: 600, y1: C0[1], y2: C0[1], class: "stroke thin dash c-label-2" }, svg);
+    Plot.fleche(svg, [C0[0] - 5, C0[1] + d1], [C0[0] - 5, C0[1]], { cls: "c-tint", min: 2 });
+    Plot.fleche(svg, [C0[0] + 5, C0[1]], [C0[0] + 5, C0[1] + d1], { cls: "c-tint", min: 2 });
+    Plot.fleche(svg, [C0[0] - ux, C0[1] - uy], [C0[0], C0[1]], { cls: "c-warn", min: 2 });
+    Plot.fleche(svg, [C0[0], C0[1]], [C0[0] + ux, C0[1] - uy], { cls: "c-warn", min: 2 });
+    Plot.el("circle", { cx: C0[0], cy: C0[1], r: 4, class: "fill c-label" }, svg);
+    $("sur").textContent = F.num(u / c, 2) + " c";
+    $("swr").textContent = F.num(w / c, 2) + " c";
+    $("vwy").textContent = F.num(r.wy / c, 3) + " c";
+    $("vn").textContent = F.num(n.somme / (m * c), 3);
+    $("fn").textContent = t("fig.f.n", { p: F.num(Math.abs(n.somme / n.dp1) * 100, 3) });
+    $("vr").textContent = F.num(Math.abs(r.somme) < 1e-12 * Math.abs(r.dp1) ? 0 : r.somme / (m * c), 3);
+    $("fr").textContent = t("fig.f.r", { mw: F.num(r.mw, 4), mv: F.num(r.mv, 4) });
+    $("vq").textContent = F.num(r.rapport, 4);
+    $("fq").textContent = t("fig.f.q", { s: F.num(Math.sqrt(1 - (u / c) ** 2), 4) });
+  }
+  su.oninput = sw.oninput = draw; draw();
+})();
+
+/* ---------- le corps collé : deux boules de 1 kg à 1 km/s, deux protons à 0,6 c ---------- */
+(() => {
+  const a = R.collage(1, 1000), p = R.collage(K.m_p, 0.6 * c);
+  $("colle").innerHTML = t("s3.colle", { dm: F.qty(F.sci(a.exces, 2), "kg"), frac: F.sci(a.exces / 2, 2), Mp: F.num(p.M / K.m_p, 3) });
+})();
+
+/* ---------- deux inerties : un proton du LHC ---------- */
+(() => {
+  const S = R.depuisCinetique(K.m_p, 6.8e12 * K.e - K.m_p * c * c), I2 = R.inerties(K.m_p, S.v);   // 6,8 TeV: the total energy of a beam proton
+  $("inerties").innerHTML = t("s4.lhc", { g: F.num(S.gamma, 4), tr: F.num(I2.transversale / K.m_p, 4), lo: F.sci(I2.longitudinale / K.m_p, 2),
+    mp: F.qty(F.num(K.m_p * c * c / (1e6 * K.e), 7), "MeV/c²") });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["lewis", 1909, "idea"], ["einstein", 1948, "idea"], ["okun", 1989, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["tables"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["hypothese", "d"], ["vertical", "a"], ["newton", "c"], ["limite", "b"], ["mastic", "d"], ["inertie", "a"], ["table", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 164 });
+})();
+</script>
+</body>
+</html>

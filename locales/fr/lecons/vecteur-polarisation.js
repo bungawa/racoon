@@ -1,0 +1,95 @@
+/* Leçon « Vecteur polarisation P » (Feynman II.10.2) : textes en français.
+   Une autre langue = locales/<langue>/lecons/vecteur-polarisation.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Vecteur polarisation P",
+    "crumb.jour": "Vecteur polarisation",
+    "h1": "Vecteur polarisation P",
+    "lede": "Un atome neutre placé dans un champ électrique se déforme : son noyau est poussé d'un côté, ses électrons de l'autre. Le décalage est minuscule, cent mille fois plus petit que l'atome. Mais il y a des milliards de milliards d'atomes par centimètre cube. Leur somme est un vecteur, la polarisation, qui suffit à décrire l'isolant.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : Le dipôle électrique",
+
+    "s1.sec": "Un atome dans un champ",
+    "s1.h2": "Le noyau d'un côté, le nuage de l'autre",
+    "s1.p1": "Un isolant n'a pas d'électrons libres : chacun reste attaché à son atome. Le champ ne peut donc pas déplacer les charges d'une face à l'autre, comme dans un métal (leçon « Constante diélectrique »). Il peut seulement les écarter un peu à l'intérieur de chaque atome. Le noyau, positif, glisse dans le sens du champ ; le nuage électronique, négatif, en sens inverse. Les deux centres de charge ne coïncident plus : vu de loin, l'atome est un petit dipôle (leçon « Le dipôle électrique »).",
+    "s1.p2": "De combien ? Un modèle simple suffit pour l'ordre de grandeur. Le nuage est une boule uniforme de charge \u2212<var>Ze</var> et de rayon <var>a</var>, le noyau un point +<var>Ze</var>. Décalé de δ à l'intérieur de la boule, le noyau subit un champ de rappel <var>Ze</var>δ/(4πε<sub>0</sub><var>a</var>³), proportionnel à δ (théorème de Gauss, leçon « Champ d'une sphère chargée »). Il s'arrête quand ce rappel équilibre le champ appliqué <var>E</var> :",
+    "val.nuage": "Approximation : nuage rigide et uniforme, qui se déplace sans se déformer, valable tant que δ ≪ <var>a</var>, c'est-à-dire <var>E</var> ≪ <var>Ze</var>/(4πε<sub>0</sub><var>a</var>²), le champ atomique (5 × 10¹¹\u00a0V·m⁻¹ pour <var>a</var> = <var>a</var><sub>0</sub>). Le vrai nuage de l'hydrogène se déforme plus facilement : la mécanique quantique donne exactement 4,5 fois cette valeur.",
+    "sys.title": "Décrire le système avant d'appliquer la loi",
+    "sys1.body": "Un atome de la taille de l'hydrogène, <var>a</var> = <var>a</var><sub>0</sub> = 0,529 × 10⁻¹⁰\u00a0m, dans un champ de 10⁶\u00a0V·m⁻¹ (environ le tiers du champ qui fait claquer l'air, leçon « Claquage sous haute tension »). Le modèle donne δ = {d}\u00a0m. Le nombre sans dimension qui décide de tout est δ/<var>a</var> = <var>E</var>/<var>E</var><sub>atome</sub> = {r}, avec <var>E</var><sub>atome</sub> = {Ea}\u00a0V·m⁻¹ : la déformation est infime, donc proportionnelle au champ. C'est pour cela que la constante diélectrique ne dépend pas de la tension. Pour que la déformation cesse d'être petite, il faudrait approcher <var>E</var><sub>atome</sub>, plus de cent mille fois le champ de claquage de l'air.",
+
+    "s2.sec": "Le vecteur",
+    "s2.h2": "Le moment dipolaire par unité de volume",
+    "s2.p1": "Chaque atome porte un moment dipolaire <var>q</var><b>δ</b>, où <var>q</var> est la charge déplacée et <b>δ</b> le vecteur qui va de la charge négative à la charge positive. S'il y a <var>N</var> atomes par mètre cube, tous décalés de la même façon, leur moment par unité de volume est la <em>polarisation</em> :",
+    "val.10.4": "Exacte : définition de <b>P</b>, en C·m⁻², pour des dipôles identiques. Pour un mélange, on somme les <var>N</var><sub>i</sub><var>q</var><sub>i</sub><b>δ</b><sub>i</sub>. <b>P</b> est une moyenne sur un volume qui contient beaucoup d'atomes : elle n'a pas de sens à l'échelle de 10⁻¹⁰\u00a0m.",
+    "s2.p2": "Seul compte le produit <var>Nq</var><b>δ</b> : peu importe que tous les électrons se décalent un peu ou que quelques-uns se décalent beaucoup, peu importe que l'atome se déforme ou qu'une molécule déjà polaire s'oriente (étape « Origine moléculaire de la polarisation »). Dans un isolant ordinaire, <b>P</b> est proportionnelle au champ <b>E</b> au même point, avec un coefficient propre au matériau ; la relation (10.8) le nomme. Faites varier le champ :",
+    "fig.aria": "Un atome dans un champ dirigé vers la droite : le nuage électronique est décalé vers la gauche, le noyau vers la droite, avec un grossissement indiqué",
+    "fig.legend.nuage": "nuage électronique et son centre",
+    "fig.legend.noyau": "noyau, moment dipolaire",
+    "fig.legend.champ": "champ appliqué",
+    "fig.E": "E",
+    "fig.p": "p",
+    "fig.zoom": "décalage grossi {g} fois",
+    "fig.choix": "Modèle d'atome",
+    "mod.nuage": "Nuage uniforme, rayon a0",
+    "mod.hydrogene": "Hydrogène (4,5 fois plus déformable)",
+    "ctl.E": "Champ appliqué",
+    "k.delta": "Décalage δ",
+    "f.delta": "δ/a0 = {r}",
+    "k.P": "Polarisation d'un gaz de ces atomes",
+    "f.P": "N = {N}\u00a0m⁻³ (273\u00a0K, 101\u202f325\u00a0Pa)",
+    "k.chi": "Rapport P/(ε0 E)",
+    "f.chi": "constant : c'est la susceptibilité χ de (10.8)",
+    "fig.caption": "Le décalage est si petit qu'il faut le grossir de mille à cent millions de fois, selon le champ, pour le voir ; le facteur s'affiche sous l'atome. Doublez le champ : δ et <b>P</b> doublent, le rapport <b>P</b>/(ε<sub>0</sub><var>E</var>) ne bouge pas. Pour un gaz d'atomes d'hydrogène dans les conditions normales (l'hydrogène réel forme des molécules H<sub>2</sub>), on trouverait κ = 1 + χ ≈ 1,000\u202f2 : l'air, à 1,000\u202f59, est du même ordre.",
+
+    "s3.sec": "Ce que P ne dit pas encore",
+    "s3.h2": "Des dipôles partout, et pourtant une charge nulle",
+    "s3.p1": "Dans un morceau d'isolant polarisé uniformément, chaque petit volume contient autant de charge positive que de négative : le décalage ne crée pas de charge nette à l'intérieur. Et pourtant, d'après la leçon « Constante diélectrique », les faces se chargent. Les deux sont vrais : sur une face, les charges décalées dépassent d'une épaisseur δ, et il n'y a personne pour les compenser.",
+    "s3.p2": "Combien ? Exactement <b>P</b>, par unité d'aire, sur une face perpendiculaire à <b>P</b> : c'est l'objet de la leçon « Charges de polarisation ». On y voit aussi qu'une polarisation qui varie d'un point à l'autre laisse une charge en volume. La polarisation est l'intermédiaire entre l'atome et le condensateur : elle se calcule à partir des atomes, et elle donne les charges.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Des atmosphères d'éther aux électrets",
+    "hist.intro": "L'idée qu'un isolant transmet l'action électrique en se polarisant, molécule par molécule, est antérieure à la découverte de l'électron et du noyau. Les uns après les autres, ils ont donné un contenu au mot.",
+    "hist.events": {
+      mossotti: { who: "Ottaviano Fabrizio Mossotti", what: "démontre qu'un diélectrique transmet l'action entre deux conducteurs par la polarisation de ses molécules.", context: "Il imagine chaque molécule entourée d'une atmosphère d'éther que le champ déforme ; le mémoire complet paraît en 1850." },
+      rutherford: { who: "Ernest Rutherford", what: "publie en mai 1911 l'analyse de la diffusion des particules alpha : la charge positive de l'atome est concentrée dans un noyau minuscule.", context: "L'image du noyau qui glisse dans son nuage, utilisée ici, suppose ce noyau." },
+      electret: { who: "Gerhard Sessler et James West", what: "déposent le 22 mai 1962, aux Bell Labs, le brevet du microphone à électret.", context: "Une feuille de PTFE garde une charge et une polarisation quasi permanentes, sans pile pour la maintenir." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      micro: { name: "Microphones à électret", text: "Une membrane mince fait face à une feuille isolante qui porte une charge et une polarisation figées : c'est un condensateur déjà chargé. Le son déplace la membrane, la capacité varie, une tension apparaît. James West estime qu'il s'en fabrique plus de deux milliards par an." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      sens: { prompt: "Un isolant est placé dans un champ dirigé vers la droite. Dans quel sens pointe sa polarisation P ?",
+        options: { a: "Vers la droite : les charges positives se décalent dans le sens du champ, et P va du négatif au positif.", b: "Vers la gauche : les électrons se décalent vers la gauche.", c: "Elle est perpendiculaire au champ.", d: "Elle est nulle, car l'isolant est neutre." },
+        why: "Le noyau va dans le sens de E, le nuage en sens inverse. Le vecteur δ va de la charge négative à la positive : il pointe dans le sens du champ, P aussi. Neutre ne veut pas dire non polarisé." },
+      ordre: { prompt: "Dans un champ de 10⁶\u00a0V·m⁻¹, de combien le noyau d'un atome de la taille de l'hydrogène se décale-t-il par rapport au centre de son nuage ?",
+        options: { a: "D'environ 10⁻¹⁰\u00a0m, la taille de l'atome.", b: "D'environ 10⁻¹³\u00a0m.", c: "D'environ 10⁻¹⁶\u00a0m, quelques millionièmes du rayon de l'atome.", d: "De rien : le noyau est trop lourd pour bouger." },
+        hint: "δ/a = E/E_atome, avec E_atome ≈ 5 × 10¹¹\u00a0V·m⁻¹.",
+        why: "δ/a0 ≈ 10⁶/(5 × 10¹¹) ≈ 2 × 10⁻⁶, donc δ ≈ 10⁻¹⁶\u00a0m. La masse n'intervient pas à l'équilibre : seules comptent les forces électriques." },
+      unite: { prompt: "Quelle est l'unité SI de la polarisation P ?",
+        options: { a: "Le C·m, comme un moment dipolaire.", b: "Le C·m⁻², comme une charge surfacique.", c: "Le V·m⁻¹, comme un champ.", d: "Elle n'a pas d'unité, comme κ." },
+        why: "Un moment dipolaire (C·m) par unité de volume (m³) donne des C·m⁻². Ce n'est pas un hasard : la leçon « Charges de polarisation » montre que P est la charge par unité d'aire qui apparaît sur une face." },
+      mecanisme: { prompt: "Deux isolants ont la même polarisation P. Dans le premier, tous les électrons se décalent de δ ; dans le second, un dixième d'entre eux se décale de 10 δ. Lequel produit les plus grandes charges sur ses faces ?",
+        options: { a: "Le premier : plus de charges sont déplacées.", b: "Le second : les décalages sont plus grands.", c: "Cela dépend de la masse des électrons.", d: "Aucun : à P égale, les charges des faces sont égales." },
+        why: "Seul le produit N q δ compte. Les charges des faces, et tout le champ créé hors des atomes, ne dépendent que de P." },
+      pression: { prompt: "On double la pression d'un gaz à température constante. Que devient, dans le même champ, sa polarisation ?",
+        options: { a: "Elle double : deux fois plus d'atomes par unité de volume, chacun aussi déformé.", b: "Elle ne change pas : chaque atome se déforme pareil.", c: "Elle est multipliée par quatre.", d: "Elle diminue, car les atomes se gênent." },
+        why: "P = N p, et N double avec la pression (gaz parfait). Dans un gaz dilué, le champ des voisins est négligeable ; dans un liquide ou un solide, il ne l'est plus (étape « Liquides, solides et ferroélectricité »)." },
+      lineaire: { prompt: "Pourquoi P est-elle proportionnelle à E dans un isolant ordinaire ?",
+        options: { a: "Parce que tous les isolants sont homogènes.", b: "Parce que le noyau est beaucoup plus lourd que les électrons.", c: "Parce que c'est une loi exacte de l'électrostatique.", d: "Parce que le décalage est minuscule devant l'atome : toute force de rappel est alors proportionnelle au décalage." },
+        why: "Pour δ ≪ a, la force de rappel est le premier terme de son développement, linéaire en δ : un ressort. La proportionnalité est une approximation, excellente tant que E ≪ 5 × 10¹¹\u00a0V·m⁻¹." },
+      exterieur: { prompt: "Un bloc d'isolant uniformément polarisé n'a aucune charge nette à l'intérieur. Crée-t-il un champ à l'extérieur ?",
+        options: { a: "Non : sans charge nette, il ne crée aucun champ.", b: "Oui : ses faces portent des charges, et le bloc est un grand dipôle.", c: "Seulement si on le relie à la terre.", d: "Oui, mais seulement à l'intérieur des atomes." },
+        why: "Sur les faces, les charges décalées ne sont plus compensées. Le bloc porte +P sur une face et \u2212P sur l'autre : c'est un dipôle de moment P × volume, et il crée un champ dehors (leçon « Charges de polarisation »)." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 10 (texte original en anglais), §10-2. Modèle du nuage uniforme, valeur exacte 9/2 de la polarisabilité de l'hydrogène, ordres de grandeur et figure propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

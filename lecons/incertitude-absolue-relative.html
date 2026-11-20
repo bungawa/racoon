@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Incertitude absolue et incertitude relative</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .share { display: grid; gap: 6px; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-mesurer" data-i18n="monde.mesurer"></a><span class="aux">›</span><a href="/racoon/etape?id=grandeurs-incertitudes" data-i18n="etape.grandeurs-incertitudes"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fond" href="/racoon/atlas?piste=fond" data-i18n="tag.piste"></a>
+      <span class="chip plain" data-i18n="tag.prereq"></span>
+      <span class="chip plain" data-i18n="tag.duree"></span>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n="s1.p1"></p>
+    <p data-i18n="s1.p2"></p>
+    <div class="box def"><b data-i18n="s1.def.title"></b>
+      <p data-i18n-html="s1.def.body"></p>
+    </div>
+    <div class="eq">
+      <math display="block"><msub><mi>u</mi><mi>r</mi></msub><mo>=</mo><mfrac><mrow><mi>u</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow></mfrac></math>
+      
+    </div>
+    <p class="validite" data-i18n="eq1.validite"></p>
+    <p data-i18n="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n="s2.p1"></p>
+    <div class="eq">
+      <math display="block"><mi>u</mi><mo>(</mo><mover><mi>x</mi><mo>‾</mo></mover><mo>)</mo><mo>=</mo><mfrac><msub><mi>s</mi><mi>x</mi></msub><msqrt><mi>n</mi></msqrt></mfrac></math>
+      
+    </div>
+    <p class="validite" data-i18n="eq2.validite"></p>
+    <figure>
+      <div class="panel">
+        <div class="controls">
+          <button class="btn tinted" type="button" id="a1" data-i18n="typeA.one"></button>
+          <button class="btn tinted" type="button" id="a10" data-i18n="typeA.ten"></button>
+          <button class="btn tinted" type="button" id="a0" data-i18n="typeA.clear"></button>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="typeA.n"></span><span class="v" id="an"></span></div>
+          <div class="stat"><span class="k" data-i18n="typeA.mean"></span><span class="v" id="am"></span></div>
+          <div class="stat"><span class="k" data-i18n="typeA.s"></span><span class="v" id="as"></span><span class="f" data-i18n="typeA.s.f"></span></div>
+          <div class="stat"><span class="k" data-i18n="typeA.u"></span><span class="v" id="au"></span><span class="f" data-i18n="typeA.u.f"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n="typeA.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq">
+      <math display="block"><mi>u</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mfrac><mi>a</mi><msqrt><mn>3</mn></msqrt></mfrac></math>
+      
+    </div>
+    <p class="validite" data-i18n="eq3.validite"></p>
+    <div class="box rem"><b data-i18n="s2.rem.title"></b>
+      <p data-i18n="s2.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n="s3.p1"></p>
+    <div class="box prop"><b data-i18n="s3.prop.title"></b>
+      <p data-i18n-html="s3.prop.sum"></p>
+      <p data-i18n-html="s3.prop.prod"></p>
+      <p data-i18n-html="s3.prop.pow"></p>
+    </div>
+    <div class="eq">
+      <math display="block"><mfrac><mrow><mi>u</mi><mo>(</mo><mi>g</mi><mo>)</mo></mrow><mi>g</mi></mfrac><mo>=</mo><msqrt><msup><mrow><mo>(</mo><mfrac><mrow><mi>u</mi><mo>(</mo><mi>L</mi><mo>)</mo></mrow><mi>L</mi></mfrac><mo>)</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo>(</mo><mn>2</mn><mfrac><mrow><mi>u</mi><mo>(</mo><mi>T</mi><mo>)</mo></mrow><mi>T</mi></mfrac><mo>)</mo></mrow><mn>2</mn></msup></msqrt></math>
+      
+    </div>
+    <p class="validite" data-i18n="eq4.validite"></p>
+    <p data-i18n="s3.p2"></p>
+    <figure>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="ul" data-i18n="pend.uL"></label><output id="ulv" for="ul"></output></div>
+            <input id="ul" type="range" min="0.5" max="20" step="0.5" value="1"></div>
+          <div class="ctl"><div class="row"><label for="ut" data-i18n="pend.uT"></label><output id="utv" for="ut"></output></div>
+            <input id="ut" type="range" min="1" max="100" step="1" value="10"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="pend.g"></span><span class="v" id="pg"></span><span class="f" id="pgu"></span></div>
+          <div class="stat"><span class="k" data-i18n="pend.r"></span><span class="v" id="pr"></span></div>
+        </div>
+        <div class="share"><div class="row2"><span data-i18n="pend.shareL"></span><span class="readout" id="psl"></span></div><div class="meter"><i id="pml"></i></div></div>
+        <div class="share"><div class="row2"><span data-i18n="pend.shareT"></span><span class="readout" id="pst"></span></div><div class="meter"><i id="pmt"></i></div></div>
+      </div>
+      <figcaption data-i18n="pend.caption"></figcaption>
+    </figure>
+    <figure class="chart">
+      <svg id="mc" role="img" data-i18n-attr="aria-label:mc.aria"></svg>
+      <div class="controls"><button class="btn tinted" type="button" id="mcgo" data-i18n="mc.again"></button><span class="readout" id="mcread"></span></div>
+      <figcaption data-i18n="mc.caption"></figcaption>
+    </figure>
+    <div class="box warn"><b data-i18n="s3.warn.title"></b>
+      <p data-i18n="s3.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n="s4.p1"></p>
+    <div class="box def"><b data-i18n="s4.def.title"></b>
+      <p data-i18n="s4.def.body"></p>
+    </div>
+    <div class="eq">
+      <math display="block"><mi>z</mi><mo>=</mo><mfrac><mrow><mo>|</mo><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mo>|</mo></mrow><msqrt><mi>u</mi><msup><mrow><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>)</mo></mrow><mn>2</mn></msup><mo>+</mo><mi>u</mi><msup><mrow><mo>(</mo><msub><mi>x</mi><mn>2</mn></msub><mo>)</mo></mrow><mn>2</mn></msup></msqrt></mfrac></math>
+      
+    </div>
+    <p class="validite" data-i18n="eq5.validite"></p>
+    <p data-i18n="s4.p2"></p>
+    <figure>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="g2" data-i18n="cmp.g2"></label><output id="g2v" for="g2"></output></div>
+            <input id="g2" type="range" min="9.60" max="10.00" step="0.01" value="9.75"></div>
+          <div class="ctl"><div class="row"><label for="u2" data-i18n="cmp.u2"></label><output id="u2v" for="u2"></output></div>
+            <input id="u2" type="range" min="0.01" max="0.20" step="0.01" value="0.04"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="cmp.g1"></span><span class="v" id="cg1"></span><span class="f" id="cu1"></span></div>
+          <div class="stat"><span class="k" data-i18n="cmp.z"></span><span class="v" id="cz"></span><span class="f" id="cverdict"></span></div>
+        </div>
+        <div class="meter" id="cmeter"><i id="cbar"></i></div>
+      </div>
+      <figcaption data-i18n="cmp.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+/* typographie française partout, sauf le <h1> : il reste identique au titre de lecons/index.json */
+const main = document.querySelector("main");
+F.autoTypo(main);
+document.title = t("title");
+const $ = id => document.getElementById(id);
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+const G_UNIT = "m·s⁻²";
+const written = (x, u, unit) => { const r = Incert.round(x, u); return r.decimals == null ? { x: F.qty(F.num(x, 4), unit), u: F.qty("0", unit) }
+  : { x: F.qty(F.fix(r.x, r.decimals), unit), u: F.qty(F.fix(r.u, r.decimals), unit) }; };
+const pct = r => F.qty(F.num(r * 100, 2), "%");
+
+/* ---------- type A : chronométrer 10 périodes à la main ---------- */
+(() => {
+  const rand = Quiz.rng(17), TRUE10 = 20.06, SIGMA = 0.10;     // s : 10 périodes, dispersion du déclenchement manuel
+  let xs = [];
+  const add = n => { for (let i = 0; i < n; i++) xs.push(TRUE10 + SIGMA * Incert.gauss(rand)); show(); };
+  function show() {
+    const a = Incert.typeA(xs);
+    $("an").textContent = F.num(a.n, 6);
+    $("am").textContent = a.n ? F.qty(F.fix(a.mean, 3), "s") : "–";
+    $("as").textContent = a.n > 1 ? F.qty(F.fix(a.s, 3), "s") : "–";
+    $("au").textContent = a.n > 1 ? F.qty(F.fix(a.u, 3), "s") : "–";
+  }
+  $("a1").onclick = () => add(1); $("a10").onclick = () => add(10); $("a0").onclick = () => { xs = []; show(); };
+  add(5);
+})();
+
+/* ---------- pendule : contributions et Monte-Carlo ---------- */
+const L0 = 1.000, T0 = 2.006;
+let current = Incert.pendulum(L0, T0, 0.001, 0.010);
+const onPendulum = [];
+(() => {
+  const ul = $("ul"), ut = $("ut");
+  function upd() {
+    const uL = ul.value / 1000, uT = ut.value / 1000;
+    current = Incert.pendulum(L0, T0, uL, uT);
+    $("ulv").textContent = F.si(uL, "m"); $("utv").textContent = F.si(uT, "s");
+    const w = written(current.g, current.u, G_UNIT);
+    $("pg").textContent = w.x; $("pgu").textContent = t("pend.u", { u: w.u });
+    $("pr").textContent = pct(current.r);
+    $("psl").textContent = pct(current.shareL); $("pst").textContent = pct(current.shareT);
+    $("pml").style.width = (100 * current.shareL).toFixed(1) + "%"; $("pmt").style.width = (100 * current.shareT).toFixed(1) + "%";
+    onPendulum.forEach(f => f());
+  }
+  ul.oninput = ut.oninput = upd; upd();
+})();
+
+(() => {
+  const svg = $("mc"), N = 20000; let seed = 1;
+  function draw() {
+    const p = current, uL = $("ul").value / 1000, uT = $("ut").value / 1000;
+    const gs = Incert.monteCarlo(L0, T0, uL, uT, N, Quiz.rng(seed));
+    const arr = Array.from(gs), m = Incert.mean(arr), s = Incert.stdev(arr);
+    const lo = p.g - 4.5 * p.u, hi = p.g + 4.5 * p.u, bins = 45, c = Incert.histogram(arr, lo, hi, bins), w = (hi - lo) / bins;
+    const peak = N * w / (p.u * Math.sqrt(2 * Math.PI)), ymax = Math.max(peak, ...c) * 1.1;
+    svg.innerHTML = "";
+    const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 260, pad: { b: 44 },
+      x: { domain: [lo, hi], label: t("mc.x") }, y: { domain: [0, ymax], label: t("mc.y") } });
+    c.forEach((k, i) => Plot.el("rect", { x: x(lo + i * w) + 0.5, y: y(k), width: Math.max(0, x(lo + w) - x(lo) - 1), height: y(0) - y(k), class: "area" }, g));
+    let d = "";
+    for (let i = 0; i <= 200; i++) { const v = lo + (hi - lo) * i / 200, z = (v - p.g) / p.u; d += (i ? "L" : "M") + x(v).toFixed(1) + " " + y(peak * Math.exp(-z * z / 2)).toFixed(1); }
+    Plot.el("path", { d, class: "curve" }, g);
+    [p.g - p.u, p.g + p.u].forEach(v => Plot.el("line", { x1: x(v), x2: x(v), y1: y(0), y2: y(ymax), class: "ref" }, g));
+    const inside = arr.filter(v => Math.abs(v - p.g) <= p.u).length / N;
+    $("mcread").textContent = t("mc.readout", { m: F.qty(F.fix(m, 3), G_UNIT), s: F.qty(F.num(s, 2), G_UNIT), u: F.qty(F.num(p.u, 2), G_UNIT), f: F.qty(F.num(inside * 100, 2), "%") });
+  }
+  $("mcgo").onclick = () => { seed++; draw(); };
+  onPendulum.push(draw); draw();
+})();
+
+/* ---------- écart normalisé ---------- */
+(() => {
+  const g2 = $("g2"), u2 = $("u2");
+  function upd() {
+    const r1 = Incert.round(current.g, current.u), x1 = r1.x, v1 = r1.u, x2 = +g2.value, v2 = +u2.value;
+    const z = Incert.zScore(x1, v1, x2, v2);
+    $("g2v").textContent = F.qty(F.fix(x2, 2), G_UNIT); $("u2v").textContent = F.qty(F.fix(v2, 2), G_UNIT);
+    const w = written(current.g, current.u, G_UNIT);
+    $("cg1").textContent = w.x; $("cu1").textContent = t("pend.u", { u: w.u });
+    $("cz").textContent = F.fix(z, 1);
+    $("cverdict").textContent = t(z <= 2 ? "cmp.ok" : "cmp.ko");
+    $("cmeter").classList.toggle("over", z > 2);
+    $("cbar").style.width = Math.min(100, z / 4 * 100).toFixed(1) + "%";
+  }
+  g2.oninput = u2.oninput = upd; onPendulum.push(upd); upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["legendre", 1805, "idea"], ["gauss", 1809, "idea"], ["student", 1908, "idea"], ["montecarlo", 1949, "idea"],
+    ["inc1", 1980, "idea"], ["gum", 1993, "use"], ["jcgm101", 2008, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["codata", "labos", "tp"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["relative", "a"], ["pendule", "a"], ["quadrature", "a"], ["typeA", "a"], ["typeB", "a"], ["ecriture", "a"], ["ecart", "a"], ["difference", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => { const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) }; }), { t, seed: 3 });
+})();
+</script>
+</body>
+</html>

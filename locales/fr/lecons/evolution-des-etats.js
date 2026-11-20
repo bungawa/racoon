@@ -1,0 +1,101 @@
+/* Leçon « L'évolution des états dans le temps » (Feynman III.8.4) : textes en français.
+   Une autre langue = locales/<langue>/lecons/evolution-des-etats.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "L'évolution des états dans le temps",
+    "crumb.jour": "L'évolution des états",
+    "h1": "L'évolution des états dans le temps",
+    "lede": "Laisser passer le temps, c'est faire traverser au système un appareil de plus. On sait combiner les appareils : il suffit donc de connaître l'effet d'un temps très court, et ce qui le décrit est une matrice, la matrice hamiltonienne.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : l'étape « Vecteurs d'état et base »",
+
+    "s1.sec": "Attendre",
+    "s1.h2": "Le temps comme un appareil",
+    "s1.p1": "Le système : un atome ou une molécule, préparé dans l'état |φ⟩ à l'instant <var>t</var><sub>1</sub>, sans être observé jusqu'à <var>t</var><sub>2</sub>. Ce qu'il devient pendant l'attente se décrit comme un appareil : l'amplitude de le trouver ensuite dans l'état |χ⟩ s'écrit ⟨χ|<var>U</var>(<var>t</var><sub>2</sub>, <var>t</var><sub>1</sub>)|φ⟩. Connaître <var>U</var>, c'est connaître la dynamique. Quand l'attente va de l'infini passé à l'infini futur, <var>U</var> devient la matrice <var>S</var> des physiciens des collisions, qui ne regardent que ce qui entre et ce qui sort. Deux attentes successives forment une attente :",
+    "val.8.30": "Exacte : c'est la règle de composition de deux appareils en série, appliquée à deux durées qui se suivent ; elle suppose seulement que rien n'observe le système à l'instant <var>t</var><sub>2</sub>.",
+    "s1.p2": "On découpe donc une longue attente en attentes courtes. Choisissons une base |<var>i</var>⟩, fixe dans le temps, et notons <var>C</var><sub><var>i</var></sub>(<var>t</var>) = ⟨<var>i</var>|ψ(<var>t</var>)⟩ les amplitudes de l'état à l'instant <var>t</var>. Une attente Δ<var>t</var> les mélange par une matrice :",
+    "val.8.35": "Exacte : c'est la décomposition sur une base complète, ⟨<var>i</var>|<var>U</var>|ψ⟩ = Σ ⟨<var>i</var>|<var>U</var>|<var>j</var>⟩⟨<var>j</var>|ψ⟩, avec des états de base qui ne changent pas eux-mêmes avec le temps. Toute la physique est dans les nombres <var>U</var><sub><var>ij</var></sub>.",
+
+    "s2.sec": "La loi",
+    "s2.h2": "Un temps très court",
+    "s2.p1": "Quand Δ<var>t</var> tend vers zéro, rien ne doit arriver : <var>U</var><sub><var>ij</var></sub> tend vers δ<sub><var>ij</var></sub>, qui vaut 1 si <var>i</var> = <var>j</var> et 0 sinon. Pour un Δ<var>t</var> petit, l'écart est proportionnel à Δ<var>t</var>. On écrit le coefficient sous une forme choisie pour la suite, avec un facteur \u2212<var>i</var>/ℏ mis à part :",
+    "val.8.37": "Approximation : premier ordre en Δ<var>t</var>. Le terme suivant est d'ordre (<var>E</var>Δ<var>t</var>/ℏ)², <var>E</var> l'ordre de grandeur des éléments de <var>H</var> ; le développement ne vaut que pour Δ<var>t</var> ≪ ℏ/<var>E</var>. Il devient exact à la limite Δ<var>t</var> → 0, qui donne (8.39).",
+    "s2.p2": "Reporté dans (8.35), cela donne <var>C</var><sub><var>i</var></sub>(<var>t</var> + Δ<var>t</var>) = Σ [δ<sub><var>ij</var></sub> \u2212 (<var>i</var>/ℏ)<var>H</var><sub><var>ij</var></sub>Δ<var>t</var>] <var>C</var><sub><var>j</var></sub>(<var>t</var>). On fait passer <var>C</var><sub><var>i</var></sub>(<var>t</var>) à gauche, on divise par Δ<var>t</var>, et la limite est une équation différentielle :",
+    "val.8.39": "Exacte dans son cadre : des états de base fixes et une base complète. Ce qui est approché, c'est toujours la matrice <var>H</var><sub><var>ij</var></sub> elle-même : on ne la connaît que pour un modèle du système, qui retient quelques états et en oublie d'autres. Sans champ extérieur variable, <var>H</var><sub><var>ij</var></sub> ne dépend pas de <var>t</var>.",
+    "s2.p3": "C'est la loi de la dynamique quantique : la variation de chaque amplitude est une combinaison linéaire de toutes les amplitudes à cet instant. Les coefficients <var>H</var><sub><var>ij</var></sub> forment la matrice hamiltonienne, étudiée dans « La matrice hamiltonienne ». Le facteur <var>i</var>ℏ est là pour que <var>H</var> soit une énergie : un état seul d'énergie <var>E</var> retrouve alors l'amplitude e<sup>\u2212<var>iEt</var>/ℏ</sup> d'un état stationnaire.",
+
+    "s3.sec": "Interaction",
+    "s3.h2": "Avancer pas à pas",
+    "s3.p1": "Le système : deux états couplés, |1⟩ et |2⟩, de même énergie <var>E</var><sub>0</sub>, avec <var>H</var><sub>12</sub> = <var>H</var><sub>21</sub> = \u2212<var>A</var>, comme dans « La molécule d'ammoniac ». <var>A</var> est fixé par la fréquence mesurée de l'ammoniac, 23,87\u00a0GHz. Le système part de |1⟩. La courbe pleine est la probabilité exacte de le trouver en |2⟩. Les points appliquent la règle du temps court (8.37), un pas après l'autre : c'est ce que ferait un calcul numérique naïf.",
+    "fig.aria": "Probabilité d'être dans l'état 2 en fonction du temps : solution exacte et pas successifs de la règle du temps court",
+    "fig.legend.exacte": "solution exacte de (8.39)",
+    "fig.legend.euler": "pas répétés de (8.37)",
+    "fig.x": "temps t (ps)",
+    "fig.y": "probabilité d'être en |2⟩",
+    "fig.n": "Pas par période",
+    "fig.e0": "Énergie E₀, en unités de A",
+    "fig.k.pas": "Durée d'un pas Δ<var>t</var>",
+    "fig.f.pas": "plus grand |<var>E</var>|Δ<var>t</var>/ℏ : {eps}",
+    "fig.k.norme": "Probabilité totale après deux périodes",
+    "fig.f.norme": "prévue : moyenne de (1 + (<var>E</var>Δ<var>t</var>/ℏ)²)<sup><var>n</var></sup> sur les deux niveaux, {th} ; exacte : 1",
+    "fig.k.ecart": "Plus grand écart sur la probabilité d'être en |2⟩",
+    "fig.f.bon": "les pas suivent la solution exacte à 2\u00a0% près",
+    "fig.f.mauvais": "les pas s'écartent de la solution exacte",
+    "fig.caption": "Avec peu de pas, la probabilité totale grandit à chaque pas : la règle du temps court n'est juste qu'au premier ordre. Augmenter <var>E</var><sub>0</sub> ne change rien à la courbe exacte, qui ne dépend que de <var>A</var> ; il faut pourtant des pas plus courts pour la suivre, car c'est la plus grande énergie qui fixe l'erreur.",
+    "s3.p2": "La limite Δ<var>t</var> → 0 n'est pas une formalité : (8.39) est exacte, ses pas finis ne le sont pas. La courbe exacte, elle, ne voit que l'écart entre les deux niveaux : <var>E</var><sub>0</sub> n'ajoute qu'une phase commune aux deux amplitudes, invisible dans les probabilités.",
+
+    "s4.sec": "Décrire le système",
+    "s4.h2": "Ce que la loi suppose",
+    "s4.p1": "La loi (8.39) ne dit rien de <var>H</var>. Elle suppose une base d'états fixes, et un système qu'on n'observe pas pendant l'évolution. Pour l'ammoniac, on garde deux états, l'azote d'un côté ou de l'autre du plan des hydrogènes, et l'on oublie la rotation, la vibration et le mouvement d'ensemble : c'est valable tant que l'énergie fournie au système reste bien inférieure à celle qui exciterait ces autres mouvements.",
+    "s4.p2": "Le nombre sans dimension qui décide d'un pas de calcul est <var>E</var>Δ<var>t</var>/ℏ, l'angle de phase tourné pendant le pas. L'énergie <var>E</var> dépend du zéro choisi : on peut lui ajouter une constante, qui ne change aucune probabilité, mais qui change ce nombre.",
+    "sys.title": "Le système décrit : les temps de l'ammoniac",
+    "sys.body": "Avec <var>A</var> = {A}, le temps propre de l'échange est ℏ/<var>A</var> = {tau}, et la probabilité revient en |1⟩ en {T}. Si l'on comptait dans <var>E</var><sub>0</sub> l'énergie de masse de la molécule, <var>m</var><var>c</var>² ≈ {mc2}, il faudrait des pas de l'ordre de ℏ/(<var>m</var><var>c</var>²) ≈ {tauM}, {r} fois plus courts : on choisit le zéro des énergies pour ne garder que les écarts utiles.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "De la mécanique des matrices à la loi d'évolution",
+    "hist.intro": "La loi d'évolution sous forme de matrice est née en quelques mois, en 1925, à Göttingen et à Cambridge.",
+    "hist.events": {
+      heisenberg: { who: "Werner Heisenberg", what: "propose de ne garder en théorie que des grandeurs observables, rangées en tableaux d'amplitudes de transition entre états.", context: "Article reçu le 29 juillet par la Zeitschrift für Physik ; il est à l'origine de la mécanique des matrices." },
+      bornjordan: { who: "Max Born et Pascual Jordan", what: "reconnaissent dans les tableaux de Heisenberg des matrices, et écrivent leurs équations du mouvement.", context: "Article « Zur Quantenmechanik », reçu le 27 septembre par la Zeitschrift für Physik." },
+      dirac: { who: "Paul Dirac", what: "écrit à son tour les équations fondamentales de la mécanique quantique, à partir du même travail de Heisenberg.", context: "Article « The fundamental equations of quantum mechanics », aux Proceedings of the Royal Society." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      qubits: { name: "Le pilotage des qubits", text: "Un bit quantique est un système à deux états. Pour concevoir les impulsions de champ qui le font basculer, on intègre (8.39) avec un hamiltonien qui dépend du temps, par des pas courts devant ℏ divisé par les énergies en jeu, exactement comme dans la figure, mais avec des méthodes d'ordre plus élevé." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      attente: { prompt: "Pourquoi peut-on traiter une attente comme un appareil ?",
+        options: { a: "Parce que le temps est une coordonnée comme les autres, en relativité.", b: "Parce qu'une attente prend un état et en rend un autre, et qu'on décrit cet effet par des amplitudes ⟨χ|U|φ⟩, comme pour un filtre.", c: "Parce qu'on mesure le système pendant l'attente.", d: "Parce que les amplitudes ne changent pas pendant une attente." },
+        why: "Un appareil, en mécanique quantique, c'est ce qui transforme un état d'entrée en état de sortie, décrit par ses amplitudes. Une attente sans observation fait exactement cela." },
+      produit: { prompt: "Pourquoi suffit-il de connaître l'effet d'un temps très court ?",
+        options: { a: "Parce que les temps longs n'ont pas de sens en mécanique quantique.", b: "Parce que les amplitudes d'un temps long sont les sommes de celles des temps courts.", c: "Parce qu'un système ne change que pendant les temps courts.", d: "Parce qu'une attente longue est le produit des attentes courtes qui la composent, (8.30)." },
+        hint: "Deux appareils en série se combinent par un produit de matrices.",
+        why: "U(t₃, t₁) = U(t₃, t₂) U(t₂, t₁) : on reconstruit toute l'évolution en multipliant les matrices des pas successifs, ce que l'équation différentielle (8.39) fait à la limite." },
+      delta: { prompt: "Que vaut U_ij(t + Δt, t) quand Δt tend vers zéro ?",
+        options: { a: "δ_ij : 1 si i = j, 0 sinon ; rien n'arrive en un temps nul.", b: "0 pour tous i et j.", c: "1 pour tous i et j.", d: "H_ij." },
+        why: "En un temps nul, l'état ne change pas : chaque amplitude reste ce qu'elle était. La matrice est l'identité, et l'écart à l'identité est proportionnel à Δt." },
+      i: { prompt: "Pourquoi écrit-on le coefficient de Δt sous la forme \u2212(i/ħ)H_ij ?",
+        options: { a: "Parce que H_ij est toujours imaginaire.", b: "Par convention, sans conséquence physique.", c: "Pour que H soit une énergie : un état seul évolue alors en e^(\u2212iEt/ħ), la loi des états stationnaires, et la conservation de la probabilité impose à H d'être hermitienne.", d: "Pour que la probabilité diminue avec le temps." },
+        why: "Le facteur i fait tourner les phases au lieu de faire croître ou décroître les modules ; ħ convertit une énergie en pulsation, ω = E/ħ." },
+      euler: { prompt: "Un calcul applique la règle du temps court avec des pas Δt finis. Que devient la probabilité totale ?",
+        options: { a: "Elle reste exactement égale à 1.", b: "Elle croît d'environ (EΔt/ħ)² à chaque pas : la règle n'est juste qu'au premier ordre.", c: "Elle décroît à chaque pas.", d: "Elle oscille autour de 1 sans dérive." },
+        hint: "Le module de 1 \u2212 iε est √(1 + ε²).",
+        why: "Sur un état d'énergie E, un pas multiplie l'amplitude par 1 \u2212 iEΔt/ħ, de module carré 1 + (EΔt/ħ)² > 1. L'erreur disparaît quand Δt tend vers zéro." },
+      base: { prompt: "Que suppose (8.39) sur la base |i⟩ ?",
+        options: { a: "Qu'elle tourne avec le système.", b: "Qu'elle est faite d'états d'énergie définie.", c: "Qu'elle contient exactement deux états.", d: "Qu'elle est complète et que ses états sont fixes, indépendants du temps." },
+        why: "On décompose l'état sur des états de base qui ne bougent pas ; tout ce qui change est dans les amplitudes C_i(t). N'importe quelle base fixe convient, pas seulement les états stationnaires." },
+      phase: { prompt: "On ajoute une même constante aux deux énergies diagonales d'un système à deux états. Qu'est-ce qui change ?",
+        options: { a: "Seulement une phase commune aux deux amplitudes : aucune probabilité ne change.", b: "La période d'échange entre les deux états.", c: "La probabilité de trouver le système dans l'état 2.", d: "Rien du tout, pas même les phases." },
+        why: "Une constante ajoutée à H multiplie toutes les amplitudes par le même facteur e^(\u2212iεt/ħ). Les probabilités ne voient que les écarts d'énergie. Un calcul pas à pas, lui, voit la constante : son erreur dépend de la plus grande énergie." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 8, §8-4 (texte original en anglais). Fréquence d'inversion de l'ammoniac : valeur arrondie de la raie (3, 3), 23,87\u00a0GHz. Histoire : W. Heisenberg, Z. Phys. 33, 879 (1925) ; M. Born et P. Jordan, Z. Phys. 34, 858 (1925) ; P. A. M. Dirac, Proc. R. Soc. A 109, 642 (1925). Calculs propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

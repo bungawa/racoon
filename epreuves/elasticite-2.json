@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["rotation", "a"],
+  ["moule", "b"],
+  ["volume", "c"],
+  ["seisme", "d"],
+  ["fer", "a"],
+  ["cycle", "b"],
+  ["cauchy", "c"],
+  ["craie", "d"]
+ ]
+}

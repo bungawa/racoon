@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["plaque", "a"],
+  ["gaz", "b"],
+  ["cinematique", "c"],
+  ["catheter", "d"],
+  ["laminaire", "a"],
+  ["diffusion", "b"],
+  ["maquette", "c"],
+  ["pression", "d"]
+ ]
+}

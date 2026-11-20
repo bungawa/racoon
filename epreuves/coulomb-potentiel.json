@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["antenne", "a"],
+  ["bobine", "b"],
+  ["zero", "c"],
+  ["baguette", "d"],
+  ["travail", "a"],
+  ["carre", "b"],
+  ["pente", "c"],
+  ["exposant", "d"]
+ ]
+}

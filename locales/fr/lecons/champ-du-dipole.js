@@ -1,0 +1,98 @@
+/* Leçon « Champ du dipôle et gradient de son potentiel » (Feynman II.6.4, avec le champ de §6-2) : textes en français.
+   Une autre langue = locales/<langue>/lecons/champ-du-dipole.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Champ du dipôle et gradient de son potentiel",
+    "crumb.jour": "Champ du dipôle",
+    "h1": "Champ du dipôle et gradient de son potentiel",
+    "eq.cos": "cos",
+    "eq.sin": "sin",
+    "eq.int": "int",
+    "lede": "Le champ d'un dipôle décroît comme 1/r³ : doubler la distance le divise par huit. Il est deux fois plus fort sur l'axe que dans le plan médiateur, et de sens opposé. Son potentiel s'obtient sans calcul de racines : déplacer une charge revient à déplacer le point d'observation en sens inverse, et le dipôle n'est que la dérivée du potentiel d'une charge.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : le dipôle électrique",
+
+    "s1.sec": "Le champ",
+    "s1.h2": "Le champ, dérivée du potentiel",
+    "s1.p1": "Le champ est \u2212∇φ (leçon « Le champ, gradient du potentiel »). Dérivez le potentiel du dipôle, (6.13), écrit <var>K</var><var>p</var><var>z</var>/<var>r</var><sup>3</sup> avec <var>z</var> le long de <var>p</var>. La composante le long de l'axe et la composante perpendiculaire, dans le plan qui contient l'axe et le point, ne dépendent que de <var>r</var> et de l'angle θ à l'axe.",
+    "val.6.14": "Approximation : dipôle ponctuel, distance <var>r</var> ≫ <var>d</var> à la paire. Sur l'axe, le rapport du dipôle au champ exact vaut (1 \u2212 (<var>d</var>/2<var>r</var>)<sup>2</sup>)<sup>2</sup> : erreur relative d'environ (<var>d</var>/<var>r</var>)<sup>2</sup>/2, soit 0,5\u00a0% à <var>r</var> = 10<var>d</var>. La figure la mesure en tout point.",
+    "val.6.15": "Approximation : même domaine que (6.14). <var>E</var><sub>⊥</sub> est nulle sur l'axe (θ = 0) et dans le plan médiateur (θ = 90°), où le champ est parallèle à l'axe.",
+    "s1.p2": "Sur l'axe, θ = 0 : <var>E</var> = 2<var>K</var><var>p</var>/<var>r</var><sup>3</sup>, dans le sens de <var>p</var>. Dans le plan médiateur, θ = 90° : <var>E</var> = <var>K</var><var>p</var>/<var>r</var><sup>3</sup>, en sens opposé. La norme vaut <var>K</var><var>p</var>√(3 cos<sup>2</sup>θ + 1)/<var>r</var><sup>3</sup> : elle ne varie que d'un facteur 2 avec la direction, mais d'un facteur 8 quand la distance double. Le champ d'une charge seule ne décroît que comme 1/<var>r</var><sup>2</sup> : les deux champs de la paire se compensent presque, et c'est leur écart qu'on voit.",
+
+    "s2.sec": "Le potentiel comme gradient",
+    "s2.h2": "Déplacer la charge, ou déplacer le point",
+    "s2.p1": "Un argument physique donne (6.13) d'un coup. Le potentiel en P d'une charge placée en <var>z</var> = Δ<var>z</var> est celui d'une charge à l'origine, observée en P déplacé de \u2212Δ<var>z</var> : seule la position relative compte. Au premier ordre, il vaut donc φ<sub>0</sub> \u2212 Δ<var>z</var> ∂φ<sub>0</sub>/∂<var>z</var>. Faites-le pour +<var>q</var> en +<var>d</var>/2 et pour \u2212<var>q</var> en \u2212<var>d</var>/2 : les termes en φ<sub>0</sub> s'annulent, les dérivées s'ajoutent. Il reste \u2212<var>q</var><var>d</var> fois la dérivée, le long de l'axe, du potentiel d'une charge unité.",
+    "val.6.20": "Approximation : premier ordre en <var>d</var>/<var>r</var>, d'où la dérivée à la place de la différence des deux potentiels ; erreur relative de l'ordre de (<var>d</var>/<var>r</var>)<sup>2</sup>. Le dipôle ponctuel est la limite <var>d</var> → 0 à <var>p</var> = <var>q</var><var>d</var> fixé, où elle devient exacte. Φ<sub>0</sub> est le potentiel d'une charge de 1\u00a0C, en V·C<sup>\u22121</sup>.",
+    "s2.p2": "<var>p</var>·∇ est la dérivée dans la direction de <var>p</var>, multipliée par <var>p</var>. Comme ∇(1/<var>r</var>) = \u2212<var>r</var>/<var>r</var><sup>3</sup>, on retrouve <var>K</var><var>p</var>·<var>r</var>/<var>r</var><sup>3</sup>. La recette vaut pour toute source : le potentiel d'une paire de sources opposées, très proches, est la dérivée du potentiel d'une source. La figure trace les lignes de champ de la paire, calculées pas à pas, et celles du dipôle ponctuel, d'équation <var>r</var> = <var>C</var> sin<sup>2</sup>θ.",
+    "fig.aria": "Lignes de champ d'une paire de charges opposées et lignes du dipôle ponctuel équivalent, avec le champ en un point sonde réglable",
+    "fig.legend.paire": "lignes de la paire, ±1\u00a0nC",
+    "fig.legend.point": "lignes du dipôle ponctuel, r = C sin²θ",
+    "fig.legend.sonde": "point sonde ; flèche fine : (6.14) et (6.15)",
+    "fig.d": "Écart d entre les charges",
+    "fig.r": "Distance r de la sonde au centre",
+    "fig.th": "Angle θ de la sonde avec l'axe",
+    "fig.deg": "{a}\u00a0°",
+    "fig.k.ez": "E<sub>z</sub> du dipôle, (6.14)",
+    "fig.k.ep": "E<sub>⊥</sub> du dipôle, (6.15)",
+    "fig.f.exact": "paire exacte : {v}",
+    "fig.k.err": "Écart du dipôle à la paire",
+    "fig.v.err": "{e}\u00a0%",
+    "fig.f.err": "d/r = {x}",
+    "fig.caption": "La figure couvre 32\u00a0cm × 21\u00a0cm. La flèche épaisse est le champ exact de la paire, la fine celui du dipôle ponctuel, à la même échelle. Loin de la paire, les lignes de la paire et du dipôle se confondent, et les deux flèches aussi. Rapprochez la sonde, ou écartez les charges : quand d/r approche 1, chaque charge se fait sentir séparément, et le champ n'est plus celui d'un dipôle.",
+
+    "s3.sec": "Une sphère polarisée",
+    "s3.h2": "Deux boules décalées : un dipôle dehors, un champ uniforme dedans",
+    "s3.p1": "Une boule uniformément chargée +ρ, et une boule \u2212ρ de même rayon <var>a</var>, décalée de <var>s</var> le long de <var>z</var>. Là où elles se recouvrent, les charges s'annulent ; il ne reste qu'une mince couche de charge à la surface, d'épaisseur <var>s</var> cos θ, positive d'un côté, négative de l'autre. Dehors, chaque boule agit comme une charge ponctuelle à son centre (leçon « Champ d'une sphère chargée ») : l'ensemble est un dipôle de moment <var>Q</var><var>s</var>. Dedans, chaque boule crée un champ ρ<var>r</var>/(3ε<sub>0</sub>) depuis son centre ; la somme des deux ne dépend plus du point.",
+    "val.boules": "Approximation pour σ = σ<sub>0</sub> cos θ avec σ<sub>0</sub> = ρ<var>s</var> : premier ordre en <var>s</var>/<var>a</var>. Le champ dedans, dans toute la zone commune aux deux boules, est exact pour tout décalage <var>s</var> < 2<var>a</var>. Le champ dehors est exactement celui de deux charges ponctuelles décalées de <var>s</var> : dipolaire à (<var>s</var>/<var>r</var>)<sup>2</sup> près.",
+    "sys.title": "Décrire le système avant d'appliquer la loi",
+    "sys1.body": "Une boule de cuivre de 1\u00a0cm de rayon : ses électrons libres, environ 8,47 × 10<sup>28</sup> par mètre cube, forment la boule \u2212ρ, les ions la boule +ρ, avec ρ ≈ {rho}\u00a0C·m<sup>\u22123</sup>. Décalez les électrons de <var>s</var> = {s}, cent fois moins que la taille d'un atome : <var>s</var>/<var>a</var> = {rapport}, le premier ordre est excellent. Il apparaît σ<sub>0</sub> ≈ {sigma}, un moment {p}, et un champ intérieur uniforme de {E}. C'est pourquoi un métal annule un champ extérieur ordinaire, de quelques kilovolts par mètre, par un déplacement infime de ses électrons. Ce qu'on néglige : le grain des atomes, à l'échelle duquel une couche d'épaisseur <var>s</var> n'a pas de sens ; seule la charge moyenne par unité d'aire en a un.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Le cœur vu comme un dipôle",
+    "hist.intro": "Quand le muscle cardiaque se contracte, une onde de dépolarisation le parcourt : vue de loin, la répartition des charges qui l'accompagne ressemble à un dipôle qui tourne au cours du battement. Les électrodes posées sur la peau en mesurent des différences de potentiel.",
+    "hist.events": {
+      waller: { who: "Augustus Désiré Waller", what: "publie dans le Journal of Physiology le premier électrocardiogramme humain, enregistré par des électrodes posées sur le corps, sans ouvrir la poitrine.", context: "Le cœur est plongé dans les tissus, qui conduisent : on modélise son activité, vue de la surface du corps, par un dipôle." },
+      einthoven: { who: "Willem Einthoven", what: "présente le 19 mars, devant la Chelsea Clinical Society, puis publie dans The Lancet, son triangle de trois dérivations entre les bras et la jambe gauche.", context: "Il traite l'activité du cœur comme un vecteur au centre d'un triangle équilatéral : chaque dérivation mesure la projection de ce vecteur sur un côté du triangle." },
+      nobel: { who: "Willem Einthoven", what: "reçoit le prix Nobel de physiologie ou médecine pour sa découverte du mécanisme de l'électrocardiogramme.", context: "Il avait construit en 1901 le galvanomètre à corde, l'appareil qui a rendu ces enregistrements possibles." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      ecg: { name: "Électrocardiographie", text: "Les dérivations d'Einthoven sont toujours enregistrées ; leurs amplitudes donnent la direction moyenne du dipôle cardiaque, l'axe électrique du cœur, qu'un cardiologue lit sur chaque tracé." },
+      simulation: { name: "Simulation moléculaire", text: "Les logiciels de dynamique moléculaire modélisent les molécules polaires par des charges ponctuelles ; à grande distance, leur interaction est celle de deux dipôles, qui décroît comme 1/<var>r</var><sup>3</sup>, et elle contribue à orienter les molécules polaires les unes par rapport aux autres." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      axe: { prompt: "À la même distance r d'un dipôle, comment se compare le champ sur l'axe à celui du plan médiateur ?",
+        options: { a: "Deux fois plus fort, et de sens opposé.", b: "Égal en norme, de sens opposé.", c: "Deux fois plus faible, de même sens.", d: "Quatre fois plus fort, de même sens." },
+        hint: "(6.14) avec θ = 0, puis θ = 90°.",
+        why: "θ = 0 : Ez = 2Kp/r³. θ = 90° : Ez = \u2212Kp/r³. Le champ est deux fois plus fort sur l'axe, et dirigé le long de p ; dans le plan médiateur, il est opposé à p." },
+      equateur: { prompt: "Dans le plan médiateur d'une paire +q, \u2212q, le potentiel est nul. Le champ y est-il nul aussi ?",
+        options: { a: "Oui : le champ est la dérivée du potentiel, nul partout dans ce plan.", b: "Oui, mais seulement loin de la paire.", c: "Non : il est perpendiculaire au plan, opposé à p ; φ est nul dans le plan mais varie quand on le traverse.", d: "Non : il est dans le plan, dirigé vers l'extérieur." },
+        why: "Un potentiel nul sur une surface donne un champ sans composante dans cette surface, pas un champ nul. φ change de signe à la traversée du plan : sa dérivée normale n'est pas nulle." },
+      cube: { prompt: "Loin d'une paire de charges opposées, on mesure 8\u00a0mV·m⁻¹ à 1\u00a0m de son centre. Que mesure-t-on à 2\u00a0m, dans la même direction ?",
+        options: { a: "4\u00a0mV·m⁻¹.", b: "2\u00a0mV·m⁻¹.", c: "8\u00a0mV·m⁻¹.", d: "1\u00a0mV·m⁻¹ : le champ décroît comme 1/r³." },
+        why: "Le potentiel d'un dipôle décroît comme 1/r², son champ comme 1/r³. Doubler la distance divise le champ par 8." },
+      deplacer: { prompt: "Pourquoi le potentiel en P d'une charge déplacée de Δz est-il celui de la charge non déplacée, vu depuis P déplacé de \u2212Δz ?",
+        options: { a: "Parce que le potentiel est le même partout.", b: "Parce que le potentiel d'une charge ne dépend que de la position relative du point et de la charge.", c: "Parce que Δz est petit.", d: "Parce que la charge est positive." },
+        why: "φ = Kq/|P \u2212 S| ne dépend que de P \u2212 S. Déplacer S de +Δz ou P de \u2212Δz donne le même vecteur P \u2212 S. Le premier ordre en Δz n'intervient qu'ensuite, pour remplacer la différence par une dérivée." },
+      gradient: { prompt: "Que signifie φ = \u2212p·∇Φ0 ?",
+        options: { a: "Le potentiel du dipôle est \u2212p fois la dérivée, dans la direction de p, du potentiel d'une charge unité.", b: "Le potentiel du dipôle est le gradient de son champ.", c: "Le potentiel du dipôle est nul.", d: "Le dipôle crée le même potentiel qu'une charge p." },
+        why: "p·∇ = p ∂/∂s le long de p. Le dipôle est la différence de deux potentiels de charges très proches : à la limite, une dérivée." },
+      boules: { prompt: "Deux boules uniformément chargées ±ρ, de même rayon, sont décalées de s. Quel est le champ dans la région où elles se recouvrent ?",
+        options: { a: "Nul, puisque la charge y est nulle.", b: "Celui d'un dipôle, en 1/r³ depuis le centre.", c: "Uniforme, de norme ρs/(3ε0), le long du décalage, dirigé du côté chargé + vers le côté chargé \u2212 : opposé à p.", d: "Radial, croissant avec la distance au centre." },
+        hint: "Dans une boule uniforme, le champ vaut ρr/(3ε0), r compté depuis son centre.",
+        why: "La boule + donne ρ(r \u2212 r₊)/(3ε0), la boule \u2212 donne \u2212ρ(r \u2212 r₋)/(3ε0). La somme vaut ρ(r₋ \u2212 r₊)/(3ε0) : elle ne dépend pas du point. Une densité nulle impose une divergence nulle, pas un champ nul." },
+      sonde: { prompt: "Une paire de charges opposées a un écart d = 1\u00a0cm. À r = 10\u00a0cm sur l'axe, quelle erreur relative fait-on sur le champ en utilisant (6.14) ?",
+        options: { a: "10\u00a0%.", b: "Environ 0,5\u00a0%.", c: "Environ 0,01\u00a0%.", d: "Aucune." },
+        why: "Sur l'axe, le rapport vaut (1 \u2212 (d/2r)²)² = (1 \u2212 1/400)² ≈ 1 \u2212 1/200. L'erreur relative est d'environ (d/r)²/2 = 0,5\u00a0%." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 6 (texte original en anglais), §6-2 (champ) et §6-4. Figure, exemple du cuivre et calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Facteurs cinétiques et flèches courbes</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .duo { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+  .duo > div { flex: 1 1 240px; min-width: 0; display: grid; gap: 6px; justify-items: center; }
+  .duo svg, .seul svg { width: auto; max-width: 100%; height: auto; }
+  .choix { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; }
+  .choix > label { flex: 1 1 200px; }
+  #rx { flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-organique" data-i18n="monde.chim-organique"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-mecanismes" data-i18n="etape.chim-mecanismes"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n-html="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/loi-d-arrhenius" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mi>k</mi><mo stretchy="false">(</mo><msub><mi>T</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><mrow><mi>k</mi><mo stretchy="false">(</mo><msub><mi>T</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mfrac><mo>=</mo><mi data-i18n="eq.exp"></mi><mo>⁡</mo><mrow><mo>[</mo><mfrac><msub><mi>E</mi><mi mathvariant="normal">a</mi></msub><mi>R</mi></mfrac><mrow><mo>(</mo><mfrac><mn>1</mn><msub><mi>T</mi><mn>1</mn></msub></mfrac><mo>−</mo><mfrac><mn>1</mn><msub><mi>T</mi><mn>2</mn></msub></mfrac><mo>)</mo></mrow><mo>]</mo></mrow></math></div>
+    <p class="validite" data-i18n-html="s1.validite"></p>
+    <div class="list keyed" id="facteurs"></div>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="box def"><b data-i18n="s2.def.titre"></b>
+      <p data-i18n-html="s2.def.corps"></p>
+    </div>
+    <div class="seul"><svg class="fig no-sigle" id="homolyse" role="img" data-i18n-attr="aria-label:s2.aria"></svg></div>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure>
+      <div class="panel">
+        <div class="seg" role="group" id="rx">
+          <button type="button" data-r="sn2" aria-pressed="true" data-i18n="rx.sn2.nom"></button>
+          <button type="button" data-r="acide" aria-pressed="false" data-i18n="rx.acide.nom"></button>
+          <button type="button" data-r="cyanure" aria-pressed="false" data-i18n="rx.cyanure.nom"></button>
+          <button type="button" data-r="heterolyse" aria-pressed="false" data-i18n="rx.heterolyse.nom"></button>
+        </div>
+        <p class="no-sigle" id="consigne"></p>
+        <div class="choix">
+          <label class="field"><span data-i18n="fig.de"></span><select id="de"></select></label>
+          <label class="field"><span data-i18n="fig.vers"></span><select id="vers"></select></label>
+          <button type="button" class="btn" id="ajouter" data-i18n="fig.ajouter"></button>
+          <button type="button" class="btn tinted" id="effacer" data-i18n="fig.effacer"></button>
+          <button type="button" class="btn tinted" id="solution" data-i18n="fig.solution"></button>
+        </div>
+        <div class="duo">
+          <div><span class="k" data-i18n="fig.avant"></span><svg class="fig no-sigle" id="avant" role="img" data-i18n-attr="aria-label:fig.aria.avant"></svg></div>
+          <div><span class="k" data-i18n="fig.apres"></span><svg class="fig no-sigle" id="apres" role="img" data-i18n-attr="aria-label:fig.aria.apres"></svg></div>
+        </div>
+        <div class="box rem"><b data-i18n="fig.verdict"></b><p class="no-sigle" id="verdict"></p></div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="list keyed" id="erreurs"></div>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/fleches-courbes.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script src="/racoon/statistique.js"></script>
+<script src="/racoon/chim-organique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I.fallback : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const O = ChimOrga, sym = s => t("chim.sym", { s });
+const poser = (svg, s, k) => { const vb = s.viewBox.split(" ").map(Number);
+  svg.setAttribute("viewBox", s.viewBox); svg.setAttribute("width", Math.round(vb[2] * k)); svg.setAttribute("height", Math.round(vb[3] * k)); svg.innerHTML = s.html; };
+
+/* ---------- facteurs cinétiques : Arrhenius chiffré ---------- */
+(() => {
+  const R = Constantes.R, T1 = 298.15, kJ = 1000, f = (Ea, a, b) => Math.exp(Ea / R * (1 / a - 1 / b));
+  const ROWS = [["ea50", 50], ["ea80", 80], ["ea100", 100]], txt = textOf("facteurs.rows", ROWS.map(r => r[0]).concat(["catal"]));
+  document.getElementById("facteurs").innerHTML = ROWS.map(([id, Ea]) => `<div><span class="k">${F.qty(F.num(Ea, 3), "kJ·mol⁻¹")}</span><span>${txt[id]}</span><span class="v">× ${F.fix(f(Ea * kJ, T1, T1 + 10), 2)}</span></div>`).join("")
+    + `<div><span class="k">${F.qty("−" + F.num(10, 2), "kJ·mol⁻¹")}</span><span>${txt.catal}</span><span class="v">× ${F.fix(Math.exp(10 * kJ / (R * T1)), 0)}</span></div>`;
+})();
+
+/* ---------- homolyse en flèches en hameçon ---------- */
+(() => {
+  const m = O.mol("Br 0 0; Br 1.2 0 | 0-1");
+  poser(document.getElementById("homolyse"), O.schema(m, { texte: sym, fleches: [{ de: [0, 1], vers: 0, demi: true, cote: 1 }, { de: [0, 1], vers: 1, demi: true, cote: -1 }], doublets: false, echelle: 40 }), 1.5);
+})();
+
+/* ---------- écrire un mécanisme ---------- */
+(() => {
+  const RX = {
+    sn2: { spec: "H -0.8 0.5; O 0 0 q-1; C 1.5 0; Br 2.6 0 | 0-1 2-3", carbones: true, sol: [{ de: 1, vers: 2 }, { de: [2, 3], vers: 3 }] },
+    acide: { spec: "N 0 0; H -0.5 0.85; H -0.5 -0.85; H -1 0; H 1.2 0; Cl 2.2 0 | 0-1 0-2 0-3 4-5", carbones: true, sol: [{ de: 0, vers: 4 }, { de: [4, 5], vers: 5 }] },
+    cyanure: { spec: "C -2 0.6 q-1; N -3.1 0.6; C 0 0; O 0 1.1; C 0.866 -0.5; C -0.866 -0.5 | 0#1 2=3 2-4 2-5", carbones: true, sol: [{ de: 0, vers: 2 }, { de: [2, 3], vers: 3 }] },
+    heterolyse: { spec: "C 0 0; C -0.866 0.5; C -0.866 -0.5; C 0 1; Br 1.1 0 | 0-1 0-2 0-3 0-4", carbones: false, sol: [{ de: [0, 4], vers: 4 }] },
+  };
+  const $ = id => document.getElementById(id);
+  let cle = "sn2", fleches = [];
+  const noms = () => t("rx." + cle + ".atomes");
+  const lien = (m, l) => noms()[l.a] + (l.ordre === 3 ? "≡" : l.ordre === 2 ? "=" : "–") + noms()[l.b];
+  function options() {
+    const R = RX[cle], m = O.mol(R.spec), nl = O.electrons(m), N = noms();
+    if (N.length !== m.atomes.length) throw new Error("rx." + cle + ".atomes : " + N.length + " noms pour " + m.atomes.length + " atomes");
+    const de = [], vers = [];
+    m.atomes.forEach((a, i) => { if (nl[i] >= 2) de.push([JSON.stringify(i), t("fig.o.doublet", { a: N[i] })]); });
+    m.atomes.forEach((a, i) => vers.push([JSON.stringify(i), t("fig.o.atome", { a: N[i] })]));
+    m.liaisons.forEach(l => { de.push([JSON.stringify([l.a, l.b]), t("fig.o.liaison", { l: lien(m, l) })]); vers.push([JSON.stringify([l.a, l.b]), t("fig.o.liaison", { l: lien(m, l) })]); });
+    $("de").innerHTML = de.map(([v, txt]) => `<option value="${v}">${txt}</option>`).join("");
+    $("vers").innerHTML = vers.map(([v, txt]) => `<option value="${v}">${txt}</option>`).join("");
+  }
+  function maj() {
+    const R = RX[cle], m = O.mol(R.spec), N = noms();
+    $("consigne").innerHTML = t("rx." + cle + ".consigne");
+    let s;
+    try { s = O.schema(m, { texte: sym, carbones: R.carbones, fleches, echelle: 38 }); }
+    catch (e) { fleches.pop(); s = O.schema(m, { texte: sym, carbones: R.carbones, fleches, echelle: 38 }); $("verdict").textContent = t("v.impossible"); poser($("avant"), s, 1.4); return; }
+    poser($("avant"), s, 1.4);
+    poser($("apres"), O.schema(s.apres.m, { texte: sym, carbones: R.carbones, echelle: 38 }), 1.4);
+    const attendu = O.appliquer(m, R.sol).m;
+    let v;
+    if (!fleches.length) v = t("v.vide");
+    else if (s.apres.depasse.length) v = t("v.octet", { a: s.apres.depasse.map(i => N[i]).join(", ") });
+    else if (O.memeEtat(s.apres.m, attendu)) v = t("v.ok", { n: fleches.length });
+    else if (fleches.length < R.sol.length && fleches.every(f => R.sol.some(g => { try { return O.memeEtat(O.appliquer(m, [f]).m, O.appliquer(m, [g]).m); } catch (e) { return false; } }))) v = t("v.incomplet");
+    else v = t("v.autre");
+    $("verdict").textContent = v;
+    document.querySelectorAll("#rx button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.r === cle)));
+  }
+  $("rx").onclick = e => { const b = e.target.closest("button"); if (!b) return; cle = b.dataset.r; fleches = []; options(); maj(); };
+  $("ajouter").onclick = () => { fleches.push({ de: JSON.parse($("de").value), vers: JSON.parse($("vers").value) }); maj(); };
+  $("effacer").onclick = () => { fleches = []; maj(); };
+  $("solution").onclick = () => { fleches = RX[cle].sol.slice(); maj(); };
+  options(); maj();
+})();
+
+/* ---------- erreurs classiques ---------- */
+(() => {
+  const ERR = ["noyau", "octet", "charge", "sens"], txt = textOf("erreurs", ERR);
+  document.getElementById("erreurs").innerHTML = ERR.map(id => `<div><span class="k">${txt[id].k}</span><span>${txt[id].text}</span><span class="v"></span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["lewis", 1916, "idea"], ["robinson", 1922, "idea"], ["ingold", 1934, "idea"], ["hughes", 1935, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount(document.getElementById("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["froid", "enseignement"], uses = textOf("uses.items", USES);
+  document.getElementById("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["depart", "a"], ["arrivee", "c"], ["octet", "b"], ["charge", "d"], ["hamecon", "a"], ["temperature", "c"], ["catalyseur", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount(document.getElementById("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

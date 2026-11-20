@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["standard", "a"],
+  ["kirchhoff", "b"],
+  ["bombe", "c"],
+  ["hess", "d"],
+  ["pci", "a"],
+  ["dissociation", "b"],
+  ["volumes", "c"],
+  ["echelle", "d"]
+ ]
+}

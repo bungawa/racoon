@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Équation de Van der Waals</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-statistique" data-i18n="monde.statistique"></a><span class="aux">›</span><a href="/racoon/etape?id=gaz-reels" data-i18n="etape.gaz-reels"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-thermo" href="/racoon/atlas?piste=thermo" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/limites-du-gaz-parfait" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi>P</mi><mo>=</mo><mfrac><mrow><mi>n</mi><mi>R</mi><mi>T</mi></mrow><mrow><mi>V</mi><mo>−</mo><mi>n</mi><mi>b</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.covolume"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mrow><mo>(</mo><mi>P</mi><mo>+</mo><mfrac><mrow><mi>a</mi><msup><mi>n</mi><mn>2</mn></msup></mrow><msup><mi>V</mi><mn>2</mn></msup></mfrac><mo>)</mo></mrow><mrow><mo>(</mo><mi>V</mi><mo>−</mo><mi>n</mi><mi>b</mi><mo>)</mo></mrow><mo>=</mo><mi>n</mi><mi>R</mi><mi>T</mi></math></div>
+    <p class="validite" data-i18n-html="val.vdw"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>T</mi><mi>c</mi></msub><mo>=</mo><mfrac><mrow><mn>8</mn><mi>a</mi></mrow><mrow><mn>27</mn><mi>R</mi><mi>b</mi></mrow></mfrac><mo>,</mo><mspace width="1em"/><msub><mi>P</mi><mi>c</mi></msub><mo>=</mo><mfrac><mi>a</mi><mrow><mn>27</mn><msup><mi>b</mi><mn>2</mn></msup></mrow></mfrac><mo>,</mo><mspace width="1em"/><msub><mi>V</mi><mrow><mi>m</mi><mo>,</mo><mi>c</mi></mrow></msub><mo>=</mo><mn>3</mn><mi>b</mi></math></div>
+    <p class="validite" data-i18n-html="val.critique"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><mi>a</mi><mo>=</mo><mfrac><mrow><mn>27</mn><msup><mi>R</mi><mn>2</mn></msup><msubsup><mi>T</mi><mi>c</mi><mn>2</mn></msubsup></mrow><mrow><mn>64</mn><msub><mi>P</mi><mi>c</mi></msub></mrow></mfrac><mo>,</mo><mspace width="1.5em"/><mi>b</mi><mo>=</mo><mfrac><mrow><mi>R</mi><msub><mi>T</mi><mi>c</mi></msub></mrow><mrow><mn>8</mn><msub><mi>P</mi><mi>c</mi></msub></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.ab"></p>
+    <div class="list keyed" id="tab"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="iso" role="img" data-i18n-attr="aria-label:iso.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="iso.leg.vdw"></span><span class="c-ok" data-i18n="iso.leg.mes"></span><span class="c-warn" data-i18n="iso.leg.parfait"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <label class="field"><span data-i18n="iso.gaz"></span>
+            <select id="gaz">
+              <option value="CO2" data-i18n="gaz.CO2"></option>
+              <option value="N2" data-i18n="gaz.N2"></option>
+              <option value="Ar" data-i18n="gaz.Ar"></option>
+            </select></label>
+          <div class="ctl"><div class="row"><label for="ti" data-i18n="iso.t"></label><output id="tiv" for="ti"></output></div>
+            <input id="ti" type="range" min="0" max="4" step="1" value="0"></div>
+          <div class="ctl"><div class="row"><label for="vk" data-i18n="iso.v"></label><output id="vkv" for="vk"></output></div>
+            <input id="vk" type="range" min="0" max="100" step="1" value="30"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="iso.k.mes"></span><span class="v" id="vmes"></span><span class="f" data-i18n="iso.f.mes"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="iso.k.vdw"></span><span class="v" id="vvdw"></span><span class="f" id="fvdw"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="iso.k.gp"></span><span class="v" id="vgp"></span><span class="f" id="fgp"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="iso.k.cin"></span><span class="v" id="vcin"></span><span class="f" data-i18n="iso.f.cin"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="iso.k.int"></span><span class="v" id="vint"></span><span class="f" data-i18n="iso.f.int"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="iso.caption"></figcaption>
+    </figure>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/equation-de-van-der-waals.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/statistique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const S = Statistique, R = Constantes.R, GAZ = ["N2", "Ar", "CO2"];
+
+/* ---------- a, b et point critique : Van der Waals contre la mesure ---------- */
+(() => {
+  $("tab").innerHTML = GAZ.map(g => {
+    const C = S.CRITIQUE[g], G = S.vdwCritique(g), k = S.critiqueVdw(G);
+    return `<div><span class="k">${t("gaz." + g)}</span><span>${t("tab.ligne", {
+      a: F.qty(F.num(G.a, 3), "Pa·m⁶·mol⁻²"), b: F.qty(F.sci(G.b, 3), "m³·mol⁻¹"),
+      zc: F.fix(C.Pc / (C.rhoc * R * C.Tc), 3), vc: F.num(100 * (k.Vc * C.rhoc - 1), 2) })}</span></div>`;
+  }).join("");
+})();
+
+/* ---------- isothermes : Van der Waals, gaz parfait, mesure ---------- */
+(() => {
+  const svg = $("iso"), sg = $("gaz"), st = $("ti"), sv = $("vk"), VMIN = 2e-5, VMAX = 0.1, PMIN = 5e4, PMAX = 2e8;
+  const temps = g => Object.keys(S.ISO[g]).map(Number).sort((a, b) => a - b);
+  const pc = x => F.num(100 * x, 2) + F.NB + "%";
+  function draw() {
+    const g = sg.value, T = temps(g)[+st.value], G = S.vdwCritique(g), Iso = S.isotherme(g, T);
+    const v0 = Math.min(...Iso.Vm), v1 = Math.max(...Iso.Vm), V = v0 * Math.pow(v1 / v0, +sv.value / 100);
+    svg.innerHTML = "";
+    const o = Plot.axes(svg, { fmt: F, w: 640, h: 340, pad: { b: 44, l: 56 },
+      x: { scale: "log", domain: [VMIN, VMAX], label: t("iso.x") }, y: { scale: "log", domain: [PMIN, PMAX], label: t("iso.y") } });
+    const clip = p => Math.max(PMIN, Math.min(PMAX, p)), dans = p => p >= PMIN && p <= PMAX, vdw = [], gp = [];
+    for (let i = 0; i <= 400; i++) {
+      const v = VMIN * Math.pow(VMAX / VMIN, i / 400);
+      if (v > G.b * 1.0001) { const p = R * T / (v - G.b) - G.a / (v * v); if (dans(p)) vdw.push([o.x(v), o.y(p)]); }
+      if (dans(R * T / v)) gp.push([o.x(v), o.y(R * T / v)]);
+    }
+    Plot.el("path", { d: Plot.path(gp), class: "stroke dash c-warn" }, o.g);
+    Plot.el("path", { d: Plot.path(vdw), class: "stroke c-tint" }, o.g);
+    Iso.Vm.forEach((v, i) => Plot.el("circle", { cx: o.x(v), cy: o.y(Iso.P[i]), r: 3.5, class: "fill c-ok" }, o.g));
+    Plot.el("line", { x1: o.x(G.b), x2: o.x(G.b), y1: o.y(PMIN), y2: o.y(PMAX), class: "stroke thin c-label-2" }, o.g);
+    Plot.el("text", { x: o.x(G.b) + 4, y: o.y(PMAX) + 14, class: "tick" }, o.g).textContent = "b";
+    const pm = S.pMesure(g, T, V), c = S.coeffsVdw(G, V, T), pg = R * T / V;
+    Plot.el("line", { x1: o.x(V), x2: o.x(V), y1: o.y(PMIN), y2: o.y(PMAX), class: "stroke thin c-label" }, o.g);
+    Plot.el("circle", { cx: o.x(V), cy: o.y(clip(c.P)), r: 5, class: "fill c-tint" }, o.g);
+    $("tiv").innerHTML = F.kelvin(T);
+    $("vkv").textContent = F.qty(F.sci(V, 3), "m³·mol⁻¹");
+    $("vmes").textContent = F.si(pm, "Pa", { sig: 3 });
+    $("vvdw").textContent = F.si(c.P, "Pa", { sig: 3 }); $("fvdw").textContent = t("iso.f.ecart", { e: pc(c.P / pm - 1) });
+    $("vgp").textContent = F.si(pg, "Pa", { sig: 3 }); $("fgp").textContent = t("iso.f.ecart", { e: pc(pg / pm - 1) });
+    $("vcin").textContent = F.si(c.cinetique, "Pa", { sig: 3 });
+    $("vint").textContent = F.si(c.interne, "Pa", { sig: 3 });
+    const C = S.CRITIQUE[g], ev = Math.abs(c.P / pm - 1);
+    $("sys").innerHTML = t("sys.inner", { gaz: t("gaz." + g), T: F.kelvin(T), tr: F.fix(T / C.Tc, 2), bv: F.fix(G.b / V, 3),
+      av: F.fix(G.a / (R * T * V), 3), e: pc(ev), avis: t(ev < 0.01 ? "sys.ok" : ev < 0.1 ? "sys.moyen" : "sys.ko") });
+  }
+  sg.onchange = st.oninput = sv.oninput = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["these", 1873, "idea"], ["etats", 1880, "idea"], ["helium", 1908, "experiment"], ["nobel", 1910, "idea"], ["peng", 1976, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["procedes", "cubique"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["covolume", "b"], ["interne", "d"], ["carre", "a"], ["critique", "c"], ["zc", "b"], ["ab", "a"], ["co2", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 4102 });
+})();
+</script>
+</body>
+</html>

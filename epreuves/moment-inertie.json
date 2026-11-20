@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["marteau", "a"],
+  ["gravite", "b"],
+  ["quart", "c"],
+  ["fil", "d"],
+  ["coin", "a"],
+  ["diagonale", "b"],
+  ["tabouret", "c"],
+  ["course", "d"]
+ ]
+}

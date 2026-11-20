@@ -1,0 +1,92 @@
+/* Leçon « La croissance des cristaux » : textes en français. Une autre langue = locales/<langue>/lecons/croissance-des-cristaux.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "La croissance des cristaux",
+    "crumb.jour": "Croissance",
+    "h1": "La croissance des cristaux",
+    "lede": "Personne ne range les atomes d'un cristal. Ils essaient des places au hasard, des milliers de milliards de fois par seconde, et restent un peu plus souvent là où ils ont beaucoup de voisins. Ce tri lent suffit à faire des faces planes.",
+    "tag.piste": "Solide et milieux continus",
+    "tag.prereq": "Prérequis : « Les liaisons chimiques dans les cristaux »",
+
+    "s1.sec": "Essais et erreurs",
+    "s1.h2": "Un tri par l'énergie",
+    "s1.p1": "Dans un liquide, chaque atome heurte ses voisins sans arrêt. L'ordre de grandeur de la cadence est <var>k</var><sub>B</sub><var>T</var>/<var>h</var>, environ 6\u00a0×\u00a010¹² chocs par seconde à 300\u00a0K, soit de l'ordre de 10¹³ essais par seconde. Un atome qui touche le cristal y reste ou repart. Il reste plus volontiers là où il gagne beaucoup d'énergie, c'est-à-dire là où il forme beaucoup de liaisons.",
+    "s1.p2": "Décrivons le système avant d'appliquer une loi. Un cristal plan à mailles carrées ; chaque atome se lie à ses quatre plus proches voisins, avec l'énergie ε par liaison. L'agitation thermique, de l'ordre de <var>k</var><sub>B</sub><var>T</var>, tend à défaire ces liaisons. Un seul nombre sans dimension compare les deux :",
+    "val.j": "Exacte : c'est la définition de <var>J</var>. Ce qui est approché, c'est l'existence d'une énergie ε par liaison, la même pour toutes et additive : les voisins plus lointains, à √2 fois la distance et au-delà, sont ignorés. À 300\u00a0K, <var>k</var><sub>B</sub><var>T</var> = 25,9\u00a0meV ; une liaison de 0,1\u00a0eV donne <var>J</var> = 3,9.",
+    "s1.p3": "Un site libre au bord du cristal a <var>k</var> voisins déjà en place, de 1 à 4. Chaque liaison manquante, comparée à un site entièrement entouré, coûte un facteur e<sup>\u2212<var>J</var></sup> sur la probabilité qu'un atome posé là y reste :",
+    "val.p": "Approximation (modèle de réseau à liaisons entre plus proches voisins) : réseau carré à deux dimensions, un atome posé reste ou repart aussitôt, sans glisser le long de la surface ni se détacher plus tard. Le facteur e<sup>\u2212<var>J</var></sup> par liaison manquante est un facteur de Boltzmann : il suppose que chaque site est essayé de nombreuses fois, ce qui vaut tant que le front avance lentement devant les quelque 10¹³ essais par seconde. Les cristaux réels croissent souvent par les marches qu'offre une dislocation, ce que le modèle ignore.",
+
+    "s2.sec": "Un germe qui grossit",
+    "s2.h2": "Faces planes ou amas déchiqueté",
+    "s2.p1": "Le dessin fait croître 1\u202f600 atomes à partir d'un seul, avec ε = 0,1\u00a0eV par liaison. Faites varier la température. Chaud, <var>J</var> est petit : tout contact colle, le germe devient un amas déchiqueté. Froid, <var>J</var> est grand : un atome isolé sur une face plane repart presque toujours, un atome dans un coin reste. Le cristal remplit ses rangées une à une, et ses bords deviennent droits.",
+    "cr.aria": "Cristal plan qui grossit à partir d'un germe, atomes colorés par ordre d'arrivée",
+    "cr.legend.ancien": "atomes en place",
+    "cr.legend.recent": "derniers 10 % arrivés",
+    "cr.t": "Température T",
+    "cr.tirage": "Autre tirage",
+    "cr.k.remp": "Remplissage",
+    "cr.f.remp": "atomes / aire du rectangle qui les enferme",
+    "cr.k.p1": "Rester sur une face plane (k = 1)",
+    "cr.f.p1": "dans un coin (k = 3) : {p3}",
+    "cr.k.j": "J = ε/(k_B T)",
+    "cr.f.j": "ε = 0,1 eV par liaison",
+    "cr.caption": "Tirets : le plus petit rectangle qui contient le cristal. Un remplissage de 100\u00a0% serait un rectangle plein. Le même tirage au hasard sert à toutes les températures ; « Autre tirage » en change.",
+    "s2.p2": "Les chiffres du modèle : à <var>J</var> = 3, un atome posé sur une face plane reste avec la probabilité e<sup>\u22129</sup> ≈ 1,2\u00a0×\u00a010<sup>\u22124</sup>, un atome dans un coin avec e<sup>\u22123</sup> ≈ 0,05. Le coin gagne d'un facteur e⁶ ≈ 400. Sur la plage du curseur, le remplissage moyen passe d'environ 59\u00a0% à 10\u202f000\u00a0K (<var>J</var> = 0,12) à 93\u00a0% à 200\u00a0K (<var>J</var> = 5,8).",
+    "s2.rem.title": "Remarque : ce que le modèle ne fait pas",
+    "s2.rem.body": "Un vrai cristal plan, à basse température, attend longtemps qu'une nouvelle rangée commence : il faut qu'un atome isolé reste sur une face lisse, ce qui est rare. Le modèle ne compte pas ce temps, il ne choisit que parmi les sites où l'atome reste. C'est cette attente qui rend la croissance réelle si lente, et la marche d'une dislocation qui l'abrège.",
+
+    "s3.sec": "Lenteur et pureté",
+    "s3.h2": "Pourquoi les grands cristaux sont rares",
+    "s3.p1": "Le tri ne marche que si les atomes ont le temps d'essayer. Refroidi vite, un liquide se fige avant que chaque atome ait trouvé sa place : on obtient de petits grains, ou un verre sans ordre à grande distance. Les grands cristaux naturels, quartz ou sel gemme, ont grandi pendant des durées géologiques, dans des conditions presque constantes.",
+    "s3.p2": "Les cristaux qu'on fabrique imitent ce tri, en l'accélérant par un germe. Un petit monocristal plonge dans le bain fondu, juste au-dessus de la température de fusion, puis remonte lentement en tournant. Le liquide qui se fige à son contact prend son réseau et son orientation. Le réseau lui-même est décrit dans « La géométrie interne des cristaux », les liaisons qui fixent ε dans « Les liaisons chimiques dans les cristaux ».",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Du rubis de laboratoire au lingot de silicium",
+    "hist.intro": "Faire croître un cristal à volonté a d'abord servi les bijoutiers, puis l'électronique.",
+    "hist.events": {
+      verneuil: { who: "Auguste Verneuil", what: "annonce publiquement la fabrication de rubis par fusion à la flamme.", context: "Une poudre fondue dans une flamme se dépose sur un germe qui grossit. Il avait déposé des plis cachetés à l'Académie des sciences en 1891 et 1892." },
+      czochralski: { who: "Jan Czochralski", what: "tire un fil d'étain monocristallin d'un creuset de métal fondu.", context: "Il y aurait trempé sa plume par erreur. Il publie la méthode en 1918, pour mesurer la vitesse de cristallisation des métaux." },
+      teal: { who: "Gordon Teal et J. B. Little", what: "font croître des monocristaux de germanium par la méthode de Czochralski, aux laboratoires Bell.", context: "Les transistors demandent un réseau sans joint de grain : la méthode passe à l'industrie des semi-conducteurs." },
+      plaquettes: { who: "Industrie des semi-conducteurs", what: "introduit les plaquettes de silicium de 300\u00a0mm de diamètre.", context: "Chacune est découpée dans un monocristal tiré du bain, épaisse de 775\u00a0µm, et pèse environ 125\u00a0g." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      silicium: { name: "Lingots de silicium", text: "Les monocristaux de silicium des puces sont le plus souvent tirés par la méthode de Czochralski : un germe, un bain fondu, un tirage lent. Le diamètre standard des plaquettes est de 300\u00a0mm depuis 1999." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      essais: { prompt: "Comment un atome trouve-t-il sa place dans un cristal qui croît ?",
+        options: { a: "Une force à longue portée le guide vers le bon site.", b: "Par essais : il touche des sites au hasard, des milliers de milliards de fois par seconde, et reste plus souvent là où il forme beaucoup de liaisons.", c: "Il garde la place où il touche le cristal en premier, toujours.", d: "Le cristal l'attire vers son centre." },
+        hint: "Pensez à la cadence des chocs dans un liquide.",
+        why: "Rien ne guide l'atome. Les chocs, quelque 10¹³ par seconde, lui font essayer des sites ; la probabilité de rester est plus grande là où l'énergie est basse. Répété assez longtemps, ce tri range le cristal." },
+      faces: { prompt: "Avec J = 3, combien de fois plus de chances un atome a-t-il de rester dans un coin (3 voisins) que sur une face plane (1 voisin) ?",
+        options: { a: "3 fois.", b: "9 fois.", c: "e³, environ 20 fois.", d: "e⁶, environ 400 fois." },
+        hint: "Deux liaisons de différence, un facteur e^(\u2212J) chacune.",
+        why: "e^(\u22123) contre e^(\u22129) : le rapport est e^(2J) = e⁶ ≈ 403. Les atomes s'accumulent dans les coins, les rangées se complètent avant qu'une nouvelle commence : les faces sont planes." },
+      j: { prompt: "On double la température absolue, l'énergie d'une liaison ne change pas. Que devient J ?",
+        options: { a: "Il est divisé par 2 : le tri par le nombre de voisins devient moins sélectif.", b: "Il double.", c: "Il ne change pas : J ne dépend que de la liaison.", d: "Il est divisé par 4." },
+        why: "J = ε/(k_B T) : à ε fixé, J varie comme 1/T. Plus chaud, chaque liaison manquante pèse moins ; les bords du cristal deviennent irréguliers." },
+      coin: { prompt: "Dans le dessin, pourquoi les bords deviennent-ils droits à basse température ?",
+        options: { a: "Parce que le réseau carré l'impose quelle que soit la température.", b: "Parce qu'on ajoute moins d'atomes.", c: "Parce qu'un atome ne reste presque qu'où il a plusieurs voisins : chaque rangée se complète avant que la suivante commence.", d: "Parce que les atomes froids sont plus petits." },
+        why: "Le réseau est le même à toutes les températures ; c'est le tri qui change. À grand J, un atome isolé sur une face repart, un atome au fond d'un coin reste : le cristal comble ses creux et garde des faces planes." },
+      trempe: { prompt: "Un liquide refroidi très vite donne de petits grains ou un verre. Pourquoi ?",
+        options: { a: "Parce que le froid casse les liaisons.", b: "Parce que les atomes sont figés avant d'avoir essayé assez de sites pour trouver ceux d'énergie basse.", c: "Parce qu'un verre a plus de liaisons qu'un cristal.", d: "Parce que la vitesse de refroidissement change le réseau." },
+        why: "Le tri a besoin de temps. Si le front avance trop vite devant la cadence des essais, l'ordre n'a pas le temps de s'établir à grande distance." },
+      germe: { prompt: "Dans la méthode de Czochralski, à quoi sert le germe qu'on plonge dans le bain ?",
+        options: { a: "Il impose le réseau et son orientation : le liquide qui se fige à son contact continue son cristal.", b: "Il refroidit le bain.", c: "Il apporte les impuretés nécessaires.", d: "Il absorbe les dislocations." },
+        why: "Sans germe, le liquide cristalliserait en de nombreux grains d'orientations différentes. Le germe donne un modèle : tout le lingot est un seul cristal, d'orientation choisie." },
+      equilibre: { prompt: "Dans le modèle, J = 0. Que produit la croissance ?",
+        options: { a: "Un carré parfait.", b: "Rien : aucun atome ne reste.", c: "Un amas déchiqueté : tout contact colle, le remplissage tombe vers 58 %.", d: "Un cercle parfait." },
+        hint: "Avec J = 0, e^(\u2212(4 \u2212 k)J) vaut 1 pour tout k.",
+        why: "Tous les sites du bord ont la même chance, quel que soit leur nombre de voisins : le cristal grossit au hasard, sans faces. C'est la limite d'une température très haute devant ε/k_B." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 30 (texte original en anglais), §30-3. Le modèle de croissance du dessin est propre à cette page. Dates : Czochralski, « Ein neues Verfahren zur Messung der Kristallisationsgeschwindigkeit der Metalle », <i>Zeitschrift für physikalische Chemie</i>, 1918.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

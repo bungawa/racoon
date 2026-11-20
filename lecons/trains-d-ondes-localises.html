@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trains d'ondes localisés</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-ondes" data-i18n="monde.ondes"></a><span class="aux">›</span><a href="/racoon/etape?id=battements-paquets" data-i18n="etape.battements-paquets"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-ondes" href="/racoon/atlas?piste=ondes" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/somme-de-deux-ondes" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msup><mi>e</mi><mrow><mi>i</mi><msub><mi>ω</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>t</mi><mo>−</mo><mi>x</mi><mo>/</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></msup><mo>+</mo><msup><mi>e</mi><mrow><mi>i</mi><msub><mi>ω</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>t</mi><mo>−</mo><mi>x</mi><mo>/</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><msup><mi>e</mi><mrow><mi>i</mi><msub><mi>ω</mi><mn>1</mn></msub><msup><mi>t</mi><mo>′</mo></msup></mrow></msup><mo>+</mo><msup><mi>e</mi><mrow><mi>i</mi><msub><mi>ω</mi><mn>2</mn></msub><msup><mi>t</mi><mo>′</mo></msup></mrow></msup><mo>,</mo><mspace width="0.6em"></mspace><msup><mi>t</mi><mo>′</mo></msup><mo>=</mo><mi>t</mi><mo>−</mo><mi>x</mi><mo>/</mo><mi>c</mi></math><span class="n">(48.11)</span></div>
+    <p class="validite" data-i18n-html="val.48.11"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>n</mi><mo>=</mo><mn>1</mn><mo>−</mo><mfrac><mrow><mi>N</mi><msubsup><mi>q</mi><mi>e</mi><mn>2</mn></msubsup></mrow><mrow><mn>2</mn><msub><mi>ε</mi><mn>0</mn></msub><mi>m</mi><msup><mi>ω</mi><mn>2</mn></msup></mrow></mfrac></math><span class="n">(48.12)</span></div>
+    <p class="validite" data-i18n-html="val.48.12"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>v</mi><mi>p</mi></msub><mo>=</mo><mfrac><mi>ω</mi><mi>k</mi></mfrac></math><span class="n">(48.13)</span></div>
+    <p class="validite" data-i18n-html="val.48.13"></p>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="eq"><math display="block"><mi>k</mi><mo>=</mo><mfrac><mi>ω</mi><mi>c</mi></mfrac><mo>−</mo><mfrac><mi>a</mi><mrow><mi>ω</mi><mi>c</mi></mrow></mfrac><mo>,</mo><mspace width="0.6em"></mspace><mi>a</mi><mo>=</mo><mfrac><mrow><mi>N</mi><msubsup><mi>q</mi><mi>e</mi><mn>2</mn></msubsup></mrow><mrow><mn>2</mn><msub><mi>ε</mi><mn>0</mn></msub><mi>m</mi></mrow></mfrac></math><span class="n">(48.14)</span></div>
+    <p class="validite" data-i18n-html="val.48.14"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mtable columnalign="left"><mtr><mtd><msup><mi>e</mi><mrow><mi>i</mi><mo stretchy="false">(</mo><msub><mi>ω</mi><mn>1</mn></msub><mi>t</mi><mo>−</mo><msub><mi>k</mi><mn>1</mn></msub><mi>x</mi><mo stretchy="false">)</mo></mrow></msup><mo>+</mo><msup><mi>e</mi><mrow><mi>i</mi><mo stretchy="false">(</mo><msub><mi>ω</mi><mn>2</mn></msub><mi>t</mi><mo>−</mo><msub><mi>k</mi><mn>2</mn></msub><mi>x</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><msup><mi>e</mi><mrow><mi>i</mi><mo stretchy="false">[</mo><mo stretchy="false">(</mo><msub><mi>ω</mi><mn>1</mn></msub><mo>+</mo><msub><mi>ω</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mi>t</mi><mo>−</mo><mo stretchy="false">(</mo><msub><mi>k</mi><mn>1</mn></msub><mo>+</mo><msub><mi>k</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mi>x</mi><mo stretchy="false">]</mo><mo>/</mo><mn>2</mn></mrow></msup></mtd></mtr><mtr><mtd><mspace width="2em"></mspace><mo>×</mo><mrow><mo>[</mo><msup><mi>e</mi><mrow><mi>i</mi><mo stretchy="false">[</mo><mo stretchy="false">(</mo><msub><mi>ω</mi><mn>1</mn></msub><mo>−</mo><msub><mi>ω</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mi>t</mi><mo>−</mo><mo stretchy="false">(</mo><msub><mi>k</mi><mn>1</mn></msub><mo>−</mo><msub><mi>k</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mi>x</mi><mo stretchy="false">]</mo><mo>/</mo><mn>2</mn></mrow></msup><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mo stretchy="false">[</mo><mo stretchy="false">(</mo><msub><mi>ω</mi><mn>1</mn></msub><mo>−</mo><msub><mi>ω</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mi>t</mi><mo>−</mo><mo stretchy="false">(</mo><msub><mi>k</mi><mn>1</mn></msub><mo>−</mo><msub><mi>k</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mi>x</mi><mo stretchy="false">]</mo><mo>/</mo><mn>2</mn></mrow></msup><mo>]</mo></mrow></mtd></mtr></mtable></math><span class="n">(48.15)</span></div>
+    <p class="validite" data-i18n-html="val.48.15"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>v</mi><mi>M</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>ω</mi><mn>1</mn></msub><mo>−</mo><msub><mi>ω</mi><mn>2</mn></msub></mrow><mrow><msub><mi>k</mi><mn>1</mn></msub><mo>−</mo><msub><mi>k</mi><mn>2</mn></msub></mrow></mfrac></math><span class="n">(48.16)</span></div>
+    <p class="validite" data-i18n-html="val.48.16"></p>
+    <div class="eq"><math display="block"><msub><mi>v</mi><mi>g</mi></msub><mo>=</mo><mfrac><mrow><mi>d</mi><mi>ω</mi></mrow><mrow><mi>d</mi><mi>k</mi></mrow></mfrac></math><span class="n">(48.17)</span></div>
+    <p class="validite" data-i18n-html="val.48.17"></p>
+    <p data-i18n-html="s3.p3"></p>
+    <div class="eq"><math display="block"><msub><mi>v</mi><mi>g</mi></msub><mo>=</mo><mfrac><mi>c</mi><mrow><mn>1</mn><mo>+</mo><mi>a</mi><mo>/</mo><msup><mi>ω</mi><mn>2</mn></msup></mrow></mfrac></math><span class="n">(48.18)</span></div>
+    <p class="validite" data-i18n-html="val.48.18"></p>
+    <p data-i18n-html="s3.p4"></p>
+    <figure class="chart">
+      <svg class="fig" id="pq" role="img" data-i18n-attr="aria-label:pq.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="pq.legend.chi"></span><span class="c-warn" data-i18n="pq.legend.vg"></span><span class="c-label-2" data-i18n="pq.legend.vp"></span></div>
+      <div class="panel">
+        <div class="seg" role="group" id="mil">
+          <button type="button" data-m="plasma" data-i18n="pq.plasma"></button>
+          <button type="button" data-m="vide" data-i18n="pq.vide"></button>
+        </div>
+        <div class="ctl"><div class="row"><label for="tp" data-i18n="pq.t"></label><output id="tpv" for="tp"></output></div>
+          <input id="tp" type="range" min="0" max="4" step="0.02" value="1.5"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="pq.k.vp"></span><span class="v" id="vvp"></span><span class="f" id="fvp"></span></div>
+          <div class="stat"><span class="k" data-i18n="pq.k.vg"></span><span class="v" id="vvg"></span><span class="f" id="fvg"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="pq.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="pg" role="img" data-i18n-attr="aria-label:pg.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="pg.legend.s"></span><span class="c-warn" data-i18n="pg.legend.env"></span></div>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="nn" data-i18n="pg.n"></label><output id="nnv" for="nn"></output></div>
+          <input id="nn" type="range" min="1" max="39" step="1" value="2"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="pg.k.dt"></span><span class="v" id="vdt"></span><span class="f" id="fdt"></span></div>
+          <div class="stat"><span class="k" data-i18n="pg.k.df"></span><span class="v" id="vdf"></span><span class="f" id="fdf"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="pg.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/trains-d-ondes-localises.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/ondes.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+
+/* ---------- §48-4 : un paquet d'ondes radio de 10 MHz dans un plasma de fréquence propre 6 MHz, ou dans le vide ---------- */
+(() => {
+  const O = self.Ondes, c = Constantes.c, W0 = 2 * Math.PI * 10e6, SIG = 0.0067;
+  const PL = O.plasma(2 * Math.PI * 6e6), MIL = {
+    plasma: O.paquet(PL.k(W0), SIG, PL.omega),
+    vide: O.paquet(W0 / c, SIG, O.RELATIONS.son(c)),
+  };
+  const XS = Array.from({ length: 1201 }, (_, i) => -300 + 1800 * i / 1200);
+  let mil = "plasma";
+  function upd() {
+    const Q = MIL[mil], tt = 1e-6 * +$("tp").value, xg = Q.vgroupe * tt, xp = Q.vphase * tt;
+    const svg = $("pq"); svg.innerHTML = "";
+    const P = Plot.axes(svg, { fmt: F, w: 640, h: 250, pad: { l: 52, b: 44 }, x: { domain: [-300, 1500], label: t("pq.xaxis") }, y: { domain: [-1.2, 1.2], label: t("pq.yaxis") } });
+    Plot.el("path", { d: Plot.path(XS.map(x => [P.x(x), P.y(Q.enveloppe(x, tt))])), class: "stroke thin dash c-label-2" }, P.g);
+    Plot.el("path", { d: Plot.path(XS.map(x => [P.x(x), P.y(Q.chi(x, tt))])), class: "curve" }, P.g);
+    Plot.el("line", { x1: P.x(xg), x2: P.x(xg), y1: P.y(-1.2), y2: P.y(1.2), class: "ref" }, P.g);
+    if (xp <= 1500) Plot.el("circle", { cx: P.x(xp), cy: P.y(Q.chi(xp, tt)), r: 6, class: "fill c-label-2" }, P.g);
+    $("tpv").textContent = F.si(tt, "s");
+    $("vvp").textContent = t("pq.enc", { r: F.num(Q.vphase / c, 3) }); $("fvp").textContent = t("pq.f.vp", { d: F.si(xp, "m") });
+    $("vvg").textContent = t("pq.enc", { r: F.num(Q.vgroupe / c, 3) }); $("fvg").textContent = t("pq.f.vg", { d: F.si(xg, "m"), p: F.num(Q.vphase * Q.vgroupe / (c * c), 4) });
+    $("mil").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.m === mil)));
+  }
+  $("mil").querySelectorAll("button").forEach(x => x.onclick = () => { mil = x.dataset.m; upd(); });
+  $("tp").oninput = upd; upd();
+})();
+
+/* ---------- §48-4 : un seul sommet, beaucoup de fréquences (figure 48-6) ---------- */
+(() => {
+  const O = self.Ondes, F0 = 2e6, DF = 1e5, TS = Array.from({ length: 2401 }, (_, i) => -12e-6 + 24e-6 * i / 2400);
+  function upd() {
+    const n = +$("nn").value, P0 = O.peigne(n, F0, DF);
+    const svg = $("pg"); svg.innerHTML = "";
+    const P = Plot.axes(svg, { fmt: F, w: 640, h: 230, pad: { l: 52, b: 44 }, x: { domain: [-12, 12], label: t("pg.xaxis") }, y: { domain: [-1.1, 1.1], label: t("pg.yaxis") } });
+    Plot.el("path", { d: Plot.path(TS.map(x => [P.x(1e6 * x), P.y(P0.enveloppe(x))])), class: "stroke dash c-warn" }, P.g);
+    Plot.el("path", { d: Plot.path(TS.map(x => [P.x(1e6 * x), P.y(-P0.enveloppe(x))])), class: "stroke dash c-warn" }, P.g);
+    Plot.el("path", { d: Plot.path(TS.map(x => [P.x(1e6 * x), P.y(P0.s(x))])), class: "stroke thin c-tint" }, P.g);
+    $("nnv").textContent = F.num(n, 2);
+    $("vdt").textContent = n > 1 ? F.si(P0.demiLargeur, "s") : t("pg.inf"); $("fdt").textContent = t("pg.f.dt", { r: F.si(P0.recurrence, "s") });
+    $("vdf").textContent = F.si(P0.largeurSpectrale, "Hz"); $("fdf").textContent = t("pg.f.df", { p: F.num(P0.demiLargeur * P0.largeurSpectrale, 3) });
+  }
+  $("nn").oninput = upd; upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["hamilton", 1839, "idea"], ["rayleigh", 1877, "idea"], ["sommerfeld", 1907, "idea"], ["brillouin", 1914, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["gps", "pulsars"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["nondispersif", "c"], ["indice", "a"], ["relativite", "d"], ["groupe", "b"], ["produit", "c"], ["sommet", "a"], ["gps", "b"], ["pulsar", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 484 });
+})();
+</script>
+</body>
+</html>

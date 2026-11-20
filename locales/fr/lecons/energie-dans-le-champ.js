@@ -1,0 +1,96 @@
+/* Leçon « Énergie dans le champ électrostatique » (Feynman II.8.5) : textes en français.
+   Une autre langue = locales/<langue>/lecons/energie-dans-le-champ.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Énergie dans le champ électrostatique",
+    "crumb.jour": "Énergie dans le champ",
+    "h1": "Énergie dans le champ électrostatique",
+    "lede": "L'énergie d'un ensemble de charges s'écrit de deux façons : sur les charges, ρφ/2, ou dans l'espace vide, ε0E²/2. Les deux donnent le même total, mais ne le placent pas au même endroit. Une boule chargée garde ainsi, selon la seconde, les cinq sixièmes de son énergie hors d'elle.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : énergie d'une distribution de charges, sphère uniforme",
+    "sys.title": "Décrire le système avant d'appliquer la loi",
+
+    "s1.sec": "Sur les charges",
+    "s1.h2": "La somme sur les paires, réécrite avec le potentiel",
+    "s1.p1": "Reprenons (8.3) pour une densité ρ : on somme ρ<sub>1</sub>ρ<sub>2</sub>d<var>V</var><sub>1</sub>d<var>V</var><sub>2</sub>/(4πε<sub>0</sub><var>r</var><sub>12</sub>) sur tous les couples de petits volumes. En intégrant sur tout l'espace pour chacun des deux, on compte chaque paire deux fois : il faut un facteur 1/2. L'intégrale sur le second volume est le potentiel φ au premier. Il reste une intégrale simple.",
+    "val.8.28": "Exacte : c'est (8.3) réécrite, pour une densité lissée de charges immobiles, l'origine du potentiel à l'infini. Approché autour : comme la densité est continue, chaque morceau de charge est compté avec lui-même, ce que (8.3) ne fait pas (leçon « Énergie d'une distribution de charges, sphère uniforme ») ; pour des charges ponctuelles, il faut prendre en chaque charge le potentiel des autres seulement.",
+    "s1.p2": "Pour deux charges ponctuelles, la formule se lit : la moitié de <var>q</var><sub>1</sub> fois le potentiel que crée <var>q</var><sub>2</sub> en 1, plus la moitié de <var>q</var><sub>2</sub> fois le potentiel que crée <var>q</var><sub>1</sub> en 2. Les deux moitiés sont égales et redonnent <var>q</var><sub>1</sub><var>q</var><sub>2</sub>/(4πε<sub>0</sub><var>r</var><sub>12</sub>). Dans cette écriture, l'énergie est là où sont les charges : rien dans le vide.",
+
+    "s2.sec": "Dans le champ",
+    "s2.h2": "La même énergie, écrite avec le champ seul",
+    "s2.p1": "Remplaçons ρ par \u2212ε<sub>0</sub>∇²φ, l'équation de Poisson (leçon « Équations de Poisson et de Laplace »). L'identité φ∇²φ = ∇·(φ∇φ) \u2212 (∇φ)², puis le théorème d'Ostrogradski sur la divergence, séparent l'intégrale sur un volume <var>V</var> en deux : une intégrale de <var>E</var>², et un terme sur la surface <var>S</var> qui borde <var>V</var>.",
+    "val.surface": "Exacte : identité de Green, pour tout volume <var>V</var> et toute densité ρ qui vérifie l'équation de Poisson ; <var>n</var> est la normale sortante. Approché autour : l'électrostatique, charges immobiles et champ indépendant du temps.",
+    "s2.p2": "Prenons pour <var>S</var> une sphère de rayon <var>R</var> très grand. Loin des charges, φ décroît comme 1/<var>R</var>, <var>E</var> comme 1/<var>R</var>², l'aire croît comme <var>R</var>² : le terme de surface décroît comme 1/<var>R</var> et s'annule à l'infini. Toute l'énergie est alors dans l'intégrale de <var>E</var>², et la densité d'énergie ε<sub>0</sub><var>E</var>²/2 est définie en chaque point, y compris là où il n'y a aucune charge.",
+    "val.8.30": "Approximation : intégrale sur tout l'espace, et charges de taille finie. Sur une sphère de rayon <var>R</var> qui contient la charge <var>Q</var>, il manque <var>Q</var>²/(8πε<sub>0</sub><var>R</var>) ; à 1\u00a0m d'une charge de 1\u00a0nC, 4,5\u00a0nJ. Pour des charges ponctuelles, l'intégrale diverge : leçon « Énergie d'une charge ponctuelle ». Dans le vide seulement ; un matériau polarisable change la densité.",
+    "ou.aria": "Énergie par mètre de rayon autour d'une distribution de charge sphérique, placée sur les charges ou dans le champ, et part de l'énergie à l'intérieur d'un rayon choisi",
+    "ou.legend.champ": "dans le champ : ε0E²/2 × 4πr²",
+    "ou.legend.rhophi": "sur les charges : ρφ/2 × 4πr²",
+    "ou.x": "distance au centre r/a",
+    "ou.y": "énergie par mètre de rayon, en K Q²/a²",
+    "ou.choix": "Répartition de la charge",
+    "dist.uniforme": "Uniforme",
+    "dist.parabolique": "Plus dense au centre",
+    "dist.coquille": "Coquille 0,7a à a",
+    "ou.r": "Rayon de la sphère de bilan r/a",
+    "ou.k.champ": "Énergie dans le champ à l'intérieur de r",
+    "ou.f.champ": "part du total, ε0E²/2",
+    "ou.k.rhophi": "Énergie sur les charges à l'intérieur de r",
+    "ou.f.rhophi": "part du total, ρφ/2",
+    "ou.k.surface": "Terme de surface, φ(r)Q(r)/2",
+    "ou.f.surface": "la différence des deux",
+    "ou.caption": "Les aires colorées sont l'énergie comptée à l'intérieur du rayon choisi. Sur les charges, tout est dedans dès <var>r</var> = <var>a</var>. Dans le champ, la boule uniforme n'a que 1/6 de son énergie en elle ; les 5/6 restants sont dehors, et la moitié du total n'est atteinte qu'à 5<var>a</var>/3. Le terme de surface comble exactement l'écart, et décroît comme 1/<var>r</var> : à 4<var>a</var>, il vaut encore 21\u00a0% du total pour la boule uniforme. Les deux comptes ne s'accordent qu'à l'infini.",
+    "sys1.body": "L'air au sol. Par beau temps, le champ électrique de l'atmosphère est de l'ordre de 100\u00a0V·m<sup>\u22121</sup> : ε<sub>0</sub><var>E</var>²/2 ≈ {u1}. Sous un nuage d'orage, le champ ne dépasse guère 3\u00a0MV·m<sup>\u22121</sup>, où l'air devient conducteur : {u2}. Ces joules par mètre cube sont aussi des pascals : c'est la force par unité d'aire sur la surface d'un conducteur, σ²/(2ε<sub>0</sub>) (leçon « Sphère et coquille sphérique chargées »), au plus {rap} fois la pression atmosphérique. Ce qu'on néglige : la polarisation de l'air, dont la permittivité relative diffère de 1 de moins de 10<sup>\u22123</sup> ; les ions de l'air, qui ne changent pas la densité d'énergie du champ qu'ils créent.",
+
+    "s3.sec": "Où est l'énergie ?",
+    "s3.h2": "Deux comptes justes, une seule localisation",
+    "s3.p1": "Tant que tout est statique, aucune mesure ne départage ρφ/2 et ε<sub>0</sub><var>E</var>²/2 : on ne mesure que des variations du total, et les deux les donnent pareillement. La question devient réelle quand l'énergie bouge. On veut qu'elle se conserve localement : si elle diminue dans un volume, c'est qu'elle a traversé sa surface. Une onde lumineuse emporte de l'énergie dans le vide, là où il n'y a aucune charge : il faut qu'elle soit dans le champ.",
+    "s3.p2": "La gravitation tranche en principe : toute énergie a une masse, <var>E</var>/<var>c</var>², et attire. Une boule chargée attire un peu plus qu'une boule neutre de même matière, et la différence a sa source répartie comme ε<sub>0</sub><var>E</var>²/2, surtout hors de la boule. Le cours retient donc la densité dans le champ. Elle a un prix, payé dans la leçon « Énergie d'une charge ponctuelle ».",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "De l'action à distance à l'énergie du champ",
+    "hist.intro": "L'idée que l'énergie électrique remplit l'espace autour des corps chargés vient de Maxwell. Elle ne devient indispensable qu'avec les champs qui varient, et la relativité lui donne un poids.",
+    "hist.events": {
+      maxwell: { who: "James Clerk Maxwell", what: "lit le 8 décembre 1864 devant la Royal Society « A Dynamical Theory of the Electromagnetic Field », publiée en 1865.", context: "Il y place l'énergie électromagnétique dans le champ, dans l'espace qui entoure les corps électrisés et aimantés, et non dans les corps eux-mêmes. Il demande qu'on prenne cette énergie au sens propre." },
+      poynting: { who: "John Henry Poynting", what: "publie dans les Philosophical Transactions « On the Transfer of Energy in the Electromagnetic Field ».", context: "Il écrit la conservation locale de l'énergie électromagnétique : ce que perd un volume a traversé sa surface, avec la densité d'énergie électrique et magnétique de Maxwell, et un flux d'énergie à travers les surfaces." },
+      einstein: { who: "Albert Einstein", what: "publie dans les Annalen der Physik un article daté du 27 septembre : « L'inertie d'un corps dépend-elle de son contenu en énergie ? ».", context: "Un corps qui émet l'énergie L sous forme de rayonnement perd la masse L/c². L'énergie du champ a donc une masse, et pèse." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      capacite: { name: "Calcul des capacités par éléments finis", text: "Les logiciels de simulation électrostatique calculent la carte du champ dans un composant, en intègrent ε<sub>0</sub><var>E</var>²/2 (ou sa forme avec la permittivité du matériau) sur le maillage, et en tirent la capacité, <var>C</var> = 2<var>W</var>/<var>U</var>²." },
+      claquage: { name: "Limite des condensateurs", text: "L'énergie stockée par mètre cube est bornée par le champ de claquage du milieu, par la densité ε<var>E</var>²/2 : c'est pourquoi les condensateurs à forte énergie utilisent des films isolants minces, qui tiennent des champs très supérieurs à celui de l'air." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      demi: { prompt: "Pourquoi un facteur 1/2 dans (8.28) ?",
+        options: { a: "Parce que la moitié de l'énergie est rayonnée.", b: "Parce qu'en intégrant ρφ sur tout l'espace, chaque paire de charges est comptée deux fois.", c: "Parce que le potentiel moyen vaut la moitié du potentiel maximal.", d: "Parce que l'énergie cinétique s'écrit mv²/2." },
+        why: "φ en un point contient l'effet de toutes les autres charges ; ρφ intégré sur tout l'espace compte (1, 2) et (2, 1). La moitié redonne la somme sur les paires." },
+      vide: { prompt: "Selon (8.30), où y a-t-il de l'énergie autour de deux charges ?",
+        options: { a: "Partout où le champ n'est pas nul, y compris dans le vide entre et autour d'elles.", b: "Seulement sur les charges.", c: "Seulement entre les deux charges.", d: "Nulle part : l'énergie n'appartient qu'au système entier." },
+        why: "ε0E²/2 est une densité locale, définie là où il y a un champ. ρφ/2, au contraire, est nulle là où il n'y a pas de charge." },
+      dehors: { prompt: "Une boule uniformément chargée. Quelle part de son énergie, comptée par ε0E²/2, est hors de la boule ?",
+        options: { a: "Aucune : l'énergie est où sont les charges.", b: "La moitié.", c: "1/6.", d: "5/6 : le champ extérieur, celui d'une charge ponctuelle, contient Q²/(8πε0a) sur les 3/5 de Q²/(4πε0a)." },
+        hint: "Le champ d'une charge ponctuelle contient Q²/(8πε0r) au-delà du rayon r.",
+        why: "(1/2)/(3/5) = 5/6. Dedans, le champ croît depuis zéro : il ne porte que 1/10 de Q²/(4πε0a), soit 1/6 du total." },
+      surface: { prompt: "On fait le bilan de ε0E²/2 dans une sphère de rayon R = 10a autour d'une boule chargée. Le résultat :",
+        options: { a: "est exactement l'énergie totale.", b: "dépasse l'énergie totale.", c: "est inférieur au total de Q²/(8πε0R), l'énergie du champ au-delà de R : environ 8\u00a0% pour la boule uniforme.", d: "est nul, car il n'y a pas de charge entre a et R." },
+        why: "Le terme de surface, φQ/2 = Q²/(8πε0R), est ce qui manque ; il vaut (1/20)/(3/5) ≈ 8\u00a0% du total à R = 10a, et décroît comme 1/R." },
+      double: { prompt: "On double le champ dans une région vide. La densité d'énergie :",
+        options: { a: "est multipliée par 4 : elle varie comme E².", b: "double.", c: "ne change pas, il n'y a pas de charge.", d: "est multipliée par 8." },
+        why: "u = ε0E²/2. C'est aussi pourquoi l'énergie de deux champs superposés n'est pas la somme des énergies : il y a un terme croisé ε0E1·E2." },
+      air: { prompt: "Quelle est la densité d'énergie du champ dans l'air juste avant le claquage, vers 3\u00a0MV·m⁻¹ ?",
+        options: { a: "Environ 3 × 10⁶ J·m⁻³.", b: "Environ 40\u00a0J·m⁻³, soit une pression de 40\u00a0Pa.", c: "Environ 10⁻⁸ J·m⁻³.", d: "Environ 10⁵ J·m⁻³, la pression atmosphérique." },
+        why: "8,85 × 10⁻¹² × (3 × 10⁶)²/2 ≈ 40\u00a0J·m⁻³. C'est peu : stocker de l'énergie dans un champ électrique exige un isolant qui tient un champ bien plus fort." },
+      choix: { prompt: "Pourquoi préférer ε0E²/2 à ρφ/2, alors qu'en statique elles donnent le même total ?",
+        options: { a: "Parce que ρφ/2 est fausse.", b: "Parce que ε0E²/2 est plus facile à intégrer.", c: "Parce que l'électrostatique le démontre.", d: "Parce que l'énergie doit se conserver localement : la lumière transporte de l'énergie dans le vide, où ρ = 0." },
+        why: "La statique ne départage pas les deux écritures. Les champs variables, et la gravitation de l'énergie, demandent une énergie localisée dans le champ." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 8 (texte original en anglais), §8-5. Exemples de l'air et des trois répartitions, et calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

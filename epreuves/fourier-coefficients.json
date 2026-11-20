@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["marche", "a"],
+  ["fenetre", "b"],
+  ["points", "c"],
+  ["puissance", "d"],
+  ["reste", "a"],
+  ["distorsion", "b"],
+  ["melange", "c"],
+  ["phases", "d"]
+ ]
+}

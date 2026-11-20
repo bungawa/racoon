@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gravitation universelle</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-mecanique" data-i18n="monde.mecanique"></a><span class="aux">›</span><a href="/racoon/etape?id=gravitation-universelle" data-i18n="etape.gravitation-universelle"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-meca" href="/racoon/atlas?piste=meca" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/loi-de-la-gravitation" data-i18n="tag.prereq"></a>
+      <span class="chip plain" data-i18n="tag.duree"></span>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mover accent="true"><mi>F</mi><mo>→</mo></mover><mo>=</mo><mo>−</mo><mi>G</mi><mfrac><mrow><msub><mi>m</mi><mn>1</mn></msub><msub><mi>m</mi><mn>2</mn></msub></mrow><msup><mi>r</mi><mn>2</mn></msup></mfrac><mspace width="0.1em"/><msub><mover accent="true"><mi>u</mi><mo>→</mo></mover><mrow><mn>1</mn><mo>→</mo><mn>2</mn></mrow></msub></math></div>
+    <p class="validite" data-i18n-html="val.1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi>T</mi><mo>=</mo><mn>2</mn><mi>π</mi><msqrt><mfrac><msup><mi>a</mi><mn>3</mn></msup><mrow><mi>G</mi><mo stretchy="false">(</mo><msub><mi>M</mi><mn>1</mn></msub><mo>+</mo><msub><mi>M</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mfrac></msqrt></math></div>
+    <p class="validite" data-i18n-html="val.2"></p>
+    <figure>
+      <div class="chart"><svg id="ladder" role="img" data-i18n-attr="aria-label:ech.aria"></svg></div>
+      <div class="legend"><span class="c-tint" data-i18n="ech.legend.sys"></span><span class="c-warn" data-i18n="ech.legend.limite"></span></div>
+      <div class="panel">
+        <label class="field"><span data-i18n="ech.pick"></span>
+          <select id="sys">
+            <option value="pomme" data-i18n="ech.opt.pomme"></option>
+            <option value="lune" data-i18n="ech.opt.lune"></option>
+            <option value="terre" data-i18n="ech.opt.terre"></option>
+            <option value="sirius" data-i18n="ech.opt.sirius"></option>
+            <option value="galaxie" data-i18n="ech.opt.galaxie"></option>
+          </select></label>
+        <p id="sysdesc"></p>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="ech.k.r"></span><span class="v" id="vr"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="ech.k.a"></span><span class="v" id="va"></span><span class="f" id="fa"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="ech.k.t"></span><span class="v" id="vt"></span><span class="f" id="ft"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="ech.k.phi"></span><span class="v" id="vphi"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="ech.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="box rem"><b data-i18n="s2.sys.title"></b>
+      <p data-i18n-html="s2.sys.body"></p>
+    </div>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>a</mi><mi data-i18n="eq.maree"></mi></msub><mo>=</mo><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mrow><mo stretchy="false">(</mo><mi>d</mi><mo>−</mo><mi>R</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mfrac><mo>−</mo><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mi>d</mi><mn>2</mn></msup></mfrac><mo>≈</mo><mfrac><mrow><mn>2</mn><mi>G</mi><mi>M</mi><mi>R</mi></mrow><msup><mi>d</mi><mn>3</mn></msup></mfrac><mo>=</mo><mfrac><mrow><mn>2</mn><mi>R</mi></mrow><mi>d</mi></mfrac><mo>·</mo><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mi>d</mi><mn>2</mn></msup></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.3"></p>
+    <p data-i18n-html="s2.p3"></p>
+    <figure>
+      <svg class="fig" id="maree" viewBox="0 0 640 300" role="img" data-i18n-attr="aria-label:mar.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="mar.legend.maree"></span><span class="c-label-2" data-i18n="mar.legend.terre"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <label class="field"><span data-i18n="mar.pick"></span>
+            <select id="astre">
+              <option value="lune" data-i18n="mar.opt.lune"></option>
+              <option value="soleil" data-i18n="mar.opt.soleil"></option>
+            </select></label>
+          <div class="ctl"><div class="row"><label for="dsl" data-i18n="mar.d"></label><output id="dread" for="dsl"></output></div>
+            <input id="dsl" type="range" min="0.5" max="2" step="0.05" value="1"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="mar.k.direct"></span><span class="v" id="vdir"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="mar.k.maree"></span><span class="v" id="vmar"></span><span class="f" id="fmar"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="mar.k.ratio"></span><span class="v" id="vrat"></span><span class="f" id="frat"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="mar.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p4"></p>
+    <div class="box warn"><b data-i18n="s2.warn.title"></b>
+      <p data-i18n-html="s2.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="list keyed" id="limites"></div>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/gravitation-universelle.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/gravitation.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), Gr = Gravitation, Cst = Constantes;
+const ACC = "m·s⁻²";
+const num = (v, sig) => v >= 0.01 && v < 1e4 ? F.num(v, sig) : F.sci(v, sig);
+const dur = s => s > 2 * Gr.YEAR ? t("u.ans", { n: F.num(s / Gr.YEAR, 4) }) : t("u.jours", { n: F.num(s / 86400, 4) });
+
+/* ---------- l'échelle des systèmes ---------- */
+(() => {
+  const E = Gr.echelles(), IDS = ["pomme", "lune", "terre", "sirius", "galaxie"], svg = $("ladder"), sel = $("sys");
+  textOf("ech.desc", IDS);
+  const every = n => v => { const e = Math.round(Math.log10(v)); return e % n ? "" : "10" + F.sup(e); };
+  function draw() {
+    const id = sel.value, s = E[id];
+    svg.innerHTML = "";
+    const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 300, x: { scale: "log", domain: [1e-6, 1e22], label: t("ech.x"), fmt: every(4) }, y: { scale: "log", domain: [1e-12, 1e2], label: t("ech.y"), fmt: every(2) } });
+    /* where the law has not been tested, or fails with the visible mass alone */
+    Plot.el("line", { x1: x(Gr.R_MIN_TESTE), x2: x(Gr.R_MIN_TESTE), y1: y(1e2), y2: y(1e-12), class: "ref" }, g);
+    Plot.el("line", { x1: x(1e-6), x2: x(1e22), y1: y(1e-10), y2: y(1e-10), class: "ref" }, g);
+    Plot.el("text", { x: x(Gr.R_MIN_TESTE) + 6, y: y(1e1), class: "note" }, g).textContent = t("ech.note.court");
+    Plot.el("text", { x: x(1e-5), y: y(1e-10) + 16, class: "note" }, g).textContent = t("ech.note.galaxie");
+    IDS.forEach(k => {
+      const p = E[k];
+      Plot.el("circle", { cx: x(p.r), cy: y(p.a), r: k === id ? 7 : 4, class: "dot" }, g);
+      Plot.el("text", { x: x(p.r) + (k === "galaxie" ? -9 : 9), y: y(p.a) - 8, "text-anchor": k === "galaxie" ? "end" : "start", class: k === id ? "note" : "tick" }, g).textContent = t("ech.opt." + k);
+    });
+    $("sysdesc").innerHTML = t("ech.desc")[id];
+    $("vr").textContent = F.si(s.r, "m");
+    $("va").textContent = F.qty(num(s.a, 3), ACC);
+    $("fa").textContent = t("ech.f.g", { r: num(s.a / Cst.g0, 3) });
+    if (s.Tobs) {
+      $("vt").textContent = dur(s.T);
+      $("ft").textContent = t("ech.f.obs", { obs: dur(s.Tobs), e: F.qty(F.num(Math.abs(s.T / s.Tobs - 1) * 100, 2), "%") });
+    } else if (id === "galaxie") {
+      $("vt").textContent = dur(s.T);
+      $("ft").innerHTML = t("ech.f.masse", { kg: F.qty(F.sci(s.M, 2), "kg"), m: F.sci(s.M / Gr.M_SUN, 2) });
+    } else { $("vt").textContent = "–"; $("ft").textContent = t("ech.f.chute"); }
+    $("vphi").textContent = F.sci(s.phi, 2);
+  }
+  sel.onchange = draw; draw();
+})();
+
+/* ---------- les marées ---------- */
+(() => {
+  const svg = $("maree"), P = Plot.el, sel = $("astre"), dsl = $("dsl"), R = Cst.R_E_mean, O = [240, 150], RE = 80;
+  const BODY = { lune: { GM: Cst.G * Gr.LUNE.M, d: Gr.LUNE.d }, soleil: { GM: Cst.GM_sun, d: Cst.au } };
+  const ref = Gr.mareeLune().tidal;                                      // arrows scaled on the Moon's mean tide
+  const arrow = (x1, y1, x2, y2, cls) => Plot.fleche(svg, [x1, y1], [x2, y2], { cls, tete: 7 });
+  function draw() {
+    const b = BODY[sel.value], k = +dsl.value, d = b.d * k, m = Gr.maree(b.GM, d, R);
+    svg.innerHTML = "";
+    P("circle", { cx: O[0], cy: O[1], r: RE, class: "stroke thin c-label-2" }, svg);
+    /* the deformed ocean, exaggerated: r = R (1 + ε (3cos²θ − 1)/2) */
+    const eps = 0.12 * Math.min(2.5, m.tidal / ref);
+    let path = "";
+    for (let i = 0; i <= 72; i++) { const th = i * Math.PI / 36, rr = RE * (1 + eps * (3 * Math.cos(th) ** 2 - 1) / 2); path += (i ? "L" : "M") + (O[0] + rr * Math.cos(th)).toFixed(1) + " " + (O[1] - rr * Math.sin(th)).toFixed(1); }
+    P("path", { d: path, class: "stroke c-tint dash" }, svg);
+    for (let i = 0; i < 16; i++) {
+      const th = i * Math.PI / 8, a = Gr.tidalAt(b.GM, d, R, th), sc = 30 / ref * Math.min(1, 2.5 * ref / m.tidal) ;
+      const ax = a.r * Math.cos(th) - a.t * Math.sin(th), ay = a.r * Math.sin(th) + a.t * Math.cos(th);
+      const px = O[0] + RE * Math.cos(th), py = O[1] - RE * Math.sin(th);
+      arrow(px, py, px + sc * ax, py - sc * ay, "c-tint");
+    }
+    P("circle", { cx: 600, cy: O[1], r: sel.value === "lune" ? 10 : 18, class: "fill c-warn" }, svg);
+    const l = P("text", { x: 600, y: O[1] + 36, "text-anchor": "middle" }, svg); l.textContent = t("mar.opt." + sel.value);
+    const n = P("text", { x: 420, y: O[1] - 10, "text-anchor": "middle" }, svg); n.textContent = t("mar.lab.d", { d: F.si(d, "m") });
+    P("line", { x1: O[0] + RE + 50, y1: O[1], x2: 580, y2: O[1], class: "stroke thin dash c-label-2" }, svg);
+    $("dread").textContent = t("mar.dread", { k: F.num(k, 3) });
+    $("vdir").textContent = F.qty(F.sci(m.direct, 3), ACC);
+    $("vmar").textContent = F.qty(F.sci(m.tidal, 3), ACC);
+    $("fmar").textContent = t("mar.f.g", { r: F.sci(m.tidal / Cst.g0, 2), l: F.num(m.tidal / ref, 3) });
+    $("vrat").textContent = F.qty(F.num(m.ratio * 100, 3), "%");
+    $("frat").textContent = t("mar.f.err", { e: F.qty(F.num(m.err * 100, 2), "%") });
+  }
+  sel.onchange = dsl.oninput = draw; draw();
+})();
+
+/* ---------- où la loi cesse de valoir ---------- */
+(() => {
+  const E = Gr.echelles(), ROWS = ["court", "fort", "galaxie"], txt = textOf("lim.rows", ROWS);
+  const V = { court: F.qty(F.num(Gr.R_MIN_TESTE * 1e6, 2), "µm"), fort: F.sci(E.terre.phi, 2), galaxie: F.qty(F.sci(E.galaxie.a, 2), ACC) };
+  $("limites").innerHTML = ROWS.map(id => `<div><span class="k">${txt[id].k}</span><span>${txt[id].text.replace("{v}", V[id])}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["romer", 1676, "experiment"], ["newton", 1687, "idea"], ["neptune", 1846, "experiment"], ["sirius", 1862, "experiment"], ["zwicky", 1933, "experiment"], ["rubin", 1970, "experiment"], ["court", 2020, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["rance", "gravimetre"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["deux", "a"], ["soleil", "a"], ["chute", "a"], ["sirius", "a"], ["distance", "a"], ["galaxie", "a"], ["coherence", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 75 });
+})();
+</script>
+</body>
+</html>

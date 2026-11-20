@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["bobine", "a"],
+  ["condensateur", "b"],
+  ["pile", "c"],
+  ["generateur", "d"],
+  ["compte", "a"],
+  ["pont", "b"],
+  ["thevenin", "c"],
+  ["accord", "d"]
+ ]
+}

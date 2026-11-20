@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["echelle", "c"],
+  ["brassage", "a"],
+  ["rapport", "d"],
+  ["piege", "b"],
+  ["boucle", "a"],
+  ["centrifugeuse", "d"],
+  ["paire", "b"],
+  ["vapeur", "c"]
+ ]
+}

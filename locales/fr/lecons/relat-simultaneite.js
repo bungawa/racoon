@@ -1,0 +1,96 @@
+/* Leçon « La simultanéité » (Feynman I.15.6) : textes en français.
+   Une autre langue = locales/<langue>/lecons/relat-simultaneite.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "La simultanéité",
+    "crumb.jour": "La simultanéité",
+    "h1": "La simultanéité",
+    "lede": "Deux événements éloignés, simultanés pour le passager d'un vaisseau, ne le sont pas pour le sol. Le terme ux/c² de la transformation de Lorentz dit de combien, et c'est lui qui rend cohérentes une dilatation du temps et une contraction des longueurs que chacun voit chez l'autre.",
+    "tag.piste": "Relativité",
+    "tag.prereq": "Prérequis : la contraction de Lorentz",
+
+    "s1.sec": "Le terme nouveau",
+    "s1.h2": "La date d'un événement éloigné",
+    "s1.p1": "La loi des temps de « La transformation de Lorentz » s'écrit <var>t</var>′ = (<var>t</var> \u2212 <var>u</var><var>x</var>/<var>c</var>²)/√(1 \u2212 <var>u</var>²/<var>c</var>²). Son dénominateur est celui de « La dilatation du temps ». Le terme <var>u</var><var>x</var>/<var>c</var>² du numérateur est nouveau : il n'a aucun équivalent chez Galilée, pour qui <var>t</var>′ = <var>t</var>. Que veut-il dire ? Prenons deux événements à la même date <var>t</var><sub>0</sub> du sol S, aux abscisses <var>x</var><sub>1</sub> et <var>x</var><sub>2</sub>. Le vaisseau S′, qui avance à <var>u</var> selon <var>x</var>, leur donne des dates différentes :",
+    "val.15.3g": "Exacte : deux événements simultanés dans le référentiel galiléen S, datés par un référentiel S′ qui avance à <var>u</var> selon <var>x</var>, avec la transformation de Lorentz. L'écart est nul si <var>x</var><sub>1</sub> = <var>x</var><sub>2</sub> : deux événements au même endroit et au même instant le sont pour tous. Il n'est pas d'ordre (<var>u</var>/<var>c</var>)², mais d'ordre <var>u</var>/<var>c</var> fois le temps que met la lumière à aller d'un événement à l'autre ; pour <var>u</var> ≪ <var>c</var>, il vaut <var>u</var>(<var>x</var><sub>1</sub> \u2212 <var>x</var><sub>2</sub>)/<var>c</var>² à (<var>u</var>/<var>c</var>)²/2 près en valeur relative.",
+    "s1.p2": "C'est la relativité de la simultanéité à distance. Ce n'est pas un défaut des horloges : la date attribuée à un événement éloigné dépend du référentiel. Si <var>u</var> > 0, l'événement placé le plus loin vers l'avant, <var>x</var><sub>2</sub> > <var>x</var><sub>1</sub>, est pour le vaisseau le plus ancien des deux.",
+
+    "s2.sec": "Synchroniser deux horloges",
+    "s2.h2": "Un éclair au milieu du vaisseau",
+    "s2.p1": "Le système : un vaisseau de longueur propre <var>L</var><sub>0</sub> = 300\u00a0m, une horloge à chaque bout, qui passe devant le sol à la vitesse <var>u</var>. Le passager veut synchroniser ses deux horloges. La méthode la plus simple : repérer le milieu exact, y produire un éclair, et mettre chaque horloge à zéro quand la lumière l'atteint. La lumière va à <var>c</var> dans les deux sens et parcourt la même distance : pour le passager, elle atteint les deux bouts en même temps, et ses horloges sont synchronisées. Il a le droit de le penser, puisqu'il ne peut pas savoir qu'il bouge.",
+    "s2.p2": "Le sol raisonne autrement. Pour lui, le vaisseau mesure <var>L</var> = <var>L</var><sub>0</sub>/γ, et il avance pendant que la lumière se propage. L'arrière (indice 1), qui va au-devant de la lumière, est atteint au bout de (<var>L</var>/2)/(<var>c</var> + <var>u</var>) ; l'avant (indice 2), qui la fuit, au bout de (<var>L</var>/2)/(<var>c</var> \u2212 <var>u</var>). Les deux mises à zéro, simultanées pour le passager, sont séparées pour le sol de :",
+    "val.15.3h": "Exacte : la lumière va à <var>c</var> dans le référentiel du sol, la longueur du vaisseau y vaut <var>L</var><sub>0</sub>/γ par (15.6) de « La contraction de Lorentz », et les deux horloges sont immobiles dans le vaisseau. C'est (15.3g) lue dans l'autre sens : deux événements simultanés à bord, séparés au sol de γ<var>u</var><var>L</var><sub>0</sub>/<var>c</var>².",
+    "fig.aria": "Diagramme d'espace-temps du sol : lignes d'univers des deux bouts du vaisseau, lumière partie du milieu, ligne de simultanéité du vaisseau",
+    "fig.legend.bouts": "lignes d'univers de l'arrière (à gauche) et de l'avant ; trait fin : l'instant choisi au sol",
+    "fig.legend.lumiere": "la lumière partie du milieu, à 45°",
+    "fig.legend.simul": "instants égaux pour le vaisseau, par les deux mises à zéro",
+    "fig.b": "Vitesse u/c du vaisseau",
+    "fig.bv": "{b}, γ = {g}",
+    "fig.t": "Instant choisi, au sol",
+    "fig.k.ecart": "Écart des mises à zéro, au sol",
+    "fig.f.ecart": "(15.3h) ; longueur au sol : {L}",
+    "fig.k.ar": "Horloge arrière, à cet instant du sol",
+    "fig.k.av": "Horloge avant, au même instant",
+    "fig.f.av": "l'arrière avance de uL₀/c² = {d}",
+    "fig.attente": "pas encore atteinte",
+    "fig.xaxis": "x au sol (m)",
+    "fig.yaxis": "ct au sol (m)",
+    "fig.caption": "Le temps du sol monte, multiplié par <var>c</var> pour se lire en mètres comme <var>x</var>. Les deux points sont les mises à zéro ; ils ne sont à la même hauteur que si <var>u</var> = 0. Pour le vaisseau, ils sont sur une même ligne d'instants égaux, de pente <var>u</var>/<var>c</var>. Déplacez l'instant du sol : une fois les deux horloges atteintes, l'arrière avance toujours sur l'avant de <var>u</var><var>L</var><sub>0</sub>/<var>c</var>², et non de γ<var>u</var><var>L</var><sub>0</sub>/<var>c</var>², car chaque horloge du vaisseau bat γ fois moins vite que celles du sol.",
+    "sys.title": "Le système décrit : un train",
+    "sys1.body": "Un train de 300\u00a0m passe à 90\u00a0m·s<sup>\u22121</sup> ; au milieu, un contrôleur allume une lampe, et les horloges de tête et de queue se mettent à zéro à l'arrivée de la lumière. <var>u</var>/<var>c</var> = {b}. Pour le quai, la queue est atteinte {d} avant la tête. La lumière met elle-même {tl} à parcourir le train : c'est leur rapport, <var>u</var>/<var>c</var>, qui mesure l'effet, et il est trop petit pour qu'un voyageur le perçoive. Pour un référentiel qui avance à 4\u00a0km·s<sup>\u22121</sup>, la vitesse d'un satellite GPS, et deux événements à 20\u00a0000\u00a0km l'un de l'autre, <var>u</var>Δ<var>x</var>/<var>c</var>² atteint 0,9\u00a0µs : une horloge atomique le voit.",
+
+    "s3.sec": "Ce qui en découle",
+    "s3.h2": "Ce que la simultanéité explique",
+    "s3.p1": "Elle lève le paradoxe des dilatations réciproques. Le sol voit les horloges du vaisseau retarder, et le vaisseau voit celles du sol retarder. Pour comparer, le vaisseau note ce que marque une horloge du sol quand elle passe devant son horloge avant, puis devant son horloge arrière : le vaisseau avance, l'horloge du sol recule vers sa queue. Le sol objecte que ces deux horloges du vaisseau ne sont pas synchronisées : l'arrière avance de <var>u</var><var>L</var><sub>0</sub>/<var>c</var>² sur l'avant. Avec cette correction, les deux récits donnent les mêmes lectures, horloge par horloge. Il en va de même pour les règles de « La contraction de Lorentz » : chacun reproche à l'autre des marques qui ne sont pas simultanées.",
+    "s3.p2": "Elle ne renverse jamais une cause et son effet. Si un signal peut aller d'un événement à l'autre, à une vitesse au plus égale à <var>c</var>, alors |<var>x</var><sub>2</sub> \u2212 <var>x</var><sub>1</sub>| ≤ <var>c</var>|<var>t</var><sub>2</sub> \u2212 <var>t</var><sub>1</sub>|, et la transformation de Lorentz, avec |<var>u</var>| &lt; <var>c</var>, garde l'ordre des deux dates. Seuls des événements trop éloignés pour qu'un signal les relie changent d'ordre selon l'observateur : c'est la géométrie de « Passé, présent, futur : le cône de lumière ».",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Du temps local à la synchronisation des horloges",
+    "hist.intro": "Un artifice de calcul est devenu une définition, puis une correction que les réseaux d'horloges appliquent tous les jours.",
+    "hist.events": {
+      lorentz: { who: "Hendrik Lorentz", what: "introduit, dans son essai sur les phénomènes électriques et optiques dans les corps en mouvement, un « temps local » t \u2212 vx/c².", context: "Pour lui, c'est un intermédiaire de calcul qui simplifie les équations d'un corps en mouvement à travers l'éther ; le vrai temps reste celui de l'éther." },
+      poincare: { who: "Henri Poincaré", what: "publie « La mesure du temps » dans la Revue de métaphysique et de morale.", context: "Il y soutient que la simultanéité de deux événements éloignés n'a de sens que par une convention, et il prend l'exemple des signaux télégraphiques qu'échangent deux observatoires pour mesurer leur différence de longitude." },
+      einstein: { who: "Albert Einstein", what: "définit la simultanéité par un échange de signaux lumineux, au début de « Sur l'électrodynamique des corps en mouvement ».", context: "Deux horloges A et B sont synchrones si la lumière met, par définition, autant de temps pour aller de A à B que de B à A. Il en déduit que deux événements simultanés pour un observateur ne le sont pas pour un autre, en mouvement par rapport au premier." },
+      sagnac: { who: "David Allan, Marc Weiss et Neil Ashby", what: "comparent, au moyen des satellites GPS, les horloges atomiques de trois laboratoires répartis autour de la Terre.", context: "Synchronisées de proche en proche par des signaux, les horloges ne bouclent le tour de la Terre qu'en tenant compte de sa rotation (effet Sagnac) ; l'écart résiduel moyen est d'environ 5 ns sur trois mois." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      temps: { name: "Synchroniser les horloges de la Terre", text: "Sur la Terre qui tourne, une synchronisation par signaux faite de proche en proche tout autour de l'équateur revient au point de départ avec 207\u00a0ns d'écart : deux fois la vitesse de rotation de la Terre, fois l'aire du disque équatorial, divisé par c². Le GPS et les laboratoires de temps synchronisent donc leurs horloges dans le référentiel géocentrique, qui ne tourne pas, et corrigent chaque échange de signaux de cet effet, qui atteint des centaines de nanosecondes." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      milieu: { prompt: "Un éclair part du milieu d'un vaisseau qui avance. Pour qui la lumière atteint-elle les deux bouts en même temps ?",
+        options: { a: "Pour le passager seulement ; pour le sol, l'arrière est atteint d'abord.", b: "Pour le sol seulement ; pour le passager, l'avant est atteint d'abord.", c: "Pour les deux, puisque la lumière va à c pour tous.", d: "Pour personne : l'avant est toujours atteint d'abord." },
+        why: "À bord, la lumière parcourt deux distances égales à la même vitesse. Pour le sol, l'arrière va au-devant de la lumière et l'avant la fuit ; l'écart est (15.3h)." },
+      memelieu: { prompt: "Deux événements ont lieu au même endroit et au même instant pour le sol. Pour un observateur rapide, sont-ils simultanés ?",
+        options: { a: "Non : l'écart vaut γu/c².", b: "Cela dépend du sens de sa vitesse.", c: "Oui, pour tous les observateurs.", d: "Non, sauf si sa vitesse est faible." },
+        why: "(15.3g) est proportionnelle à x₁ \u2212 x₂ : nulle au même endroit. Une coïncidence, comme deux voitures qui se heurtent, est la même pour tous." },
+      calcul: { prompt: "Un vaisseau de longueur propre 300\u00a0m passe à 0,6\u00a0c. Pour le sol, quel temps sépare les deux mises à zéro faites par l'éclair du milieu ?",
+        options: { a: "0,6\u00a0µs.", b: "0,75\u00a0µs.", c: "1\u00a0µs.", d: "0,48\u00a0µs." },
+        hint: "γuL₀/c², avec γ = 1,25 et L₀/c = 1\u00a0µs.",
+        why: "1,25 × 0,6 × 1\u00a0µs = 0,75\u00a0µs, d'après (15.3h)." },
+      lecture: { prompt: "Même vaisseau, une fois les deux horloges atteintes. À un même instant du sol, que marquent-elles ?",
+        options: { a: "La même chose : elles sont synchronisées.", b: "L'avant avance de 0,75\u00a0µs sur l'arrière.", c: "L'arrière avance de 0,75\u00a0µs sur l'avant.", d: "L'arrière avance de 0,6\u00a0µs sur l'avant." },
+        hint: "Chaque horloge du vaisseau bat γ fois moins vite que celles du sol.",
+        why: "L'arrière a été mis à zéro 0,75\u00a0µs plus tôt, au sol ; pendant ce temps, il a compté 0,75/1,25 = 0,6\u00a0µs, soit uL₀/c²." },
+      causal: { prompt: "Un événement A en cause un autre, B, par un signal qui va à 0,5\u00a0c. Un observateur peut-il voir B avant A ?",
+        options: { a: "Non : pour tout observateur plus lent que la lumière, A reste avant B.", b: "Oui, s'il va plus vite que 0,5\u00a0c.", c: "Oui, s'il va dans le sens opposé au signal.", d: "Oui, si A et B sont assez éloignés." },
+        why: "Le signal relie A à B, donc |Δx| ≤ c|Δt|. Alors uΔx/c² reste plus petit que Δt en valeur absolue, et l'ordre ne change pas. Seuls des événements qu'aucun signal ne peut relier changent d'ordre." },
+      quotidien: { prompt: "Un avion à 250\u00a0m·s⁻¹ survole deux villes distantes de 1\u00a0000\u00a0km, où deux horloges sonnent au même instant pour le sol. Pour l'avion, quel temps sépare les deux sonneries ?",
+        options: { a: "Environ 1\u00a0s.", b: "Environ 3\u00a0ms, le temps de trajet de la lumière.", c: "Environ 3\u00a0ns.", d: "Exactement zéro, puisque la vitesse est faible." },
+        hint: "uΔx/c².",
+        why: "250 × 10⁶/(9 × 10¹⁶) ≈ 2,8 × 10⁻⁹\u00a0s : c'est u/c fois le temps de trajet de la lumière, 3,3\u00a0ms. Des horloges atomiques le verraient ; nos sens, non." },
+      reciproque: { prompt: "Le sol trouve que les horloges du vaisseau retardent, et le vaisseau trouve que celles du sol retardent. Qu'est-ce qui évite la contradiction ?",
+        options: { a: "L'un des deux se trompe : celui qui a accéléré.", b: "Chacun compare une horloge de l'autre à deux des siennes, que l'autre juge mal synchronisées.", c: "Les deux retards se compensent exactement.", d: "Les horloges ne retardent qu'en apparence, à cause du temps de trajet de la lumière." },
+        why: "Comparer des rythmes entre deux référentiels demande deux horloges dans l'un d'eux. Leur synchronisation dépend du référentiel : avec le décalage uL₀/c², les deux récits s'accordent, lecture par lecture." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. I, chap. 15, §15-6 (texte original en anglais). Notations SI. Lorentz, <i>Versuch einer Theorie der elektrischen und optischen Erscheinungen in bewegten Körpern</i> (1895) ; Poincaré, « La mesure du temps », <i>Revue de métaphysique et de morale</i> 6 (1898) ; Einstein, <i>Annalen der Physik</i> 17 (1905) ; Allan, Weiss et Ashby, <i>Science</i> 228 (1985) ; N. Ashby, « Relativity in the Global Positioning System », <i>Living Reviews in Relativity</i> 6 (2003). Calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

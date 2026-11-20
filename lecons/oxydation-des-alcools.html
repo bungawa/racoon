@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oxydation des alcools selon leur classe</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .reaction { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 8px; align-items: center; }
+  .reaction svg { width: 100%; height: 150px; }
+  .reaction .fleche { text-align: center; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-organique" data-i18n="monde.chim-organique"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-redox-organique" data-i18n="etape.chim-redox-organique"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/niveau-d-oxydation-organique" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="box def"><b data-i18n="s1.def.titre"></b>
+      <p data-i18n-html="s1.def.corps"></p>
+    </div>
+    <p data-i18n-html="s1.p2"></p>
+    <figure>
+      <div class="reaction">
+        <svg class="fig no-sigle" id="alcool" role="img" data-i18n-attr="aria-label:ox.ariaA"></svg>
+        <div class="fleche readout" id="conditions"></div>
+        <svg class="fig no-sigle" id="produit" role="img" data-i18n-attr="aria-label:ox.ariaP"></svg>
+      </div>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="alcsel" data-i18n="ox.alcool"></label></div><select id="alcsel"></select></div>
+        <div class="seg" role="group" id="mode" data-i18n-attr="aria-label:ox.mode">
+          <button type="button" data-m="poussee" data-i18n="ox.poussee"></button>
+          <button type="button" data-m="menagee" data-i18n="ox.menagee"></button>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="ox.k.classe"></span><span class="v" id="classe"></span><span class="f" id="fclasse"></span></div>
+          <div class="stat"><span class="k" data-i18n="ox.k.no"></span><span class="v" id="dno"></span><span class="f" id="fdno"></span></div>
+        </div>
+      </div>
+      <div class="list keyed no-sigle" id="oxdetail" aria-live="polite"></div>
+      <figcaption data-i18n-html="ox.caption"></figcaption>
+    </figure>
+    <div class="eq no-sigle" data-i18n-html="eq.dichromate"></div>
+    <p class="validite" data-i18n-html="val.dichromate"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="list keyed" id="controle"></div>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="list keyed no-sigle" id="indices"></div>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="box warn"><b data-i18n="s2.surete.titre"></b>
+      <p data-i18n-html="s2.surete.corps"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/oxydation-des-alcools.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/chim-solutions.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/chim-architecture.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script src="/racoon/statistique.js"></script>
+<script src="/racoon/chim-organique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const O = ChimOrga, S = ChimSolutions, $ = id => document.getElementById(id), sym = s => t("chim.sym", { s });
+const signe = x => (x > 0 ? "+" : "") + F.num(x, 3);
+const peindre = (svg, m, o) => { const d = O.dessin(m, Object.assign({ texte: sym }, o)); svg.setAttribute("viewBox", d.viewBox); svg.innerHTML = d.html; };
+const keyed = (el, rows) => { el.innerHTML = rows.map(([k, v]) => `<div><span class="k">${k}</span><span>${v}</span></div>`).join(""); };
+/* bandes IR de la table de l'étape « Spectroscopies » (m⁻¹), affichées en cm⁻¹ comme le font les spectroscopistes */
+const NOMS_IR = textOf("ir.noms", ["ohAlcool", "chAldehyde", "coAldehyde", "ohAcide", "coAcide", "coCetone"]), FAM = textOf("ox.familles", ["aldehyde", "cetone", "acide", "alcool"]);
+const bande = id => { const B = O.Spectro.BANDES_IR[id]; return t("ir.bande", { min: F.num(B.min / 100, 4), max: F.num(B.max / 100, 4), n: NOMS_IR[id] }); };
+const IR = { aldehyde: ["chAldehyde", "coAldehyde"], acide: ["ohAcide", "coAcide"], cetone: ["coCetone"], alcool: ["ohAlcool"] };
+
+/* ---------- §1 : un alcool, un mode, le produit ---------- */
+(() => {
+  const IDS = ["ethanol", "propan1ol", "butan1ol", "propan2ol", "butan2ol", "cyclohexanol", "methylpropan2ol"];
+  const PRODUITS = { ethanol: ["ethanal", "acideEthanoique"], propan1ol: ["propanal", "acidePropanoique"], butan1ol: ["butanal", "acideButanoique"],
+    propan2ol: ["propanone", "propanone"], butan2ol: ["butanone", "butanone"], cyclohexanol: ["cyclohexanone", "cyclohexanone"] };
+  const noms = textOf("ox.alcools", IDS), produits = textOf("ox.produits", [...new Set(Object.values(PRODUITS).flat())]), cr = S.COUPLES.find(c => c.id === "cr");
+  const sel = $("alcsel");
+  sel.innerHTML = IDS.map(id => `<option value="${id}">${noms[id]}</option>`).join("");
+  sel.value = "propan1ol";
+  let mode = "poussee";
+  function maj() {
+    const id = sel.value, m = O.molecule(id), o = O.alcools(m)[0], c = O.carbinol(m, o), r = O.oxyderAlcool(m, o, mode);
+    peindre($("alcool"), m, { surligne: [c], echelle: 40 });
+    $("classe").textContent = t("ox.classe." + r.classe);
+    $("fclasse").textContent = t("ox.f.classe", { k: r.classe });
+    $("mode").querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.m === mode)));
+    $("conditions").textContent = t("ox.cond." + mode);
+    if (!r.produit) {
+      $("produit").setAttribute("viewBox", "-60 -30 120 60");
+      $("produit").innerHTML = `<text x="0" y="5" text-anchor="middle" class="fill c-label-2">${t("ox.rien")}</text>`;
+      $("dno").textContent = "0"; $("fdno").textContent = t("ox.f.rien");
+      keyed($("oxdetail"), [[t("ox.k.produit"), t("ox.tertiaire")], [t("ox.k.ir"), t("ox.ir.reste", { b: bande("ohAlcool") })]]);
+      return;
+    }
+    peindre($("produit"), r.produit, { surligne: [r.c], echelle: 40 });
+    const noC = x => O.nombreOxydation(x.m, x.c), avant = noC({ m, c }), apres = noC({ m: r.produit, c: r.c });
+    $("dno").textContent = signe(apres - avant);
+    $("fdno").textContent = t("ox.f.no", { a: signe(avant), b: signe(apres) });
+    const eq = S.bilan(cr, { ox: O.formuleTexte(r.produit), red: O.formuleTexte(m) });
+    const nom = produits[PRODUITS[id][r.famille === "acide" ? 1 : 0]];
+    keyed($("oxdetail"), [
+      [t("ox.k.produit"), t("ox.produit", { n: nom, f: FAM[r.famille] })],
+      [t("ox.k.bilan"), S.ecrire(eq)],
+      [t("ox.k.ir"), IR[r.famille].map(bande).join(" ; ")],
+      [t("ox.k.note"), t("ox.note." + (r.classe === 2 ? "secondaire" : mode))],
+    ]);
+  }
+  sel.onchange = maj;
+  $("mode").querySelectorAll("button").forEach(b => b.onclick = () => { mode = b.dataset.m; maj(); });
+  maj();
+})();
+
+/* ---------- §2 : oxydation contrôlée, et reconnaître le produit ---------- */
+(() => {
+  const CTRL = ["distiller", "sanseau"], txt = textOf("s2.controle", CTRL);
+  /* propanal 319–323 K, propan-1-ol 370–371 K (Wikipédia, fiches des deux composés) */
+  const T = { propanal: [319, 323], propanol: [370, 371] }, c = k => Math.round(k - 273.15);
+  const int = ([a, b]) => F.qty(a + "–" + b, "K") + ` <span class="aux">(${F.qty(c(a) + "–" + c(b), "°C")})</span>`;
+  keyed($("controle"), [[txt.distiller.k, t("s2.distiller", { a: int(T.propanal), b: int(T.propanol) })], [txt.sanseau.k, txt.sanseau.v]]);
+  const ROWS = [["alcool", ["ohAlcool"]], ["aldehyde", ["chAldehyde", "coAldehyde"]], ["acide", ["ohAcide", "coAcide"]]], rmn = textOf("ir.rmn", ROWS.map(r => r[0]));
+  keyed($("indices"), ROWS.map(([f, b]) => [FAM[f], b.map(bande).join(" ; ") + " ; " + rmn[f]]));
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["liebig", 1835, "idea"], ["jones", 1946, "experiment"], ["borkenstein", 1954, "use"], ["corey", 1975, "experiment"], ["reach", 2017, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["ethylotest", "electronique"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["tertiaire", "c"], ["secondaire", "a"], ["primaire", "d"], ["distiller", "b"], ["sanseau", "c"], ["ir", "a"], ["dichromate", "b"], ["ethylotest", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

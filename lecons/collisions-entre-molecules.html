@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Collisions entre molécules</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-statistique" data-i18n="monde.statistique"></a><span class="aux">›</span><a href="/racoon/etape?id=libre-parcours-moyen" data-i18n="etape.libre-parcours-moyen"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-thermo" href="/racoon/atlas?piste=thermo" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/distribution-des-vitesses-moleculaires" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi>N</mi><mo>=</mo><mfrac><mi>T</mi><mi>τ</mi></mfrac></math><span class="n">(43.1)</span></div>
+    <p class="validite" data-i18n-html="val.43.1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mi>d</mi><mi>N</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mo>−</mo><mfrac><mi>N</mi><mi>τ</mi></mfrac></math><span class="n">(43.3)</span></div>
+    <p class="validite" data-i18n-html="val.43.3"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="eq"><math display="block"><mi>P</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>t</mi><mo>/</mo><mi>τ</mi></mrow></msup></math><span class="n">(43.8)</span></div>
+    <p class="validite" data-i18n-html="val.43.8"></p>
+    <p data-i18n-html="s1.p4"></p>
+    <div class="eq"><math display="block"><mo>⟨</mo><msub><mi>t</mi><mi>s</mi></msub><mo>⟩</mo><mo>=</mo><mfrac><mn>1</mn><msub><mi>N</mi><mn>0</mn></msub></mfrac><msubsup><mo>∫</mo><mn>0</mn><mi>∞</mi></msubsup><mi>t</mi><mfrac><mrow><mi>N</mi><mo>(</mo><mi>t</mi><mo>)</mo><mi>d</mi><mi>t</mi></mrow><mi>τ</mi></mfrac><mo>=</mo><mi>τ</mi></math></div>
+    <p class="validite" data-i18n-html="val.moy"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="sim.sec"></span>
+    <h2 data-i18n="sim.h2"></h2>
+    <p data-i18n-html="sim.p"></p>
+    <figure class="chart">
+      <svg class="fig" id="courbe" role="img" data-i18n-attr="aria-label:sim.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="sim.legend.sim"></span><span class="c-label-2" data-i18n="sim.legend.loi"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="p" data-i18n="sim.p.label"></label><output id="pv" for="p"></output></div>
+            <input id="p" type="range" min="0.01" max="1" step="0.01" value="0.02"></div>
+          <button class="btn tinted" type="button" id="refaire" data-i18n="sim.refaire"></button>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="sim.k.libre"></span><span class="v" id="vlibre"></span><span class="f" data-i18n="sim.f.libre"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="sim.k.tau"></span><span class="v" id="vtau"></span><span class="f" id="ftau"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="sim.k.jusqua"></span><span class="v" id="vjus"></span><span class="f" id="fjus"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="sim.k.cont"></span><span class="v" id="vcont"></span><span class="f" id="fcont"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="sim.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p data-i18n-html="sys.inner"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/collisions-entre-molecules.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/statistique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const S = Statistique;
+
+/* ---------- des chocs tirés au hasard, pas de durée dt = pτ ---------- */
+(() => {
+  const svg = $("courbe"), sp = $("p"), N = 400, DUREE = 60, TMAX = 4;     // τ = 1: times in units of τ
+  let seed = 431;
+  const mean = a => { let s = 0, n = 0; for (const x of a) if (isFinite(x)) { s += x; n++; } return s / n; };
+  const tauUnits = x => F.num(x, 3) + "\u00a0τ";
+  function draw() {
+    const p = +sp.value, v = S.vols({ N, tau: 1, p, duree: DUREE }, Quiz.rng(seed)), th = S.attente(p, 1);
+    const prem = Array.from(v.premier).sort((a, b) => a - b);
+    svg.innerHTML = "";
+    const o = Plot.axes(svg, { fmt: F, w: 640, h: 280, pad: { b: 44, l: 56 },
+      x: { domain: [0, TMAX], label: t("sim.x") }, y: { domain: [0, 1], label: t("sim.y") } });
+    const loi = []; for (let x = 0; x <= TMAX; x += 0.02) loi.push([o.x(x), o.y(S.survie(x, 1))]);
+    Plot.el("path", { d: Plot.path(loi), class: "stroke dash c-label-2" }, o.g);
+    const pts = [[o.x(0), o.y(1)]]; let k = 0;                        // survival: a staircase, one step per first collision
+    for (const ti of prem) { if (ti > TMAX) break; k++; pts.push([o.x(ti), pts[pts.length - 1][1]], [o.x(ti), o.y(1 - k / N)]); }
+    pts.push([o.x(TMAX), pts[pts.length - 1][1]]);
+    Plot.el("path", { d: Plot.path(pts), class: "stroke bold c-tint" }, o.g);
+    $("pv").textContent = F.fix(p, 2);
+    $("vlibre").textContent = tauUnits(mean(v.libres));
+    $("vtau").textContent = F.qty(F.num(100 * prem.filter(x => x > 1).length / N, 3), "%");
+    $("ftau").textContent = t("sim.f.tau", { e: F.qty(F.num(100 * Math.exp(-1), 3), "%"), d: F.qty(F.num(100 * Math.pow(1 - p, Math.floor(1 / p + 1e-9)), 3), "%") });
+    $("vjus").textContent = tauUnits(mean(v.jusqua));
+    $("fjus").textContent = t("sim.f.theorie", { v: tauUnits(th.jusqua) });
+    $("vcont").textContent = tauUnits(mean(Array.from(v.jusqua, (x, i) => x + v.depuis[i])));
+    $("fcont").textContent = t("sim.f.theorie", { v: tauUnits(th.contenant) });
+  }
+  sp.oninput = draw; $("refaire").onclick = () => { seed++; draw(); }; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["poisson", 1837, "idea"], ["erlang", 1909, "idea"], ["rutherford", 1910, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["geant4"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["fraction", "a"], ["survie", "b"], ["memoire", "c"], ["paradoxe", "d"], ["regulier", "a"], ["vitesse", "b"], ["compter", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 431 });
+})();
+</script>
+</body>
+</html>

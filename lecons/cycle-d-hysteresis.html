@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cycle d'hystérésis</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-magnetisme-induction" data-i18n="monde.magnetisme-induction"></a><span class="aux">›</span><a href="/racoon/etape?id=ferromagnetisme" data-i18n="etape.ferromagnetisme"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/comprendre-le-ferromagnetisme" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mfrac><mi>E</mi><mi>S</mi></mfrac><mo>=</mo><mfrac><mrow><mi>σ</mi><mi>L</mi></mrow><mi>D</mi></mfrac><mo>+</mo><mn>2</mn><mi>κ</mi><msub><mi>μ</mi><mn>0</mn></msub><msubsup><mi>M</mi><mi>s</mi><mn>2</mn></msubsup><mi>D</mi><mo>,</mo><mspace width="1em"/><msup><mi>D</mi><mo>*</mo></msup><mo>=</mo><msqrt><mfrac><mrow><mi>σ</mi><mi>L</mi></mrow><mrow><mn>2</mn><mi>κ</mi><msub><mi>μ</mi><mn>0</mn></msub><msubsup><mi>M</mi><mi>s</mi><mn>2</mn></msubsup></mrow></mfrac></msqrt></math></div>
+    <p class="validite" data-i18n-html="val.bandes"></p>
+    <figure class="chart">
+      <svg class="fig" id="bandes" role="img" data-i18n-attr="aria-label:fig1.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n-html="fig1.legend.total"></span><span class="c-label-2" data-i18n-html="fig1.legend.parts"></span><span class="c-warn" data-i18n-html="fig1.legend.un"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="sl" data-i18n-html="fig1.l"></label><output id="slr" for="sl"></output></div>
+            <input id="sl" type="range" min="-8.5" max="-2" step="0.05" value="-3"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="fig1.k.d"></span><span class="v" id="vd"></span><span class="f" id="fd"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig1.k.gain"></span><span class="v" id="vg"></span><span class="f" id="fg"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig1.k.lc"></span><span class="v" id="vlc"></span><span class="f" id="flc"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig1.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>H</mi><mo>=</mo><msub><mi>N</mi><mi>d</mi></msub><mi>M</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>+</mo><mfrac><mn>1</mn><mrow><mn>2</mn><msub><mi>μ</mi><mn>0</mn></msub><msub><mi>M</mi><mi>s</mi></msub></mrow></mfrac><mfrac><mrow><mi>d</mi><mi>V</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.paroi"></p>
+    <figure class="chart">
+      <svg class="fig" id="cycle" role="img" data-i18n-attr="aria-label:fig2.aria"></svg>
+      <svg class="fig" id="clics" role="img" data-i18n-attr="aria-label:fig2.aria2"></svg>
+      <div class="legend"><span class="c-tint" data-i18n-html="fig2.legend.montee"></span><span class="c-warn" data-i18n-html="fig2.legend.descente"></span><span class="c-label-2" data-i18n-html="fig2.legend.sauts"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="sa" data-i18n-html="fig2.a"></label><output id="sar" for="sa"></output></div>
+            <input id="sa" type="range" min="2" max="60" step="1" value="20"></div>
+          <div class="ctl"><div class="row"><label for="sn" data-i18n-html="fig2.nd"></label><output id="snr" for="sn"></output></div>
+            <input id="sn" type="range" min="0" max="10" step="0.5" value="2"></div>
+          <div class="ctl"><button type="button" class="btn" id="tirage" data-i18n="fig2.tirage"></button></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="fig2.k.hc"></span><span class="v" id="vhc"></span><span class="f" id="fhc"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig2.k.mr"></span><span class="v" id="vmr"></span><span class="f" id="fmr"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig2.k.sauts"></span><span class="v" id="vsauts"></span><span class="f" id="fsauts"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig2.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/cycle-d-hysteresis.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/physique-fondamentale.js"></script>
+<script src="/racoon/lecons/champs-em.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/magnetisme-induction.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const M = MagInd, C = Constantes;
+const MS = M.FER_MS, W = M.paroi(M.FER_PAROI.A, M.FER_PAROI.K);
+
+/* ---------- le système décrit : énergie de champ contre énergie de paroi ---------- */
+(() => {
+  $("sys1").innerHTML = t("sys1.body", { u: F.si(C.mu0 * MS * MS / 2, "J·m⁻³", { sig: 2 }), s: F.si(W.sigma, "J·m⁻²", { sig: 1 }),
+    d: F.si(W.delta, "m", { sig: 2 }), L: F.si(W.sigma / (C.mu0 * MS * MS / 2), "m", { sig: 2 }) });
+})();
+
+/* ---------- domaines en bandes ---------- */
+(() => {
+  const sl = $("sl");
+  function draw() {
+    const L = Math.pow(10, +sl.value), d = M.domainesBandes(W.sigma, MS, L), svg = $("bandes"); svg.innerHTML = "";
+    const D0 = d.D / 100, D1 = Math.min(d.D * 100, 1e-1), ds = Array.from({ length: 160 }, (_, i) => D0 * Math.pow(D1 / D0, i / 159));
+    const ys = ds.map(D => d.energie(D)), y0 = Math.min(d.E, d.Eun) / 3, y1 = Math.max(...ys, d.Eun) * 1.5;
+    const P = Plot.axes(svg, { fmt: F, w: 640, h: 300, x: { domain: [D0, D1], scale: "log", label: t("fig1.ax.x") },
+      y: { domain: [y0, y1], scale: "log", label: t("fig1.ax.y") } });
+    /* only the part of each curve inside the frame (monotonic pieces: the kept points are contiguous) */
+    const trace = (f, cls) => { const pts = ds.map(D => [D, f(D)]).filter(q => q[1] >= y0 && q[1] <= y1);
+      if (pts.length > 1) Plot.el("path", { d: Plot.path(pts.map(q => [P.x(q[0]), P.y(q[1])])), class: cls }, P.g); };
+    trace(D => W.sigma * L / D, "stroke thin dash c-label-2");
+    trace(D => 2 * d.kappa * C.mu0 * MS * MS * D, "stroke thin dash c-label-2");
+    trace(D => d.energie(D), "curve");
+    if (d.Eun <= y1) Plot.el("line", { x1: P.x(D0), x2: P.x(D1), y1: P.y(d.Eun), y2: P.y(d.Eun), class: "ref" }, P.g);
+    Plot.el("circle", { cx: P.x(d.D), cy: P.y(d.E), r: 5, class: "dot" }, P.g);
+    $("slr").innerHTML = F.si(L, "m", { sig: 2 });
+    $("vd").innerHTML = F.si(d.D, "m", { sig: 2 });
+    $("fd").innerHTML = t("fig1.f.d", { n: F.num(Math.max(1, d.domaines), 2) });
+    $("vg").textContent = F.num(d.Eun / d.E, 2);
+    $("fg").innerHTML = t(d.E < d.Eun ? "fig1.f.gain" : "fig1.f.perte");
+    $("vlc").innerHTML = F.si(d.Lc, "m", { sig: 2 });
+    $("flc").innerHTML = t("fig1.f.lc");
+  }
+  sl.oninput = draw; draw();
+})();
+
+/* ---------- une paroi accrochée : le cycle et ses sauts ---------- */
+(() => {
+  const sa = $("sa"), sn = $("sn"); let graine = 7;
+  function draw() {
+    const amax = +sa.value * 1e-6, Nd = +sn.value * 1e-5;
+    const pa = M.paroiAccrochee({ amax, Nd, graine }), Hmax = 1.5 * pa.Hp + 1.2 * Nd * MS, c = pa.cycle(Hmax, 400);
+    let svg = $("cycle"); svg.innerHTML = "";
+    let P = Plot.axes(svg, { fmt: F, w: 640, h: 300, x: { domain: [-Hmax, Hmax], label: t("fig2.ax.x") }, y: { domain: [-1.1, 1.1], label: t("fig2.ax.y") } });
+    Plot.el("line", { x1: P.x(-Hmax), x2: P.x(Hmax), y1: P.y(0), y2: P.y(0), class: "zero" }, P.g);
+    Plot.el("line", { x1: P.x(0), x2: P.x(0), y1: P.y(-1.1), y2: P.y(1.1), class: "zero" }, P.g);
+    /* a branch is drawn as a staircase: M holds, then jumps at the field where the wall breaks free */
+    const marches = br => { const out = []; br.forEach((p, i) => { if (i) out.push([p.H, br[i - 1].M]); out.push([p.H, p.M]); }); return out; };
+    Plot.el("path", { d: Plot.path(marches(c.descente).map(q => [P.x(q[0]), P.y(q[1] / MS)])), class: "ref" }, P.g);
+    Plot.el("path", { d: Plot.path(marches(c.montee).map(q => [P.x(q[0]), P.y(q[1] / MS)])), class: "curve" }, P.g);
+    svg = $("clics"); svg.innerHTML = "";
+    const smax = Math.max(1e-3, ...c.sauts.map(s => s / MS));
+    P = Plot.axes(svg, { fmt: F, w: 640, h: 130, x: { domain: [-Hmax, Hmax], label: t("fig2.ax.x") }, y: { domain: [0, smax * 1.1], label: t("fig2.ax.y2") } });
+    for (const p of c.montee.concat(c.descente)) if (p.saut > 0)
+      Plot.el("line", { x1: P.x(p.H), x2: P.x(p.H), y1: P.y(0), y2: P.y(p.saut / MS), class: "stroke c-label-2" }, P.g);
+    $("sar").innerHTML = F.si(amax, "J·m⁻²", { sig: 2 });
+    $("snr").textContent = Nd === 0 ? "0" : F.sci(Nd, 2);
+    $("vhc").innerHTML = F.si(c.Hc, "A·m⁻¹", { sig: 2 });
+    $("fhc").innerHTML = t("fig2.f.hc", { hp: F.si(pa.Hp, "A·m⁻¹", { sig: 2 }) });
+    $("vmr").textContent = F.num(c.Mr / MS, 2);
+    $("fmr").innerHTML = t("fig2.f.mr", { nm: F.si(Nd * MS, "A·m⁻¹", { sig: 2 }) });
+    $("vsauts").textContent = String(c.sauts.length);
+    $("fsauts").innerHTML = t("fig2.f.sauts", { s: F.num(50 * smax, 2) });
+  }
+  sa.oninput = sn.oninput = draw;
+  $("tirage").onclick = () => { graine = graine * 31 % 9973 + 1; draw(); };
+  draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["barkhausen", 1919, "experiment"], ["landau", 1935, "idea"], ["kittel", 1946, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["rectification"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["pourquoi", "c"], ["echelle", "a"], ["racine", "d"], ["direction", "b"], ["sauts", "a"], ["cisaille", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 373 });
+})();
+</script>
+</body>
+</html>

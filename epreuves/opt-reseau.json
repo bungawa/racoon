@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["ordres", "a"],
+  ["incidence", "b"],
+  ["reflexion", "c"],
+  ["resolution", "d"],
+  ["retard", "a"],
+  ["radio", "b"],
+  ["echelette", "c"],
+  ["lobes", "d"]
+ ]
+}

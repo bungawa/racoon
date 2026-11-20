@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le tenseur de polarisabilité</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .pol { max-width: 420px; margin: 0 auto; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-solide" data-i18n="monde.solide"></a><span class="aux">›</span><a href="/racoon/etape?id=tenseurs-1" data-i18n="etape.tenseurs-1"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-solide" href="/racoon/atlas?piste=solide" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/etape?id=rotation-espace" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <div class="box def"><b data-i18n="s1.sys.title"></b>
+      <p data-i18n-html="s1.sys.body"></p>
+    </div>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi mathvariant="bold">P</mi><mo>=</mo><mi>α</mi><mspace width="0.1em"/><mi mathvariant="bold">E</mi><mo>,</mo><mspace width="1em"/><mi>α</mi><mo>=</mo><msub><mi>ε</mi><mn>0</mn></msub><mi>χ</mi></math></div>
+    <p class="validite" data-i18n-html="val.iso"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>P</mi><mi>x</mi></msub><mo>=</mo><msub><mi>α</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub><msub><mi>E</mi><mi>x</mi></msub><mo>,</mo><mspace width="1em"/><msub><mi>P</mi><mi>y</mi></msub><mo>=</mo><msub><mi>α</mi><mrow><mi>y</mi><mi>x</mi></mrow></msub><msub><mi>E</mi><mi>x</mi></msub><mo>,</mo><mspace width="1em"/><msub><mi>P</mi><mi>z</mi></msub><mo>=</mo><msub><mi>α</mi><mrow><mi>z</mi><mi>x</mi></mrow></msub><msub><mi>E</mi><mi>x</mi></msub></math><span class="n">(31.1)</span></div>
+    <p class="validite" data-i18n-html="val.31.1"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="eq"><math display="block"><mrow><mo>(</mo><mtable><mtr><mtd><msub><mi>P</mi><mi>x</mi></msub></mtd></mtr><mtr><mtd><msub><mi>P</mi><mi>y</mi></msub></mtd></mtr><mtr><mtd><msub><mi>P</mi><mi>z</mi></msub></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><msub><mi>α</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub></mtd><mtd><msub><mi>α</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub></mtd><mtd><msub><mi>α</mi><mrow><mi>x</mi><mi>z</mi></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>α</mi><mrow><mi>y</mi><mi>x</mi></mrow></msub></mtd><mtd><msub><mi>α</mi><mrow><mi>y</mi><mi>y</mi></mrow></msub></mtd><mtd><msub><mi>α</mi><mrow><mi>y</mi><mi>z</mi></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>α</mi><mrow><mi>z</mi><mi>x</mi></mrow></msub></mtd><mtd><msub><mi>α</mi><mrow><mi>z</mi><mi>y</mi></mrow></msub></mtd><mtd><msub><mi>α</mi><mrow><mi>z</mi><mi>z</mi></mrow></msub></mtd></mtr></mtable><mo>)</mo></mrow><mrow><mo>(</mo><mtable><mtr><mtd><msub><mi>E</mi><mi>x</mi></msub></mtd></mtr><mtr><mtd><msub><mi>E</mi><mi>y</mi></msub></mtd></mtr><mtr><mtd><msub><mi>E</mi><mi>z</mi></msub></mtd></mtr></mtable><mo>)</mo></mrow></math><span class="n">(31.4)</span></div>
+    <p class="validite" data-i18n-html="val.31.4"></p>
+    <p data-i18n-html="s1.p4"></p>
+    <div class="eq"><math display="block"><msub><mi>P</mi><mi>i</mi></msub><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mn>3</mn></munderover><msub><mi>α</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><msub><mi>E</mi><mi>j</mi></msub></math><span class="n">(31.5)</span></div>
+    <p class="validite" data-i18n-html="val.31.5"></p>
+    <div class="box prop"><b data-i18n="s1.prop.title"></b>
+      <p data-i18n-html="s1.prop.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure>
+      <svg class="fig pol" id="pol" viewBox="-160 -160 320 320" role="img" data-i18n-attr="aria-label:pol.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="pol.legend.E"></span><span class="c-warn" data-i18n="pol.legend.P"></span><span class="c-label-2" data-i18n="pol.legend.axe"></span></div>
+      <div class="panel">
+        <div class="ctl"><div class="row"><span data-i18n="pol.milieu"></span></div>
+          <div class="seg" role="group" data-i18n-attr="aria-label:pol.milieu">
+            <button type="button" id="m-calcite" aria-pressed="true" data-i18n="pol.m.calcite"></button>
+            <button type="button" id="m-verre" aria-pressed="false" data-i18n="pol.m.verre"></button>
+            <button type="button" id="m-fictif" aria-pressed="false" data-i18n="pol.m.fictif"></button>
+          </div></div>
+        <div class="ctl"><div class="row"><label for="ang" data-i18n="pol.angle"></label><output id="angv" for="ang"></output></div>
+          <input id="ang" type="range" min="0" max="180" step="1" value="45"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="pol.k.ecart"></span><span class="v" id="vecart"></span><span class="f" id="fecart"></span></div>
+          <div class="stat"><span class="k" data-i18n="pol.k.par"></span><span class="v" id="vpar"></span><span class="f" data-i18n="pol.f.par"></span></div>
+          <div class="stat"><span class="k" data-i18n="pol.k.perp"></span><span class="v" id="vperp"></span><span class="f" data-i18n="pol.f.perp"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="pol.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="box rem"><b data-i18n="s2.rem.title"></b>
+      <p data-i18n-html="s2.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi mathvariant="bold">Γ</mi><mo>=</mo><mi mathvariant="bold">P</mi><mo>∧</mo><mi mathvariant="bold">E</mi></math></div>
+    <p class="validite" data-i18n-html="val.couple"></p>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/tenseur-de-polarisabilite.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const deg = Math.PI / 180;
+
+/* ---------- §31-1 : un champ qu'on fait tourner dans le plan qui contient l'axe optique ---------- */
+(() => {
+  /* susceptibilities χ = n² − 1 at 590 nm: calcite n_o = 1,658 (⊥ axis), n_e = 1,486 (∥ axis); a glass n = 1,5; a fictitious 4:1 crystal */
+  const chi = n => n * n - 1;
+  const MEDIA = { calcite: [chi(1.486), chi(1.658)], verre: [chi(1.5), chi(1.5)], fictif: [0.5, 2] };   // [χ along x = optic axis, χ along y]
+  let medium = "calcite";
+  const svg = $("pol"), R = 120;
+  const arrow = (x, y, cls) => Plot.fleche(svg, [0, 0], [x, -y], { cls, tete: 12, trait: "stroke bold", min: 1e-9 });
+  function upd() {
+    Object.keys(MEDIA).forEach(m => $("m-" + m).setAttribute("aria-pressed", String(m === medium)));
+    const [cx, cy] = MEDIA[medium], th = +$("ang").value * deg;
+    const alpha = Tenseurs.diag(cx, cy, cy);                 // α/ε₀ in the crystal axes: x along the optic axis
+    const E = [Math.cos(th), Math.sin(th), 0], P = Tenseurs.appliquer(alpha, E);
+    const big = Math.max(cx, cy);
+    svg.innerHTML = "";
+    Plot.el("circle", { cx: 0, cy: 0, r: R, class: "stroke thin dash c-label-2" }, svg);
+    Plot.el("line", { x1: -150, y1: 0, x2: 150, y2: 0, class: "stroke thin c-label-2" }, svg);
+    Plot.el("text", { x: 150, y: -6, "text-anchor": "end" }, svg).textContent = t("pol.fig.axe");
+    arrow(E[0] * R, E[1] * R, "c-tint");
+    arrow(P[0] / big * R, P[1] / big * R, "c-warn");
+    Plot.el("text", { x: E[0] * (R + 16), y: -E[1] * (R + 16) + 4, "text-anchor": "middle" }, svg).textContent = t("pol.fig.E");
+    /* P's label beside its tip, on the side away from E */
+    const pn = Math.hypot(P[0], P[1]), side = Math.sign(E[0] * P[1] - E[1] * P[0]) || 1, nx = -P[1] / pn * side, ny = P[0] / pn * side;
+    Plot.el("text", { x: P[0] / big * R * 0.8 + nx * 14, y: -(P[1] / big * R * 0.8 + ny * 14) + 4, "text-anchor": "middle" }, svg).textContent = t("pol.fig.P");
+    const ecart = Tenseurs.angle(E, P), par = Tenseurs.scalaire(P, E), perp = Math.hypot(...Tenseurs.vectoriel(E, P));
+    $("angv").textContent = F.num(+$("ang").value, 3) + "°";
+    $("vecart").textContent = F.fix(ecart / deg, 1) + "°";
+    const m = Math.atan(Math.sqrt(Math.max(cx, cy) / Math.min(cx, cy))) - Math.atan(Math.sqrt(Math.min(cx, cy) / Math.max(cx, cy)));
+    $("fecart").textContent = t("pol.f.ecart", { max: F.fix(m / deg, 1) + "°" });
+    $("vpar").textContent = F.fix(par, 3);
+    $("vperp").textContent = F.fix(perp, 3);
+  }
+  Object.keys(MEDIA).forEach(m => $("m-" + m).onclick = () => { medium = m; upd(); });
+  $("ang").oninput = upd; upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["bartholin", 1669, "experiment"], ["huygens", 1690, "idea"], ["voigt", 1898, "idea"], ["freedericksz", 1927, "experiment"], ["schadt", 1971, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["ecran", "lame"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["verre", "c"], ["biais", "a"], ["neuf", "d"], ["indice", "b"], ["double", "a"], ["couple", "c"], ["axes", "d"], ["principal", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 311 });
+})();
+</script>
+</body>
+</html>

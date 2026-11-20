@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["base", "a"],
+  ["produit", "b"],
+  ["symetrie", "c"],
+  ["action", "d"],
+  ["dirac", "a"],
+  ["niveaux", "b"],
+  ["raie", "c"],
+  ["doppler", "d"]
+ ]
+}

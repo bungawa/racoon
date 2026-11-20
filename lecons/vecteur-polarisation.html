@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vecteur polarisation P</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-electrostatique" data-i18n="monde.electrostatique"></a><span class="aux">›</span><a href="/racoon/etape?id=polarisation" data-i18n="etape.polarisation"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/dipole-electrique" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi>δ</mi><mo>=</mo><mfrac><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub><msup><mi>a</mi><mn>3</mn></msup></mrow><mrow><mi>Z</mi><mi>e</mi></mrow></mfrac><mi>E</mi><mo>,</mo><mspace width="1em"/><mi>p</mi><mo>=</mo><mi>Z</mi><mi>e</mi><mi>δ</mi><mo>=</mo><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub><msup><mi>a</mi><mn>3</mn></msup><mi>E</mi></math></div>
+    <p class="validite" data-i18n-html="val.nuage"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi mathvariant="bold">P</mi><mo>=</mo><mi>N</mi><mi>q</mi><mi mathvariant="bold">δ</mi></math><span class="n">(10.4)</span></div>
+    <p class="validite" data-i18n-html="val.10.4"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <figure>
+      <svg class="fig" id="atome" viewBox="0 0 640 260" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.nuage"></span><span class="c-warn" data-i18n="fig.legend.noyau"></span><span class="c-label" data-i18n="fig.legend.champ"></span></div>
+      <div class="panel">
+        <div class="seg" role="group" id="mods" data-i18n-attr="aria-label:fig.choix">
+          <button type="button" data-m="nuage" aria-pressed="true" data-i18n="mod.nuage"></button>
+          <button type="button" data-m="hydrogene" data-i18n="mod.hydrogene"></button>
+        </div>
+        <div class="ctl"><div class="row"><label for="esl" data-i18n="ctl.E"></label><output id="eread" for="esl"></output></div>
+          <input id="esl" type="range" min="3" max="8" step="0.05" value="6"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="k.delta"></span><span class="v" id="vd"></span><span class="f" id="fd"></span></div>
+          <div class="stat"><span class="k" data-i18n="k.P"></span><span class="v" id="vp"></span><span class="f" id="fp"></span></div>
+          <div class="stat"><span class="k" data-i18n="k.chi"></span><span class="v" id="vc"></span><span class="f" id="fc"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/vecteur-polarisation.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/physique-fondamentale.js"></script>
+<script src="/racoon/lecons/champs-em.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/electrostatique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const ES = Electrostatique, a0 = Constantes.a0;
+const N_GAZ = Constantes.atm / (Constantes.k_B * 273.15);       // m⁻³: an ideal gas at 273,15 K and 101 325 Pa (Loschmidt)
+const FACTEUR = { nuage: 1, hydrogene: 4.5 };                     // α/(4π ε0 a0³): the uniform cloud, and hydrogen's exact 9/2
+
+/* ---------- le système décrit : un atome de rayon a0 sous 10⁶ V/m ---------- */
+(() => {
+  const o = ES.atomeNuage(1e6, a0);
+  $("sys1").innerHTML = t("sys1.body", { d: F.sci(o.delta, 2), r: F.sci(o.relatif, 2), Ea: F.sci(o.Eatome, 2) });
+})();
+
+/* ---------- l'atome déformé ---------- */
+(() => {
+  const svg = $("atome"), esl = $("esl");
+  let mod = "nuage";
+  function dessin(rel) {
+    svg.innerHTML = "";
+    const P = (tag, a, g) => Plot.el(tag, a, g || svg), cx = 320, cy = 130, R = 90;
+    const exp = Math.floor(Math.log10(0.25 / rel)), G = Math.pow(10, Math.max(0, exp)), dx = R * rel * G;
+    const gt = P("g", { class: "c-tint" });
+    P("circle", { cx: (cx - dx / 2).toFixed(1), cy, r: R, class: "fill", opacity: 0.3 }, gt);
+    P("circle", { cx: (cx - dx / 2).toFixed(1), cy, r: 2.5, class: "fill" }, gt);
+    const gw = P("g", { class: "c-warn" });
+    P("circle", { cx: (cx + dx / 2).toFixed(1), cy, r: 6, class: "fill" }, gw);
+    const gl = P("g", { class: "c-label" });
+    [40, 220].forEach(y => Plot.fleche(gl, [40, y], [140, y]));
+    Plot.fleche(gl, [520, 130], [600, 130], { cls: "c-warn" });
+    P("text", { x: 90, y: 30, "text-anchor": "middle", class: "label" }, gl).textContent = t("fig.E");
+    P("text", { x: 560, y: 115, "text-anchor": "middle", class: "label" }, gl).textContent = t("fig.p");
+    P("text", { x: 320, y: 250, "text-anchor": "middle", class: "label" }, gl).textContent = t("fig.zoom", { g: "10" + F.sup(Math.max(0, exp)) });
+  }
+  function draw() {
+    const E0 = Math.pow(10, +esl.value), o = ES.atomeNuage(E0, a0, 1, N_GAZ), f = FACTEUR[mod];
+    const delta = f * o.delta, P = f * o.P, chi = f * o.chi;
+    dessin(delta / a0);
+    $("eread").textContent = F.si(E0, "V·m⁻¹");
+    $("vd").textContent = F.qty(F.sci(delta, 2), "m");
+    $("fd").textContent = t("f.delta", { r: F.sci(delta / a0, 2) });
+    $("vp").textContent = F.qty(F.sci(P, 2), "C·m⁻²");
+    $("fp").textContent = t("f.P", { N: F.sci(N_GAZ, 3) });
+    $("vc").textContent = F.sci(chi, 2);
+    $("fc").textContent = t("f.chi");
+  }
+  document.querySelectorAll("#mods button").forEach(bt => bt.onclick = () => {
+    mod = bt.dataset.m; document.querySelectorAll("#mods button").forEach(z => z.setAttribute("aria-pressed", z === bt)); draw(); });
+  esl.oninput = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["mossotti", 1846, "idea"], ["rutherford", 1911, "experiment"], ["electret", 1962, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["micro"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["sens", "a"], ["ordre", "c"], ["unite", "b"], ["mecanisme", "d"], ["pression", "a"], ["lineaire", "d"], ["exterieur", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 1002 });
+})();
+</script>
+</body>
+</html>

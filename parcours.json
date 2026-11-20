@@ -1,0 +1,3240 @@
+{
+ "mondes": [
+  {
+   "id": "panorama",
+   "etapes": [
+    "panorama-physique",
+    "physique-et-sciences"
+   ]
+  },
+  {
+   "id": "mesurer",
+   "etapes": [
+    "grandeurs-incertitudes",
+    "le-temps",
+    "les-distances"
+   ]
+  },
+  {
+   "id": "atomes-energie",
+   "etapes": [
+    "les-atomes",
+    "energie-premiere-approche"
+   ]
+  },
+  {
+   "id": "outils",
+   "etapes": [
+    "nombres-logarithmes",
+    "nombres-complexes",
+    "vecteurs",
+    "symetries",
+    "probabilites",
+    "champs-et-gradient",
+    "operateur-nabla",
+    "flux-et-gauss",
+    "circulation-et-stokes"
+   ]
+  },
+  {
+   "id": "mecanique",
+   "etapes": [
+    "decrire-mouvement",
+    "lois-de-newton",
+    "calculer-mouvement",
+    "les-forces",
+    "quantite-de-mouvement",
+    "travail-puissance",
+    "energie-potentielle",
+    "kepler-newton",
+    "gravitation-universelle",
+    "forces-centrales",
+    "oscillateur",
+    "pendule",
+    "resonance",
+    "transitoires",
+    "champs-em",
+    "particule-chargee",
+    "deux-corps"
+   ]
+  },
+  {
+   "id": "solide",
+   "etapes": [
+    "centre-de-masse",
+    "moment-inertie",
+    "rotation-espace",
+    "contact-solides",
+    "non-galileen",
+    "tenseurs-1",
+    "tenseurs-2",
+    "elasticite-1",
+    "elasticite-2",
+    "cristaux-1",
+    "cristaux-2"
+   ]
+  },
+  {
+   "id": "fluides",
+   "etapes": [
+    "statique-fluides",
+    "tension-superficielle",
+    "fluide-parfait",
+    "viscosite",
+    "sillages",
+    "bilans-ecoulements"
+   ]
+  },
+  {
+   "id": "thermo",
+   "etapes": [
+    "premier-second-principe",
+    "entropie-energie-interne",
+    "changements-etat-corps-pur",
+    "machines-thermiques-reelles"
+   ]
+  },
+  {
+   "id": "statistique",
+   "etapes": [
+    "gaz-cinetique",
+    "loi-de-boltzmann",
+    "vitesses-chaleurs-massiques",
+    "equipartition",
+    "cinetique-applications",
+    "libre-parcours-moyen",
+    "diffusion-moleculaire",
+    "irreversibilite",
+    "gaz-reels",
+    "detentes-fluide-reel",
+    "conduction-thermique",
+    "convection-rayonnement"
+   ]
+  },
+  {
+   "id": "optique-geometrique",
+   "etapes": [
+    "opt-lumiere-fermat",
+    "opt-fermat-precis",
+    "opt-dioptre-lentille",
+    "opt-systemes-optiques",
+    "opt-miroirs-spheriques",
+    "opt-oeil",
+    "opt-chromaticite",
+    "opt-retine",
+    "opt-yeux-neurologie"
+   ]
+  },
+  {
+   "id": "electrostatique",
+   "etapes": [
+    "coulomb-potentiel",
+    "gauss-electrostatique",
+    "equilibre-charges",
+    "gauss-symetries",
+    "conducteurs-cavites",
+    "potentiel-dipole",
+    "methode-des-images",
+    "condensateur-plan",
+    "methodes-champ",
+    "energie-densite",
+    "energie-condensateur",
+    "champ-atmospherique",
+    "orages-foudre",
+    "polarisation",
+    "polarisation-moleculaire",
+    "dielectriques-reels",
+    "memes-equations",
+    "analogies-ecoulement"
+   ]
+  },
+  {
+   "id": "ondes",
+   "etapes": [
+    "systemes-lineaires",
+    "ondes-sonores",
+    "battements-paquets",
+    "ondes-trois-dimensions",
+    "modes-propres",
+    "fourier-sons",
+    "fourier-coefficients",
+    "ondes-choc-surface",
+    "traitement-du-signal"
+   ]
+  },
+  {
+   "id": "magnetisme-induction",
+   "etapes": [
+    "champ-magnetique-courants",
+    "ampere-relativite",
+    "potentiel-vecteur",
+    "potentiel-circuits-simples",
+    "biot-savart",
+    "energie-courants",
+    "moteurs-generateurs",
+    "flux-faraday",
+    "inductance",
+    "trajectoires-charges",
+    "focalisation",
+    "moments-magnetiques",
+    "larmor-quantique",
+    "etats-quantifies",
+    "paramagnetisme-rmn",
+    "aimantation-h",
+    "noyau-de-fer",
+    "ferromagnetisme"
+   ]
+  },
+  {
+   "id": "relativite",
+   "etapes": [
+    "rel-lorentz",
+    "rel-temps-longueurs",
+    "rel-vitesses-jumeaux",
+    "rel-dynamique",
+    "rel-intervalles",
+    "rel-quadrivecteurs",
+    "rel-courbes",
+    "rel-gravitation-horloges",
+    "rel-courbure"
+   ]
+  },
+  {
+   "id": "optique-ondulatoire",
+   "etapes": [
+    "opt-rayonnement-dipole",
+    "opt-ondes-em",
+    "opt-interferences",
+    "opt-reseau",
+    "opt-diffraction",
+    "opt-indice",
+    "opt-absorption",
+    "opt-amortissement-rayonnement",
+    "opt-diffusion",
+    "opt-birefringence",
+    "opt-activite-reflexion",
+    "opt-sources-rapides",
+    "opt-synchrotron-doppler",
+    "opt-aberration-impulsion"
+   ]
+  },
+  {
+   "id": "ondes-milieux",
+   "etapes": [
+    "equations-maxwell",
+    "champ-qui-se-propage",
+    "ondes-planes-spheriques",
+    "lumiere-source-ponctuelle",
+    "dipole-oscillant-charge-mobile",
+    "energie-flux-champ",
+    "exemples-flux-impulsion",
+    "circuits-impedances",
+    "puissance-filtres",
+    "ao-filtres-actifs",
+    "conversion-electromecanique",
+    "cavites-resonantes",
+    "lignes-guides",
+    "modes-guides",
+    "ondes-dans-dielectrique",
+    "metaux-peau-plasma",
+    "reflexion-refraction-milieux",
+    "coefficients-fresnel",
+    "plasmas",
+    "masse-electromagnetique",
+    "limites-maxwell",
+    "rel-electro-quadri",
+    "rel-electro-equations",
+    "rel-champs-charge"
+   ]
+  },
+  {
+   "id": "principes",
+   "etapes": [
+    "symetries-lois-conservation",
+    "parite-antimatiere",
+    "principe-moindre-action"
+   ]
+  },
+  {
+   "id": "quantique-amplitudes",
+   "etapes": [
+    "deux-fentes-electrons",
+    "observer-et-incertitude",
+    "atome-et-niveaux",
+    "regles-des-amplitudes",
+    "bosons-et-fermions",
+    "bosons-fermions-matiere"
+   ]
+  },
+  {
+   "id": "quantique-deux-etats",
+   "etapes": [
+    "stern-gerlach-spin1",
+    "algebre-spin1",
+    "spin-demi-rotations-z",
+    "spin-demi-rotations-generales",
+    "amplitudes-et-temps",
+    "espace-des-etats",
+    "hamiltonien-ammoniac",
+    "maser-ammoniac-champ",
+    "maser-ammoniac-resonance",
+    "molecules-deux-etats",
+    "colorants-et-spin-champ",
+    "pauli-et-operateurs-spin",
+    "photon-kaon-n-etats",
+    "hyperfin-niveaux",
+    "hyperfin-zeeman"
+   ]
+  },
+  {
+   "id": "quantique-schrodinger",
+   "etapes": [
+    "electron-dans-un-reseau",
+    "defauts-du-reseau",
+    "electrons-et-trous-semi",
+    "jonctions-et-transistor",
+    "ondes-de-spin-etape",
+    "molecules-independantes",
+    "fonction-d-onde-et-impulsion",
+    "schrodinger-et-quantification",
+    "symetrie-et-conservation-q",
+    "polarisation-lambda",
+    "moment-cinetique-rayonnement",
+    "moment-cinetique-composition",
+    "hydrogene-niveaux",
+    "hydrogene-et-tableau",
+    "operateurs-et-moyennes",
+    "operateurs-impulsion-evolution",
+    "schrodinger-champ-magnetique",
+    "supraconductivite-etape"
+   ]
+  },
+  {
+   "id": "chim-architecture",
+   "etapes": [
+    "chim-atome",
+    "chim-molecules",
+    "chim-cristal-parfait",
+    "chim-types-cristaux",
+    "chim-cristal-reel",
+    "chim-avancement",
+    "chim-vitesse-reaction",
+    "chim-orbitales-moleculaires"
+   ]
+  },
+  {
+   "id": "chim-solutions",
+   "etapes": [
+    "chim-acides-bases",
+    "chim-precipitation-complexation",
+    "chim-complexes-catalyse",
+    "chim-oxydoreduction",
+    "chim-thermochimie",
+    "chim-enthalpie-libre",
+    "chim-diagrammes-e-ph",
+    "chim-binaires",
+    "chim-ellingham",
+    "chim-industrie-minerale"
+   ]
+  },
+  {
+   "id": "chim-organique",
+   "etapes": [
+    "chim-stereochimie",
+    "chim-spectroscopies",
+    "chim-mecanismes",
+    "chim-halogenoalcanes",
+    "chim-redox-organique",
+    "chim-activation-protection",
+    "chim-conversion-groupes",
+    "chim-liaisons-cc",
+    "chim-polymeres",
+    "chim-aromatiques",
+    "chim-amines-diazonium",
+    "chim-alcenes-alcynes",
+    "chim-complements-synthese"
+   ]
+  }
+ ],
+ "etapes": {
+  "panorama-physique": {
+   "monde": "panorama",
+   "prereq": [],
+   "lecons": [
+    "/racoon/lecons/qu-est-ce-que-la-physique",
+    "/racoon/lecons/physique-avant-1920",
+    "/racoon/lecons/physique-quantique",
+    "/racoon/lecons/noyaux-et-particules"
+   ],
+   "bonus": true
+  },
+  "physique-et-sciences": {
+   "monde": "panorama",
+   "prereq": [
+    "panorama-physique"
+   ],
+   "lecons": [
+    "/racoon/lecons/physique-et-autres-sciences",
+    "/racoon/lecons/physique-et-chimie",
+    "/racoon/lecons/physique-et-biologie",
+    "/racoon/lecons/physique-et-astronomie",
+    "/racoon/lecons/physique-et-geologie",
+    "/racoon/lecons/physique-et-psychologie",
+    "/racoon/lecons/comment-en-est-on-arrive-la"
+   ],
+   "bonus": true
+  },
+  "grandeurs-incertitudes": {
+   "monde": "mesurer",
+   "prereq": [],
+   "lecons": [
+    "/racoon/lecons/incertitude-absolue-relative",
+    "/racoon/lecons/ordres-de-grandeur",
+    "/racoon/lecons/homogeneite-dimensions"
+   ]
+  },
+  "le-temps": {
+   "monde": "mesurer",
+   "prereq": [
+    "grandeurs-incertitudes"
+   ],
+   "lecons": [
+    "/racoon/lecons/temps-distance-mouvement",
+    "/racoon/lecons/le-temps",
+    "/racoon/lecons/temps-courts",
+    "/racoon/lecons/temps-longs",
+    "/racoon/lecons/unites-etalons-temps"
+   ]
+  },
+  "les-distances": {
+   "monde": "mesurer",
+   "prereq": [
+    "grandeurs-incertitudes"
+   ],
+   "lecons": [
+    "/racoon/lecons/grandes-distances",
+    "/racoon/lecons/petites-distances"
+   ]
+  },
+  "les-atomes": {
+   "monde": "atomes-energie",
+   "prereq": [
+    "grandeurs-incertitudes"
+   ],
+   "lecons": [
+    "/racoon/lecons/atomes-en-mouvement",
+    "/racoon/lecons/processus-atomiques",
+    "/racoon/lecons/reactions-chimiques"
+   ]
+  },
+  "energie-premiere-approche": {
+   "monde": "atomes-energie",
+   "prereq": [
+    "les-atomes"
+   ],
+   "lecons": [
+    "/racoon/lecons/qu-est-ce-que-l-energie",
+    "/racoon/lecons/energie-potentielle-pesanteur",
+    "/racoon/lecons/energie-cinetique",
+    "/racoon/lecons/autres-formes-energie"
+   ]
+  },
+  "nombres-logarithmes": {
+   "monde": "outils",
+   "prereq": [],
+   "lecons": [
+    "/racoon/lecons/addition-et-multiplication",
+    "/racoon/lecons/operations-inverses",
+    "/racoon/lecons/abstraction-et-generalisation",
+    "/racoon/lecons/approcher-les-irrationnels"
+   ]
+  },
+  "nombres-complexes": {
+   "monde": "outils",
+   "prereq": [
+    "nombres-logarithmes"
+   ],
+   "lecons": [
+    "/racoon/lecons/nombres-complexes",
+    "/racoon/lecons/exponentielles-imaginaires"
+   ]
+  },
+  "vecteurs": {
+   "monde": "outils",
+   "prereq": [
+    "grandeurs-incertitudes"
+   ],
+   "lecons": [
+    "/racoon/lecons/vecteurs",
+    "/racoon/lecons/algebre-des-vecteurs",
+    "/racoon/lecons/produit-scalaire"
+   ]
+  },
+  "symetries": {
+   "monde": "outils",
+   "prereq": [
+    "vecteurs"
+   ],
+   "lecons": [
+    "/racoon/lecons/symetrie-en-physique",
+    "/racoon/lecons/translations",
+    "/racoon/lecons/rotations"
+   ]
+  },
+  "decrire-mouvement": {
+   "monde": "mecanique",
+   "prereq": [
+    "le-temps",
+    "les-distances"
+   ],
+   "lecons": [
+    "/racoon/lecons/decrire-le-mouvement",
+    "/racoon/lecons/vitesse",
+    "/racoon/lecons/vitesse-derivee",
+    "/racoon/lecons/distance-integrale",
+    "/racoon/lecons/acceleration"
+   ]
+  },
+  "lois-de-newton": {
+   "monde": "mecanique",
+   "prereq": [
+    "vecteurs",
+    "decrire-mouvement"
+   ],
+   "lecons": [
+    "/racoon/lecons/quantite-de-mouvement-et-force",
+    "/racoon/lecons/vitesse-norme-et-vecteur",
+    "/racoon/lecons/composantes-vitesse-acceleration-force",
+    "/racoon/lecons/newton-en-notation-vectorielle",
+    "/racoon/lecons/qu-est-ce-que-la-force",
+    "/racoon/lecons/sens-des-equations-dynamique"
+   ]
+  },
+  "calculer-mouvement": {
+   "monde": "mecanique",
+   "prereq": [
+    "lois-de-newton"
+   ],
+   "lecons": [
+    "/racoon/lecons/resolution-numerique",
+    "/racoon/lecons/mouvement-des-planetes"
+   ]
+  },
+  "les-forces": {
+   "monde": "mecanique",
+   "prereq": [
+    "lois-de-newton"
+   ],
+   "lecons": [
+    "/racoon/lecons/caracteriser-une-force",
+    "/racoon/lecons/frottements",
+    "/racoon/lecons/forces-moleculaires",
+    "/racoon/lecons/forces-fondamentales-et-champs",
+    "/racoon/lecons/forces-d-inertie",
+    "/racoon/lecons/forces-nucleaires"
+   ]
+  },
+  "quantite-de-mouvement": {
+   "monde": "mecanique",
+   "prereq": [
+    "lois-de-newton"
+   ],
+   "lecons": [
+    "/racoon/lecons/troisieme-loi-de-newton",
+    "/racoon/lecons/conservation-quantite-de-mouvement",
+    "/racoon/lecons/chocs",
+    "/racoon/lecons/quantite-de-mouvement-et-energie",
+    "/racoon/lecons/quantite-de-mouvement-relativiste"
+   ]
+  },
+  "travail-puissance": {
+   "monde": "mecanique",
+   "prereq": [
+    "energie-premiere-approche",
+    "les-forces"
+   ],
+   "lecons": [
+    "/racoon/lecons/energie-corps-qui-tombe",
+    "/racoon/lecons/travail-du-poids",
+    "/racoon/lecons/travail-d-une-force",
+    "/racoon/lecons/mouvement-contraint"
+   ]
+  },
+  "energie-potentielle": {
+   "monde": "mecanique",
+   "prereq": [
+    "travail-puissance"
+   ],
+   "lecons": [
+    "/racoon/lecons/forces-conservatives",
+    "/racoon/lecons/forces-non-conservatives",
+    "/racoon/lecons/energie-systeme-de-points",
+    "/racoon/lecons/champ-des-corps-etendus",
+    "/racoon/lecons/potentiels-et-champs"
+   ]
+  },
+  "kepler-newton": {
+   "monde": "mecanique",
+   "prereq": [
+    "lois-de-newton",
+    "calculer-mouvement"
+   ],
+   "lecons": [
+    "/racoon/lecons/les-planetes-dans-le-ciel",
+    "/racoon/lecons/lois-de-kepler",
+    "/racoon/lecons/naissance-de-la-dynamique",
+    "/racoon/lecons/loi-de-la-gravitation"
+   ]
+  },
+  "gravitation-universelle": {
+   "monde": "mecanique",
+   "prereq": [
+    "kepler-newton",
+    "energie-potentielle"
+   ],
+   "lecons": [
+    "/racoon/lecons/gravitation-universelle",
+    "/racoon/lecons/experience-de-cavendish",
+    "/racoon/lecons/qu-est-ce-que-la-gravitation",
+    "/racoon/lecons/gravitation-et-relativite"
+   ]
+  },
+  "forces-centrales": {
+   "monde": "mecanique",
+   "prereq": [
+    "energie-potentielle",
+    "kepler-newton",
+    "vecteurs"
+   ],
+   "lecons": [
+    "/racoon/lecons/moment-cinetique-d-un-point",
+    "/racoon/lecons/force-centrale-et-loi-des-aires",
+    "/racoon/lecons/energie-potentielle-effective",
+    "/racoon/lecons/champ-newtonien-coniques"
+   ]
+  },
+  "oscillateur": {
+   "monde": "mecanique",
+   "prereq": [
+    "lois-de-newton"
+   ],
+   "lecons": [
+    "/racoon/lecons/equations-differentielles-lineaires",
+    "/racoon/lecons/oscillateur-harmonique",
+    "/racoon/lecons/harmonique-et-circulaire",
+    "/racoon/lecons/conditions-initiales",
+    "/racoon/lecons/oscillations-forcees"
+   ]
+  },
+  "pendule": {
+   "monde": "mecanique",
+   "prereq": [
+    "oscillateur",
+    "energie-potentielle"
+   ],
+   "lecons": [
+    "/racoon/lecons/pendule-simple",
+    "/racoon/lecons/portrait-de-phase-du-pendule",
+    "/racoon/lecons/periode-aux-grandes-amplitudes"
+   ]
+  },
+  "resonance": {
+   "monde": "mecanique",
+   "prereq": [
+    "oscillateur",
+    "nombres-complexes"
+   ],
+   "lecons": [
+    "/racoon/lecons/complexes-et-mouvement-harmonique",
+    "/racoon/lecons/oscillateur-force-amorti",
+    "/racoon/lecons/resonance-electrique"
+   ]
+  },
+  "particule-chargee": {
+   "monde": "mecanique",
+   "prereq": [
+    "travail-puissance",
+    "champs-em"
+   ],
+   "lecons": [
+    "/racoon/lecons/force-de-lorentz",
+    "/racoon/lecons/particule-champ-electrique",
+    "/racoon/lecons/particule-champ-magnetique"
+   ]
+  },
+  "probabilites": {
+   "monde": "outils",
+   "prereq": [
+    "grandeurs-incertitudes"
+   ],
+   "lecons": [
+    "/racoon/lecons/hasard-et-vraisemblance",
+    "/racoon/lecons/fluctuations",
+    "/racoon/lecons/marche-au-hasard",
+    "/racoon/lecons/distribution-de-probabilite",
+    "/racoon/lecons/principe-d-incertitude"
+   ]
+  },
+  "champs-et-gradient": {
+   "monde": "outils",
+   "prereq": [
+    "vecteurs"
+   ],
+   "lecons": [
+    "/racoon/lecons/comprendre-la-physique",
+    "/racoon/lecons/champs-scalaires-et-vectoriels",
+    "/racoon/lecons/gradient",
+    "/racoon/lecons/operateur-nabla"
+   ]
+  },
+  "operateur-nabla": {
+   "monde": "outils",
+   "prereq": [
+    "champs-et-gradient"
+   ],
+   "lecons": [
+    "/racoon/lecons/calculer-avec-nabla",
+    "/racoon/lecons/equation-de-la-chaleur",
+    "/racoon/lecons/derivees-secondes-des-champs",
+    "/racoon/lecons/pieges-de-l-analyse-vectorielle"
+   ]
+  },
+  "flux-et-gauss": {
+   "monde": "outils",
+   "prereq": [
+    "operateur-nabla"
+   ],
+   "lecons": [
+    "/racoon/lecons/integrale-curviligne-gradient",
+    "/racoon/lecons/flux-d-un-champ",
+    "/racoon/lecons/theoreme-de-gauss",
+    "/racoon/lecons/equation-de-diffusion"
+   ]
+  },
+  "circulation-et-stokes": {
+   "monde": "outils",
+   "prereq": [
+    "flux-et-gauss"
+   ],
+   "lecons": [
+    "/racoon/lecons/circulation-d-un-champ",
+    "/racoon/lecons/theoreme-de-stokes",
+    "/racoon/lecons/irrotationnel-et-flux-conservatif",
+    "/racoon/lecons/bilan-analyse-vectorielle"
+   ]
+  },
+  "transitoires": {
+   "monde": "mecanique",
+   "prereq": [
+    "resonance"
+   ],
+   "lecons": [
+    "/racoon/lecons/resonance-dans-la-nature",
+    "/racoon/lecons/energie-d-un-oscillateur",
+    "/racoon/lecons/oscillations-amorties",
+    "/racoon/lecons/transitoires-electriques"
+   ]
+  },
+  "champs-em": {
+   "monde": "mecanique",
+   "prereq": [
+    "les-forces",
+    "vecteurs"
+   ],
+   "lecons": [
+    "/racoon/lecons/forces-electriques",
+    "/racoon/lecons/champ-electrique-et-magnetique",
+    "/racoon/lecons/caracteriser-un-champ-de-vecteurs",
+    "/racoon/lecons/lois-de-l-electromagnetisme",
+    "/racoon/lecons/que-sont-les-champs",
+    "/racoon/lecons/electromagnetisme-science-technique"
+   ]
+  },
+  "deux-corps": {
+   "monde": "mecanique",
+   "prereq": [
+    "forces-centrales",
+    "quantite-de-mouvement"
+   ],
+   "lecons": [
+    "/racoon/lecons/probleme-a-deux-corps",
+    "/racoon/lecons/etats-lies-et-diffusion",
+    "/racoon/lecons/section-efficace",
+    "/racoon/lecons/experience-de-rutherford"
+   ]
+  },
+  "centre-de-masse": {
+   "monde": "solide",
+   "prereq": [
+    "quantite-de-mouvement",
+    "travail-puissance"
+   ],
+   "lecons": [
+    "/racoon/lecons/centre-de-masse",
+    "/racoon/lecons/rotation-d-un-solide",
+    "/racoon/lecons/moment-cinetique-d-un-solide",
+    "/racoon/lecons/conservation-du-moment-cinetique"
+   ]
+  },
+  "moment-inertie": {
+   "monde": "solide",
+   "prereq": [
+    "centre-de-masse"
+   ],
+   "lecons": [
+    "/racoon/lecons/proprietes-du-centre-de-masse",
+    "/racoon/lecons/trouver-le-centre-de-masse",
+    "/racoon/lecons/moment-d-inertie",
+    "/racoon/lecons/energie-cinetique-de-rotation"
+   ]
+  },
+  "rotation-espace": {
+   "monde": "solide",
+   "prereq": [
+    "moment-inertie",
+    "vecteurs"
+   ],
+   "lecons": [
+    "/racoon/lecons/moments-en-trois-dimensions",
+    "/racoon/lecons/rotation-produit-vectoriel",
+    "/racoon/lecons/gyroscope",
+    "/racoon/lecons/moment-cinetique-solide-quelconque"
+   ]
+  },
+  "contact-solides": {
+   "monde": "solide",
+   "prereq": [
+    "moment-inertie",
+    "les-forces"
+   ],
+   "lecons": [
+    "/racoon/lecons/glissement-et-roulement",
+    "/racoon/lecons/lois-de-coulomb-glissement",
+    "/racoon/lecons/puissance-des-liaisons",
+    "/racoon/lecons/solide-axe-fixe"
+   ]
+  },
+  "non-galileen": {
+   "monde": "solide",
+   "prereq": [
+    "rotation-espace"
+   ],
+   "lecons": [
+    "/racoon/lecons/changer-de-referentiel",
+    "/racoon/lecons/entrainement-et-coriolis",
+    "/racoon/lecons/dynamique-terrestre"
+   ]
+  },
+  "tenseurs-1": {
+   "monde": "solide",
+   "prereq": [
+    "rotation-espace"
+   ],
+   "lecons": [
+    "/racoon/lecons/tenseur-de-polarisabilite",
+    "/racoon/lecons/composantes-d-un-tenseur",
+    "/racoon/lecons/ellipsoide-d-energie",
+    "/racoon/lecons/tenseur-d-inertie"
+   ]
+  },
+  "tenseurs-2": {
+   "monde": "solide",
+   "prereq": [
+    "tenseurs-1"
+   ],
+   "lecons": [
+    "/racoon/lecons/produit-vectoriel-tenseur",
+    "/racoon/lecons/tenseur-des-contraintes",
+    "/racoon/lecons/tenseurs-d-ordre-superieur"
+   ]
+  },
+  "elasticite-1": {
+   "monde": "solide",
+   "prereq": [
+    "tenseurs-2"
+   ],
+   "lecons": [
+    "/racoon/lecons/loi-de-hooke",
+    "/racoon/lecons/deformations-uniformes",
+    "/racoon/lecons/torsion-et-ondes-de-cisaillement",
+    "/racoon/lecons/poutre-flechie-elasticite",
+    "/racoon/lecons/flambement"
+   ]
+  },
+  "elasticite-2": {
+   "monde": "solide",
+   "prereq": [
+    "elasticite-1"
+   ],
+   "lecons": [
+    "/racoon/lecons/tenseur-des-deformations",
+    "/racoon/lecons/tenseur-d-elasticite",
+    "/racoon/lecons/mouvements-d-un-corps-elastique",
+    "/racoon/lecons/comportement-non-elastique",
+    "/racoon/lecons/calculer-les-constantes-elastiques"
+   ]
+  },
+  "cristaux-1": {
+   "monde": "solide",
+   "prereq": [
+    "les-atomes",
+    "les-forces"
+   ],
+   "lecons": [
+    "/racoon/lecons/geometrie-interne-des-cristaux",
+    "/racoon/lecons/liaisons-dans-les-cristaux",
+    "/racoon/lecons/croissance-des-cristaux",
+    "/racoon/lecons/reseaux-cristallins",
+    "/racoon/lecons/symetries-dans-le-plan"
+   ]
+  },
+  "cristaux-2": {
+   "monde": "solide",
+   "prereq": [
+    "cristaux-1",
+    "elasticite-1"
+   ],
+   "lecons": [
+    "/racoon/lecons/symetries-dans-l-espace",
+    "/racoon/lecons/resistance-des-metaux",
+    "/racoon/lecons/dislocations",
+    "/racoon/lecons/modele-de-bragg-et-nye"
+   ]
+  },
+  "statique-fluides": {
+   "monde": "fluides",
+   "prereq": [
+    "les-forces",
+    "travail-puissance"
+   ],
+   "lecons": [
+    "/racoon/lecons/pression-et-forces-de-pression",
+    "/racoon/lecons/statique-des-fluides",
+    "/racoon/lecons/poussee-d-archimede"
+   ]
+  },
+  "tension-superficielle": {
+   "monde": "fluides",
+   "prereq": [
+    "statique-fluides"
+   ],
+   "lecons": [
+    "/racoon/lecons/tension-superficielle",
+    "/racoon/lecons/protocole-tension-superficielle",
+    "/racoon/lecons/mesurer-tension-superficielle"
+   ]
+  },
+  "fluide-parfait": {
+   "monde": "fluides",
+   "prereq": [
+    "statique-fluides",
+    "circulation-et-stokes"
+   ],
+   "lecons": [
+    "/racoon/lecons/hydrostatique",
+    "/racoon/lecons/equations-du-mouvement-d-un-fluide",
+    "/racoon/lecons/theoreme-de-bernoulli",
+    "/racoon/lecons/circulation-dans-un-fluide",
+    "/racoon/lecons/lignes-de-tourbillon"
+   ]
+  },
+  "viscosite": {
+   "monde": "fluides",
+   "prereq": [
+    "fluide-parfait"
+   ],
+   "lecons": [
+    "/racoon/lecons/viscosite",
+    "/racoon/lecons/ecoulement-visqueux",
+    "/racoon/lecons/nombre-de-reynolds"
+   ]
+  },
+  "sillages": {
+   "monde": "fluides",
+   "prereq": [
+    "viscosite"
+   ],
+   "lecons": [
+    "/racoon/lecons/ecoulement-autour-d-un-cylindre",
+    "/racoon/lecons/limite-de-viscosite-nulle",
+    "/racoon/lecons/ecoulement-de-couette"
+   ]
+  },
+  "bilans-ecoulements": {
+   "monde": "fluides",
+   "prereq": [
+    "sillages"
+   ],
+   "lecons": [
+    "/racoon/lecons/bilans-systeme-ouvert",
+    "/racoon/lecons/pertes-de-charge",
+    "/racoon/lecons/couche-limite",
+    "/racoon/lecons/ecoulements-compressibles"
+   ]
+  },
+  "symetries-lois-conservation": {
+   "monde": "principes",
+   "prereq": [
+    "rotation-espace",
+    "rel-quadrivecteurs"
+   ],
+   "lecons": [
+    "/racoon/lecons/operations-de-symetrie",
+    "/racoon/lecons/symetrie-dans-l-espace-et-dans-le-temps",
+    "/racoon/lecons/symetrie-et-lois-de-conservation",
+    "/racoon/lecons/reflexion-dans-un-miroir",
+    "/racoon/lecons/vecteurs-polaires-et-vecteurs-axiaux"
+   ]
+  },
+  "parite-antimatiere": {
+   "monde": "principes",
+   "prereq": [
+    "symetries-lois-conservation"
+   ],
+   "lecons": [
+    "/racoon/lecons/distinguer-la-droite-de-la-gauche",
+    "/racoon/lecons/la-parite-n-est-pas-conservee",
+    "/racoon/lecons/l-antimatiere",
+    "/racoon/lecons/les-symetries-brisees"
+   ]
+  },
+  "principe-moindre-action": {
+   "monde": "principes",
+   "prereq": [
+    "energie-potentielle",
+    "opt-fermat-precis"
+   ],
+   "lecons": [
+    "/racoon/lecons/le-principe-de-moindre-action",
+    "/racoon/lecons/complements-sur-la-moindre-action"
+   ]
+  },
+  "premier-second-principe": {
+   "monde": "thermo",
+   "prereq": [
+    "energie-premiere-approche"
+   ],
+   "lecons": [
+    "/racoon/lecons/machines-thermiques-et-premier-principe",
+    "/racoon/lecons/le-second-principe",
+    "/racoon/lecons/machines-reversibles",
+    "/racoon/lecons/rendement-d-une-machine-ideale"
+   ]
+  },
+  "entropie-energie-interne": {
+   "monde": "thermo",
+   "prereq": [
+    "premier-second-principe"
+   ],
+   "lecons": [
+    "/racoon/lecons/temperature-thermodynamique",
+    "/racoon/lecons/entropie",
+    "/racoon/lecons/energie-interne",
+    "/racoon/lecons/applications-de-l-energie-interne"
+   ]
+  },
+  "changements-etat-corps-pur": {
+   "monde": "thermo",
+   "prereq": [
+    "entropie-energie-interne"
+   ],
+   "lecons": [
+    "/racoon/lecons/diagrammes-p-t-et-p-v",
+    "/racoon/lecons/enthalpie-et-entropie-de-changement-d-etat",
+    "/racoon/lecons/equation-de-clausius-clapeyron",
+    "/racoon/lecons/equilibre-liquide-vapeur-et-formule-de-clapeyron"
+   ]
+  },
+  "machines-thermiques-reelles": {
+   "monde": "thermo",
+   "prereq": [
+    "changements-etat-corps-pur"
+   ],
+   "lecons": [
+    "/racoon/lecons/bilans-d-energie-et-d-entropie-en-systeme-ouvert",
+    "/racoon/lecons/moteurs-pompes-a-chaleur-et-refrigerateurs",
+    "/racoon/lecons/cycles-avec-changement-d-etat"
+   ]
+  },
+  "gaz-cinetique": {
+   "monde": "statistique",
+   "prereq": [
+    "quantite-de-mouvement",
+    "changements-etat-corps-pur"
+   ],
+   "lecons": [
+    "/racoon/lecons/proprietes-de-la-matiere",
+    "/racoon/lecons/la-pression-d-un-gaz",
+    "/racoon/lecons/compressibilite-du-rayonnement",
+    "/racoon/lecons/temperature-et-energie-cinetique",
+    "/racoon/lecons/la-loi-des-gaz-parfaits"
+   ]
+  },
+  "loi-de-boltzmann": {
+   "monde": "statistique",
+   "prereq": [
+    "gaz-cinetique",
+    "probabilites"
+   ],
+   "lecons": [
+    "/racoon/lecons/l-atmosphere-exponentielle",
+    "/racoon/lecons/la-loi-de-boltzmann",
+    "/racoon/lecons/evaporation-d-un-liquide"
+   ]
+  },
+  "vitesses-chaleurs-massiques": {
+   "monde": "statistique",
+   "prereq": [
+    "loi-de-boltzmann"
+   ],
+   "lecons": [
+    "/racoon/lecons/distribution-des-vitesses-moleculaires",
+    "/racoon/lecons/chaleurs-massiques-des-gaz",
+    "/racoon/lecons/l-echec-de-la-physique-classique"
+   ]
+  },
+  "equipartition": {
+   "monde": "statistique",
+   "prereq": [
+    "vitesses-chaleurs-massiques",
+    "oscillateur"
+   ],
+   "lecons": [
+    "/racoon/lecons/equipartition-de-l-energie",
+    "/racoon/lecons/equilibre-thermique-du-rayonnement",
+    "/racoon/lecons/equipartition-et-oscillateur-quantique",
+    "/racoon/lecons/marche-aleatoire-et-mouvement-brownien"
+   ]
+  },
+  "cinetique-applications": {
+   "monde": "statistique",
+   "prereq": [
+    "equipartition"
+   ],
+   "lecons": [
+    "/racoon/lecons/vitesse-d-evaporation",
+    "/racoon/lecons/emission-thermoionique",
+    "/racoon/lecons/ionisation-thermique",
+    "/racoon/lecons/cinetique-chimique",
+    "/racoon/lecons/lois-du-rayonnement-d-einstein"
+   ]
+  },
+  "libre-parcours-moyen": {
+   "monde": "statistique",
+   "prereq": [
+    "vitesses-chaleurs-massiques"
+   ],
+   "lecons": [
+    "/racoon/lecons/collisions-entre-molecules",
+    "/racoon/lecons/le-libre-parcours-moyen",
+    "/racoon/lecons/la-vitesse-de-derive"
+   ]
+  },
+  "diffusion-moleculaire": {
+   "monde": "statistique",
+   "prereq": [
+    "libre-parcours-moyen"
+   ],
+   "lecons": [
+    "/racoon/lecons/conductivite-ionique",
+    "/racoon/lecons/diffusion-moleculaire",
+    "/racoon/lecons/conductivite-thermique-d-un-gaz"
+   ]
+  },
+  "irreversibilite": {
+   "monde": "statistique",
+   "prereq": [
+    "vitesses-chaleurs-massiques"
+   ],
+   "lecons": [
+    "/racoon/lecons/fonctionnement-d-un-cliquet",
+    "/racoon/lecons/le-cliquet-comme-moteur",
+    "/racoon/lecons/reversibilite-en-mecanique",
+    "/racoon/lecons/irreversibilite",
+    "/racoon/lecons/ordre-et-entropie"
+   ]
+  },
+  "gaz-reels": {
+   "monde": "statistique",
+   "prereq": [
+    "gaz-cinetique"
+   ],
+   "lecons": [
+    "/racoon/lecons/limites-du-gaz-parfait",
+    "/racoon/lecons/equation-de-van-der-waals",
+    "/racoon/lecons/developpement-du-viriel",
+    "/racoon/lecons/coefficients-thermoelastiques-d-un-fluide-reel"
+   ]
+  },
+  "detentes-fluide-reel": {
+   "monde": "statistique",
+   "prereq": [
+    "gaz-reels"
+   ],
+   "lecons": [
+    "/racoon/lecons/detente-de-joule-gay-lussac",
+    "/racoon/lecons/detente-de-joule-thomson",
+    "/racoon/lecons/ce-que-les-detentes-revelent-des-interactions"
+   ]
+  },
+  "conduction-thermique": {
+   "monde": "statistique",
+   "prereq": [
+    "diffusion-moleculaire",
+    "circulation-et-stokes"
+   ],
+   "lecons": [
+    "/racoon/lecons/loi-de-fourier-et-equation-de-la-chaleur",
+    "/racoon/lecons/regime-stationnaire-et-resistance-thermique",
+    "/racoon/lecons/regime-variable-et-ondes-thermiques"
+   ]
+  },
+  "convection-rayonnement": {
+   "monde": "statistique",
+   "prereq": [
+    "conduction-thermique",
+    "equipartition"
+   ],
+   "lecons": [
+    "/racoon/lecons/convection-loi-de-newton-et-ailette",
+    "/racoon/lecons/corps-noir-et-lois-de-planck-de-wien-et-de-stefan",
+    "/racoon/lecons/bilans-radiatifs-et-effet-de-serre"
+   ]
+  },
+  "systemes-lineaires": {
+   "monde": "ondes",
+   "prereq": [
+    "transitoires"
+   ],
+   "lecons": [
+    "/racoon/lecons/linearite-d-une-equation-differentielle",
+    "/racoon/lecons/superposition-des-solutions",
+    "/racoon/lecons/oscillations-dans-les-systemes-lineaires",
+    "/racoon/lecons/analogies-en-physique",
+    "/racoon/lecons/transformee-de-laplace-et-notation-complexe",
+    "/racoon/lecons/impedances-en-serie-et-en-parallele"
+   ]
+  },
+  "ondes-sonores": {
+   "monde": "ondes",
+   "prereq": [
+    "systemes-lineaires",
+    "gaz-cinetique"
+   ],
+   "lecons": [
+    "/racoon/lecons/qu-est-ce-qu-une-onde",
+    "/racoon/lecons/propagation-du-son",
+    "/racoon/lecons/l-equation-d-onde",
+    "/racoon/lecons/solutions-de-l-equation-d-onde",
+    "/racoon/lecons/la-vitesse-du-son"
+   ]
+  },
+  "battements-paquets": {
+   "monde": "ondes",
+   "prereq": [
+    "ondes-sonores"
+   ],
+   "lecons": [
+    "/racoon/lecons/somme-de-deux-ondes",
+    "/racoon/lecons/battements-et-modulation",
+    "/racoon/lecons/bandes-laterales",
+    "/racoon/lecons/trains-d-ondes-localises"
+   ]
+  },
+  "ondes-trois-dimensions": {
+   "monde": "ondes",
+   "prereq": [
+    "battements-paquets"
+   ],
+   "lecons": [
+    "/racoon/lecons/amplitudes-de-probabilite-des-particules",
+    "/racoon/lecons/ondes-a-trois-dimensions",
+    "/racoon/lecons/modes-normaux"
+   ]
+  },
+  "modes-propres": {
+   "monde": "ondes",
+   "prereq": [
+    "ondes-trois-dimensions"
+   ],
+   "lecons": [
+    "/racoon/lecons/reflexion-des-ondes",
+    "/racoon/lecons/ondes-confinees-et-frequences-propres",
+    "/racoon/lecons/modes-propres-a-deux-dimensions",
+    "/racoon/lecons/pendules-couples",
+    "/racoon/lecons/modes-d-un-systeme-lineaire"
+   ]
+  },
+  "fourier-sons": {
+   "monde": "ondes",
+   "prereq": [
+    "modes-propres"
+   ],
+   "lecons": [
+    "/racoon/lecons/sons-musicaux",
+    "/racoon/lecons/serie-de-fourier",
+    "/racoon/lecons/timbre-et-consonance"
+   ]
+  },
+  "fourier-coefficients": {
+   "monde": "ondes",
+   "prereq": [
+    "fourier-sons"
+   ],
+   "lecons": [
+    "/racoon/lecons/coefficients-de-fourier",
+    "/racoon/lecons/energie-et-theoreme-de-parseval",
+    "/racoon/lecons/reponses-non-lineaires"
+   ]
+  },
+  "ondes-choc-surface": {
+   "monde": "ondes",
+   "prereq": [
+    "ondes-sonores"
+   ],
+   "lecons": [
+    "/racoon/lecons/ondes-d-etrave",
+    "/racoon/lecons/ondes-de-choc",
+    "/racoon/lecons/ondes-dans-les-solides",
+    "/racoon/lecons/ondes-de-surface"
+   ]
+  },
+  "traitement-du-signal": {
+   "monde": "ondes",
+   "prereq": [
+    "fourier-coefficients"
+   ],
+   "lecons": [
+    "/racoon/lecons/spectre-d-un-signal-periodique-et-non-periodique",
+    "/racoon/lecons/filtrage-lineaire-d-un-signal",
+    "/racoon/lecons/echantillonnage-et-critere-de-shannon",
+    "/racoon/lecons/modulation-et-demodulation"
+   ]
+  },
+  "opt-lumiere-fermat": {
+   "monde": "optique-geometrique",
+   "prereq": [
+    "decrire-mouvement"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-nature-lumiere",
+    "/racoon/lecons/opt-reflexion-refraction",
+    "/racoon/lecons/opt-fermat-temps-minimal"
+   ]
+  },
+  "opt-fermat-precis": {
+   "monde": "optique-geometrique",
+   "prereq": [
+    "opt-lumiere-fermat"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-fermat-applications",
+    "/racoon/lecons/opt-fermat-enonce-precis",
+    "/racoon/lecons/opt-fermat-pourquoi"
+   ]
+  },
+  "opt-dioptre-lentille": {
+   "monde": "optique-geometrique",
+   "prereq": [
+    "opt-fermat-precis"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-intro-optique-geometrique",
+    "/racoon/lecons/opt-focale-dioptre",
+    "/racoon/lecons/opt-focale-lentille",
+    "/racoon/lecons/opt-grandissement"
+   ]
+  },
+  "opt-systemes-optiques": {
+   "monde": "optique-geometrique",
+   "prereq": [
+    "opt-dioptre-lentille"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-associations-lentilles",
+    "/racoon/lecons/opt-aberrations",
+    "/racoon/lecons/opt-pouvoir-separateur"
+   ]
+  },
+  "opt-miroirs-spheriques": {
+   "monde": "optique-geometrique",
+   "prereq": [
+    "opt-systemes-optiques"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-miroirs-centre-sommet-foyer",
+    "/racoon/lecons/opt-miroirs-conjugaison-gauss",
+    "/racoon/lecons/opt-miroirs-constructions-montages"
+   ]
+  },
+  "opt-oeil": {
+   "monde": "optique-geometrique",
+   "prereq": [
+    "opt-systemes-optiques"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-oeil-humain",
+    "/racoon/lecons/opt-couleur-intensite",
+    "/racoon/lecons/opt-mesure-sensation-couleur"
+   ]
+  },
+  "opt-chromaticite": {
+   "monde": "optique-geometrique",
+   "prereq": [
+    "opt-oeil"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-diagramme-chromaticite",
+    "/racoon/lecons/opt-mecanisme-vision-couleurs",
+    "/racoon/lecons/opt-physico-chimie-couleurs"
+   ]
+  },
+  "opt-retine": {
+   "monde": "optique-geometrique",
+   "prereq": [
+    "opt-chromaticite"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-sensation-couleur",
+    "/racoon/lecons/opt-physiologie-oeil",
+    "/racoon/lecons/opt-batonnets"
+   ]
+  },
+  "opt-yeux-neurologie": {
+   "monde": "optique-geometrique",
+   "prereq": [
+    "opt-retine"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-oeil-compose",
+    "/racoon/lecons/opt-autres-yeux",
+    "/racoon/lecons/opt-neurologie-vision"
+   ]
+  },
+  "opt-rayonnement-dipole": {
+   "monde": "optique-ondulatoire",
+   "prereq": [
+    "oscillateur"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-em-et-lumiere",
+    "/racoon/lecons/opt-rayonnement",
+    "/racoon/lecons/opt-dipole-rayonnant",
+    "/racoon/lecons/opt-interferences-premiere-approche"
+   ]
+  },
+  "opt-ondes-em": {
+   "monde": "optique-ondulatoire",
+   "prereq": [
+    "opt-rayonnement-dipole",
+    "transitoires"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-ondes-em",
+    "/racoon/lecons/opt-energie-rayonnement",
+    "/racoon/lecons/opt-ondes-sinusoidales"
+   ]
+  },
+  "opt-interferences": {
+   "monde": "optique-ondulatoire",
+   "prereq": [
+    "opt-ondes-em"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-deux-dipoles",
+    "/racoon/lecons/opt-mathematiques-interferences",
+    "/racoon/lecons/opt-n-oscillateurs"
+   ]
+  },
+  "opt-reseau": {
+   "monde": "optique-ondulatoire",
+   "prereq": [
+    "opt-interferences"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-reseau-diffraction",
+    "/racoon/lecons/opt-resolution-reseau",
+    "/racoon/lecons/opt-antenne-parabolique"
+   ]
+  },
+  "opt-diffraction": {
+   "monde": "optique-ondulatoire",
+   "prereq": [
+    "opt-reseau"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-lames-minces-cristaux",
+    "/racoon/lecons/opt-diffraction-ecrans-opaques",
+    "/racoon/lecons/opt-plan-charges-oscillantes"
+   ]
+  },
+  "opt-indice": {
+   "monde": "optique-ondulatoire",
+   "prereq": [
+    "opt-diffraction"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-indice-refraction",
+    "/racoon/lecons/opt-champ-du-milieu",
+    "/racoon/lecons/opt-dispersion"
+   ]
+  },
+  "opt-absorption": {
+   "monde": "optique-ondulatoire",
+   "prereq": [
+    "opt-indice"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-absorption",
+    "/racoon/lecons/opt-energie-onde-electrique",
+    "/racoon/lecons/opt-diffraction-lumiere-ecran"
+   ]
+  },
+  "opt-amortissement-rayonnement": {
+   "monde": "optique-ondulatoire",
+   "prereq": [
+    "opt-absorption"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-resistance-rayonnement",
+    "/racoon/lecons/opt-puissance-rayonnee",
+    "/racoon/lecons/opt-amortissement-rayonnement"
+   ]
+  },
+  "opt-diffusion": {
+   "monde": "optique-ondulatoire",
+   "prereq": [
+    "opt-amortissement-rayonnement"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-sources-independantes",
+    "/racoon/lecons/opt-diffusion-lumiere",
+    "/racoon/lecons/opt-vecteur-electrique"
+   ]
+  },
+  "opt-birefringence": {
+   "monde": "optique-ondulatoire",
+   "prereq": [
+    "opt-diffusion"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-polarisation-diffusee",
+    "/racoon/lecons/opt-birefringence",
+    "/racoon/lecons/opt-polariseurs"
+   ]
+  },
+  "opt-activite-reflexion": {
+   "monde": "optique-ondulatoire",
+   "prereq": [
+    "opt-birefringence"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-activite-optique",
+    "/racoon/lecons/opt-intensite-reflechie",
+    "/racoon/lecons/opt-refraction-anormale"
+   ]
+  },
+  "opt-sources-rapides": {
+   "monde": "optique-ondulatoire",
+   "prereq": [
+    "opt-activite-reflexion",
+    "rel-quadrivecteurs"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-sources-en-mouvement",
+    "/racoon/lecons/opt-mouvement-apparent",
+    "/racoon/lecons/opt-synchrotron"
+   ]
+  },
+  "opt-synchrotron-doppler": {
+   "monde": "optique-ondulatoire",
+   "prereq": [
+    "opt-sources-rapides"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-synchrotron-cosmique",
+    "/racoon/lecons/opt-rayonnement-freinage",
+    "/racoon/lecons/opt-effet-doppler"
+   ]
+  },
+  "opt-aberration-impulsion": {
+   "monde": "optique-ondulatoire",
+   "prereq": [
+    "opt-synchrotron-doppler"
+   ],
+   "lecons": [
+    "/racoon/lecons/opt-quadrivecteur-omega-k",
+    "/racoon/lecons/opt-aberration",
+    "/racoon/lecons/opt-impulsion-lumiere"
+   ]
+  },
+  "rel-lorentz": {
+   "monde": "relativite",
+   "prereq": [
+    "quantite-de-mouvement",
+    "energie-potentielle"
+   ],
+   "lecons": [
+    "/racoon/lecons/relat-principe",
+    "/racoon/lecons/relat-transformation-lorentz",
+    "/racoon/lecons/relat-michelson-morley"
+   ]
+  },
+  "rel-temps-longueurs": {
+   "monde": "relativite",
+   "prereq": [
+    "rel-lorentz"
+   ],
+   "lecons": [
+    "/racoon/lecons/relat-dilatation-temps",
+    "/racoon/lecons/relat-contraction-longueurs",
+    "/racoon/lecons/relat-simultaneite"
+   ]
+  },
+  "rel-vitesses-jumeaux": {
+   "monde": "relativite",
+   "prereq": [
+    "rel-temps-longueurs"
+   ],
+   "lecons": [
+    "/racoon/lecons/relat-philosophes",
+    "/racoon/lecons/relat-jumeaux",
+    "/racoon/lecons/relat-composition-vitesses"
+   ]
+  },
+  "rel-dynamique": {
+   "monde": "relativite",
+   "prereq": [
+    "rel-vitesses-jumeaux"
+   ],
+   "lecons": [
+    "/racoon/lecons/relat-dynamique",
+    "/racoon/lecons/relat-masse-energie",
+    "/racoon/lecons/relat-masse-relativiste",
+    "/racoon/lecons/relat-energie"
+   ]
+  },
+  "rel-intervalles": {
+   "monde": "relativite",
+   "prereq": [
+    "rel-dynamique"
+   ],
+   "lecons": [
+    "/racoon/lecons/relat-geometrie-espace-temps",
+    "/racoon/lecons/relat-intervalle",
+    "/racoon/lecons/relat-cone-de-lumiere"
+   ]
+  },
+  "rel-quadrivecteurs": {
+   "monde": "relativite",
+   "prereq": [
+    "rel-intervalles"
+   ],
+   "lecons": [
+    "/racoon/lecons/relat-quadrivecteurs",
+    "/racoon/lecons/relat-energie-impulsion",
+    "/racoon/lecons/relat-algebre-quadrivecteurs"
+   ]
+  },
+  "rel-electro-quadri": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "tenseurs-2",
+    "dipole-oscillant-charge-mobile"
+   ],
+   "lecons": [
+    "/racoon/lecons/relat-quadrivecteurs-electro",
+    "/racoon/lecons/relat-produit-scalaire-4d",
+    "/racoon/lecons/relat-gradient-4d"
+   ]
+  },
+  "rel-electro-equations": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "rel-electro-quadri"
+   ],
+   "lecons": [
+    "/racoon/lecons/relat-electro-4d",
+    "/racoon/lecons/relat-quadripotentiel",
+    "/racoon/lecons/relat-invariance-maxwell"
+   ]
+  },
+  "rel-champs-charge": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "rel-electro-equations"
+   ],
+   "lecons": [
+    "/racoon/lecons/relat-potentiels-charge-rapide",
+    "/racoon/lecons/relat-champs-charge-uniforme",
+    "/racoon/lecons/relat-transformation-champs",
+    "/racoon/lecons/relat-mouvement-notation-relativiste",
+    "/racoon/lecons/relat-tenseur-energie-impulsion-em"
+   ]
+  },
+  "rel-courbes": {
+   "monde": "relativite",
+   "prereq": [
+    "rel-quadrivecteurs"
+   ],
+   "lecons": [
+    "/racoon/lecons/relat-courbes-2d",
+    "/racoon/lecons/relat-courbure-3d",
+    "/racoon/lecons/relat-espace-courbe"
+   ]
+  },
+  "rel-gravitation-horloges": {
+   "monde": "relativite",
+   "prereq": [
+    "rel-courbes"
+   ],
+   "lecons": [
+    "/racoon/lecons/relat-geometrie-espace-temps-courbe",
+    "/racoon/lecons/relat-principe-equivalence",
+    "/racoon/lecons/relat-horloges-gravitation"
+   ]
+  },
+  "rel-courbure": {
+   "monde": "relativite",
+   "prereq": [
+    "rel-gravitation-horloges"
+   ],
+   "lecons": [
+    "/racoon/lecons/relat-courbure-espace-temps",
+    "/racoon/lecons/relat-mouvement-espace-temps-courbe",
+    "/racoon/lecons/relat-gravitation-einstein"
+   ]
+  },
+  "deux-fentes-electrons": {
+   "monde": "quantique-amplitudes",
+   "prereq": [
+    "probabilites",
+    "les-atomes",
+    "opt-diffraction",
+    "quantite-de-mouvement"
+   ],
+   "lecons": [
+    "/racoon/lecons/mecanique-atomique-lois",
+    "/racoon/lecons/balles-deux-fentes",
+    "/racoon/lecons/ondes-deux-fentes",
+    "/racoon/lecons/electrons-deux-fentes",
+    "/racoon/lecons/interference-ondes-electrons"
+   ]
+  },
+  "observer-et-incertitude": {
+   "monde": "quantique-amplitudes",
+   "prereq": [
+    "deux-fentes-electrons"
+   ],
+   "lecons": [
+    "/racoon/lecons/observer-les-electrons",
+    "/racoon/lecons/premiers-principes-quantiques",
+    "/racoon/lecons/incertitude-de-heisenberg",
+    "/racoon/lecons/ondes-amplitude-probabilite"
+   ]
+  },
+  "atome-et-niveaux": {
+   "monde": "quantique-amplitudes",
+   "prereq": [
+    "observer-et-incertitude"
+   ],
+   "lecons": [
+    "/racoon/lecons/mesure-position-impulsion",
+    "/racoon/lecons/diffraction-electrons-cristal",
+    "/racoon/lecons/taille-d-un-atome",
+    "/racoon/lecons/niveaux-d-energie-atome",
+    "/racoon/lecons/implications-philosophiques-quantique"
+   ]
+  },
+  "regles-des-amplitudes": {
+   "monde": "quantique-amplitudes",
+   "prereq": [
+    "atome-et-niveaux"
+   ],
+   "lecons": [
+    "/racoon/lecons/composition-des-amplitudes",
+    "/racoon/lecons/figure-deux-fentes-amplitudes",
+    "/racoon/lecons/diffusion-amplitudes-cristal",
+    "/racoon/lecons/identiques-en-amplitudes"
+   ]
+  },
+  "bosons-et-fermions": {
+   "monde": "quantique-amplitudes",
+   "prereq": [
+    "regles-des-amplitudes",
+    "equipartition"
+   ],
+   "lecons": [
+    "/racoon/lecons/bosons-et-fermions",
+    "/racoon/lecons/etats-deux-bosons",
+    "/racoon/lecons/etats-n-bosons",
+    "/racoon/lecons/emission-absorption-photons-bosons"
+   ]
+  },
+  "bosons-fermions-matiere": {
+   "monde": "quantique-amplitudes",
+   "prereq": [
+    "bosons-et-fermions"
+   ],
+   "lecons": [
+    "/racoon/lecons/spectre-corps-noir-bosons",
+    "/racoon/lecons/helium-liquide",
+    "/racoon/lecons/principe-d-exclusion"
+   ]
+  },
+  "stern-gerlach-spin1": {
+   "monde": "quantique-deux-etats",
+   "prereq": [
+    "regles-des-amplitudes",
+    "rotation-espace"
+   ],
+   "lecons": [
+    "/racoon/lecons/filtrer-stern-gerlach",
+    "/racoon/lecons/atomes-filtres-experiences",
+    "/racoon/lecons/filtres-stern-gerlach-serie",
+    "/racoon/lecons/etats-de-base-spin1"
+   ]
+  },
+  "algebre-spin1": {
+   "monde": "quantique-deux-etats",
+   "prereq": [
+    "stern-gerlach-spin1"
+   ],
+   "lecons": [
+    "/racoon/lecons/amplitudes-qui-interferent-spin1",
+    "/racoon/lecons/machinerie-quantique",
+    "/racoon/lecons/changement-de-base-spin1",
+    "/racoon/lecons/autres-situations-spin1"
+   ]
+  },
+  "spin-demi-rotations-z": {
+   "monde": "quantique-deux-etats",
+   "prereq": [
+    "algebre-spin1"
+   ],
+   "lecons": [
+    "/racoon/lecons/transformation-des-amplitudes",
+    "/racoon/lecons/repere-tourne-amplitudes",
+    "/racoon/lecons/rotations-autour-de-z"
+   ]
+  },
+  "spin-demi-rotations-generales": {
+   "monde": "quantique-deux-etats",
+   "prereq": [
+    "spin-demi-rotations-z"
+   ],
+   "lecons": [
+    "/racoon/lecons/rotations-180-90-autour-de-y",
+    "/racoon/lecons/rotations-autour-de-x",
+    "/racoon/lecons/rotations-quelconques-spin-demi"
+   ]
+  },
+  "amplitudes-et-temps": {
+   "monde": "quantique-deux-etats",
+   "prereq": [
+    "spin-demi-rotations-generales"
+   ],
+   "lecons": [
+    "/racoon/lecons/atomes-au-repos-etats-stationnaires",
+    "/racoon/lecons/mouvement-uniforme-amplitudes",
+    "/racoon/lecons/energie-potentielle-amplitudes",
+    "/racoon/lecons/forces-et-limite-classique",
+    "/racoon/lecons/precession-spin-demi"
+   ]
+  },
+  "espace-des-etats": {
+   "monde": "quantique-deux-etats",
+   "prereq": [
+    "amplitudes-et-temps"
+   ],
+   "lecons": [
+    "/racoon/lecons/amplitudes-et-vecteurs",
+    "/racoon/lecons/decomposition-vecteurs-d-etat",
+    "/racoon/lecons/etats-de-base-du-monde"
+   ]
+  },
+  "hamiltonien-ammoniac": {
+   "monde": "quantique-deux-etats",
+   "prereq": [
+    "espace-des-etats"
+   ],
+   "lecons": [
+    "/racoon/lecons/evolution-des-etats",
+    "/racoon/lecons/matrice-hamiltonienne",
+    "/racoon/lecons/molecule-d-ammoniac"
+   ]
+  },
+  "maser-ammoniac-champ": {
+   "monde": "quantique-deux-etats",
+   "prereq": [
+    "hamiltonien-ammoniac",
+    "condensateur-plan"
+   ],
+   "lecons": [
+    "/racoon/lecons/etats-ammoniac",
+    "/racoon/lecons/ammoniac-champ-statique",
+    "/racoon/lecons/transitions-champ-variable"
+   ]
+  },
+  "maser-ammoniac-resonance": {
+   "monde": "quantique-deux-etats",
+   "prereq": [
+    "maser-ammoniac-champ"
+   ],
+   "lecons": [
+    "/racoon/lecons/transitions-a-la-resonance",
+    "/racoon/lecons/transitions-hors-resonance",
+    "/racoon/lecons/absorption-de-la-lumiere-quantique"
+   ]
+  },
+  "molecules-deux-etats": {
+   "monde": "quantique-deux-etats",
+   "prereq": [
+    "hamiltonien-ammoniac",
+    "opt-activite-reflexion"
+   ],
+   "lecons": [
+    "/racoon/lecons/ion-moleculaire-hydrogene",
+    "/racoon/lecons/forces-nucleaires-echange",
+    "/racoon/lecons/molecule-d-hydrogene",
+    "/racoon/lecons/benzene-deux-etats"
+   ]
+  },
+  "colorants-et-spin-champ": {
+   "monde": "quantique-deux-etats",
+   "prereq": [
+    "molecules-deux-etats"
+   ],
+   "lecons": [
+    "/racoon/lecons/colorants-deux-etats",
+    "/racoon/lecons/hamiltonien-spin-champ-magnetique",
+    "/racoon/lecons/electron-tournant-champ-magnetique"
+   ]
+  },
+  "pauli-et-operateurs-spin": {
+   "monde": "quantique-deux-etats",
+   "prereq": [
+    "colorants-et-spin-champ"
+   ],
+   "lecons": [
+    "/racoon/lecons/matrices-de-pauli",
+    "/racoon/lecons/matrices-de-spin-operateurs",
+    "/racoon/lecons/resolution-equations-deux-etats"
+   ]
+  },
+  "photon-kaon-n-etats": {
+   "monde": "quantique-deux-etats",
+   "prereq": [
+    "pauli-et-operateurs-spin"
+   ],
+   "lecons": [
+    "/racoon/lecons/etats-polarisation-photon",
+    "/racoon/lecons/meson-k-neutre",
+    "/racoon/lecons/systemes-a-n-etats"
+   ]
+  },
+  "hyperfin-niveaux": {
+   "monde": "quantique-deux-etats",
+   "prereq": [
+    "photon-kaon-n-etats"
+   ],
+   "lecons": [
+    "/racoon/lecons/etats-de-base-deux-spins",
+    "/racoon/lecons/hamiltonien-fondamental-hydrogene",
+    "/racoon/lecons/niveaux-hyperfins"
+   ]
+  },
+  "hyperfin-zeeman": {
+   "monde": "quantique-deux-etats",
+   "prereq": [
+    "hyperfin-niveaux"
+   ],
+   "lecons": [
+    "/racoon/lecons/zeeman-hyperfin",
+    "/racoon/lecons/etats-hyperfins-champ-magnetique",
+    "/racoon/lecons/matrice-de-projection-spin1"
+   ]
+  },
+  "electron-dans-un-reseau": {
+   "monde": "quantique-schrodinger",
+   "prereq": [
+    "photon-kaon-n-etats",
+    "cristaux-2"
+   ],
+   "lecons": [
+    "/racoon/lecons/electron-reseau-1d",
+    "/racoon/lecons/etats-energie-definie-reseau",
+    "/racoon/lecons/etats-temporels-reseau",
+    "/racoon/lecons/electron-reseau-3d"
+   ]
+  },
+  "defauts-du-reseau": {
+   "monde": "quantique-schrodinger",
+   "prereq": [
+    "electron-dans-un-reseau"
+   ],
+   "lecons": [
+    "/racoon/lecons/autres-etats-reseau",
+    "/racoon/lecons/diffusion-imperfections-reseau",
+    "/racoon/lecons/piegeage-imperfection-reseau",
+    "/racoon/lecons/diffusion-et-etats-lies-reseau"
+   ]
+  },
+  "electrons-et-trous-semi": {
+   "monde": "quantique-schrodinger",
+   "prereq": [
+    "defauts-du-reseau",
+    "vitesses-chaleurs-massiques",
+    "biot-savart"
+   ],
+   "lecons": [
+    "/racoon/lecons/electrons-et-trous",
+    "/racoon/lecons/semi-conducteurs-dopes",
+    "/racoon/lecons/effet-hall"
+   ]
+  },
+  "jonctions-et-transistor": {
+   "monde": "quantique-schrodinger",
+   "prereq": [
+    "electrons-et-trous-semi"
+   ],
+   "lecons": [
+    "/racoon/lecons/jonctions-semi-conducteurs",
+    "/racoon/lecons/redressement-jonction",
+    "/racoon/lecons/transistor"
+   ]
+  },
+  "ondes-de-spin-etape": {
+   "monde": "quantique-schrodinger",
+   "prereq": [
+    "defauts-du-reseau"
+   ],
+   "lecons": [
+    "/racoon/lecons/ondes-de-spin",
+    "/racoon/lecons/deux-ondes-de-spin",
+    "/racoon/lecons/particules-independantes"
+   ]
+  },
+  "molecules-independantes": {
+   "monde": "quantique-schrodinger",
+   "prereq": [
+    "ondes-de-spin-etape"
+   ],
+   "lecons": [
+    "/racoon/lecons/benzene-particules-independantes",
+    "/racoon/lecons/chimie-organique-quantique",
+    "/racoon/lecons/autres-usages-particules-independantes"
+   ]
+  },
+  "fonction-d-onde-et-impulsion": {
+   "monde": "quantique-schrodinger",
+   "prereq": [
+    "defauts-du-reseau"
+   ],
+   "lecons": [
+    "/racoon/lecons/amplitudes-sur-une-droite",
+    "/racoon/lecons/fonction-d-onde",
+    "/racoon/lecons/etats-impulsion-definie"
+   ]
+  },
+  "schrodinger-et-quantification": {
+   "monde": "quantique-schrodinger",
+   "prereq": [
+    "fonction-d-onde-et-impulsion"
+   ],
+   "lecons": [
+    "/racoon/lecons/normalisation-etats-position",
+    "/racoon/lecons/equation-de-schrodinger",
+    "/racoon/lecons/niveaux-d-energie-quantifies"
+   ]
+  },
+  "symetrie-et-conservation-q": {
+   "monde": "quantique-schrodinger",
+   "prereq": [
+    "photon-kaon-n-etats",
+    "symetries",
+    "parite-antimatiere"
+   ],
+   "lecons": [
+    "/racoon/lecons/symetrie-quantique",
+    "/racoon/lecons/symetrie-et-conservation",
+    "/racoon/lecons/lois-de-conservation-quantiques"
+   ]
+  },
+  "polarisation-lambda": {
+   "monde": "quantique-schrodinger",
+   "prereq": [
+    "symetrie-et-conservation-q"
+   ],
+   "lecons": [
+    "/racoon/lecons/lumiere-polarisee-amplitudes",
+    "/racoon/lecons/desintegration-lambda-zero",
+    "/racoon/lecons/recapitulatif-matrices-de-rotation"
+   ]
+  },
+  "moment-cinetique-rayonnement": {
+   "monde": "quantique-schrodinger",
+   "prereq": [
+    "polarisation-lambda",
+    "hyperfin-zeeman"
+   ],
+   "lecons": [
+    "/racoon/lecons/rayonnement-dipolaire-quantique",
+    "/racoon/lecons/diffusion-lumiere-atome-quantique",
+    "/racoon/lecons/annihilation-positronium",
+    "/racoon/lecons/matrice-rotation-spin-quelconque"
+   ]
+  },
+  "moment-cinetique-composition": {
+   "monde": "quantique-schrodinger",
+   "prereq": [
+    "moment-cinetique-rayonnement"
+   ],
+   "lecons": [
+    "/racoon/lecons/mesure-spin-nucleaire",
+    "/racoon/lecons/composition-moments-cinetiques-quantiques",
+    "/racoon/lecons/note-derivation-matrice-rotation",
+    "/racoon/lecons/note-parite-emission-photon"
+   ]
+  },
+  "hydrogene-niveaux": {
+   "monde": "quantique-schrodinger",
+   "prereq": [
+    "schrodinger-et-quantification",
+    "moment-cinetique-composition"
+   ],
+   "lecons": [
+    "/racoon/lecons/schrodinger-atome-hydrogene",
+    "/racoon/lecons/solutions-symetrie-spherique",
+    "/racoon/lecons/etats-dependance-angulaire"
+   ]
+  },
+  "hydrogene-et-tableau": {
+   "monde": "quantique-schrodinger",
+   "prereq": [
+    "hydrogene-niveaux"
+   ],
+   "lecons": [
+    "/racoon/lecons/solution-generale-hydrogene",
+    "/racoon/lecons/fonctions-d-onde-hydrogene",
+    "/racoon/lecons/tableau-periodique-quantique"
+   ]
+  },
+  "operateurs-et-moyennes": {
+   "monde": "quantique-schrodinger",
+   "prereq": [
+    "schrodinger-et-quantification",
+    "moment-cinetique-composition"
+   ],
+   "lecons": [
+    "/racoon/lecons/operations-et-operateurs",
+    "/racoon/lecons/energies-moyennes-quantiques",
+    "/racoon/lecons/energie-moyenne-d-un-atome",
+    "/racoon/lecons/operateur-position"
+   ]
+  },
+  "operateurs-impulsion-evolution": {
+   "monde": "quantique-schrodinger",
+   "prereq": [
+    "operateurs-et-moyennes"
+   ],
+   "lecons": [
+    "/racoon/lecons/operateur-quantite-de-mouvement",
+    "/racoon/lecons/moment-cinetique-operateur",
+    "/racoon/lecons/evolution-des-valeurs-moyennes"
+   ]
+  },
+  "schrodinger-champ-magnetique": {
+   "monde": "quantique-schrodinger",
+   "prereq": [
+    "operateurs-impulsion-evolution",
+    "energie-courants"
+   ],
+   "lecons": [
+    "/racoon/lecons/schrodinger-champ-magnetique",
+    "/racoon/lecons/continuite-des-probabilites",
+    "/racoon/lecons/deux-sortes-de-quantite-de-mouvement",
+    "/racoon/lecons/sens-de-la-fonction-d-onde"
+   ]
+  },
+  "supraconductivite-etape": {
+   "monde": "quantique-schrodinger",
+   "prereq": [
+    "schrodinger-champ-magnetique"
+   ],
+   "lecons": [
+    "/racoon/lecons/supraconductivite",
+    "/racoon/lecons/effet-meissner",
+    "/racoon/lecons/quantification-du-flux",
+    "/racoon/lecons/dynamique-supraconductivite",
+    "/racoon/lecons/jonction-josephson"
+   ]
+  },
+  "coulomb-potentiel": {
+   "monde": "electrostatique",
+   "prereq": [
+    "champs-em",
+    "circulation-et-stokes"
+   ],
+   "lecons": [
+    "/racoon/lecons/lois-de-l-electrostatique",
+    "/racoon/lecons/coulomb-et-superposition",
+    "/racoon/lecons/potentiel-electrique",
+    "/racoon/lecons/champ-gradient-du-potentiel"
+   ]
+  },
+  "gauss-electrostatique": {
+   "monde": "electrostatique",
+   "prereq": [
+    "coulomb-potentiel"
+   ],
+   "lecons": [
+    "/racoon/lecons/flux-du-champ-electrique",
+    "/racoon/lecons/gauss-divergence-de-e",
+    "/racoon/lecons/champ-sphere-chargee",
+    "/racoon/lecons/lignes-de-champ-equipotentielles"
+   ]
+  },
+  "equilibre-charges": {
+   "monde": "electrostatique",
+   "prereq": [
+    "gauss-electrostatique"
+   ],
+   "lecons": [
+    "/racoon/lecons/gauss-et-rotationnel-nul",
+    "/racoon/lecons/equilibre-champ-electrostatique",
+    "/racoon/lecons/equilibre-avec-conducteurs",
+    "/racoon/lecons/stabilite-des-atomes"
+   ]
+  },
+  "gauss-symetries": {
+   "monde": "electrostatique",
+   "prereq": [
+    "gauss-electrostatique",
+    "symetries"
+   ],
+   "lecons": [
+    "/racoon/lecons/champ-fil-charge",
+    "/racoon/lecons/champ-plans-charges",
+    "/racoon/lecons/sphere-et-coquille-chargees"
+   ]
+  },
+  "conducteurs-cavites": {
+   "monde": "electrostatique",
+   "prereq": [
+    "equilibre-charges",
+    "gauss-symetries"
+   ],
+   "lecons": [
+    "/racoon/lecons/champ-d-un-conducteur",
+    "/racoon/lecons/champ-dans-une-cavite",
+    "/racoon/lecons/loi-en-1-sur-r2-exacte"
+   ]
+  },
+  "potentiel-dipole": {
+   "monde": "electrostatique",
+   "prereq": [
+    "conducteurs-cavites"
+   ],
+   "lecons": [
+    "/racoon/lecons/poisson-laplace",
+    "/racoon/lecons/dipole-electrique",
+    "/racoon/lecons/equations-vectorielles-repere",
+    "/racoon/lecons/champ-du-dipole",
+    "/racoon/lecons/approximation-dipolaire"
+   ]
+  },
+  "methode-des-images": {
+   "monde": "electrostatique",
+   "prereq": [
+    "potentiel-dipole"
+   ],
+   "lecons": [
+    "/racoon/lecons/champ-conducteurs-charges",
+    "/racoon/lecons/methode-des-images-lecon",
+    "/racoon/lecons/charge-pres-d-un-plan",
+    "/racoon/lecons/charge-pres-d-une-sphere"
+   ]
+  },
+  "condensateur-plan": {
+   "monde": "electrostatique",
+   "prereq": [
+    "methode-des-images"
+   ],
+   "lecons": [
+    "/racoon/lecons/condensateur-plan-armatures",
+    "/racoon/lecons/claquage-haute-tension",
+    "/racoon/lecons/emission-de-champ"
+   ]
+  },
+  "methodes-champ": {
+   "monde": "electrostatique",
+   "prereq": [
+    "nombres-complexes",
+    "condensateur-plan",
+    "vitesses-chaleurs-massiques",
+    "oscillateur"
+   ],
+   "lecons": [
+    "/racoon/lecons/methodes-champ-electrostatique",
+    "/racoon/lecons/champs-plans-variable-complexe",
+    "/racoon/lecons/oscillations-gaz-d-electrons",
+    "/racoon/lecons/colloides-electrolyte",
+    "/racoon/lecons/champ-d-une-grille"
+   ]
+  },
+  "energie-densite": {
+   "monde": "electrostatique",
+   "prereq": [
+    "energie-potentielle",
+    "conducteurs-cavites"
+   ],
+   "lecons": [
+    "/racoon/lecons/energie-distribution-de-charges",
+    "/racoon/lecons/energie-dans-le-champ",
+    "/racoon/lecons/energie-charge-ponctuelle"
+   ]
+  },
+  "energie-condensateur": {
+   "monde": "electrostatique",
+   "prereq": [
+    "energie-densite",
+    "condensateur-plan"
+   ],
+   "lecons": [
+    "/racoon/lecons/energie-condensateur-forces",
+    "/racoon/lecons/energie-cristal-ionique",
+    "/racoon/lecons/energie-electrostatique-noyaux"
+   ]
+  },
+  "champ-atmospherique": {
+   "monde": "electrostatique",
+   "prereq": [
+    "condensateur-plan",
+    "diffusion-moleculaire"
+   ],
+   "lecons": [
+    "/racoon/lecons/gradient-potentiel-atmosphere",
+    "/racoon/lecons/courants-atmospheriques",
+    "/racoon/lecons/origine-courants-atmospheriques"
+   ]
+  },
+  "orages-foudre": {
+   "monde": "electrostatique",
+   "prereq": [
+    "champ-atmospherique"
+   ],
+   "lecons": [
+    "/racoon/lecons/les-orages",
+    "/racoon/lecons/separation-des-charges",
+    "/racoon/lecons/la-foudre"
+   ]
+  },
+  "polarisation": {
+   "monde": "electrostatique",
+   "prereq": [
+    "condensateur-plan",
+    "vitesses-chaleurs-massiques"
+   ],
+   "lecons": [
+    "/racoon/lecons/constante-dielectrique",
+    "/racoon/lecons/vecteur-polarisation",
+    "/racoon/lecons/charges-de-polarisation",
+    "/racoon/lecons/electrostatique-avec-dielectriques"
+   ]
+  },
+  "polarisation-moleculaire": {
+   "monde": "electrostatique",
+   "prereq": [
+    "polarisation"
+   ],
+   "lecons": [
+    "/racoon/lecons/champs-forces-dielectriques",
+    "/racoon/lecons/dipoles-moleculaires",
+    "/racoon/lecons/polarisation-electronique",
+    "/racoon/lecons/polarisation-d-orientation"
+   ]
+  },
+  "dielectriques-reels": {
+   "monde": "electrostatique",
+   "prereq": [
+    "polarisation-moleculaire"
+   ],
+   "lecons": [
+    "/racoon/lecons/champ-cavite-dielectrique",
+    "/racoon/lecons/clausius-mossotti",
+    "/racoon/lecons/dielectriques-solides",
+    "/racoon/lecons/ferroelectricite"
+   ]
+  },
+  "memes-equations": {
+   "monde": "electrostatique",
+   "prereq": [
+    "condensateur-plan",
+    "diffusion-moleculaire"
+   ],
+   "lecons": [
+    "/racoon/lecons/memes-equations-memes-solutions",
+    "/racoon/lecons/chaleur-source-pres-d-une-paroi",
+    "/racoon/lecons/membrane-tendue",
+    "/racoon/lecons/diffusion-des-neutrons"
+   ]
+  },
+  "analogies-ecoulement": {
+   "monde": "electrostatique",
+   "prereq": [
+    "memes-equations"
+   ],
+   "lecons": [
+    "/racoon/lecons/ecoulement-irrotationnel-sphere",
+    "/racoon/lecons/eclairement-d-un-plan",
+    "/racoon/lecons/unite-de-la-nature"
+   ]
+  },
+  "champ-magnetique-courants": {
+   "monde": "magnetisme-induction",
+   "prereq": [
+    "particule-chargee",
+    "conducteurs-cavites"
+   ],
+   "lecons": [
+    "/racoon/lecons/le-champ-magnetique",
+    "/racoon/lecons/courant-et-conservation-charge",
+    "/racoon/lecons/force-magnetique-sur-un-courant"
+   ]
+  },
+  "ampere-relativite": {
+   "monde": "magnetisme-induction",
+   "prereq": [
+    "champ-magnetique-courants"
+   ],
+   "lecons": [
+    "/racoon/lecons/theoreme-d-ampere",
+    "/racoon/lecons/fil-et-solenoide",
+    "/racoon/lecons/relativite-champs-e-b",
+    "/racoon/lecons/transformation-courants-charges"
+   ]
+  },
+  "potentiel-vecteur": {
+   "monde": "magnetisme-induction",
+   "prereq": [
+    "ampere-relativite"
+   ],
+   "lecons": [
+    "/racoon/lecons/superposition-main-droite",
+    "/racoon/lecons/le-potentiel-vecteur",
+    "/racoon/lecons/potentiel-vecteur-courants-connus"
+   ]
+  },
+  "potentiel-circuits-simples": {
+   "monde": "magnetisme-induction",
+   "prereq": [
+    "potentiel-vecteur"
+   ],
+   "lecons": [
+    "/racoon/lecons/potentiel-vecteur-fil",
+    "/racoon/lecons/potentiel-vecteur-solenoide",
+    "/racoon/lecons/petite-boucle-dipole-magnetique"
+   ]
+  },
+  "biot-savart": {
+   "monde": "magnetisme-induction",
+   "prereq": [
+    "potentiel-circuits-simples",
+    "energie-condensateur"
+   ],
+   "lecons": [
+    "/racoon/lecons/potentiel-vecteur-circuit",
+    "/racoon/lecons/loi-de-biot-et-savart",
+    "/racoon/lecons/force-sur-une-boucle"
+   ]
+  },
+  "energie-courants": {
+   "monde": "magnetisme-induction",
+   "prereq": [
+    "biot-savart"
+   ],
+   "lecons": [
+    "/racoon/lecons/energies-mecanique-electrique",
+    "/racoon/lecons/energie-courants-permanents",
+    "/racoon/lecons/b-ou-a",
+    "/racoon/lecons/potentiel-vecteur-quantique",
+    "/racoon/lecons/statique-pas-dynamique"
+   ]
+  },
+  "moteurs-generateurs": {
+   "monde": "magnetisme-induction",
+   "prereq": [
+    "biot-savart"
+   ],
+   "lecons": [
+    "/racoon/lecons/moteurs-et-generateurs",
+    "/racoon/lecons/transformateurs-inductances",
+    "/racoon/lecons/forces-courants-induits",
+    "/racoon/lecons/technologie-electrique"
+   ]
+  },
+  "flux-faraday": {
+   "monde": "magnetisme-induction",
+   "prereq": [
+    "moteurs-generateurs"
+   ],
+   "lecons": [
+    "/racoon/lecons/physique-de-l-induction",
+    "/racoon/lecons/exceptions-regle-du-flux",
+    "/racoon/lecons/betatron",
+    "/racoon/lecons/paradoxe-de-l-induction"
+   ]
+  },
+  "inductance": {
+   "monde": "magnetisme-induction",
+   "prereq": [
+    "flux-faraday"
+   ],
+   "lecons": [
+    "/racoon/lecons/alternateur",
+    "/racoon/lecons/inductance-mutuelle",
+    "/racoon/lecons/auto-inductance",
+    "/racoon/lecons/inductance-et-energie-magnetique"
+   ]
+  },
+  "trajectoires-charges": {
+   "monde": "magnetisme-induction",
+   "prereq": [
+    "biot-savart",
+    "opt-systemes-optiques"
+   ],
+   "lecons": [
+    "/racoon/lecons/mouvement-champ-uniforme",
+    "/racoon/lecons/analyse-en-quantite-de-mouvement",
+    "/racoon/lecons/champs-croises"
+   ]
+  },
+  "focalisation": {
+   "monde": "magnetisme-induction",
+   "prereq": [
+    "trajectoires-charges"
+   ],
+   "lecons": [
+    "/racoon/lecons/lentille-electrostatique",
+    "/racoon/lecons/lentille-magnetique",
+    "/racoon/lecons/microscope-electronique",
+    "/racoon/lecons/guidage-accelerateur",
+    "/racoon/lecons/focalisation-gradient-alterne"
+   ]
+  },
+  "moments-magnetiques": {
+   "monde": "magnetisme-induction",
+   "prereq": [
+    "energie-courants",
+    "rotation-espace"
+   ],
+   "lecons": [
+    "/racoon/lecons/dia-et-paramagnetisme",
+    "/racoon/lecons/moment-magnetique-moment-cinetique",
+    "/racoon/lecons/precession-aimants-atomiques",
+    "/racoon/lecons/diamagnetisme"
+   ]
+  },
+  "larmor-quantique": {
+   "monde": "magnetisme-induction",
+   "prereq": [
+    "moments-magnetiques"
+   ],
+   "lecons": [
+    "/racoon/lecons/theoreme-de-larmor",
+    "/racoon/lecons/bohr-van-leeuwen",
+    "/racoon/lecons/moment-cinetique-quantique",
+    "/racoon/lecons/energie-magnetique-des-atomes"
+   ]
+  },
+  "etats-quantifies": {
+   "monde": "magnetisme-induction",
+   "prereq": [
+    "larmor-quantique",
+    "vitesses-chaleurs-massiques"
+   ],
+   "lecons": [
+    "/racoon/lecons/etats-magnetiques-quantifies",
+    "/racoon/lecons/stern-et-gerlach",
+    "/racoon/lecons/methode-de-rabi"
+   ]
+  },
+  "paramagnetisme-rmn": {
+   "monde": "magnetisme-induction",
+   "prereq": [
+    "etats-quantifies"
+   ],
+   "lecons": [
+    "/racoon/lecons/paramagnetisme-materiaux",
+    "/racoon/lecons/desaimantation-adiabatique",
+    "/racoon/lecons/resonance-magnetique-nucleaire"
+   ]
+  },
+  "aimantation-h": {
+   "monde": "magnetisme-induction",
+   "prereq": [
+    "paramagnetisme-rmn",
+    "inductance"
+   ],
+   "lecons": [
+    "/racoon/lecons/courants-d-aimantation",
+    "/racoon/lecons/le-champ-h",
+    "/racoon/lecons/courbe-d-aimantation"
+   ]
+  },
+  "noyau-de-fer": {
+   "monde": "magnetisme-induction",
+   "prereq": [
+    "aimantation-h"
+   ],
+   "lecons": [
+    "/racoon/lecons/inductances-noyau-de-fer",
+    "/racoon/lecons/electroaimants",
+    "/racoon/lecons/aimantation-spontanee"
+   ]
+  },
+  "ferromagnetisme": {
+   "monde": "magnetisme-induction",
+   "prereq": [
+    "noyau-de-fer"
+   ],
+   "lecons": [
+    "/racoon/lecons/comprendre-le-ferromagnetisme",
+    "/racoon/lecons/proprietes-thermodynamiques-ferro",
+    "/racoon/lecons/cycle-d-hysteresis",
+    "/racoon/lecons/materiaux-ferromagnetiques",
+    "/racoon/lecons/materiaux-magnetiques-extraordinaires"
+   ]
+  },
+  "equations-maxwell": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "inductance"
+   ],
+   "lecons": [
+    "/racoon/lecons/equations-de-maxwell",
+    "/racoon/lecons/courant-de-deplacement",
+    "/racoon/lecons/toute-la-physique-classique"
+   ]
+  },
+  "champ-qui-se-propage": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "equations-maxwell"
+   ],
+   "lecons": [
+    "/racoon/lecons/champ-qui-se-propage-lecon",
+    "/racoon/lecons/vitesse-de-la-lumiere",
+    "/racoon/lecons/potentiels-equation-d-onde"
+   ]
+  },
+  "ondes-planes-spheriques": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "champ-qui-se-propage",
+    "ondes-sonores"
+   ],
+   "lecons": [
+    "/racoon/lecons/ondes-planes-dans-le-vide",
+    "/racoon/lecons/ondes-electromagnetiques-a-trois-dimensions",
+    "/racoon/lecons/imagination-scientifique",
+    "/racoon/lecons/ondes-spheriques"
+   ]
+  },
+  "lumiere-source-ponctuelle": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "ondes-planes-spheriques"
+   ],
+   "lecons": [
+    "/racoon/lecons/lumiere-et-ondes-em",
+    "/racoon/lecons/ondes-spheriques-source-ponctuelle",
+    "/racoon/lecons/solution-generale-maxwell"
+   ]
+  },
+  "dipole-oscillant-charge-mobile": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "lumiere-source-ponctuelle"
+   ],
+   "lecons": [
+    "/racoon/lecons/champs-dipole-oscillant",
+    "/racoon/lecons/lienard-wiechert",
+    "/racoon/lecons/formule-de-lorentz-charge"
+   ]
+  },
+  "energie-flux-champ": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "champ-qui-se-propage"
+   ],
+   "lecons": [
+    "/racoon/lecons/conservation-locale",
+    "/racoon/lecons/conservation-energie-electromagnetisme",
+    "/racoon/lecons/densite-flux-energie-champ"
+   ]
+  },
+  "exemples-flux-impulsion": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "energie-flux-champ"
+   ],
+   "lecons": [
+    "/racoon/lecons/ambiguite-energie-du-champ",
+    "/racoon/lecons/exemples-flux-d-energie",
+    "/racoon/lecons/quantite-de-mouvement-du-champ"
+   ]
+  },
+  "circuits-impedances": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "inductance",
+    "systemes-lineaires"
+   ],
+   "lecons": [
+    "/racoon/lecons/impedances",
+    "/racoon/lecons/generateurs-ideaux",
+    "/racoon/lecons/lois-de-kirchhoff-complexes",
+    "/racoon/lecons/circuits-equivalents"
+   ]
+  },
+  "puissance-filtres": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "circuits-impedances"
+   ],
+   "lecons": [
+    "/racoon/lecons/puissance-regime-sinusoidal",
+    "/racoon/lecons/reseau-en-echelle",
+    "/racoon/lecons/filtres-passifs",
+    "/racoon/lecons/autres-elements-de-circuit"
+   ]
+  },
+  "ao-filtres-actifs": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "puissance-filtres"
+   ],
+   "lecons": [
+    "/racoon/lecons/ampli-op-ideal-montages-lineaires",
+    "/racoon/lecons/filtres-actifs-bode",
+    "/racoon/lecons/comparateurs-oscillateurs"
+   ]
+  },
+  "conversion-electromecanique": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "puissance-filtres",
+    "moment-inertie"
+   ],
+   "lecons": [
+    "/racoon/lecons/transformateur-monophase",
+    "/racoon/lecons/machines-courant-continu-synchrone",
+    "/racoon/lecons/hacheur-onduleur-redresseur"
+   ]
+  },
+  "cavites-resonantes": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "puissance-filtres",
+    "dipole-oscillant-charge-mobile"
+   ],
+   "lecons": [
+    "/racoon/lecons/elements-de-circuit-reels",
+    "/racoon/lecons/condensateur-hautes-frequences",
+    "/racoon/lecons/cavite-resonante",
+    "/racoon/lecons/modes-d-une-cavite",
+    "/racoon/lecons/cavites-et-circuits-resonants"
+   ]
+  },
+  "lignes-guides": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "cavites-resonantes"
+   ],
+   "lecons": [
+    "/racoon/lecons/ligne-de-transmission",
+    "/racoon/lecons/guide-d-onde-rectangulaire",
+    "/racoon/lecons/frequence-de-coupure",
+    "/racoon/lecons/vitesse-des-ondes-guidees"
+   ]
+  },
+  "modes-guides": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "lignes-guides"
+   ],
+   "lecons": [
+    "/racoon/lecons/observer-les-ondes-guidees",
+    "/racoon/lecons/plomberie-guides-d-onde",
+    "/racoon/lecons/modes-d-un-guide",
+    "/racoon/lecons/autre-vision-ondes-guidees"
+   ]
+  },
+  "ondes-dans-dielectrique": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "dielectriques-reels",
+    "dipole-oscillant-charge-mobile",
+    "opt-diffusion"
+   ],
+   "lecons": [
+    "/racoon/lecons/polarisation-de-la-matiere",
+    "/racoon/lecons/maxwell-dans-un-dielectrique",
+    "/racoon/lecons/ondes-dans-un-dielectrique",
+    "/racoon/lecons/indice-complexe"
+   ]
+  },
+  "metaux-peau-plasma": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "ondes-dans-dielectrique"
+   ],
+   "lecons": [
+    "/racoon/lecons/indice-d-un-melange",
+    "/racoon/lecons/ondes-dans-les-metaux",
+    "/racoon/lecons/peau-et-frequence-plasma"
+   ]
+  },
+  "reflexion-refraction-milieux": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "metaux-peau-plasma"
+   ],
+   "lecons": [
+    "/racoon/lecons/reflexion-refraction-lumiere",
+    "/racoon/lecons/ondes-materiaux-denses",
+    "/racoon/lecons/conditions-aux-limites-em"
+   ]
+  },
+  "coefficients-fresnel": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "reflexion-refraction-milieux"
+   ],
+   "lecons": [
+    "/racoon/lecons/ondes-reflechie-transmise",
+    "/racoon/lecons/reflexion-sur-les-metaux",
+    "/racoon/lecons/reflexion-totale-interne"
+   ]
+  },
+  "plasmas": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "coefficients-fresnel",
+    "focalisation"
+   ],
+   "lecons": [
+    "/racoon/lecons/modele-du-plasma",
+    "/racoon/lecons/propagation-dans-un-plasma",
+    "/racoon/lecons/confinement-magnetique-fusion"
+   ]
+  },
+  "masse-electromagnetique": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "exemples-flux-impulsion"
+   ],
+   "lecons": [
+    "/racoon/lecons/energie-champ-charge-ponctuelle",
+    "/racoon/lecons/impulsion-champ-charge-mobile",
+    "/racoon/lecons/masse-electromagnetique-lecon"
+   ]
+  },
+  "limites-maxwell": {
+   "monde": "ondes-milieux",
+   "prereq": [
+    "masse-electromagnetique"
+   ],
+   "lecons": [
+    "/racoon/lecons/force-d-un-electron-sur-lui-meme",
+    "/racoon/lecons/modifier-theorie-de-maxwell",
+    "/racoon/lecons/champ-de-force-nucleaire"
+   ]
+  },
+  "chim-atome": {
+   "monde": "chim-architecture",
+   "prereq": [
+    "les-atomes"
+   ],
+   "lecons": [
+    "/racoon/lecons/atome-isotopes-mole",
+    "/racoon/lecons/configuration-electronique",
+    "/racoon/lecons/classification-periodique"
+   ]
+  },
+  "chim-molecules": {
+   "monde": "chim-architecture",
+   "prereq": [
+    "chim-atome"
+   ],
+   "lecons": [
+    "/racoon/lecons/schemas-de-lewis",
+    "/racoon/lecons/geometrie-vsepr",
+    "/racoon/lecons/van-der-waals-liaison-hydrogene",
+    "/racoon/lecons/solvants-et-solubilite"
+   ]
+  },
+  "chim-cristal-parfait": {
+   "monde": "chim-architecture",
+   "prereq": [
+    "chim-molecules"
+   ],
+   "lecons": [
+    "/racoon/lecons/reseau-motif-maille",
+    "/racoon/lecons/empilements-compacts",
+    "/racoon/lecons/compacite-sites-interstitiels"
+   ]
+  },
+  "chim-types-cristaux": {
+   "monde": "chim-architecture",
+   "prereq": [
+    "chim-cristal-parfait",
+    "energie-condensateur"
+   ],
+   "lecons": [
+    "/racoon/lecons/quatre-types-de-cristaux",
+    "/racoon/lecons/rayons-ioniques",
+    "/racoon/lecons/energie-reticulaire",
+    "/racoon/lecons/constante-de-madelung",
+    "/racoon/lecons/comparer-les-solides"
+   ]
+  },
+  "chim-cristal-reel": {
+   "monde": "chim-architecture",
+   "prereq": [
+    "chim-types-cristaux",
+    "cristaux-2"
+   ],
+   "lecons": [
+    "/racoon/lecons/lacunes-ions-interstitiels",
+    "/racoon/lecons/non-stoechiometrie",
+    "/racoon/lecons/caractere-ionique-halogenures"
+   ]
+  },
+  "chim-avancement": {
+   "monde": "chim-architecture",
+   "prereq": [
+    "chim-atome"
+   ],
+   "lecons": [
+    "/racoon/lecons/avancement-reactif-limitant",
+    "/racoon/lecons/quotient-reaction-constante-equilibre",
+    "/racoon/lecons/evolution-spontanee"
+   ]
+  },
+  "chim-vitesse-reaction": {
+   "monde": "chim-architecture",
+   "prereq": [
+    "chim-avancement",
+    "loi-de-boltzmann"
+   ],
+   "lecons": [
+    "/racoon/lecons/vitesse-ordre-demi-reaction",
+    "/racoon/lecons/loi-d-arrhenius",
+    "/racoon/lecons/etape-cinetiquement-determinante"
+   ]
+  },
+  "chim-orbitales-moleculaires": {
+   "monde": "chim-architecture",
+   "prereq": [
+    "chim-molecules",
+    "hydrogene-et-tableau"
+   ],
+   "lecons": [
+    "/racoon/lecons/orbitales-atomiques",
+    "/racoon/lecons/interaction-deux-orbitales",
+    "/racoon/lecons/diagramme-orbitales-moleculaires",
+    "/racoon/lecons/orbitales-frontalieres"
+   ]
+  },
+  "chim-acides-bases": {
+   "monde": "chim-solutions",
+   "prereq": [
+    "chim-avancement"
+   ],
+   "lecons": [
+    "/racoon/lecons/couples-acide-base",
+    "/racoon/lecons/reaction-preponderante",
+    "/racoon/lecons/calcul-de-ph",
+    "/racoon/lecons/tampons-et-titrages"
+   ]
+  },
+  "chim-precipitation-complexation": {
+   "monde": "chim-solutions",
+   "prereq": [
+    "chim-acides-bases"
+   ],
+   "lecons": [
+    "/racoon/lecons/produit-de-solubilite",
+    "/racoon/lecons/ion-commun-et-ph",
+    "/racoon/lecons/constantes-de-formation"
+   ]
+  },
+  "chim-complexes-catalyse": {
+   "monde": "chim-solutions",
+   "prereq": [
+    "chim-orbitales-moleculaires",
+    "chim-vitesse-reaction",
+    "chim-precipitation-complexation"
+   ],
+   "lecons": [
+    "/racoon/lecons/structure-des-complexes",
+    "/racoon/lecons/cycles-catalytiques",
+    "/racoon/lecons/polymerisation-coordination"
+   ]
+  },
+  "chim-oxydoreduction": {
+   "monde": "chim-solutions",
+   "prereq": [
+    "chim-avancement"
+   ],
+   "lecons": [
+    "/racoon/lecons/nombres-d-oxydation",
+    "/racoon/lecons/piles-formule-de-nernst",
+    "/racoon/lecons/prevoir-reaction-redox"
+   ]
+  },
+  "chim-thermochimie": {
+   "monde": "chim-solutions",
+   "prereq": [
+    "chim-avancement",
+    "premier-second-principe"
+   ],
+   "lecons": [
+    "/racoon/lecons/grandeurs-de-reaction",
+    "/racoon/lecons/loi-de-hess",
+    "/racoon/lecons/temperature-de-flamme"
+   ]
+  },
+  "chim-enthalpie-libre": {
+   "monde": "chim-solutions",
+   "prereq": [
+    "chim-thermochimie",
+    "entropie-energie-interne"
+   ],
+   "lecons": [
+    "/racoon/lecons/enthalpie-libre",
+    "/racoon/lecons/potentiel-chimique",
+    "/racoon/lecons/enthalpie-libre-de-reaction",
+    "/racoon/lecons/deplacement-d-equilibre"
+   ]
+  },
+  "chim-diagrammes-e-ph": {
+   "monde": "chim-solutions",
+   "prereq": [
+    "chim-oxydoreduction",
+    "chim-precipitation-complexation",
+    "chim-enthalpie-libre"
+   ],
+   "lecons": [
+    "/racoon/lecons/diagramme-potentiel-ph",
+    "/racoon/lecons/courbes-intensite-potentiel",
+    "/racoon/lecons/corrosion-electrolyse-accumulateurs"
+   ]
+  },
+  "chim-binaires": {
+   "monde": "chim-solutions",
+   "prereq": [
+    "chim-enthalpie-libre",
+    "changements-etat-corps-pur"
+   ],
+   "lecons": [
+    "/racoon/lecons/binaires-liquide-vapeur",
+    "/racoon/lecons/distillation-fractionnee",
+    "/racoon/lecons/binaires-solide-liquide",
+    "/racoon/lecons/analyse-thermique-alliages"
+   ]
+  },
+  "chim-ellingham": {
+   "monde": "chim-solutions",
+   "prereq": [
+    "chim-diagrammes-e-ph"
+   ],
+   "lecons": [
+    "/racoon/lecons/diagrammes-d-ellingham",
+    "/racoon/lecons/pyrometallurgie",
+    "/racoon/lecons/hydrometallurgie-du-zinc",
+    "/racoon/lecons/silicium-et-titane"
+   ]
+  },
+  "chim-industrie-minerale": {
+   "monde": "chim-solutions",
+   "prereq": [
+    "chim-diagrammes-e-ph",
+    "chim-vitesse-reaction"
+   ],
+   "lecons": [
+    "/racoon/lecons/synthese-de-l-ammoniac",
+    "/racoon/lecons/acide-nitrique-engrais",
+    "/racoon/lecons/electrolyse-chlorure-de-sodium",
+    "/racoon/lecons/chlore-en-solution"
+   ]
+  },
+  "chim-stereochimie": {
+   "monde": "chim-organique",
+   "prereq": [
+    "chim-molecules"
+   ],
+   "lecons": [
+    "/racoon/lecons/isomerie-de-constitution",
+    "/racoon/lecons/conformations-newman",
+    "/racoon/lecons/chiralite-descripteurs",
+    "/racoon/lecons/activite-optique-loi-de-biot"
+   ]
+  },
+  "chim-spectroscopies": {
+   "monde": "chim-organique",
+   "prereq": [
+    "chim-stereochimie",
+    "paramagnetisme-rmn"
+   ],
+   "lecons": [
+    "/racoon/lecons/spectroscopies-uv-ir",
+    "/racoon/lecons/rmn-du-proton",
+    "/racoon/lecons/couplages-premier-ordre"
+   ]
+  },
+  "chim-mecanismes": {
+   "monde": "chim-organique",
+   "prereq": [
+    "chim-stereochimie",
+    "chim-vitesse-reaction"
+   ],
+   "lecons": [
+    "/racoon/lecons/nucleophiles-electrophiles",
+    "/racoon/lecons/acte-elementaire-intermediaire",
+    "/racoon/lecons/fleches-courbes",
+    "/racoon/lecons/synthese-au-laboratoire"
+   ]
+  },
+  "chim-halogenoalcanes": {
+   "monde": "chim-organique",
+   "prereq": [
+    "chim-mecanismes",
+    "chim-acides-bases"
+   ],
+   "lecons": [
+    "/racoon/lecons/substitutions-nucleophiles",
+    "/racoon/lecons/elimination-e2",
+    "/racoon/lecons/organomagnesiens",
+    "/racoon/lecons/addition-nucleophile-carbonyle"
+   ]
+  },
+  "chim-redox-organique": {
+   "monde": "chim-organique",
+   "prereq": [
+    "chim-halogenoalcanes",
+    "chim-oxydoreduction"
+   ],
+   "lecons": [
+    "/racoon/lecons/niveau-d-oxydation-organique",
+    "/racoon/lecons/oxydation-des-alcools",
+    "/racoon/lecons/reduction-nabh4"
+   ]
+  },
+  "chim-activation-protection": {
+   "monde": "chim-organique",
+   "prereq": [
+    "chim-redox-organique"
+   ],
+   "lecons": [
+    "/racoon/lecons/synthese-de-williamson",
+    "/racoon/lecons/activation-electrophile-alcools",
+    "/racoon/lecons/acetalisation",
+    "/racoon/lecons/protection-deprotection",
+    "/racoon/lecons/analyse-retrosynthetique"
+   ]
+  },
+  "chim-conversion-groupes": {
+   "monde": "chim-organique",
+   "prereq": [
+    "chim-activation-protection",
+    "chim-orbitales-moleculaires",
+    "chim-enthalpie-libre"
+   ],
+   "lecons": [
+    "/racoon/lecons/familles-fonctionnelles",
+    "/racoon/lecons/additions-electrophiles",
+    "/racoon/lecons/esters-amides-peptides",
+    "/racoon/lecons/hydrogenation-epoxydation"
+   ]
+  },
+  "chim-liaisons-cc": {
+   "monde": "chim-organique",
+   "prereq": [
+    "chim-conversion-groupes"
+   ],
+   "lecons": [
+    "/racoon/lecons/diels-alder",
+    "/racoon/lecons/enolates-aldolisation",
+    "/racoon/lecons/crotonisation-michael",
+    "/racoon/lecons/organomagnesiens-epoxydes-esters"
+   ]
+  },
+  "chim-polymeres": {
+   "monde": "chim-organique",
+   "prereq": [
+    "chim-mecanismes"
+   ],
+   "lecons": [
+    "/racoon/lecons/degre-de-polymerisation",
+    "/racoon/lecons/polymerisation-radicalaire",
+    "/racoon/lecons/polymerisation-anionique",
+    "/racoon/lecons/transition-vitreuse"
+   ]
+  },
+  "chim-aromatiques": {
+   "monde": "chim-organique",
+   "prereq": [
+    "chim-mecanismes",
+    "chim-orbitales-moleculaires",
+    "molecules-independantes"
+   ],
+   "lecons": [
+    "/racoon/lecons/aromaticite",
+    "/racoon/lecons/substitution-electrophile-aromatique",
+    "/racoon/lecons/polysubstitution-aromatique",
+    "/racoon/lecons/phenols-anilines"
+   ]
+  },
+  "chim-amines-diazonium": {
+   "monde": "chim-organique",
+   "prereq": [
+    "chim-aromatiques",
+    "chim-conversion-groupes"
+   ],
+   "lecons": [
+    "/racoon/lecons/alkylation-des-amines",
+    "/racoon/lecons/diazotation",
+    "/racoon/lecons/colorants-azoiques"
+   ]
+  },
+  "chim-alcenes-alcynes": {
+   "monde": "chim-organique",
+   "prereq": [
+    "chim-conversion-groupes",
+    "chim-complexes-catalyse"
+   ],
+   "lecons": [
+    "/racoon/lecons/hydrogenation-alcenes-alcynes",
+    "/racoon/lecons/dihydroxylation",
+    "/racoon/lecons/ozonolyse",
+    "/racoon/lecons/additions-radicalaires-acetylures"
+   ]
+  },
+  "chim-complements-synthese": {
+   "monde": "chim-organique",
+   "prereq": [
+    "chim-liaisons-cc"
+   ],
+   "lecons": [
+    "/racoon/lecons/reaction-de-wittig",
+    "/racoon/lecons/synthese-malonique",
+    "/racoon/lecons/organocuprates",
+    "/racoon/lecons/reductions-lialh4"
+   ]
+  }
+ }
+}

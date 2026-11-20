@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>L'expérience de Rutherford</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-mecanique" data-i18n="monde.mecanique"></a><span class="aux">›</span><a href="/racoon/etape?id=deux-corps" data-i18n="etape.deux-corps"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-meca" href="/racoon/atlas?piste=meca" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/section-efficace" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>b</mi><mo>=</mo><mfrac><mi>d</mi><mn>2</mn></mfrac><mi data-i18n="eq.cot"></mi><mfrac><mi>θ</mi><mn>2</mn></mfrac><mo>,</mo><mspace width="1em"></mspace><mi>d</mi><mo>=</mo><mfrac><mrow><msub><mi>Z</mi><mn>1</mn></msub><msub><mi>Z</mi><mn>2</mn></msub><msup><mi>e</mi><mn>2</mn></msup></mrow><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub><msub><mi>E</mi><mi mathvariant="normal">c</mi></msub></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.b"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mfrac><mrow><mi mathvariant="normal">d</mi><mi>σ</mi></mrow><mrow><mi mathvariant="normal">d</mi><mi mathvariant="normal">Ω</mi></mrow></mfrac><mo>=</mo><msup><mrow><mo>(</mo><mfrac><mi>d</mi><mn>4</mn></mfrac><mo>)</mo></mrow><mn>2</mn></msup><mfrac><mn>1</mn><mrow><msup><mi data-i18n="eq.sin"></mi><mn>4</mn></msup><mo>(</mo><mi>θ</mi><mo>/</mo><mn>2</mn><mo>)</mo></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.ruth"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="chart">
+      <div class="seg" role="group" id="cible">
+        <button type="button" data-z="79" data-a="197" data-i18n="mc.or"></button>
+        <button type="button" data-z="47" data-a="108" data-i18n="mc.argent"></button>
+        <button type="button" data-z="29" data-a="64" data-i18n="mc.cuivre"></button>
+        <button type="button" data-z="13" data-a="27" data-i18n="mc.alu"></button>
+      </div>
+      <svg class="fig" id="hist" role="img" data-i18n-attr="aria-label:mc.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="mc.legend.sim"></span><span class="c-warn ring" data-i18n="mc.legend.th"></span><span class="c-label sq" data-i18n="mc.legend.gm"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="en" data-i18n="mc.e"></label><output id="env" for="en"></output></div>
+            <input id="en" type="range" min="2" max="10" step="0.1" value="8.8"></div>
+          <div class="ctl"><div class="row"><label for="nn" data-i18n="mc.n"></label><output id="nnv" for="nn"></output></div>
+            <input id="nn" type="range" min="3" max="5.5" step="0.1" value="5"></div>
+          <p><button type="button" class="btn tinted" id="tirer" data-i18n="mc.tirer"></button></p>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="mc.k.d"></span><span class="v" id="vd"></span><span class="f" data-i18n="mc.f.d"></span></div>
+          <div class="stat"><span class="k" data-i18n="mc.k.b90"></span><span class="v" id="vb"></span><span class="f" data-i18n="mc.f.b90"></span></div>
+          <div class="stat"><span class="k" data-i18n="mc.k.arriere"></span><span class="v" id="varr"></span><span class="f" data-i18n="mc.f.arriere"></span></div>
+          <div class="stat"><span class="k" data-i18n="mc.k.chi"></span><span class="v" id="vchi"></span><span class="f" id="fchi"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="mc.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="list keyed" id="sys"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/experience-de-rutherford.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/cinematique.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/dynamique.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/lecons/travail.js"></script>
+<script src="/racoon/lecons/algebre-vectorielle.js"></script>
+<script src="/racoon/lecons/kepler.js"></script>
+<script src="/racoon/lecons/potentiel.js"></script>
+<script src="/racoon/lecons/forces-centrales.js"></script>
+<script src="/racoon/lecons/deux-corps.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+const fill = (s, v) => s.replace(/\{(\w+)\}/g, (m, k) => k in v ? v[k] : m);
+const DEG = Math.PI / 180, Cst = Constantes, D = DeuxCorps, MA = D.masseAlpha;
+const fm = x => F.qty(F.num(x * 1e15, 3), "fm");
+/* closest head-on distance for an alpha particle of lab energy E on a nucleus (Z, A): relative-motion energy, d = Z1 Z2 e²/(4π ε0 Ec) */
+const dArret = (E, Z, A) => D.coulomb(2, Z) / D.ecm(E, MA, A * Cst.u);
+
+/* ---------- simulation : histogramme des déviations contre 1/sin⁴(θ/2) ---------- */
+(() => {
+  const P = Plot.el, BORNES = Array.from({ length: 12 }, (_, i) => (15 + 15 * i) * DEG), seg = $("cible");
+  let Z = 79, A = 197, graine = 1;
+  const parSr = (n, i) => n / (2 * Math.PI * (Math.cos(BORNES[i]) - Math.cos(BORNES[i + 1])));
+  function upd() {
+    seg.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(+x.dataset.z === Z)));
+    const E = +$("en").value * D.MeV, N = Math.round(Math.pow(10, +$("nn").value)), d = dArret(E, Z, A), bmax = 5 * d;
+    $("env").textContent = F.qty(F.num(+$("en").value, 2), "MeV"); $("nnv").textContent = F.num(N, 6);
+    const R = D.rutherford(N, bmax, d, graine, BORNES), S = Math.PI * bmax * bmax;
+    const svg = $("hist"); svg.innerHTML = "";
+    const th = x => N / S * D.differentielle(x * DEG, d);                     // expected count per steradian
+    const Y0 = Math.max(0.1, th(180) / 30), Y1 = th(15) * 3;
+    const { x: X, y: Y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 300, pad: { b: 44 }, x: { domain: [0, 180], label: t("mc.x") }, y: { scale: "log", domain: [Y0, Y1], label: t("mc.y") } });
+    const xs = Array.from({ length: 200 }, (_, i) => 12 + 168 * i / 199);
+    P("path", { d: xs.map((x, i) => (i ? "L" : "M") + X(x).toFixed(1) + " " + Y(th(x)).toFixed(1)).join(""), class: "ref" }, g);
+    R.compte.forEach((n, i) => { if (n > 0) P("circle", { cx: X((BORNES[i] + BORNES[i + 1]) / 2 / DEG), cy: Y(Math.max(Y0, parSr(n, i))), r: 5, class: "dot" }, g); });
+    if (Z === 79) {                       // Geiger and Marsden's gold counts, scaled to the curve by one factor (least squares in log)
+      const k = Math.exp(D.GM1913.reduce((s, [a, n]) => s + Math.log(th(a) / n), 0) / D.GM1913.length);
+      D.GM1913.forEach(([a, n]) => P("rect", { x: X(a) - 4, y: Y(n * k) - 4, width: 8, height: 8, class: "fill c-label" }, g));
+    }
+    $("vd").textContent = fm(d); $("vb").textContent = fm(D.impact(90 * DEG, d));
+    $("varr").textContent = F.sci(5.896e28 * 2.1e-7 * D.auDela(90 * DEG, d), 2);
+    const chi = R.compte.reduce((s, n, i) => s + (n - R.attendu[i]) ** 2 / R.attendu[i], 0);
+    $("vchi").textContent = F.num(chi, 3); $("fchi").textContent = t("mc.f.chi", { k: R.compte.length });
+  }
+  seg.querySelectorAll("button").forEach(x => x.onclick = () => { Z = +x.dataset.z; A = +x.dataset.a; upd(); });
+  $("en").oninput = $("nn").oninput = upd; $("tirer").onclick = () => { graine++; upd(); }; upd();
+})();
+
+/* ---------- décrire le système ---------- */
+(() => {
+  const IDS = ["electrons", "recul", "noyau", "quantique"], items = textOf("sys.items", IDS);
+  const E = MA * 2.06e7 ** 2 / 2, d = dArret(E, 79, 197);
+  const v = { emax: F.num(D.angleMax(MA, Cst.m_e) / DEG, 2), mu: F.num(100 * (1 - D.ecm(E, MA, 197 * Cst.u) / E), 2),
+    d: fm(d), eta: F.num(D.coulomb(2, 79) / (Cst.hbar * 2.06e7), 2), dal: fm(dArret(E, 13, 27)) };
+  keyed($("sys"), t("sys.tag"), IDS, Object.fromEntries(IDS.map(id => [id, { name: items[id].name, text: fill(items[id].text, v) }])));
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["gm1909", 1909, "experiment"], ["rutherford", 1911, "idea"], ["gm1913", 1913, "experiment"], ["chadwick", 1921, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["rbs"], u = textOf("uses.items", USES), rad = 170 * DEG;
+  const v = { au: F.num(D.facteurK(4, 197, rad), 3), si: F.num(D.facteurK(4, 28, rad), 3) };
+  keyed($("uses"), t("uses.tag"), USES, { rbs: { name: u.rbs.name, text: fill(u.rbs.text, v) } });
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["thomson", "c"], ["sin4", "a"], ["energie", "d"], ["z", "b"], ["b90", "c"], ["electron", "a"], ["anomalie", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 229 });
+})();
+</script>
+</body>
+</html>

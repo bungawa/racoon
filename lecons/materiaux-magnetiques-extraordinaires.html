@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matériaux magnétiques extraordinaires</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-magnetisme-induction" data-i18n="monde.magnetisme-induction"></a><span class="aux">›</span><a href="/racoon/etape?id=ferromagnetisme" data-i18n="etape.ferromagnetisme"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/comprendre-le-ferromagnetisme" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p data-i18n-html="sys1.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>m</mi><mi>a</mi></msub><mo>=</mo><msub><mi>B</mi><msub><mi>j</mi><mi>a</mi></msub></msub><mo>(</mo><mfrac><mrow><mi>g</mi><msub><mi>j</mi><mi>a</mi></msub><msub><mi>μ</mi><mi>B</mi></msub><msub><mi>B</mi><mi>a</mi></msub></mrow><mrow><mi>k</mi><mi>T</mi></mrow></mfrac><mo>)</mo><mo>,</mo><mspace width="1em"/><msub><mi>B</mi><mi>a</mi></msub><mo>=</mo><msub><mi>B</mi><mn>0</mn></msub><mo>+</mo><msub><mi>w</mi><mrow><mi>a</mi><mi>a</mi></mrow></msub><msub><mi>p</mi><mi>a</mi></msub><mo>+</mo><msub><mi>w</mi><mrow><mi>a</mi><mi>b</mi></mrow></msub><msub><mi>p</mi><mi>b</mi></msub></math></div>
+    <p class="validite" data-i18n-html="val.neel"></p>
+    <figure class="chart">
+      <svg class="fig" id="reseaux" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n-html="fig.legend.a"></span><span class="c-warn" data-i18n-html="fig.legend.b"></span><span class="c-label-2" data-i18n-html="fig.legend.net"></span></div>
+      <div class="panel">
+        <div class="seg" role="group" id="ordre">
+          <button type="button" data-p="ferro" data-i18n="fig.ferro"></button>
+          <button type="button" data-p="anti" data-i18n="fig.anti"></button>
+          <button type="button" data-p="ferri" data-i18n="fig.ferri"></button>
+          <button type="button" data-p="comp" data-i18n="fig.comp"></button>
+        </div>
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="st" data-i18n-html="fig.t"></label><output id="str" for="st"></output></div>
+            <input id="st" type="range" min="0.02" max="1.15" step="0.005" value="0.4"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="fig.k.net"></span><span class="v" id="vnet"></span><span class="f" id="fnet"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig.k.to"></span><span class="v" id="vto"></span><span class="f" id="fto"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig.k.comp"></span><span class="v" id="vcomp"></span><span class="f" id="fcomp"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>p</mi><mi data-i18n="eq.net"></mi></msub><mo>=</mo><mrow><mo>|</mo><mo>∑</mo><msub><mi>p</mi><mo>↑</mo></msub><mo>−</mo><mo>∑</mo><msub><mi>p</mi><mo>↓</mo></msub><mo>|</mo></mrow><mo>,</mo><mspace width="1em"/><mi>σ</mi><mo>=</mo><mfrac><mrow><msub><mi>p</mi><mi data-i18n="eq.net"></mi></msub><msub><mi>μ</mi><mi>B</mi></msub><msub><mi>N</mi><mi>A</mi></msub></mrow><msub><mi>M</mi><mi data-i18n="eq.mol"></mi></msub></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.compte"></p>
+    <p id="ferrites"></p>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/materiaux-magnetiques-extraordinaires.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/physique-fondamentale.js"></script>
+<script src="/racoon/lecons/champs-em.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/magnetisme-induction.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const M = MagInd, C = Constantes;
+/* Illustrative parameter sets (w in T per Bohr magneton per formula unit): chosen to show each kind of order, not fitted. */
+const PRESETS = {
+  ferro: { nA: 1, nB: 1, jA: 0.5, jB: 0.5, wAA: 200, wAB: 200, wBB: 200 },
+  anti: { nA: 1, nB: 1, jA: 0.5, jB: 0.5, wAB: -400 },
+  ferri: { nA: 1, nB: 2, jA: 2.5, jB: 2, wAA: -10, wAB: -60, wBB: 5 },
+  comp: { nA: 1, nB: 1, jA: 2.5, jB: 3.5, wAA: 150, wAB: -15, wBB: 0 },
+};
+
+/* ---------- deux sous-réseaux en champ moyen ---------- */
+(() => {
+  const seg = $("ordre"), st = $("st"); let cle = "ferri", cache = {};
+  /* the ordering temperature: the highest T where sublattice a keeps a moment, by bisection after a coarse scan */
+  const ordonne = (o, T) => Math.abs(M.deuxReseaux(Object.assign({ T }, o)).mA) > 1e-6;
+  function preparer(k) {
+    if (cache[k]) return cache[k];
+    const o = PRESETS[k]; let hi = 50; while (ordonne(o, hi) && hi < 1e5) hi *= 2;
+    let lo = hi / 2; for (let i = 0; i < 40; i++) { const m = (lo + hi) / 2; if (ordonne(o, m)) lo = m; else hi = m; }
+    const To = lo, pts = [];
+    for (let i = 1; i <= 140; i++) { const T = 1.15 * To * i / 140, r = M.deuxReseaux(Object.assign({ T }, o));
+      pts.push([T, o.nA * 2 * o.jA * r.mA, o.nB * 2 * o.jB * r.mB, r.net]); }
+    let Tcomp = null; for (let i = 1; i < pts.length; i++) if (pts[i - 1][3] * pts[i][3] < 0 && pts[i][0] < To * 0.999)
+      Tcomp = pts[i - 1][0] + (pts[i][0] - pts[i - 1][0]) * pts[i - 1][3] / (pts[i - 1][3] - pts[i][3]);
+    return (cache[k] = { o, To, pts, Tcomp });
+  }
+  function draw() {
+    const c = preparer(cle), tt = +st.value, T = tt * c.To, r = M.deuxReseaux(Object.assign({ T }, c.o)), svg = $("reseaux"); svg.innerHTML = "";
+    const ymax = Math.max(...c.pts.map(p => Math.max(Math.abs(p[1]), Math.abs(p[2])))) * 1.1;
+    const P = Plot.axes(svg, { fmt: F, w: 640, h: 300, x: { domain: [0, 1.15 * c.To], label: t("fig.ax.x") }, y: { domain: [-ymax, ymax], label: t("fig.ax.y") } });
+    Plot.el("line", { x1: P.x(0), x2: P.x(1.15 * c.To), y1: P.y(0), y2: P.y(0), class: "zero" }, P.g);
+    const seg0 = [[0, c.pts[0][1], c.pts[0][2], c.pts[0][3]]].concat(c.pts);
+    Plot.el("path", { d: Plot.path(seg0.map(p => [P.x(p[0]), P.y(p[1])])), class: "curve" }, P.g);
+    Plot.el("path", { d: Plot.path(seg0.map(p => [P.x(p[0]), P.y(p[2])])), class: "ref" }, P.g);
+    Plot.el("path", { d: Plot.path(seg0.map(p => [P.x(p[0]), P.y(p[3])])), class: "stroke bold c-label-2" }, P.g);
+    Plot.el("line", { x1: P.x(T), x2: P.x(T), y1: P.y(-ymax), y2: P.y(ymax), class: "stroke thin dash c-label" }, P.g);
+    Plot.el("circle", { cx: P.x(T), cy: P.y(r.net), r: 5, class: "dot" }, P.g);
+    seg.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.p === cle)));
+    $("str").textContent = F.num(tt, 3);
+    $("vnet").textContent = F.num(r.net, 3);
+    $("fnet").innerHTML = t("fig.f.net", { T: F.kelvin(T) });
+    $("vto").innerHTML = F.kelvin(c.To);
+    $("fto").innerHTML = t(cle === "ferro" ? "fig.f.to.curie" : cle === "anti" ? "fig.f.to.neel" : "fig.f.to.ferri");
+    $("vcomp").innerHTML = c.Tcomp == null ? t("fig.aucune") : F.kelvin(c.Tcomp);
+    $("fcomp").innerHTML = t(c.Tcomp == null ? "fig.f.comp.non" : "fig.f.comp.oui");
+  }
+  seg.querySelectorAll("button").forEach(x => x.onclick = () => { cle = x.dataset.p; draw(); });
+  st.oninput = draw; draw();
+})();
+
+/* ---------- le décompte de Néel : magnétite et grenat ---------- */
+(() => {
+  const mg = M.momentFerrite(M.FERRITES.magnetite), y = M.momentFerrite(M.FERRITES.yig);
+  $("ferrites").innerHTML = t("ferrites.body", { nm: String(mg.net), sm: F.si(mg.sigma, "A·m²·kg⁻¹", { sig: 3 }),
+    ny: String(y.net), sy: F.si(y.sigma, "A·m²·kg⁻¹", { sig: 3 }) });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["neel", 1948, "idea"], ["shull", 1949, "experiment"], ["bertaut", 1956, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["filtres"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["anti", "c"], ["neutrons", "a"], ["magnetite", "d"], ["isolant", "b"], ["compensation", "c"], ["grenat", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 375 });
+})();
+</script>
+</body>
+</html>

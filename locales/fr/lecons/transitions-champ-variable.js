@@ -1,0 +1,101 @@
+/* Leçon « Les transitions dans un champ variable » (Feynman III.9.3) : textes en français.
+   Une autre langue = locales/<langue>/lecons/transitions-champ-variable.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Les transitions dans un champ variable",
+    "crumb.jour": "Les transitions dans un champ variable",
+    "h1": "Les transitions dans un champ variable",
+    "lede": "Un champ électrique qui oscille couple les deux états de l'ammoniac. S'il oscille à la fréquence propre de la molécule, ses petites poussées s'additionnent et la font passer d'un état à l'autre. Pour le voir, on sépare dans les amplitudes ce qui tourne vite de ce qui change lentement.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : l'ammoniac dans un champ statique",
+
+    "s1.sec": "Le modèle",
+    "s1.h2": "Un champ qui oscille",
+    "s1.p1": "Le système : une molécule d'ammoniac dans une cavité micro-onde, où le champ électrique, perpendiculaire au plan des hydrogènes, oscille à la pulsation ω :",
+    "eq.cos": "cos",
+    "val.9.37": "Approximation : champ uniforme à l'échelle de la molécule, la longueur d'onde, 1,26\u00a0cm, est cent millions de fois plus grande. Le facteur 2 est un choix d'écriture qui simplifie la suite.",
+    "s1.p2": "Les équations sont celles du champ statique, avec ℰ qui dépend du temps. Dans la base I, II, le champ ne touche plus les diagonales : il couple les deux états.",
+    "val.9.39": "Approximation : modèle à deux états, μ et <var>A</var> constants. Dans ce modèle, les équations sont exactes à chaque instant, quel que soit μℰ/<var>A</var>, même pour un champ variable : (8.39) admet un hamiltonien qui dépend du temps.",
+
+    "s2.sec": "Séparer le lent du rapide",
+    "s2.h2": "Les amplitudes lentes",
+    "s2.p1": "Sans champ, <var>C</var><sub>I</sub> et <var>C</var><sub>II</sub> tournent à des pulsations énormes, <var>E</var><sub>I</sub>/ℏ et <var>E</var><sub>II</sub>/ℏ. On met cette rotation à part :",
+    "val.9.40": "Exacte : simple changement de variable. γ<sub>I</sub> et γ<sub>II</sub> sont constants sans champ ; un champ faible ne les fait varier que lentement.",
+    "s2.p2": "Reportées dans (9.39), les énergies <var>E</var><sub>I</sub> et <var>E</var><sub>II</sub> s'éliminent, et il reste, avec ω<sub>0</sub> = (<var>E</var><sub>I</sub> \u2212 <var>E</var><sub>II</sub>)/ℏ = 2<var>A</var>/ℏ :",
+    "val.9.43": "Exacte pour le modèle à deux états, quel que soit le champ ℰ(<var>t</var>). Rien n'a encore été négligé.",
+    "s2.p3": "On remplace ℰ par (9.37). Chaque équation contient deux termes : l'un en e<sup>±<var>i</var>(ω + ω<sub>0</sub>)<var>t</var></sup>, qui tourne très vite, l'autre en e<sup>±<var>i</var>(ω \u2212 ω<sub>0</sub>)<var>t</var></sup>, lent quand ω est proche de ω<sub>0</sub>. Le premier pousse γ dans un sens puis dans l'autre, des milliards de fois par seconde ; son effet se moyenne à presque rien. On le néglige :",
+    "val.9.45": "Approximation : ω proche de ω<sub>0</sub> et μℰ<sub>0</sub>/ℏ ≪ ω<sub>0</sub>. Le terme négligé déplace la résonance d'environ (μℰ<sub>0</sub>/ℏ)²/ω<sub>0</sub> vers le haut et ajoute de petites oscillations à 2ω ; pour l'ammoniac dans une cavité, le rapport (μℰ<sub>0</sub>/ℏ)/ω<sub>0</sub> est de l'ordre de 10⁻⁴ ou moins.",
+
+    "s3.sec": "Interaction",
+    "s3.h2": "Ce que coûte l'approximation",
+    "s3.p1": "Le système : une molécule qui part de l'état I. On intègre (9.43) tel quel, et (9.45). Le temps est compté en périodes de la molécule, 2π/ω<sub>0</sub>. Le premier curseur règle l'intensité du couplage, μℰ<sub>0</sub>/(ℏω<sub>0</sub>), le second l'écart de pulsation (ω \u2212 ω<sub>0</sub>), en unités de μℰ<sub>0</sub>/ℏ.",
+    "fig.aria": "Probabilité d'être dans l'état II en fonction du temps, par les équations complètes et par l'approximation",
+    "fig.legend.complet": "(9.43), complet",
+    "fig.legend.rwa": "(9.45), terme rapide négligé",
+    "fig.x": "temps (périodes de la molécule)",
+    "fig.y": "probabilité d'être en II",
+    "fig.s": "Couplage μℰ₀/(ℏω₀), échelle logarithmique",
+    "fig.d": "Désaccord (ω \u2212 ω₀)/(μℰ₀/ℏ)",
+    "fig.k.max": "Plus grande probabilité d'être en II",
+    "fig.v.max": "{c} et {r}",
+    "fig.f.max": "complet puis approché ; (9.45) prévoit 1/(1 + ((ω \u2212 ω<sub>0</sub>)ℏ/(2μℰ<sub>0</sub>))²) = {p}",
+    "fig.k.ecart": "Plus grand écart entre les deux courbes",
+    "fig.f.bon": "l'approximation est excellente",
+    "fig.f.mauvais": "le terme rapide compte",
+    "fig.caption": "Pour un couplage de 10⁻³ de ω<sub>0</sub>, les deux courbes se confondent. À 0,1 de ω<sub>0</sub>, la courbe complète tremble à 2ω et le passage n'est plus complet à ω = ω<sub>0</sub> : la vraie résonance s'est déplacée. Un désaccord de quelques μℰ<sub>0</sub>/ℏ suffit à empêcher le passage.",
+    "s3.p2": "C'est l'approximation de l'onde tournante, ou du champ tournant : on ne garde que la partie du champ qui tourne avec la molécule. Elle est d'autant meilleure que le champ est faible devant ℏω<sub>0</sub>/μ ; pour l'ammoniac dans un maser, l'écart est invisible. La solution de (9.45) est l'objet de « Les transitions à la résonance ».",
+
+    "s4.sec": "Décrire le système",
+    "s4.h2": "Trois pulsations",
+    "s4.p1": "Trois nombres décrivent le problème : ω<sub>0</sub>, la pulsation propre ; ω, celle du champ ; μℰ<sub>0</sub>/ℏ, le couplage. Deux rapports sans dimension décident : (μℰ<sub>0</sub>/ℏ)/ω<sub>0</sub> mesure ce que néglige (9.45) ; (ω \u2212 ω<sub>0</sub>)/(μℰ<sub>0</sub>/ℏ) dit si le champ est assez proche de la résonance pour faire passer la molécule.",
+    "s4.p2": "Un champ statique n'est que le cas ω = 0 : loin de la résonance, il ne fait pas passer la molécule d'un état à l'autre, il ne fait que déplacer ses niveaux, comme dans (9.33).",
+    "sys.title": "Le système décrit : un champ de 100 V/m",
+    "sys.body": "ω<sub>0</sub> = {w0} ; avec μ = 1,47\u00a0D et ℰ<sub>0</sub> = 100\u00a0V·m⁻¹, μℰ<sub>0</sub>/ℏ = {s}, soit {r} de ω<sub>0</sub> : le terme rapide est négligeable. La molécule passe de I à II en π/(2μℰ<sub>0</sub>/ℏ) = {T}.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Les transitions provoquées par un champ oscillant",
+    "hist.intro": "La méthode est née avec les faisceaux moléculaires et les moments magnétiques, avant de servir aux molécules polaires.",
+    "hist.events": {
+      rabi: { who: "Isidor Rabi et ses collaborateurs", what: "font traverser à un faisceau moléculaire un champ magnétique oscillant, et repèrent la fréquence à laquelle les noyaux basculent : la résonance magnétique.", context: "Article « A New Method of Measuring Nuclear Magnetic Moment », à l'université Columbia." },
+      blochsiegert: { who: "Felix Bloch et Arnold Siegert", what: "montrent que les termes rapides qu'on néglige d'habitude décalent la vraie fréquence de résonance quand le champ est intense.", context: "On parle depuis du décalage de Bloch-Siegert." },
+      nobel: { who: "Isidor Rabi", what: "reçoit le prix Nobel de physique pour sa méthode de résonance, qui mesure les propriétés magnétiques des noyaux atomiques.", context: "Ses travaux sont à l'origine de la résonance magnétique nucléaire." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      irm: { name: "L'imagerie par résonance magnétique", text: "En IRM, un champ radiofréquence à la fréquence de précession des protons les fait basculer d'un état de spin à l'autre. Le calcul des impulsions repose sur la même séparation du lent et du rapide, avec les mêmes équations à deux états." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      lent: { prompt: "Pourquoi écrire C_I = γ_I e^(\u2212iE_I t/ħ) ?",
+        options: { a: "Pour isoler dans γ_I la variation lente due au champ, la rotation rapide propre à l'état étant mise à part.", b: "Parce que γ_I est une probabilité.", c: "Pour rendre les équations linéaires.", d: "Parce que le champ est faible." },
+        why: "Sans champ, γ_I est constant ; avec un champ faible, il varie à l'échelle de ħ/(μℰ₀), bien plus lentement que e^(\u2212iE_I t/ħ)." },
+      rapide: { prompt: "Pourquoi peut-on négliger les termes en e^(±i(ω + ω₀)t) ?",
+        options: { a: "Parce qu'ils sont nuls.", b: "Parce que ω + ω₀ est petit.", c: "Parce qu'ils oscillent si vite que leur effet sur les amplitudes lentes se moyenne presque à zéro.", d: "Parce que le champ est statique." },
+        why: "Un terme qui change de signe des milliards de fois pendant que γ change à peine pousse γ dans un sens puis dans l'autre : son effet net est de l'ordre de μℰ₀/(ħ ω₀)." },
+      resonance: { prompt: "Pour quelle pulsation du champ les transitions sont-elles les plus fortes ?",
+        options: { a: "ω = 0, un champ statique.", b: "ω = ω₀ = 2A/ħ, la pulsation propre de la molécule.", c: "ω = 2ω₀.", d: "N'importe laquelle, si le champ est assez fort." },
+        why: "À ω = ω₀, le terme lent de (9.45) ne tourne plus : ses effets s'additionnent au lieu de se compenser." },
+      fort: { prompt: "Que montre la figure quand le couplage atteint 0,1 de ω₀ ?",
+        options: { a: "Que (9.45) devient exact.", b: "Que la molécule ne change plus d'état.", c: "Que les deux courbes sont identiques.", d: "Que la courbe complète s'écarte de l'approchée : le terme négligé tremble à 2ω et déplace la résonance." },
+        why: "L'approximation demande μℰ₀/ħ ≪ ω₀. À 0,1, le terme rapide n'est plus négligeable : c'est le décalage de Bloch-Siegert." },
+      gamma: { prompt: "Sans champ, comment évoluent γ_I et γ_II ?",
+        options: { a: "Ils restent constants.", b: "Ils oscillent à ω₀.", c: "Ils décroissent.", d: "Ils s'échangent." },
+        why: "Avec ℰ = 0, le second membre de (9.43) est nul : toute l'évolution est dans les exponentielles mises à part." },
+      desaccord: { prompt: "Le champ oscille à ω = ω₀ + 4μℰ₀/ħ. Quelle part des molécules passe au plus en II, d'après (9.45) ?",
+        options: { a: "100\u00a0%.", b: "20\u00a0% : 1/(1 + 2²).", c: "50\u00a0%.", d: "6\u00a0%." },
+        hint: "La figure affiche la formule.",
+        why: "1/(1 + ((ω \u2212 ω₀)ħ/(2μℰ₀))²) = 1/(1 + 4) = 0,2. Plus le désaccord est grand devant le couplage, moins la molécule passe." },
+      energie: { prompt: "Une molécule passe de l'état I à l'état II sous l'effet du champ. Où va l'énergie 2A ?",
+        options: { a: "Elle disparaît.", b: "Dans le mouvement de la molécule.", c: "Dans le champ électromagnétique de la cavité, qui gagne l'énergie que la molécule perd.", d: "Dans les autres molécules." },
+        why: "L'énergie se conserve : un passage de I vers II cède 2A = ħω₀ au champ. C'est le principe du maser, développé dans « Les transitions à la résonance »." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 9, §9-3 (texte original en anglais). Moment dipolaire de l'ammoniac, 1,47\u00a0D : NIST, « Selected Values of Electric Dipole Moments for Molecules in the Gas Phase » (Nelson, Lide et Maryott, 1967). Histoire : I. I. Rabi et coll., « A New Method of Measuring Nuclear Magnetic Moment » (1938) ; F. Bloch et A. Siegert (1940) ; prix Nobel de physique 1944. Calculs propres à cette page ; le décalage de la résonance est vérifié par intégration numérique.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

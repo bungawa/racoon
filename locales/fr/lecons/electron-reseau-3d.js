@@ -1,0 +1,103 @@
+/* Leçon « Un électron dans un réseau à trois dimensions » (Feynman III.13.4) : textes en français.
+   Une autre langue = locales/<langue>/lecons/electron-reseau-3d.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Un électron dans un réseau à trois dimensions",
+    "crumb.jour": "Réseau à trois dimensions",
+    "h1": "Un électron dans un réseau à trois dimensions",
+    "lede": "Un vrai cristal a trois directions, et rien n'oblige les atomes à être aussi proches dans chacune. L'électron y reste une onde, mais son nombre d'onde devient un vecteur, et sa masse effective peut dépendre de la direction où on le pousse.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : les états dépendant du temps dans un réseau",
+    "eq.cos": "cos",
+    "eq.min": "min",
+
+    "s1.sec": "1 · Décrire le système",
+    "s1.h2": "Un réseau rectangulaire",
+    "s1.p1": "On range les atomes aux nœuds d'un réseau rectangulaire, de pas <var>a</var>, <var>b</var>, <var>c</var> selon <var>x</var>, <var>y</var>, <var>z</var>. L'électron saute vers chacun des six voisins, avec une amplitude qui dépend de la direction : <var>A</var><sub><var>x</var></sub>, <var>A</var><sub><var>y</var></sub>, <var>A</var><sub><var>z</var></sub>. L'équation de chaque amplitude <var>C</var>(<var>x</var>, <var>y</var>, <var>z</var>) contient sept termes : rester, et arriver de six voisins. Comme sur la chaîne de la leçon « Les états d'énergie définie dans un réseau », on essaie une onde, maintenant dans les trois directions :",
+    "val.13.23": "Exacte : solution pour tout vecteur <var>k</var> réel, comme (13.10) sur la chaîne. Les approximations sont celles du modèle : plus proches voisins, un état par atome, atomes fixes. Un réseau non rectangulaire (cubique centré, hexagonal) donne d'autres sommes de cosinus.",
+    "s1.p2": "En reportant, chaque direction donne son cosinus, et les énergies s'ajoutent :",
+    "val.13.24": "Exacte dans le modèle des plus proches voisins sur un réseau rectangulaire. L'énergie remplit une bande de largeur 4(<var>A</var><sub><var>x</var></sub> + <var>A</var><sub><var>y</var></sub> + <var>A</var><sub><var>z</var></sub>).",
+    "s1.p3": "L'onde e<sup>i<var>k</var>·<var>r</var></sup> se propage dans la direction de <var>k</var>. Chaque composante de <var>k</var> se limite, comme sur la chaîne, à un intervalle de largeur 2π divisé par le pas correspondant.",
+
+    "s2.sec": "2 · Le bas de la bande",
+    "s2.h2": "Trois masses",
+    "s2.p1": "Pour <var>k</var> petit, chaque cosinus se développe au second ordre :",
+    "val.13.26": "Approximation : <var>k</var><sub><var>x</var></sub><var>a</var>, <var>k</var><sub><var>y</var></sub><var>b</var>, <var>k</var><sub><var>z</var></sub><var>c</var> ≪ 1 ; l'erreur relative est de l'ordre de (<var>k</var><var>a</var>)<sup>2</sup>/12, moins de 1\u00a0% sous 0,35 dans chaque direction.",
+    "s2.p2": "Chaque direction a sa masse effective, ℏ<sup>2</sup>/(2<var>A</var><sub><var>x</var></sub><var>a</var><sup>2</sup>) selon <var>x</var>, et ainsi de suite. Si le réseau est cubique et les sauts égaux, <var>a</var> = <var>b</var> = <var>c</var> et <var>A</var><sub><var>x</var></sub> = <var>A</var><sub><var>y</var></sub> = <var>A</var><sub><var>z</var></sub> = <var>A</var> :",
+    "val.13.27": "Approximation : comme (13.26). L'isotropie n'est exacte qu'au second ordre : à <var>k</var><var>a</var> = 0,2, l'énergie le long d'une arête et le long d'une diagonale du cube diffèrent de 0,2\u00a0%.",
+    "fig.aria": "Courbes d'égale énergie d'un électron dans le plan kz = 0 d'un réseau rectangulaire",
+    "fig.legend.exact": "courbe d'égale énergie, (13.24)",
+    "fig.legend.ellipse": "ellipse de (13.26)",
+    "fig.xaxis": "kₓa (rad)",
+    "fig.yaxis": "k_y b (rad)",
+    "fig.r": "Rapport des sauts, A_y/Aₓ",
+    "fig.e": "Énergie au-dessus du bas, en fraction de la bande",
+    "fig.k.mx": "Masse effective selon x",
+    "fig.k.my": "Masse effective selon y",
+    "fig.v.m": "{r} mₑ",
+    "fig.f.mx": "Aₓ = 1 eV, a = 0,3 nm",
+    "fig.f.my": "{q} fois celle selon x",
+    "fig.k.forme": "Rapport des axes de l'ellipse",
+    "fig.v.forme": "{q}",
+    "fig.f.ellipse": "bas de bande : la courbe est l'ellipse",
+    "fig.f.milieu": "milieu : la courbe s'écarte de l'ellipse",
+    "fig.f.haut": "haut : la courbe entoure les coins, k = (±π/a, ±π/b)",
+    "fig.caption": "Au bas de la bande, les courbes d'égale énergie sont des ellipses : l'électron répond plus facilement dans la direction où il saute mieux. Avec <var>A</var><sub><var>y</var></sub> = <var>A</var><sub><var>x</var></sub>, l'ellipse devient un cercle. Plus haut, la courbe se déforme, puis se referme autour des coins de la zone : au haut de la bande, l'électron se comporte comme une particule de masse négative.",
+
+    "s3.sec": "3 · La masse est un tenseur",
+    "s3.h2": "Une réponse qui dépend de la direction",
+    "s3.p1": "Avec des masses différentes selon <var>x</var> et <var>y</var>, une force selon une diagonale ne produit pas une accélération selon cette diagonale : l'accélération est plus grande dans la direction de la masse la plus petite. La relation entre force et accélération est linéaire, mais pas un simple produit par un nombre : c'est un tenseur, comme la polarisabilité d'un cristal de la leçon « Le tenseur de polarisabilité ». Dans les axes du réseau, il est diagonal, et ses trois termes sont les masses de (13.26).",
+    "s3.p2": "Pour un réseau quelconque, les axes propres de ce tenseur ne sont pas forcément ceux qu'on attendrait, et le bas de bande peut ne pas être en <var>k</var> = 0. Le modèle de cette leçon contient pourtant l'essentiel : une onde, une énergie qui dépend de la direction de <var>k</var>, et une masse par direction.",
+
+    "s4.sec": "Décrire le système",
+    "s4.h2": "Les nombres du cristal",
+    "s4.p1": "Deux nombres disent ce qui est négligé : <var>k</var><var>a</var> pour l'isotropie du cube, la taille du cristal contre le pas pour l'invariance par translation.",
+    "sys.title": "Le système décrit : réseau cubique, <var>a</var> = 0,3\u00a0nm, <var>A</var> = 1\u00a0eV",
+    "sys1.body": "À <var>k</var><var>a</var> = 0,2, l'énergie le long d'une arête du cube et le long d'une diagonale diffèrent de {p}\u00a0% : la masse unique de (13.27) est une excellente approximation au bas de la bande.",
+    "sys2.body": "Un grain de 1\u00a0µm compte {n} atomes sur son côté : loin des surfaces, l'onde infinie de (13.23) est une bonne approximation. Près d'une surface, sur quelques pas, elle ne l'est plus.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Des bandes dans l'espace",
+    "hist.intro": "Du réseau rectangulaire de cette leçon aux cristaux réels, il a fallu passer à des réseaux plus compliqués et mesurer des masses dans plusieurs directions.",
+    "hist.events": {
+      bloch: { who: "Felix Bloch", what: "écrit les états d'un électron dans un réseau à trois dimensions comme des ondes modulées par la période du réseau.", context: "Zeitschrift für Physik, vol. 52." },
+      wallace: { who: "Philip Wallace", what: "applique le modèle des sauts entre voisins au réseau hexagonal du graphite.", context: "Physical Review, vol. 71 : les courbes d'égale énergie y ont la symétrie d'ordre six du réseau." },
+      slater: { who: "John Slater et George Koster", what: "tabulent les amplitudes de saut entre orbitales de différentes formes pour les réseaux usuels.", context: "Physical Review, vol. 94. Leur méthode sert encore à calculer des bandes avec peu de paramètres." },
+      dresselhaus: { who: "Gene Dresselhaus, Arthur Kip et Charles Kittel", what: "mesurent par résonance cyclotron les masses effectives des porteurs du silicium et du germanium.", context: "Physical Review, vol. 98." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      silicium: { name: "Les vallées du silicium", text: "Dans le silicium, le bas de la bande de conduction n'est pas en k = 0 : il y a plusieurs minimums, chacun entouré de surfaces d'égale énergie en ellipsoïdes. Les simulations de composants combinent leurs masses : une moyenne géométrique pour compter les états, une moyenne harmonique pour la conduction." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      separable: { prompt: "Pourquoi l'énergie (13.24) est-elle une somme de trois termes indépendants ?",
+        options: { a: "Parce que l'électron ne peut sauter que dans une direction à la fois pendant toute sa vie.", b: "Parce que chaque saut ne change qu'une coordonnée, et que l'onde e^(ik·r) est un produit de trois ondes, une par direction.", c: "Parce que les trois directions ont le même pas.", d: "Parce que l'énergie est toujours additive." },
+        hint: "Que devient e^(ik·r) quand on avance d'un pas selon x ?",
+        why: "Un saut selon x multiplie l'onde par e^(±ikₓa) sans toucher aux autres facteurs. Chaque direction ajoute son \u22122A cos." },
+      cubique: { prompt: "Réseau cubique, sauts égaux. Comment sont les surfaces d'égale énergie au bas de la bande ?",
+        options: { a: "Des cubes.", b: "Des plans.", c: "Des ellipsoïdes allongés selon x.", d: "Des sphères : E = E_min + Aa²k²." },
+        why: "(13.27) : l'énergie ne dépend que de |k|. Une seule masse, comme pour un électron libre." },
+      tenseur: { prompt: "Masse effective deux fois plus petite selon x que selon y. On pousse l'électron par une force selon la diagonale (x + y). Où va l'accélération ?",
+        options: { a: "Plus près de x que de la diagonale : la composante selon x est deux fois plus grande.", b: "Exactement selon la diagonale.", c: "Plus près de y.", d: "Perpendiculairement à la force." },
+        why: "aₓ = Fₓ/mₓ, a_y = F_y/m_y avec Fₓ = F_y et mₓ = m_y/2 : aₓ = 2a_y. La masse est un tenseur, pas un nombre." },
+      forme: { prompt: "A_y = Aₓ/4, même pas dans les deux directions. Quel est le rapport des axes de l'ellipse d'égale énergie, selon k_y et selon kₓ ?",
+        options: { a: "1/4.", b: "1/2.", c: "2 : l'ellipse est plus longue selon k_y.", d: "4." },
+        why: "Aₓkₓ² = A_y k_y² sur l'ellipse : k_y/kₓ = √(Aₓ/A_y) = 2. Il faut un k_y plus grand pour la même énergie, car l'électron est plus lourd selon y." },
+      direction: { prompt: "Dans un cristal où A_z est presque nul, que fait l'électron ?",
+        options: { a: "Il se déplace facilement dans les plans xy, très difficilement selon z : sa masse selon z est très grande.", b: "Il ne bouge plus du tout.", c: "Il va plus vite selon z.", d: "Rien ne change." },
+        why: "m_z = ℏ²/(2A_z c²) devient très grande : le cristal conduit dans ses plans, mal entre eux. C'est le cas du graphite." },
+      haut: { prompt: "Où se trouvent les états de plus haute énergie dans le plan kz = 0 ?",
+        options: { a: "En k = 0.", b: "Aux coins de la zone, kₓa = ±π et k_y b = ±π.", c: "Sur les axes kₓ = 0.", d: "Il n'y en a pas : l'énergie croît sans limite." },
+        why: "Les deux cosinus valent \u22121 aux coins : E = E₀ + 2Aₓ + 2A_y \u2212 2A_z. Les amplitudes y alternent de signe dans les deux directions." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 13, §13-4 (texte original en anglais). Notations SI. Bloch, Zeitschrift für Physik 52, 555 (1929) ; Wallace, Physical Review 71, 622 (1947) ; Slater et Koster, Physical Review 94, 1498 (1954) ; Dresselhaus, Kip et Kittel, Physical Review 98, 368 (1955). Calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

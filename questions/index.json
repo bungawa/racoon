@@ -1,0 +1,14 @@
+[
+  {"titre": "C'est quoi un aimant ?", "notions": ["magnetostatique", "magnetisme_atomique", "ferromagnetisme", "spin_demi"], "chemin": "/racoon/questions/aimant"},
+  {"titre": "C'est quoi la masse d'un objet ?", "notions": ["dynamique", "gravitation", "relat_energie", "mesure"], "chemin": "/racoon/questions/masse"},
+  {"titre": "C'est quoi la température ?", "notions": ["gaz_cinetique", "brownien", "thermo", "boltzmann"], "chemin": "/racoon/questions/temperature"},
+  {"titre": "C'est quoi l'énergie ?", "notions": ["energie", "thermo", "relat_energie", "energie_champ"], "chemin": "/racoon/questions/energie"},
+  {"titre": "C'est quoi la lumière ?", "notions": ["ondes_em", "rayonnement", "quantique_comportement", "optique_geom"], "chemin": "/racoon/questions/lumiere"},
+  {"titre": "C'est quoi l'électricité ?", "notions": ["electrostatique", "mouvement_charges", "circuits_ac", "induction"], "chemin": "/racoon/questions/electricite"},
+  {"titre": "C'est quoi la pression ?", "notions": ["gaz_cinetique", "statique_fluides", "mesure"], "chemin": "/racoon/questions/pression"},
+  {"titre": "C'est quoi le temps ?", "notions": ["mesure", "relat_restreinte", "espace_temps", "cliquet"], "chemin": "/racoon/questions/temps"},
+  {"titre": "D'où vient la loi de la gravitation ?", "notions": ["gravitation", "dynamique", "espace_temps", "relativite_generale"], "chemin": "/racoon/questions/gravitation-depuis-einstein"},
+  {"titre": "Quand peut-on oublier la relativité ?", "notions": ["relat_restreinte", "relat_energie", "mesure", "cinematique"], "chemin": "/racoon/questions/quand-oublier-la-relativite"},
+  {"titre": "Isolé, fermé, ouvert : quel système choisir ?", "notions": ["thermo", "machines_thermiques"], "chemin": "/racoon/questions/systemes-thermodynamiques"},
+  {"titre": "D'où vient l'énergie d'un turbo ?", "notions": ["machines_thermiques", "thermo", "energie"], "chemin": "/racoon/questions/energie-d-un-turbo"}
+]

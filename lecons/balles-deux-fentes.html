@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Les balles et les deux fentes</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-quantique-amplitudes" data-i18n="monde.quantique-amplitudes"></a><span class="aux">›</span><a href="/racoon/etape?id=deux-fentes-electrons" data-i18n="etape.deux-fentes-electrons"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-quant" href="/racoon/atlas?piste=quant" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/distribution-de-probabilite" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>P</mi><mn>12</mn></msub><mo>=</mo><msub><mi>P</mi><mn>1</mn></msub><mo>+</mo><msub><mi>P</mi><mn>2</mn></msub></math><span class="n">(37.1)</span></div>
+    <p class="validite" data-i18n-html="val.37.1"></p>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="graphe" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.compte"></span><span class="c-label-2" data-i18n="fig.legend.attendu"></span><span class="c-warn" data-i18n="fig.legend.somme"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" role="group" id="mode">
+            <button type="button" data-m="1" data-i18n="fig.m1"></button>
+            <button type="button" data-m="2" data-i18n="fig.m2"></button>
+            <button type="button" data-m="12" data-i18n="fig.m12"></button>
+          </div>
+          <p>
+            <button type="button" class="btn tinted" id="tir1" data-i18n="fig.tir1"></button>
+            <button type="button" class="btn tinted" id="tir100" data-i18n="fig.tir100"></button>
+            <button type="button" class="btn tinted" id="tir10k" data-i18n="fig.tir10k"></button>
+            <button type="button" class="btn tinted" id="vider" data-i18n="fig.vider"></button>
+          </p>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.tirs"></span><span class="v" id="vtirs"></span><span class="f" id="ftirs"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.derniere"></span><span class="v" id="vder"></span><span class="f" id="fder"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.test"></span><span class="v" id="vtest"></span><span class="f" id="ftest"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+      <p id="sys2"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/balles-deux-fentes.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/quantique-amplitudes.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const Q = QuantAmp;
+/* the bench: gun 2 m before the armour plate, holes 0,3 m apart, backstop 4 m behind; each hole passes q of the shots */
+const BANC = { d: 0.3, L: 4, D: 2, s: 0.6 }, X = 3, NB = 24, q = 0.04, PAR = 1000;
+const dens = j => x => Q.probaBalles(x, BANC)["P" + j];
+/* expected arrivals per PAR shots in each cell, hole j alone: PAR q × the share of bump j in the cell */
+const part = j => { const f = dens(j), m = 24000, h = 2 * X / m, cum = [0]; for (let k = 0; k < m; k++) cum.push(cum[k] + f(-X + (k + 0.5) * h) * h);
+  return Array.from({ length: NB }, (_, c) => PAR * q * (cum[(c + 1) * m / NB] - cum[c * m / NB]) / cum[m]); };
+const ATT = { 1: part(1), 2: part(2) }; ATT[12] = ATT[1].map((v, c) => v + ATT[2][c]);
+
+/* ---------- shots one at a time, holes 1, 2 or both ---------- */
+(() => {
+  const svg = $("graphe"), seg = $("mode"), alea = Q.aleaGraine(Date.now());
+  const vide = () => ({ tirs: 0, h: new Array(NB).fill(0) });
+  let S = { 1: vide(), 2: vide(), 12: vide() }, mode = "12", derniere = null;
+  function tirer(n) {
+    const s = S[mode], ouverts = mode === "12" ? [1, 2] : [+mode];
+    const passe = { 1: 0, 2: 0 }; derniere = null;
+    for (let k = 0; k < n; k++) { const u = alea(); const j = u < q ? 1 : u < 2 * q ? 2 : 0; if (j && ouverts.includes(j)) { passe[j]++; derniere = j; } }
+    for (const j of ouverts) {
+      const xs = Q.tirerArrivees(dens(j), -X, X, passe[j], alea);
+      Q.histogrammeArrivees(xs, -X, X, NB).forEach((v, c) => s.h[c] += v);
+      if (derniere === j && xs.length) derniere = { j, x: xs[xs.length - 1] };
+    }
+    if (typeof derniere === "number") derniere = null;
+    s.tirs += n; draw();
+  }
+  function draw() {
+    const s = S[mode], k = s.tirs ? PAR / s.tirs : 0, haut = Math.max(2 * q * PAR * 0.2, ...s.h.map(v => v * k)) * 1.1;
+    svg.innerHTML = "";
+    const G = Plot.axes(svg, { fmt: F, w: 640, h: 280, pad: { l: 56, b: 44 }, x: { domain: [-X, X], label: t("fig.xaxis") }, y: { domain: [0, haut], label: t("fig.yaxis") } });
+    const cw = 2 * X / NB;
+    s.h.forEach((v, c) => { if (v) Plot.el("rect", { x: G.x(-X + c * cw) + 1, width: G.x(cw) - G.x(0) - 2, y: G.y(v * k), height: G.y(0) - G.y(v * k), class: "fill c-tint" }, G.g); });
+    /* the expected curve, as steps */
+    const marches = ATT[mode].flatMap((v, c) => [[G.x(-X + c * cw), G.y(v)], [G.x(-X + (c + 1) * cw), G.y(v)]]);
+    Plot.el("path", { d: Plot.path(marches), class: "stroke c-label-2" }, G.g);
+    /* both open: the sum of the two measured one-hole curves, P1 + P2, for comparison */
+    let z2 = null, zmax = 0, nz = 0;
+    if (mode === "12" && S[1].tirs && S[2].tirs) {
+      const k1 = PAR / S[1].tirs, k2 = PAR / S[2].tirs;
+      const somme = S[1].h.map((v, c) => v * k1 + S[2].h[c] * k2);
+      Plot.el("path", { d: Plot.path(somme.map((v, c) => [G.x(-X + (c + 0.5) * cw), G.y(v)])), class: "stroke dash c-warn" }, G.g);
+      if (s.tirs) {
+        z2 = 0;
+        s.h.forEach((v, c) => { const vr = v * k * k + S[1].h[c] * k1 * k1 + S[2].h[c] * k2 * k2; if (vr > 0) { const z = (v * k - somme[c]) / Math.sqrt(vr); z2 += z * z; nz++; zmax = Math.max(zmax, Math.abs(z)); } });
+      }
+    }
+    const arr = s.h.reduce((a, v) => a + v, 0);
+    $("vtirs").textContent = F.num(s.tirs, 6);
+    $("ftirs").textContent = t("fig.f.tirs", { n: F.num(arr, 6) });
+    $("vder").textContent = derniere ? F.si(derniere.x, "m") : "—";
+    $("fder").textContent = derniere ? t("fig.f.der" + derniere.j) : t("fig.f.rien");
+    $("vtest").textContent = z2 === null ? "—" : F.num(z2 / Math.max(nz, 1), 2);
+    $("ftest").textContent = z2 === null ? t("fig.f.test.manque") : t("fig.f.test", { z: F.num(zmax, 2) });
+    seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.m === mode)));
+  }
+  seg.querySelectorAll("button").forEach(b => b.onclick = () => { mode = b.dataset.m; derniere = null; draw(); });
+  $("tir1").onclick = () => tirer(1); $("tir100").onclick = () => tirer(100); $("tir10k").onclick = () => tirer(10000);
+  $("vider").onclick = () => { S = { 1: vide(), 2: vide(), 12: vide() }; derniere = null; draw(); };
+  draw();
+})();
+
+/* ---------- the system described: a bullet of 10 g, the counts ---------- */
+(() => {
+  const m = 0.01, v = 400, lam = Q.broglie(m * v), i = Q.interfrangeFentes(lam, BANC.L, BANC.d), w = 2 * X / NB;
+  $("sys1").innerHTML = t("sys1.body", { l: F.si(lam, "m"), i: F.si(i, "m"), w: F.si(w, "m"), n: F.sci(w / i, 1) });
+  const N = 10000, p = ATT[12][NB / 2] / PAR, c = Q.fluctuationComptage(N, p);
+  $("sys2").innerHTML = t("sys2.body", { N: F.num(N, 6), m: F.num(c.moyenne, 3), e: F.num(c.ecart, 2), r: F.num(100 * c.relatif, 2), N4: F.num(100 * N, 6) });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["compteur", 1908, "experiment"], ["poisson", 1910, "experiment"], ["geiger", 1928, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["radioprotection"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["somme", "a"], ["milieu", "c"], ["grains", "b"], ["mesure", "d"], ["fluct", "a"], ["ricochet", "c"], ["franges", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 372 });
+})();
+</script>
+</body>
+</html>

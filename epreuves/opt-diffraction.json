@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["huile", "a"],
+  ["biais", "b"],
+  ["antireflet", "c"],
+  ["ordres", "d"],
+  ["frange", "b"],
+  ["recul", "c"],
+  ["disque", "d"],
+  ["nappe", "a"]
+ ]
+}

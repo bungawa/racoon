@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-i18n="h1">D'où vient l'énergie d'un turbo ?</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/questions" data-i18n="crumb.questions"></a><span class="aux">›</span><span data-i18n="crumb.titre"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-thermo" href="/racoon/atlas?piste=thermo" data-i18n="tag.piste"></a>
+      <a class="chip t-thermo" href="/racoon/atlas?notion=machines_thermiques" data-i18n="tag.n.machines_thermiques"></a>
+      <a class="chip t-thermo" href="/racoon/atlas?notion=thermo" data-i18n="tag.n.thermo"></a>
+      <span class="chip plain" data-i18n="tag.genre"></span>
+      <span class="chip plain" data-i18n="tag.duree"></span>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="box rem"><b data-i18n="s1.sys.title"></b>
+      <p id="sys"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq">
+      <math display="block"><mi>η</mi><mo>=</mo><mfrac><mi>w</mi><mi>q</mi></mfrac><mo>=</mo><mn>1</mn><mo>−</mo><msup><mi>r</mi><mrow><mn>1</mn><mo>−</mo><mi>γ</mi></mrow></msup></math>
+      <span class="n">(1)</span>
+    </div>
+    <p class="validite" data-i18n-html="val.otto"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq">
+      <math display="block"><msub><mi>w</mi><mtext data-i18n="eq.queue"></mtext></msub><mo>=</mo><mfrac><mrow><msub><mi>p</mi><mn>4</mn></msub><msub><mi>v</mi><mn>4</mn></msub><mo>−</mo><msub><mi>p</mi><mi mathvariant="normal">a</mi></msub><msub><mi>v</mi><mn>5</mn></msub></mrow><mrow><mi>γ</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo>−</mo><msub><mi>p</mi><mi mathvariant="normal">a</mi></msub><mo>(</mo><msub><mi>v</mi><mn>5</mn></msub><mo>−</mo><msub><mi>v</mi><mn>4</mn></msub><mo>)</mo></math>
+      <span class="n">(2)</span>
+    </div>
+    <p class="validite" data-i18n-html="val.queue"></p>
+    <p id="s2p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq">
+      <math display="block"><msub><mi>η</mi><mi mathvariant="normal">T</mi></msub><mspace width="0.15em"></mspace><msub><mi>c</mi><mi>p</mi></msub><msub><mi>T</mi><mi mathvariant="normal">e</mi></msub><mrow><mo>(</mo><mn>1</mn><mo>−</mo><msup><mrow><mo>(</mo><msub><mi>p</mi><mi mathvariant="normal">a</mi></msub><mo>/</mo><msub><mi>p</mi><mi mathvariant="normal">e</mi></msub><mo>)</mo></mrow><mi>k</mi></msup><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><msub><mi>c</mi><mi>p</mi></msub><msub><mi>T</mi><mn>1</mn></msub><mo>(</mo><msup><mi>Π</mi><mi>k</mi></msup><mo>−</mo><mn>1</mn><mo>)</mo></mrow><msub><mi>η</mi><mi mathvariant="normal">C</mi></msub></mfrac><mo>,</mo><mspace width="1em"></mspace><mi>k</mi><mo>=</mo><mfrac><mrow><mi>γ</mi><mo>−</mo><mn>1</mn></mrow><mi>γ</mi></mfrac></math>
+      <span class="n">(3)</span>
+    </div>
+    <p class="validite" data-i18n-html="val.turbo"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <figure>
+      <div class="panel">
+        <div class="chart"><svg class="fig" id="pv" role="img" data-i18n-attr="aria-label:fig.aria"></svg></div>
+        <div class="legend"><span class="c-tint" data-i18n="fig.leg.cycle"></span><span class="c-warn" data-i18n="fig.leg.queue"></span><span class="c-ok" data-i18n="fig.leg.adm"></span><span class="c-ko" data-i18n="fig.leg.ech"></span></div>
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="pisl" data-i18n="ctl.pi"></label><output id="piread" for="pisl"></output></div>
+            <input id="pisl" type="range" min="1" max="3" step="0.05" value="2"></div>
+          <div class="ctl"><div class="row"><label for="etasl" data-i18n="ctl.eta"></label><output id="etaread" for="etasl"></output></div>
+            <input id="etasl" type="range" min="0.5" max="0.85" step="0.01" value="0.7"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="k.pe"></span><span class="v" id="vpe"></span><span class="f" id="fpe"></span></div>
+          <div class="stat"><span class="k" data-i18n="k.wc"></span><span class="v" id="vwc"></span><span class="f" id="fwc"></span></div>
+          <div class="stat"><span class="k" data-i18n="k.paye"></span><span class="v" id="vpaye"></span><span class="f" data-i18n="f.paye"></span></div>
+          <div class="stat"><span class="k" data-i18n="k.ech"></span><span class="v" id="vech"></span><span class="f" id="fech"></span></div>
+          <div class="stat"><span class="k" data-i18n="k.puiss"></span><span class="v" id="vp"></span><span class="f" id="fp"></span></div>
+        </div>
+        <p id="verdict" role="status"></p>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="lim.sec"></span>
+    <h2 data-i18n="lim.h2"></h2>
+    <p data-i18n-html="lim.p"></p>
+    <div class="list keyed" id="limites"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/locales/fr/questions/energie-d-un-turbo.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/questions/systemes-thermodynamiques.js"></script>
+<script src="/racoon/questions/energie-d-un-turbo.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+F.autoTypo(document.querySelector("main"));
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+const $ = id => document.getElementById(id);
+const kj = x => F.qty(F.num(x / 1e3, 3), "kJ·kg⁻¹");
+const pa = p => F.si(p, "Pa", { prefix: "k", sig: 3 });
+
+/* ---------- le système, et les nombres du cycle ---------- */
+(() => {
+  const N = 3000 / 60, course = 0.086, son = Math.sqrt(1.4 * Systemes.R_AIR * 300), vp = 2 * course * N;   // tr·s⁻¹, m, m·s⁻¹
+  $("sys").innerHTML = t("s1.sys.body", { vp: F.si(vp, "m·s⁻¹", { sig: 2 }), c: F.si(son, "m·s⁻¹", { sig: 3 }), m: F.num(vp / son, 2) });
+  const c = Turbo.otto(), e = c.etats;
+  $("s2p3").innerHTML = t("s2.p3", { eta: F.qty(F.num(100 * c.eta, 2), "%"), p4: F.qty(F.num(e[4].p / 1e5, 2) + " × 10⁵", "Pa"),
+    T4: F.kelvin(e[4].T), queue: kj(c.queue), part: F.qty(F.num(100 * c.queue / c.q, 1), "%") });
+})();
+
+/* ---------- interactif : gaver le moteur ---------- */
+(() => {
+  const svg = $("pv"), S = { pi: $("pisl"), eta: $("etasl") }, W = 640, H = 340;
+  function draw() {
+    const pi = +S.pi.value, eta = +S.eta.value, m = Turbo.moteur({ pi, etaT: eta, etaC: eta }), mc = Turbo.mecanique({ pi, etaC: eta });
+    const c = m.cycle, e = c.etats, g = c.gamma;
+    svg.innerHTML = "";
+    const A = Plot.axes(svg, { fmt: F, w: W, h: H, pad: { b: 44 },
+      x: { scale: "log", domain: [0.01, 4], label: t("fig.x") }, y: { scale: "log", domain: [3e4, 1e8], label: t("fig.y") } });
+    const P = (v, p) => [A.x(v), A.y(p)];
+    const adia = (a, vb, n = 40) => Array.from({ length: n + 1 }, (_, i) => { const v = a.v * Math.pow(vb / a.v, i / n); return P(v, a.p * Math.pow(a.v / v, g)); });
+    /* la queue : de 4, l'adiabatique prolongée jusqu'à pa, puis l'isobare pa jusqu'au volume de fin de course */
+    if (c.queue > 0) {
+      Plot.el("path", { d: Plot.path([...adia(e[4], e[5].v), P(e[4].v, c.pa)]) + "Z", class: "area" }, A.g);
+      Plot.el("path", { d: Plot.path(adia(e[4], e[5].v)), class: "ref" }, A.g);
+    }
+    Plot.el("path", { d: Plot.path([...adia(e[1], e[2].v), P(e[3].v, e[3].p), ...adia(e[3], e[4].v)]) + "Z", class: "curve" }, A.g);
+    Plot.el("path", { d: Plot.path([P(e[2].v, pi * c.pa), P(e[1].v, pi * c.pa)]), class: "stroke c-ok" }, A.g);       // admission
+    Plot.el("path", { d: Plot.path([P(e[1].v, m.pe), P(e[2].v, m.pe)]), class: "stroke dash c-ko" }, A.g);            // échappement
+    [1, 2, 3, 4].forEach(n => { const [x, y] = P(e[n].v, e[n].p); Plot.el("circle", { cx: x, cy: y, r: 3.5, class: "dot" }, A.g);
+      Plot.el("text", { x: x + 6, y: y - 6, class: "note" }, A.g).textContent = String(n); });
+    $("piread").textContent = F.num(pi, 3) + " · " + pa(pi * c.pa);
+    $("etaread").textContent = F.qty(F.num(100 * eta, 2), "%");
+    $("vpe").textContent = pa(m.pe); $("fpe").innerHTML = t("f.pe", { Te: F.kelvin(m.Te) });
+    $("vwc").textContent = kj(m.wc); $("fwc").textContent = t("f.wc", { q: kj(c.queue) });
+    $("vpaye").textContent = kj(m.paye);
+    $("vech").textContent = kj(m.echappement); $("fech").textContent = t("f.ech", { f: F.qty(F.num(100 * m.echappement / c.queue, 2), "%") });
+    $("vp").textContent = "× " + F.num(m.puissance, 3); $("fp").textContent = t("f.p", { m: "× " + F.num(mc.puissance, 3) });
+    $("verdict").textContent = pi <= 1 ? t("v.atmo") : t(m.wb >= 0 ? "v.pousse" : "v.coute", { b: kj(Math.abs(m.wb)) });
+  }
+  Object.values(S).forEach(s => s.oninput = draw); draw();
+})();
+
+/* ---------- limites ---------- */
+(() => {
+  const IDS = ["reponse", "cliquetis", "parois"], txt = textOf("lim.rows", IDS);
+  $("limites").innerHTML = IDS.map(id => `<div><span class="k">${txt[id].name}</span><span>${txt[id].text}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["buchi", 1905, "idea"], ["serie", 1962, "use"], ["rs01", 1977, "experiment"], ["dijon", 1979, "experiment"], ["mguh", 2014, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["navires", "systemes"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["queue", "b"], ["source", "a"], ["paye", "c"], ["pousse", "d"], ["refroidir", "a"], ["mauvais", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 11 });
+})();
+</script>
+</body>
+</html>

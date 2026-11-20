@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Réactions chimiques</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-atomes-energie" data-i18n="monde.atomes-energie"></a><span class="aux">›</span><a href="/racoon/etape?id=les-atomes" data-i18n="etape.les-atomes"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-fond" href="/racoon/atlas?piste=fond" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/processus-atomiques" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n="s1.p1"></p>
+    <p data-i18n="s1.p2"></p>
+    <div class="eq">
+      <math display="block"><mi mathvariant="normal">C</mi><mo>+</mo><msub><mi mathvariant="normal">O</mi><mn>2</mn></msub><mo>⟶</mo><mi mathvariant="normal">C</mi><msub><mi mathvariant="normal">O</mi><mn>2</mn></msub></math>
+      
+    </div>
+    <p class="validite" data-i18n="eq1.validite"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <figure class="chart">
+      <svg id="levels" role="img" data-i18n-attr="aria-label:lev.aria"></svg>
+      <div class="panel">
+        <div class="seg" id="reac" role="group" data-i18n-attr="aria-label:lev.choose"></div>
+        <div class="ctl"><div class="row"><label for="msl" data-i18n="lev.mass"></label><output id="mread" for="msl"></output></div>
+          <input id="msl" type="range" min="-3" max="2" step="0.01" value="0"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="lev.k.dh"></span><span class="v" id="vdh"></span></div>
+          <div class="stat"><span class="k" data-i18n="lev.k.energy"></span><span class="v" id="ven"></span><span class="f" id="fen"></span></div>
+          <div class="stat"><span class="k" data-i18n="lev.k.co2"></span><span class="v" id="vco2"></span></div>
+        </div>
+      </div>
+      <div class="list keyed" id="balance"></div>
+      <figcaption data-i18n-html="lev.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="list keyed" id="bonds"></div>
+    <div class="box rem"><b data-i18n="s2.rem.title"></b>
+      <p data-i18n-html="s2.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n="s3.p1"></p>
+    <figure>
+      <div class="stage"><canvas id="mol"></canvas><div class="overlay" id="molread"></div></div>
+      <div class="panel">
+        <div class="seg" id="pick" role="group" data-i18n-attr="aria-label:mol.choose"></div>
+      </div>
+      <div class="legend"><span class="el-c" data-i18n="mol.legend.c"></span><span class="el-o" data-i18n="mol.legend.o"></span><span class="el-h" data-i18n="mol.legend.h"></span></div>
+      <figcaption data-i18n-html="mol.caption"></figcaption>
+    </figure>
+    <p data-i18n="s3.p2"></p>
+    <div class="box warn"><b data-i18n="s3.warn.title"></b>
+      <p data-i18n-html="s3.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/reactions-chimiques.js"></script>
+<script src="/racoon/lecons/reactions-chimiques.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I.fallback : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const onTheme = f => { f(); matchMedia("(prefers-color-scheme: dark)").addEventListener("change", f); new MutationObserver(f).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] }); };
+const segOf = (el, ids, names, pick) => {
+  el.innerHTML = ids.map(() => '<button type="button"></button>').join("");
+  [...el.children].forEach((b, i) => { b.textContent = names[ids[i]];
+    b.onclick = () => { [...el.children].forEach(x => x.setAttribute("aria-pressed", x === b)); pick(ids[i]); }; });
+  el.children[0].setAttribute("aria-pressed", "true");
+};
+const kj = v => F.qty(F.fix(v, 1), t("unit.kjmol"));
+const SPECIES = textOf("species", Object.keys(Chem.SPECIES));
+const ATOMS = textOf("atoms", Object.keys(Chem.MASS));
+
+/* ---------- §1-4 : niveaux d'enthalpie ---------- */
+(() => {
+  const IDS = Object.keys(Chem.REACTIONS), names = textOf("lev.reactions", IDS), msl = $("msl");
+  const { x, y, g } = Plot.axes($("levels"), { fmt: F, w: 640, h: 320, pad: { b: 30, l: 64 },
+    x: { domain: [0, 1], ticks: 1, fmt: () => "" }, y: { domain: [-1200, 100], label: t("lev.y") } });
+  Plot.el("line", { x1: x(0), x2: x(1), y1: y(0), y2: y(0), class: "zero" }, g);
+  const L = Plot.el("line", { class: "curve" }, g), R = Plot.el("line", { class: "curve" }, g), link = Plot.el("line", { class: "ref" }, g);
+  const tL = Plot.el("text", { class: "note", "text-anchor": "middle" }, g), tR = Plot.el("text", { class: "note", "text-anchor": "middle" }, g);
+  const tD = Plot.el("text", { class: "note", "text-anchor": "start" }, g);
+  const side = s => Object.entries(s).map(([k, n]) => (n > 1 ? n + " " : "") + SPECIES[k]).join(" + ");
+  const sum = s => Object.entries(s).reduce((h, [k, n]) => h + n * Chem.SPECIES[k].dfH, 0);
+  let id = IDS[0];
+  function upd() {
+    const r = Chem.REACTIONS[id], hl = sum(r.left), hr = sum(r.right), dh = Chem.deltaH(r), m = Math.pow(10, +msl.value);
+    const set = (el, a) => Object.entries(a).forEach(([k, v]) => el.setAttribute(k, v));
+    set(L, { x1: x(0.06), x2: x(0.4), y1: y(hl), y2: y(hl) }); set(R, { x1: x(0.6), x2: x(0.94), y1: y(hr), y2: y(hr) });
+    set(link, { x1: x(0.5), x2: x(0.5), y1: y(hl), y2: y(hr) });
+    set(tL, { x: x(0.23), y: y(hl) - 8 }); tL.textContent = side(r.left);
+    set(tR, { x: x(0.77), y: y(hr) + 18 }); tR.textContent = side(r.right);
+    set(tD, { x: x(0.5) + 8, y: (y(hl) + y(hr)) / 2 }); tD.textContent = t("lev.dh", { v: kj(dh) });
+    $("vdh").textContent = kj(dh);
+    $("mread").textContent = t("lev.massof", { m: F.si(m * 1e3, "g"), what: SPECIES[r.fuel] });
+    $("ven").textContent = F.si(m * Chem.perKg(r), "J");
+    $("fen").textContent = t("lev.perkg", { e: F.si(Chem.perKg(r), "J") });
+    $("vco2").textContent = F.si(m * Chem.co2PerKg(r) * 1e3, "g");
+    const nl = Chem.count(r.left), nr = Chem.count(r.right);
+    $("balance").innerHTML = Object.keys(nl).map(a => `<div><span class="k">${ATOMS[a]}</span><span>${t("lev.atoms", { l: nl[a], r: nr[a] || 0 })}</span></div>`).join("");
+  }
+  segOf($("reac"), IDS, names, k => { id = k; upd(); });
+  msl.oninput = upd; upd();
+})();
+
+/* ---------- §1-4 : bilan des liaisons ---------- */
+(() => {
+  const broken = { "C-H": 4, "O=O": 2 }, formed = { "C=O": 2, "O-H": 4 };
+  const sumOf = o => Object.entries(o).reduce((e, [b, k]) => e + k * Chem.BOND[b], 0);
+  const rows = [["broken", sumOf(broken)], ["formed", -sumOf(formed)], ["total", Chem.bondEstimate(broken, formed)], ["hess", Chem.deltaH(Chem.REACTIONS.ch4)]];
+  const txt = textOf("bonds.rows", rows.map(r => r[0]));
+  $("bonds").innerHTML = rows.map(([id, v]) => `<div><span class="k">${(v > 0 ? "+" : "") + kj(v)}</span><span>${txt[id]}</span></div>`).join("");
+})();
+
+/* ---------- §1-4 : molécules en 3D ---------- */
+(() => {
+  const IDS = Object.keys(Chem.MOLECULES), names = textOf("mol.names", IDS), full = textOf("mol.full", IDS), canvas = $("mol"), read = $("molread");
+  const mass = id => Object.entries(Chem.formula(id)).reduce((m, [a, k]) => m + k * Chem.MASS[a], 0);
+  const cache = {}, shape = id => cache[id] || (cache[id] = Chem.embed(id, Quiz.rng(17)));
+  let show = () => {};
+  const describe = id => read.textContent = t("mol.readout", { name: full[id], m: F.qty(F.fix(mass(id), 2), t("unit.gmol")) });
+  segOf($("pick"), IDS, names, id => { describe(id); show(id); });
+  describe(IDS[0]);
+  if (!self.THREE || !THREE.OrbitControls) { read.textContent = t("mol.offline"); $("pick").querySelectorAll("button").forEach(b => b.addEventListener("click", () => read.textContent = t("mol.offline"))); return; }
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(40, 4 / 3, 0.1, 200);
+  const ctl = new THREE.OrbitControls(cam, canvas);
+  ctl.enableDamping = true; ctl.autoRotate = !reduce; ctl.autoRotateSpeed = 1.2;
+  canvas.addEventListener("pointerdown", () => ctl.autoRotate = false);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x445566, 1.0));
+  const sun = new THREE.DirectionalLight(0xffffff, 0.7); sun.position.set(10, 15, 8); scene.add(sun);
+  const MAT = { C: new THREE.MeshStandardMaterial({ roughness: 0.5 }), O: new THREE.MeshStandardMaterial({ roughness: 0.5 }), H: new THREE.MeshStandardMaterial({ roughness: 0.4 }), bond: new THREE.MeshStandardMaterial({ roughness: 0.6 }) };
+  onTheme(() => { MAT.C.color.set(css("--el-c")); MAT.O.color.set(css("--el-o")); MAT.H.color.set(css("--el-h")); MAT.bond.color.set(css("--label-2")); });
+  const RAD = { C: 0.3, O: 0.28, H: 0.2 }, SPH = {}, CYL = new THREE.CylinderGeometry(1, 1, 1, 14);
+  Object.keys(RAD).forEach(a => SPH[a] = new THREE.SphereGeometry(RAD[a], 24, 16));
+  let group = null;
+  const Y = new THREE.Vector3(0, 1, 0);
+  show = id => {
+    const g = shape(id);
+    if (group) scene.remove(group);
+    group = new THREE.Group();
+    const V = g.pos.map(p => new THREE.Vector3(p[0], p[1], p[2]));
+    g.atoms.forEach((a, i) => { const s = new THREE.Mesh(SPH[a], MAT[a]); s.position.copy(V[i]); group.add(s); });
+    g.bonds.forEach(([i, j, o]) => {
+      const d = new THREE.Vector3().subVectors(V[j], V[i]), len = d.length(), mid = new THREE.Vector3().addVectors(V[i], V[j]).multiplyScalar(0.5);
+      let side = new THREE.Vector3().crossVectors(d, Math.abs(d.y) < 0.9 * len ? Y : new THREE.Vector3(1, 0, 0)).normalize();
+      const r = o === 1 ? 0.09 : 0.06;
+      for (let k = 0; k < o; k++) {
+        const c = new THREE.Mesh(CYL, MAT.bond), off = (k - (o - 1) / 2) * 0.2;
+        c.scale.set(r, len, r); c.position.copy(mid).addScaledVector(side, off);
+        c.quaternion.setFromUnitVectors(Y, d.clone().normalize()); group.add(c);
+      }
+    });
+    scene.add(group);
+    const R = Math.max(1.5, ...g.pos.map(p => Math.hypot(...p)));
+    cam.position.set(0, R * 0.8, R * 3.2); ctl.target.set(0, 0, 0); ctl.update();
+  };
+  function resize() { const r = canvas.getBoundingClientRect(); renderer.setSize(r.width, r.height, false); cam.aspect = r.width / r.height; cam.updateProjectionMatrix(); }
+  new ResizeObserver(resize).observe(canvas); resize();
+  let visible = true; new IntersectionObserver(e => visible = e[0].isIntersecting).observe(canvas);
+  show(IDS[0]);
+  (function tick() { requestAnimationFrame(tick); if (!visible) return; ctl.update(); renderer.render(scene, cam); })();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["lavoisier", 1772, "experiment"], ["traite", 1789, "idea"], ["kekule", 1858, "idea"], ["vanthoff", 1874, "idea"],
+    ["ionone", 1893, "use"], ["bragg", 1913, "experiment"], ["pauling", 1939, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["pot", "co", "parfum", "energie"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["partners", "b"], ["heat", "a"], ["co", "c"], ["bonds", "d"], ["mass", "a"], ["shape", "b"], ["smell", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 11 });
+})();
+</script>
+</body>
+</html>

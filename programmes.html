@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-i18n="h1">Programmes officiels</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page outil">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/atlas" data-i18n="crumb.atlas"></a><span class="aux">›</span><span data-i18n="crumb.programmes"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags"><a class="chip plain" href="/racoon/atlas" data-i18n="head.atlas"></a></div>
+  </header>
+  <div id="annees"></div>
+  <p class="caption" id="status" role="status"></p>
+  <p class="foot" data-i18n="foot"></p>
+</main>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/locales/fr/programmes.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/sections.js"></script>
+<script src="/racoon/ingenieur-data.js"></script>
+<script src="/racoon/graph.js"></script>
+<script src="/racoon/filieres.js"></script>
+<script src="/racoon/programmes.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t, D = I.pick;
+Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang).autoTypo(document.querySelector("main"));
+const P = Programmes, F = self.FILIERES || [], BY = new Map(Graphe.NOEUDS.map(n => [n.id, n]));
+const BYF = new Map(F.map(f => [f.id, f]));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const ED = x => esc(D(x));
+const sigles = ids => ids.map(id => D(BYF.get(id).sigle));
+const chaine = ids => new Set(sigles(ids)).size === 1 ? esc(t("atlas.deux", { sigle: sigles(ids)[0] })) : sigles(ids).map(esc).join(" → ");   // BCPST then BCPST: « BCPST, les deux années »
+/* a notion of the programme opens on the map; its title comes from the graph */
+const notion = id => `<a class="chip plain" href="/racoon/atlas?notion=${esc(id)}">${ED(BY.get(id).titre)}</a>`;
+const ligne = f => `<div><div>
+    <p><b class="no-sigle">${ED(f.sigle)}</b> · ${ED(f.nom)}</p>
+    <div class="tags">${P.chaines(f, F).map(c => `<a class="chip plain c-tint" href="${esc(P.lien(c))}">${c.length > 1 ? chaine(c) : esc(t("atlas.seul", { sigle: D(f.sigle) }))}</a>`).join("")}</div>
+    <p class="caption">${esc(t("texte"))} <span class="no-sigle">${ED(f.texte)}</span>${f.lacunes ? " · " + esc(t("lacunes", { n: f.lacunes })) : ""}</p>
+    <details class="more"><summary>${esc(t("parties", { n: f.parties.length }))}</summary>
+      <ul class="list keyed">${f.parties.map((p, i) => `<li><span class="k">${i + 1}</span><span>${ED(p.titre)}<span class="tags">${p.notions.map(notion).join("")}</span></span></li>`).join("")}</ul></details>
+  </div><span class="v">${esc(t("notions", { n: P.notionsDe(f).length }))}</span></div>`;
+const groupes = P.parAnnee(F);
+document.getElementById("annees").innerHTML = groupes.map(g => `<section class="card">
+  <span class="sec">${esc(t("annee." + g.annee))}</span>
+  <div class="list">${g.filieres.map(ligne).join("")}</div></section>`).join("");
+if (!groupes.length) document.getElementById("status").textContent = t("vide");
+</script>
+</body>
+</html>

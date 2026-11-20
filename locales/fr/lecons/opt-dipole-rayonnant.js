@@ -1,0 +1,100 @@
+/* Leçon « Le dipôle rayonnant » (Feynman I.28.3) : textes en français.
+   Une autre langue = locales/<langue>/lecons/opt-dipole-rayonnant.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Le dipôle rayonnant",
+    "crumb.jour": "Le dipôle rayonnant",
+    "h1": "Le dipôle rayonnant",
+    "lede": "Deux bouts de fil reliés à un générateur font monter et descendre des charges : c'est la source la plus simple de rayonnement. Un second dipôle, branché sur un haut-parleur, en explore le champ. Trois positions et deux orientations suffisent à vérifier la loi du rayonnement.",
+    "tag.piste": "Optique",
+    "tag.prereq": "Prérequis : le rayonnement",
+
+    "s1.sec": "La loi à vérifier",
+    "s1.h2": "Un champ en 1/r, projeté, retardé",
+    "s1.p1": "On prend (28.6) comme loi fondamentale du rayonnement : le champ électrique d'une charge lente, très loin d'elle, décroît comme 1/<var>r</var>, et il est proportionnel à son accélération projetée sur le plan perpendiculaire à la ligne de visée, prise un temps <var>r</var>/<var>c</var> plus tôt. Sous forme vectorielle, θ étant l'angle entre l'accélération et la ligne de visée :",
+    "val.28.6a": "Approximation : celle de (28.6). Charge lente (erreur de l'ordre de 2<var>v</var>/<var>c</var>), déplacement petit devant <var>r</var>, et <var>r</var> grand devant λ/2π : à <var>r</var> = 2\u00a0λ, les termes négligés valent encore 8 % du champ. Le vecteur <var>a</var><sub>⊥</sub> est perpendiculaire à la ligne de visée, dans le plan qui la contient avec l'accélération.",
+    "s1.p2": "Cette loi suffira pour comprendre la réflexion, la réfraction, les interférences, la diffraction et la diffusion de la lumière. Le reste de (28.3) n'a servi qu'à montrer d'où elle vient. On peut la vérifier par l'expérience, sans théorie : il faut une charge qui accélère, et un instrument qui mesure un champ électrique.",
+
+    "s2.sec": "La source et le détecteur",
+    "s2.h2": "Deux fils, un générateur",
+    "s2.p1": "Deux morceaux de fil, <var>A</var> au-dessus de <var>B</var>, sont reliés à un générateur à haute fréquence. À un instant, il tire les électrons hors de <var>A</var> et les pousse dans <var>B</var> ; une demi-période plus tard, il fait l'inverse. Dans les deux fils, les charges accélèrent ensemble vers le haut, puis ensemble vers le bas : tout se passe comme une seule charge qui monte et descend. Le champ de nombreuses charges qui bougent de la même façon est la somme de leurs champs. Un fil très court devant la distance que parcourt la lumière pendant une période, c'est-à-dire devant la longueur d'onde, forme un dipôle électrique oscillant.",
+    "s2.p2": "Le détecteur est fait de même : une paire de fils. Un champ électrique parallèle à ses fils y pousse les électrons vers le haut ou vers le bas ; un redresseur placé entre ses deux moitiés transforme ce mouvement en un signal qu'on amplifie et qu'on entend dans un haut-parleur, grâce à la modulation audio du générateur. Le détecteur ne mesure que la composante du champ le long de ses fils.",
+
+    "s3.sec": "Explorer le champ",
+    "s3.h2": "Trois positions, deux orientations",
+    "s3.p1": "Le système : le générateur <var>G</var>, vertical, au centre ; le détecteur <var>D</var> à vingt longueurs d'onde, dans un plan qui contient <var>G</var>, à l'angle θ de son axe, ses fils à l'angle α de la verticale. Le champ affiché est la somme (28.6a) calculée au point <var>D</var>, en unités de sa valeur dans le plan équatorial ; le signal est la composante le long du détecteur. Les positions 1, 2 et 3 sont celles de l'expérience : à l'horizontale de <var>G</var>, à 45°, à sa verticale.",
+    "fig.aria": "Le dipôle G vu de côté, le détecteur D sur un cercle autour de lui, la direction du champ en D et le diagramme de rayonnement",
+    "fig.legend.diagramme": "module du champ selon la direction, |sin θ|",
+    "fig.legend.champ": "direction d'oscillation du champ en D",
+    "fig.legend.detecteur": "fils du détecteur",
+    "eq.sin": "sin",
+    "fig.G": "G",
+    "fig.D": "D",
+    "fig.p1": "Position 1",
+    "fig.p2": "Position 2",
+    "fig.p3": "Position 3",
+    "fig.theta": "Direction de D depuis l'axe de G, θ",
+    "fig.alpha": "Orientation du détecteur, α",
+    "fig.k.champ": "Champ en <var>D</var> (unité : à l'équateur)",
+    "fig.f.champ": "|sin θ| = {v}",
+    "fig.k.signal": "Signal du détecteur",
+    "fig.f.signal": "angle entre détecteur et champ : {a}",
+    "fig.f.rien": "aucun champ à capter",
+    "fig.caption": "La flèche double donne la direction le long de laquelle le champ oscille en <var>D</var>, sa longueur son amplitude. Le champ est toujours perpendiculaire à la ligne <var>G</var><var>D</var> et dans le plan qui contient <var>G</var> : il n'est vertical qu'à l'équateur. Le détecteur capte le plus quand ses fils lui sont parallèles, rien quand ils lui sont perpendiculaires.",
+    "s3.p2": "En position 1, le signal est fort quand <var>D</var> est parallèle à <var>G</var> ; il est le même tout autour de l'axe de <var>G</var>, à la même hauteur. Tourné de 90°, le détecteur ne capte plus rien : le champ y est vertical. En position 3, plus rien du tout, quelle que soit l'orientation : vue d'en haut, la charge vient vers le détecteur et s'en éloigne, sans mouvement transversal. En position 2, le champ est plus faible, |sin 45°| ≈ 0,71 fois celui de la position 1, et le signal est le plus fort quand le détecteur est incliné, perpendiculaire à <var>G</var><var>D</var> : ce n'est pas l'accélération qui compte, mais sa projection.",
+
+    "s4.sec": "Décrire le banc",
+    "s4.h2": "Ce que l'expérience néglige",
+    "s4.p1": "La loi (28.6a) suppose une source ponctuelle, un détecteur loin d'elle, et rien d'autre dans la pièce. Or le champ met aussi en mouvement les électrons des murs, des tables et de l'expérimentateur, qui rayonnent à leur tour et atteignent le détecteur : ce sont des ondes réfléchies. Pour qu'elles restent faibles, on travaille près de la source, sans en être trop près. Le banc se décrit par trois nombres sans dimension : taille de l'antenne contre longueur d'onde, distance contre longueur d'onde, distance aux murs contre distance à la source.",
+    "sys.title": "Le système décrit : un banc à 300 MHz",
+    "sys1.body": "Le générateur oscille à 300\u00a0MHz : λ = {l}. Ses deux fils mesurent ensemble 20\u00a0cm, <var>L</var>/λ = {Ll} : le dipôle est court : la lumière le parcourt en un cinquième de période, et les charges de tout le fil oscillent presque en phase. Le détecteur est à 2\u00a0m : <var>k</var><var>r</var> = {kr}, et les termes en 1/<var>r</var><sup>2</sup> et 1/<var>r</var><sup>3</sup> valent encore {p}\u00a0% et {p2}\u00a0% du champ rayonné. Un mur métallique à 3\u00a0m derrière le détecteur renvoie une onde qui semble venir d'une source image à 2 + 2 × 3 = 8\u00a0m : son amplitude atteint {echo}\u00a0% de l'onde directe. C'est pourquoi l'expérience ne suit (28.6a) qu'approximativement, assez pour en reconnaître les traits.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Les dipôles de Hertz",
+    "hist.intro": "La démonstration de cette leçon est, à peu de chose près, celle qui a prouvé l'existence des ondes de Maxwell.",
+    "hist.events": {
+      hertz1: { who: "Heinrich Hertz", what: "commence à Karlsruhe ses expériences sur les oscillations électriques rapides.", context: "Son émetteur est un dipôle : deux tiges de laiton terminées par des boules, séparées par un éclateur où jaillit une étincelle. Son détecteur est une boucle de fil interrompue, où une petite étincelle signale le champ." },
+      hertz2: { who: "Heinrich Hertz", what: "publie des expériences qui montrent des ondes électromagnétiques transversales, de vitesse finie, dans l'air.", context: "Il mesure leur longueur d'onde par des ondes stationnaires devant une plaque métallique, et montre qu'elles se réfléchissent et se réfractent comme la lumière." },
+      marconi: { who: "Guglielmo Marconi", what: "annonce avoir reçu le 12 décembre, à Signal Hill (Terre-Neuve), la lettre S en morse émise depuis Poldhu, en Cornouailles.", context: "L'antenne de réception était un fil tenu en l'air par un cerf-volant. Certains historiens doutent de cette première écoute ; deux mois plus tard, des signaux transatlantiques assez forts pour actionner un enregistreur morse sont reçus devant témoins." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      wifi: { name: "Antennes Wi-Fi", text: "À 2,4\u00a0GHz, la longueur d'onde vaut 12,5\u00a0cm, et les antennes verticales d'un point d'accès mesurent quelques centimètres. Comme le dipôle de cette leçon, elles rayonnent le plus à l'horizontale, autant dans toutes les directions autour d'elles, et presque rien droit au-dessus : on les pose verticales pour couvrir un étage." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      axe: { prompt: "Le détecteur est placé exactement au-dessus du générateur vertical, dans son axe. Que capte-t-il ?",
+        options: { a: "Un signal maximal, s'il est vertical.", b: "Un signal maximal, s'il est horizontal.", c: "Rien, quelle que soit son orientation.", d: "La moitié du signal de la position 1." },
+        hint: "Que voit-on de la charge quand on la regarde le long de son mouvement ?",
+        why: "Vue de l'axe, la charge vient vers le détecteur et s'en éloigne : son accélération est le long de la ligne de visée, sa projection est nulle, sin θ = 0." },
+      tourne: { prompt: "En position 1, à l'horizontale du générateur vertical, on tourne le détecteur de 90° pour le rendre horizontal. Que devient le signal ?",
+        options: { a: "Il disparaît : le champ y est vertical, perpendiculaire aux fils du détecteur.", b: "Il ne change pas : le détecteur capte le champ dans toutes les directions.", c: "Il double.", d: "Il est divisé par √2." },
+        why: "Le champ est dans le plan qui contient G et la ligne de visée, perpendiculaire à celle-ci : en position 1, vertical. Le détecteur ne mesure que la composante le long de ses fils, nulle quand il est horizontal." },
+      oblique: { prompt: "En position 2, à 45° de l'axe du générateur, comment orienter le détecteur pour un signal maximal, et que vaut-il ?",
+        options: { a: "Vertical, parallèle au générateur ; le même qu'en position 1.", b: "Horizontal ; 0,5 fois celui de la position 1.", c: "Le long de la ligne qui va de G à D ; le maximum possible.", d: "Perpendiculaire à la ligne qui va de G à D, dans le plan qui contient G ; environ 0,71 fois celui de la position 1." },
+        why: "Le champ est l'accélération projetée perpendiculairement à la ligne de visée : il est incliné, perpendiculaire à la ligne qui va de G à D, et vaut sin 45° ≈ 0,71 fois le champ à l'équateur." },
+      azimut: { prompt: "On fait le tour du générateur vertical, à la même hauteur et à la même distance. Comment varie le champ ?",
+        options: { a: "Il est maximal devant et derrière, nul sur les côtés.", b: "Il ne varie pas : le dipôle n'a pas de direction privilégiée autour de son axe.", c: "Il tourne avec le détecteur.", d: "Il s'annule tous les 90°." },
+        why: "Le problème est symétrique autour de l'axe du générateur : seul compte l'angle θ avec cet axe." },
+      court: { prompt: "Un générateur oscille à 100\u00a0MHz. Quelle longueur maximale de fil peut-on encore traiter, à peu près, comme un dipôle court ?",
+        options: { a: "Une trentaine de centimètres : nettement moins que λ = 3\u00a0m.", b: "3\u00a0m, une longueur d'onde.", c: "30\u00a0m, pour que le signal porte loin.", d: "N'importe quelle longueur : seule compte la fréquence." },
+        hint: "Comparez le fil à la distance que parcourt la lumière pendant une période.",
+        why: "Pendant une période de 10\u00a0ns, la lumière parcourt 3\u00a0m. Un fil de 30\u00a0cm en est le dixième : les charges de ses différentes parties bougent presque en phase, et on peut le traiter comme une seule charge oscillante." },
+      deuxfils: { prompt: "Pourquoi l'émetteur est-il fait de deux fils et d'un générateur ?",
+        options: { a: "Parce qu'il faut deux charges opposées pour qu'un champ rayonne.", b: "Parce que le second fil sert de détecteur.", c: "C'est seulement un moyen de faire accélérer des charges toutes ensemble vers le haut puis vers le bas, comme une seule charge.", d: "Pour que les rayonnements des deux fils s'annulent loin de la source." },
+        why: "Le générateur pompe les électrons de A vers B, puis de B vers A : dans les deux fils, les charges accélèrent dans le même sens au même moment. Leurs champs s'additionnent comme celui d'une seule charge qui oscille." },
+      murs: { prompt: "Le détecteur est à 2\u00a0m du générateur, un mur métallique 3\u00a0m derrière lui. Quelle est, à peu près, l'amplitude de l'onde réfléchie par le mur, comparée à l'onde directe ?",
+        options: { a: "Négligeable : un mur ne rayonne pas.", b: "Environ 25 % : la source image est à 8\u00a0m, et le champ décroît en 1/r.", c: "Environ 6 %, en 1/r².", d: "100 % : un mur métallique renvoie tout." },
+        hint: "Un mur conducteur plan agit comme un miroir : l'onde réfléchie semble venir d'une source symétrique.",
+        why: "La source image est à 2 + 2 × 3 = 8\u00a0m du détecteur : 2/8 = 25 % de l'onde directe. D'où le conseil de travailler près de la source, loin des murs." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. I, chap. 28, §28-3 (texte original en anglais). Notations SI. Hertz : IEEE Milestone « First Generation and Experimental Proof of Electromagnetic Waves, 1886-1888 » ; Wikipédia, « Heinrich Hertz ». Marconi : IEEE Milestones « Transmission of Transatlantic Radio Signals, 1901 » et « Reception of Transatlantic Radio Signals, 1901 ». Banc à 300\u00a0MHz et calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

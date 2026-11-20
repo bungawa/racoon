@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Refroidissement par désaimantation adiabatique</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-magnetisme-induction" data-i18n="monde.magnetisme-induction"></a><span class="aux">›</span><a href="/racoon/etape?id=paramagnetisme-rmn" data-i18n="etape.paramagnetisme-rmn"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/paramagnetisme-materiaux" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <ol>
+      <li data-i18n-html="s1.li1"></li>
+      <li data-i18n-html="s1.li2"></li>
+      <li data-i18n-html="s1.li3"></li>
+    </ol>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>S</mi><mo>=</mo><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mrow><mo>[</mo><mi data-i18n="eq.ln"></mi><mo>(</mo><mn>2</mn><mspace width="0.1em"/><mi data-i18n="eq.cosh"></mi><mi>u</mi><mo>)</mo><mo>−</mo><mi>u</mi><mspace width="0.1em"/><mi data-i18n="eq.tanh"></mi><mi>u</mi><mo>]</mo></mrow><mo>,</mo><mspace width="1em"/><mi>u</mi><mo>=</mo><mfrac><mrow><msub><mi>μ</mi><mi>z</mi></msub><mi>B</mi></mrow><mrow><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow></mfrac></math><span class="n">(35.18a)</span></div>
+    <p class="validite" data-i18n-html="val.35.18a"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>T</mi><mi>f</mi></msub><mo>=</mo><msub><mi>T</mi><mi>i</mi></msub><mfrac><msub><mi>B</mi><mi>f</mi></msub><msub><mi>B</mi><mi>i</mi></msub></mfrac></math><span class="n">(35.18b)</span></div>
+    <p class="validite" data-i18n-html="val.35.18b"></p>
+    <p data-i18n-html="s2.p3"></p>
+    <div class="eq"><math display="block"><msub><mi>T</mi><mi>f</mi></msub><mo>=</mo><msub><mi>T</mi><mi>i</mi></msub><msqrt><mfrac><mrow><msubsup><mi>B</mi><mi>f</mi><mn>2</mn></msubsup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow><mrow><msubsup><mi>B</mi><mi>i</mi><mn>2</mn></msubsup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></mfrac></msqrt></math><span class="n">(35.18c)</span></div>
+    <p class="validite" data-i18n-html="val.35.18c"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <p id="chaleur"></p>
+    <p id="nucleaire"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <figure>
+      <svg class="fig" id="cycle" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-label-2" data-i18n-html="fig.legend.zero"></span><span class="c-tint" data-i18n-html="fig.legend.bi"></span><span class="c-warn" data-i18n-html="fig.legend.bf"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="sj" data-i18n-html="fig.j"></label><output id="sjr" for="sj"></output></div>
+            <input id="sj" type="range" min="1" max="7" step="2" value="7"></div>
+          <div class="ctl"><div class="row"><label for="sti" data-i18n-html="fig.ti"></label><output id="stir" for="sti"></output></div>
+            <input id="sti" type="range" min="0.5" max="4" step="0.05" value="1.5"></div>
+          <div class="ctl"><div class="row"><label for="sbi" data-i18n-html="fig.bi"></label><output id="sbir" for="sbi"></output></div>
+            <input id="sbi" type="range" min="0.1" max="8" step="0.05" value="0.8"></div>
+          <div class="ctl"><div class="row"><label for="sbf" data-i18n-html="fig.bf"></label><output id="sbfr" for="sbf"></output></div>
+            <input id="sbf" type="range" min="0" max="0.5" step="0.005" value="0"></div>
+          <div class="ctl"><div class="row"><label for="sb" data-i18n-html="fig.b"></label><output id="sbr" for="sb"></output></div>
+            <input id="sb" type="range" min="-3" max="-0.5" step="0.05" value="-0.9"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="fig.k.tf"></span><span class="v" id="vt"></span><span class="f" id="ft"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig.k.ideal"></span><span class="v" id="vi"></span><span class="f" id="fi"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig.k.x"></span><span class="v" id="vx"></span><span class="f" id="fx"></span></div>
+          <div class="stat"><span class="k" data-i18n="fig.k.q"></span><span class="v" id="vq"></span><span class="f" id="fq"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/desaimantation-adiabatique.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/physique-fondamentale.js"></script>
+<script src="/racoon/lecons/champs-em.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/magnetisme-induction.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const M = MagInd, Cst = Constantes, KB = Cst.k_B, MUB = Cst.mu_B;
+/* The model salt of this page: spins of g = 2, a Debye lattice of 100 K with 20 lattice atoms per magnetic ion (assumed). */
+const RESEAU = { r: 20, thetaD: 100 };
+const tK = T => T >= 10 ? F.kelvin(T) : F.si(T, "K", { sig: 2 });
+
+/* ---------- le système décrit : le sel de Giauque et MacDougall ---------- */
+(() => {
+  const Ti = 1.5, Bi = 0.8, d = 0.5e-9;
+  const Sspin = M.entropieSpin(3.5, 2 * MUB * Bi / (KB * Ti)), Slat = RESEAU.r * M.entropieReseau(Ti, RESEAU.thetaD);
+  const b = Cst.mu0 * 7 * MUB / (4 * Math.PI * d * d * d);
+  $("sys1").innerHTML = t("sys1.body", { Ti: tK(Ti), Bi: F.si(Bi, "T", { sig: 1 }), xj: F.num(3.5 * 2 * MUB * Bi / (KB * Ti), 2),
+    S0: F.num(Math.log(8), 3), Si: F.num(Sspin, 3), r: F.num(100 * Slat / Sspin, 1), d: F.si(d, "m", { sig: 1 }), b: F.si(b, "T", { sig: 1 }),
+    bB: F.num(b / Bi, 1) });
+})();
+
+/* ---------- la chaleur dégagée, et l'étage nucléaire ---------- */
+(() => {
+  const d = M.desaimantation({ j: 3.5, g: 2, Bi: 0.8, Bf: 0, Ti: 1.5, b: 0.13 });
+  $("chaleur").innerHTML = t("chaleur.body", { Q: F.si(d.chaleur * Cst.N_A, "J·mol⁻¹", { sig: 2 }), Tf: tK(d.Tf) });
+  const gp = M.PARTICULES.proton.g, muN = Cst.e * Cst.hbar / (2 * Cst.m_p);
+  $("nucleaire").innerHTML = t("nucleaire.body", { xe: F.num(M.rapportThermique(2, 1, 2), 2), xp: F.sci(M.rapportThermique(gp, 1, 2, muN), 1),
+    xp2: F.num(M.rapportThermique(gp, 8, 0.01, muN), 2) });
+})();
+
+/* ---------- le cycle dans le diagramme entropie–température ---------- */
+(() => {
+  const svg = $("cycle"), sj = $("sj"), sti = $("sti"), sbi = $("sbi"), sbf = $("sbf"), sb = $("sb");
+  const lt = [-3, Math.log10(4)], n = 181;
+  function draw() {
+    const j = +sj.value / 2, Ti = +sti.value, Bi = +sbi.value, Bf = +sbf.value, b = Math.pow(10, +sb.value);
+    const o = Object.assign({ j, g: 2, b, Bi, Bf, Ti }, RESEAU), s = M.selSpins(o), d = M.desaimantation(o), Smax = Math.log(2 * j + 1);
+    svg.innerHTML = "";
+    const P = Plot.axes(svg, { fmt: F, w: 640, h: 300, x: { scale: "log", domain: [1e-3, 4], label: t("fig.ax.x") }, y: { domain: [0, 1.15 * Smax], label: t("fig.ax.y") } });
+    const curve = (B, cls) => { const pts = []; for (let k = 0; k < n; k++) { const T = Math.pow(10, lt[0] + (lt[1] - lt[0]) * k / (n - 1));
+      pts.push([P.x(T), P.y(Math.min(1.15 * Smax, s.S(B, T)))]); } Plot.el("path", { d: Plot.path(pts), class: cls }, svg); };
+    curve(0, "stroke thin c-label-2"); curve(Bi, "stroke bold c-tint"); curve(Bf, "stroke c-warn");
+    const A = [P.x(Ti), P.y(Math.min(1.15 * Smax, s.S(0, Ti)))], Bp = [P.x(Ti), P.y(d.Si)], Tf = Math.max(d.Tf, 1e-3), C = [P.x(Tf), P.y(d.Si)];
+    Plot.el("path", { d: Plot.path([A, Bp]), class: "stroke thin dash c-label" }, svg);
+    Plot.el("path", { d: Plot.path([Bp, C]), class: "stroke thin dash c-label" }, svg);
+    for (const p of [A, Bp, C]) Plot.el("circle", { cx: p[0], cy: p[1], r: 4, class: "fill c-tint" }, svg);
+    $("sjr").textContent = F.num(+sj.value, 1) + "/2";
+    $("stir").textContent = F.si(Ti, "K", { sig: 3 });
+    $("sbir").textContent = F.si(Bi, "T", { sig: 3 });
+    $("sbfr").textContent = Bf === 0 ? "0" : F.si(Bf, "T", { sig: 2 });
+    $("sbr").textContent = F.si(b, "T", { sig: 2 });
+    $("vt").textContent = d.Tf < 1e-6 ? t("fig.v.zero") : F.si(d.Tf, "K", { sig: 3 });
+    $("ft").innerHTML = t(d.Tf > 1.05 * d.interne ? "fig.f.reseau" : "fig.f.interne");
+    $("vi").textContent = F.si(d.interne, "K", { sig: 3 });
+    $("fi").innerHTML = t("fig.f.ideal");
+    $("vx").textContent = F.num(j * d.xi, 3);
+    $("fx").innerHTML = t(j * d.xi < 0.5 ? "fig.f.faible" : "fig.f.bon");
+    $("vq").textContent = F.si(d.chaleur * Cst.N_A, "J·mol⁻¹", { sig: 2 });
+    $("fq").innerHTML = t("fig.f.q");
+  }
+  sj.oninput = sti.oninput = sbi.oninput = sbf.oninput = sb.oninput = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["debye", 1926, "idea"], ["giauque", 1933, "experiment"], ["nobel", 1949, "idea"], ["kurti", 1956, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["xrism"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["rapport", "c"], ["brusque", "a"], ["depart", "d"], ["bain", "b"], ["plancher", "c"], ["nucleaire", "a"], ["memeBT", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 355 });
+})();
+</script>
+</body>
+</html>

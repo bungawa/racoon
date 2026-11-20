@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Développement du viriel</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-statistique" data-i18n="monde.statistique"></a><span class="aux">›</span><a href="/racoon/etape?id=gaz-reels" data-i18n="etape.gaz-reels"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-thermo" href="/racoon/atlas?piste=thermo" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/equation-de-van-der-waals" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi>Z</mi><mo>=</mo><mfrac><mrow><mi>P</mi><msub><mi>V</mi><mi>m</mi></msub></mrow><mrow><mi>R</mi><mi>T</mi></mrow></mfrac><mo>=</mo><mn>1</mn><mo>+</mo><mfrac><mrow><mi>B</mi><mo>(</mo><mi>T</mi><mo>)</mo></mrow><msub><mi>V</mi><mi>m</mi></msub></mfrac><mo>+</mo><mfrac><mrow><mi>C</mi><mo>(</mo><mi>T</mi><mo>)</mo></mrow><msubsup><mi>V</mi><mi>m</mi><mn>2</mn></msubsup></mfrac><mo>+</mo><mo>…</mo></math></div>
+    <p class="validite" data-i18n-html="val.serie"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><mi>B</mi><mo>(</mo><mi>T</mi><mo>)</mo><mo>=</mo><mo>−</mo><mn>2</mn><mi>π</mi><msub><mi>N</mi><mi>A</mi></msub><msubsup><mo>∫</mo><mn>0</mn><mi>∞</mi></msubsup><mrow><mo>(</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>u</mi><mo>(</mo><mi>r</mi><mo>)</mo><mo>/</mo><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow></msup><mo>−</mo><mn>1</mn><mo>)</mo></mrow><msup><mi>r</mi><mn>2</mn></msup><mspace width="0.2em"/><mi mathvariant="normal">d</mi><mi>r</mi></math></div>
+    <p class="validite" data-i18n-html="val.b"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>B</mi><mtext data-i18n="eq.vdw"></mtext></msub><mo>(</mo><mi>T</mi><mo>)</mo><mo>=</mo><mi>b</mi><mo>−</mo><mfrac><mi>a</mi><mrow><mi>R</mi><mi>T</mi></mrow></mfrac><mo>,</mo><mspace width="1.5em"/><msub><mi>C</mi><mtext data-i18n="eq.vdw"></mtext></msub><mo>=</mo><msup><mi>b</mi><mn>2</mn></msup></math></div>
+    <p class="validite" data-i18n-html="val.vdw"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="bt" role="img" data-i18n-attr="aria-label:bt.aria"></svg>
+      <div class="legend"><span class="c-ok" data-i18n="bt.leg.mes"></span><span class="c-tint" data-i18n="bt.leg.lj"></span><span class="c-warn" data-i18n="bt.leg.vdw"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <label class="field"><span data-i18n="bt.gaz"></span>
+            <select id="gaz">
+              <option value="Ar" data-i18n="gaz.Ar"></option>
+              <option value="N2" data-i18n="gaz.N2"></option>
+              <option value="CO2" data-i18n="gaz.CO2"></option>
+            </select></label>
+          <div class="ctl"><div class="row"><label for="tk" data-i18n="bt.t"></label><output id="tkv" for="tk"></output></div>
+            <input id="tk" type="range" min="0" max="100" step="1" value="50"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="bt.k.mes"></span><span class="v" id="vmes"></span><span class="f" data-i18n="bt.f.unite"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="bt.k.lj"></span><span class="v" id="vlj"></span><span class="f" data-i18n="bt.f.unite"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="bt.k.vdw"></span><span class="v" id="vvdw"></span><span class="f" data-i18n="bt.f.unite"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="bt.k.eps"></span><span class="v" id="veps"></span><span class="f" data-i18n="bt.f.eps"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="bt.k.sig"></span><span class="v" id="vsig"></span><span class="f" id="frms"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="bt.k.tb"></span><span class="v" id="vtb"></span><span class="f" id="ftb"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="bt.caption"></figcaption>
+    </figure>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/developpement-du-viriel.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/statistique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const S = Statistique, R = Constantes.R, kB = Constantes.k_B;
+
+/* ---------- B(T) : mesure, Lennard-Jones ajusté, Van der Waals ---------- */
+(() => {
+  const svg = $("bt"), sg = $("gaz"), st = $("tk"), fits = {};
+  const fit = g => fits[g] || (fits[g] = S.ajusteLJ(g));             // about 0,15 s per gas, once
+  const cm = x => x * 1e6;                                           // m³·mol⁻¹ → cm³·mol⁻¹ for the axis and the readings
+  function draw() {
+    const g = sg.value, tab = S.B_MES[g], T0 = tab[0][0], T1 = tab[tab.length - 1][0], f = fit(g), G = S.vdwCritique(g);
+    const T = T0 * Math.pow(T1 / T0, +st.value / 100), p = { eps: f.eps, sigma: f.sigma };
+    const lo = Math.min(-260, Math.floor(cm(S.bVdw(G, T0)) / 50) * 50), hi = 60;
+    svg.innerHTML = "";
+    const o = Plot.axes(svg, { fmt: F, w: 640, h: 320, pad: { b: 44, l: 56 },
+      x: { domain: [0, 1100], label: t("bt.x") }, y: { domain: [lo, hi], label: t("bt.y") } });
+    Plot.el("line", { x1: o.x(0), x2: o.x(1100), y1: o.y(0), y2: o.y(0), class: "stroke thin c-label-2" }, o.g);
+    const lj = [], vw = [];
+    for (let i = 0; i <= 120; i++) {
+      const x = 0.8 * T0 + (1100 - 0.8 * T0) * i / 120, bl = cm(S.bLJ(x, p)), bv = cm(S.bVdw(G, x));
+      if (bl >= lo) lj.push([o.x(x), o.y(bl)]); if (bv >= lo) vw.push([o.x(x), o.y(bv)]);
+    }
+    Plot.el("path", { d: Plot.path(vw), class: "stroke dash c-warn" }, o.g);
+    Plot.el("path", { d: Plot.path(lj), class: "stroke c-tint" }, o.g);
+    tab.forEach(([x, b]) => Plot.el("circle", { cx: o.x(x), cy: o.y(b), r: 4, class: "fill c-ok" }, o.g));
+    Plot.el("line", { x1: o.x(T), x2: o.x(T), y1: o.y(lo), y2: o.y(hi), class: "stroke thin c-label" }, o.g);
+    const bm = S.bMesure(g, T), bl = S.bLJ(T, p), bv = S.bVdw(G, T), TB = S.boyle(g), TBv = S.boyleVdw(G);
+    $("tkv").innerHTML = F.kelvin(T);
+    $("vmes").textContent = F.num(cm(bm), 3);
+    $("vlj").textContent = F.num(cm(bl), 3);
+    $("vvdw").textContent = F.num(cm(bv), 3);
+    $("veps").innerHTML = F.kelvin(f.eps / kB);
+    $("vsig").textContent = F.qty(F.num(f.sigma * 1e9, 3), "nm");
+    $("frms").textContent = t("bt.f.rms", { e: F.num(cm(f.rms), 2) });
+    $("vtb").innerHTML = F.kelvin(TB);
+    $("ftb").textContent = t("bt.f.tb", { tv: F.qty(F.num(TBv, 3), "K") });
+    $("sys").innerHTML = t("sys.inner", { gaz: t("gaz." + g), T: F.kelvin(T), ekt: F.fix(f.eps / (kB * T), 2),
+      bp: F.sci(bm * 101325 / (R * T), 2), avis: t(T < TB ? "sys.attraction" : "sys.repulsion") });
+  }
+  sg.onchange = st.oninput = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["onnes", 1901, "idea"], ["jones", 1924, "idea"], ["cohesion", 1931, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["gaz"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["paires", "c"], ["signe", "a"], ["vdw", "d"], ["ajuste", "b"], ["troncature", "c"], ["cdeux", "a"], ["boyle", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 4103 });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["battement", "a"],
+  ["lampes", "b"],
+  ["hasard", "c"],
+  ["couleur", "d"],
+  ["thomson", "a"],
+  ["montagne", "b"],
+  ["cercle", "c"],
+  ["polariseur", "d"]
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["plaques", "a"],
+  ["ecart", "b"],
+  ["bords", "c"],
+  ["loin", "d"],
+  ["vis", "a"],
+  ["paschen", "b"],
+  ["tunnel", "c"],
+  ["rayon", "d"]
+ ]
+}

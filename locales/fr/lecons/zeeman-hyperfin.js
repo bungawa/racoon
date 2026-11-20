@@ -1,0 +1,98 @@
+/* Leçon « L'effet Zeeman hyperfin » (Feynman III.12.4) : textes en français.
+   Une autre langue = locales/<langue>/lecons/zeeman-hyperfin.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "L'effet Zeeman hyperfin",
+    "crumb.jour": "L'effet Zeeman hyperfin",
+    "h1": "L'effet Zeeman hyperfin",
+    "lede": "Plongeons l'atome d'hydrogène dans un champ magnétique. Ses deux aimants, l'électron et le proton, veulent chacun s'orienter, alors que leur couplage les veut opposés. Qui gagne ? Cela dépend du champ, et la transition se fait autour de cinq centièmes de tesla.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : les niveaux d'énergie hyperfins",
+    "eq.I": "I",
+    "eq.II": "II",
+    "eq.III": "III",
+    "eq.IV": "IV",
+
+    "s1.sec": "1 · Décrire le système",
+    "s1.h2": "Ajouter le champ au hamiltonien",
+    "s1.p1": "Le système : l'atome d'hydrogène fondamental, au repos, dans un champ <b>B</b> uniforme et constant le long de <var>z</var>. Au couplage A σ<sub>e</sub>·σ<sub>p</sub> de « Le hamiltonien de l'état fondamental de l'hydrogène » s'ajoute l'énergie de chaque moment dans le champ, comme pour un spin seul dans « Les matrices de spin de Pauli ». μ<sub>e</sub> et μ<sub>p</sub> sont les moments le long des spins ; celui de l'électron est négatif.",
+    "val.12.27": "Approximation : état 1s seul ; on néglige l'effet diamagnétique du champ sur le mouvement orbital de l'électron, et l'on suppose <b>B</b> uniforme sur l'atome. <var>A</var> est pris indépendant du champ.",
+    "sys.title": "Les deux aimants",
+    "sys1.body": "|μ<sub>e</sub>| = {me}, μ<sub>p</sub> = {mp} : l'électron est {r} fois plus magnétique que le proton. Le champ l'emporte sur le couplage quand |μ<sub>e</sub> \u2212 μ<sub>p</sub>|<var>B</var> dépasse 2<var>A</var>, soit au-delà de <var>B</var><sub>0</sub> = {b0}. Le champ terrestre, environ 5 × 10<sup>\u22125</sup>\u00a0T, n'en est que {ba} : dans l'espace comme au laboratoire sans aimant, les niveaux restent ceux sans champ.",
+
+    "s2.sec": "2 · Les quatre niveaux",
+    "s2.h2": "Deux états restent simples, deux se mélangent",
+    "s2.p1": "Le champ selon <var>z</var> ne change pas les états de base, il ne fait que décaler leurs énergies. |++⟩ et |\u2212\u2212⟩ restent donc des états propres :",
+    "val.12.31": "Approximation : celle de (12.27). Exacte dans ce modèle à tout champ : |++⟩ reste état propre.",
+    "val.12.32": "Approximation : la même ; |\u2212\u2212⟩ reste état propre.",
+    "s2.p2": "Dans le bloc de |+\u2212⟩ et |\u2212+⟩, le champ ajoute ∓(μ<sub>e</sub> \u2212 μ<sub>p</sub>)<var>B</var> sur la diagonale, alors que le couplage 2<var>A</var> reste. C'est un système à deux états, résolu par la formule de « La résolution des équations à deux états » :",
+    "val.12.35": "Approximation : celle de (12.27). Exacte dans ce modèle : les racines d'une matrice 2 × 2, que Breit et Rabi ont écrites en 1931 pour tout atome à un électron de valence.",
+    "s2.p3": "En posant",
+    "val.12.36": "Exacte : des notations. μ et μ′ sont positifs, car μ<sub>e</sub> est négatif et bien plus grand que μ<sub>p</sub>.",
+    "val.12.38": "Approximation : pour I et II, exacte à tout champ. Pour III et IV, valable en champ fort, μ′<var>B</var> ≫ 2<var>A</var> ; l'écart à (12.35) vaut environ <var>A</var>(2<var>A</var>/μ′<var>B</var>), soit 10\u00a0% de <var>A</var> pour <var>B</var> = 10<var>B</var><sub>0</sub>.",
+
+    "s3.sec": "3 · Le diagramme",
+    "s3.h2": "Les niveaux en fonction du champ",
+    "s3.p1": "Faites croître le champ. Les énergies sont en unités de <var>A</var>, l'écart hyperfin sans champ étant 4<var>A</var>.",
+    "fig.aria": "Les quatre niveaux d'énergie de l'atome d'hydrogène fondamental en fonction du champ magnétique, en unités de A",
+    "fig.legend.I": "I, |++⟩",
+    "fig.legend.II": "II, |\u2212\u2212⟩",
+    "fig.legend.III": "III",
+    "fig.legend.IV": "IV",
+    "fig.B": "Champ magnétique B",
+    "fig.x": "B (T)",
+    "fig.y": "E / A",
+    "fig.k.e": "Énergies / <var>A</var>",
+    "fig.f.e": "I ; II ; III ; IV",
+    "fig.k.f1": "Fréquence III → IV",
+    "fig.f.f1": "1,42 GHz sans champ, varie en B²",
+    "fig.k.f2": "Fréquence I → IV",
+    "fig.f.f2": "varie d'abord linéairement",
+    "fig.caption": "Le pointillé marque <var>B</var><sub>0</sub> = 2<var>A</var>/μ′. En dessous, les niveaux s'écartent peu de ceux sans champ : I et II linéairement, III et IV quadratiquement. Au-dessus, ils se rangent en deux paires selon l'orientation du seul spin de l'électron, à ±μ′<var>B</var> environ, et le couplage ne fait plus que les séparer de 2<var>A</var>.",
+    "s3.p2": "La transition III ↔ IV, celle de la raie à 21 cm sans champ, ne bouge qu'au second ordre en <var>B</var> : à 10<sup>\u22125</sup>\u00a0T, sa fréquence change d'environ 28\u00a0Hz sur 1,42\u00a0GHz, contre 140\u00a0kHz pour la transition I ↔ IV. C'est pourquoi les horloges à hydrogène l'utilisent. La transition I ↔ IV, au contraire, bouge au premier ordre : elle mesure le champ.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Des raies qui se dédoublent",
+    "hist.intro": "L'effet d'un champ magnétique sur les raies a été vu sur la lumière visible, longtemps avant les niveaux hyperfins.",
+    "hist.events": {
+      zeeman: { who: "Pieter Zeeman", what: "observe l'élargissement, puis le dédoublement, des raies d'une flamme de sodium placée dans un champ magnétique.", context: "Prix Nobel 1902, partagé avec Hendrik Lorentz, qui en donne l'explication classique." },
+      breit: { who: "Gregory Breit et Isidor Rabi", what: "publient la formule des niveaux hyperfins d'un atome à un électron de valence dans un champ quelconque, de faible à fort.", context: "Physical Review, article « Measurement of nuclear spin ». Pour l'hydrogène, elle se réduit à (12.31), (12.32) et (12.35)." },
+      rabi: { who: "Isidor Rabi et son équipe", what: "mesurent par résonance magnétique sur un jet les écarts entre ces niveaux, et en déduisent les moments des noyaux.", context: "Le champ appliqué sépare les niveaux comme sur ce diagramme ; on fait basculer les atomes de l'un à l'autre." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      maser: { name: "Transition d'horloge", text: "Les horloges atomiques à hydrogène, comme celles à césium, utilisent la transition entre deux états de <var>m</var> = 0, dont la fréquence ne dépend du champ qu'au second ordre : un champ résiduel mal connu ne la décale presque pas." },
+      magneto: { name: "Magnétomètres atomiques", text: "À l'inverse, les magnétomètres atomiques mesurent un champ par une transition qui varie au premier ordre, comme I ↔ IV : la fréquence lue donne <var>B</var> par des constantes atomiques connues." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      lineaire: { prompt: "Pourquoi les niveaux I et II varient-ils linéairement avec B à tout champ ?",
+        options: { a: "Parce que le champ est faible.", b: "Parce que |++⟩ et |\u2212\u2212⟩ restent des états propres : le champ selon z ne les couple à rien, il ne fait que décaler leur énergie de ∓(μe + μp)B.", c: "Parce qu'ils ont l'énergie A.", d: "Ils ne varient pas linéairement." },
+        why: "Le terme de champ est diagonal dans la base selon z ; le couplage A σe·σp ne relie |++⟩ et |\u2212\u2212⟩ à aucun autre état. Leur énergie est donc exactement A ∓ (μe + μp)B." },
+      quadra: { prompt: "En champ faible, de combien le niveau III est-il déplacé ?",
+        options: { a: "De μ′B, au premier ordre.", b: "Pas du tout.", c: "De (μ′B)²/4A environ : au second ordre, car le champ mélange III avec IV, 4A plus bas.", d: "De 2A." },
+        hint: "Développez √(1 + x) ≈ 1 + x/2 dans (12.35).",
+        why: "E_III = A{\u22121 + 2√(1 + μ′²B²/4A²)} ≈ A + μ′²B²/4A : un déplacement quadratique. C'est l'effet d'un couplage faible entre deux états séparés : ils se repoussent au second ordre." },
+      fort: { prompt: "En champ fort, B ≫ B₀, à quoi ressemblent les états III et IV ?",
+        options: { a: "À |+\u2212⟩ et |\u2212+⟩ : le champ impose la direction du spin de l'électron, et le couplage ne suffit plus à les mélanger.", b: "Au triplet et au singulet.", c: "À |++⟩ et |\u2212\u2212⟩.", d: "À des états où aucun spin n'a de direction." },
+        why: "Quand μ′B ≫ 2A, les termes diagonaux dominent : les états propres tendent vers les états de base |+\u2212⟩ et |\u2212+⟩, et les énergies vers \u2212A ± μ′B." },
+      b0: { prompt: "Que vaut, en ordre de grandeur, le champ B₀ = 2A/μ′ où l'on passe du régime faible au régime fort ?",
+        options: { a: "1 T.", b: "10⁻⁵ T, le champ terrestre.", c: "10 T.", d: "Environ 0,05 T : 2A ≈ 4,7 × 10⁻²⁵ J divisé par μ′ ≈ 9,3 × 10⁻²⁴ J·T⁻¹." },
+        why: "2A/μ′ = 4,7 × 10⁻²⁵ / 9,3 × 10⁻²⁴ ≈ 0,05 T. C'est le champ d'un petit aimant permanent, pas celui de la Terre." },
+      electron: { prompt: "Pourquoi, en champ fort, les niveaux se rangent-ils en deux paires très écartées et non en quatre niveaux également espacés ?",
+        options: { a: "Parce que le proton n'a pas de moment.", b: "Parce que le moment de l'électron est environ 660 fois celui du proton : l'orientation du spin de l'électron fixe le gros de l'énergie, celle du proton ne la change que peu.", c: "Parce que A est grand.", d: "Parce que les quatre états ont la même énergie." },
+        why: "Les deux paires sont à ±μ′B ≈ ±|μe|B ; dans chaque paire, l'orientation du proton et le couplage séparent les niveaux de quantités de l'ordre de A et μpB, bien plus petites." },
+      horloge: { prompt: "Pourquoi une horloge atomique à hydrogène utilise-t-elle la transition III ↔ IV plutôt que I ↔ IV ?",
+        options: { a: "Parce que sa fréquence ne dépend du champ qu'au second ordre, et qu'un petit champ résiduel la décale à peine.", b: "Parce qu'elle est plus intense.", c: "Parce que I n'existe pas en champ nul.", d: "Parce qu'elle a une fréquence plus haute." },
+        why: "En champ faible, E_III \u2212 E_IV varie en B² ; E_I \u2212 E_IV varie en B. Pour une horloge, on veut une fréquence insensible au champ ; pour un magnétomètre, l'inverse." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 12, §12-4 (texte original en anglais). Notations SI. Moments de l'électron (facteur <var>g</var>) et du proton : valeurs CODATA 2022 (pour le proton, citée par l'article « Proton magnetic moment » de Wikipédia en anglais). Zeeman, Breit et Rabi : article « Zeeman effect » de Wikipédia en anglais ; Rabi 1937 : article « Isidor Isaac Rabi ». Calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else (root.LOCALES = root.LOCALES || {}).fr = Object.assign((root.LOCALES || {}).fr || {}, T);
+})(typeof self !== "undefined" ? self : this);

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le tenseur d'inertie</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .mat { overflow-x: auto; text-align: center; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-solide" data-i18n="monde.solide"></a><span class="aux">›</span><a href="/racoon/etape?id=tenseurs-1" data-i18n="etape.tenseurs-1"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-solide" href="/racoon/atlas?piste=solide" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/ellipsoide-d-energie" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>j</mi><mi>i</mi></msub><mo>=</mo><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>σ</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><msub><mi>E</mi><mi>j</mi></msub></math></div>
+    <p class="validite" data-i18n-html="val.31.15a"></p>
+    <div class="box def"><b data-i18n="s1.sys.title"></b>
+      <p data-i18n-html="s1.sys.body"></p>
+    </div>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>L</mi><mi>i</mi></msub><mo>=</mo><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>I</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><msub><mi>ω</mi><mi>j</mi></msub></math><span class="n">(31.21)</span></div>
+    <p class="validite" data-i18n-html="val.31.21"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="eq"><math display="block"><msub><mi>E</mi><mi mathvariant="normal">c</mi></msub><mo>=</mo><munder><mo>∑</mo><mtext data-i18n="eq.points"></mtext></munder><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>m</mi><msup><mrow><mo stretchy="false">(</mo><mi mathvariant="bold">ω</mi><mo>∧</mo><mi mathvariant="bold">r</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><munder><mo>∑</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></munder><msub><mi>I</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><msub><mi>ω</mi><mi>i</mi></msub><msub><mi>ω</mi><mi>j</mi></msub></math><span class="n">(31.17)</span></div>
+    <p class="validite" data-i18n-html="val.31.17"></p>
+    <p data-i18n-html="s1.p4"></p>
+    <div class="eq"><math display="block"><msub><mi>I</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><munder><mo>∑</mo><mtext data-i18n="eq.points"></mtext></munder><mi>m</mi><mspace width="0.1em"/><mo stretchy="false">(</mo><msup><mi>r</mi><mn>2</mn></msup><msub><mi>δ</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>−</mo><msub><mi>r</mi><mi>i</mi></msub><msub><mi>r</mi><mi>j</mi></msub><mo stretchy="false">)</mo></math><span class="n">(31.20)</span></div>
+    <p class="validite" data-i18n-html="val.31.20"></p>
+    <p data-i18n-html="s1.p5"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>I</mi><mi>G</mi></msub><mo>=</mo><mfrac><mi>m</mi><mn>12</mn></mfrac><mrow><mo>(</mo><mtable><mtr><mtd><msup><mi>b</mi><mn>2</mn></msup><mo>+</mo><msup><mi>c</mi><mn>2</mn></msup></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><msup><mi>c</mi><mn>2</mn></msup><mo>+</mo><msup><mi>a</mi><mn>2</mn></msup></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mtd></mtr></mtable><mo>)</mo></mrow></math><span class="n">(31.20a)</span></div>
+    <p class="validite" data-i18n-html="val.31.21a"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>I</mi><mrow><mi>O</mi><mo>,</mo><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><msub><mi>I</mi><mrow><mi>G</mi><mo>,</mo><mi>i</mi><mi>j</mi></mrow></msub><mo>+</mo><mi>m</mi><mspace width="0.1em"/><mo stretchy="false">(</mo><msup><mi>d</mi><mn>2</mn></msup><msub><mi>δ</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>−</mo><msub><mi>d</mi><mi>i</mi></msub><msub><mi>d</mi><mi>j</mi></msub><mo stretchy="false">)</mo></math><span class="n">(31.20b)</span></div>
+    <p class="validite" data-i18n-html="val.31.21b"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure>
+      <div class="stage"><canvas id="box"></canvas><div class="overlay" id="boxread"></div></div>
+      <div class="legend"><span class="c-tint" data-i18n="bx.legend.w"></span><span class="c-warn" data-i18n="bx.legend.L"></span><span class="c-label-2" data-i18n="bx.legend.axes"></span></div>
+      <div class="mat" id="mat"></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><span data-i18n="bx.solide"></span></div>
+            <div class="seg" role="group" data-i18n-attr="aria-label:bx.solide">
+              <button type="button" id="s-brique" aria-pressed="true" data-i18n="bx.s.brique"></button>
+              <button type="button" id="s-cube" aria-pressed="false" data-i18n="bx.s.cube"></button>
+              <button type="button" id="s-plaque" aria-pressed="false" data-i18n="bx.s.plaque"></button>
+            </div></div>
+          <div class="ctl"><div class="row"><span data-i18n="bx.pivot"></span></div>
+            <div class="seg" role="group" data-i18n-attr="aria-label:bx.pivot">
+              <button type="button" id="p-centre" aria-pressed="true" data-i18n="bx.p.centre"></button>
+              <button type="button" id="p-coin" aria-pressed="false" data-i18n="bx.p.coin"></button>
+            </div></div>
+        </div>
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="wt" data-i18n="bx.wt"></label><output id="wtv" for="wt"></output></div>
+            <input id="wt" type="range" min="0" max="180" step="any" value="30"></div>
+          <div class="ctl"><div class="row"><label for="wp" data-i18n="bx.wp"></label><output id="wpv" for="wp"></output></div>
+            <input id="wp" type="range" min="-180" max="180" step="any" value="0"></div>
+        </div>
+        <div class="controls"><span data-i18n="bx.aligner"></span>
+          <button class="btn tinted" type="button" id="al-0" data-i18n="bx.al.1"></button>
+          <button class="btn tinted" type="button" id="al-1" data-i18n="bx.al.2"></button>
+          <button class="btn tinted" type="button" id="al-2" data-i18n="bx.al.3"></button>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="bx.k.propres"></span><span class="v" id="vprop"></span><span class="f" data-i18n="bx.f.propres"></span></div>
+          <div class="stat"><span class="k" data-i18n="bx.k.angle"></span><span class="v" id="vang"></span><span class="f" data-i18n="bx.f.angle"></span></div>
+          <div class="stat"><span class="k" data-i18n="bx.k.ec"></span><span class="v" id="vec"></span><span class="f" data-i18n="bx.f.ec"></span></div>
+          <div class="stat"><span class="k" data-i18n="bx.k.couple"></span><span class="v" id="vcouple"></span><span class="f" data-i18n="bx.f.couple"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="bx.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><mi mathvariant="bold">Γ</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">d</mi><mi mathvariant="bold">L</mi></mrow><mrow><mi mathvariant="normal">d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi mathvariant="bold">ω</mi><mo>∧</mo><mi mathvariant="bold">L</mi></math><span class="n">(31.21a)</span></div>
+    <p class="validite" data-i18n-html="val.31.21c"></p>
+    <p data-i18n-html="s3.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/tenseur-d-inertie.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const deg = Math.PI / 180, T = Tenseurs;
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const onTheme = f => { f(); matchMedia("(prefers-color-scheme: dark)").addEventListener("change", f); new MutationObserver(f).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] }); };
+
+/* ---------- un pavé d'acier qui tourne autour d'un axe imposé ---------- */
+(() => {
+  const RHO = 7850, W = 10;                                                 // kg·m⁻³, rad·s⁻¹
+  const SOLIDS = { brique: [0.20, 0.10, 0.05], cube: [0.10, 0.10, 0.10], plaque: [0.20, 0.20, 0.02] };   // edges a, b, c along x, y, z (m)
+  let solid = "brique", pivot = "centre", view = null;
+  const fmt = x => (Math.abs(x) < 5e-7 ? "0" : (x < 0 ? F.MINUS : "") + F.fix(Math.abs(x) * 1e3, 2));
+  const mat = M => `<math display="block"><msub><mi>I</mi><mi>O</mi></msub><mo>=</mo><mrow><mo>(</mo><mtable>${M.map(r => `<mtr>${r.map(x => `<mtd><mn>${fmt(x)}</mn></mtd>`).join("")}</mtr>`).join("")}</mtable><mo>)</mo></mrow><mo>×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup><mspace width="0.3em"/><mtext>${t("bx.unite")}</mtext></math>`;
+
+  function state() {
+    const [a, b, c] = SOLIDS[solid], m = RHO * a * b * c;
+    const IG = T.inertiePave(m, a, b, c), d = pivot === "centre" ? [0, 0, 0] : [a / 2, b / 2, c / 2];   // G seen from the pivot O
+    const IO = T.huygens(IG, m, d);
+    const th = +$("wt").value * deg, ph = +$("wp").value * deg;
+    const w = [Math.sin(th) * Math.cos(ph), Math.sin(th) * Math.sin(ph), Math.cos(th)].map(x => x * W);
+    const L = T.appliquer(IO, w);
+    return { a, b, c, m, d, IO, w, L, p: T.propres(IO) };
+  }
+  function upd() {
+    Object.keys(SOLIDS).forEach(s => $("s-" + s).setAttribute("aria-pressed", String(s === solid)));
+    ["centre", "coin"].forEach(p => $("p-" + p).setAttribute("aria-pressed", String(p === pivot)));
+    const s = state();
+    $("wtv").textContent = F.fix(+$("wt").value, 1) + "°";
+    $("wpv").textContent = (+$("wp").value < 0 ? F.MINUS : "") + F.fix(Math.abs(+$("wp").value), 1) + "°";
+    $("mat").innerHTML = mat(s.IO);
+    $("vprop").textContent = s.p.valeurs.map(x => F.fix(x * 1e3, 2)).join(" ; ");
+    $("vang").textContent = F.fix(T.angle(s.w, s.L) / deg, 1) + "°";
+    $("vec").textContent = F.si(T.energieRotation(s.IO, s.w), "J", { sig: 3 });
+    const G = Math.hypot(...T.vectoriel(s.w, s.L));
+    $("vcouple").textContent = G < 1e-9 ? F.qty("0", "N·m") : F.qty(F.num(G, 3), "N·m");
+    if (view) view(s);
+  }
+  Object.keys(SOLIDS).forEach(s => $("s-" + s).onclick = () => { solid = s; upd(); });
+  ["centre", "coin"].forEach(p => $("p-" + p).onclick = () => { pivot = p; upd(); });
+  [0, 1, 2].forEach(k => $("al-" + k).onclick = () => {
+    let u = state().p.axes[k]; if (u[2] < 0) u = u.map(x => -x);            // the same axis, pointing up
+    $("wt").value = Math.acos(Math.max(-1, Math.min(1, u[2]))) / deg;
+    $("wp").value = Math.atan2(u[1], u[0]) / deg;
+    upd();
+  });
+  $("wt").oninput = $("wp").oninput = upd;
+
+  const canvas = $("box"), read = $("boxread");
+  if (!self.THREE) { read.textContent = t("bx.offline"); upd(); return; }
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(35, 4 / 3, 0.01, 10);
+  cam.up.set(0, 0, 1); cam.position.set(0.55, 0.42, 0.35);
+  const ctl = new THREE.OrbitControls(cam, canvas); ctl.enableDamping = true;
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x445566, 0.9));
+  const sun = new THREE.DirectionalLight(0xffffff, 0.6); sun.position.set(1, 0.6, 1.4); scene.add(sun);
+  const body = new THREE.Group(); scene.add(body);                          // turns about ω; its origin is the pivot O
+  const boxMat = new THREE.MeshStandardMaterial({ roughness: 0.45, metalness: 0.3, transparent: true, opacity: 0.85 });
+  const box = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), boxMat); body.add(box);
+  const edges = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1, 1, 1)), new THREE.LineBasicMaterial()); box.add(edges);
+  const axMat = new THREE.LineBasicMaterial({ transparent: true, opacity: 0.7 });
+  const principal = new THREE.LineSegments(new THREE.BufferGeometry(), axMat); body.add(principal);
+  const arrW = new THREE.ArrowHelper(new THREE.Vector3(0, 0, 1), new THREE.Vector3(), 0.25, 0x007aff, 0.03, 0.018);
+  const arrL = new THREE.ArrowHelper(new THREE.Vector3(0, 0, 1), new THREE.Vector3(), 0.25, 0xff9500, 0.03, 0.018);
+  scene.add(arrW, arrL);
+  const axisLine = new THREE.Line(new THREE.BufferGeometry(), new THREE.LineDashedMaterial({ dashSize: 0.01, gapSize: 0.008 })); scene.add(axisLine);
+  onTheme(() => { boxMat.color.set(css("--t-solide")); edges.material.color.set(css("--label").slice(0, 7)); axMat.color.set(css("--label").slice(0, 7));
+    axisLine.material.color.set(css("--tint")); arrW.setColor(new THREE.Color(css("--tint"))); arrL.setColor(new THREE.Color(css("--warn"))); });
+  let S = null, phase = 0, Lmax = 1;
+  const wHat = new THREE.Vector3(), q = new THREE.Quaternion();
+  view = s => {
+    S = s;
+    box.scale.set(s.a, s.b, s.c); box.position.set(...s.d);
+    const pts = []; s.p.axes.forEach(u => { const v = new THREE.Vector3(...u).multiplyScalar(0.16); pts.push(v.clone().negate(), v); });
+    principal.geometry.setFromPoints(pts);
+    wHat.set(...s.w).normalize();
+    axisLine.geometry.setFromPoints([wHat.clone().multiplyScalar(-0.3), wHat.clone().multiplyScalar(0.3)]); axisLine.computeLineDistances();
+    arrW.setDirection(wHat); arrW.setLength(0.25, 0.03, 0.018);
+    Lmax = Math.max(...s.p.valeurs) * 10;
+    read.textContent = t("bx.read", { m: F.si(s.m, "kg", { sig: 3 }) });
+  };
+  function resize() { const r = canvas.getBoundingClientRect(); renderer.setSize(r.width, r.height, false); cam.aspect = r.width / r.height; cam.updateProjectionMatrix(); }
+  new ResizeObserver(resize).observe(canvas); resize();
+  let visible = true, last = performance.now(); new IntersectionObserver(e => visible = e[0].isIntersecting).observe(canvas);
+  (function tick(now) {
+    requestAnimationFrame(tick);
+    const dt = Math.min(0.05, ((now || last) - last) / 1000); last = now || last;
+    if (!visible || !S) return;
+    if (!reduce) phase += dt * 0.8;                                          // shown slowed down: 0,8 rad·s⁻¹ instead of 10
+    q.setFromAxisAngle(wHat, phase); body.quaternion.copy(q);
+    /* L in the lab: the body turned by the phase carries its tensor, L = Q I Qᵀ ω (it sweeps a cone about ω) */
+    const L = new THREE.Vector3(...S.L).applyQuaternion(q);
+    arrL.setDirection(L.clone().normalize()); arrL.setLength(0.25 * L.length() / Lmax, 0.03, 0.018);
+    ctl.update(); renderer.render(scene, cam);
+  })();
+  upd();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["huygens", 1673, "idea"], ["euler", 1765, "idea"], ["poinsot", 1834, "idea"], ["explorer", 1958, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["roue", "satellite", "cao"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["plus", "a"], ["parallele", "c"], ["energie", "b"], ["cube", "d"], ["coin", "a"], ["roue", "b"], ["explorer", "d"], ["haltere", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 314 });
+})();
+</script>
+</body>
+</html>

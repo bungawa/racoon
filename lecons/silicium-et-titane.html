@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Élaboration du silicium et du titane</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-solutions" data-i18n="monde.chim-solutions"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-ellingham" data-i18n="etape.chim-ellingham"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/diagrammes-d-ellingham" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq" data-i18n-html="eq.carbo"></div>
+    <p class="validite" data-i18n-html="val.carbo"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq" data-i18n-html="eq.si"></div>
+    <p class="validite" data-i18n-html="val.si"></p>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq" data-i18n-html="eq.carbochlor"></div>
+    <p class="validite" data-i18n-html="val.carbochlor"></p>
+    <div class="eq" data-i18n-html="eq.kroll"></div>
+    <p class="validite" data-i18n-html="val.kroll"></p>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <figure class="chart">
+      <div class="panel">
+        <div class="seg" role="group" id="metal" data-i18n-attr="aria-label:fig.metal">
+          <button type="button" data-m="si" data-i18n="fig.si"></button>
+          <button type="button" data-m="ti" data-i18n="fig.ti"></button>
+        </div>
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="temp" data-i18n="fig.T"></label><output id="tempv" for="temp"></output></div>
+            <input id="temp" type="range" min="800" max="2400" step="10" value="1100"></div>
+        </div>
+        <div class="seg" role="group" id="modele" data-i18n-attr="aria-label:fig.modele">
+          <button type="button" data-m="ellingham" data-i18n="fig.m.ellingham"></button>
+          <button type="button" data-m="janaf" data-i18n="fig.m.janaf"></button>
+        </div>
+      </div>
+      <svg class="fig" id="reactions" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend" id="legende"></div>
+      <div class="list keyed" id="lecture"></div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n-html="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/silicium-et-titane.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/chim-solutions.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), E = ChimSolutions.Ellingham;
+
+/* ---------- §4 : les réactions, ΔrG°(T) ---------- */
+(() => {
+  const T1 = 800, T2 = 2400;
+  /* each reaction is a combination of couples of ChimSolutions.Ellingham (per mole of O2 or Cl2), Hess */
+  const REACTIONS = {
+    si: { c: { cco: 1, sio2: -1 }, cls: "c-tint" }, sic: { c: { sic: 1 }, cls: "c-warn" },
+    ti: { c: { cco: 1, tio2: -1 }, cls: "c-tint" }, tic: { c: { tic: 1 }, cls: "c-warn" },
+    chlor: { c: { ticl4: 2, tio2: -1 }, cls: "c-label-2" }, carbochlor: { c: { ticl4: 2, tio2: -1, cco: 1 }, cls: "c-ok" },
+    kroll: { c: { mgcl2: 2, ticl4: -2 }, cls: "c-ko" },
+  };
+  const JEUX = { si: ["si", "sic"], ti: ["ti", "tic", "chlor", "carbochlor", "kroll"] };
+  const nom = textOf("fig.r", Object.keys(REACTIONS));
+  let metal = "ti", modele = "ellingham";
+  const G = (r, T) => { const v = E.combinaison(REACTIONS[r].c, T, modele); return v === null ? null : v / 1000; };
+  function zero(r) {                                                   // the temperature where ΔrG° changes sign, if any
+    for (let T = T1; T < T2; T += 5) { const a = G(r, T), b = G(r, T + 5); if (a !== null && b !== null && a * b <= 0 && a !== b) return T + 5 * a / (a - b); }
+    return null;
+  }
+  function draw() {
+    const T = +$("temp").value, svg = $("reactions"), ids = JEUX[metal];
+    $("tempv").innerHTML = F.kelvin(T);
+    $("metal").querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.m === metal)));
+    $("modele").querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.m === modele)));
+    svg.innerHTML = "";
+    const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 340, x: { domain: [T1, T2], label: t("fig.ax.x") },
+      y: { domain: [-600, 500], label: t("fig.ax.y"), fmt: v => F.fix(v, 0) } });
+    Plot.el("line", { x1: x(T1), x2: x(T2), y1: y(0), y2: y(0), class: "zero" }, g);
+    for (const r of ids) {
+      const pts = [];
+      for (let u = T1; u <= T2; u += 20) { const v = G(r, u); if (v !== null) pts.push([x(u), y(Math.max(-600, Math.min(500, v)))]); }
+      if (pts.length > 1) Plot.el("path", { d: Plot.path(pts), class: "stroke bold " + REACTIONS[r].cls }, g);
+    }
+    Plot.el("line", { x1: x(T), x2: x(T), y1: y(-600), y2: y(500), class: "ref" }, g);
+    $("legende").innerHTML = ids.map(r => `<span class="${REACTIONS[r].cls}">${nom[r]}</span>`).join("");
+    $("lecture").innerHTML = ids.map(r => {
+      const v = G(r, T), z = zero(r);
+      const val = v === null ? t("fig.hors") : t("fig.val", { g: F.qty(F.fix(v, 0), "kJ·mol⁻¹") });
+      const s = z === null ? t(G(r, T1) < 0 ? "fig.toujours" : "fig.jamais") : t(G(r, z + 10) < 0 ? "fig.audessus" : "fig.audessous", { tz: F.kelvin(z) });
+      return `<div><span class="k">${nom[r]}</span><span>${val} ${s}</span></div>`;
+    }).join("");
+  }
+  $("temp").oninput = draw;
+  $("metal").querySelectorAll("button").forEach(b => b.onclick = () => { metal = b.dataset.m; draw(); });
+  $("modele").querySelectorAll("button").forEach(b => b.onclick = () => { modele = b.dataset.m; draw(); });
+  draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["gregor", 1791, "experiment"], ["berzelius", 1824, "experiment"], ["hunter", 1910, "experiment"], ["kroll", 1940, "use"], ["siemens", 1956, "use"], ["ffc", 2000, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["alliages", "puces", "solaire"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["croisement", "c"], ["four", "a"], ["carbure", "b"], ["chlore", "d"], ["kroll", "c"], ["argon", "a"], ["recyclage", "d"], ["purete", "b"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 1940 });
+})();
+</script>
+</body>
+</html>

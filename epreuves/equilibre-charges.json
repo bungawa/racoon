@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["gauss", "a"],
+  ["tourbillon", "b"],
+  ["triangle", "c"],
+  ["cube", "d"],
+  ["image", "b"],
+  ["figee", "a"],
+  ["chute", "d"],
+  ["muon", "c"]
+ ]
+}

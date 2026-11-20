@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cycles catalytiques et hydrogénation homogène</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .anneau { max-width: 420px; margin: 0 auto; }
+  #devine { flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-solutions" data-i18n="monde.chim-solutions"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-complexes-catalyse" data-i18n="etape.chim-complexes-catalyse"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/structure-des-complexes" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="box def"><b data-i18n="def.title"></b>
+      <p data-i18n-html="def.body"></p>
+    </div>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="eq"><math display="block"><mi>N</mi><mo>=</mo><mfrac><msub><mi>n</mi><mi>P</mi></msub><msub><mi>n</mi><mi>c</mi></msub></mfrac><mo>,</mo><mspace width="1.5em"/><mi>f</mi><mo>=</mo><mfrac><mi>N</mi><mrow><mi>Δ</mi><mi>t</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.ton"></p>
+    <p id="tonex"></p>
+    <p data-i18n-html="s1.p4"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="list keyed" id="actes"></div>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="box warn"><b data-i18n="s2.warn.title"></b>
+      <p data-i18n-html="s2.warn.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure>
+      <div class="panel">
+        <div class="seg" role="group" id="kseg">
+          <button type="button" data-k="wilkinson" data-i18n="cy.wilkinson"></button>
+          <button type="button" data-k="monsanto" data-i18n="cy.monsanto"></button>
+        </div>
+      </div>
+      <svg class="fig anneau" id="ring" viewBox="0 0 420 340" role="img" data-i18n-attr="aria-label:cy.aria"></svg>
+      <div class="panel">
+        <p id="pas"></p>
+        <div class="seg" role="group" id="devine"></div>
+        <p id="verdict"></p>
+        <div class="controls"><button class="btn" type="button" id="suivant" data-i18n="cy.suivant"></button><button class="btn tinted" type="button" id="debut" data-i18n="cy.debut"></button></div>
+      </div>
+      <div class="list keyed" id="journal"></div>
+      <figcaption data-i18n-html="cy.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><msub><mi mathvariant="normal">C</mi><mn>2</mn></msub><msub><mi mathvariant="normal">H</mi><mn>4</mn></msub><mo>+</mo><msub><mi mathvariant="normal">H</mi><mn>2</mn></msub><mo>→</mo><msub><mi mathvariant="normal">C</mi><mn>2</mn></msub><msub><mi mathvariant="normal">H</mi><mn>6</mn></msub></math></div>
+    <p class="validite" data-i18n-html="val.bilan"></p>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="box rem"><b data-i18n="s4.rem.title"></b>
+      <p data-i18n-html="s4.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/cycles-catalytiques.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/chim-solutions.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), CS = ChimSolutions;
+/* formulas are notation, the same in every language: the table only marks them */
+const fx = c => t("fx", { f: CS.ecrireComplexe(c) }), sp = s => t("fx", { f: CS.LIGANDS[s] && s !== "S" ? CS.LIGANDS[s].f : CS.texte(s) });
+const ROMAIN = ["0", "I", "II", "III", "IV", "V", "VI"];
+const signe = v => v > 0 ? "+" + v : v < 0 ? "−" + -v : "0";
+const TYPES = ["association", "dissociation", "echange", "additionOxydante", "eliminationReductrice", "insertion", "desinsertion"];
+
+/* ---------- a worked number of cycles: a textbook example, not a measurement ---------- */
+(() => {
+  const ex = { nP: 5.0e-2, nC: 1.0e-5, dt: 1800 };
+  $("tonex").innerHTML = t("tonex", { nP: F.si(ex.nP, "mol"), nC: F.si(ex.nC, "mol"), dt: F.qty(F.num(ex.dt / 60, 3), "min"),
+    N: F.num(CS.ton(ex.nP, ex.nC), 4), f: F.qty(F.num(CS.tof(ex.nP, ex.nC, ex.dt), 2), "s⁻¹") });
+})();
+
+/* ---------- the elementary processes, measured on the two cycles of the page ---------- */
+(() => {
+  const K = ["wilkinson", "monsanto"].map(k => CS.cycleCatalytique(CS.CYCLES[k]));
+  const W = CS.CYCLES.wilkinson, act = CS.etape(W.precurseur, W.depart, W.activation.entre, W.activation.sort);
+  const exemples = [{ type: act.type, de: W.precurseur, vers: W.depart, entre: W.activation.entre, sort: W.activation.sort, dx: act.dx, dNe: act.dNe, ds: act.ds }];
+  K.forEach(k => k.etapes.forEach(e => exemples.push(e)));
+  /* dissociation and β-elimination: from the alkene polymerisation of « Polymérisation des alcènes par coordination » */
+  const P = CS.CYCLES.coordination; let cur = P.depart;
+  [...P.croissance, ...P.transfert].forEach(s => { const e = { de: cur, vers: s.vers, entre: s.entre || [], sort: s.sort || [] };
+    exemples.push(Object.assign(e, CS.etape(cur, s.vers, e.entre, e.sort))); cur = s.vers; });
+  const vus = TYPES.map(ty => exemples.find(e => e.type === ty)).filter(Boolean);
+  $("actes").innerHTML = vus.map(e => `<div><span class="k">${t("proc." + e.type)}</span><span>${t("actes.ligne", {
+    de: fx(e.de), vers: fx(e.vers), plus: e.entre.map(sp).join(" + ") || "—", moins: e.sort.map(sp).join(" + ") || "—" })}</span>`
+    + `<span class="v">${t("actes.delta", { dx: signe(e.dx), dne: signe(e.dNe), ds: signe(e.ds) })}</span></div>`).join("");
+})();
+
+/* ---------- step through a cycle, guess each process ---------- */
+(() => {
+  const ring = $("ring"), seg = $("kseg"), devine = $("devine");
+  let k, cyc, i, devinee, entres, sortis;
+  devine.innerHTML = TYPES.map(ty => `<button type="button" data-t="${ty}">${t("proc." + ty)}</button>`).join("");
+  function nodes() {
+    const n = cyc.etapes.length, R = 120, c = 170, cx = 210;
+    const pos = j => [cx + R * Math.sin(2 * Math.PI * j / n), c - R * Math.cos(2 * Math.PI * j / n)];
+    ring.innerHTML = "";
+    Plot.el("circle", { cx, cy: c, r: R, class: "stroke thin dash c-label-2" }, ring);
+    const inter = [cyc.depart, ...cyc.etapes.slice(0, -1).map(e => Object.assign({ c: e.vers }, e.compte))];
+    inter.forEach((s, j) => {
+      const [x, y] = pos(j), on = j === i % n;
+      Plot.el("circle", { cx: x, cy: y, r: 26, class: on ? "fill c-tint" : "fill c-label-2", opacity: on ? 1 : 0.25 }, ring);
+      Plot.el("text", { x, y: y - 2, "text-anchor": "middle", class: on ? "fill c-label" : "" }, ring).textContent = s.Ne;
+      Plot.el("text", { x, y: y + 13, "text-anchor": "middle", class: on ? "fill c-label" : "" }, ring).textContent = t("cy.metal", { m: s.c.m, x: ROMAIN[s.x] });
+    });
+    /* what comes in and goes out at each step, outside the ring between its two ends */
+    cyc.etapes.forEach((e, j) => {
+      const a = 2 * Math.PI * (j + 0.5) / n, x = cx + (R + 34) * Math.sin(a), y = c - (R + 34) * Math.cos(a) + 4;
+      const s = [...e.entre.map(v => "+" + CS.texte(v)), ...e.sort.map(v => "−" + CS.texte(v))].join(" ");
+      if (s) Plot.el("text", { x, y, "text-anchor": x > cx + 5 ? "start" : x < cx - 5 ? "end" : "middle" }, ring).textContent = t("fx", { f: s });
+    });
+    Plot.el("text", { x: cx, y: c + 4, "text-anchor": "middle" }, ring).textContent = t("cy.centre");
+  }
+  function journal() {
+    const net = {};
+    entres.forEach(s => net[s] = (net[s] || 0) + 1); sortis.forEach(s => net[s] = (net[s] || 0) - 1);
+    const g = {}, d = {};
+    for (const s in net) if (net[s] > 0) g[s] = net[s]; else if (net[s] < 0) d[s] = -net[s];
+    const fin = i >= cyc.etapes.length;
+    let html = `<div><span class="k">${t("cy.entre")}</span><span>${entres.map(sp).join(" + ") || "—"}</span></div>`
+      + `<div><span class="k">${t("cy.sort")}</span><span>${sortis.map(sp).join(" + ") || "—"}</span></div>`;
+    if (fin) {
+      html += `<div><span class="k">${t("cy.bilan")}</span><span>${t("fx", { f: CS.ecrire({ gauche: g, droite: d }, "→") })}</span></div>`;
+      if (CS.CYCLES[k].annexes) {
+        const b = cyc.bilan;
+        html += `<div><span class="k">${t("cy.iode")}</span><span>${t("cy.iodeTexte", { b: t("fx", { f: CS.ecrire(b, "→") }) })}</span></div>`;
+      }
+    }
+    $("journal").innerHTML = html;
+  }
+  function show() {
+    nodes(); journal();
+    const n = cyc.etapes.length, fin = i >= n;
+    devine.querySelectorAll("button").forEach(b => { b.disabled = fin || devinee; b.setAttribute("aria-pressed", "false"); });
+    $("suivant").disabled = fin;
+    if (fin) { $("pas").innerHTML = t("cy.fini", { c: fx(cyc.depart.c) }); $("verdict").textContent = ""; return; }
+    const e = cyc.etapes[i];
+    $("pas").innerHTML = t("cy.pas", { k: i + 1, n, de: fx(e.de), vers: fx(e.vers),
+      plus: e.entre.map(sp).join(" + ") || "—", moins: e.sort.map(sp).join(" + ") || "—" });
+    if (!devinee) $("verdict").textContent = t("cy.question");
+  }
+  function guess(ty) {
+    if (i >= cyc.etapes.length || devinee) return;
+    const e = cyc.etapes[i]; devinee = true;
+    devine.querySelectorAll("button").forEach(b => { b.setAttribute("aria-pressed", String(b.dataset.t === e.type)); b.disabled = true; });
+    $("verdict").innerHTML = t(ty === e.type ? "cy.juste" : "cy.faux", { p: t("proc." + e.type), dx: signe(e.dx), dne: signe(e.dNe),
+      x: ROMAIN[e.compte.x], ne: e.compte.Ne, pourquoi: t("pourquoi." + e.type) });
+  }
+  function next() {
+    if (i >= cyc.etapes.length) return;
+    const e = cyc.etapes[i]; entres.push(...e.entre); sortis.push(...e.sort);
+    i++; devinee = false; show();
+  }
+  function load(name) {
+    k = name; cyc = CS.cycleCatalytique(CS.CYCLES[k]); i = 0; devinee = false; entres = []; sortis = [];
+    seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.k === k)));
+    show();
+  }
+  seg.onclick = ev => { const b = ev.target.closest("button"); if (b) load(b.dataset.k); };
+  devine.onclick = ev => { const b = ev.target.closest("button"); if (b) guess(b.dataset.t); };
+  $("suivant").onclick = next;
+  $("debut").onclick = () => load(k);
+  load("wilkinson");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["wilkinson", 1965, "experiment"], ["knowles", 1968, "experiment"], ["paulik", 1968, "experiment"], ["monsanto", 1970, "use"],
+    ["ldopa", 1974, "use"], ["cativa", 1995, "use"], ["nobel2001", 2001, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["acetique", "chiral"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["bilan", "b"], ["precurseur", "c"], ["ao", "a"], ["insertion", "d"], ["cis", "b"], ["seize", "c"], ["ton", "a"], ["monsanto", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 1965 });
+})();
+</script>
+</body>
+</html>

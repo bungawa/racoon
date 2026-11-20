@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["turbine", "a"],
+  ["robinet", "b"],
+  ["compresseur", "c"],
+  ["pac", "d"],
+  ["puissance", "a"],
+  ["congelateur", "b"],
+  ["detente", "c"],
+  ["rankine", "d"]
+ ]
+}

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chaleurs massiques des gaz</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-statistique" data-i18n="monde.statistique"></a><span class="aux">›</span><a href="/racoon/etape?id=vitesses-chaleurs-massiques" data-i18n="etape.vitesses-chaleurs-massiques"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-thermo" href="/racoon/atlas?piste=thermo" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/distribution-des-vitesses-moleculaires" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mi>P</mi><mi>V</mi><mo>=</mo><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mo>=</mo><mo>(</mo><mi>γ</mi><mo>−</mo><mn>1</mn><mo>)</mo><mi>U</mi></math></div>
+    <p class="validite" data-i18n-html="val.pv"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi>U</mi><mo>=</mo><mfrac><mi>f</mi><mn>2</mn></mfrac><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mspace width="1.5em"/><mo>⇒</mo><mspace width="1.5em"/><mi>γ</mi><mo>=</mo><mn>1</mn><mo>+</mo><mfrac><mn>2</mn><mi>f</mi></mfrac><mo>,</mo><mspace width="1em"/><msub><mi>C</mi><mrow><mi>V</mi><mo>,</mo><mi>m</mi></mrow></msub><mo>=</mo><mfrac><mi>f</mi><mn>2</mn></mfrac><mi>R</mi><mo>,</mo><mspace width="1em"/><msub><mi>c</mi><mi>V</mi></msub><mo>=</mo><mfrac><msub><mi>C</mi><mrow><mi>V</mi><mo>,</mo><mi>m</mi></mrow></msub><mi>M</mi></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.f"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <ul><li data-i18n-html="s2.l1"></li><li data-i18n-html="s2.l2"></li><li data-i18n-html="s2.l3"></li></ul>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><mrow><mo>⟨</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>κ</mi><msup><mi>x</mi><mn>2</mn></msup><mo>⟩</mo></mrow><mo>=</mo><mfrac><mrow><mo>∫</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>κ</mi><msup><mi>x</mi><mn>2</mn></msup><msup><mi>e</mi><mrow><mo>−</mo><mi>κ</mi><msup><mi>x</mi><mn>2</mn></msup><mo>/</mo><mn>2</mn><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow></msup><mi>d</mi><mi>x</mi></mrow><mrow><mo>∫</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>κ</mi><msup><mi>x</mi><mn>2</mn></msup><mo>/</mo><mn>2</mn><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow></msup><mi>d</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></math></div>
+    <p class="validite" data-i18n-html="val.ressort"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="table" role="img" data-i18n-attr="aria-label:tab.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="tab.legend.mes"></span><span class="c-warn" data-i18n="tab.legend.cl"></span><span data-i18n="tab.legend.courbe"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="gz" data-i18n="tab.gaz"></label></div>
+            <select id="gz"></select></div>
+          <div class="seg" role="group" id="vseg">
+            <button type="button" data-v="1" data-i18n="tab.vib"></button>
+            <button type="button" data-v="0" data-i18n="tab.rigide"></button>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="tab.k.mes"></span><span class="v" id="vmes"></span><span class="f" id="fmes"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="tab.k.cl"></span><span class="v" id="vcl"></span><span class="f" id="fcl"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="tab.k.f"></span><span class="v" id="vf"></span><span class="f" data-i18n="tab.f.f"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="tab.k.cv"></span><span class="v" id="vcv"></span><span class="f" id="fcv"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="tab.caption"></figcaption>
+    </figure>
+    <p id="verdict"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p data-i18n-html="sys.inner"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/chaleurs-massiques-des-gaz.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/thermo.js"></script>
+<script src="/racoon/lecons/incertitude-absolue-relative.js"></script>
+<script src="/racoon/lecons/probabilites.js"></script>
+<script src="/racoon/statistique.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const S = Statistique;
+
+/* ---------- la table 40-1 contre le compte classique ---------- */
+(() => {
+  const G = S.GAMMA_MES, IDS = Object.keys(G), noms = textOf("tab.noms", IDS), verdicts = textOf("tab.verdicts", IDS);
+  const svg = $("table"), sg = $("gz"), seg = $("vseg");
+  sg.innerHTML = IDS.map(k => `<option value="${k}">${noms[k]}</option>`).join(""); sg.value = "O2";
+  let vib = true;
+  function draw() {
+    const gz = sg.value, g = G[gz];
+    svg.innerHTML = "";
+    const o = Plot.axes(svg, { fmt: F, w: 640, h: 320, pad: { b: 44, l: 56 },
+      x: { domain: [0, 45], label: t("tab.x") }, y: { domain: [1, 1.7], label: t("tab.y"), fmt: y => F.fix(y, 1) } });
+    const pts = []; for (let i = 0; i <= 200; i++) { const f = 2.6 + (45 - 2.6) * i / 200; pts.push([o.x(f), o.y(S.gammaDe(f))]); }
+    Plot.el("path", { d: Plot.path(pts), class: "stroke thin" }, o.g);
+    const fs = S.fDe(g.gamma);
+    Plot.el("line", { x1: o.x(0), x2: o.x(45), y1: o.y(g.gamma), y2: o.y(g.gamma), class: "ref" }, o.g);
+    Plot.el("line", { x1: o.x(fs), x2: o.x(fs), y1: o.y(g.gamma), y2: o.y(1), class: "ref" }, o.g);
+    for (const k of IDS) {
+      const h = G[k], f = S.degres(h.r, h.lin, vib), sel = k === gz, x = o.x(f);
+      Plot.el("line", { x1: x, x2: x, y1: o.y(S.gammaDe(f)), y2: o.y(h.gamma), class: "stroke thin dash c-label" }, o.g);
+      Plot.el("circle", { cx: x, cy: o.y(S.gammaDe(f)), r: sel ? 6 : 4, class: "fill c-warn" }, o.g);
+      Plot.el("circle", { cx: x, cy: o.y(h.gamma), r: sel ? 7 : 4.5, class: "dot" }, o.g);
+    }
+    const f = S.degres(g.r, g.lin, vib), gc = S.gammaDe(f);
+    $("vmes").textContent = F.fix(g.gamma, 3);
+    $("fmes").innerHTML = t("tab.f.mes", { T: F.kelvin(g.T) });
+    $("vcl").textContent = F.fix(gc, 3);
+    $("fcl").textContent = t("tab.f.cl", { f: F.num(f, 3) });
+    $("vf").textContent = F.num(fs, 3);
+    $("vcv").textContent = F.si(S.cvMassique(g.gamma, g.M), "J·kg⁻¹·K⁻¹", { sig: 3 });
+    $("fcv").textContent = t("tab.f.cv", { c: F.si(S.cvMolaire(g.gamma), "J·mol⁻¹·K⁻¹", { sig: 3 }), M: F.si(1e3 * g.M, "g·mol⁻¹", { sig: 4 }) });
+    $("verdict").innerHTML = verdicts[gz];
+    seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.v === (vib ? "1" : "0"))));
+  }
+  seg.querySelectorAll("button").forEach(b => b.onclick = () => { vib = b.dataset.v === "1"; draw(); });
+  sg.onchange = draw; draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["laplace", 1816, "idea"], ["kundt", 1876, "experiment"], ["argon", 1895, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["acoustique", "oxygene"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["mono", "b"], ["massique", "d"], ["rigide", "a"], ["raideur", "c"], ["ethane", "b"], ["iode", "d"], ["son", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 405 });
+})();
+</script>
+</body>
+</html>

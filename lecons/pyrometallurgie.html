@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pyrométallurgie et haut-fourneau</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-solutions" data-i18n="monde.chim-solutions"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-ellingham" data-i18n="etape.chim-ellingham"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/diagrammes-d-ellingham" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="list keyed" id="zones"></div>
+    <div class="eq" data-i18n-html="eq.bilan"></div>
+    <p class="validite" data-i18n-html="val.bilan"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq" data-i18n-html="eq.boudouard"></div>
+    <p class="validite" data-i18n-html="val.boudouard"></p>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq" data-i18n-html="eq.wustite"></div>
+    <p class="validite" data-i18n-html="val.wustite"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <figure class="chart">
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="temp" data-i18n="fig.T"></label><output id="tempv" for="temp"></output></div>
+            <input id="temp" type="range" min="600" max="1600" step="10" value="1100"></div>
+          <div class="ctl"><div class="row"><label for="xco" data-i18n="fig.x"></label><output id="xcov" for="xco"></output></div>
+            <input id="xco" type="range" min="0" max="100" step="1" value="60"></div>
+        </div>
+        <div class="seg" role="group" id="modele" data-i18n-attr="aria-label:fig.modele">
+          <button type="button" data-m="janaf" data-i18n="fig.m.janaf"></button>
+          <button type="button" data-m="ellingham" data-i18n="fig.m.ellingham"></button>
+        </div>
+      </div>
+      <svg class="fig" id="chaudron" role="img" data-i18n-attr="aria-label:fig.aria"></svg>
+      <div class="legend"><span class="c-warn" data-i18n="fig.leg.boudouard"></span><span class="c-tint" data-i18n="fig.leg.feo"></span><span class="c-ok" data-i18n="fig.leg.fe3o4"></span><span class="c-label-2" data-i18n="fig.leg.fefe3o4"></span></div>
+      <div class="stats">
+        <div class="stat"><span class="k" data-i18n="fig.k.phase"></span><span class="v" id="vphase"></span><span class="f" id="fphase"></span></div>
+        <div class="stat"><span class="k" data-i18n="fig.k.eq"></span><span class="v" id="veq"></span><span class="f" id="feq"></span></div>
+        <div class="stat"><span class="k" data-i18n="fig.k.c"></span><span class="v" id="vc"></span><span class="f" id="fc"></span></div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="box rem"><b data-i18n="s4.rem.title"></b>
+      <p data-i18n-html="s4.rem.body"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n-html="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/pyrometallurgie.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/chim-solutions.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), E = ChimSolutions.Ellingham;
+const keyed = (id, k, ids) => { const txt = textOf(k, ids); $(id).innerHTML = ids.map(i => `<div><span class="k">${txt[i].k}</span><span>${txt[i].v}</span></div>`).join(""); };
+keyed("zones", "s1.zones", ["gueulard", "cuve", "etalages", "creuset"]);
+
+/* ---------- §3 : diagramme de Chaudron ---------- */
+(() => {
+  const T1 = 600, T2 = 1600, PHASES = ["Fe", "FeO", "Fe3O4", "Fe2O3"], nomPhase = textOf("phase", PHASES);
+  let modele = "janaf";
+  const xco = (id, T) => 1 / (1 + E.rapportGaz(id, "co2", T, modele));
+  const pc = v => F.qty(F.fix(100 * v, 0), "%");
+  function draw() {
+    const T = +$("temp").value, X = +$("xco").value / 100, svg = $("chaudron"), Tw = E.TW(modele);
+    $("tempv").innerHTML = F.kelvin(T); $("xcov").textContent = pc(X);
+    $("modele").querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.m === modele)));
+    svg.innerHTML = "";
+    const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 360, x: { domain: [T1, T2], label: t("fig.ax.x") },
+      y: { domain: [0, 1], label: t("fig.ax.y"), fmt: v => F.fix(100 * v, 0) } });
+    const courbe = (f, a, b, cls) => { const pts = [];
+      for (let u = a; u <= b + 1e-9; u += Math.min(10, b - a)) pts.push([x(u), y(f(u))]);
+      Plot.el("path", { d: Plot.path(pts), class: cls }, g); };
+    courbe(u => E.boudouard(u, 1e5, modele), T1, T2, "stroke c-warn");
+    courbe(u => xco("feo", u), Tw, T2, "stroke bold c-tint");
+    courbe(u => xco("fe3o4", u), Tw, T2, "stroke bold c-ok");
+    courbe(u => xco("fefe3o4", u), T1, Tw, "stroke bold c-label-2");
+    /* the names of the domains, placed inside each one */
+    const lab = (s, u, v) => { Plot.el("text", { x: x(u), y: y(v), "text-anchor": "middle" }, g).textContent = nomPhase[s]; };
+    lab("Fe", 1450, (1 + xco("feo", 1450)) / 2);
+    lab("FeO", 1450, (xco("feo", 1450) + xco("fe3o4", 1450)) / 2);
+    lab("Fe3O4", 1450, xco("fe3o4", 1450) / 2);
+    lab("Fe3O4", 700, xco("fefe3o4", 700) / 2);
+    Plot.el("line", { x1: x(Tw), x2: x(Tw), y1: y(0), y2: y(1), class: "stroke thin dash c-label-2" }, g);
+    Plot.el("circle", { cx: x(T), cy: y(X), r: 6, class: "fill c-tint" }, g);
+    /* readouts */
+    const s = E.ferStable(T, Math.min(Math.max(X, 1e-6), 1 - 1e-6), modele);
+    $("vphase").textContent = nomPhase[s];
+    $("fphase").textContent = t(T > Tw ? "fig.f.wustite" : "fig.f.sanswustite", { tw: F.fix(Tw, 0) });
+    const xe = T > Tw ? xco("feo", T) : xco("fefe3o4", T);
+    $("veq").textContent = pc(xe);
+    $("feq").textContent = t(T > Tw ? "fig.f.eqfeo" : "fig.f.eqfe3o4");
+    const xb = E.boudouard(T, 1e5, modele);
+    $("vc").textContent = pc(xb);
+    $("fc").textContent = t(X > xb + 0.005 ? "fig.f.depot" : X < xb - 0.005 ? "fig.f.attaque" : "fig.f.equilibre");
+  }
+  $("temp").oninput = $("xco").oninput = draw;
+  $("modele").querySelectorAll("button").forEach(b => b.onclick = () => { modele = b.dataset.m; draw(); });
+  draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["darby", 1709, "use"], ["neilson", 1828, "use"], ["cowper", 1857, "use"], ["boudouard", 1899, "experiment"], ["hydrogene", 2021, "experiment"], ["acier", 2024, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["fonte", "convertisseur", "reduction"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["contre", "c"], ["boudouard", "a"], ["sens", "d"], ["etages", "b"], ["wustite", "c"], ["approx", "b"], ["fonte", "a"], ["convertisseur", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 1709 });
+})();
+</script>
+</body>
+</html>

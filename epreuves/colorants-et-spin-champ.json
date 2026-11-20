@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["visible", "c"],
+  ["intensite", "a"],
+  ["teinte", "d"],
+  ["matrice", "b"],
+  ["energies", "c"],
+  ["rpe", "a"],
+  ["cone", "d"],
+  ["deuxetats", "b"]
+ ]
+}

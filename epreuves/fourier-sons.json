@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["periode", "a"],
+  ["bruit", "b"],
+  ["somme", "c"],
+  ["phase", "d"],
+  ["coins", "a"],
+  ["pincee", "b"],
+  ["quinte", "c"],
+  ["phases", "d"]
+ ]
+}

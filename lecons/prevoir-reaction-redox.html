@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prévoir une réaction d'oxydoréduction</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+<style>
+  .echelle-row { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+  .echelle-row > svg { flex: 1 1 280px; max-width: 360px; min-width: 0; }
+  .echelle-row > div { flex: 1 1 280px; min-width: 0; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-solutions" data-i18n="monde.chim-solutions"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-oxydoreduction" data-i18n="etape.chim-oxydoreduction"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/piles-formule-de-nernst" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="box def"><b data-i18n="s1.sys.title"></b>
+      <p data-i18n-html="s1.sys.body"></p>
+    </div>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi data-i18n="fn.log"></mi><msup><mi>K</mi><mo>°</mo></msup><mo>=</mo><mfrac><mrow><mi>n</mi><mspace width="0.1em"/><mo>(</mo><msubsup><mi>E</mi><mn>1</mn><mo>°</mo></msubsup><mo>&minus;</mo><msubsup><mi>E</mi><mn>2</mn><mo>°</mo></msubsup><mo>)</mo></mrow><mrow><mi>R</mi><mi>T</mi><mspace width="0.1em"/><mi data-i18n="fn.ln"></mi><mspace width="0.1em"/><mn>10</mn><mo>/</mo><mi>F</mi></mrow></mfrac><mo>≈</mo><mfrac><mrow><mi>n</mi><mspace width="0.1em"/><mo>(</mo><msubsup><mi>E</mi><mn>1</mn><mo>°</mo></msubsup><mo>&minus;</mo><msubsup><mi>E</mi><mn>2</mn><mo>°</mo></msubsup><mo>)</mo></mrow><mrow><mn>0,059</mn><mspace width="0.2em"/><mi mathvariant="normal">V</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.k"></p>
+    <p data-i18n-html="s1.p3"></p>
+    <div class="eq"><math display="block"><msub><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">r</mi></msub><msup><mi>G</mi><mo>°</mo></msup><mo>=</mo><mo>&minus;</mo><mi>n</mi><mi>F</mi><mo>(</mo><msubsup><mi>E</mi><mn>1</mn><mo>°</mo></msubsup><mo>&minus;</mo><msubsup><mi>E</mi><mn>2</mn><mo>°</mo></msubsup><mo>)</mo><mo>=</mo><mo>&minus;</mo><mi>R</mi><mi>T</mi><mspace width="0.1em"/><mi data-i18n="fn.ln"></mi><msup><mi>K</mi><mo>°</mo></msup></math></div>
+    <p class="validite" data-i18n-html="val.g"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure>
+      <div class="echelle-row">
+        <svg class="fig" id="echelle" role="img" data-i18n-attr="aria-label:ech.aria"></svg>
+        <div class="panel">
+          <label class="field"><span data-i18n="ech.ox"></span><select id="selox"></select></label>
+          <label class="field"><span data-i18n="ech.red"></span><select id="selred"></select></label>
+          <div class="ctl"><div class="row"><label for="cox" data-i18n="ech.cox"></label><output id="coxv" for="cox"></output></div>
+            <input id="cox" type="range" min="-3" max="0" step="0.1" value="-1"></div>
+          <div class="ctl"><div class="row"><label for="cred" data-i18n="ech.cred"></label><output id="credv" for="cred"></output></div>
+            <input id="cred" type="range" min="-3" max="0" step="0.1" value="-1"></div>
+          <div class="ctl"><div class="row"><label for="ph" data-i18n="ech.ph"></label><output id="phv" for="ph"></output></div>
+            <input id="ph" type="range" min="0" max="7" step="0.5" value="0"></div>
+          <div class="stats">
+            <div class="stat"><span class="k" data-i18n="ech.k.de"></span><span class="v" id="vde"></span><span class="f" id="fde"></span></div>
+            <div class="stat"><span class="k" data-i18n="ech.k.lgk"></span><span class="v" id="vlgk"></span><span class="f" id="flgk"></span></div>
+            <div class="stat"><span class="k" data-i18n="ech.k.tau"></span><span class="v" id="vtau"></span><span class="f" id="ftau"></span></div>
+            <div class="stat"><span class="k" data-i18n="ech.k.e"></span><span class="v" id="ve"></span><span class="f" data-i18n="ech.f.e"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="list keyed" id="final"></div>
+      <figcaption data-i18n-html="ech.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="list keyed" id="mutations"></div>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="box rem"><b data-i18n="s4.rem.title"></b>
+      <p data-i18n-html="s4.rem.body"></p>
+    </div>
+    <p data-i18n-html="s4.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n-html="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/prevoir-reaction-redox.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/chim-solutions.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), C = ChimSolutions, P = Plot.el;
+const keyed = (id, k, ids) => { const txt = textOf(k, ids); $(id).innerHTML = ids.map(i => `<div><span class="k">${txt[i].k}</span><span>${txt[i].v}</span></div>`).join(""); };
+keyed("mutations", "s3.mutations", ["cu", "fe", "h2o2", "cl"]);
+const volt = v => F.qty(F.fix(v, 2), "V"), conc = c => F.qty(F.sci(c, 2), "mol·L⁻¹");
+const ecrite = eq => t("ech.ecrite", { g: C.cote(eq.gauche), d: C.cote(eq.droite) });
+
+/* ---------- §2 : échelle des potentiels, réaction choisie ---------- */
+(() => {
+  const IDS = ["zn", "fe2", "pb", "h", "s4o6", "cu21", "cu", "cu1", "i2", "o2h2o2", "fe32", "ag", "o2", "cr", "cl2", "mn", "h2o2"];
+  const LIST = IDS.map(id => C.COUPLES.find(c => c.id === id));
+  const nom = c => t("ech.nomcouple", { ox: C.texte(c.ox), red: C.texte(c.red) });
+  const opts = LIST.map(c => `<option value="${c.id}">${nom(c)}</option>`).join("");
+  $("selox").innerHTML = $("selred").innerHTML = opts; $("selox").value = "fe32"; $("selred").value = "i2";
+  const svg = $("echelle"), W = 320, H = 520, E0 = -0.9, E1 = 1.9, y = E => 20 + (E1 - E) / (E1 - E0) * (H - 40);
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  /* labels pushed apart by 15 px at least, with a leader to their true height */
+  const spread = ys => { const o = ys.map((v, i) => [v, i]).sort((a, b) => a[0] - b[0]), out = [];
+    let last = -Infinity; for (const [v, i] of o) { last = Math.max(v, last + 15); out[i] = last; } return out; };
+  const LBL = spread(LIST.map(c => y(c.E0)));
+  const GAZ = ["O2", "H2", "Cl2"];
+  function draw() {
+    const c1 = LIST.find(c => c.id === $("selox").value), c2 = LIST.find(c => c.id === $("selred").value);
+    const pH = +$("ph").value, cox = Math.pow(10, +$("cox").value), cred = Math.pow(10, +$("cred").value);
+    $("coxv").textContent = conc(cox); $("credv").textContent = conc(cred); $("phv").textContent = F.fix(pH, 1);
+    /* the scale */
+    svg.innerHTML = "";
+    P("line", { x1: 160, x2: 160, y1: 14, y2: H - 14, class: "stroke c-label-2" }, svg);
+    P("text", { x: 160, y: 10, "text-anchor": "middle" }, svg).textContent = t("ech.axe");
+    LIST.forEach((c, i) => {
+      const yy = y(c.E0), sel = c === c1 || c === c2, cls = sel ? (c === c1 ? "c-tint" : "c-warn") : "c-label-2";
+      P("line", { x1: 150, x2: 170, y1: yy, y2: yy, class: "stroke " + cls + (sel ? " bold" : " thin") }, svg);
+      P("line", { x1: 150, x2: 112, y1: yy, y2: LBL[i], class: "stroke thin c-label-2" }, svg);
+      P("line", { x1: 170, x2: 208, y1: yy, y2: LBL[i], class: "stroke thin c-label-2" }, svg);
+      P("text", { x: 108, y: LBL[i] + 4, "text-anchor": "end" }, svg).textContent = t("ech.lab.ox", { s: C.texte(c.ox), e: F.fix(c.E0, 2) });
+      P("text", { x: 212, y: LBL[i] + 4 }, svg).textContent = t("ech.lab.red", { s: C.texte(c.red) });
+    });
+    if (c1 === c2) { ["vde", "vlgk", "vtau", "ve", "fde", "flgk", "ftau"].forEach(id => $(id).textContent = "–"); $("final").innerHTML = row(t("ech.k.eq"), t("ech.meme")); return; }
+    Plot.fleche(svg, [14, y(c1.E0)], [14, y(c2.E0)], { cls: "c-tint", min: 4 });
+    /* the reaction, its constant and its final state, H⁺ held by a buffer */
+    const eq = C.bilan(c1, c2), lk = C.lgK(c1.E0, c2.E0, eq.n);
+    const fixes = { "H^+": Math.pow(10, -pH) }; GAZ.forEach(g => fixes[g] = 1);
+    const n0 = {}; n0[c1.ox] = cox; n0[c2.red] = (n0[c2.red] || 0) + (c2.red === c1.ox ? 0 : cred);
+    const r = C.etatFinal(eq, n0, lk, { V: 1, fixes });
+    const reac = Object.keys(eq.gauche).filter(s => !(s in fixes) && C.phase(s) !== "solvant");
+    if (!reac.length) { $("vde").textContent = volt(c1.E0 - c2.E0); $("fde").textContent = t("ech.f.de", { n: eq.n }); $("vlgk").textContent = F.fix(lk, 1);
+      ["flgk", "vtau", "ve"].forEach(id => $(id).textContent = "–"); $("ftau").textContent = t("ech.v.gaz"); $("final").innerHTML = row(t("ech.k.eq"), ecrite(eq)); return; }
+    const lim = reac.reduce((m, s) => n0[s] / eq.gauche[s] < n0[m] / eq.gauche[m] ? s : m);
+    const xiMax = n0[lim] / eq.gauche[lim], tau = xiMax > 0 ? r.xi / xiMax : 0, reste = r.n[lim] / n0[lim];
+    const lgKapp = Math.log10(C.quotient(eq, Object.assign({}, fixes)));            // what the buffer adds: Π a(H⁺)^ν
+    $("vde").textContent = volt(c1.E0 - c2.E0); $("fde").textContent = t("ech.f.de", { n: eq.n });
+    $("vlgk").textContent = F.fix(lk, 1); $("flgk").textContent = t("ech.f.lgk", { k: F.fix(lk - lgKapp, 1), ph: F.fix(pH, 1) });
+    $("vtau").textContent = tau > 0.9999 ? t("ech.tau.total", { r: F.sci(reste, 2) }) : F.qty(tau < 1e-3 ? F.sci(100 * tau, 2) : F.num(100 * tau, 3), "%");
+    $("ftau").textContent = t(tau > 0.99 ? "ech.v.total" : tau < 0.01 ? "ech.v.nulle" : "ech.v.eq");
+    /* one solution, one potential: read it on a couple whose species are all still there */
+    const a = Object.assign({}, fixes); for (const s in r.n) a[s] = C.phase(s) === "solide" ? 1 : r.n[s];     // V = 1 L, c° = 1 mol·L⁻¹
+    const vivant = c => [c.ox, c.red].every(s => !(s in r.n) || r.n[s] > 0);
+    $("ve").textContent = vivant(c1) ? volt(C.potentiel(c1, a)) : vivant(c2) ? volt(C.potentiel(c2, a)) : "–";
+    $("final").innerHTML = row(t("ech.k.eq"), ecrite(eq)) +
+      Object.keys(r.n).map(s => row(t("ech.k.fin", { s: C.texte(s) }), C.phase(s) === "solide" ? t("ech.solide", { n: F.qty(F.sci(r.n[s], 2), "mol") }) : conc(r.n[s]))).join("");
+  }
+  const row = (k, v) => `<div><span class="k">${k}</span><span>${v}</span></div>`;
+  ["selox", "selred"].forEach(id => $(id).onchange = draw);
+  ["cox", "cred", "ph"].forEach(id => $(id).oninput = draw);
+  draw();
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["margueritte", 1846, "experiment"], ["latimer", 1938, "idea"], ["frost", 1951, "idea"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["cementation", "iodometrie", "fer"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["gamma", "c"], ["lgk", "a"], ["fei", "d"], ["n", "b"], ["dismut", "a"], ["perm", "c"], ["ph", "b"], ["egal", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 2613 });
+})();
+</script>
+</body>
+</html>

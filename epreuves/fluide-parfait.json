@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["seau", "c"],
+  ["convection", "b"],
+  ["tourbillon", "d"],
+  ["regime", "a"],
+  ["venturi", "b"],
+  ["vidange", "c"],
+  ["portance", "d"],
+  ["anneau", "a"]
+ ]
+}

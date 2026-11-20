@@ -1,0 +1,97 @@
+/* Leçon « États magnétiques quantifiés » (Feynman II.35.1) : textes en français.
+   Une autre langue = locales/<langue>/lecons/etats-magnetiques-quantifies.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "États magnétiques quantifiés",
+    "crumb.jour": "États magnétiques quantifiés",
+    "h1": "États magnétiques quantifiés",
+    "lede": "Un atome dans un champ magnétique n'a pas toutes les énergies possibles : son moment ne prend que 2j\u00a0+\u00a01 composantes le long du champ. Avant d'en voir les preuves expérimentales, on rassemble ici les règles, et l'on compare ce qu'un tri des atomes selon μ<sub>z</sub> trouverait, en mécanique classique et en mécanique quantique.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : énergie magnétique des atomes",
+
+    "s1.sec": "1 · Décrire le système",
+    "s1.h2": "Trois règles pour un atome dans un champ",
+    "s1.p1": "Le système : un atome (ou un noyau) isolé, de spin <var>j</var>, dans un champ <var>B</var> uniforme et statique selon <var>z</var>. Le spin est un nombre propre à l'objet, entier ou demi-entier. Mesurée le long de n'importe quel axe, la composante de son moment cinétique ne prend que les valeurs espacées de ħ :",
+    "val.35.1": "Exacte en mécanique quantique pour un système de spin <var>j</var> donné : 2<var>j</var>\u00a0+\u00a01 valeurs, sur n'importe quel axe. Ce qui reste approché, c'est de traiter <var>j</var> comme fixé : un champ assez fort mélange les états de spins différents de l'atome.",
+    "s1.p2": "Le moment magnétique est porté par le moment cinétique, avec le facteur <var>g</var> de l'objet. Dans le champ, l'énergie de l'atome change d'une quantité qui ne dépend que de la composante du moment le long du champ :",
+    "val.35.2": "Approximation : champ uniforme à l'échelle de l'atome (10⁻¹⁰\u00a0m) et faible, c'est-à-dire <var>g</var>μ<sub>B</sub><var>B</var> (5,8\u00a0×\u00a010⁻⁵\u00a0eV par tesla pour <var>g</var>\u00a0=\u00a01) petit devant l'écart en énergie aux autres états de l'atome, de l'ordre de l'électronvolt pour ses états excités. Si le noyau a lui-même un spin, son couplage aux électrons sépare déjà les niveaux sans champ, et il faut que le champ soit petit ou grand devant ce couplage pour que l'image reste simple.",
+    "val.35.3": "Exacte comme définition de <var>g</var>, pour l'atome dans un état donné ; (35.1) dit alors que μ<sub>z</sub> ne prend que 2<var>j</var>\u00a0+\u00a01 valeurs. Pour un atome, <var>q</var> et <var>m</var> sont la charge et la masse de l'électron, <var>q</var>\u00a0=\u00a0\u2212<var>q</var><sub>e</sub> : le moment est opposé au moment cinétique. Pour un noyau, on prend la charge et la masse du proton.",
+    "sys.title": "Décrire le système avant d'appliquer la loi",
+    "sys1.body": "Un électron dans 1\u00a0T : ses deux niveaux sont séparés de <var>g</var>μ<sub>B</sub><var>B</var>\u00a0=\u00a0{dU}. À {T}, l'énergie d'agitation <var>k</var><sub>B</sub><var>T</var> vaut {kT} : le rapport des deux, {r}, dit que le champ ne trie presque pas les atomes d'un gaz par collisions. C'est pourquoi on ne voit pas les états quantifiés en mesurant l'aimantation d'un gaz chaud : il faut séparer les atomes un par un, ou provoquer des transitions entre niveaux.",
+
+    "s2.sec": "2 · Des niveaux et une fréquence",
+    "s2.h2": "Ce que le champ fait aux 2j + 1 états",
+    "s2.p1": "Sans champ, les 2<var>j</var>\u00a0+\u00a01 états ont la même énergie. Avec un champ, (35.2) et (35.3) les séparent en 2<var>j</var>\u00a0+\u00a01 niveaux également espacés, qui s'écartent en proportion de <var>B</var> ; « Énergie magnétique des atomes » les trace en fonction du champ. Leur centre de gravité ne bouge pas : les valeurs de <var>J</var><sub>z</sub> sont symétriques, leur somme est nulle. L'écart entre deux niveaux voisins, divisé par ħ, est une pulsation :",
+    "val.35.4": "Exacte à partir de (35.3) et de l'écart ħ entre deux valeurs voisines de (35.1). C'est la pulsation de précession du moment autour du champ, (34.11) : le même nombre décrit le gyroscope classique et l'écart des niveaux. Pour un électron, <var>q</var> est négatif ; on prend la valeur absolue, le signe donne le sens de la précession.",
+    "s2.p2": "Pour un électron, le moment est opposé au moment cinétique : l'état <var>J</var><sub>z</sub>\u00a0=\u00a0+ħ/2 voit son énergie monter, l'état \u2212ħ/2 la voit descendre. Le niveau le plus bas est celui dont le moment est le plus aligné sur le champ.",
+    "freqs.body": "Ordres de grandeur, pour 1\u00a0T : {e} pour le spin de l'électron, {o} pour un moment orbital (<var>g</var>\u00a0=\u00a01), {p} pour le proton et {n} pour le neutron. Les électrons résonnent dans les micro-ondes, les noyaux dans les ondes radio : c'est le domaine des transitions de « Méthode de Rabi ».",
+
+    "s3.sec": "3 · Explorer",
+    "s3.h2": "Trier les atomes selon μz",
+    "s3.p1": "Imaginez un appareil qui range chaque atome d'un gaz selon la valeur de μ<sub>z</sub> qu'il porte, et la courbe qui donne la fraction des atomes en dessous de chaque valeur. Classiquement, un moment de longueur fixe orienté au hasard a une composante uniformément répartie entre \u2212μ et +μ : la courbe est une rampe. En mécanique quantique, μ<sub>z</sub> ne prend que 2<var>j</var>\u00a0+\u00a01 valeurs, chacune pour la même fraction des atomes : la courbe est un escalier. Les deux moments ont la même longueur, √(<var>j</var>(<var>j</var>\u00a0+\u00a01)) en unités de <var>g</var>μ<sub>B</sub>.",
+    "fig.aria": "Fraction des atomes dont μ_z est inférieur à une valeur donnée : escalier quantique de 2j + 1 marches contre rampe classique, pour un spin j choisi",
+    "fig.legend.q": "mécanique quantique : 2<var>j</var> + 1 marches",
+    "fig.legend.c": "moment classique orienté au hasard",
+    "fig.j": "Spin j",
+    "fig.ax.x": "μz, en unités de g μB",
+    "fig.ax.y": "fraction des atomes en dessous",
+    "fig.k.valeurs": "Valeurs possibles de μz",
+    "fig.f.valeurs": "une par marche, autant d'atomes sur chacune",
+    "fig.k.max": "Plus grand μz, quantique / classique",
+    "fig.f.max": "rapport {r} : jamais tout à fait aligné",
+    "fig.k.carre": "⟨μ<sub>z</sub>²⟩, quantique / classique",
+    "fig.f.carre": "égaux, comme (34.25) le veut",
+    "fig.k.ecart": "Plus grand écart des deux courbes",
+    "fig.f.ecart": "environ {n}/(2j + 1) : il diminue quand j grandit",
+    "fig.f.zero": "j = 0 : aucun moment, rien à trier",
+    "fig.caption": "Pour un spin 1/2, l'escalier n'a que deux marches, et la rampe classique s'étend bien au-delà, jusqu'à √3/2. Pour un grand spin, l'escalier épouse la rampe : on retrouve le comportement classique des grands moments cinétiques.",
+    "s3.p2": "Ce tri, l'« Expérience de Stern et Gerlach » le réalise : un champ qui varie dans l'espace pousse chaque atome en proportion de son μ<sub>z</sub>. Une rampe donnerait une tache étalée ; un escalier donne des taches séparées, autant que de marches. Le carré moyen ne permet pas de distinguer les deux images ; la forme de la répartition, si.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "De la quantification spatiale au spin",
+    "hist.intro": "L'idée qu'un atome ne s'oriente que de quelques façons dans un champ précède sa preuve, et le spin de l'électron vient l'expliquer ; aujourd'hui, ces niveaux servent à détecter les électrons non appariés.",
+    "hist.events": {
+      stern: { who: "Otto Stern", what: "propose, dans la Zeitschrift für Physik, une expérience qui trancherait : si les orientations sont quantifiées, un jet d'atomes doit se scinder dans un champ inhomogène.", context: "La théorie de Bohr et Sommerfeld prévoyait des orientations permises, que beaucoup tenaient pour une commodité de calcul. L'expérience est réalisée l'année suivante avec Walther Gerlach." },
+      spin: { who: "George Uhlenbeck et Samuel Goudsmit", what: "proposent, dans une note des Naturwissenschaften datée du 17 octobre, que l'électron possède un moment cinétique propre, de spin 1/2.", context: "Deux orientations seulement pour un électron : c'est ce qui donne deux faisceaux à l'atome d'argent, dont un seul électron porte le moment." },
+      zavoisky: { who: "Ievgueni Zavoïski", what: "observe à Kazan la résonance paramagnétique électronique : des micro-ondes absorbées quand leur fréquence vaut l'écart des niveaux de spin.", context: "Brebis Bleaney la développe au même moment à Oxford. C'est (35.4) appliqué au spin de l'électron d'un solide." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      rpe: { name: "La résonance paramagnétique électronique", text: "La plupart des spectromètres travaillent vers 9,75\u00a0GHz, dans un champ d'environ 0,35\u00a0T : (35.4) avec <var>g</var>\u00a0≈\u00a02. Ils détectent les radicaux libres, qui ont un électron non apparié. Un dosimètre à alanine en tire la dose qu'il a reçue, dans un faisceau de radiothérapie ou un irradiateur industriel, de 1\u00a0Gy environ jusqu'à 100\u00a0kGy : l'irradiation crée des radicaux en nombre proportionnel à la dose. La même mesure date des dents fossiles." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      nombre: { prompt: "Un atome a un spin j = 2. Combien de valeurs μ_z peut-il prendre le long d'un champ ?",
+        options: { a: "Deux, comme l'électron.", b: "Quatre.", c: "Cinq.", d: "Une infinité, mais très serrées." },
+        why: "2j + 1 = 5 valeurs : J_z vaut 2, 1, 0, \u22121 ou \u22122 fois ħ, et μ_z leur est proportionnel." },
+      centre: { prompt: "On établit un champ faible : que devient la moyenne des énergies des 2j + 1 états ?",
+        options: { a: "Elle ne change pas : les niveaux s'écartent symétriquement.", b: "Elle monte en proportion de B.", c: "Elle descend en proportion de B².", d: "Elle prend la valeur du niveau le plus bas." },
+        why: "ΔU est proportionnel à J_z, dont les valeurs sont symétriques autour de zéro : leur somme est nulle, le centre de gravité des niveaux reste en place." },
+      signe: { prompt: "Pour un électron libre, que fait le champ à l'énergie de l'état J_z = +ħ/2 ?",
+        options: { a: "Il la baisse, le moment étant dans le sens de J.", b: "Rien : seul l'état J_z = 0 change.", c: "Il la baisse de g μ_B B.", d: "Il la monte d'environ μ_B B, car le moment est opposé à J." },
+        hint: "q = \u2212q_e dans (35.3).",
+        why: "μ_z = g(\u2212q_e/2m)J_z est négatif quand J_z > 0 ; ΔU = \u2212μ_z B est positif, environ +μ_B B pour g ≈ 2." },
+      frequence: { prompt: "Dans 1 T, quelle fréquence correspond à l'écart des deux niveaux d'un proton ?",
+        options: { a: "Environ 28 GHz.", b: "Environ 43 MHz.", c: "Environ 14 GHz.", d: "Environ 1 Hz." },
+        hint: "Le magnéton du proton est environ 1\u202f836 fois plus petit que celui de Bohr, et g vaut environ 5,59.",
+        why: "f = g e B/(4π m_p) ≈ 42,6 MHz. Les 28 GHz sont ceux de l'électron : les noyaux résonnent dans les ondes radio." },
+      classique: { prompt: "Classiquement, des moments de même longueur μ orientés au hasard : comment se répartit μ_z ?",
+        options: { a: "Surtout près de zéro, comme la projection d'un vecteur dans un plan.", b: "Surtout près de ±μ.", c: "Uniformément entre \u2212μ et +μ.", d: "Uniquement en ±μ." },
+        why: "Sur une sphère, des bandes de même hauteur ont la même aire : cos θ est uniforme, donc μ_z = μ cos θ aussi. C'est la rampe de la figure." },
+      grand: { prompt: "Que se passe-t-il quand le spin j devient très grand ?",
+        options: { a: "L'escalier des valeurs quantiques épouse la rampe classique, et j/√(j(j + 1)) tend vers 1.", b: "Le nombre de valeurs reste deux.", c: "L'écart entre les deux répartitions grandit.", d: "Le carré moyen quantique s'écarte du classique." },
+        why: "2j + 1 marches de hauteur 1/(2j + 1) : l'écart à la rampe décroît comme 1/(2j + 1). Les grands moments cinétiques ont un comportement classique." },
+      entier: { prompt: "Pourquoi 2j est-il toujours un entier ?",
+        options: { a: "Parce que le moment cinétique classique est entier.", b: "Parce que g vaut 2.", c: "Parce que le champ impose des valeurs entières.", d: "Parce que de j à \u2212j on descend par pas de 1 : il faut un nombre entier de pas, 2j." },
+        why: "La liste (35.1) va de j à \u2212j par pas de 1, sans valeur fractionnaire entre les deux : elle n'existe que si 2j est entier. D'où les spins entiers ou demi-entiers." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol.\u00a0II, chap.\u00a035, §35-1 (texte original en anglais). Notations SI. Stern : <i>Zeitschrift für Physik</i>, vol.\u00a07, 1921, p.\u00a0249. Uhlenbeck et Goudsmit : <i>Naturwissenschaften</i>, note du 17 octobre 1925 (Instituut-Lorentz, Leiden, « Spin »). Zavoïski, Bleaney, bande X et dosimétrie à alanine : Wikipédia, « Electron paramagnetic resonance ». Constantes et facteurs g : CODATA 2022. Calculs propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

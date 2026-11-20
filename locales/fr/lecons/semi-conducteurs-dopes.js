@@ -1,0 +1,98 @@
+/* Leçon « Les semi-conducteurs dopés » (Feynman III.14.2) : textes en français.
+   Une autre langue = locales/<langue>/lecons/semi-conducteurs-dopes.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Les semi-conducteurs dopés",
+    "crumb.jour": "Semi-conducteurs dopés",
+    "h1": "Les semi-conducteurs dopés",
+    "lede": "Un atome de phosphore pour cent millions d'atomes de silicium multiplie le nombre d'électrons libres par plusieurs dizaines de milliers. Les impuretés, choisies et dosées, fixent la conductivité d'un semi-conducteur, et presque sans dépendre de la température.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : les électrons et les trous dans les semi-conducteurs",
+    "eq.derive": "dérive",
+
+    "s1.sec": "1 · Donneurs et accepteurs",
+    "s1.h2": "Un électron de trop, un électron de moins",
+    "s1.p1": "Remplaçons un atome de silicium, qui a quatre électrons de valence, par un atome de phosphore ou d'arsenic, qui en a cinq. Quatre forment les liaisons avec les voisins ; le cinquième reste lié à l'impureté, mais à peine : c'est l'état piégé de la leçon « Le piégeage par une imperfection du réseau », juste sous la bande de conduction, à quelques centièmes d'électronvolt. L'agitation thermique le libère : l'impureté est un donneur, et le cristal, qui conduit par ses électrons négatifs, est de type <var>n</var>.",
+    "s1.p2": "Avec un atome à trois électrons, bore ou aluminium, une liaison reste incomplète. Elle prend un électron à une liaison voisine, et laisse un trou qui se promène : l'impureté est un accepteur, et le cristal, qui conduit par ses trous positifs, est de type <var>p</var>. Dans un cristal de type <var>n</var>, presque tous les donneurs sont ionisés, et la loi (14.4) fixe les trous :",
+    "val.14.4b": "Approximation : tous les donneurs ionisés. L'énergie de liaison, environ 0,045\u00a0eV pour le phosphore dans le silicium, est du même ordre que <var>k</var><sub>B</sub><var>T</var>, 0,026\u00a0eV à 300\u00a0K, et la bande de conduction offre bien plus d'états qu'il n'y a de donneurs ; c'est faux à basse température, sous 100\u00a0K environ. Il faut aussi <var>N</var><sub>D</sub> ≫ <var>n</var><sub>i</sub>, et dopage assez faible pour que le cristal reste non dégénéré, sous 10<sup>24</sup>\u00a0m⁻³ environ dans le silicium. Le simulateur résout la neutralité exacte <var>N</var><sub><var>n</var></sub> \u2212 <var>N</var><sub><var>p</var></sub> = <var>N</var><sub>D</sub> \u2212 <var>N</var><sub>A</sub> avec (14.4).",
+
+    "s2.sec": "2 · La conductivité",
+    "s2.h2": "Des porteurs qui dérivent",
+    "s2.p1": "Dans un champ électrique ℰ, un porteur accélère, puis il est diffusé, par une impureté ou par une vibration du réseau, et repart dans une direction quelconque. Entre deux diffusions, pendant un temps moyen τ, il gagne une vitesse <var>q</var>ℰτ/<var>m</var> dans le sens de la force : c'est sa vitesse moyenne de dérive.",
+    "val.14.5": "Approximation : modèle des collisions, τ indépendant du champ et de la vitesse, masse effective isotrope. Valable tant que la vitesse de dérive reste petite devant la vitesse thermique, environ 10⁵\u00a0m·s⁻¹ ; dans un champ assez fort pour que la dérive l'approche, la vitesse cesse de croître comme ℰ.",
+    "s2.p2": "La densité de courant est le nombre de porteurs par unité de volume, fois leur charge, fois leur vitesse : elle est proportionnelle à ℰ, c'est la loi d'Ohm. Avec les deux sortes de porteurs, dont les contributions s'ajoutent puisque <var>q</var><sup>2</sup> est positif dans les deux cas :",
+    "val.14.8": "Approximation : celle de (14.5) pour chaque sorte de porteurs. On écrit souvent <var>q</var>τ/<var>m</var> = μ, la mobilité : σ = <var>e</var>(<var>N</var><sub><var>n</var></sub>μ<sub><var>n</var></sub> + <var>N</var><sub><var>p</var></sub>μ<sub><var>p</var></sub>), avec dans le silicium à 300\u00a0K μ<sub><var>n</var></sub> ≈ 0,15 et μ<sub><var>p</var></sub> ≈ 0,045\u00a0m<sup>2</sup>·V⁻¹·s⁻¹, valeurs d'un cristal peu dopé : les impuretés, en diffusant les porteurs, réduisent la mobilité.",
+    "fig.aria": "Densités d'électrons et de trous d'un silicium dopé en fonction de la température",
+    "fig.legend.n": "électrons Nₙ",
+    "fig.legend.p": "trous N_p",
+    "fig.legend.ni": "densité intrinsèque nᵢ",
+    "fig.xaxis": "température (K)",
+    "fig.yaxis": "densité (m⁻³)",
+    "fig.d": "Donneurs, N_D",
+    "fig.a": "Accepteurs, N_A",
+    "fig.t": "Température, T",
+    "fig.k.np": "Électrons et trous",
+    "fig.v.np": "{n} et {p} m⁻³",
+    "fig.f.typen": "type n : les électrons sont majoritaires",
+    "fig.f.typep": "type p : les trous sont majoritaires",
+    "fig.f.intr": "presque intrinsèque : autant d'électrons que de trous",
+    "fig.k.sigma": "Conductivité σ",
+    "fig.f.sigma": "résistivité {rho}, mobilités du silicium à 300 K",
+    "fig.caption": "Tant que <var>n</var><sub>i</sub> ≪ <var>N</var><sub>D</sub>, la densité des majoritaires est celle des donneurs, et ne dépend pas de la température : un palier. Quand <var>n</var><sub>i</sub> rattrape le dopage, vers 500 à 700\u00a0K selon <var>N</var><sub>D</sub>, le cristal redevient intrinsèque. Les minoritaires suivent <var>n</var><sub>i</sub><sup>2</sup>/<var>N</var><sub>D</sub> : ils croissent très vite avec la température. Mettez autant d'accepteurs que de donneurs : ils se compensent.",
+
+    "s3.sec": "Décrire le système",
+    "s3.h2": "Des impuretés rares, des effets énormes",
+    "s3.p1": "Trois rapports : l'énergie de liaison du donneur contre <var>k</var><sub>B</sub><var>T</var>, qui dit s'il est ionisé ; le temps entre deux diffusions, qui fixe la mobilité ; le dopage contre <var>n</var><sub>i</sub>, qui dit qui l'emporte.",
+    "sys.title": "Le système décrit : silicium à 300\u00a0K, 10<sup>22</sup> donneurs par mètre cube",
+    "sys1.body": "Le dopant est lié par quelques centièmes d'électronvolt, du même ordre que <var>k</var><sub>B</sub><var>T</var> ≈ {kT}, et la bande de conduction offre des milliers de fois plus d'états qu'il n'y a de donneurs : il est ionisé. À très basse température, les électrons retombent sur les donneurs et la conductivité s'effondre.",
+    "sys2.body": "Avec μ<sub><var>n</var></sub> = 0,15\u00a0m<sup>2</sup>·V⁻¹·s⁻¹ et une masse effective de conduction de 0,26 <var>m</var><sub>e</sub>, (14.5) donne τ ≈ {tau} entre deux diffusions. Dans un champ de 10<sup>3</sup>\u00a0V·m⁻¹, la dérive vaut {v}, mille fois moins que la vitesse thermique.",
+    "sys3.body": "Le silicium pur conduit {s0} ; avec un donneur pour 5 millions d'atomes, il conduit {s1}. Les impuretés, pas le silicium, fixent la conductivité.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Des impuretés gênantes aux impuretés voulues",
+    "hist.intro": "Les impuretés ont d'abord rendu les semi-conducteurs imprévisibles ; maîtrisées, elles en ont fait des composants.",
+    "hist.events": {
+      bidwell: { who: "Shelford Bidwell", what: "rapporte que les propriétés de certains semi-conducteurs viennent des impuretés qu'ils contiennent.", context: "Une observation faite indépendamment, plus tard, par Bernhard Gudden." },
+      gudden: { who: "Bernhard Gudden", what: "attribue à son tour la conduction des semi-conducteurs à leurs impuretés.", context: "L'année suivante, Wilson en donne l'explication par la théorie des bandes." },
+      woodyard: { who: "John Woodyard", what: "obtient un brevet américain pour un procédé de dopage du germanium par de petites quantités d'éléments de la colonne de l'azote.", context: "Mis au point chez Sperry Gyroscope pendant la Seconde Guerre mondiale." },
+      pfann: { who: "William Pfann", what: "développe aux Bell Labs la fusion de zone, qui purifie le germanium jusqu'à un atome étranger pour 10¹⁰.", context: "On ne peut doper avec précision qu'un cristal d'abord très pur." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      dopage: { name: "Le dopage des composants", text: "Le silicium des composants est dopé de 10¹⁹ à 10²⁴ atomes par mètre cube selon la région : un dopage léger correspond à un atome pour cinq milliards, un dopage fort à un pour cinquante mille (le silicium compte 5 × 10²⁸ atomes par mètre cube). Le phosphore donne le type n, le bore le type p." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      donneur: { prompt: "Pourquoi un atome d'arsenic dans le germanium fournit-il un électron libre ?",
+        options: { a: "Parce que l'arsenic est un métal.", b: "Parce qu'il prend un électron au germanium.", c: "Parce qu'il a cinq électrons de valence : quatre forment les liaisons, le cinquième est à peine lié et l'agitation thermique le libère.", d: "Parce qu'il change la bande interdite du germanium." },
+        why: "Le cinquième électron est dans un état piégé très peu profond, de l'ordre du centième d'électronvolt, moins que k_BT à 300 K, 0,026 eV." },
+      accepteur: { prompt: "Un cristal de silicium dopé au bore conduit surtout par :",
+        options: { a: "des trous : chaque bore prend un électron à une liaison voisine et laisse un trou mobile.", b: "des électrons.", c: "des ions bore.", d: "des excitons." },
+        why: "Le bore a trois électrons de valence : la quatrième liaison se complète en prenant un électron voisin. Le trou laissé se déplace : type p." },
+      minoritaires: { prompt: "Silicium à 300 K, nᵢ = 10¹⁶ m⁻³, dopé à N_D = 10²² m⁻³. Combien de trous ?",
+        options: { a: "10²² m⁻³.", b: "10¹⁶ m⁻³.", c: "Aucun.", d: "10¹⁰ m⁻³ : nᵢ²/N_D." },
+        hint: "Le produit N_n N_p ne dépend pas du dopage.",
+        why: "N_p = nᵢ²/N_n = 10³²/10²² = 10¹⁰ m⁻³. Le dopage augmente les électrons et diminue les trous d'autant." },
+      temperature: { prompt: "Pourquoi la conductivité d'un silicium dopé n dépend-elle peu de la température autour de 300 K ?",
+        options: { a: "Parce que la bande interdite change avec T.", b: "Parce que le nombre de majoritaires est fixé par les donneurs, tous ionisés, et non par l'agitation thermique.", c: "Parce que les trous compensent.", d: "Elle en dépend énormément." },
+        why: "N_n ≈ N_D tant que nᵢ ≪ N_D. Seule la mobilité varie un peu avec T, par les vibrations du réseau." },
+      derive: { prompt: "Mobilité 0,15 m²·V⁻¹·s⁻¹, champ 2 × 10³ V·m⁻¹. Quelle vitesse de dérive ?",
+        options: { a: "300 m·s⁻¹.", b: "0,15 m·s⁻¹.", c: "3 × 10⁵ m·s⁻¹.", d: "La vitesse de la lumière." },
+        why: "v = μℰ = 0,15 × 2 × 10³ = 300 m·s⁻¹, bien moins que la vitesse thermique." },
+      compense: { prompt: "On dope un silicium avec autant de bore que de phosphore. Que devient-il ?",
+        options: { a: "Très conducteur, de type n.", b: "Très conducteur, de type p.", c: "Presque intrinsèque : les électrons des donneurs comblent les places des accepteurs.", d: "Métallique." },
+        why: "N_n \u2212 N_p = N_D \u2212 N_A = 0 : avec (14.4), N_n = N_p = nᵢ. Les impuretés se compensent ; elles diffusent pourtant toujours les porteurs." },
+      masse: { prompt: "Pourquoi les trous du silicium conduisent-ils moins bien que ses électrons, à densité égale ?",
+        options: { a: "Parce qu'ils ont une charge plus faible.", b: "Parce que leur mobilité qτ/m est plus petite : 0,045 contre 0,15 m²·V⁻¹·s⁻¹.", c: "Parce qu'ils ne répondent pas au champ.", d: "Parce qu'ils sont moins nombreux." },
+        why: "(14.8) : chaque porteur contribue en q²τ/m. Les trous du silicium ont une mobilité trois fois plus faible." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 14, §14-2 (texte original en anglais). Notations SI. Mobilités et masses à 300\u00a0K : tables usuelles des propriétés du silicium. Histoire du dopage : Bidwell (1885), Gudden (1930), brevet Woodyard (1950), fusion de zone de Pfann (1951). Calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

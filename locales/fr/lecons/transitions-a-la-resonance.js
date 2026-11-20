@@ -1,0 +1,102 @@
+/* Leçon « Les transitions à la résonance » (Feynman III.9.4) : textes en français.
+   Une autre langue = locales/<langue>/lecons/transitions-a-la-resonance.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Les transitions à la résonance",
+    "crumb.jour": "Les transitions à la résonance",
+    "h1": "Les transitions à la résonance",
+    "lede": "Un champ qui oscille exactement à la fréquence de la molécule la fait basculer de l'état haut à l'état bas, puis la ramène, à un rythme fixé par l'intensité du champ. Réglez le temps de passage pour qu'elle sorte en bas : elle a cédé son énergie au champ. C'est le maser.",
+    "tag.piste": "Physique quantique",
+    "tag.prereq": "Prérequis : les transitions dans un champ variable",
+
+    "s1.sec": "La résonance",
+    "s1.h2": "Un balancement entre deux états",
+    "s1.p1": "Le système : une molécule d'ammoniac qui traverse une cavité où le champ oscille à ω = ω<sub>0</sub>. Dans (9.45), les exponentielles valent 1 :",
+    "val.9.46": "Approximation : celle de (9.45), terme rapide négligé, μℰ<sub>0</sub>/ℏ ≪ ω<sub>0</sub> ; résonance exacte, champ d'amplitude constante pendant le passage.",
+    "s1.p2": "En dérivant une seconde fois, chaque γ obéit à l'équation d'un oscillateur harmonique de pulsation μℰ<sub>0</sub>/ℏ. Une molécule qui entre dans l'état I, γ<sub>I</sub> = 1, a pour probabilités",
+    "eq.cos": "cos",
+    "eq.sin": "sin",
+    "val.9.50": "Approximation : celle de (9.46). La somme des deux vaut 1 à chaque instant. La probabilité oscille à la pulsation 2μℰ<sub>0</sub>/ℏ, la pulsation de Rabi, quel que soit l'état de départ.",
+    "s1.p3": "Le champ fait passer la molécule de I à II, puis de II à I, sans fin. Pour qu'elle sorte de la cavité dans l'état II, on règle la durée <var>T</var> du passage, ou l'intensité du champ :",
+    "val.9.50a": "Approximation : une seule vitesse <var>v</var> et un champ uniforme sur la longueur <var>L</var> de la cavité. Un faisceau réel a des vitesses dispersées : la condition ne vaut alors qu'en moyenne.",
+
+    "s2.sec": "Le maser",
+    "s2.h2": "L'énergie va au champ",
+    "s2.p1": "Une molécule qui passe de I à II perd l'énergie 2<var>A</var> = ℏω<sub>0</sub>. Les équations ne disent pas où elle va ; la conservation de l'énergie le dit : au champ de la cavité, qui gagne exactement ce que les molécules perdent. Si l'on n'envoie dans la cavité que des molécules dans l'état I, triées comme dans « La molécule d'ammoniac dans un champ électrique statique », le champ grandit, et ses pertes sont compensées : c'est un oscillateur, et un amplificateur. Le mot maser veut dire amplification de micro-ondes par émission stimulée de rayonnement.",
+    "s2.p2": "Deux défauts réduisent le rendement : les molécules n'ont pas toutes la même vitesse, donc pas le même <var>T</var> ; et le champ n'est pas le même partout dans la cavité. Aucun réglage ne fait sortir toutes les molécules dans l'état II.",
+    "s2.p3": "Sans tri, il faut une autre façon de peupler l'état haut. Dans un maser à trois niveaux, on excite les atomes vers un niveau plus haut encore, d'où ils retombent vers un niveau qui dure : il se peuple davantage que le niveau du dessous, et l'on fait fonctionner la transition entre ces deux-là. Un laser est un maser aux fréquences optiques, dont la cavité est faite de deux miroirs plans.",
+
+    "s3.sec": "Interaction",
+    "s3.h2": "Régler le champ d'une cavité",
+    "s3.p1": "Le système : un faisceau d'ammoniac trié, toutes les molécules dans l'état I, qui traverse une cavité de 10\u00a0cm à la résonance. Le champ s'écrit 2ℰ<sub>0</sub> cos ω<var>t</var>, comme dans (9.37) : son amplitude est 2ℰ<sub>0</sub>. La source est à la température choisie ; les vitesses du faisceau suivent la loi d'un jet effusif, de densité proportionnelle à <var>v</var>³ e<sup>\u2212<var>mv</var>²/2<var>k</var><sub>B</sub><var>T</var></sup>.",
+    "fig.aria": "Probabilité de sortir de la cavité dans l'état II en fonction de l'amplitude du champ, pour une seule vitesse et pour un faisceau réel",
+    "fig.legend.une": "une seule vitesse, √(2k_BT/m)",
+    "fig.legend.faisceau": "faisceau réel, vitesses dispersées",
+    "fig.x": "ℰ₀, moitié de l'amplitude du champ (V·m⁻¹)",
+    "fig.y": "probabilité de sortir en II",
+    "fig.e": "Champ ℰ₀",
+    "fig.temp": "Température de la source",
+    "fig.k.p": "Probabilité de sortir en II, faisceau réel",
+    "fig.f.p": "une seule vitesse : {u}",
+    "fig.k.opt": "Meilleur champ pour le faisceau",
+    "fig.f.opt": "probabilité {p} ; pour une seule vitesse, {e} donnerait 1",
+    "fig.k.puis": "Puissance cédée au champ, pour 10¹³ molécules par seconde",
+    "fig.f.puis": "flux × 2<var>A</var> × probabilité",
+    "fig.caption": "La courbe d'une seule vitesse monte à 1 puis redescend : au-delà, la molécule a le temps de revenir en I. Le faisceau réel ne dépasse jamais 1 : les molécules lentes ont fait plus d'un demi-tour quand les rapides n'en ont fait qu'une partie. Une source plus froide ralentit le faisceau, et il faut moins de champ.",
+    "s3.p2": "Le maser fonctionne avec des champs minuscules, quelques dixièmes de volt par mètre, parce que chaque molécule passe des centaines de microsecondes dans la cavité : des millions de périodes, pendant lesquelles les petites poussées du champ s'additionnent.",
+
+    "s4.sec": "Décrire le système",
+    "s4.h2": "Les échelles d'un maser à ammoniac",
+    "s4.p1": "Le temps de passage <var>T</var> doit être grand devant la période 2π/ω<sub>0</sub>, pour que le champ ait le temps d'agir de façon cohérente, et court devant le temps entre deux collisions, qui détruisent la cohérence : c'est pourquoi on travaille avec un faisceau dans le vide.",
+    "s4.p2": "Le champ doit vérifier μℰ<sub>0</sub>/ℏ ≪ ω<sub>0</sub>, sans quoi (9.46) ne vaut plus. Pour l'ammoniac, la condition π/2 donne un rapport si petit que l'approximation ne coûte rien.",
+    "sys.title": "Le système décrit : un faisceau à 300 K dans une cavité de 10 cm",
+    "sys.body": "Vitesse typique √(2<var>k</var><sub>B</sub><var>T</var>/<var>m</var>) = {v} ; temps de passage <var>T</var> = {T}, soit {n} périodes de l'onde. La condition π/2 demande ℰ<sub>0</sub> = {e} ; alors (μℰ<sub>0</sub>/ℏ)/ω<sub>0</sub> = {r}.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Le premier maser",
+    "hist.intro": "L'idée est venue en même temps, de part et d'autre du monde ; l'ammoniac a servi à la réaliser.",
+    "hist.events": {
+      basov: { who: "Nikolaï Bassov et Alexandre Prokhorov", what: "proposent le principe d'un amplificateur fondé sur des molécules triées dans l'état haut, à une conférence de radiospectroscopie de l'Académie des sciences de l'Union soviétique.", context: "Leur travail est publié en octobre 1954. Joseph Weber présente des idées voisines la même année, à Ottawa." },
+      townes: { who: "Charles Townes, James Gordon et Herbert Zeiger", what: "font fonctionner à l'université Columbia le premier maser, à ammoniac, vers 24\u00a0GHz.", context: "Publié en 1955 à la Physical Review : « The Maser—New Type of Microwave Amplifier, Frequency Standard, and Spectrometer »." },
+      nobel: { who: "Charles Townes, Nikolaï Bassov et Alexandre Prokhorov", what: "partagent le prix Nobel de physique pour des travaux fondamentaux dans le domaine de l'électronique quantique, qui ont conduit à la construction d'oscillateurs et d'amplificateurs fondés sur le principe maser-laser.", context: "Fondation Nobel." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      horloge: { name: "Les horloges à maser à hydrogène", text: "Des masers à hydrogène servent d'étalons de fréquence ; avec d'autres horloges atomiques, ils contribuent au Temps atomique international, coordonné par le Bureau international des poids et mesures." },
+      espace: { name: "Écouter les sondes lointaines", text: "Au début des années 1960, le Jet Propulsion Laboratory a mis au point un maser refroidi à l'hélium, vers 4\u00a0K, pour amplifier avec très peu de bruit les signaux des sondes : c'est ce qui a permis à Mariner IV d'envoyer ses images de Mars." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      pi2: { prompt: "Que faut-il pour qu'une molécule entrée dans l'état I sorte de la cavité dans l'état II à coup sûr ?",
+        options: { a: "Un champ aussi fort que possible.", b: "Un champ statique.", c: "Un temps de passage aussi long que possible.", d: "Un réglage précis : μℰ₀T/ħ = π/2, à la résonance." },
+        why: "D'après (9.50), P_II = sin²(μℰ₀T/ħ) vaut 1 pour μℰ₀T/ħ = π/2. Plus de champ ou de temps la ramène vers I." },
+      energie: { prompt: "Où va l'énergie 2A perdue par une molécule qui passe de I à II dans la cavité ?",
+        options: { a: "Au champ électromagnétique de la cavité.", b: "Elle est rayonnée au hasard.", c: "Elle chauffe les parois.", d: "Elle reste dans la molécule." },
+        why: "L'énergie se conserve : le champ gagne ce que perdent les molécules. Le champ stimule l'émission, et l'émission renforce le champ." },
+      vitesse: { prompt: "Pourquoi un faisceau réel ne donne-t-il jamais toutes ses molécules dans l'état II ?",
+        options: { a: "Parce que certaines molécules sont dans l'état II à l'entrée.", b: "Parce que le champ est trop faible.", c: "Parce que les molécules n'ont pas toutes la même vitesse : la condition π/2 ne peut pas valoir pour toutes à la fois.", d: "Parce que l'énergie se perd." },
+        why: "Le temps de passage T = L/v varie d'une molécule à l'autre ; un champ réglé pour les unes est trop fort ou trop faible pour les autres." },
+      tri: { prompt: "Pourquoi trie-t-on les molécules avant la cavité ?",
+        options: { a: "Pour les ralentir.", b: "Parce que sans tri, autant de molécules passeraient de II à I, en prenant de l'énergie au champ, que de I à II.", c: "Pour les aligner sur le champ.", d: "Pour les refroidir." },
+        why: "À l'équilibre, les deux états sont presque également peuplés. Un champ fait passer I vers II et II vers I avec la même probabilité : il faut un excès dans l'état haut pour amplifier." },
+      trop: { prompt: "On double le champ par rapport à la condition π/2, pour une vitesse unique. Que devient la probabilité de sortir en II ?",
+        options: { a: "Zéro : la molécule a fait un aller-retour, μℰ₀T/ħ = π.", b: "1, encore mieux.", c: "1/2.", d: "2." },
+        hint: "Doubler le champ double l'argument du sinus de (9.50).",
+        why: "sin²(π) = 0. Le champ ramène la molécule dans l'état I : elle a pris au champ l'énergie qu'elle lui avait donnée." },
+      trois: { prompt: "Comment un maser à trois niveaux peuple-t-il son état haut sans trier les atomes ?",
+        options: { a: "En chauffant le milieu.", b: "En appliquant un champ statique.", c: "En refroidissant le milieu jusqu'au zéro absolu.", d: "En excitant les atomes vers un niveau plus haut, d'où ils retombent vers un niveau qui dure, qui se peuple plus que le niveau du dessous." },
+        why: "On obtient ainsi plus d'atomes dans le niveau supérieur de la transition que dans l'inférieur, sans faisceau ni tri." },
+      laser: { prompt: "Qu'est-ce qu'un laser, du point de vue de cette leçon ?",
+        options: { a: "Un appareil sans rapport, fondé sur la lumière blanche.", b: "Un maser qui fonctionne en champ statique.", c: "Un maser aux fréquences optiques, dont la cavité est formée de deux miroirs plans.", d: "Un maser dont les molécules ne sont pas triées et dont la cavité est fermée." },
+        why: "Le principe est le même : un milieu où l'état haut est plus peuplé que l'état bas, dans une cavité qui renvoie le champ dans le milieu." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. III, chap. 9, §9-4 (texte original en anglais). Moment dipolaire de l'ammoniac, 1,47\u00a0D : NIST, « Selected Values of Electric Dipole Moments for Molecules in the Gas Phase » (Nelson, Lide et Maryott, 1967). Histoire : N. Bassov et A. Prokhorov (1952, publié en 1954) ; J. P. Gordon, H. J. Zeiger et C. H. Townes, Phys. Rev. 99, 1264 (1955) ; prix Nobel de physique 1964. Usages : masers à hydrogène et Temps atomique international ; maser du Jet Propulsion Laboratory pour Mariner IV. Flux de 10¹³ molécules par seconde : hypothèse de calcul. Calculs propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

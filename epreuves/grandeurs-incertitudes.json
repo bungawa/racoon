@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["pendule", "c"],
+  ["atmo", "b"],
+  ["quadrature", "d"],
+  ["amplitude", "a"],
+  ["explosion", "b"],
+  ["mesures", "c"],
+  ["fermi", "a"],
+  ["dimension", "d"]
+ ]
+}

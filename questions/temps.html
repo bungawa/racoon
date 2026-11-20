@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-i18n="h1">C'est quoi le temps ?</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/questions" data-i18n="crumb.questions"></a><span class="aux">›</span><span data-i18n="crumb.titre"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-relat" href="/racoon/atlas?piste=fond" data-i18n="tag.piste"></a>
+      <span class="chip plain" data-i18n="tag.genre"></span>
+      <span class="chip plain" data-i18n="tag.duree"></span>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n="s1.p1"></p>
+    <p data-i18n="s1.p2"></p>
+    <p data-i18n="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="box def"><b data-i18n="s2.def.title"></b>
+      <p data-i18n-html="s2.def.body"></p>
+    </div>
+    <div class="list keyed" id="horloges"></div>
+    <p data-i18n-html="s2.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n="s3.p1"></p>
+    <div class="eq">
+      <math display="block"><mi>Δ</mi><mi>τ</mi><mo>=</mo><mfrac><mrow><mi>Δ</mi><mi>t</mi></mrow><mi>γ</mi></mfrac><mo>,</mo><mspace width="0.5em"/><mi>γ</mi><mo>=</mo><mfrac><mn>1</mn><msqrt><mn>1</mn><mo>−</mo><msup><mi>v</mi><mn>2</mn></msup><mo>/</mo><msup><mi>c</mi><mn>2</mn></msup></msqrt></mfrac><mo>;</mo><mspace width="1em"/><mfrac><mrow><mi>Δ</mi><mi>f</mi></mrow><mi>f</mi></mfrac><mo>≈</mo><mfrac><mrow><mi>g</mi><mi>Δ</mi><mi>h</mi></mrow><msup><mi>c</mi><mn>2</mn></msup></mfrac></math>
+      <span class="n">(1)</span>
+    </div>
+    <p class="validite" data-i18n="val.1"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <figure>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="vsl" data-i18n="speed.label"></label><output id="vread" for="vsl"></output></div>
+          <input id="vsl" type="range" min="0" max="8.47" step="0.01" value="2.4"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="speed.beta"></span><span class="v" id="vbeta"></span></div>
+          <div class="stat"><span class="k" data-i18n="speed.gamma"></span><span class="v" id="vgamma"></span></div>
+          <div class="stat"><span class="k" data-i18n="speed.lag"></span><span class="v" id="vlag"></span><span class="f" data-i18n="speed.lag.f"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="speed.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="gps.sec"></span>
+    <h2 data-i18n="gps.h2"></h2>
+    <p data-i18n="gps.p1"></p>
+    <figure class="chart">
+      <svg id="gchart" role="img" data-i18n-attr="aria-label:gps.aria"></svg>
+      <div class="panel">
+        <div class="ctl"><div class="row"><label for="hsl" data-i18n="gps.alt"></label><output id="hread" for="hsl"></output></div>
+          <input id="hsl" type="range" min="200" max="40000" step="1" value="20184"></div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="gps.v"></span><span class="v" id="ov"></span></div>
+          <div class="stat"><span class="k" data-i18n="gps.grav"></span><span class="v" id="ograv"></span></div>
+          <div class="stat"><span class="k" data-i18n="gps.kin"></span><span class="v" id="okin"></span></div>
+          <div class="stat"><span class="k" data-i18n="gps.net"></span><span class="v" id="onet"></span><span class="f" id="oerr"></span></div>
+        </div>
+        <p id="verdict" role="status"></p>
+      </div>
+      <div class="legend"><span class="c-tint" data-i18n="gps.legend.net"></span><span class="c-warn" data-i18n="gps.legend.parts"></span></div>
+      <figcaption data-i18n-html="gps.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n="s4.p1"></p>
+    <blockquote class="thesis" data-i18n="s4.thesis"></blockquote>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="list keyed" id="fleche"></div>
+    <p data-i18n="s4.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="lim.sec"></span>
+    <h2 data-i18n="lim.h2"></h2>
+    <div class="box prop"><b data-i18n="lim.bien.title"></b><p data-i18n="lim.bien.body"></p></div>
+    <div class="box warn"><b data-i18n="lim.mal.title"></b><p data-i18n="lim.mal.body"></p></div>
+    <div class="box rem"><b data-i18n="lim.ouvert.title"></b><p data-i18n="lim.ouvert.body"></p></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="liens.sec"></span>
+    <h2 data-i18n="liens.h2"></h2>
+    <p data-i18n-html="liens.intro"></p>
+    <div class="list stack" id="liens"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/locales/fr/questions/temps.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/questions/temps.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+F.autoTypo(document.querySelector("main"));
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+const $ = id => document.getElementById(id);
+const usj = x => F.qty((x > 0 ? "+" : "") + F.num(x * 1e6, 3), t("unit.usj"));   // s par jour → « +38,5 µs/j »
+
+/* ---------- horloges : ce qu'elles comptent ---------- */
+(() => {
+  const ROWS = [["pendule", F.si(0.5, "Hz")], ["quartz", F.qty(F.num(32768, 5), "Hz")], ["cesium", F.qty(F.num(9192631770, 10), "Hz")], ["optique", "10" + F.sup(-18)]];
+  const txt = textOf("horloges.rows", ROWS.map(r => r[0]));
+  $("horloges").innerHTML = ROWS.map(([id, v]) => `<div><span class="k">${txt[id].name}</span><span>${txt[id].text}</span><span class="v">${v}</span></div>`).join("");
+})();
+
+/* ---------- dilatation due à la vitesse ---------- */
+(() => {
+  const sl = $("vsl");
+  const upd = () => {
+    const v = Math.min(Math.pow(10, +sl.value), 0.999 * Chrono.C), g1 = Chrono.gammaMinusOne(v);
+    $("vread").textContent = F.si(v, "m·s⁻¹");
+    $("vbeta").textContent = v / Chrono.C < 1e-3 ? F.sci(v / Chrono.C, 3) : F.num(v / Chrono.C, 4);
+    $("vgamma").textContent = g1 < 1e-3 ? t("speed.gamma.small", { e: F.sci(g1, 3) }) : F.num(1 + g1, 5);
+    $("vlag").textContent = F.si(Chrono.lagPerDay(v), "s");
+  };
+  sl.oninput = upd; upd();
+})();
+
+/* ---------- horloge en orbite circulaire ---------- */
+(() => {
+  const KM = 1e3, HMAX = 40000, { x, y, g } = Plot.axes($("gchart"), { fmt: F, w: 640, h: 300, pad: { b: 44 },
+    x: { domain: [0, HMAX], label: t("gps.x") }, y: { domain: [-30, 60], label: t("gps.y") } });
+  const path = f => { let d = ""; for (let h = 200; h <= HMAX; h += 200) d += (h === 200 ? "M" : "L") + x(h).toFixed(1) + " " + y(f(Chrono.orbitPerDay(h * KM)) * 1e6).toFixed(1); return d; };
+  Plot.el("line", { x1: x(0), x2: x(HMAX), y1: y(0), y2: y(0), class: "zero" }, g);
+  Plot.el("path", { d: path(o => o.grav), class: "ref" }, g);
+  Plot.el("path", { d: path(o => o.kin), class: "ref" }, g);
+  Plot.el("path", { d: path(o => o.net), class: "curve" }, g);
+  const MARKS = [["iss", 415], ["gps", 20184], ["geo", Math.round(Chrono.geoAltitude() / KM)]], marks = textOf("gps.marks", MARKS.map(m => m[0]));
+  MARKS.forEach(([id, h], i) => {
+    Plot.el("line", { x1: x(h), x2: x(h), y1: y(-30), y2: y(60), class: "grid" }, g);
+    Plot.el("text", { x: x(h) + (i === 2 ? -4 : 4), y: y(55 - 8 * i), "text-anchor": i === 2 ? "end" : "start", class: "note" }, g).textContent = marks[id];
+  });
+  const dot = Plot.el("circle", { r: 6, class: "dot" }, g), sl = $("hsl");
+  const upd = () => {
+    const h = +sl.value, o = Chrono.orbitPerDay(h * KM);
+    dot.setAttribute("cx", x(h)); dot.setAttribute("cy", y(o.net * 1e6));
+    $("hread").textContent = F.si(h * KM, "m", { prefix: "k" });
+    $("ov").textContent = F.si(o.v, "m·s⁻¹", { prefix: "k" });
+    $("ograv").textContent = usj(o.grav);
+    $("okin").textContent = usj(o.kin);
+    $("onet").textContent = usj(o.net);
+    $("oerr").textContent = t("gps.err", { d: F.si(Chrono.rangeError(o.net), "m") });
+    $("verdict").textContent = t(o.net > 0 ? "gps.ahead" : "gps.behind");
+  };
+  sl.oninput = upd; upd();
+})();
+
+/* ---------- flèche du temps : retour spontané ---------- */
+(() => {
+  const ROWS = [["dix", 10], ["cent", 100], ["mole", 6.022e23]], txt = textOf("fleche.rows", ROWS.map(r => r[0]));
+  const p = N => { const e = Chrono.log10AllInHalf(N); return N <= 10 ? F.sci(Chrono.allInHalf(N), 3) : "10" + (Math.abs(e) < 1000 ? F.sup(Math.round(e)) : "<sup>" + F.sci(e, 2) + "</sup>"); };
+  $("fleche").innerHTML = ROWS.map(([id, N]) => `<div><span class="k">${txt[id].name}</span><span>${txt[id].text}</span><span class="v">${p(N)}</span></div>`).join("");
+})();
+
+/* ---------- notions liées ---------- */
+(() => {
+  const NOTIONS = ["mesure", "relat_restreinte", "espace_temps", "cliquet"], txt = textOf("liens.items", NOTIONS);
+  $("liens").innerHTML = NOTIONS.map(id => `<div><a href="/racoon/atlas?notion=${id}"><b>${txt[id].name}</b></a><span>${txt[id].text}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["huygens", 1656, "experiment"], ["boltzmann", 1877, "idea"], ["einstein", 1905, "idea"], ["eddington", 1927, "idea"], ["essen", 1955, "experiment"],
+    ["cgpm", 1967, "use"], ["hafele", 1971, "experiment"], ["gps", 1978, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["gps", "utc", "geodesie"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["compter", "a"], ["gps", "a"], ["iss", "a"], ["simultane", "a"], ["reciproque", "a"], ["fleche", "a"], ["cesium", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 11 });
+})();
+</script>
+</body>
+</html>

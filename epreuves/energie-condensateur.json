@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["isole", "a"],
+  ["generateur", "b"],
+  ["ressort", "c"],
+  ["rangees", "d"],
+  ["ordre", "a"],
+  ["distance", "b"],
+  ["miroir", "c"],
+  ["paires", "d"]
+ ]
+}

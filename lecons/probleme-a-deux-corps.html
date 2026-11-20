@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le problème à deux corps</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-mecanique" data-i18n="monde.mecanique"></a><span class="aux">›</span><a href="/racoon/etape?id=deux-corps" data-i18n="etape.deux-corps"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-meca" href="/racoon/atlas?piste=meca" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/conservation-quantite-de-mouvement" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mrow><mo>(</mo><msub><mi>m</mi><mn>1</mn></msub><mo>+</mo><msub><mi>m</mi><mn>2</mn></msub><mo>)</mo></mrow><mover><mrow><mi>O</mi><mi>G</mi></mrow><mo>→</mo></mover><mo>=</mo><msub><mi>m</mi><mn>1</mn></msub><mover><mrow><mi>O</mi><msub><mi>M</mi><mn>1</mn></msub></mrow><mo>→</mo></mover><mo>+</mo><msub><mi>m</mi><mn>2</mn></msub><mover><mrow><mi>O</mi><msub><mi>M</mi><mn>2</mn></msub></mrow><mo>→</mo></mover><mo>,</mo><mspace width="1em"></mspace><mover><mi>r</mi><mo>→</mo></mover><mo>=</mo><mover><mrow><msub><mi>M</mi><mn>1</mn></msub><msub><mi>M</mi><mn>2</mn></msub></mrow><mo>→</mo></mover></math></div>
+    <p class="validite" data-i18n-html="val.def"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mi>μ</mi><mfrac><mrow><msup><mi mathvariant="normal">d</mi><mn>2</mn></msup><mover><mi>r</mi><mo>→</mo></mover></mrow><mrow><mi mathvariant="normal">d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><msub><mover><mi>F</mi><mo>→</mo></mover><mrow><mn>1</mn><mo>→</mo><mn>2</mn></mrow></msub><mo>,</mo><mspace width="1em"></mspace><mi>μ</mi><mo>=</mo><mfrac><mrow><msub><mi>m</mi><mn>1</mn></msub><msub><mi>m</mi><mn>2</mn></msub></mrow><mrow><msub><mi>m</mi><mn>1</mn></msub><mo>+</mo><msub><mi>m</mi><mn>2</mn></msub></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.reduit"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>E</mi><mi mathvariant="normal">c</mi></msub><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>M</mi><msubsup><mi>v</mi><mi>G</mi><mn>2</mn></msubsup><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>μ</mi><msup><mi>v</mi><mn>2</mn></msup><mo>,</mo><mspace width="1em"></mspace><msub><mover><mi>L</mi><mo>→</mo></mover><mi>G</mi></msub><mo>=</mo><mover><mi>r</mi><mo>→</mo></mover><mo>∧</mo><mi>μ</mi><mover><mi>v</mi><mo>→</mo></mover></math></div>
+    <p class="validite" data-i18n-html="val.koenig"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <figure>
+      <svg class="fig" id="orb" viewBox="0 0 640 380" role="img" data-i18n-attr="aria-label:orb.aria"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="orb.legend.m1"></span><span class="c-warn" data-i18n="orb.legend.m2"></span><span class="c-label-2" data-i18n="orb.legend.rel"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="q" data-i18n="orb.q"></label><output id="qv" for="q"></output></div>
+            <input id="q" type="range" min="-3" max="0" step="0.05" value="-0.5"></div>
+          <div class="ctl"><div class="row"><label for="ex" data-i18n="orb.e"></label><output id="exv" for="ex"></output></div>
+            <input id="ex" type="range" min="0" max="0.8" step="0.01" value="0.5"></div>
+          <div class="ctl"><div class="row"><label for="tt" data-i18n="orb.t"></label><output id="ttv" for="tt"></output></div>
+            <input id="tt" type="range" min="0" max="1" step="0.01" value="0.2"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="orb.k.mu"></span><span class="v" id="vmu"></span><span class="f" data-i18n="orb.f.mu"></span></div>
+          <div class="stat"><span class="k" data-i18n="orb.k.g"></span><span class="v" id="vg"></span><span class="f" data-i18n="orb.f.g"></span></div>
+          <div class="stat"><span class="k" data-i18n="orb.k.t"></span><span class="v" id="vt"></span><span class="f" data-i18n="orb.f.t"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="orb.caption"></figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mi>T</mi><mo>=</mo><mn>2</mn><mi>π</mi><msqrt><mfrac><msup><mi>a</mi><mn>3</mn></msup><mrow><mi>G</mi><mo>(</mo><msub><mi>m</mi><mn>1</mn></msub><mo>+</mo><msub><mi>m</mi><mn>2</mn></msub><mo>)</mo></mrow></mfrac></msqrt></math></div>
+    <p class="validite" data-i18n-html="val.kepler"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="stats">
+      <div class="stat"><span class="k" data-i18n="st.k.jup"></span><span class="v" id="sjup"></span><span class="f" data-i18n="st.f.jup"></span></div>
+      <div class="stat"><span class="k" data-i18n="st.k.sol"></span><span class="v" id="ssol"></span><span class="f" data-i18n="st.f.sol"></span></div>
+      <div class="stat"><span class="k" data-i18n="st.k.lune"></span><span class="v" id="slune"></span><span class="f" data-i18n="st.f.lune"></span></div>
+      <div class="stat"><span class="k" data-i18n="st.k.h"></span><span class="v" id="sh"></span><span class="f" data-i18n="st.f.h"></span></div>
+    </div>
+    <p data-i18n-html="s3.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="list keyed" id="sys"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/probleme-a-deux-corps.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/cinematique.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/dynamique.js"></script>
+<script src="/racoon/tenseurs.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/lecons/travail.js"></script>
+<script src="/racoon/lecons/algebre-vectorielle.js"></script>
+<script src="/racoon/lecons/kepler.js"></script>
+<script src="/racoon/lecons/potentiel.js"></script>
+<script src="/racoon/lecons/forces-centrales.js"></script>
+<script src="/racoon/lecons/deux-corps.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+const fill = (s, v) => s.replace(/\{(\w+)\}/g, (m, k) => k in v ? v[k] : m);
+
+/* ---------- les deux orbites autour de G ---------- */
+(() => {
+  const P = Plot.el, W = 640, CY = 190;
+  function upd() {
+    const q = Math.pow(10, +$("q").value), e = +$("ex").value, u = +$("tt").value, M = 1 + q;   // m1 = 1, m2 = q
+    $("qv").textContent = F.num(q, 3); $("exv").textContent = F.num(e, 2); $("ttv").textContent = F.num(u, 2) + " T";
+    const a = Math.min(165 / Math.sqrt(1 - e * e), 290), CX = W / 2 + a * e;      // the relative orbit fills the frame, centred
+    const rel = Kepler.ellipse(a, e, 240), svg = $("orb"); svg.innerHTML = "";
+    const path = (pts, k, cls) => P("path", { d: pts.map((p, i) => (i ? "L" : "M") + (CX + k * p[0]).toFixed(1) + " " + (CY - k * p[1]).toFixed(1)).join(""), class: cls }, svg);
+    path(rel, 1, "stroke thin dash c-label-2");
+    path(rel, 1 / M, "stroke c-warn");                                            // body 2: (m1/M) r
+    path(rel, -q / M, "stroke c-tint");                                            // body 1: −(m2/M) r
+    const E = Kepler.anomalie(2 * Math.PI * u, e), r = [a * (Math.cos(E) - e), a * Math.sqrt(1 - e * e) * Math.sin(E)];
+    const p1 = [CX - q / M * r[0], CY + q / M * r[1]], p2 = [CX + r[0] / M, CY - r[1] / M];
+    P("line", { x1: p1[0], y1: p1[1], x2: p2[0], y2: p2[1], class: "stroke thin c-label-2" }, svg);
+    P("circle", { cx: CX + r[0], cy: CY - r[1], r: 4, class: "fill c-label-2" }, svg);
+    P("circle", { cx: p1[0], cy: p1[1], r: 9, class: "fill c-tint" }, svg);
+    P("circle", { cx: p2[0], cy: p2[1], r: 3 + 6 * Math.cbrt(q), class: "fill c-warn" }, svg);
+    P("circle", { cx: CX, cy: CY, r: 2.5, class: "fill c-label" }, svg);
+    P("text", { x: CX - 14, y: CY - 8 }, svg).textContent = "G";
+    $("vmu").textContent = F.num(DeuxCorps.reduite(1, q) / q, 3);
+    $("vg").textContent = F.num(q / M, 3);
+    $("vt").textContent = F.num(DeuxCorps.periodeRelative(q), 3);
+  }
+  ["q", "ex", "tt"].forEach(id => $(id).oninput = upd); upd();
+})();
+
+/* ---------- ordres de grandeur ---------- */
+(() => {
+  const J = DeuxCorps.jupiterSoleil(), L = Kepler.LUNE, Cst = Constantes;
+  $("sjup").textContent = F.num(J.surRayon, 3);
+  $("ssol").textContent = F.qty(F.num(J.vSoleil, 3), "m·s⁻¹");
+  $("slune").textContent = F.qty(F.num(DeuxCorps.barycentre(1, L.masse, L.a) / 1e3, 4), "km");
+  $("sh").textContent = F.sci(1 - DeuxCorps.reduite(Cst.m_e, Cst.m_p) / Cst.m_e, 3);
+})();
+
+/* ---------- décrire le système ---------- */
+(() => {
+  const IDS = ["isole", "points", "newton"], items = textOf("sys.items", IDS), Cst = Constantes;
+  const v = { maree: F.sci(FC.mareeSolaire().tangentielle, 1), lune: F.num(Constantes.R_E_mean / 1e3, 4),
+    vc: F.sci((DeuxCorps.jupiterSoleil().vJupiter / Cst.c) ** 2, 1),
+    dl: F.qty(F.num(DeuxCorps.decalageIsotopique(656.28e-9, Cst.m_p, 3.3435837768e-27) * 1e9, 3), "nm") };
+  keyed($("sys"), t("sys.tag"), IDS, Object.fromEntries(IDS.map(id => [id, { name: items[id].name, text: fill(items[id].text, v) }])));
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["principia", 1687, "idea"], ["urey", 1931, "experiment"], ["pegase", 1995, "experiment"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["vitesses", "isotopes"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["mu", "b"], ["g", "a"], ["lourd", "c"], ["periode", "d"], ["ec", "a"], ["soleil", "b"], ["isole", "c"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 211 });
+})();
+</script>
+</body>
+</html>

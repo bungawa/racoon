@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Enthalpie libre standard de réaction et constante d'équilibre</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-chim-solutions" data-i18n="monde.chim-solutions"></a><span class="aux">›</span><a href="/racoon/etape?id=chim-enthalpie-libre" data-i18n="etape.chim-enthalpie-libre"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n-html="lede"></p>
+    <div class="tags">
+      <a class="chip t-chim" href="/racoon/atlas?piste=chim" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/potentiel-chimique" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><msub><mi mathvariant="normal">Δ</mi><mtext>r</mtext></msub><mi>G</mi><mo>=</mo><msub><mrow><mo>(</mo><mfrac><mrow><mo>∂</mo><mi>G</mi></mrow><mrow><mo>∂</mo><mi>ξ</mi></mrow></mfrac><mo>)</mo></mrow><mrow><mi>T</mi><mo>,</mo><mi>p</mi></mrow></msub><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>ν</mi><mi>i</mi></msub><msub><mi>μ</mi><mi>i</mi></msub></math></div>
+    <p class="validite" data-i18n-html="val.drG"></p>
+    <p data-i18n-html="s1.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi mathvariant="normal">Δ</mi><mtext>r</mtext></msub><mi>G</mi><mo>=</mo><msub><mi mathvariant="normal">Δ</mi><mtext>r</mtext></msub><msup><mi>G</mi><mo>°</mo></msup><mo>(</mo><mi>T</mi><mo>)</mo><mo>+</mo><mi>R</mi><mi>T</mi><mspace width="0.1em"></mspace><mi data-i18n="eq.ln"></mi><msub><mi>Q</mi><mtext>r</mtext></msub><mspace width="2em"></mspace><msub><mi>Q</mi><mtext>r</mtext></msub><mo>=</mo><munder><mo>∏</mo><mi>i</mi></munder><msubsup><mi>a</mi><mi>i</mi><msub><mi>ν</mi><mi>i</mi></msub></msubsup></math></div>
+    <p class="validite" data-i18n-html="val.Q"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><msub><mi mathvariant="normal">Δ</mi><mtext>r</mtext></msub><msup><mi>G</mi><mo>°</mo></msup><mo>(</mo><mi>T</mi><mo>)</mo><mo>=</mo><mo>−</mo><mi>R</mi><mi>T</mi><mspace width="0.1em"></mspace><mi data-i18n="eq.ln"></mi><msup><mi>K</mi><mo>°</mo></msup><mo>(</mo><mi>T</mi><mo>)</mo><mspace width="2em"></mspace><msub><mi mathvariant="normal">Δ</mi><mtext>r</mtext></msub><mi>G</mi><mo>=</mo><mi>R</mi><mi>T</mi><mspace width="0.1em"></mspace><mi data-i18n="eq.ln"></mi><mfrac><msub><mi>Q</mi><mtext>r</mtext></msub><msup><mi>K</mi><mo>°</mo></msup></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.K"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="gx" role="img" data-i18n-attr="aria-label:gx.aria"></svg>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="gxT" data-i18n="gx.T"></label><output id="gxTv" for="gxT"></output></div>
+            <input id="gxT" type="range" min="300" max="380" step="1" value="320"></div>
+          <div class="ctl"><div class="row"><label for="gxp" data-i18n="gx.p"></label><output id="gxpv" for="gxp"></output></div>
+            <input id="gxp" type="range" min="4" max="5" step="0.01" value="5"></div>
+          <div class="ctl"><div class="row"><label for="gxx" data-i18n="gx.xi"></label><output id="gxxv" for="gxx"></output></div>
+            <input id="gxx" type="range" min="0.01" max="0.99" step="0.01" value="0.1"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="gx.k.drG"></span><span class="v" id="gxg"></span><span class="f" id="gxgf"></span></div>
+          <div class="stat"><span class="k" data-i18n="gx.k.eq"></span><span class="v" id="gxe"></span><span class="f" id="gxef"></span></div>
+          <div class="stat"><span class="k" data-i18n="gx.k.K"></span><span class="v" id="gxk"></span><span class="f" id="gxkf"></span></div>
+        </div>
+      </div>
+      <div class="legend"><span class="c-tint" data-i18n="gx.leg.G"></span><span class="c-warn" data-i18n="gx.leg.sans"></span></div>
+      <figcaption data-i18n-html="gx.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s3.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><msub><mi mathvariant="normal">Δ</mi><mtext>r</mtext></msub><msup><mi>G</mi><mo>°</mo></msup><mo>(</mo><mi>T</mi><mo>)</mo><mo>=</mo><msub><mi mathvariant="normal">Δ</mi><mtext>r</mtext></msub><msup><mi>H</mi><mo>°</mo></msup><mo>(</mo><mi>T</mi><mo>)</mo><mo>−</mo><mi>T</mi><mspace width="0.1em"></mspace><msub><mi mathvariant="normal">Δ</mi><mtext>r</mtext></msub><msup><mi>S</mi><mo>°</mo></msup><mo>(</mo><mi>T</mi><mo>)</mo><mspace width="2em"></mspace><msub><mi mathvariant="normal">Δ</mi><mtext>r</mtext></msub><msup><mi>S</mi><mo>°</mo></msup><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>ν</mi><mi>i</mi></msub><msubsup><mi>S</mi><mi>i</mi><mo>°</mo></msubsup></math></div>
+    <p class="validite" data-i18n-html="val.HS"></p>
+    <div class="list keyed" id="reactions"></div>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="eq"><math display="block"><msub><mi mathvariant="normal">Δ</mi><mtext>r</mtext></msub><msup><mi>G</mi><mo>°</mo></msup><mo>(</mo><mi>T</mi><mo>)</mo><mo>≈</mo><msub><mi mathvariant="normal">Δ</mi><mtext>r</mtext></msub><msup><mi>H</mi><mo>°</mo></msup><mo>(</mo><msub><mi>T</mi><mn>0</mn></msub><mo>)</mo><mo>−</mo><mi>T</mi><mspace width="0.1em"></mspace><msub><mi mathvariant="normal">Δ</mi><mtext>r</mtext></msub><msup><mi>S</mi><mo>°</mo></msup><mo>(</mo><msub><mi>T</mi><mn>0</mn></msub><mo>)</mo></math></div>
+    <p class="validite" data-i18n-html="val.ell"></p>
+    <p data-i18n-html="s4.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/enthalpie-libre-de-reaction.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/chim-solutions.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id), P = Plot.el, C = ChimSolutions, R = Constantes.R;
+const keyed = (el, tag, ids, items) => { el.innerHTML = ids.map(id => `<div><span class="k">${tag}</span><span><strong>${items[id].name}.</strong> ${items[id].text}</span></div>`).join(""); };
+const kJ = v => F.qty(F.num(v / 1e3, 4), "kJ·mol⁻¹"), JK = v => F.qty(F.num(v, 4), "J·K⁻¹·mol⁻¹");
+const K0 = k => k > 1e4 || k < 1e-3 ? F.sci(k, 3) : F.num(k, 3);
+
+/* ---------- G(ξ) de N2O4 = 2 NO2 ---------- */
+(() => {
+  const DIM = { N2O4: -1, NO2: 2 }, svg = $("gx"), sT = $("gxT"), sp = $("gxp"), sx = $("gxx");
+  function upd() {
+    const T = +sT.value, p = Math.pow(10, +sp.value), xi = +sx.value;
+    const m = C.melangeGaz(DIM, { N2O4: 1 }, T, p), g0 = m.G(0), e = m.equilibre;
+    const sans = z => m.G(z) - R * T * Object.entries(m.n(z)).reduce((s, [id, n]) => s + (n > 0 ? n * Math.log(m.x(z)[id]) : 0), 0);
+    const N = 200, G = [], S = [];
+    for (let i = 0; i <= N; i++) { const z = i / N; G.push((m.G(z) - g0) / 1e3); S.push((sans(z) - g0) / 1e3); }
+    const lo = Math.floor(Math.min(...G, ...S)) - 0.5, hi = Math.ceil(Math.max(...G, ...S)) + 0.5;
+    svg.innerHTML = "";
+    const { x, y, g } = Plot.axes(svg, { fmt: F, w: 640, h: 320, pad: { b: 44, l: 56 },
+      x: { domain: [0, 1], label: t("gx.x") }, y: { domain: [lo, hi], label: t("gx.y") } });
+    P("path", { d: Plot.path(S.map((v, i) => [x(i / N), y(v)])), class: "ref" }, g);
+    P("path", { d: Plot.path(G.map((v, i) => [x(i / N), y(v)])), class: "curve" }, g);
+    const gy = (m.G(xi) - g0) / 1e3, slope = m.drG(xi) / 1e3, dx = 0.12;   // the tangent: ΔrG is the slope
+    P("line", { x1: x(Math.max(0, xi - dx)), x2: x(Math.min(1, xi + dx)), y1: y(gy - slope * (xi - Math.max(0, xi - dx))), y2: y(gy + slope * (Math.min(1, xi + dx) - xi)), class: "zero" }, g);
+    P("circle", { cx: x(e.xi), cy: y((m.G(e.xi) - g0) / 1e3), r: 5, class: "dot" }, g);
+    P("circle", { cx: x(xi), cy: y(gy), r: 6, class: "dot" }, g);
+    $("gxTv").innerHTML = F.kelvin(T); $("gxpv").textContent = F.si(p, "Pa"); $("gxxv").textContent = F.qty(F.fix(xi, 2), "mol");
+    const d = m.drG(xi);
+    $("gxg").textContent = kJ(d); $("gxgf").textContent = t(Math.abs(d) < 20 ? "gx.f.eq" : d < 0 ? "gx.f.avant" : "gx.f.arriere", { q: K0(Math.exp(m.lnQ(xi))) });
+    $("gxe").textContent = F.qty(F.fix(e.xi, 3), "mol"); $("gxef").textContent = t("gx.f.x", { x: F.num(100 * e.x.NO2, 3) });
+    $("gxk").textContent = K0(Math.exp(m.lnK)); $("gxkf").textContent = t("gx.f.K", { g: kJ(-R * T * m.lnK) });
+  }
+  sT.oninput = sp.oninput = sx.oninput = upd; upd();
+})();
+
+/* ---------- quelques réactions ---------- */
+(() => {
+  const RX = { haber: { N2: -1, H2: -3, NH3: 2 }, dim: { N2O4: -1, NO2: 2 }, vap: { "H2O(l)": -1, "H2O(g)": 1 }, eau: { H2: -1, O2: -0.5, "H2O(l)": 1 } };
+  const IDS = Object.keys(RX), txt = textOf("rx.items", IDS);
+  $("reactions").innerHTML = IDS.map(id => { const nu = RX[id];
+    return `<div><span class="k">${txt[id].eq}</span><span>${t("rx.ligne", { h: kJ(C.drH(nu)), s: JK(C.drS(nu)), g: kJ(C.drG(nu)) })} ${txt[id].text}</span><span class="v">${t("rx.K", { k: K0(Math.exp(C.lnK(nu))) })}</span></div>`; }).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["guldberg", 1864, "idea"], ["vanthoff", 1884, "idea"], ["nernst", 1906, "idea"], ["janaf", 1998, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["voie", "minimum"]; keyed($("uses"), t("uses.tag"), USES, textOf("uses.items", USES));
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["pente", "b"], ["positif", "d"], ["K", "a"], ["minimum", "c"], ["ordre", "b"], ["solide", "a"], ["ellingham", "c"], ["ecrire", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t });
+})();
+</script>
+</body>
+</html>

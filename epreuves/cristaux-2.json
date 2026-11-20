@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["polarisation", "a"],
+  ["piezo", "b"],
+  ["frenkel", "c"],
+  ["rangee", "d"],
+  ["acier", "a"],
+  ["circuit", "b"],
+  ["energie", "c"],
+  ["radeau", "d"]
+ ]
+}

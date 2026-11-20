@@ -1,0 +1,91 @@
+/* Leçon « Le dipôle électrique » (Feynman II.6.2) : textes en français.
+   Une autre langue = locales/<langue>/lecons/dipole-electrique.js, mêmes clés.
+   Texte seulement : années, types d'événement, bonnes réponses et identifiants restent dans la page. */
+(function (root) {
+  const T = {
+    "title": "Le dipôle électrique",
+    "crumb.jour": "Dipôle électrique",
+    "h1": "Le dipôle électrique",
+    "eq.cos": "cos",
+    "lede": "Deux charges égales et opposées, très proches : vues de loin, leurs potentiels se compensent presque. Ce qui reste ne dépend que du produit de la charge par l'écart, le moment dipolaire, et décroît comme 1/r² au lieu de 1/r. Une molécule d'eau, un atome dans un champ, une antenne vue de loin : tous ressemblent à ce couple.",
+    "tag.piste": "Électromagnétisme",
+    "tag.prereq": "Prérequis : potentiel électrique",
+
+    "s1.sec": "Deux charges opposées",
+    "s1.h2": "Le potentiel de deux charges opposées, vu de loin",
+    "s1.p1": "Placez +<var>q</var> et \u2212<var>q</var> sur l'axe <var>z</var>, à la distance <var>d</var> l'une de l'autre, l'origine au milieu. Le potentiel en (<var>x</var>, <var>y</var>, <var>z</var>) est la somme de deux potentiels de Coulomb (leçon « Potentiel électrique »).",
+    "val.6.8": "Exacte pour deux charges ponctuelles au repos : c'est la superposition de deux potentiels de Coulomb. Ce qui reste approché : réduire un objet réel (une molécule, un atome déformé) à deux points, ce que la leçon « Approximation dipolaire d'une distribution quelconque » justifie à grande distance.",
+    "s1.p2": "Loin de la paire, à une distance <var>r</var> ≫ <var>d</var>, les deux termes sont presque égaux et se compensent. Développez chaque racine au premier ordre en <var>d</var> : 1/|<var>r</var> ∓ <var>d</var>/2| ≈ (1 ± <var>z</var><var>d</var>/(2<var>r</var><sup>2</sup>))/<var>r</var>. La différence vaut <var>z</var><var>d</var>/<var>r</var><sup>3</sup>, multipliée par <var>q</var>. <var>q</var> et <var>d</var> n'interviennent que par leur produit.",
+    "val.6.10": "Exacte : définition du moment dipolaire de la paire, en C·m. Le vecteur <var>p</var> va de \u2212<var>q</var> vers +<var>q</var>.",
+    "val.6.13": "Approximation : <var>r</var> ≫ <var>d</var>, termes en (<var>d</var>/<var>r</var>)<sup>2</sup> négligés. Sur l'axe, l'erreur relative vaut exactement (<var>d</var>/2<var>r</var>)<sup>2</sup> : 0,25\u00a0% à <var>r</var> = 10<var>d</var>, mais 25\u00a0% à <var>r</var> = <var>d</var>. Hors de l'axe, elle est du même ordre et s'annule là où le potentiel lui-même s'annule. <var>r</var> part du milieu de la paire.",
+    "s1.p3": "Avec <var>z</var> = <var>r</var> cos θ, le potentiel ne dépend que de la distance et de l'angle θ à l'axe du dipôle. La forme vectorielle ne choisit aucun axe : elle vaut pour un dipôle orienté n'importe comment, <var>r</var> allant du dipôle au point d'observation. Deux traits la distinguent d'une charge seule : elle décroît comme 1/<var>r</var><sup>2</sup>, et elle change de signe d'un côté à l'autre du plan médiateur, où elle est nulle.",
+
+    "s2.sec": "Ordres de grandeur",
+    "s2.h2": "Où commence le « loin » ?",
+    "s2.p1": "(6.13) ne vaut qu'au-delà de quelques <var>d</var>. Près de la paire, chaque charge se fait sentir séparément. La figure compare le potentiel exact, (6.8), et celui du dipôle, le long d'une demi-droite qui fait l'angle θ avec l'axe. Le potentiel d'une charge seule, en 1/<var>r</var>, sert de repère : la paire tombe plus vite.",
+    "sys.title": "Décrire le système avant d'appliquer la loi",
+    "sys1.body": "Une molécule d'eau isolée : son moment dipolaire mesuré vaut {p}. Écrit <var>p</var> = <var>e</var><var>d</var>, c'est une charge élémentaire déplacée de <var>d</var> = {d}, bien moins que la taille de la molécule (les liaisons O–H mesurent 95,7\u00a0pm). À {r} de la molécule, (<var>d</var>/<var>r</var>)<sup>2</sup> ≈ {taille} : la paire équivalente y est dipolaire à mieux que 1\u00a0% près, et son champ vaut, sur l'axe, 2<var>K</var><var>p</var>/<var>r</var><sup>3</sup> ≈ {champ}. Mais la molécule n'est pas cette paire : ses charges s'étendent sur environ 0,1\u00a0nm, et les termes suivants, en 1/<var>r</var><sup>3</sup>, corrigent le potentiel d'une fraction de l'ordre de 0,1\u00a0nm/<var>r</var>, de moins de 1\u00a0% à 11\u00a0% à 1\u00a0nm selon la direction, davantage près du plan où le potentiel s'annule, pour le modèle à trois charges de la leçon « Approximation dipolaire d'une distribution quelconque ». Ce qu'on néglige encore : les molécules voisines, qui déforment le nuage électronique.",
+    "fig.aria": "Potentiel exact d'une paire de charges opposées et potentiel du dipôle équivalent, en fonction de la distance, en échelle logarithmique",
+    "fig.legend.exact": "paire de charges, exact (6.8)",
+    "fig.legend.dipole": "dipôle (6.13)",
+    "fig.legend.charge": "charge q seule",
+    "fig.th": "Angle θ avec l'axe du dipôle",
+    "fig.deg": "{a}\u00a0°",
+    "fig.r": "Distance r (repère vertical)",
+    "fig.rd": "r = {u} d",
+    "fig.x": "r/d",
+    "fig.y": "|φ| / (K q/d)",
+    "fig.k.exact": "Potentiel exact, q = 1\u00a0nC, d = 1\u00a0mm",
+    "fig.f.exact": "dipôle : {v}",
+    "fig.k.err": "Erreur relative du dipôle",
+    "fig.v.err": "{e}\u00a0%",
+    "fig.f.err": "sur l'axe, (d/2r)² = {e}\u00a0%",
+    "fig.caption": "Loin de la paire, la courbe exacte rejoint celle du dipôle, de pente \u22122 en échelle logarithmique ; la charge seule a une pente \u22121. Près de la paire, la courbe exacte remonte vers la charge la plus proche. Au-delà de 80°, le potentiel s'approche de zéro (il est nul dans le plan médiateur) et l'échelle logarithmique ne le montre plus.",
+
+    "hist.sec": "Histoire et pratique",
+    "hist.h2": "Le moment dipolaire des molécules",
+    "hist.intro": "L'idée qu'une molécule neutre puisse porter un moment dipolaire permanent, et que ce moment se mesure, date du début du XX<sup>e</sup> siècle. Elle explique encore aujourd'hui pourquoi l'eau dissout les sels et chauffe dans un four à micro-ondes.",
+    "hist.events": {
+      debye: { who: "Peter Debye", what: "applique la notion de moment dipolaire à la répartition des charges dans les molécules dissymétriques, et relie ce moment à la permittivité et à sa variation avec la température.", context: "Une molécule polaire s'oriente dans un champ, contre l'agitation thermique : la permittivité d'un gaz polaire décroît quand la température monte, ce qui permet de mesurer p." },
+      nobel: { who: "Peter Debye", what: "reçoit le prix Nobel de chimie pour ses contributions à la connaissance de la structure moléculaire, par ses travaux sur les moments dipolaires et sur la diffraction des rayons X et des électrons dans les gaz.", context: "L'unité de moment dipolaire de la chimie, le debye, porte son nom : 1\u00a0D ≈ 3,336 × 10⁻³⁰\u00a0C·m." },
+      mesure: { who: "Journal of Chemical Physics", what: "publie une mesure spectroscopique du moment dipolaire de la molécule d'eau isolée, sur ses niveaux de rotation les plus bas : 1,8546 ± 0,0006\u00a0D.", context: "Soit 6,186 × 10⁻³⁰\u00a0C·m, la valeur qu'utilise cette leçon." },
+    },
+    "uses.h3": "Toujours à l'œuvre aujourd'hui",
+    "uses.tag": "Usage",
+    "uses.items": {
+      four: { name: "Four à micro-ondes", text: "Le champ, oscillant à 2,45\u00a0GHz dans la plupart des fours domestiques, fait tourner les dipôles des molécules d'eau ; en heurtant leurs voisines, elles cèdent cette énergie sous forme de chaleur." },
+      solvant: { name: "L'eau, solvant des sels", text: "Autour d'un ion, les molécules d'eau orientent leur dipôle : le pôle négatif vers un cation, le positif vers un anion. Leur champ réduit la force entre ions, qui se séparent." },
+    },
+
+    "quiz.sec": "Vérifiez votre compréhension",
+    "quiz.h2": "Quiz",
+    "quiz.items": {
+      decroissance: { prompt: "Loin d'un dipôle, on double la distance, sans changer de direction. Le potentiel est divisé par :",
+        options: { a: "2, comme pour une charge seule.", b: "8.", c: "4 : il décroît comme 1/r².", d: "Il ne change pas." },
+        why: "(6.13) : φ = p cos θ/(4πε0 r²). À θ fixé, doubler r divise φ par 4. Le champ, dérivée de φ, décroît comme 1/r³ et serait divisé par 8." },
+      produit: { prompt: "On double les charges d'une paire et on divise leur écart par deux. Loin de la paire, le potentiel :",
+        options: { a: "Ne change pas : il ne dépend que de p = qd.", b: "Double.", c: "Est divisé par deux.", d: "Quadruple." },
+        why: "Au premier ordre en d/r, q et d n'interviennent que par leur produit. Près de la paire, en revanche, les deux situations diffèrent." },
+      equateur: { prompt: "Que vaut le potentiel d'un dipôle dans le plan médiateur de la paire ?",
+        options: { a: "Le double de sa valeur sur l'axe.", b: "K p/r².", c: "La moitié de sa valeur sur l'axe.", d: "Zéro : chaque point y est à égale distance des deux charges." },
+        why: "cos θ = 0 dans ce plan. C'est même exact, pas seulement pour r ≫ d : les deux charges y sont à la même distance et leurs potentiels s'annulent. Le champ, lui, n'y est pas nul." },
+      erreur: { prompt: "Sur l'axe d'une paire, à la distance r = 10 d de son milieu, quelle erreur relative commet-on en utilisant (6.13) ?",
+        options: { a: "10\u00a0%.", b: "0,25\u00a0% : (d/2r)².", c: "1\u00a0% : (d/r)².", d: "Aucune : (6.13) est exacte sur l'axe." },
+        hint: "Sur l'axe, le potentiel exact vaut Kqd/(r² \u2212 d²/4).",
+        why: "Le rapport du dipôle à l'exact vaut 1 \u2212 (d/2r)² = 1 \u2212 1/400 sur l'axe. L'erreur décroît comme le carré de d/r : à r = d, elle atteint 25\u00a0%." },
+      eau: { prompt: "La molécule d'eau a un moment dipolaire de 6,2 × 10⁻³⁰\u00a0C·m. Écrit comme une charge élémentaire déplacée de d, que vaut d ?",
+        options: { a: "Environ 0,1\u00a0nm, la taille de la molécule.", b: "Environ 1\u00a0nm.", c: "Environ 0,04\u00a0nm : 6,2 × 10⁻³⁰/1,6 × 10⁻¹⁹.", d: "Environ 10⁻¹⁵\u00a0m, la taille d'un noyau." },
+        why: "d = p/e ≈ 3,9 × 10⁻¹¹\u00a0m. C'est un écart effectif : la charge n'est pas une charge élémentaire entière déplacée, mais une petite dissymétrie du nuage électronique." },
+      sens: { prompt: "Dans quel sens pointe le vecteur moment dipolaire d'une paire ?",
+        options: { a: "De la charge \u2212q vers la charge +q.", b: "De +q vers \u2212q, comme le champ entre elles.", c: "Perpendiculairement à la paire.", d: "Il n'a pas de sens défini." },
+        why: "p = q d, avec d le vecteur qui va de \u2212q à +q. Entre les charges, le champ va de + vers \u2212 : il est opposé à p." },
+      vecteur: { prompt: "Pourquoi écrire le potentiel du dipôle sous la forme p·r/(4πε0 r³) plutôt que p z/(4πε0 r³) ?",
+        options: { a: "Parce que la seconde forme est fausse.", b: "Parce que la première est plus précise près de la paire.", c: "Parce que la première ne vaut que pour l'eau.", d: "Parce qu'elle vaut pour un dipôle orienté n'importe comment, sans choisir l'axe z le long de p." },
+        why: "Les deux sont égales quand z est le long de p. La forme vectorielle ne dépend d'aucun repère : c'est le sujet de la leçon « Remarques sur les équations vectorielles »." },
+    },
+
+    "foot": "Source : Feynman, <i>Lectures on Physics</i>, vol. II, chap. 6 (texte original en anglais), §6-2. Exemple de la molécule d'eau et calculs numériques propres à cette page.",
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = T;
+  else { root.LOCALES = root.LOCALES || {}; root.LOCALES.fr = Object.assign(root.LOCALES.fr || {}, T); }
+})(typeof self !== "undefined" ? self : this);

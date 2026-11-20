@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portrait de phase du pendule</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-mecanique" data-i18n="monde.mecanique"></a><span class="aux">›</span><a href="/racoon/etape?id=pendule" data-i18n="etape.pendule"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-meca" href="/racoon/atlas?piste=meca" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/pendule-simple" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <div class="box def"><b data-i18n="s1.sys.title"></b>
+      <p data-i18n-html="s1.sys.body"></p>
+    </div>
+    <p data-i18n-html="s1.p1"></p>
+    <div class="eq"><math display="block"><mfrac><msup><mover><mi>θ</mi><mo>˙</mo></mover><mn>2</mn></msup><mn>2</mn></mfrac><mo>+</mo><msubsup><mi>ω</mi><mn>0</mn><mn>2</mn></msubsup><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi data-i18n="eq.cos"></mi><mspace width="0.1em"/><mi>θ</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><msub><mi>E</mi><mi mathvariant="normal">m</mi></msub><mrow><mi>m</mi><msup><mi>ℓ</mi><mn>2</mn></msup></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.2.1"></p>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="eq"><math display="block"><mover><mi>θ</mi><mo>˙</mo></mover><mo>=</mo><mo>±</mo><mn>2</mn><msub><mi>ω</mi><mn>0</mn></msub><msqrt><mrow><msup><mi>k</mi><mn>2</mn></msup><mo>−</mo><msup><mi data-i18n="eq.sin"></mi><mn>2</mn></msup><mfrac><mi>θ</mi><mn>2</mn></mfrac></mrow></msqrt><mo>,</mo><mspace width="0.8em"/><msup><mi>k</mi><mn>2</mn></msup><mo>=</mo><mfrac><msub><mi>E</mi><mi mathvariant="normal">m</mi></msub><mrow><mn>2</mn><mi>m</mi><mi>g</mi><mi>ℓ</mi></mrow></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.2.2"></p>
+    <p data-i18n-html="s1.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="portrait" role="img" data-i18n-attr="aria-label:pp.aria"></svg>
+      <div class="legend"><span class="c-label-2" data-i18n="pp.legend.niveaux"></span><span class="c-warn" data-i18n="pp.legend.sep"></span><span class="c-tint" data-i18n="pp.legend.traj"></span></div>
+      <svg class="fig" id="temps" role="img" data-i18n-attr="aria-label:pp.aria.t"></svg>
+      <div class="panel">
+        <div class="controls">
+          <div class="ctl"><div class="row"><label for="pth" data-i18n="pp.th0"></label><output id="pthv" for="pth"></output></div>
+            <input id="pth" type="range" min="-180" max="180" step="1" value="0"></div>
+          <div class="ctl"><div class="row"><label for="pom" data-i18n="pp.om0"></label><output id="pomv" for="pom"></output></div>
+            <input id="pom" type="range" min="-300" max="300" step="1" value="150"></div>
+          <div class="ctl"><div class="row"><span data-i18n="pp.amort"></span></div>
+            <div class="seg" role="group" data-i18n-attr="aria-label:pp.amort">
+              <button type="button" id="q-0" aria-pressed="true" data-i18n="pp.q.0"></button>
+              <button type="button" id="q-20" aria-pressed="false" data-i18n="pp.q.20"></button>
+              <button type="button" id="q-5" aria-pressed="false" data-i18n="pp.q.5"></button>
+            </div></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n="pp.k.k2"></span><span class="v" id="vk2"></span><span class="f" data-i18n="pp.f.k2"></span></div>
+          <div class="stat"><span class="k" data-i18n="pp.k.nature"></span><span class="v" id="vnat"></span><span class="f" id="fnat"></span></div>
+          <div class="stat"><span class="k" data-i18n="pp.k.T"></span><span class="v" id="vT"></span><span class="f" id="fT"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="pp.caption"></figcaption>
+    </figure>
+    <ul><li data-i18n-html="s2.li1"></li><li data-i18n-html="s2.li2"></li><li data-i18n-html="s2.li3"></li></ul>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><mfrac><msup><mi>θ</mi><mn>2</mn></msup><msubsup><mi>θ</mi><mi>m</mi><mn>2</mn></msubsup></mfrac><mo>+</mo><mfrac><msup><mover><mi>θ</mi><mo>˙</mo></mover><mn>2</mn></msup><mrow><msubsup><mi>ω</mi><mn>0</mn><mn>2</mn></msubsup><msubsup><mi>θ</mi><mi>m</mi><mn>2</mn></msubsup></mrow></mfrac><mo>=</mo><mn>1</mn></math></div>
+    <p class="validite" data-i18n-html="val.2.3"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <div class="eq"><math display="block"><mover><mi>φ</mi><mo>¨</mo></mover><mo>=</mo><msubsup><mi>ω</mi><mn>0</mn><mn>2</mn></msubsup><mi>φ</mi><mo>,</mo><mspace width="0.8em"/><mi>φ</mi><mo>=</mo><mi>θ</mi><mo>−</mo><mi>π</mi><mspace width="0.8em"/><mo stretchy="false">⇒</mo><mspace width="0.8em"/><mi>φ</mi><mo>=</mo><mi>A</mi><mspace width="0.1em"/><msup><mi mathvariant="normal">e</mi><mrow><msub><mi>ω</mi><mn>0</mn></msub><mi>t</mi></mrow></msup><mo>+</mo><mi>B</mi><mspace width="0.1em"/><msup><mi mathvariant="normal">e</mi><mrow><mo>−</mo><msub><mi>ω</mi><mn>0</mn></msub><mi>t</mi></mrow></msup></math></div>
+    <p class="validite" data-i18n-html="val.2.4"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <div class="eq"><math display="block"><mover><mi>θ</mi><mo>˙</mo></mover><mo>=</mo><mo>±</mo><mn>2</mn><msub><mi>ω</mi><mn>0</mn></msub><mspace width="0.1em"/><mi data-i18n="eq.cos"></mi><mfrac><mi>θ</mi><mn>2</mn></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.2.5"></p>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="eq"><math display="block"><mi>T</mi><mo>≈</mo><mfrac><mn>4</mn><msub><mi>ω</mi><mn>0</mn></msub></mfrac><mspace width="0.1em"/><mi data-i18n="eq.ln"></mi><mfrac><mn>4</mn><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>k</mi><mn>2</mn></msup></mrow></msqrt></mfrac></math></div>
+    <p class="validite" data-i18n-html="val.2.6"></p>
+    <div class="list keyed" id="sep"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s5.sec"></span>
+    <h2 data-i18n="s5.h2"></h2>
+    <p data-i18n-html="s5.p1"></p>
+    <div class="eq"><math display="block"><mover><mi>θ</mi><mo>¨</mo></mover><mo>+</mo><mfrac><msub><mi>ω</mi><mn>0</mn></msub><mi>Q</mi></mfrac><mover><mi>θ</mi><mo>˙</mo></mover><mo>+</mo><msubsup><mi>ω</mi><mn>0</mn><mn>2</mn></msubsup><mi data-i18n="eq.sin"></mi><mspace width="0.1em"/><mi>θ</mi><mo>=</mo><mn>0</mn><mo>,</mo><mspace width="0.8em"/><mfrac><mrow><mi mathvariant="normal">d</mi><msub><mi>E</mi><mi mathvariant="normal">m</mi></msub></mrow><mrow><mi mathvariant="normal">d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mo>−</mo><mfrac><mrow><mi>m</mi><msup><mi>ℓ</mi><mn>2</mn></msup><msub><mi>ω</mi><mn>0</mn></msub></mrow><mi>Q</mi></mfrac><msup><mover><mi>θ</mi><mo>˙</mo></mover><mn>2</mn></msup><mo>≤</mo><mn>0</mn></math></div>
+    <p class="validite" data-i18n-html="val.2.7"></p>
+    <p data-i18n-html="s5.p2"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s6.sec"></span>
+    <h2 data-i18n="s6.h2"></h2>
+    <p data-i18n-html="s6.p1"></p>
+    <h3 data-i18n="s6.fil.h3"></h3>
+    <p data-i18n-html="s6.fil.p"></p>
+    <h3 data-i18n="s6.air.h3"></h3>
+    <p data-i18n-html="s6.air.p"></p>
+    <h3 data-i18n="s6.terre.h3"></h3>
+    <p data-i18n-html="s6.terre.p"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/portrait-de-phase-du-pendule.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/cinematique.js"></script>
+<script src="/racoon/lecons/forces.js"></script>
+<script src="/racoon/lecons/dynamique.js"></script>
+<script src="/racoon/lecons/integration.js"></script>
+<script src="/racoon/analyse-vectorielle.js"></script>
+<script src="/racoon/lecons/travail.js"></script>
+<script src="/racoon/lecons/oscillateur.js"></script>
+<script src="/racoon/lecons/pendule.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const path = Plot.path;
+const DEG = Math.PI / 180, W = Pendule.pulsation(1), T0 = 2 * Math.PI / W;
+
+/* ---------- §2 : le portrait, ses courbes de niveau, une trajectoire calculée ---------- */
+(() => {
+  const svg = $("portrait"), svgT = $("temps"), XM = 360, YM = 3, QS = { "0": Infinity, "20": 20, "5": 5 };
+  let q = "0", o = null;
+  /* a curve in (θ in rad, θ̇) → screen; copies shifted by ±2π so both wells show; cut where θ jumps */
+  const draw = (pts, cls, shifts) => (shifts || [0]).forEach(s =>
+    Plot.el("path", { d: path(pts.map(([th, om]) => [o.x(th / DEG + s), o.y(om / W)])), class: cls }, o.g));
+  function wrapped(th, om) {                                   // a long trajectory folded into [−360°, 360°[
+    const segs = [[]];
+    th.forEach((a, i) => {
+      const d = a / DEG, x = d - 720 * Math.floor((d + 360) / 720), last = segs[segs.length - 1];
+      if (last.length && Math.abs(x - last[last.length - 1][0]) > 360) segs.push([]);
+      segs[segs.length - 1].push([x, om[i] / W]);
+    });
+    return segs;
+  }
+  function upd() {
+    ["0", "20", "5"].forEach(k => $("q-" + k).setAttribute("aria-pressed", String(k === q)));
+    const th0 = +$("pth").value * DEG, om0 = +$("pom").value / 100 * W, Q = QS[q];
+    svg.innerHTML = "";
+    o = Plot.axes(svg, { fmt: F, w: 640, h: 340, pad: { b: 44, l: 48 }, x: { domain: [-XM, XM], label: t("pp.xaxis") }, y: { domain: [-YM, YM], label: t("pp.yaxis") } });
+    /* the copies shifted by ±360° stop at the frame */
+    const clip = Plot.el("clipPath", { id: "pp-clip" }, Plot.el("defs", {}, svg));
+    Plot.el("rect", { x: o.x(-XM), y: o.y(YM), width: o.x(XM) - o.x(-XM), height: o.y(-YM) - o.y(YM) }, clip);
+    o.g = Plot.el("g", { "clip-path": "url(#pp-clip)" }, svg);
+    [0.05, 0.2, 0.4, 0.6, 0.8, 0.95].forEach(k2 => draw(Pendule.courbe(W, k2)[0], "grid", [-360, 0, 360]));
+    [1.2, 1.6].forEach(k2 => Pendule.courbe(W, k2).forEach(c => draw(c, "grid", [-360, 0, 360])));
+    Pendule.courbe(W, 1).forEach(c => draw(c, "ref", [-360, 0, 360]));
+    const k2 = Pendule.kappa2(W, th0, om0), nat = Pendule.nature(W, th0, om0, 1e-3);
+    const dur = Q === Infinity ? Math.min(Math.max(1.05 * (nat === "oscillation" || nat === "revolution" ? Pendule.periodeEnergie(W, k2) : 0), 2 * T0), 8 * T0) : 12 * T0;
+    const run = Pendule.trajectoire(W, th0, om0, { Q, h: T0 / 400, duree: dur });
+    wrapped(run.th, run.om).forEach(s => Plot.el("path", { d: path(s.map(([x, y]) => [o.x(x), o.y(Math.max(-YM, Math.min(YM, y)))])), class: "curve" }, o.g));
+    Plot.el("circle", { cx: o.x(th0 / DEG), cy: o.y(om0 / W), r: 5, class: "dot" }, o.g);
+    /* θ(t), in degrees */
+    svgT.innerHTML = "";
+    const lo = Math.min(-200, ...run.th.map(a => a / DEG)), hi = Math.max(200, ...run.th.map(a => a / DEG));
+    const ot = Plot.axes(svgT, { fmt: F, w: 640, h: 200, pad: { b: 44, l: 56 }, x: { domain: [0, dur], label: t("pp.taxis") }, y: { domain: [lo, hi], label: t("pp.thaxis") } });
+    Plot.el("path", { d: path(run.t.map((tt, i) => [ot.x(tt), ot.y(run.th[i] / DEG)])), class: "curve" }, ot.g);
+    /* readouts */
+    $("pthv").textContent = F.num(th0 / DEG, 3) + "°";
+    $("pomv").textContent = t("pp.om0v", { r: F.num(om0 / W, 3) });
+    $("vk2").textContent = F.num(k2, 3);
+    $("vnat").textContent = t("pp.nature." + nat);
+    $("fnat").textContent = Q === Infinity ? t("pp.f.nature." + nat) : t("pp.f.amorti", { Q: F.num(Q, 2) });
+    const T = nat === "oscillation" || nat === "revolution" ? Pendule.periodeEnergie(W, k2) : nat === "separatrice" ? Infinity : NaN;
+    $("vT").textContent = isFinite(T) ? F.si(T, "s", { sig: 3 }) : nat === "separatrice" ? "∞" : F.MINUS;
+    $("fT").textContent = t("pp.f.T." + nat, { r: isFinite(T) ? F.num(T / T0, 3) : "" });
+  }
+  ["0", "20", "5"].forEach(k => $("q-" + k).onclick = () => { q = k; upd(); });
+  $("pth").oninput = $("pom").oninput = upd;
+  /* a click on the portrait starts the motion there */
+  svg.addEventListener("pointerdown", e => {
+    if (!o) return;
+    const p = svg.createSVGPoint(); p.x = e.clientX; p.y = e.clientY;
+    const c = p.matrixTransform(svg.getScreenCTM().inverse());
+    let d = o.x.inv(c.x); d = d - 360 * Math.round(d / 360);
+    $("pth").value = Math.round(Math.max(-180, Math.min(180, d)));
+    $("pom").value = Math.round(Math.max(-YM, Math.min(YM, o.y.inv(c.y))) * 100);
+    upd();
+  });
+  upd();
+})();
+
+/* ---------- §4 : la séparatrice, période qui diverge ---------- */
+(() => {
+  const ROWS = [["e2", 1e-2], ["e4", 1e-4], ["e8", 1e-8]];
+  const txt = textOf("sep.items", ROWS.map(r => r[0]));
+  $("sep").innerHTML = ROWS.map(([id, e]) => `<div><span class="k">${F.num(Pendule.periodeEnergie(W, 1 - e) / T0, 3)} <var>T</var>₀</span><span>${txt[id]}</span></div>`).join("");
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["poincare1881", 1881, "idea"], ["stephenson1908", 1908, "idea"], ["kapitza1951", 1951, "experiment"], ["paul1989", 1989, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["piege", "gyropode"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["fermee", "b"], ["ouverte", "c"], ["col", "a"], ["periode", "d"], ["spirale", "b"], ["fil", "c"], ["sommet", "a"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 1102 });
+})();
+</script>
+</body>
+</html>

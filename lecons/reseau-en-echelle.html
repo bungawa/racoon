@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Réseau en échelle</title>
+<link rel="stylesheet" href="/racoon/ds.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="crumb"><a href="/racoon/" data-i18n="crumb.parcours"></a><span class="aux">›</span><a href="/racoon/#monde-ondes-milieux" data-i18n="monde.ondes-milieux"></a><span class="aux">›</span><a href="/racoon/etape?id=puissance-filtres" data-i18n="etape.puissance-filtres"></a><span class="aux">›</span><span data-i18n="crumb.jour"></span></div>
+    <h1 data-i18n="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="tags">
+      <a class="chip t-em" href="/racoon/atlas?piste=em" data-i18n="tag.piste"></a>
+      <a class="chip plain" href="/racoon/lecons/puissance-regime-sinusoidal" data-i18n="tag.prereq"></a>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="sec" data-i18n="s1.sec"></span>
+    <h2 data-i18n="s1.h2"></h2>
+    <p data-i18n-html="s1.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="schema" viewBox="0 0 640 150" role="img" data-i18n-attr="aria-label:fig.aria.schema"></svg>
+      <figcaption data-i18n-html="fig.schema.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s1.p2"></p>
+    <div class="box rem"><b data-i18n="fibo.title"></b>
+      <p id="fibo"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s2.sec"></span>
+    <h2 data-i18n="s2.h2"></h2>
+    <p data-i18n-html="s2.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>z</mi><mn>0</mn></msub><mo>=</mo><msub><mi>z</mi><mn>1</mn></msub><mo>+</mo><mfrac><mrow><msub><mi>z</mi><mn>2</mn></msub><msub><mi>z</mi><mn>0</mn></msub></mrow><mrow><msub><mi>z</mi><mn>2</mn></msub><mo>+</mo><msub><mi>z</mi><mn>0</mn></msub></mrow></mfrac></math><span class="n">(22.27a)</span></div>
+    <p class="validite" data-i18n-html="val.22.27a"></p>
+    <p data-i18n-html="s2.p2"></p>
+    <div class="eq"><math display="block"><msub><mi>z</mi><mn>0</mn></msub><mo>=</mo><mfrac><msub><mi>z</mi><mn>1</mn></msub><mn>2</mn></mfrac><mo>+</mo><msqrt><mrow><mo stretchy="false">(</mo><msubsup><mi>z</mi><mn>1</mn><mn>2</mn></msubsup><mo>/</mo><mn>4</mn><mo stretchy="false">)</mo><mo>+</mo><msub><mi>z</mi><mn>1</mn></msub><msub><mi>z</mi><mn>2</mn></msub></mrow></msqrt></math><span class="n">(22.27)</span></div>
+    <p class="validite" data-i18n-html="val.22.27"></p>
+    <p data-i18n-html="s2.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s3.sec"></span>
+    <h2 data-i18n="s3.h2"></h2>
+    <p data-i18n-html="s3.p1"></p>
+    <div class="eq"><math display="block"><msub><mi>z</mi><mn>0</mn></msub><mo>=</mo><msqrt><mrow><mo stretchy="false">(</mo><mi>L</mi><mo>/</mo><mi>C</mi><mo stretchy="false">)</mo><mo>−</mo><mo stretchy="false">(</mo><msup><mi>ω</mi><mn>2</mn></msup><msup><mi>L</mi><mn>2</mn></msup><mo>/</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></msqrt></math><span class="n">(22.28)</span></div>
+    <p class="validite" data-i18n-html="val.22.28"></p>
+    <p data-i18n-html="s3.p2"></p>
+    <p data-i18n-html="s3.p3"></p>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="s4.sec"></span>
+    <h2 data-i18n="s4.h2"></h2>
+    <p data-i18n-html="s4.p1"></p>
+    <figure class="chart">
+      <svg class="fig" id="trace" role="img" data-i18n-attr="aria-label:fig.aria.trace"></svg>
+      <div class="legend"><span class="c-tint" data-i18n="fig.legend.re"></span><span class="c-warn" data-i18n="fig.legend.im"></span><span class="c-label-2" data-i18n="fig.legend.z0"></span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="seg" role="group" id="bout">
+            <button type="button" data-b="ouvert" data-i18n="fig.ouvert"></button>
+            <button type="button" data-b="court" data-i18n="fig.court"></button>
+            <button type="button" data-b="resistance" data-i18n="fig.resistance"></button>
+          </div>
+          <div class="ctl"><div class="row"><label for="sn" data-i18n="fig.n"></label><output id="snv" for="sn"></output></div>
+            <input id="sn" type="range" min="1" max="40" step="1" value="10"></div>
+          <div class="ctl"><div class="row"><label for="sw" data-i18n-html="fig.w"></label><output id="swv" for="sw"></output></div>
+            <input id="sw" type="range" min="0.02" max="2" step="0.01" value="0.5"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="k" data-i18n-html="fig.k.z0"></span><span class="v" id="vz0"></span><span class="f" id="fz0"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.zn"></span><span class="v" id="vzn"></span><span class="f" id="fzn"></span></div>
+          <div class="stat"><span class="k" data-i18n-html="fig.k.p"></span><span class="v" id="vp"></span><span class="f" id="fp"></span></div>
+        </div>
+      </div>
+      <figcaption data-i18n-html="fig.caption"></figcaption>
+    </figure>
+    <p data-i18n-html="s4.p2"></p>
+    <div class="box rem"><b data-i18n="sys.title"></b>
+      <p id="sys1"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="hist.sec"></span>
+    <h2 data-i18n="hist.h2"></h2>
+    <p data-i18n="hist.intro"></p>
+    <div id="history"></div>
+    <h3 data-i18n="uses.h3"></h3>
+    <div class="list keyed" id="uses"></div>
+  </section>
+
+  <section class="card">
+    <span class="sec" data-i18n="quiz.sec"></span>
+    <h2 data-i18n="quiz.h2"></h2>
+    <div id="quiz"></div>
+  </section>
+
+  <p class="foot" data-i18n-html="foot"></p>
+</main>
+
+<script src="/racoon/i18n.js"></script>
+<script src="/racoon/locales/fr/kit.js"></script>
+<script src="/racoon/locales/fr/parcours.js"></script>
+<script src="/racoon/locales/fr/sigles.js"></script>
+<script src="/racoon/sigles.js"></script>
+<script src="/racoon/liens.js"></script>
+<script src="/racoon/parcours.js"></script>
+<script src="/racoon/navigation.js"></script>
+<script src="/racoon/locales/fr/lecons/reseau-en-echelle.js"></script>
+<script src="/racoon/fmt.js"></script>
+<script src="/racoon/plot.js"></script>
+<script src="/racoon/quiz.js"></script>
+<script src="/racoon/timeline.js"></script>
+<script src="/racoon/constantes.js"></script>
+<script src="/racoon/lecons/complexes.js"></script>
+<script src="/racoon/ondes-milieux.js"></script>
+<script>
+const I = I18n.boot(self.LOCALES), t = I.t;
+const F = Fmt.forLang(I.lang === I18n.PSEUDO ? I18n.FALLBACK : I.lang);
+document.title = t("title");
+/* Structure lives here, text in the table: both must name the same ids. */
+const textOf = (k, ids) => { const all = t(k), extra = Object.keys(all).filter(id => !ids.includes(id)), lost = ids.filter(id => !all[id]);
+  if (extra.length || lost.length) throw new Error(k + ": no text for [" + lost + "], unused text [" + extra + "]"); return all; };
+F.autoTypo(document.querySelector("main"));
+const $ = id => document.getElementById(id);
+const OM = OndesMilieux;
+const L = 1e-3, C = 1e-6, RC = Math.sqrt(L / C), W0 = 2 / Math.sqrt(L * C);     // the L-C ladder of the page: 1 mH, 1 µF
+const cplx = z => F.qty(F.num(z.re, 3) + (z.im < 0 ? " " + F.MINUS + " " : " + ") + F.num(Math.abs(z.im), 3) + " i", "Ω");
+
+/* ---------- schéma : trois cellules z1 en série, z2 en dérivation, puis la suite ---------- */
+(() => {
+  const s = $("schema"), y0 = 30, y1 = 120;
+  const boite = (x, y, w, h, lab) => { Plot.el("rect", { x, y, width: w, height: h, rx: 3, class: "stroke c-tint" }, s);
+    Plot.el("text", { x: x + w / 2, y: y + h / 2 + 5, "text-anchor": "middle", class: "label" }, s).textContent = lab; };
+  Plot.el("line", { x1: 40, x2: 560, y1: y0, y2: y0, class: "stroke thin c-label-2" }, s);
+  Plot.el("line", { x1: 40, x2: 560, y1: y1, y2: y1, class: "stroke thin c-label-2" }, s);
+  for (let k = 0; k < 3; k++) {
+    const x = 70 + 160 * k;
+    boite(x, y0 - 13, 60, 26, t("fig.z1"));
+    Plot.el("line", { x1: x + 110, x2: x + 110, y1: y0, y2: y1, class: "stroke thin c-label-2" }, s);
+    boite(x + 93, 62, 34, 26, t("fig.z2"));
+  }
+  [[40, y0, "a"], [40, y1, "b"], [218, y0, "c"], [218, y1, "d"]].forEach(([x, y, k]) => {
+    Plot.el("circle", { cx: x, cy: y, r: 3.5, class: "fill c-label" }, s);
+    Plot.el("text", { x: x - 4, y: y + (y === y0 ? -9 : 20), "text-anchor": "middle", class: "label" }, s).textContent = t("fig.borne." + k);
+  });
+  Plot.el("line", { x1: 560, x2: 620, y1: y0, y2: y0, class: "stroke thin dash c-label-2" }, s);
+  Plot.el("line", { x1: 560, x2: 620, y1: y1, y2: y1, class: "stroke thin dash c-label-2" }, s);
+})();
+
+/* ---------- une échelle de résistances égales : les rapports de Fibonacci ---------- */
+(() => {
+  const v = [1, 2, 3, 5, 10].map(N => F.num(OM.echelle(1, 1, N).z.re, 6));
+  $("fibo").innerHTML = t("fibo.body", { z1: v[0], z2: v[1], z3: v[2], z5: v[3], z10: v[4], or: F.num(OM.impedanceCaracteristique(1, 1).re, 6) });
+})();
+
+/* ---------- l'échelle L-C finie contre l'échelle infinie ---------- */
+(() => {
+  const sn = $("sn"), sw = $("sw"), seg = $("bout"), trace = $("trace");
+  let bout = "resistance";
+  const fin = { ouvert: null, court: Cx.c(0), resistance: Cx.c(RC) };
+  const zin = (x, N) => { try { const e = OM.echelleLC(L, C, x * W0); return OM.echelle(e.z1, e.z2, N, fin[bout]).z; } catch (e) { return Cx.c(NaN, NaN); } };
+  const LIM = 4;
+  /* a curve in pieces: a point beyond the frame ends the piece, so that a pole is not drawn as a vertical line */
+  function morceaux(P, xs, ys, cls) {
+    let pts = [];
+    const flush = () => { if (pts.length > 1) Plot.el("path", { d: Plot.path(pts), class: cls }, P.g); pts = []; };
+    xs.forEach((x, i) => { const y = ys[i]; if (!isFinite(y) || Math.abs(y) > LIM) { flush(); return; } pts.push([P.x(x), P.y(y)]); });
+    flush();
+  }
+  function draw() {
+    const N = +sn.value, xw = +sw.value;
+    seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.b === bout)));
+    $("snv").textContent = F.num(N, 3); $("swv").textContent = F.num(xw, 3);
+    trace.innerHTML = "";
+    const P = Plot.axes(trace, { fmt: F, w: 640, h: 280, pad: { l: 56, b: 44 }, x: { domain: [0, 2], label: t("fig.xaxis") }, y: { domain: [-LIM, LIM], ticks: 8, label: t("fig.yaxis") } });
+    Plot.el("line", { x1: P.x(0), x2: P.x(2), y1: P.y(0), y2: P.y(0), class: "zero" }, P.g);
+    Plot.el("line", { x1: P.x(1), x2: P.x(1), y1: P.y(-LIM), y2: P.y(LIM), class: "stroke thin dash c-label-2" }, P.g);
+    const xs = Array.from({ length: 801 }, (_, i) => 0.0025 + i * 1.995 / 800);
+    const z0 = xs.map(x => OM.echelleLC(L, C, x * W0).z0), zn = xs.map(x => zin(x, N));
+    morceaux(P, xs, z0.map(z => z.re / RC), "stroke thin dash c-label-2");
+    morceaux(P, xs, z0.map(z => z.im / RC), "stroke thin dash c-label-2");
+    morceaux(P, xs, zn.map(z => z.re / RC), "stroke bold c-tint");
+    morceaux(P, xs, zn.map(z => z.im / RC), "stroke c-warn");
+    Plot.el("line", { x1: P.x(xw), x2: P.x(xw), y1: P.y(-LIM), y2: P.y(LIM), class: "stroke thin c-label" }, P.g);
+    const e = OM.echelleLC(L, C, xw * W0), z = zin(xw, N);
+    $("vz0").textContent = cplx(e.z0);
+    $("fz0").textContent = t(e.passe ? "fig.f.passe" : "fig.f.coupe");
+    $("vzn").textContent = isFinite(z.re) ? cplx(z) : "–";
+    $("fzn").textContent = t("fig.f.zn", { n: F.num(N, 3) });
+    /* the mean power taken from a generator of 1 V crest: ½ Re(1/z) */
+    const p = isFinite(z.re) ? Cx.div(Cx.c(1), z).re / 2 : NaN;
+    $("vp").textContent = isFinite(p) ? F.si(p, "W", { prefix: "m" }) : "–";
+    $("fp").textContent = t("fig.f.p", { p0: F.si(Cx.div(Cx.c(1), e.z0).re / 2, "W", { prefix: "m" }) });
+  }
+  seg.querySelectorAll("button").forEach(b => b.onclick = () => { bout = b.dataset.b; draw(); });
+  sn.oninput = sw.oninput = draw; draw();
+})();
+
+/* ---------- le système décrit : combien de cellules pour paraître infinie ---------- */
+(() => {
+  const tau = Math.sqrt(L * C), N = 40;
+  $("sys1").innerHTML = t("sys1.body", { L: F.si(L, "H"), C: F.si(C, "F"), rc: F.qty(F.num(RC, 3), "Ω"), f0: F.si(W0 / (2 * Math.PI), "Hz"),
+    tau: F.si(tau, "s"), n: F.num(N, 3), aller: F.si(2 * N * tau, "s") });
+})();
+
+/* ---------- histoire ---------- */
+(() => {
+  const EVENTS = [["kirchhoff", 1845, "idea"], ["heaviside", 1887, "idea"], ["pupin", 1900, "use"]];
+  const txt = textOf("hist.events", EVENTS.map(e => e[0]));
+  Timeline.mount($("history"), EVENTS.map(([id, year, kind]) => Object.assign({ year, kind }, txt[id])), { t });
+  const USES = ["r2r"], uses = textOf("uses.items", USES);
+  $("uses").innerHTML = USES.map(id => `<div><span class="k">${t("uses.tag")}</span><span><strong>${uses[id].name}.</strong> ${uses[id].text}</span></div>`).join("");
+})();
+
+/* ---------- quiz ---------- */
+(() => {
+  const QS = [["infini", "b"], ["or", "d"], ["r2r", "a"], ["reel", "c"], ["energie", "b"], ["fini", "a"], ["coupure", "d"]];
+  const txt = textOf("quiz.items", QS.map(q => q[0]));
+  Quiz.mount($("quiz"), QS.map(([id, correct]) => {
+    const q = txt[id];
+    return { id, correct, prompt: q.prompt, why: q.why, hint: q.hint, options: Object.entries(q.options).map(([oid, text]) => ({ id: oid, text })) };
+  }), { t, seed: 226 });
+})();
+</script>
+</body>
+</html>

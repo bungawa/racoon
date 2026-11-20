@@ -1,0 +1,12 @@
+{
+ "cles": [
+  ["saut", "a"],
+  ["bande", "c"],
+  ["masse", "b"],
+  ["zero", "d"],
+  ["somme", "b"],
+  ["voisins", "a"],
+  ["bosons", "d"],
+  ["pauli", "c"]
+ ]
+}
